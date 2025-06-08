@@ -11,6 +11,9 @@ module.exports = {
       },
       backdropBlur: {
         xs: '2px',
+      },
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
       }
     },
   },
