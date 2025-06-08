@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Search, TrendingUp, Star, Globe, BookOpen, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function App() {
   const [universities, setUniversities] = useState([]);
@@ -37,6 +41,40 @@ function App() {
     const setCountries = new Set(universities.map(u => u.country).filter(Boolean));
     return Array.from(setCountries).sort();
   }, [universities]);
+
+  const metrics = useMemo(() => {
+    const totalUniversities = universities.length;
+    const totalCountries = uniqueCountries.length;
+    const averageScore = universities.reduce((acc, u) => acc + u.aggregatedScore, 0) / (universities.length || 1);
+    const counts = {};
+    universities.forEach(u => {
+      counts[u.country] = (counts[u.country] || 0) + 1;
+    });
+    const sorted = Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+    const chartData = {
+      labels: sorted.map(([c]) => c),
+      datasets: [
+        {
+          data: sorted.map(([, count]) => count),
+          backgroundColor: [
+            '#f87171',
+            '#60a5fa',
+            '#a78bfa',
+            '#34d399',
+            '#fbbf24',
+          ],
+        },
+      ],
+    };
+    return {
+      totalUniversities,
+      totalCountries,
+      averageScore: averageScore.toFixed(1),
+      chartData,
+    };
+  }, [universities, uniqueCountries]);
 
   const filteredAndSortedUniversities = useMemo(() => {
     const normalize = str => str.toLowerCase().replace(/\s+/g, '');
@@ -94,14 +132,14 @@ function App() {
     setCurrentPage(1);
   }, [searchTerm, sortBy, selectedCountry]);
 
-  // Smoothly scroll to the first card on page change for small screens
+  // Smoothly scroll to the first card on page change with slight offset
   useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      window.innerWidth <= 768 &&
-      firstCardRef.current
-    ) {
-      firstCardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (typeof window !== 'undefined' && firstCardRef.current) {
+      const top =
+        firstCardRef.current.getBoundingClientRect().top +
+        window.pageYOffset -
+        60;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   }, [currentPage]);
 
@@ -189,62 +227,86 @@ function App() {
             </p>
           </div>
 
-          {/* Search and Filter Section */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search universities..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
-                  />
-                </div>
-                
-                <div className="relative">
-                  <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
-                  >
-                    <option value="aggregatedRank" className="bg-gray-800">Aggregated Rank</option>
-                    <option value="aggregatedScore" className="bg-gray-800">Aggregated Score</option>
-                    <option value="qs" className="bg-gray-800">QS Ranking</option>
-                    <option value="the" className="bg-gray-800">THE Ranking</option>
-                    <option value="arwu" className="bg-gray-800">ARWU Ranking</option>
-                    <option value="usnews" className="bg-gray-800">US News Ranking</option>
-                    <option value="name" className="bg-gray-800">Name (A-Z)</option>
-                    <option value="appearances" className="bg-gray-800">Appearances</option>
-                  </select>
-                </div>
+        </div>
+      </div>
 
-                <div className="relative">
-                  <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
-                  <select
-                    value={selectedCountry}
-                    onChange={(e) => setSelectedCountry(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
-                  >
-                    <option value="" className="bg-gray-800">All Countries</option>
-                    {uniqueCountries.map((c) => (
-                      <option key={c} value={c} className="bg-gray-800">
-                        {c}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              
-              <div className="mt-6 text-center">
-                <span className="text-purple-200">
-                  Found {filteredAndSortedUniversities.length} universities
-                </span>
-              </div>
+      {/* Metrics Overview */}
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
+              <div className="text-3xl font-bold text-white">{metrics.totalUniversities}</div>
+              <div className="text-purple-200 mt-1">Universities</div>
             </div>
+            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
+              <div className="text-3xl font-bold text-white">{metrics.totalCountries}</div>
+              <div className="text-purple-200 mt-1">Countries</div>
+            </div>
+            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
+              <div className="text-3xl font-bold text-white">{metrics.averageScore}</div>
+              <div className="text-purple-200 mt-1">Avg. Score</div>
+            </div>
+          </div>
+          <div className="bg-white/10 p-6 rounded-3xl border border-white/20">
+            <Pie data={metrics.chartData} />
+          </div>
+        </div>
+      </div>
+
+      {/* Search and Filter */}
+      <div className="container mx-auto px-6 mb-12">
+        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search universities..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
+              />
+            </div>
+
+            <div className="relative">
+              <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+              >
+                <option value="aggregatedRank" className="bg-gray-800">Aggregated Rank</option>
+                <option value="aggregatedScore" className="bg-gray-800">Aggregated Score</option>
+                <option value="qs" className="bg-gray-800">QS Ranking</option>
+                <option value="the" className="bg-gray-800">THE Ranking</option>
+                <option value="arwu" className="bg-gray-800">ARWU Ranking</option>
+                <option value="usnews" className="bg-gray-800">US News Ranking</option>
+                <option value="name" className="bg-gray-800">Name (A-Z)</option>
+                <option value="appearances" className="bg-gray-800">Appearances</option>
+              </select>
+            </div>
+
+            <div className="relative">
+              <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+              <select
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+              >
+                <option value="" className="bg-gray-800">All Countries</option>
+                {uniqueCountries.map((c) => (
+                  <option key={c} value={c} className="bg-gray-800">
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="mt-6 text-center">
+            <span className="text-purple-200">
+              Found {filteredAndSortedUniversities.length} universities
+            </span>
           </div>
         </div>
       </div>
