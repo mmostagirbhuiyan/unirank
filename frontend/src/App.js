@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Search, TrendingUp, Star, Globe, BookOpen, Award, ChevronDown, ChevronUp } from 'lucide-react';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
   const universitiesPerPage = 50;
   const [showMethodology, setShowMethodology] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
+  const firstCardRef = useRef(null);
 
   useEffect(() => {
     const loadRankings = async () => {
@@ -93,10 +94,14 @@ function App() {
     setCurrentPage(1);
   }, [searchTerm, sortBy, selectedCountry]);
 
-  // Auto-scroll to top on page change on small screens
+  // Smoothly scroll to the first card on page change for small screens
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (
+      typeof window !== 'undefined' &&
+      window.innerWidth <= 768 &&
+      firstCardRef.current
+    ) {
+      firstCardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [currentPage]);
 
@@ -250,6 +255,7 @@ function App() {
           {paginatedUniversities.map((university, index) => (
             <div
               key={index}
+              ref={index === 0 ? firstCardRef : null}
               className="group bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 animationDelay: `${index * 100}ms`
