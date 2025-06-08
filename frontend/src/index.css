@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +17,22 @@
   .animate-in {
     animation: slideIn 0.3s ease-out;
   }
+  .pulse-glow {
+    animation: pulseGlow 6s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background-image:
+      radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.35) 0, transparent 60%),
+      radial-gradient(at 85% 30%, rgba(236, 72, 153, 0.3) 0, transparent 60%),
+      radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.25) 0, transparent 60%),
+      linear-gradient(120deg, #1e1b4b, #0f172a);
+  }
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
 }
 
 @keyframes slideIn {
@@ -27,6 +44,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+  50% { box-shadow: 0 0 20px 0 rgba(124, 58, 237, 0.8); }
 }
 
 code {
