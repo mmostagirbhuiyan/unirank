@@ -89,9 +89,7 @@ function App() {
         bodyColor: '#fff',
       },
       legend: {
-        labels: {
-          color: '#e5e5e5',
-        },
+        display: false,
       },
     },
   };
@@ -202,7 +200,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-950 via-indigo-950 to-gray-900 flex items-center justify-center">
+      <div className="min-h-screen gradient-bg flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <h2 className="text-2xl font-bold text-white mb-2">Loading Universities</h2>
@@ -213,7 +211,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-950 via-indigo-950 to-gray-900">
+    <div className="min-h-screen gradient-bg">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -223,7 +221,7 @@ function App() {
         </div>
         
         <div className="relative container mx-auto px-6 py-16">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-6 text-base md:text-lg" style={{ fontSize: '95%' }}>
               <Globe className="w-5 h-5 text-blue-400" />
               <span className="text-white font-medium">Global University Rankings</span>
@@ -251,24 +249,35 @@ function App() {
       </div>
 
       {/* Metrics Overview */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 space-y-6">
+      <div className="container mx-auto px-6 py-8">
+        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
+          <div className="md:w-2/5 space-y-6">
             <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.totalUniversities}</div>
+              <div className="text-4xl font-extrabold text-white font-orbitron">{metrics.totalUniversities}</div>
               <div className="text-sm text-purple-200 uppercase">Universities</div>
             </div>
             <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.totalCountries}</div>
+              <div className="text-4xl font-extrabold text-white font-orbitron">{metrics.totalCountries}</div>
               <div className="text-sm text-purple-200 uppercase">Countries</div>
             </div>
             <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.averageScore}</div>
+              <div className="text-4xl font-extrabold text-white font-orbitron">{metrics.averageScore}</div>
               <div className="text-sm text-purple-200 uppercase">Avg. Score</div>
             </div>
           </div>
-          <div className="w-full md:w-1/3">
+          <div className="w-full md:w-3/5 flex flex-col items-center">
             <Doughnut data={metrics.chartData} options={chartOptions} />
+            <div className="flex justify-center mt-4 space-x-4">
+              {metrics.chartData.labels.map((label, i) => (
+                <div key={label} className="flex items-center gap-1 text-sm text-purple-200">
+                  <span
+                    className="w-3 h-3 inline-block rounded-sm"
+                    style={{ backgroundColor: metrics.chartData.datasets[0].backgroundColor[i] }}
+                  ></span>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
