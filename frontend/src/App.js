@@ -232,23 +232,25 @@ function App() {
 
       {/* Metrics Overview */}
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
-              <div className="text-3xl font-bold text-white">{metrics.totalUniversities}</div>
-              <div className="text-purple-200 mt-1">Universities</div>
+        <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1 grid grid-cols-3 gap-4 text-center">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <div className="text-3xl font-bold text-white">{metrics.totalUniversities}</div>
+                <div className="text-purple-200 mt-1">Universities</div>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <div className="text-3xl font-bold text-white">{metrics.totalCountries}</div>
+                <div className="text-purple-200 mt-1">Countries</div>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <div className="text-3xl font-bold text-white">{metrics.averageScore}</div>
+                <div className="text-purple-200 mt-1">Avg. Score</div>
+              </div>
             </div>
-            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
-              <div className="text-3xl font-bold text-white">{metrics.totalCountries}</div>
-              <div className="text-purple-200 mt-1">Countries</div>
+            <div className="w-full md:w-1/3">
+              <Pie data={metrics.chartData} />
             </div>
-            <div className="bg-white/10 p-6 rounded-3xl text-center border border-white/20">
-              <div className="text-3xl font-bold text-white">{metrics.averageScore}</div>
-              <div className="text-purple-200 mt-1">Avg. Score</div>
-            </div>
-          </div>
-          <div className="bg-white/10 p-6 rounded-3xl border border-white/20">
-            <Pie data={metrics.chartData} />
           </div>
         </div>
       </div>
