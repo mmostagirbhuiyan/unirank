@@ -250,7 +250,7 @@ function App() {
 
       {/* Metrics Overview */}
       <div className="container mx-auto px-6 py-8">
-        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
+        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow scale-75">
           <div className="md:w-2/5 space-y-6">
             <div>
               <div className="text-4xl font-extrabold text-white font-orbitron">{metrics.totalUniversities}</div>
