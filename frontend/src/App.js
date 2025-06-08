@@ -93,6 +93,13 @@ function App() {
     setCurrentPage(1);
   }, [searchTerm, sortBy, selectedCountry]);
 
+  // Auto-scroll to top on page change on small screens
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentPage]);
+
   const getRankingBadgeColor = (rank) => {
     if (rank <= 3) return 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white';
     if (rank <= 10) return 'bg-gradient-to-r from-blue-500 to-purple-600 text-white';
