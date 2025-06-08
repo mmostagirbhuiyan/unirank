@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Search, TrendingUp, Star, Globe, BookOpen, Award, ChevronDown, ChevronUp } from 'lucide-react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -53,18 +53,20 @@ function App() {
     const sorted = Object.entries(counts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5);
+    const palette = [
+      '#7c3aed',
+      '#6366f1',
+      '#4f46e5',
+      '#4338ca',
+      '#3730a3',
+    ];
     const chartData = {
       labels: sorted.map(([c]) => c),
       datasets: [
         {
           data: sorted.map(([, count]) => count),
-          backgroundColor: [
-            '#f87171',
-            '#60a5fa',
-            '#a78bfa',
-            '#34d399',
-            '#fbbf24',
-          ],
+          backgroundColor: palette,
+          hoverOffset: 8,
         },
       ],
     };
@@ -75,6 +77,24 @@ function App() {
       chartData,
     };
   }, [universities, uniqueCountries]);
+
+  const chartOptions = {
+    cutout: '60%',
+    plugins: {
+      tooltip: {
+        backgroundColor: 'rgba(30, 22, 60, 0.8)',
+        borderColor: '#7c3aed',
+        borderWidth: 1,
+        titleColor: '#fff',
+        bodyColor: '#fff',
+      },
+      legend: {
+        labels: {
+          color: '#e5e5e5',
+        },
+      },
+    },
+  };
 
   const filteredAndSortedUniversities = useMemo(() => {
     const normalize = str => str.toLowerCase().replace(/\s+/g, '');
@@ -182,7 +202,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center">
+      <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-950 via-indigo-950 to-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <h2 className="text-2xl font-bold text-white mb-2">Loading Universities</h2>
@@ -193,7 +213,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+    <div className="min-h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-950 via-indigo-950 to-gray-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -232,25 +252,23 @@ function App() {
 
       {/* Metrics Overview */}
       <div className="container mx-auto px-6 py-12">
-        <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 p-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 grid grid-cols-3 gap-4 text-center">
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                <div className="text-3xl font-bold text-white">{metrics.totalUniversities}</div>
-                <div className="text-purple-200 mt-1">Universities</div>
-              </div>
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                <div className="text-3xl font-bold text-white">{metrics.totalCountries}</div>
-                <div className="text-purple-200 mt-1">Countries</div>
-              </div>
-              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                <div className="text-3xl font-bold text-white">{metrics.averageScore}</div>
-                <div className="text-purple-200 mt-1">Avg. Score</div>
-              </div>
+        <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 space-y-6">
+            <div>
+              <div className="text-4xl font-extrabold text-white">{metrics.totalUniversities}</div>
+              <div className="text-sm text-purple-200 uppercase">Universities</div>
             </div>
-            <div className="w-full md:w-1/3">
-              <Pie data={metrics.chartData} />
+            <div>
+              <div className="text-4xl font-extrabold text-white">{metrics.totalCountries}</div>
+              <div className="text-sm text-purple-200 uppercase">Countries</div>
             </div>
+            <div>
+              <div className="text-4xl font-extrabold text-white">{metrics.averageScore}</div>
+              <div className="text-sm text-purple-200 uppercase">Avg. Score</div>
+            </div>
+          </div>
+          <div className="w-full md:w-1/3">
+            <Doughnut data={metrics.chartData} options={chartOptions} />
           </div>
         </div>
       </div>
