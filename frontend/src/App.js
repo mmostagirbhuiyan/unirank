@@ -56,7 +56,7 @@ function App() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5);
     const palette = [
-      '#14b8a6',
+      '#3b82f6',
       '#6366f1',
       '#f97316',
       '#e11d48',
@@ -219,25 +219,25 @@ function App() {
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 via-slate-800/30 to-black/20 animate-pulse"></div>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-teal-500/15 rounded-full blur-3xl animate-bounce"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-teal-600/15 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/15 rounded-full blur-3xl animate-bounce"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-600/15 rounded-full blur-3xl animate-pulse"></div>
         </div>
         
         <div className="relative container mx-auto px-6 py-12">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-6 text-base md:text-lg" style={{ fontSize: '95%' }}>
-              <Globe className="w-5 h-5 text-teal-400" />
+              <Globe className="w-5 h-5 text-blue-400" />
               <span className="text-white font-medium">Global University Rankings</span>
             </div>
             
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-teal-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-blue-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-teal-200 leading-tight">
+              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-blue-200 leading-tight">
                 UniRank
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">
                   Global
                 </span>
               </h1>
@@ -257,26 +257,26 @@ function App() {
           <div className="md:w-2/5 space-y-6">
             <div>
               <div className="text-4xl font-extrabold text-white">{metrics.totalUniversities}</div>
-              <div className="text-sm text-teal-200 uppercase">Universities</div>
+              <div className="text-sm text-blue-200 uppercase">Universities</div>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-white">{metrics.totalCountries}</div>
-              <div className="text-sm text-teal-200 uppercase">Countries</div>
+              <div className="text-sm text-blue-200 uppercase">Countries</div>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-white">{metrics.averageScore}</div>
-              <div className="text-sm text-teal-200 uppercase">Avg. Score</div>
+              <div className="text-sm text-blue-200 uppercase">Avg. Score</div>
             </div>
             <div>
               <div className="text-4xl font-extrabold text-white">{metrics.totalSources}</div>
-              <div className="text-sm text-teal-200 uppercase">Sources</div>
+              <div className="text-sm text-blue-200 uppercase">Sources</div>
             </div>
           </div>
           <div className="w-full md:w-3/5 flex flex-col items-center">
             <Doughnut data={metrics.chartData} options={chartOptions} />
             <div className="flex justify-center mt-4 space-x-4">
               {metrics.chartData.labels.map((label, i) => (
-                <div key={label} className="flex items-center gap-1 text-sm text-teal-200">
+                <div key={label} className="flex items-center gap-1 text-sm text-blue-200">
                   <span
                     className="w-3 h-3 inline-block rounded-sm"
                     style={{ backgroundColor: metrics.chartData.datasets[0].backgroundColor[i] }}
@@ -354,7 +354,7 @@ function App() {
             <div
               key={index}
               ref={index === 0 ? firstCardRef : null}
-              className="group bg-gradient-to-br from-slate-800/50 via-teal-800/40 to-black/60 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:brightness-110 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              className="group bg-gradient-to-br from-slate-800/50  via-blue-800/40 to-black/60 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:brightness-110 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 animationDelay: `${index * 100}ms`
               }}
