@@ -56,11 +56,11 @@ function App() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5);
     const palette = [
-      '#7c3aed',
+      '#14b8a6',
       '#6366f1',
-      '#4f46e5',
-      '#4338ca',
-      '#3730a3',
+      '#f97316',
+      '#e11d48',
+      '#eab308',
     ];
     const chartData = {
       labels: sorted.map(([c]) => c),
@@ -218,9 +218,9 @@ function App() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-800/20 to-cyan-900/20 animate-pulse"></div>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl animate-bounce"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 via-slate-800/30 to-black/20 animate-pulse"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-teal-500/15 rounded-full blur-3xl animate-bounce"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-teal-600/15 rounded-full blur-3xl animate-pulse"></div>
         </div>
         
         <div className="relative container mx-auto px-6 py-12">
@@ -231,10 +231,10 @@ function App() {
             </div>
             
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-700 to-cyan-900 rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-teal-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-teal-200 leading-tight">
+              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-teal-200 leading-tight">
                 UniRank
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
@@ -243,7 +243,7 @@ function App() {
               </h1>
             </div>
             
-            <p className="text-xl text-teal-200 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '95%' }}>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '95%' }}>
               Your comprehensive guide to global university rankings, aggregating data from QS, Times Higher Education, ARWU, and US News
             </p>
           </div>
@@ -354,7 +354,7 @@ function App() {
             <div
               key={index}
               ref={index === 0 ? firstCardRef : null}
-              className="group bg-gradient-to-br from-teal-800/40 via-cyan-900/30 to-slate-900/40 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:brightness-110 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              className="group bg-gradient-to-br from-slate-800/50 via-teal-800/40 to-black/60 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:brightness-110 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 animationDelay: `${index * 100}ms`
               }}
