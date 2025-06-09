@@ -39,7 +39,7 @@ logging.basicConfig(
 )
 
 class USNewsPolishedExtractor:
-    def __init__(self, browser='chrome', headless=True, max_entries=500, debug=False):
+    def __init__(self, browser='chrome', headless=True, max_entries=500, debug=False, page_load_timeout=60):
         if not SELENIUM_AVAILABLE:
             raise ImportError("Selenium is required. Install with: pip install selenium")
         
@@ -48,6 +48,7 @@ class USNewsPolishedExtractor:
         self.driver = None
         self.max_entries = max_entries
         self.debug = debug
+        self.page_load_timeout = page_load_timeout
         self.universities = []
         
         # US News Global Rankings URL
@@ -129,6 +130,9 @@ class USNewsPolishedExtractor:
                 self.driver = self._setup_firefox()
             else:
                 raise ValueError("Browser must be 'chrome' or 'firefox'")
+
+            # Ensure we don't hang indefinitely on slow page loads
+            self.driver.set_page_load_timeout(self.page_load_timeout)
                 
             logging.info("Browser driver initialized successfully")
             
@@ -694,6 +698,8 @@ def main():
     parser.add_argument('-n', '--max-entries', type=int, default=1000, help='Maximum entries to extract')
     parser.add_argument('-t', '--timeout', type=int, default=300, help='Maximum wait time in seconds')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
+    parser.add_argument('--page-timeout', type=int, default=60,
+                        help='Page load timeout in seconds')
     
     args = parser.parse_args()
     
@@ -712,7 +718,8 @@ def main():
         browser=args.browser,
         headless=not args.no_headless,
         max_entries=args.max_entries,
-        debug=args.debug
+        debug=args.debug,
+        page_load_timeout=args.page_timeout
     )
     
     print(f"Starting direct extraction of US News Rankings...")
