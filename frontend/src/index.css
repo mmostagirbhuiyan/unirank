@@ -24,11 +24,11 @@
 @layer utilities {
   .gradient-bg {
     background-image:
-      radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.25) 0%, transparent 50%),
-      radial-gradient(circle at 80% 30%, rgba(6, 95, 70, 0.25) 0%, transparent 50%),
-      radial-gradient(circle at 50% 90%, rgba(20, 184, 166, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 70% 10%, rgba(110, 231, 183, 0.2) 0%, transparent 50%),
-      linear-gradient(135deg, #0a0f0b 0%, #102e26 50%, #0d251f 75%, #0b1c17 100%);
+      radial-gradient(circle at 20% 20%, rgba(37, 99, 135, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(17, 94, 119, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(21, 94, 117, 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 70% 10%, rgba(12, 74, 110, 0.25) 0%, transparent 50%),
+      linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 75%, #0d1b2a 100%);
   }
 }
 
