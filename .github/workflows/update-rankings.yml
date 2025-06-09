@@ -15,7 +15,13 @@ on:
 
 jobs:
   update-rankings:
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.42.1-jammy
+      options: --ipc=host
     permissions:
       contents: write  # Required to push changes back to repo
     
@@ -52,7 +58,10 @@ jobs:
 
     - name: Fetch US News rankings
       if: github.event_name == 'workflow_dispatch' || steps.check_usnews.outputs.changed == 'true'
-      run: python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
+      run: |
+        python scripts/usnews_direct_extractor.py \
+          --browser ${{ matrix.browser }} \
+          -o frontend/public/data/usnews_rankings.csv
     
     - name: Install dependencies
       run: npm install
