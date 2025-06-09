@@ -696,7 +696,7 @@ def main():
     parser.add_argument('-b', '--browser', choices=['chrome', 'firefox'], default='chrome', help='Browser to use')
     parser.add_argument('--no-headless', action='store_true', help='Run browser in visible mode')
     parser.add_argument('-n', '--max-entries', type=int, default=1000, help='Maximum entries to extract')
-    parser.add_argument('-t', '--timeout', type=int, default=300, help='Maximum wait time in seconds')
+    parser.add_argument('-t', '--timeout', type=int, default=420, help='Maximum wait time in seconds')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     parser.add_argument('--page-timeout', type=int, default=60,
                         help='Page load timeout in seconds')
