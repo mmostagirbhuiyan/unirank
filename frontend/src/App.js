@@ -1,9 +1,31 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Search, TrendingUp, Star, Globe, BookOpen, Award, ChevronDown, ChevronUp } from 'lucide-react';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import {
+  Search,
+  TrendingUp,
+  Star,
+  Globe,
+  BookOpen,
+  Award,
+  ChevronDown,
+  ChevronUp,
+} from 'lucide-react';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from 'chart.js';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement
+);
 
 function App() {
   const [universities, setUniversities] = useState([]);
@@ -72,23 +94,33 @@ function App() {
         },
       ],
     };
+    const barData = {
+      labels: sorted.map(([c]) => c).reverse(),
+      datasets: [
+        {
+          data: sorted.map(([, count]) => count).reverse(),
+          backgroundColor: palette,
+          borderRadius: 4,
+        },
+      ],
+    };
     return {
       totalUniversities,
       totalCountries,
       averageScore: averageScore.toFixed(1),
       totalSources: sourceSet.size,
       chartData,
+      barData,
     };
   }, [universities, uniqueCountries]);
 
-  const chartOptions = {
-    cutout: '60%',
+
+  const barOptions = {
+    indexAxis: 'y',
     maintainAspectRatio: false,
-    animation: {
-      duration: 800,
-      easing: 'easeOutQuart',
-    },
+    responsive: true,
     plugins: {
+      legend: { display: false },
       tooltip: {
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderColor: '#7c3aed',
@@ -96,8 +128,16 @@ function App() {
         titleColor: '#fff',
         bodyColor: '#fff',
       },
-      legend: {
-        display: false,
+    },
+    scales: {
+      x: {
+        ticks: { color: '#fff' },
+        grid: { color: 'rgba(255,255,255,0.1)' },
+        beginAtZero: true,
+      },
+      y: {
+        ticks: { color: '#fff' },
+        grid: { display: false },
       },
     },
   };
@@ -258,38 +298,38 @@ function App() {
 
       {/* Metrics Overview */}
       <div className="container mx-auto px-6 py-4">
-        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col md:flex-row items-center gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
-          <div className="md:w-2/5 space-y-6">
-            <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.totalUniversities}</div>
-              <div className="text-sm text-blue-200 uppercase">Universities</div>
+        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="bg-white/10 rounded-2xl text-center p-4">
+              <div className="text-3xl font-extrabold text-white">{metrics.totalUniversities}</div>
+              <div className="text-xs text-blue-200 uppercase">Universities</div>
             </div>
-            <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.totalCountries}</div>
-              <div className="text-sm text-blue-200 uppercase">Countries</div>
+            <div className="bg-white/10 rounded-2xl text-center p-4">
+              <div className="text-3xl font-extrabold text-white">{metrics.totalCountries}</div>
+              <div className="text-xs text-blue-200 uppercase">Countries</div>
             </div>
-            <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.averageScore}</div>
-              <div className="text-sm text-blue-200 uppercase">Avg. Score</div>
+            <div className="bg-white/10 rounded-2xl text-center p-4">
+              <div className="text-3xl font-extrabold text-white">{metrics.averageScore}</div>
+              <div className="text-xs text-blue-200 uppercase">Avg. Score</div>
             </div>
-            <div>
-              <div className="text-4xl font-extrabold text-white">{metrics.totalSources}</div>
-              <div className="text-sm text-blue-200 uppercase">Sources</div>
+            <div className="bg-white/10 rounded-2xl text-center p-4">
+              <div className="text-3xl font-extrabold text-white">{metrics.totalSources}</div>
+              <div className="text-xs text-blue-200 uppercase">Sources</div>
             </div>
           </div>
-          <div className="w-full md:w-3/5 flex flex-col items-center">
-            <div className="relative w-48 sm:w-60 md:w-72 aspect-square bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-inner p-4 flex items-center justify-center">
-              <Doughnut data={metrics.chartData} options={chartOptions} />
+          <div className="w-full flex flex-col items-center">
+            <div className="relative w-full h-48 md:h-56 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-inner p-4">
+              <Bar data={metrics.barData} options={barOptions} />
             </div>
             <div className="flex justify-center mt-4 flex-wrap gap-2">
-              {metrics.chartData.labels.map((label, i) => (
+              {metrics.barData.labels.map((label, i) => (
                 <span
                   key={label}
                   className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
                 >
                   <span
                     className="w-2 h-2 inline-block rounded-full"
-                    style={{ backgroundColor: metrics.chartData.datasets[0].backgroundColor[i] }}
+                    style={{ backgroundColor: metrics.barData.datasets[0].backgroundColor[i] }}
                   />
                   {label}
                 </span>
