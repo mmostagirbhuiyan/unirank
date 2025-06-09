@@ -83,9 +83,14 @@ function App() {
 
   const chartOptions = {
     cutout: '60%',
+    maintainAspectRatio: false,
+    animation: {
+      duration: 800,
+      easing: 'easeOutQuart',
+    },
     plugins: {
       tooltip: {
-        backgroundColor: 'rgba(30, 22, 60, 0.8)',
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderColor: '#7c3aed',
         borderWidth: 1,
         titleColor: '#fff',
@@ -273,16 +278,21 @@ function App() {
             </div>
           </div>
           <div className="w-full md:w-3/5 flex flex-col items-center">
-            <Doughnut data={metrics.chartData} options={chartOptions} />
-            <div className="flex justify-center mt-4 space-x-4">
+            <div className="relative w-48 sm:w-60 md:w-72 aspect-square bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-inner p-4 flex items-center justify-center">
+              <Doughnut data={metrics.chartData} options={chartOptions} />
+            </div>
+            <div className="flex justify-center mt-4 flex-wrap gap-2">
               {metrics.chartData.labels.map((label, i) => (
-                <div key={label} className="flex items-center gap-1 text-sm text-blue-200">
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
+                >
                   <span
-                    className="w-3 h-3 inline-block rounded-sm"
+                    className="w-2 h-2 inline-block rounded-full"
                     style={{ backgroundColor: metrics.chartData.datasets[0].backgroundColor[i] }}
-                  ></span>
-                  <span>{label}</span>
-                </div>
+                  />
+                  {label}
+                </span>
               ))}
             </div>
           </div>
