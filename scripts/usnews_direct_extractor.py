@@ -52,6 +52,11 @@ class USNewsPolishedExtractor:
         self.page_load_timeout = page_load_timeout
         self.universities = []
         self.parsed_names = set()
+        # Track how many link elements we've already processed during
+        # incremental extraction. This prevents reprocessing all links on
+        # each scroll iteration and keeps the runtime linear rather than
+        # quadratic.
+        self.last_link_index = 0
         
         # US News Global Rankings URL
         self.base_url = "https://www.usnews.com/education/best-global-universities/rankings"
@@ -390,11 +395,24 @@ class USNewsPolishedExtractor:
             logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
             self.universities = []
             self.parsed_names = set()
+            self.last_link_index = 0
 
         try:
             links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
             total_links = len(links)
-            logging.info(f"Found {total_links} potential university links to process. Parsing may take several minutes...")
+            logging.info(
+                f"Found {total_links} potential university links to process. Parsing may take several minutes..."
+            )
+
+            # When running incrementally, only process links that were not seen
+            # in previous iterations. This keeps runtime linear as the page
+            # grows.
+            if incremental and self.last_link_index < total_links:
+                start_idx = self.last_link_index
+                links = links[start_idx:]
+                self.last_link_index = total_links
+            elif not incremental:
+                self.last_link_index = total_links
         except Exception as e:
             logging.error(f"Fatal error: Could not find any university links. Aborting. Error: {e}")
             return []
@@ -442,7 +460,13 @@ class USNewsPolishedExtractor:
                     if self.debug: logging.debug(f"Discarding '{name}': no rank symbol.")
                     continue
 
-                fallback_rank = i + 1
+                # Use a reasonable fallback rank if none is found in the text.
+                # For incremental runs we offset by the index of the first new
+                # link to maintain a consistent ordering.
+                if incremental:
+                    fallback_rank = start_idx + i + 1
+                else:
+                    fallback_rank = i + 1
                 rank_match = re.search(r'#\s*(\d+)', container_text)
                 rank = int(rank_match.group(1)) if rank_match else fallback_rank
 
