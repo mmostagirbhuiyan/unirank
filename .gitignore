@@ -16,6 +16,7 @@ complete_university_ranking_system.md
 
 # Editor directories and files
 .vscode/*
+.cursor/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -24,6 +25,7 @@ complete_university_ranking_system.md
 *.njsproj
 *.sln
 *.sw?
+userinput.py
 
 # Local Data
 frontend/public/data/arwu_rankings.csv # ARWU rankings
