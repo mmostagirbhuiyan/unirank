@@ -13,6 +13,7 @@ import pandas as pd
 from pathlib import Path
 from typing import List, Dict, Optional
 import json
+from tqdm import tqdm
 
 # Selenium imports
 try:
@@ -50,6 +51,7 @@ class USNewsPolishedExtractor:
         self.debug = debug
         self.page_load_timeout = page_load_timeout
         self.universities = []
+        self.parsed_names = set()
         
         # US News Global Rankings URL
         self.base_url = "https://www.usnews.com/education/best-global-universities/rankings"
@@ -278,32 +280,46 @@ class USNewsPolishedExtractor:
         """
         start_time = time.time()
         patience_counter = 0
-        MAX_PATIENCE = 3 # Will try 3 times before giving up
+        MAX_PATIENCE = 3  # Will try 3 times before giving up
 
         logging.info("Starting final loading strategy: Clicking 'Load More' until it disappears.")
-        
+
+        progress = tqdm(total=max_wait_time, desc="Load+Parse", unit="s", leave=False)
+
         while time.time() - start_time < max_wait_time:
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
 
+            # Extract any newly visible universities on each iteration
+            self.extract_university_data(incremental=True)
+
+            progress.n = int(time.time() - start_time)
+            progress.set_postfix({"universities": len(self.universities)})
+            progress.refresh()
+
+            if 0 < self.max_entries <= len(self.universities):
+                break
+
             load_more_clicked = self._click_load_more_button()
-            
+
             if load_more_clicked:
-                patience_counter = 0 # Reset patience on a successful click
+                patience_counter = 0  # Reset patience on a successful click
                 logging.info("Waiting 5 seconds for new content to render...")
                 time.sleep(5)
             else:
                 patience_counter += 1
-                logging.warning(f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
+                logging.warning(
+                    f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}."
+                )
                 if patience_counter >= MAX_PATIENCE:
                     logging.info("Reached max patience. Assuming all content is loaded.")
-                    break # Exit the loop
+                    break
                 time.sleep(3)
 
-        # The item count check has been completely removed to prevent premature stops.
-        
+        progress.close()
+
         logging.info("Finished loading phase.")
-        return self._count_university_entries()
+        return len(self.universities)
 
     def _click_load_more_button(self):
         """Find and click the 'Load More' button using a robust method."""
@@ -362,13 +378,18 @@ class USNewsPolishedExtractor:
         
         return max_count
 
-    def extract_university_data(self):
+    def extract_university_data(self, incremental: bool = False):
         """
-        Extracts university data, now with a check to prevent parsing the same
-        university multiple times from duplicate links.
+        Extract university data from the currently loaded portion of the page.
+
+        When ``incremental`` is True, newly parsed universities are appended to
+        the existing list while avoiding duplicates. When False, the method
+        resets internal state and performs a full parse.
         """
-        logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
-        self.universities = []
+        if not incremental:
+            logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
+            self.universities = []
+            self.parsed_names = set()
 
         try:
             links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
@@ -382,13 +403,16 @@ class USNewsPolishedExtractor:
         universities = []
         generic_keywords = ['rankings', 'methodology', 'education', 'news', 'view']
         
-        # NEW: A set to track names we've already processed in this run.
+        # Track newly parsed names in this invocation only
         parsed_names = set()
 
         for i, link in enumerate(links):
-            if i % 50 == 0 and i > 0:
+            if not incremental and i % 50 == 0 and i > 0:
                 progress_percent = (i / total_links) * 100
-                print(f"  -> Parsing progress: {i}/{total_links} links checked ({len(universities)} universities found)", end='\r')
+                print(
+                    f"  -> Parsing progress: {i}/{total_links} links checked ({len(universities)} universities found)",
+                    end="\r",
+                )
             
             try:
                 if not link.is_displayed():
@@ -397,7 +421,7 @@ class USNewsPolishedExtractor:
                 name = link.text.strip()
 
                 # OPTIMIZATION: If we've already successfully parsed this university, skip the duplicate link.
-                if name in parsed_names:
+                if name in parsed_names or name in self.parsed_names:
                     continue
 
                 if not name or len(name) < 4 or any(keyword in name.lower() for keyword in generic_keywords):
@@ -431,14 +455,20 @@ class USNewsPolishedExtractor:
                 
                 # Add the successfully parsed name to our set.
                 parsed_names.add(name)
+                self.parsed_names.add(name)
 
             except Exception as e:
                 if self.debug: logging.warning(f"Could not parse item for link text: '{link.text}'. Error: {e}")
                 continue
 
-        print()
-        logging.info(f"Successfully parsed {len(universities)} unique universities from {total_links} links.")
-        self.universities = self._clean_and_standardize_data(universities)
+        if universities:
+            cleaned = self._clean_and_standardize_data(universities)
+            self.universities.extend(cleaned)
+        if not incremental:
+            print()
+            logging.info(
+                f"Successfully parsed {len(self.universities)} unique universities from {total_links} links."
+            )
         return self.universities
 
     def _extract_and_clean_country(self, item_text, university_name):
@@ -670,17 +700,18 @@ class USNewsPolishedExtractor:
         try:
             self.setup_driver()
             loaded_count = self.load_all_universities(max_wait_time)
-            
+
             if loaded_count == 0:
                 logging.error("No university entries found")
                 return False
-            
-            universities = self.extract_university_data()
-            
-            if not universities:
+
+            # Final pass to ensure all visible universities are parsed
+            self.extract_university_data()
+
+            if not self.universities:
                 logging.error("Failed to extract university data")
                 return False
-            
+
             success = self.save_to_csv(output_csv)
             return success
             
