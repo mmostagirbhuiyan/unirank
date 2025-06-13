@@ -14,13 +14,6 @@ from pathlib import Path
 from typing import List, Dict, Optional
 import json
 
-try:
-    from tqdm import tqdm
-    TQDM_AVAILABLE = True
-except ImportError:
-    TQDM_AVAILABLE = False
-    logging.warning("tqdm not available. Install with: pip install tqdm for progress bar.")
-
 # Selenium imports
 try:
     from selenium import webdriver
@@ -40,25 +33,10 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('usnews_extractor.log')
+        logging.FileHandler('usnews_extractor.log'),
+        logging.StreamHandler(sys.stdout)
     ]
 )
-
-# Custom handler for console output that respects tqdm
-class TqdmStreamHandler(logging.StreamHandler):
-    def emit(self, record):
-        try:
-            msg = self.format(record)
-            if TQDM_AVAILABLE:
-                tqdm.write(msg, file=self.stream)
-            else:
-                self.stream.write(msg + self.terminator)
-            self.flush()
-        except Exception:
-            self.handleError(record)
-
-# Add the custom handler to the root logger
-logging.getLogger().addHandler(TqdmStreamHandler(sys.stdout))
 
 class USNewsPolishedExtractor:
     def __init__(self, browser='chrome', headless=True, max_entries=500, debug=False, page_load_timeout=60):
@@ -178,14 +156,8 @@ class USNewsPolishedExtractor:
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option('useAutomationExtension', False)
         
-        # Optional: Disable images for faster loading
-        if not self.debug: # Only disable if not in debug mode (where visual inspection might be needed)
-            prefs = {"profile.managed_default_content_settings.images": 2}
-            options.add_experimental_option("prefs", prefs)
-        
-        # Optional: Disable images for faster loading
-        # Use a more recent and realistic User-Agent
-        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+        # User agent to appear more like a regular browser
+        options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
         
         return webdriver.Chrome(options=options)
 
@@ -203,32 +175,24 @@ class USNewsPolishedExtractor:
 
     def load_all_universities(self, max_wait_time=300):
         """Load the page and scroll/click to load all university entries"""
-        import random
-        import time
-
-        # Add a small random delay before loading the page
-        delay = random.uniform(2, 5)
-        logging.info(f"Adding a {delay:.2f} second delay before loading the page to appear more human-like.")
-        time.sleep(delay)
-
         logging.info(f"Loading US News rankings page: {self.base_url}")
         
         self.driver.get(self.base_url)
         
         # Handle cookies and initial page load
-        # Give the page a moment to load and for the cookie banner to appear
         time.sleep(5)
         logging.info("Handling cookie consent...")
         self._handle_cookie_banner()
+        time.sleep(3)
         
-        # Now wait for the main content to load after the cookie banner is dismissed
+        # Wait for content to load
         self._wait_for_content()
         
-        # Scroll and load more content, and extract data incrementally
-        self._scroll_and_load_content(max_wait_time)
+        # Scroll and load more content
+        loaded_count = self._scroll_and_load_content(max_wait_time)
         
-        logging.info(f"Finished loading and incremental extraction. Total unique universities found: {len(self.universities)}")
-        return len(self.universities)
+        logging.info(f"Finished loading. Total entries visible: {loaded_count}")
+        return loaded_count
 
     def _handle_cookie_banner(self):
         """Handle cookie consent banner if present"""
@@ -309,155 +273,37 @@ class USNewsPolishedExtractor:
 
     def _scroll_and_load_content(self, max_wait_time):
         """
-        Scroll and click 'Load More' until the button is truly gone,
-        and extract university data incrementally.
+        Scroll and click 'Load More' until the button is truly gone.
+        This version IGNORES all item counts for controlling the loop.
         """
         start_time = time.time()
         patience_counter = 0
         MAX_PATIENCE = 3 # Will try 3 times before giving up
 
-        logging.info("Starting incremental loading and extraction strategy.")
+        logging.info("Starting final loading strategy: Clicking 'Load More' until it disappears.")
         
-        # Initialize lists/sets for incremental extraction
-        self.universities = []
-        parsed_names = set()
-        generic_keywords = ['rankings', 'methodology', 'education', 'news', 'view']
+        while time.time() - start_time < max_wait_time:
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)
 
-        # Use tqdm for progress bar
-        if TQDM_AVAILABLE:
-            # Initialize tqdm with total as max_entries, and a custom formatter for time remaining
-            pbar = tqdm(total=self.max_entries, unit="uni", desc="Extracting Universities", dynamic_ncols=True, leave=True, colour='cyan')
-        else:
-            pbar = None
+            load_more_clicked = self._click_load_more_button()
+            
+            if load_more_clicked:
+                patience_counter = 0 # Reset patience on a successful click
+                logging.info("Waiting 5 seconds for new content to render...")
+                time.sleep(5)
+            else:
+                patience_counter += 1
+                logging.warning(f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
+                if patience_counter >= MAX_PATIENCE:
+                    logging.info("Reached max patience. Assuming all content is loaded.")
+                    break # Exit the loop
+                time.sleep(3)
 
-        try:
-            prev_li_count = 0
-            while time.time() - start_time < max_wait_time:
-                self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                try:
-                    WebDriverWait(self.driver, 10).until(
-                        lambda d: any(
-                            btn.is_displayed() and any(txt in btn.text.lower() for txt in ["load more", "show more", "view more", "loading"])
-                            for btn in d.find_elements(By.TAG_NAME, "button")
-                        )
-                    )
-                except TimeoutException:
-                    pass
-
-                load_more_clicked = self._click_load_more_button()
-                if load_more_clicked:
-                    time.sleep(2.5)
-
-                # Select all <li> university entries
-                li_nodes = self.driver.find_elements(By.CSS_SELECTOR, "li.item-list__ListItemStyled-sc-18yjqdy-1")
-                new_li_nodes = li_nodes[prev_li_count:]
-                newly_extracted_count = 0
-                debug_print_limit = 5
-
-                for idx, li in enumerate(new_li_nodes):
-                    try:
-                        # University name
-                        try:
-                            name_elem = li.find_element(By.CSS_SELECTOR, "section h2 a")
-                            name = name_elem.text.strip()
-                        except Exception:
-                            name = ''
-                        if not name or len(name) < 4 or any(keyword in name.lower() for keyword in generic_keywords):
-                            continue
-                        if name in parsed_names:
-                            continue
-
-                        # Country/city
-                        try:
-                            spans = li.find_elements(By.CSS_SELECTOR, "section p span")
-                            country = spans[0].text.strip() if len(spans) > 0 else 'N/A'
-                            city = spans[1].text.strip() if len(spans) > 1 else 'N/A'
-                        except Exception:
-                            country = 'N/A'
-                            city = 'N/A'
-
-                        # Rank
-                        try:
-                            rank_elem = li.find_element(By.CSS_SELECTOR, "section ul li a div strong")
-                            rank = int(rank_elem.text.strip().replace('#', ''))
-                        except Exception:
-                            rank = len(self.universities) + 1
-
-                        # Score and Enrollment
-                        score = 'N/A'
-                        enrollment = 'N/A'
-                        try:
-                            stat_divs = li.find_elements(By.CSS_SELECTOR, "section div div dl div")
-                            for stat in stat_divs:
-                                try:
-                                    label = stat.find_element(By.CSS_SELECTOR, "dt").text.strip().lower()
-                                    value = stat.find_element(By.CSS_SELECTOR, "dd").text.strip()
-                                    if 'score' in label:
-                                        score = value
-                                    elif 'enrollment' in label:
-                                        enrollment = value
-                                except Exception:
-                                    continue
-                        except Exception:
-                            pass
-
-                        # Debug output for first 5
-                        if self.debug and idx < debug_print_limit:
-                            print(f"[DEBUG] Name: {name}\n[DEBUG] Country: {country}\n[DEBUG] City: {city}\n[DEBUG] Rank: {rank}\n[DEBUG] Score: {score}\n[DEBUG] Enrollment: {enrollment}\n---")
-
-                        self.universities.append({
-                            'Rank': rank,
-                            'University': name,
-                            'Country': country,
-                            'Score': score,
-                            'Enrollment': enrollment
-                        })
-                        parsed_names.add(name)
-                        newly_extracted_count += 1
-
-                        # Prune processed <li> node
-                        try:
-                            self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", li)
-                        except Exception as prune_exc:
-                            if self.debug:
-                                logging.debug(f"Failed to prune <li> node for '{name}': {prune_exc}")
-                    except Exception as e:
-                        if self.debug:
-                            logging.warning(f"Could not parse <li> entry. Error: {e}")
-                        continue
-
-                prev_li_count = len(li_nodes)
-
-                if newly_extracted_count > 0:
-                    if pbar:
-                        pbar.update(newly_extracted_count)
-                    logging.info(f"Extracted {newly_extracted_count} new universities. Total extracted: {len(self.universities)}")
-                    patience_counter = 0
-                elif load_more_clicked:
-                    logging.info("Load More clicked, but no new universities found. Waiting for content to render...")
-                    time.sleep(5)
-                else:
-                    patience_counter += 1
-                    logging.warning(f"Could not find a clickable 'Load More' button and no new universities found. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
-                    if patience_counter >= MAX_PATIENCE:
-                        logging.info("Reached max patience. Assuming all content is loaded and extracted.")
-                        break
-                    time.sleep(1)
-
-                if pbar:
-                    elapsed_time = time.time() - start_time
-                    remaining_time = max_wait_time - elapsed_time
-                    pbar.set_description(f"Extracting Universities (Time Left: {max(0, int(remaining_time))}s)")
-
-                if self.max_entries > 0 and len(self.universities) >= self.max_entries:
-                    logging.info(f"Reached max_entries limit ({self.max_entries}). Stopping extraction.")
-                    break
-
-            logging.info("Finished loading and incremental extraction phase.")
-            # Final cleaning and standardization will happen after this function returns
-        finally:
-            if pbar:
-                pbar.close()
+        # The item count check has been completely removed to prevent premature stops.
+        
+        logging.info("Finished loading phase.")
+        return self._count_university_entries()
 
     def _click_load_more_button(self):
         """Find and click the 'Load More' button using a robust method."""
@@ -516,6 +362,84 @@ class USNewsPolishedExtractor:
         
         return max_count
 
+    def extract_university_data(self):
+        """
+        Extracts university data, now with a check to prevent parsing the same
+        university multiple times from duplicate links.
+        """
+        logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
+        self.universities = []
+
+        try:
+            links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
+            total_links = len(links)
+            logging.info(f"Found {total_links} potential university links to process. Parsing may take several minutes...")
+        except Exception as e:
+            logging.error(f"Fatal error: Could not find any university links. Aborting. Error: {e}")
+            return []
+
+        ancestor_queries = ["./ancestor::li", "./ancestor::div[contains(@class, 'ranking-item')]"]
+        universities = []
+        generic_keywords = ['rankings', 'methodology', 'education', 'news', 'view']
+        
+        # NEW: A set to track names we've already processed in this run.
+        parsed_names = set()
+
+        for i, link in enumerate(links):
+            if i % 50 == 0 and i > 0:
+                progress_percent = (i / total_links) * 100
+                print(f"  -> Parsing progress: {i}/{total_links} links checked ({len(universities)} universities found)", end='\r')
+            
+            try:
+                if not link.is_displayed():
+                    continue
+
+                name = link.text.strip()
+
+                # OPTIMIZATION: If we've already successfully parsed this university, skip the duplicate link.
+                if name in parsed_names:
+                    continue
+
+                if not name or len(name) < 4 or any(keyword in name.lower() for keyword in generic_keywords):
+                    continue
+                    
+                item_container = None
+                for query in ancestor_queries:
+                    try:
+                        item_container = link.find_element(By.XPATH, query)
+                        if item_container: break
+                    except NoSuchElementException: continue
+                
+                if not item_container: continue
+                
+                container_text = item_container.text
+
+                if '#' not in container_text:
+                    if self.debug: logging.debug(f"Discarding '{name}': no rank symbol.")
+                    continue
+
+                fallback_rank = i + 1
+                rank_match = re.search(r'#\s*(\d+)', container_text)
+                rank = int(rank_match.group(1)) if rank_match else fallback_rank
+
+                country = self._extract_and_clean_country(container_text, name)
+
+                universities.append({
+                    'Rank': rank, 'University': name, 'Country': country,
+                    'Score': 'N/A', 'Enrollment': 'N/A'
+                })
+                
+                # Add the successfully parsed name to our set.
+                parsed_names.add(name)
+
+            except Exception as e:
+                if self.debug: logging.warning(f"Could not parse item for link text: '{link.text}'. Error: {e}")
+                continue
+
+        print()
+        logging.info(f"Successfully parsed {len(universities)} unique universities from {total_links} links.")
+        self.universities = self._clean_and_standardize_data(universities)
+        return self.universities
 
     def _extract_and_clean_country(self, item_text, university_name):
         """Extract and clean country information from item text"""
@@ -748,16 +672,13 @@ class USNewsPolishedExtractor:
             loaded_count = self.load_all_universities(max_wait_time)
             
             if loaded_count == 0:
-                logging.error("No university entries found or extracted.")
+                logging.error("No university entries found")
                 return False
             
-            # Data is already incrementally extracted into self.universities
-            # Now, perform final cleaning and standardization
-            self.universities = self._clean_and_standardize_data(self.universities)
-            logging.info("Final data cleaning and standardization complete.")
-
-            if not self.universities:
-                logging.error("No university data remaining after cleaning.")
+            universities = self.extract_university_data()
+            
+            if not universities:
+                logging.error("Failed to extract university data")
                 return False
             
             success = self.save_to_csv(output_csv)
@@ -775,7 +696,7 @@ def main():
     parser.add_argument('-b', '--browser', choices=['chrome', 'firefox'], default='chrome', help='Browser to use')
     parser.add_argument('--no-headless', action='store_true', help='Run browser in visible mode')
     parser.add_argument('-n', '--max-entries', type=int, default=1000, help='Maximum entries to extract')
-    parser.add_argument('-t', '--timeout', type=int, default=360, help='Maximum wait time in seconds')
+    parser.add_argument('-t', '--timeout', type=int, default=500, help='Maximum wait time in seconds')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     parser.add_argument('--page-timeout', type=int, default=60,
                         help='Page load timeout in seconds')
