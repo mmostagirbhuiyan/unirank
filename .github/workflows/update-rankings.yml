@@ -52,7 +52,7 @@ jobs:
 
     - name: Fetch US News rankings
       if: github.event_name == 'workflow_dispatch' || steps.check_usnews.outputs.changed == 'true'
-      run: python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv -t 600
+      run: python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv -t 780
     
     - name: Install dependencies
       run: npm install
