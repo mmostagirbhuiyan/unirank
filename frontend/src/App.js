@@ -13,7 +13,7 @@ import {
   Calendar,
   Layers,
 } from 'lucide-react';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   Tooltip,
@@ -209,33 +209,6 @@ function App() {
       lastUpdated,
     };
   }, [universities, uniqueCountries]);
-
-  const barOptions = {
-    indexAxis: 'y',
-    maintainAspectRatio: false,
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-        borderColor: '#7c3aed',
-        borderWidth: 1,
-        titleColor: '#fff',
-        bodyColor: '#fff',
-      },
-    },
-    scales: {
-      x: {
-        ticks: { color: '#fff' },
-        grid: { color: 'rgba(255,255,255,0.1)' },
-        beginAtZero: true,
-      },
-      y: {
-        ticks: { color: '#fff' },
-        grid: { display: false },
-      },
-    },
-  };
 
   const filteredAndSortedUniversities = useMemo(() => {
     const normalize = str => str.toLowerCase().replace(/\s+/g, '');
@@ -435,8 +408,8 @@ function App() {
               <MetricCard icon={<Star className="w-6 h-6 text-green-400" />} title="Top University" value={metrics.topUniversity?.name || '-'} sub={metrics.topUniversity?.country ? `#${metrics.topUniversity.aggregatedRank} • ${metrics.topUniversity.country}` : ''} />
               <MetricCard icon={<Users className="w-6 h-6 text-purple-400" />} title="Most Country" value={metrics.mostCountry || '-'} sub={`${metrics.mostCountryCount} universities`} />
               <MetricCard icon={<BarChart className="w-6 h-6 text-orange-400" />} title="Median Score" value={metrics.medianScore} />
-              <MetricCard icon={<Globe className="w-6 h-6 text-cyan-400" />} title="Diversity Index" value={<CircularProgressBar value={parseFloat(metrics.diversityIndex)} max={100} gradientId="diversity" colorFrom="#06b6d4" colorTo="#6366f1" label="Diversity" />} />
-              <MetricCard icon={<Layers className="w-6 h-6 text-fuchsia-400" />} title="Source Coverage" value={<CircularProgressBar value={parseFloat(metrics.sourceCoverage)} max={100} gradientId="coverage" colorFrom="#f59e42" colorTo="#e11d48" label="Coverage" />} sub="in all 4 sources" />
+              <MetricCard icon={<Globe className="w-6 h-6 text-cyan-400" />} title="Diversity Index" value={<CircularProgressBar value={parseFloat(metrics.diversityIndex)} max={100} gradientId="diversity" colorFrom="#06b6d4" colorTo="#6366f1" label="" />} />
+              <MetricCard icon={<Layers className="w-6 h-6 text-fuchsia-400" />} title="Source Coverage" value={<CircularProgressBar value={parseFloat(metrics.sourceCoverage)} max={100} gradientId="coverage" colorFrom="#f59e42" colorTo="#e11d48" label="" />} />
               {metrics.lastUpdated && <MetricCard icon={<Calendar className="w-6 h-6 text-white/80" />} title="Last Updated" value={metrics.lastUpdated} />}
             </div>
             {/* Donut Chart with World Map BG */}
