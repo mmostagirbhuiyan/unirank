@@ -24,6 +24,9 @@ complete_university_ranking_system.md
 *.njsproj
 *.sln
 *.sw?
+.cursor/*
+CLAUDE.md
+userinput.py
 
 # Local Data
 frontend/public/data/arwu_rankings.csv # ARWU rankings
