@@ -95,7 +95,8 @@ const aliasMap = new Map([
     // Resolve discrepancies around Washington University in St. Louis
     ['washington university in st louis', 'Washington University (WUSTL)'],
     ['washington university st louis', 'Washington University (WUSTL)'],
-    ['washington university', 'Washington University (WUSTL)']
+    ['washington university', 'Washington University (WUSTL)'],
+    ["queen's university", "queens university - canada"]
 ]);
 
 function canonicalizeName(name) {

@@ -4036,6 +4036,11 @@
   },
   {
     "originalName": "Queen's University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Queen's University"
+  },
+  {
+    "originalName": "Queen's University",
     "source": "qs",
     "suggestedStandardizedName": "Queen's University"
   },
@@ -17008,11 +17013,6 @@
     "originalName": "Pontificia Universidad Catolica de Chile",
     "source": "usnews",
     "suggestedStandardizedName": "Pontificia Universidad Catolica de Chile"
-  },
-  {
-    "originalName": "Queens University - Canada",
-    "source": "usnews",
-    "suggestedStandardizedName": "Queens University - Canada"
   },
   {
     "originalName": "Universite Cote d'Azur",
