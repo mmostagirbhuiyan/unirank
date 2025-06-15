@@ -13,6 +13,7 @@ import pandas as pd
 from pathlib import Path
 from typing import List, Dict, Optional
 import json
+from tqdm import tqdm
 
 # Selenium imports
 try:
@@ -39,10 +40,9 @@ logging.basicConfig(
 )
 
 class USNewsPolishedExtractor:
-    def __init__(self, browser='chrome', headless=True, max_entries=500, debug=False, page_load_timeout=60):
+    def __init__(self, browser='chrome', headless=True, max_entries=500, debug=False, page_load_timeout=120):
         if not SELENIUM_AVAILABLE:
             raise ImportError("Selenium is required. Install with: pip install selenium")
-        
         self.browser = browser.lower()
         self.headless = headless
         self.driver = None
@@ -50,7 +50,9 @@ class USNewsPolishedExtractor:
         self.debug = debug
         self.page_load_timeout = page_load_timeout
         self.universities = []
-        
+        self.visited_links = set()  # Track visited university links
+        self.output_csv = None
+
         # US News Global Rankings URL
         self.base_url = "https://www.usnews.com/education/best-global-universities/rankings"
         
@@ -197,8 +199,8 @@ class USNewsPolishedExtractor:
     def _handle_cookie_banner(self):
         """Handle cookie consent banner if present"""
         try:
-            time.sleep(3)
-            
+            time.sleep(5)  # Increased initial sleep time
+        
             # Try various methods to close modals/banners
             close_methods = [
                 ("button[aria-label='Close']", "aria-label close"),
@@ -206,32 +208,41 @@ class USNewsPolishedExtractor:
                 (".close-button", "close button class"),
                 ("button[id*='accept']", "accept id"),
                 ("button[class*='accept']", "accept class"),
-                ("button[class*='cookie']", "cookie class")
+                ("button[class*='cookie']", "cookie class"),
+                ("div[aria-modal='true'] button", "modal button"),  # Added more specific selector
+                ("div[role='dialog'] button", "dialog button"),  # Added more specific selector
+                ("div[id*='dialog'] button", "dialog id button")  # Added more specific selector
             ]
-            
+        
             for selector, method_name in close_methods:
                 try:
                     if self._try_close_modal(selector, method_name):
                         return
-                except Exception:
+                except Exception as e:
+                    logging.debug(f"Failed to close modal using {method_name}: {e}")
                     continue
-            
+        
             # Try text-based button search
             buttons = self.driver.find_elements(By.TAG_NAME, "button")
             for button in buttons:
-                if any(text in button.text.lower() for text in ['confirm', 'choice', 'accept', 'continue']):
-                    if button.is_displayed():
-                        self.driver.execute_script("arguments[0].click();", button)
-                        logging.info(f"Closed modal using button text: {button.text}")
-                        time.sleep(2)
-                        return
-            
+                try:
+                    if any(text in button.text.lower() for text in ['confirm', 'choice', 'accept', 'continue']):
+                        if button.is_displayed():
+                            # Use a more robust JavaScript click
+                            self.driver.execute_script("arguments[0].click();", button)
+                            logging.info(f"Closed modal using button text: {button.text}")
+                            time.sleep(2)
+                            return
+                except Exception as e:
+                    logging.debug(f"Failed to click button with text: {e}")
+                    continue
+        
             # Last resort: ESC key
             from selenium.webdriver.common.keys import Keys
             self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
             logging.info("Attempted to dismiss modal with ESC key")
             time.sleep(2)
-                    
+                
         except Exception as e:
             logging.debug(f"Cookie handling failed: {e}")
 
@@ -276,67 +287,115 @@ class USNewsPolishedExtractor:
         Scroll and click 'Load More' until the button is truly gone.
         This version IGNORES all item counts for controlling the loop.
         """
+        import random
         start_time = time.time()
         patience_counter = 0
         MAX_PATIENCE = 3 # Will try 3 times before giving up
 
         logging.info("Starting final loading strategy: Clicking 'Load More' until it disappears.")
-        
-        while time.time() - start_time < max_wait_time:
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(2)
 
-            load_more_clicked = self._click_load_more_button()
-            
-            if load_more_clicked:
-                patience_counter = 0 # Reset patience on a successful click
-                logging.info("Waiting 5 seconds for new content to render...")
-                time.sleep(5)
-            else:
-                patience_counter += 1
-                logging.warning(f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
-                if patience_counter >= MAX_PATIENCE:
-                    logging.info("Reached max patience. Assuming all content is loaded.")
-                    break # Exit the loop
-                time.sleep(3)
+        # Initialize tqdm progress bar
+        with tqdm(
+            total=self.max_entries,
+            desc="Extracting US News Rankings",
+            unit="uni",
+            bar_format=" {l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}{postfix}]",
+            colour="green",
+            ascii=False,
+            ncols=80  # Adjust width as needed
+        ) as pbar:
+            while time.time() - start_time < max_wait_time:
+                # Gradual scrolling
+                try:
+                    scroll_height = self.driver.execute_script("return document.body.scrollHeight;")
+                    current_position = self.driver.execute_script("return window.pageYOffset;")
+                except Exception as e:
+                    logging.error(f"Error getting scroll height or position: {e}")
+                    continue
+                scroll_step = 500  # Adjust scroll step as needed
 
-        # The item count check has been completely removed to prevent premature stops.
-        
-        logging.info("Finished loading phase.")
-        return self._count_university_entries()
+                while current_position < scroll_height:
+                    try:
+                        self.driver.execute_script(f"window.scrollTo(0, {current_position + scroll_step});")
+                        current_position += scroll_step
+                        time.sleep(random.uniform(0.5, 1.5))  # Adjust sleep time as needed
+                        scroll_height = self.driver.execute_script("return document.body.scrollHeight;") # Update scroll height
+                    except Exception as e:
+                        logging.error(f"Error during scrolling: {e}")
+                        break
+
+                load_more_clicked = self._click_load_more_button()
+
+                if load_more_clicked:
+                    patience_counter = 0  # Reset patience on a successful click
+
+                    # Extract new data and add to the list
+                    new_data = self._extract_new_university_data()
+                    self.universities.extend(new_data)
+                    logging.info(f"Total universities: {len(self.universities)}")
+                    pbar.update(len(new_data))  # Update progress bar
+
+                    # Dynamic wait for new content
+                    wait_time = 0
+                    while wait_time < 10:  # Maximum wait time of 10 seconds
+                        time.sleep(1)
+                        wait_time += 1
+                        new_links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
+                        if len(new_links) > len(self.visited_links):
+                            logging.info("New content detected, continuing...")
+                            break
+                    else:
+                        logging.info("No new content detected after 10 seconds, continuing...")
+
+                else:
+                    patience_counter += 1
+                    logging.warning(f"Could not find a clickable 'Load More' button. Patience attempt {patience_counter}/{MAX_PATIENCE}.")
+                    if patience_counter >= MAX_PATIENCE:
+                        logging.info("Reached max patience. Assuming all content is loaded.")
+                        break  # Exit the loop
+                    time.sleep(3)
+
+        logging.info("Finished scrolling and loading content.")
+        return len(self.universities)
 
     def _click_load_more_button(self):
-        """Find and click the 'Load More' button using a robust method."""
-        # Broaden the search to include loading states, based on previous logs.
+        """Find and click the 'Load More' button."""
+        # Broaden the search to include loading states.
         possible_texts = ["load more", "show more", "view more", "loading"]
         
-        try:
-            # Give the page a moment to render the button after a scroll
-            time.sleep(1)
-            buttons = self.driver.find_elements(By.TAG_NAME, "button")
+        for attempt in range(3):  # Retry up to 3 times
+            try:
+                # Give the page a moment to render the button after a scroll
+                time.sleep(1)
+                buttons = self.driver.find_elements(By.TAG_NAME, "button")
+                
+                for button in buttons:
+                    try:
+                        button_text = button.text.lower()
+                        # Check if the button is visible and contains one of our keywords
+                        if button.is_displayed() and any(text in button_text for text in possible_texts):
+                            # Use a robust JavaScript click that can handle most obscured elements
+                            self.driver.execute_script("arguments[0].scrollIntoView(true);", button)
+                            time.sleep(0.5) # Brief pause after scrolling to it
+                            self.driver.execute_script("arguments[0].click();", button)
+                            
+                            logging.info(f"Successfully clicked button with text: '{button.text}'")
+                            return True
+                    except Exception as e:
+                        # This specific button might be stale or non-interactable, continue to the next
+                        logging.warning(f"Attempt {attempt+1} failed to click button: {e}")
+                        continue
+                
+                # If we loop through all buttons and none are successfully clicked, we fail for this attempt
+                logging.warning(f"Attempt {attempt+1}: No clickable 'Load More' button found.")
+                time.sleep(2)  # Wait before retrying
             
-            for button in buttons:
-                try:
-                    button_text = button.text.lower()
-                    # Check if the button is visible and contains one of our keywords
-                    if button.is_displayed() and any(text in button_text for text in possible_texts):
-                        # Use a robust JavaScript click that can handle most obscured elements
-                        self.driver.execute_script("arguments[0].scrollIntoView(true);", button)
-                        time.sleep(0.5) # Brief pause after scrolling to it
-                        self.driver.execute_script("arguments[0].click();", button)
-                        
-                        logging.info(f"Successfully clicked button with text: '{button.text}'")
-                        return True
-                except Exception:
-                    # This specific button might be stale or non-interactable, continue to the next
-                    continue
-            
-            # If we loop through all buttons and none are successfully clicked, we fail for this attempt
-            return False
-            
-        except Exception as e:
-            logging.error(f"A critical error occurred while searching for the 'Load More' button: {e}")
-            return False
+            except Exception as e:
+                logging.error(f"A critical error occurred while searching for the 'Load More' button: {e}")
+                return False
+        
+        logging.info("All attempts to click 'Load More' button failed.")
+        return False
 
     def _count_university_entries(self, use_link_selector=True):
         """Count the number of university entries currently visible."""
@@ -362,84 +421,72 @@ class USNewsPolishedExtractor:
         
         return max_count
 
-    def extract_university_data(self):
-        """
-        Extracts university data, now with a check to prevent parsing the same
-        university multiple times from duplicate links.
-        """
-        logging.info("Starting data extraction with hardened 'bottom-up' strategy.")
-        self.universities = []
+    def _extract_new_university_data(self):
+        """Extracts university data from newly loaded content."""
+        logging.info("Extracting new university data...")
 
-        try:
-            links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
-            total_links = len(links)
-            logging.info(f"Found {total_links} potential university links to process. Parsing may take several minutes...")
-        except Exception as e:
-            logging.error(f"Fatal error: Could not find any university links. Aborting. Error: {e}")
-            return []
-
-        ancestor_queries = ["./ancestor::li", "./ancestor::div[contains(@class, 'ranking-item')]"]
-        universities = []
-        generic_keywords = ['rankings', 'methodology', 'education', 'news', 'view']
+        links = self.driver.find_elements(By.CSS_SELECTOR, "a[href*='/education/best-global-universities/']")
         
-        # NEW: A set to track names we've already processed in this run.
-        parsed_names = set()
+        # Filter out already visited links
+        links_to_process = [link for link in links if link.get_attribute('href') not in self.visited_links]
+        
+        new_universities = []
 
-        for i, link in enumerate(links):
-            if i % 50 == 0 and i > 0:
-                progress_percent = (i / total_links) * 100
-                print(f"  -> Parsing progress: {i}/{total_links} links checked ({len(universities)} universities found)", end='\r')
-            
+        for link in links_to_process:
             try:
                 if not link.is_displayed():
                     continue
 
                 name = link.text.strip()
+                link_href = link.get_attribute('href')
 
-                # OPTIMIZATION: If we've already successfully parsed this university, skip the duplicate link.
-                if name in parsed_names:
+                if not name or len(name) < 4 or any(keyword in name.lower() for keyword in ['rankings', 'methodology', 'education', 'news', 'view', 'read more']):
                     continue
 
-                if not name or len(name) < 4 or any(keyword in name.lower() for keyword in generic_keywords):
+                # More aggressive duplicate filtering
+                if (link_href, name) in self.visited_links:
                     continue
-                    
+
                 item_container = None
-                for query in ancestor_queries:
+                for query in ["./ancestor::li", "./ancestor::div[contains(@class, 'ranking-item')]"]:
                     try:
                         item_container = link.find_element(By.XPATH, query)
-                        if item_container: break
-                    except NoSuchElementException: continue
-                
-                if not item_container: continue
-                
+                        if item_container:
+                            break
+                    except NoSuchElementException:
+                        continue
+
+                if not item_container:
+                    continue
+
                 container_text = item_container.text
 
                 if '#' not in container_text:
-                    if self.debug: logging.debug(f"Discarding '{name}': no rank symbol.")
+                    if self.debug:
+                        logging.debug(f"Discarding '{name}': no rank symbol.")
                     continue
 
-                fallback_rank = i + 1
                 rank_match = re.search(r'#\s*(\d+)', container_text)
-                rank = int(rank_match.group(1)) if rank_match else fallback_rank
+                rank = int(rank_match.group(1)) if rank_match else len(self.universities) + len(new_universities) + 1
 
                 country = self._extract_and_clean_country(container_text, name)
 
-                universities.append({
-                    'Rank': rank, 'University': name, 'Country': country,
-                    'Score': 'N/A', 'Enrollment': 'N/A'
+                new_universities.append({
+                    'Rank': rank,
+                    'University': name,
+                    'Country': country,
+                    'Score': 'N/A',
+                    'Enrollment': 'N/A'
                 })
-                
-                # Add the successfully parsed name to our set.
-                parsed_names.add(name)
+                self.visited_links.add((link_href, name))
 
             except Exception as e:
-                if self.debug: logging.warning(f"Could not parse item for link text: '{link.text}'. Error: {e}")
+                if self.debug:
+                    logging.warning(f"Could not parse item for link text: '{link.text}'. Error: {e}")
                 continue
 
-        print()
-        logging.info(f"Successfully parsed {len(universities)} unique universities from {total_links} links.")
-        self.universities = self._clean_and_standardize_data(universities)
-        return self.universities
+        logging.info(f"Found {len(new_universities)} new universities.")
+        return new_universities
 
     def _extract_and_clean_country(self, item_text, university_name):
         """Extract and clean country information from item text"""
@@ -594,7 +641,7 @@ class USNewsPolishedExtractor:
             # Validate rank
             try:
                 rank = int(uni['Rank'])
-                if rank <= 0 or rank > 2500: # Increased max rank just in case
+                if rank <= 0:
                     if self.debug:
                         logging.debug(f"Discarding entry due to out-of-range rank: {uni}")
                     discard_count += 1
@@ -624,39 +671,44 @@ class USNewsPolishedExtractor:
         
         return cleaned
 
-    def save_to_csv(self, output_file="../frontend/public/data/usnews_rankings.csv"):
+    def save_to_csv(self, universities, output_file, append=True):
         """Save cleaned data to CSV file, applying the max_entries limit."""
-        if not self.universities:
-            logging.error("No university data to save")
+        if not universities:
+            logging.info("No university data to save in this batch.")
             return False
-        
+
         # --- THIS IS THE NEW LOGIC ---
         # If a max_entries limit is set, trim the full list before saving.
         # The list is already sorted by rank from the cleaning step.
-        limited_universities = self.universities
-        if self.max_entries > 0 and len(self.universities) > self.max_entries:
-            logging.info(f"Applying max_entries limit: Trimming full list from {len(self.universities)} down to {self.max_entries} universities.")
-            limited_universities = self.universities[:self.max_entries]
+        limited_universities = universities
+        if self.max_entries > 0 and len(universities) > self.max_entries:
+            logging.info(f"Applying max_entries limit: Trimming full list from {len(universities)} down to {self.max_entries} universities.")
+            limited_universities = universities[:self.max_entries]
         # --- END OF NEW LOGIC ---
 
         df = pd.DataFrame(limited_universities)
-        df.to_csv(output_file, index=False)
         
-        logging.info(f"Saved {len(df)} universities to {output_file}")
+        # Check if the file exists and if we should write the header
+        file_exists = Path(output_file).is_file()
+        header = not file_exists if not append else False
         
+        df.to_csv(output_file, mode='a' if append else 'w', header=header, index=False)
+
+        logging.info(f"Saved {len(df)} universities to {output_file} (append={append})")
+
         # Print summary using the final, possibly limited, data
         print(f"\n=== EXTRACTION SUMMARY ===")
-        print(f"Total universities saved: {len(df)}")
+        print(f"Total universities saved in this batch: {len(df)}")
         if not df.empty:
             print(f"Rank range: {df['Rank'].min()} - {df['Rank'].max()}")
             print(f"Countries represented: {df['Country'].nunique()}")
             print(f"Universities with identified countries: {len(df[df['Country'] != 'N/A'])}")
         print(f"Output file: {output_file}")
-        
+
         # Show first few entries
         print(f"\nFirst 10 entries:")
         print(df.head(10).to_string(index=False))
-        
+
         return True
 
     def close(self):
@@ -669,21 +721,22 @@ class USNewsPolishedExtractor:
         """Complete workflow: setup, load content, extract data, save clean CSV"""
         try:
             self.setup_driver()
+            self.output_csv = output_csv
             loaded_count = self.load_all_universities(max_wait_time)
-            
+
             if loaded_count == 0:
                 logging.error("No university entries found")
                 return False
-            
-            universities = self.extract_university_data()
-            
-            if not universities:
-                logging.error("Failed to extract university data")
-                return False
-            
-            success = self.save_to_csv(output_csv)
+
+            # universities = self.extract_university_data() # Removed
+
+            # if not self.universities: # Removed
+            #     logging.error("Failed to extract university data")
+            #     return False
+
+            success = self.save_to_csv(self.universities, self.output_csv)
             return success
-            
+
         except Exception as e:
             logging.error(f"Extraction failed: {e}")
             return False

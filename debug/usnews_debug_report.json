@@ -1,0 +1,115 @@
+{
+  "summary": {
+    "total_snapshots": 3,
+    "extraction_samples": 5
+  },
+  "snapshots": [
+    {
+      "position": "~100 universities",
+      "total_links": 175,
+      "containers": {
+        "li[class*='item-list']": 66,
+        "article": 1
+      },
+      "performance": {
+        "dom_nodes": 3201,
+        "memory": 99140597
+      },
+      "lazy_loading": {
+        "current_scroll": 9840.5,
+        "document_height": 17188,
+        "hidden_content": 44,
+        "images_loading": 0,
+        "skeletons": 0,
+        "viewport_height": 796
+      },
+      "link_pattern": {
+        "sample_text": "",
+        "parent_tag": "li",
+        "parent_classes": ""
+      }
+    },
+    {
+      "position": "~400 universities",
+      "total_links": 655,
+      "containers": {
+        "li[class*='item-list']": 279,
+        "article": 1
+      },
+      "performance": {
+        "dom_nodes": 9699,
+        "memory": 167695853
+      },
+      "lazy_loading": {
+        "current_scroll": 62612.5,
+        "document_height": 69860,
+        "hidden_content": 148,
+        "images_loading": 0,
+        "skeletons": 0,
+        "viewport_height": 796
+      },
+      "link_pattern": {
+        "sample_text": "",
+        "parent_tag": "li",
+        "parent_classes": ""
+      }
+    },
+    {
+      "position": "~450 universities",
+      "total_links": 715,
+      "containers": {
+        "li[class*='item-list']": 306,
+        "article": 1
+      },
+      "performance": {
+        "dom_nodes": 10512,
+        "memory": 324717882
+      },
+      "lazy_loading": {
+        "current_scroll": 69064,
+        "document_height": 76594,
+        "hidden_content": 162,
+        "images_loading": 0,
+        "skeletons": 0,
+        "viewport_height": 796
+      },
+      "link_pattern": {
+        "sample_text": "",
+        "parent_tag": "li",
+        "parent_classes": ""
+      }
+    }
+  ],
+  "extraction_patterns": [
+    {
+      "position": 0,
+      "university": "",
+      "container": "div.dropdown-menu__Container-sc-1jz3ypz-0 jzjtcv header__DropdownMenuStyled-sc-1geadoy-7 gFUobj mb2",
+      "has_rank": false
+    },
+    {
+      "position": 178,
+      "university": "",
+      "container": "section.DetailCardGlobalUniversities__CardContainer-sc-1v60hm5-0 mmKPZ",
+      "has_rank": true
+    },
+    {
+      "position": 357,
+      "university": "Read More",
+      "container": "div.DetailCardGlobalUniversities__CardOverview-sc-1v60hm5-4 esHzZu",
+      "has_rank": true
+    },
+    {
+      "position": 536,
+      "university": "University of Warwick",
+      "container": "div.DetailCardGlobalUniversities__CardOverview-sc-1v60hm5-4 esHzZu",
+      "has_rank": true
+    },
+    {
+      "position": 714,
+      "university": "Latin America",
+      "container": "div.Columns__Container-sc-10ug1wf-0 ifFuKH",
+      "has_rank": false
+    }
+  ]
+}
