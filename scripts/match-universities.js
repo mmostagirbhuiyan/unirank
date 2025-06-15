@@ -228,13 +228,20 @@ async function main() {
             // Ensure group.names is an array before iterating for mapping
              if (Array.isArray(group.names)) {
                  group.names.forEach(nameInfo => {
-                    // Add a check here to ensure nameInfo.original is defined before pushing
                     if (nameInfo.original) {
                         suggestedMapping.push({
                             originalName: nameInfo.original,
                             source: nameInfo.source,
                             suggestedStandardizedName: suggestedStandardizedName
                         });
+                        // Add cleaned name mapping as well if different from original
+                        if (nameInfo.cleaned && nameInfo.cleaned !== nameInfo.original) {
+                            suggestedMapping.push({
+                                originalName: nameInfo.cleaned,
+                                source: nameInfo.source,
+                                suggestedStandardizedName: suggestedStandardizedName
+                            });
+                        }
                     }
                  });
              }

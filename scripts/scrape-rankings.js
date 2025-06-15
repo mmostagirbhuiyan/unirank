@@ -43,6 +43,10 @@ let universityStandardizationMap = new Map();
 let usnewsNameMap = new Map();
 let usnewsCleanList = [];
 
+// --- Manual Mapping Layer ---
+// Manual mappings are loaded from manual-university-mapping.json and always take precedence over auto-generated mappings.
+let manualStandardizationMap = new Map();
+
 // Map of known aliases that should collapse to a single canonical name
 const aliasMap = new Map([
     // Common aliases and campus variations mapped to US News naming
@@ -96,7 +100,66 @@ const aliasMap = new Map([
     ['washington university in st louis', 'Washington University (WUSTL)'],
     ['washington university st louis', 'Washington University (WUSTL)'],
     ['washington university', 'Washington University (WUSTL)'],
-    ["queen's university", "queens university - canada"]
+    ["queen's university", "queens university - canada"],
+    ["queens university", "queens university - canada"],
+    // University of Munich
+    ["university of munchen", "University of Munich"],
+    ["university of münchen", "University of Munich"],
+    ["university of muenchen", "University of Munich"],
+    // Technical University of Munich
+    ["technical university of munich", "Technical University of Munich"],
+    ["technical university of münchen", "Technical University of Munich"],
+    ["technische universitat münchen", "Technical University of Munich"],
+    ["technische universitat munchen", "Technical University of Munich"],
+    // Paris Universities
+    ["paris cite university", "Universite Paris Cite"],
+    ["universite paris cite", "Universite Paris Cite"],
+    ["universite paris-saclay", "Universite Paris Saclay"],
+    ["université paris-saclay", "Universite Paris Saclay"],
+    // KU Leuven
+    ["catholic university of leuven", "KU Leuven"],
+    // Hong Kong University of Science and Technology
+    ["hong kong university of science and technology", "Hong Kong University of Science & Technology"],
+    // University of California System
+    ["university of california - los angeles", "University of California Los Angeles"],
+    ["university of california - berkeley", "University of California Berkeley"],
+    ["university of california - san diego", "University of California San Diego"],
+    ["university of california - san francisco", "University of California San Francisco"],
+    ["university of california - davis", "University of California Davis"],
+    ["university of california - santa barbara", "University of California Santa Barbara"],
+    ["university of california - irvine", "University of California Irvine"],
+    ["university of california - santa cruz", "University of California Santa Cruz"],
+    ["university of california - riverside", "University of California Riverside"],
+    // ETH Zurich
+    ["swiss federal institute of technology zurich", "ETH Zurich"],
+    ["swiss federal institute of technology zurich - ethz", "ETH Zurich"],
+    // EPFL
+    ["swiss federal institute of technology lausanne", "Ecole Polytechnique Federale de Lausanne"],
+    ["swiss federal institute of technology lausanne - epfl", "Ecole Polytechnique Federale de Lausanne"],
+    // University of Illinois Urbana-Champaign
+    ["university of illinois at urbana-champaign", "University of Illinois Urbana-Champaign"],
+    // University of Texas Austin
+    ["university of texas at austin", "University of Texas Austin"],
+    // University of North Carolina Chapel Hill
+    ["university of north carolina at chapel hill", "University of North Carolina Chapel Hill"],
+    // University of Maryland College Park
+    ["university of maryland at college park", "University of Maryland College Park"],
+    // University of Colorado Boulder
+    ["university of colorado at boulder", "University of Colorado Boulder"],
+    // University of New South Wales Sydney
+    ["university of new south wales", "University of New South Wales Sydney"],
+    // Washington University in St. Louis
+    ["washington university in st louis", "Washington University (WUSTL)"],
+    ["washington university st louis", "Washington University (WUSTL)"],
+    ["washington university", "Washington University (WUSTL)"],
+    // Sorbonne University
+    ["sorbonne university", "Sorbonne Universite"],
+    // Universite PSL
+    ["psl research university paris", "Universite PSL"],
+    // Pontifical Catholic University of Chile
+    ["pontifical catholic university of chile", "Pontificia Universidad Catolica de Chile"],
+    // Universidade de Sao Paulo
+    ["university of sao paulo", "Universidade de Sao Paulo"],
 ]);
 
 function canonicalizeName(name) {
@@ -152,14 +215,26 @@ async function loadUSNewsNames() {
     });
 }
 
-// Function to load the university name mapping from the JSON file
+// Function to load the university name mapping from the JSON files
 async function loadUniversityMapping() {
     const mappingFilePath = path.join(__dirname, '..', 'frontend', 'public', 'data', 'suggested-university-mapping.json');
+    const manualMappingFilePath = path.join(__dirname, '..', 'frontend', 'public', 'data', 'manual-university-mapping.json');
     try {
         const data = await fs.readFile(mappingFilePath, 'utf8');
         const mappingArray = JSON.parse(data);
         universityStandardizationMap = new Map(mappingArray.map(item => [`${item.originalName}@${item.source}`, item.suggestedStandardizedName]));
-        console.log(`Loaded ${universityStandardizationMap.size} mapping entries.`);
+        // Try to load manual mapping file (if it exists)
+        try {
+            const manualData = await fs.readFile(manualMappingFilePath, 'utf8');
+            const manualArray = JSON.parse(manualData);
+            manualStandardizationMap = new Map(manualArray.map(item => [`${item.originalName}@${item.source}`, item.suggestedStandardizedName]));
+            console.log(`Loaded ${manualStandardizationMap.size} manual mapping entries.`);
+        } catch (err) {
+            // If manual mapping file does not exist, that's fine
+            manualStandardizationMap = new Map();
+            console.log('No manual-university-mapping.json found, proceeding without manual overrides.');
+        }
+        console.log(`Loaded ${universityStandardizationMap.size} auto-generated mapping entries.`);
     } catch (error) {
         console.error('Error loading university mapping file:', error);
         // If the mapping file is crucial, you might want to exit or throw an error here
@@ -167,24 +242,42 @@ async function loadUniversityMapping() {
     }
 }
 
-// Modify the existing standardizeUniversityName function to use the loaded map
+// Modify the existing standardizeUniversityName function to use the merged map
 function standardizeUniversityName(originalName, source) {
     const cleaned = canonicalizeName(originalName);
+    // 1. US News canonicalization
     if (source === 'usnews') {
         return usnewsNameMap.get(cleaned) || originalName.trim();
     }
+    // 2. Manual mapping (authoritative)
+    let key = `${originalName}@${source}`;
+    if (manualStandardizationMap.has(key)) {
+        const mapped = manualStandardizationMap.get(key);
+        if (mapped && mapped !== originalName) {
+            return mapped;
+        }
+    }
+    key = `${cleaned}@${source}`;
+    if (manualStandardizationMap.has(key)) {
+        const mapped = manualStandardizationMap.get(key);
+        if (mapped && mapped !== cleaned) {
+            return mapped;
+        }
+    }
+    // 3. Alias map (fallback for known variants)
     const alias = aliasMap.get(cleaned.toLowerCase());
     if (alias) {
         return alias;
     }
+    // 4. Fuzzy match to US News names
     if (usnewsCleanList.length > 0) {
         const match = stringSimilarity.findBestMatch(cleaned, usnewsCleanList).bestMatch;
         if (match.rating >= 0.93) {
             return usnewsNameMap.get(match.target);
         }
     }
-
-    let key = `${originalName}@${source}`;
+    // 5. Auto-generated mapping
+    key = `${originalName}@${source}`;
     if (universityStandardizationMap.has(key)) {
         const mapped = universityStandardizationMap.get(key);
         if (mapped && mapped !== originalName) {
@@ -198,6 +291,7 @@ function standardizeUniversityName(originalName, source) {
             return mapped;
         }
     }
+    // 6. Fallback: cleaned or original name
     return originalName.trim();
 }
 
