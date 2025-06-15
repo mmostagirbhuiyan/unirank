@@ -8,8 +8,12 @@ import {
   Award,
   ChevronDown,
   ChevronUp,
+  Users,
+  BarChart,
+  Calendar,
+  Layers,
 } from 'lucide-react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Doughnut } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   Tooltip,
@@ -17,6 +21,7 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  ArcElement
 } from 'chart.js';
 
 ChartJS.register(
@@ -24,8 +29,75 @@ ChartJS.register(
   Legend,
   CategoryScale,
   LinearScale,
-  BarElement
+  BarElement,
+  ArcElement
 );
+
+// Helper: Animated Circular Progress Bar
+function CircularProgressBar({ value, max = 100, size = 64, stroke = 8, gradientId, label, colorFrom, colorTo }) {
+  const radius = (size - stroke) / 2;
+  const circ = 2 * Math.PI * radius;
+  const pct = Math.max(0, Math.min(1, value / max));
+  return (
+    <svg width={size} height={size} className="block mx-auto">
+      <defs>
+        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={colorFrom} />
+          <stop offset="100%" stopColor={colorTo} />
+        </linearGradient>
+      </defs>
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        fill="none"
+        stroke="#334155"
+        strokeWidth={stroke}
+        opacity={0.2}
+      />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        fill="none"
+        stroke={`url(#${gradientId})`}
+        strokeWidth={stroke}
+        strokeDasharray={circ}
+        strokeDashoffset={circ * (1 - pct)}
+        strokeLinecap="round"
+        style={{ transition: 'stroke-dashoffset 1.2s cubic-bezier(.4,2,.6,1)' }}
+      />
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dy=".3em"
+        fontSize={size * 0.22}
+        fill="#fff"
+        fontWeight="bold"
+      >
+        {Math.round(value)}%
+      </text>
+      {label && (
+        <text x="50%" y={size * 0.82} textAnchor="middle" fontSize={size * 0.13} fill="#a5b4fc">{label}</text>
+      )}
+    </svg>
+  );
+}
+
+// Helper: Metric Card
+function MetricCard({ icon, title, value, sub, children, className = "" }) {
+  return (
+    <div className={`bg-white/10 rounded-2xl text-center p-4 flex flex-col items-center shadow-lg hover:shadow-2xl transition-all border border-white/10 backdrop-blur-md ${className}`}
+      style={{ minWidth: 120 }}>
+      <div className="mb-2">{icon}</div>
+      <div className="text-xs text-blue-200 uppercase mb-1">{title}</div>
+      <div className="text-lg font-bold text-white">{value}</div>
+      {sub && <div className="text-xs text-purple-200">{sub}</div>}
+      {children}
+    </div>
+  );
+}
 
 function App() {
   const [universities, setUniversities] = useState([]);
@@ -104,6 +176,23 @@ function App() {
         },
       ],
     };
+    // Top university
+    const topUniversity = universities.reduce((best, u) => (u.aggregatedRank < (best?.aggregatedRank ?? Infinity) ? u : best), null);
+    // Most represented country
+    const [mostCountry, mostCountryCount] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] || [null, 0];
+    // Median score
+    const sortedScores = universities.map(u => u.aggregatedScore).sort((a, b) => a - b);
+    const medianScore = sortedScores.length ? (sortedScores.length % 2 === 1 ? sortedScores[Math.floor(sortedScores.length / 2)] : (sortedScores[sortedScores.length / 2 - 1] + sortedScores[sortedScores.length / 2]) / 2) : 0;
+    // Diversity index (countries/universities ratio)
+    const diversityIndex = totalCountries && totalUniversities ? (totalCountries / totalUniversities * 100).toFixed(1) : '0.0';
+    // Source coverage: % of universities in all 4 sources
+    const fullCoverage = universities.filter(u => Object.keys(u.originalRankings).length === 4).length;
+    const sourceCoverage = totalUniversities ? ((fullCoverage / totalUniversities) * 100).toFixed(1) : '0.0';
+    // Last updated (if available)
+    let lastUpdated = '';
+    if (universities.length && universities[0].lastUpdated) {
+      lastUpdated = universities[0].lastUpdated;
+    }
     return {
       totalUniversities,
       totalCountries,
@@ -111,9 +200,15 @@ function App() {
       totalSources: sourceSet.size,
       chartData,
       barData,
+      topUniversity,
+      mostCountry,
+      mostCountryCount,
+      medianScore: medianScore.toFixed(1),
+      diversityIndex,
+      sourceCoverage,
+      lastUpdated,
     };
   }, [universities, uniqueCountries]);
-
 
   const barOptions = {
     indexAxis: 'y',
@@ -246,6 +341,38 @@ function App() {
     return Math.round(avg);
   };
 
+  // Replace Bar with Doughnut for country distribution
+  const donutData = {
+    labels: metrics.barData.labels,
+    datasets: [
+      {
+        data: metrics.barData.datasets[0].data,
+        backgroundColor: [
+          '#3b82f6', // blue
+          '#6366f1', // indigo
+          '#f97316', // orange
+          '#e11d48', // red
+          '#eab308', // yellow
+        ],
+        borderWidth: 0,
+        hoverOffset: 8,
+      },
+    ],
+  };
+  const donutOptions = {
+    cutout: '70%',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: 'rgba(30,41,59,0.95)',
+        borderColor: '#6366f1',
+        borderWidth: 1,
+        titleColor: '#fff',
+        bodyColor: '#fff',
+      },
+    },
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen gradient-bg flex items-center justify-center">
@@ -298,42 +425,55 @@ function App() {
 
       {/* Metrics Overview */}
       <div className="container mx-auto px-6 py-4">
-        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="bg-white/10 rounded-2xl text-center p-4">
-              <div className="text-3xl font-extrabold text-white">{metrics.totalUniversities}</div>
-              <div className="text-xs text-blue-200 uppercase">Universities</div>
+        <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Metrics Cards Grid */}
+            <div className="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4">
+              <MetricCard icon={<Globe className="w-6 h-6 text-blue-400" />} title="Universities" value={metrics.totalUniversities} />
+              <MetricCard icon={<Award className="w-6 h-6 text-yellow-300" />} title="Countries" value={metrics.totalCountries} />
+              <MetricCard icon={<TrendingUp className="w-6 h-6 text-pink-400" />} title="Avg. Score" value={metrics.averageScore} />
+              <MetricCard icon={<Star className="w-6 h-6 text-green-400" />} title="Top University" value={metrics.topUniversity?.name || '-'} sub={metrics.topUniversity?.country ? `#${metrics.topUniversity.aggregatedRank} • ${metrics.topUniversity.country}` : ''} />
+              <MetricCard icon={<Users className="w-6 h-6 text-purple-400" />} title="Most Country" value={metrics.mostCountry || '-'} sub={`${metrics.mostCountryCount} universities`} />
+              <MetricCard icon={<BarChart className="w-6 h-6 text-orange-400" />} title="Median Score" value={metrics.medianScore} />
+              <MetricCard icon={<Globe className="w-6 h-6 text-cyan-400" />} title="Diversity Index" value={<CircularProgressBar value={parseFloat(metrics.diversityIndex)} max={100} gradientId="diversity" colorFrom="#06b6d4" colorTo="#6366f1" label="Diversity" />} />
+              <MetricCard icon={<Layers className="w-6 h-6 text-fuchsia-400" />} title="Source Coverage" value={<CircularProgressBar value={parseFloat(metrics.sourceCoverage)} max={100} gradientId="coverage" colorFrom="#f59e42" colorTo="#e11d48" label="Coverage" />} sub="in all 4 sources" />
+              {metrics.lastUpdated && <MetricCard icon={<Calendar className="w-6 h-6 text-white/80" />} title="Last Updated" value={metrics.lastUpdated} />}
             </div>
-            <div className="bg-white/10 rounded-2xl text-center p-4">
-              <div className="text-3xl font-extrabold text-white">{metrics.totalCountries}</div>
-              <div className="text-xs text-blue-200 uppercase">Countries</div>
-            </div>
-            <div className="bg-white/10 rounded-2xl text-center p-4">
-              <div className="text-3xl font-extrabold text-white">{metrics.averageScore}</div>
-              <div className="text-xs text-blue-200 uppercase">Avg. Score</div>
-            </div>
-            <div className="bg-white/10 rounded-2xl text-center p-4">
-              <div className="text-3xl font-extrabold text-white">{metrics.totalSources}</div>
-              <div className="text-xs text-blue-200 uppercase">Sources</div>
-            </div>
-          </div>
-          <div className="w-full flex flex-col items-center">
-            <div className="relative w-full h-48 md:h-56 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-inner p-4">
-              <Bar data={metrics.barData} options={barOptions} />
-            </div>
-            <div className="flex justify-center mt-4 flex-wrap gap-2">
-              {metrics.barData.labels.map((label, i) => (
-                <span
-                  key={label}
-                  className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
-                >
+            {/* Donut Chart with World Map BG */}
+            <div className="relative flex flex-col items-center justify-center h-full">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
+                {/* Faint world map SVG background */}
+                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <ellipse cx="200" cy="100" rx="180" ry="80" fill="#64748b" fillOpacity="0.08" />
+                  <ellipse cx="200" cy="100" rx="140" ry="60" fill="#64748b" fillOpacity="0.06" />
+                  <ellipse cx="200" cy="100" rx="100" ry="40" fill="#64748b" fillOpacity="0.04" />
+                  {/* You can replace with a more detailed SVG world map if desired */}
+                </svg>
+              </div>
+              <div className="relative z-10 w-56 h-56 flex items-center justify-center">
+                <Doughnut data={donutData} options={donutOptions} />
+              </div>
+              <div className="flex justify-center mt-4 flex-wrap gap-2 z-10">
+                {metrics.barData.labels.map((label, i) => (
                   <span
-                    className="w-2 h-2 inline-block rounded-full"
-                    style={{ backgroundColor: metrics.barData.datasets[0].backgroundColor[i] }}
-                  />
-                  {label}
-                </span>
-              ))}
+                    key={label}
+                    className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
+                  >
+                    <span
+                      className="w-2 h-2 inline-block rounded-full"
+                      style={{ background: `linear-gradient(90deg, #3b82f6, #6366f1, #f97316, #e11d48, #eab308)` }}
+                    />
+                    {label}
+                  </span>
+                ))}
+              </div>
+              {/* Source logos row */}
+              <div className="flex flex-wrap gap-4 justify-center items-center mt-4">
+                <img src={`${process.env.PUBLIC_URL}/logos/qs.png`} alt="QS" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src={`${process.env.PUBLIC_URL}/logos/the.png`} alt="THE" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src={`${process.env.PUBLIC_URL}/logos/arwu.png`} alt="ARWU" className="h-8 grayscale hover:grayscale-0 transition" />
+                <img src={`${process.env.PUBLIC_URL}/logos/usnews.png`} alt="US News" className="h-8 grayscale hover:grayscale-0 transition" />
+              </div>
             </div>
           </div>
         </div>
