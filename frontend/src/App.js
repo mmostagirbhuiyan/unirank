@@ -65,7 +65,7 @@ function CircularProgressBar({ value, max = 100, size = 64, stroke = 8, gradient
         strokeDasharray={circ}
         strokeDashoffset={circ * (1 - pct)}
         strokeLinecap="round"
-        style={{ transition: 'stroke-dashoffset 1.2s cubic-bezier(.4,2,.6,1)' }}
+        style={{ transition: 'stroke-dashoffset 1.5s ease-out' }}
       />
       <text
         x="50%"
@@ -88,13 +88,25 @@ function CircularProgressBar({ value, max = 100, size = 64, stroke = 8, gradient
 // Helper: Metric Card
 function MetricCard({ icon, title, value, sub, children, className = "" }) {
   return (
-    <div className={`bg-white/10 rounded-2xl text-center p-4 flex flex-col items-center shadow-lg hover:shadow-2xl transition-all border border-white/10 backdrop-blur-md ${className}`}
+    <div className={`relative bg-gray-800/60 rounded-2xl text-center p-4 flex flex-col items-center 
+      shadow-xl hover:shadow-purple-500/30 transition-all duration-300 
+      border border-transparent hover:border-purple-500/50 backdrop-blur-md 
+      overflow-hidden group ${className}`}
       style={{ minWidth: 120 }}>
-      <div className="mb-2">{icon}</div>
-      <div className="text-xs text-blue-200 uppercase mb-1">{title}</div>
-      <div className="text-lg font-bold text-white">{value}</div>
-      {sub && <div className="text-xs text-purple-200">{sub}</div>}
-      {children}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-800/20 via-purple-800/20 to-pink-800/20 
+        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+      <div className="absolute inset-0 rounded-2xl pointer-events-none 
+        border-2 border-transparent group-hover:border-purple-600/50 transition-colors duration-300"></div>
+
+      <div className="relative z-10 mb-2 transform group-hover:scale-110 transition-transform duration-300 text-purple-400">
+        {icon}
+      </div>
+      <div className="relative z-10 text-xs text-blue-300 uppercase mb-1 tracking-wider">{title}</div>
+      <div className="relative z-10 text-xl font-extrabold text-transparent bg-clip-text 
+        bg-gradient-to-r from-blue-300 to-purple-300 leading-tight">{value}</div>
+      {sub && <div className="relative z-10 text-xs text-purple-200 opacity-80 mt-1">{sub}</div>}
+      {children && <div className="relative z-10 mt-2">{children}</div>}
     </div>
   );
 }
@@ -150,18 +162,48 @@ function App() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5);
     const palette = [
-      '#3b82f6',
-      '#6366f1',
-      '#f97316',
-      '#e11d48',
-      '#eab308',
+      '#FF4D4D', // Bright Red
+      '#4CAF50', // Bright Green
+      '#2196F3', // Bright Blue
+      '#FFC107', // Bright Amber
+      '#9C27B0', // Bright Purple
     ];
+
+    const darkerPalette = [
+      '#B20000', // Darker Red
+      '#2E7D32', // Darker Green
+      '#1565C0', // Darker Blue
+      '#FF8F00', // Darker Amber
+      '#6A1B9A', // Darker Purple
+    ];
+
+    // Generate CSS linear-gradient strings for the legend
+    const legendGradientColors = sorted.map((_, index) => {
+        return `linear-gradient(135deg, ${darkerPalette[index]}, ${palette[index]})`;
+    });
+
     const chartData = {
       labels: sorted.map(([c]) => c),
       datasets: [
         {
           data: sorted.map(([, count]) => count),
-          backgroundColor: palette,
+          backgroundColor: (context) => {
+            const chart = context.chart;
+            const { ctx, chartArea } = chart;
+
+            if (!chartArea) {
+                return palette; 
+            }
+            
+            const gradients = palette.map((color, index) => {
+                // Create a diagonal linear gradient across the entire chart area
+                const gradient = ctx.createLinearGradient(chartArea.left, chartArea.top, chartArea.right, chartArea.bottom);
+                gradient.addColorStop(0, darkerPalette[index]); // Start with darker shade
+                gradient.addColorStop(1, color); // End with original color
+                return gradient;
+            });
+            return gradients;
+          },
           hoverOffset: 8,
         },
       ],
@@ -207,6 +249,9 @@ function App() {
       diversityIndex,
       sourceCoverage,
       lastUpdated,
+      palette,
+      darkerPalette,
+      legendGradientColors,
     };
   }, [universities, uniqueCountries]);
 
@@ -314,24 +359,6 @@ function App() {
     return Math.round(avg);
   };
 
-  // Replace Bar with Doughnut for country distribution
-  const donutData = {
-    labels: metrics.barData.labels,
-    datasets: [
-      {
-        data: metrics.barData.datasets[0].data,
-        backgroundColor: [
-          '#3b82f6', // blue
-          '#6366f1', // indigo
-          '#f97316', // orange
-          '#e11d48', // red
-          '#eab308', // yellow
-        ],
-        borderWidth: 0,
-        hoverOffset: 8,
-      },
-    ],
-  };
   const donutOptions = {
     cutout: '70%',
     plugins: {
@@ -423,22 +450,26 @@ function App() {
                   {/* You can replace with a more detailed SVG world map if desired */}
                 </svg>
               </div>
-              <div className="relative z-10 w-56 h-56 flex items-center justify-center">
-                <Doughnut data={donutData} options={donutOptions} />
+              <div className="relative z-10 w-64 h-64 flex items-center justify-center">
+                <Doughnut data={metrics.chartData} options={donutOptions} />
               </div>
               <div className="flex justify-center mt-4 flex-wrap gap-2 z-10">
-                {metrics.barData.labels.map((label, i) => (
-                  <span
-                    key={label}
-                    className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
-                  >
+                {metrics.chartData.labels.map((label, i) => {
+                  // Access the actual rendered background color from the chart data, which includes the gradient
+                  const backgroundColor = metrics.chartData.datasets[0].backgroundColor[i];
+                  return (
                     <span
-                      className="w-2 h-2 inline-block rounded-full"
-                      style={{ background: `linear-gradient(90deg, #3b82f6, #6366f1, #f97316, #e11d48, #eab308)` }}
-                    />
-                    {label}
-                  </span>
-                ))}
+                      key={label}
+                      className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
+                    >
+                      <span
+                        className="w-2 h-2 inline-block rounded-full"
+                        style={{ background: metrics.legendGradientColors[i] }}
+                      />
+                      {label}
+                    </span>
+                  );
+                })}
               </div>
               {/* Source logos row */}
               <div className="flex flex-wrap gap-4 justify-center items-center mt-4">
