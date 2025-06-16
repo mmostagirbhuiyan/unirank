@@ -455,8 +455,6 @@ function App() {
               </div>
               <div className="flex justify-center mt-4 flex-wrap gap-2 z-10">
                 {metrics.chartData.labels.map((label, i) => {
-                  // Access the actual rendered background color from the chart data, which includes the gradient
-                  const backgroundColor = metrics.chartData.datasets[0].backgroundColor[i];
                   return (
                     <span
                       key={label}
