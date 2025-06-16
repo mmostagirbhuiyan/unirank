@@ -118,5 +118,15 @@
     "originalName": "university of massachusetts",
     "source": "the",
     "suggestedStandardizedName": "University of Massachusetts Amherst"
+  },
+  {
+    "originalName": "Grenoble Alpes University",
+    "source": "the",
+    "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
+  },
+  {
+    "originalName": "Universite Grenoble Alpes (UGA)",
+    "source": "usnews",
+    "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
   }
 ]
