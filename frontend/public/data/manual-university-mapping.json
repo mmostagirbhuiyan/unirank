@@ -135,8 +135,18 @@
     "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
   },
   {
-    "originalName": "Parthenope University of Naples",
+    "originalName": "University of Rome - La Sapienza",
     "source": "the",
-    "suggestedStandardizedName": "Parthenope University Naples"
+    "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "University of Rome - La Sapienza",
+    "source": "qs",
+    "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "University of Rome - La Sapienza",
+    "source": "arwu",
+    "suggestedStandardizedName": "Sapienza University Rome"
   }
 ]
