@@ -42,21 +42,21 @@ This project aggregates university rankings from four major sources using a Bord
 ### 1. **Raw Data Acquisition**
 - **QS, THE, ARWU:** Download latest CSVs from [universityrankings.ch](https://www.universityrankings.ch) and place in `frontend/public/data/` as `qs_rankings.csv`, `the_rankings.csv`, `arwu_rankings.csv`.
 - **US News:** Run the Python scraper to fetch the latest data:
-  ```bash
+   ```bash
   python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
-  ```
+   ```
 
 ### 2. **Name Mapping & Fuzzy Matching**
 - Run the matching script to generate/update the university name mapping:
-  ```bash
+   ```bash
   node scripts/match-universities.js
-  ```
+   ```
 - This creates/updates `frontend/public/data/suggested-university-mapping.json`.
 - **Manual Review:** Open this file and review the suggested mappings. Edit `suggestedStandardizedName` fields as needed. You can add hardcoded mappings for edge cases.
 
 ### 3. **Aggregation**
 - Run the main aggregation script:
-  ```bash
+   ```bash
   node scripts/scrape-rankings.js
   ```
 - This script:
@@ -162,9 +162,9 @@ This project aggregates university rankings from four major sources using a Bord
     ```
 - **Frontend:**
   - Test React components:
-    ```bash
+```bash
     cd frontend
-    npm test
+npm test
     ```
 - **CI/CD:**
   - GitHub Actions workflow for deployment and PR checks
