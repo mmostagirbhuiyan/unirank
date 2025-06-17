@@ -15,6 +15,9 @@ const { scrapeARWURankings } = require('./arwu-scraper'); // Assuming this now r
 // Import aggregation logic
 const { aggregateRankings } = require('./aggregation');
 
+// Import the enhanced matcher
+const EnhancedNameMatcher = require('./enhanced_name_matcher');
+
 // Define source weights and max ranks as per the markdown
 const sourceWeights = {
     qs: 0.25,
@@ -46,6 +49,9 @@ let usnewsCleanList = [];
 // --- Manual Mapping Layer ---
 // Manual mappings are loaded from manual-university-mapping.json and map university names to US News names regardless of source
 let manualMappingToUSNews = new Map();
+
+// Create matcher instance
+const enhancedMatcher = new EnhancedNameMatcher();
 
 function canonicalizeName(name) {
     if (!name) return '';
@@ -134,7 +140,7 @@ async function loadUniversityMapping() {
     }
 }
 
-// Simplified standardization function - for non-US News sources, try to map to US News names
+// Enhanced standardization function - for non-US News sources, try to map to US News names
 function standardizeUniversityName(originalName, source) {
     const cleaned = canonicalizeName(originalName);
     
@@ -163,11 +169,14 @@ function standardizeUniversityName(originalName, source) {
         return manualMappingToUSNews.get(key);
     }
     
-    // 4. Try fuzzy match to US News names
+    // 4. ENHANCED: Apply pattern-based transformations and fuzzy match
     if (usnewsCleanList.length > 0) {
-        const match = stringSimilarity.findBestMatch(cleaned, usnewsCleanList).bestMatch;
-        if (match.rating >= 0.93) {
-            return usnewsNameMap.get(match.target);
+        // Convert usnewsCleanList back to original names for matching
+        const usnewsOriginalNames = Array.from(usnewsNameMap.values());
+        const matches = enhancedMatcher.findBestMatches(originalName, usnewsOriginalNames, 0.93);
+        if (matches.length > 0) {
+            const bestMatch = matches[0];
+            return bestMatch.target; // Return the original US News name
         }
     }
     
