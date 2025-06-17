@@ -44,9 +44,8 @@ let usnewsNameMap = new Map();
 let usnewsCleanList = [];
 
 // --- Manual Mapping Layer ---
-// Manual mappings are loaded from manual-university-mapping.json and always take precedence over auto-generated mappings.
-let manualStandardizationMap = new Map();
-
+// Manual mappings are loaded from manual-university-mapping.json and map university names to US News names regardless of source
+let manualMappingToUSNews = new Map();
 
 function canonicalizeName(name) {
     if (!name) return '';
@@ -107,55 +106,72 @@ async function loadUniversityMapping() {
         const data = await fs.readFile(mappingFilePath, 'utf8');
         const mappingArray = JSON.parse(data);
         universityStandardizationMap = new Map(mappingArray.map(item => [`${item.originalName}@${item.source}`, item.suggestedStandardizedName]));
-        // Try to load manual mapping file (if it exists)
+        
+        // Load manual mapping file - source-agnostic mappings
         try {
             const manualData = await fs.readFile(manualMappingFilePath, 'utf8');
             const manualArray = JSON.parse(manualData);
-            manualStandardizationMap = new Map(manualArray.map(item => [`${item.originalName}@${item.source}`, item.suggestedStandardizedName]));
-            console.log(`Loaded ${manualStandardizationMap.size} manual mapping entries.`);
+            
+            // Load mappings without source restriction (applies to any source)
+            manualArray.forEach(item => {
+                // If the mapping has a source field, use it (legacy support)
+                if (item.source && item.source !== 'usnews') {
+                    manualMappingToUSNews.set(`${item.originalName}@${item.source}`, item.suggestedStandardizedName);
+                } else if (!item.source) {
+                    // New format: source-agnostic mappings
+                    manualMappingToUSNews.set(item.originalName, item.suggestedStandardizedName);
+                }
+            });
+            
+            console.log(`Loaded ${manualMappingToUSNews.size} manual mapping entries (source-agnostic and legacy).`);
         } catch (err) {
-            // If manual mapping file does not exist, that's fine
-            manualStandardizationMap = new Map();
+            manualMappingToUSNews = new Map();
             console.log('No manual-university-mapping.json found, proceeding without manual overrides.');
         }
         console.log(`Loaded ${universityStandardizationMap.size} auto-generated mapping entries.`);
     } catch (error) {
         console.error('Error loading university mapping file:', error);
-        // If the mapping file is crucial, you might want to exit or throw an error here
-        // For now, we'll proceed with an empty map, meaning no standardization will occur.
     }
 }
 
-// Modify the existing standardizeUniversityName function to use the merged map
+// Simplified standardization function - for non-US News sources, try to map to US News names
 function standardizeUniversityName(originalName, source) {
     const cleaned = canonicalizeName(originalName);
-    // 1. US News canonicalization
+    
+    // 1. US News names are already canonical - just clean them
     if (source === 'usnews') {
         return usnewsNameMap.get(cleaned) || originalName.trim();
     }
-    // 2. Manual mapping (authoritative)
+    
+    // 2. For non-US News sources, try source-agnostic manual mapping first
+    if (manualMappingToUSNews.has(originalName)) {
+        return manualMappingToUSNews.get(originalName);
+    }
+    
+    if (manualMappingToUSNews.has(cleaned)) {
+        return manualMappingToUSNews.get(cleaned);
+    }
+    
+    // 3. Try legacy source-specific manual mappings
     let key = `${originalName}@${source}`;
-    if (manualStandardizationMap.has(key)) {
-        const mapped = manualStandardizationMap.get(key);
-        if (mapped && mapped !== originalName) {
-            return mapped;
-        }
+    if (manualMappingToUSNews.has(key)) {
+        return manualMappingToUSNews.get(key);
     }
+    
     key = `${cleaned}@${source}`;
-    if (manualStandardizationMap.has(key)) {
-        const mapped = manualStandardizationMap.get(key);
-        if (mapped && mapped !== cleaned) {
-            return mapped;
-        }
+    if (manualMappingToUSNews.has(key)) {
+        return manualMappingToUSNews.get(key);
     }
-    // 4. Fuzzy match to US News names
+    
+    // 4. Try fuzzy match to US News names
     if (usnewsCleanList.length > 0) {
         const match = stringSimilarity.findBestMatch(cleaned, usnewsCleanList).bestMatch;
         if (match.rating >= 0.93) {
             return usnewsNameMap.get(match.target);
         }
     }
-    // 5. Auto-generated mapping
+    
+    // 5. Auto-generated mapping (legacy support)
     key = `${originalName}@${source}`;
     if (universityStandardizationMap.has(key)) {
         const mapped = universityStandardizationMap.get(key);
@@ -163,6 +179,7 @@ function standardizeUniversityName(originalName, source) {
             return mapped;
         }
     }
+    
     key = `${cleaned}@${source}`;
     if (universityStandardizationMap.has(key)) {
         const mapped = universityStandardizationMap.get(key);
@@ -170,7 +187,8 @@ function standardizeUniversityName(originalName, source) {
             return mapped;
         }
     }
-    // 6. Fallback: cleaned or original name
+    
+    // 6. Fallback: return original name
     return originalName.trim();
 }
 
