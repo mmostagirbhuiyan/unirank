@@ -47,120 +47,6 @@ let usnewsCleanList = [];
 // Manual mappings are loaded from manual-university-mapping.json and always take precedence over auto-generated mappings.
 let manualStandardizationMap = new Map();
 
-// Map of known aliases that should collapse to a single canonical name
-const aliasMap = new Map([
-    // Common aliases and campus variations mapped to US News naming
-    ['purdue university west lafayette campus', 'Purdue University'],
-    ['california institute of technology caltech', 'California Institute of Technology'],
-    ['technik universitat munchen', 'Technical University of Munich'],
-    ['technical university of munchen', 'Technical University of Munich'],
-    ['technical university of mnchen', 'Technical University of Munich'],
-    ['university of munchen', 'University of Munich'],
-    ['university of mnchen', 'University of Munich'],
-    ['university of michigan ann arbor', 'University of Michigan'],
-    ['newcastle university newcastle upon tyne', 'Newcastle University'],
-    ['swiss federal institute of technology zurich', 'ETH Zurich'],
-    ['swiss federal institute of technology zurich ethz', 'ETH Zurich'],
-    ['swiss federal institute of technology lausanne', 'Ecole Polytechnique Federale de Lausanne'],
-    ['swiss federal institute of technology lausanne epfl', 'Ecole Polytechnique Federale de Lausanne'],
-    ['university of new south wales', 'University of New South Wales Sydney'],
-    ['psl research university paris', 'Universite PSL'],
-    ['hong kong university of science and technology', 'Hong Kong University of Science & Technology'],
-    ['the university of tokyo', 'University of Tokyo'],
-    ['london school of economics', 'London School Economics & Political Science'],
-    ['korea advanced institute of science and technology', 'Korea Advanced Institute of Science & Technology (KAIST)'],
-    ['university of malaya', 'Universiti Malaya'],
-    ['catholic university of leuven', 'KU Leuven'],
-    ['sorbonne university', 'Sorbonne Universite'],
-    ['university of texas at austin', 'University of Texas Austin'],
-    ['university of illinois at urbana champaign', 'University of Illinois Urbana-Champaign'],
-    ['universite paris saclay', 'Universite Paris Saclay'],
-    ['universit paris saclay', 'Universite Paris Saclay'],
-    ['kth royal institute of technology', 'Royal Institute of Technology'],
-    ['university of washington', 'University of Washington Seattle'],
-    ['university of heidelberg', 'Ruprecht Karls University Heidelberg'],
-    ['university of durham', 'Durham University'],
-    ['university of sao paulo', 'Universidade de Sao Paulo'],
-    ['pontifical catholic university of chile', 'Pontificia Universidad Catolica de Chile'],
-    ['paris cite university', 'Universite Paris Cite'],
-    ['paris cit university', 'Universite Paris Cite'],
-    ['universite paris cite', 'Universite Paris Cite'],
-    ['moscow state university', 'Lomonosov Moscow State University'],
-    ['national autonomous university of mexico', 'Universidad Nacional Autonoma de Mexico'],
-    ['pohang university of science and technology', 'Pohang University of Science & Technology (POSTECH)'],
-    ['university of north carolina at chapel hill', 'University of North Carolina Chapel Hill'],
-    ['university of colorado at boulder', 'University of Colorado Boulder'],
-    ['university of maryland at college park', 'University of Maryland College Park'],
-    ['university of texas southwestern medical center at dallas', 'University of Texas Southwestern Medical Center Dallas'],
-    ['university of science and technology of china', 'University of Science & Technology of China, CAS'],
-    ['karolinska institute', 'Karolinska Institutet'],
-    ['wageningen university & research center', 'Wageningen University & Research'],
-    ['university of leiden', 'Leiden University'],
-    // Resolve discrepancies around Washington University in St. Louis
-    ['washington university in st louis', 'Washington University (WUSTL)'],
-    ['washington university st louis', 'Washington University (WUSTL)'],
-    ['washington university', 'Washington University (WUSTL)'],
-    ["queen's university", "queens university - canada"],
-    ["queens university", "queens university - canada"],
-    // University of Munich
-    ["university of munchen", "University of Munich"],
-    ["university of münchen", "University of Munich"],
-    ["university of muenchen", "University of Munich"],
-    // Technical University of Munich
-    ["technical university of munich", "Technical University of Munich"],
-    ["technical university of münchen", "Technical University of Munich"],
-    ["technische universitat münchen", "Technical University of Munich"],
-    ["technische universitat munchen", "Technical University of Munich"],
-    // Paris Universities
-    ["paris cite university", "Universite Paris Cite"],
-    ["universite paris cite", "Universite Paris Cite"],
-    ["universite paris-saclay", "Universite Paris Saclay"],
-    ["université paris-saclay", "Universite Paris Saclay"],
-    // KU Leuven
-    ["catholic university of leuven", "KU Leuven"],
-    // Hong Kong University of Science and Technology
-    ["hong kong university of science and technology", "Hong Kong University of Science & Technology"],
-    // University of California System
-    ["university of california - los angeles", "University of California Los Angeles"],
-    ["university of california - berkeley", "University of California Berkeley"],
-    ["university of california - san diego", "University of California San Diego"],
-    ["university of california - san francisco", "University of California San Francisco"],
-    ["university of california - davis", "University of California Davis"],
-    ["university of california - santa barbara", "University of California Santa Barbara"],
-    ["university of california - irvine", "University of California Irvine"],
-    ["university of california - santa cruz", "University of California Santa Cruz"],
-    ["university of california - riverside", "University of California Riverside"],
-    // ETH Zurich
-    ["swiss federal institute of technology zurich", "ETH Zurich"],
-    ["swiss federal institute of technology zurich - ethz", "ETH Zurich"],
-    // EPFL
-    ["swiss federal institute of technology lausanne", "Ecole Polytechnique Federale de Lausanne"],
-    ["swiss federal institute of technology lausanne - epfl", "Ecole Polytechnique Federale de Lausanne"],
-    // University of Illinois Urbana-Champaign
-    ["university of illinois at urbana-champaign", "University of Illinois Urbana-Champaign"],
-    // University of Texas Austin
-    ["university of texas at austin", "University of Texas Austin"],
-    // University of North Carolina Chapel Hill
-    ["university of north carolina at chapel hill", "University of North Carolina Chapel Hill"],
-    // University of Maryland College Park
-    ["university of maryland at college park", "University of Maryland College Park"],
-    // University of Colorado Boulder
-    ["university of colorado at boulder", "University of Colorado Boulder"],
-    // University of New South Wales Sydney
-    ["university of new south wales", "University of New South Wales Sydney"],
-    // Washington University in St. Louis
-    ["washington university in st louis", "Washington University (WUSTL)"],
-    ["washington university st louis", "Washington University (WUSTL)"],
-    ["washington university", "Washington University (WUSTL)"],
-    // Sorbonne University
-    ["sorbonne university", "Sorbonne Universite"],
-    // Universite PSL
-    ["psl research university paris", "Universite PSL"],
-    // Pontifical Catholic University of Chile
-    ["pontifical catholic university of chile", "Pontificia Universidad Catolica de Chile"],
-    // Universidade de Sao Paulo
-    ["university of sao paulo", "Universidade de Sao Paulo"],
-]);
 
 function canonicalizeName(name) {
     if (!name) return '';
@@ -183,9 +69,7 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/[.,]/g, '');
     cleaned = cleaned.replace(/\s+/g, ' ');
     cleaned = cleaned.trim();
-    // Apply alias map if a canonical form exists
-    const alias = aliasMap.get(cleaned.toLowerCase());
-    return alias || cleaned;
+    return cleaned;
 }
 
 async function loadUSNewsNames() {
@@ -263,11 +147,6 @@ function standardizeUniversityName(originalName, source) {
         if (mapped && mapped !== cleaned) {
             return mapped;
         }
-    }
-    // 3. Alias map (fallback for known variants)
-    const alias = aliasMap.get(cleaned.toLowerCase());
-    if (alias) {
-        return alias;
     }
     // 4. Fuzzy match to US News names
     if (usnewsCleanList.length > 0) {
