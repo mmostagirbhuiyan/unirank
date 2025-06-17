@@ -148,5 +148,250 @@
     "originalName": "University of Rome - La Sapienza",
     "source": "arwu",
     "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "Tabriz University of Medical Sciences",
+    "source": "the",
+    "suggestedStandardizedName": "Tabriz University of Medical Science"
+  },
+  {
+    "originalName": "Shiraz University of Medical Sciences",
+    "source": "the",
+    "suggestedStandardizedName": "Shiraz University of Medical Science"
+  },
+  {
+    "originalName": "I.M. Sechenov First Moscow State Medical University",
+    "source": "qs",
+    "suggestedStandardizedName": "Sechenov First Moscow State Medical University"
+  },
+  {
+    "originalName": "Karolinska Institute",
+    "source": "the",
+    "suggestedStandardizedName": "Karolinska Institutet"
+  },
+  {
+    "originalName": "Karolinska Institute",
+    "source": "arwu",
+    "suggestedStandardizedName": "Karolinska Institutet"
+  },
+  {
+    "originalName": "Örebro University",
+    "source": "the",
+    "suggestedStandardizedName": "Orebro University"
+  },
+  {
+    "originalName": "Örebro University",
+    "source": "arwu",
+    "suggestedStandardizedName": "Orebro University"
+  },
+  {
+    "originalName": "University of Texas at Austin",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Texas Austin"
+  },
+  {
+    "originalName": "University of Texas at Austin",
+    "source": "the",
+    "suggestedStandardizedName": "University of Texas Austin"
+  },
+  {
+    "originalName": "University of Texas at Austin",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Texas Austin"
+  },
+  {
+    "originalName": "University of Texas at Arlington",
+    "source": "the",
+    "suggestedStandardizedName": "University of Texas Arlington"
+  },
+  {
+    "originalName": "University of Texas at Arlington",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Texas Arlington"
+  },
+  {
+    "originalName": "University of Texas Southwestern Medical Center at Dallas",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Texas Southwestern Medical Center Dallas"
+  },
+  {
+    "originalName": "Peoples' Friendship University of Russia",
+    "source": "qs",
+    "suggestedStandardizedName": "Peoples Friendship University of Russia"
+  },
+  {
+    "originalName": "Peoples' Friendship University of Russia",
+    "source": "the",
+    "suggestedStandardizedName": "Peoples Friendship University of Russia"
+  },
+  {
+    "originalName": "Shandong University of Science Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Shandong University of Science & Technology"
+  },
+  {
+    "originalName": "Indiana University-Purdue University of Indianapolis",
+    "source": "arwu",
+    "suggestedStandardizedName": "Indiana University-Purdue University Indianapolis"
+  },
+  {
+    "originalName": "China University of Mining Technology",
+    "source": "qs",
+    "suggestedStandardizedName": "China University of Mining & Technology"
+  },
+  {
+    "originalName": "China University of Mining Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "China University of Mining & Technology"
+  },
+  {
+    "originalName": "The Manchester Metropolitan University",
+    "source": "qs",
+    "suggestedStandardizedName": "Manchester Metropolitan University"
+  },
+  {
+    "originalName": "The Manchester Metropolitan University",
+    "source": "the",
+    "suggestedStandardizedName": "Manchester Metropolitan University"
+  },
+  {
+    "originalName": "The Manchester Metropolitan University",
+    "source": "arwu",
+    "suggestedStandardizedName": "Manchester Metropolitan University"
+  },
+  {
+    "originalName": "University of Texas Health Science Center at Houston",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Texas Health Science Center Houston"
+  },
+  {
+    "originalName": "Aix-Marseille University",
+    "source": "qs",
+    "suggestedStandardizedName": "Aix-Marseille Universite"
+  },
+  {
+    "originalName": "Aix-Marseille University",
+    "source": "the",
+    "suggestedStandardizedName": "Aix-Marseille Universite"
+  },
+  {
+    "originalName": "Aix-Marseille University",
+    "source": "arwu",
+    "suggestedStandardizedName": "Aix-Marseille Universite"
+  },
+  {
+    "originalName": "University Pompeu Fabra",
+    "source": "qs",
+    "suggestedStandardizedName": "Pompeu Fabra University"
+  },
+  {
+    "originalName": "University Pompeu Fabra",
+    "source": "the",
+    "suggestedStandardizedName": "Pompeu Fabra University"
+  },
+  {
+    "originalName": "University Pompeu Fabra",
+    "source": "arwu",
+    "suggestedStandardizedName": "Pompeu Fabra University"
+  },
+  {
+    "originalName": "Shahid Beheshti University of Medical Sciences",
+    "source": "the",
+    "suggestedStandardizedName": "Shahid Beheshti University Medical Sciences"
+  },
+  {
+    "originalName": "Shahid Beheshti University of Medical Sciences",
+    "source": "arwu",
+    "suggestedStandardizedName": "Shahid Beheshti University Medical Sciences"
+  },
+  {
+    "originalName": "University of Seville",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "University of Seville",
+    "source": "the",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "University of Seville",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "Okinawa Institute of Science and Technology Graduate University",
+    "source": "arwu",
+    "suggestedStandardizedName": "Okinawa Institute of Science & Technology Graduate University"
+  },
+  {
+    "originalName": "University of North Carolina at Chapel Hill",
+    "source": "qs",
+    "suggestedStandardizedName": "University of North Carolina Chapel Hill"
+  },
+  {
+    "originalName": "University of North Carolina at Chapel Hill",
+    "source": "the",
+    "suggestedStandardizedName": "University of North Carolina Chapel Hill"
+  },
+  {
+    "originalName": "University of North Carolina at Chapel Hill",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of North Carolina Chapel Hill"
+  },
+  {
+    "originalName": "University of Illinois at Urbana-Champaign",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Illinois Urbana-Champaign"
+  },
+  {
+    "originalName": "University of Illinois at Urbana-Champaign",
+    "source": "the",
+    "suggestedStandardizedName": "University of Illinois Urbana-Champaign"
+  },
+  {
+    "originalName": "University of Illinois at Urbana-Champaign",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Illinois Urbana-Champaign"
+  },
+  {
+    "originalName": "KTH - Royal Institute of Technology",
+    "source": "qs",
+    "suggestedStandardizedName": "Royal Institute of Technology"
+  },
+  {
+    "originalName": "KTH - Royal Institute of Technology",
+    "source": "the",
+    "suggestedStandardizedName": "Royal Institute of Technology"
+  },
+  {
+    "originalName": "KTH - Royal Institute of Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Royal Institute of Technology"
+  },
+  {
+    "originalName": "Ecole Normale Supérieure de Lyon",
+    "source": "qs",
+    "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
+  },
+  {
+    "originalName": "Ecole Normale Supérieure de Lyon",
+    "source": "the",
+    "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
+  },
+  {
+    "originalName": "Ecole Normale Supérieure de Lyon",
+    "source": "arwu",
+    "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
+  },
+  {
+    "originalName": "Mazandaran University of Medical Sciences",
+    "source": "the",
+    "suggestedStandardizedName": "Mazandaran University Medical Sciences"
+  },
+  {
+    "originalName": "Imam Muhammad Ibn Saud Islamic University",
+    "source": "qs",
+    "suggestedStandardizedName": "Imam Mohammad Ibn Saud Islamic University (IMSIU)"
   }
 ]
