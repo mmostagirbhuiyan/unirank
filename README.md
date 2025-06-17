@@ -39,14 +39,16 @@ This project aggregates university rankings from four major sources using a Bord
 
 ## Data Pipeline
 
-### 1. **Raw Data Acquisition**
+### Core Workflow (Your Main Process)
+
+**Step 1: Raw Data Acquisition**
 - **QS, THE, ARWU:** Download latest CSVs from [universityrankings.ch](https://www.universityrankings.ch) and place in `frontend/public/data/` as `qs_rankings.csv`, `the_rankings.csv`, `arwu_rankings.csv`.
 - **US News:** Run the Python scraper to fetch the latest data:
    ```bash
   python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
    ```
 
-### 2. **Name Mapping & Fuzzy Matching**
+**Step 2: Name Mapping & Fuzzy Matching**
 - Run the matching script to generate/update the university name mapping:
    ```bash
   node scripts/match-universities.js
@@ -54,16 +56,50 @@ This project aggregates university rankings from four major sources using a Bord
 - This creates/updates `frontend/public/data/suggested-university-mapping.json`.
 - **Manual Review:** Open this file and review the suggested mappings. Edit `suggestedStandardizedName` fields as needed. You can add hardcoded mappings for edge cases.
 
-### 3. **Aggregation**
+**Step 3: Aggregation**
 - Run the main aggregation script:
    ```bash
   node scripts/scrape-rankings.js
-  ```
+   ```
 - This script:
   - Loads all source data and the mapping file
   - Applies robust name standardization (see below)
   - Aggregates rankings using Borda Count with Penalized Absence
   - Outputs `frontend/public/data/aggregated-rankings.json`
+
+**That's it!** Your core workflow remains exactly the same. The tools below are optional helpers for data quality improvement.
+
+### Optional Data Quality Tools
+
+These tools help you identify and fix potential data quality issues over time, but are **not required** for your regular workflow:
+
+**Monthly Data Quality Check (Optional):**
+```bash
+node scripts/data-quality-monitor.js
+```
+- Shows overall data quality score and coverage statistics
+- Identifies universities that appear in only one ranking source
+
+**Find New Mapping Opportunities (Optional):**
+```bash
+node scripts/suggest-new-mappings.js
+```
+- Automatically finds high-confidence potential duplicate universities
+- Suggests additions to `manual-university-mapping.json`
+
+**Apply Suggested Mappings (Optional):**
+```bash
+node scripts/apply-suggested-mappings.js
+```
+- Safely applies high-confidence suggestions to manual mapping file
+- Always backs up your existing mappings first
+
+**Comprehensive Quality Improvement (Optional):**
+```bash
+node scripts/improve-data-quality.js
+```
+- Runs a complete improvement cycle: analyze → suggest → apply → verify
+- Use when you want to do a thorough data quality review
 
 ---
 
@@ -114,6 +150,8 @@ This project aggregates university rankings from four major sources using a Bord
 
 ## Updating & Refreshing Data
 
+### Your Regular Update Process (3 Steps)
+
 1. **Update Source Files:** Place new CSVs in `frontend/public/data/`.
 2. **Run US News Scraper:**
    ```bash
@@ -134,6 +172,27 @@ This project aggregates university rankings from four major sources using a Bord
    npm install
    npm start
    ```
+
+### Optional: Monthly Data Quality Review
+
+If you want to improve data quality over time (completely optional):
+
+1. **Check Current Quality:**
+   ```bash
+   node scripts/data-quality-monitor.js
+   ```
+
+2. **Find Improvement Opportunities:**
+   ```bash
+   node scripts/suggest-new-mappings.js
+   ```
+
+3. **Apply High-Confidence Fixes (if any found):**
+   ```bash
+   node scripts/apply-suggested-mappings.js
+   ```
+
+4. **Re-run your normal process** (Steps 3-5 above) to regenerate with improved mappings.
 
 ---
 
