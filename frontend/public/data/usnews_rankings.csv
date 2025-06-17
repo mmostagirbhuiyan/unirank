@@ -3,919 +3,979 @@ Rank,University,Country,Score,Enrollment
 2,Massachusetts Institute of Technology (MIT),United States,N/A,N/A
 3,Stanford University,United States,N/A,N/A
 4,University of Oxford,United Kingdom,N/A,N/A
-5,University of California Berkeley,United States,N/A,N/A
-6,University of Cambridge,United Kingdom,N/A,N/A
+5,University of Cambridge,United Kingdom,N/A,N/A
+6,University of California Berkeley,United States,N/A,N/A
 7,University College London,United Kingdom,N/A,N/A
-7,University of Washington Seattle,United States,N/A,N/A
-9,Columbia University,United States,N/A,N/A
-10,Yale University,United States,N/A,N/A
-11,University of California Los Angeles,United States,N/A,N/A
-12,Imperial College London,United Kingdom,N/A,N/A
-13,Johns Hopkins University,United States,N/A,N/A
-14,University of Pennsylvania,United States,N/A,N/A
-15,University of California San Francisco,United States,N/A,N/A
-16,Tsinghua University,China,N/A,N/A
-17,University of Toronto,Canada,N/A,N/A
-18,Princeton University,United States,N/A,N/A
-19,Cornell University,United States,N/A,N/A
-19,University of Michigan,United States,N/A,N/A
+8,University of Washington Seattle,United States,N/A,N/A
+9,Yale University,United States,N/A,N/A
+10,Columbia University,United States,N/A,N/A
+11,Imperial College London,United Kingdom,N/A,N/A
+11,Tsinghua University,China,N/A,N/A
+13,University of California Los Angeles,United States,N/A,N/A
+14,Johns Hopkins University,United States,N/A,N/A
+15,University of Pennsylvania,United States,N/A,N/A
+16,Cornell University,United States,N/A,N/A
+16,Princeton University,United States,N/A,N/A
+16,University of California San Francisco,United States,N/A,N/A
+16,University of Toronto,Canada,N/A,N/A
+20,National University of Singapore,Singapore,N/A,N/A
 21,University of California San Diego,United States,N/A,N/A
-22,National University of Singapore,Singapore,N/A,N/A
+21,University of Michigan,United States,N/A,N/A
 23,California Institute of Technology,United States,N/A,N/A
 24,Northwestern University,United States,N/A,N/A
-25,University of Chicago,United States,N/A,N/A
-26,Duke University,United States,N/A,N/A
-27,Nanyang Technological University,Singapore,N/A,N/A
-27,University of Melbourne,Australia,N/A,N/A
+25,Peking University,China,N/A,N/A
+26,University of Chicago,United States,N/A,N/A
+27,Duke University,United States,N/A,N/A
+28,Nanyang Technological University,Singapore,N/A,N/A
 29,University of Sydney,Australia,N/A,N/A
-30,Washington University (WUSTL),United States,N/A,N/A
-31,Peking University,China,N/A,N/A
+30,University of Melbourne,Australia,N/A,N/A
+31,Washington University (WUSTL),United States,N/A,N/A
 32,New York University,United States,N/A,N/A
-33,ETH Zurich,Switzerland,N/A,N/A
 33,University of Amsterdam,Netherlands,N/A,N/A
-35,Monash University,Australia,N/A,N/A
+34,University of New South Wales Sydney,Australia,N/A,N/A
+35,ETH Zurich,Switzerland,N/A,N/A
 36,King's College London,United Kingdom,N/A,N/A
-36,University of New South Wales Sydney,Australia,N/A,N/A
-38,University of Edinburgh,United Kingdom,N/A,N/A
-39,University of British Columbia,Canada,N/A,N/A
+37,Chinese University of Hong Kong,Hong Kong,N/A,N/A
+38,Monash University,Australia,N/A,N/A
+39,University of Edinburgh,United Kingdom,N/A,N/A
 40,Icahn School of Medicine at Mount Sinai,United States,N/A,N/A
-41,University of Queensland,Australia,N/A,N/A
-42,Chinese University of Hong Kong,Hong Kong,N/A,N/A
-43,Universite Paris Cite,France,N/A,N/A
-44,University of Copenhagen,Denmark,N/A,N/A
+41,University of British Columbia,Canada,N/A,N/A
+41,University of Copenhagen,Denmark,N/A,N/A
+43,University of Queensland,Australia,N/A,N/A
 44,University of Hong Kong,Hong Kong,N/A,N/A
-46,Utrecht University,Netherlands,N/A,N/A
-47,University of North Carolina Chapel Hill,United States,N/A,N/A
-48,Humboldt University of Berlin,Germany,N/A,N/A
-48,KU Leuven,Belgium,N/A,N/A
-50,University of Pittsburgh,United States,N/A,N/A
-51,Karolinska Institutet,Sweden,N/A,N/A
-51,Zhejiang University,China,N/A,N/A
-53,University of Munich,Germany,N/A,N/A
-54,Shanghai Jiao Tong University,China,N/A,N/A
-55,Ruprecht Karls University Heidelberg,Germany,N/A,N/A
+45,Zhejiang University,China,N/A,N/A
+46,Shanghai Jiao Tong University,China,N/A,N/A
+47,Humboldt University of Berlin,Germany,N/A,N/A
+47,Universite Paris Cite,France,N/A,N/A
+49,Utrecht University,Netherlands,N/A,N/A
+50,KU Leuven,Belgium,N/A,N/A
+51,University of North Carolina Chapel Hill,United States,N/A,N/A
+52,Karolinska Institutet,Sweden,N/A,N/A
+52,University of Pittsburgh,United States,N/A,N/A
+54,City University of Hong Kong,Hong Kong,N/A,N/A
+54,"University of Chinese Academy of Sciences, CAS",China,N/A,N/A
 56,Leiden University,Netherlands,N/A,N/A
-56,McGill University,Canada,N/A,N/A
-56,Sorbonne Universite,France,N/A,N/A
-56,University of Texas Austin,United States,N/A,N/A
-60,University of Zurich,Switzerland,N/A,N/A
-61,Ohio State University,United States,N/A,N/A
-61,University of Glasgow,United Kingdom,N/A,N/A
-63,Emory University,United States,N/A,N/A
-63,University of Minnesota Twin Cities,United States,N/A,N/A
-63,Vanderbilt University,United States,N/A,N/A
-66,Free University of Berlin,Germany,N/A,N/A
-67,Hong Kong Polytechnic University,Hong Kong,N/A,N/A
-67,University of Manchester,United Kingdom,N/A,N/A
-69,"University of Chinese Academy of Sciences, CAS",China,N/A,N/A
-70,Erasmus University Rotterdam,Netherlands,N/A,N/A
-70,Georgia Institute of Technology,United States,N/A,N/A
+57,University of Munich,Germany,N/A,N/A
+58,Hong Kong Polytechnic University,Hong Kong,N/A,N/A
+59,Free University of Berlin,Germany,N/A,N/A
+59,Ruprecht Karls University Heidelberg,Germany,N/A,N/A
+59,University of Zurich,Switzerland,N/A,N/A
+62,McGill University,Canada,N/A,N/A
+62,Sorbonne Universite,France,N/A,N/A
+62,University of Glasgow,United Kingdom,N/A,N/A
+65,University of Texas Austin,United States,N/A,N/A
+66,Ohio State University,United States,N/A,N/A
+66,Vanderbilt University,United States,N/A,N/A
+68,University of Manchester,United Kingdom,N/A,N/A
+69,Emory University,United States,N/A,N/A
+70,Fudan University,China,N/A,N/A
+71,"University of Science & Technology of China, CAS",China,N/A,N/A
 72,University of Maryland College Park,United States,N/A,N/A
-73,Boston University,United States,N/A,N/A
-74,King Abdulaziz University,Saudi Arabia|jeddah,N/A,N/A
-74,University of Wisconsin Madison,United States,N/A,N/A
-76,Universite Paris Saclay,France,N/A,N/A
-76,University of Groningen,Netherlands,N/A,N/A
-78,Vrije Universiteit Amsterdam,Netherlands,N/A,N/A
-79,City University of Hong Kong,Hong Kong,N/A,N/A
-79,University of Barcelona,Spain,N/A,N/A
-79,University of Southern California,United States,N/A,N/A
-82,Technical University of Munich,Germany,N/A,N/A
-82,"University of Science & Technology of China, CAS",China,N/A,N/A
+72,University of Minnesota Twin Cities,United States,N/A,N/A
+72,University of Wisconsin Madison,United States,N/A,N/A
+75,University of Groningen,Netherlands,N/A,N/A
+76,Erasmus University Rotterdam,Netherlands,N/A,N/A
+77,University of Southern California,United States,N/A,N/A
+78,Universite Paris Saclay,France,N/A,N/A
+79,Georgia Institute of Technology,United States,N/A,N/A
+79,Technical University of Munich,Germany,N/A,N/A
+79,Vrije Universiteit Amsterdam,Netherlands,N/A,N/A
+82,University of Barcelona,Spain,N/A,N/A
+83,University of Technology Sydney,Australia,N/A,N/A
 84,University of Tokyo,Japan,N/A,N/A
-85,Australian National University,Australia,N/A,N/A
-85,Fudan University,China,N/A,N/A
-85,University of Technology Sydney,Australia,N/A,N/A
-88,Ecole Polytechnique Federale de Lausanne,United States,N/A,N/A
-89,University of California Davis,United States,N/A,N/A
-89,University of California Santa Barbara,United States,N/A,N/A
-91,University of Western Australia,Australia,N/A,N/A
-92,Queen Mary University London,United Kingdom,N/A,N/A
-92,University of Adelaide,Australia,N/A,N/A
-94,Rockefeller University,United States,N/A,N/A
+85,Sun Yat Sen University,China,N/A,N/A
+86,Australian National University,Australia,N/A,N/A
+86,Boston University,United States,N/A,N/A
+86,Ecole Polytechnique Federale de Lausanne,United States,N/A,N/A
+86,Nanjing University,China,N/A,N/A
+90,Wuhan University,China,N/A,N/A
+91,Huazhong University of Science & Technology,China,N/A,N/A
+91,Pennsylvania State University,United States,N/A,N/A
+91,University of California Santa Barbara,United States,N/A,N/A
+94,Queen Mary University London,United Kingdom,N/A,N/A
 94,University of Birmingham,United Kingdom,N/A,N/A
-96,Pennsylvania State University,United States,N/A,N/A
-96,University of Bristol,United Kingdom,N/A,N/A
-98,Nanjing University,China,N/A,N/A
-98,University of Colorado Boulder,United States,N/A,N/A
-100,Huazhong University of Science & Technology,China,N/A,N/A
-100,King Abdullah University of Science & Technology,Saudi Arabia|thuwal,N/A,N/A
-100,University of California Irvine,United States,N/A,N/A
-100,University of Illinois Urbana-Champaign,United States,N/A,N/A
-104,University of Oslo,Norway,N/A,N/A
-105,Hong Kong University of Science & Technology,Hong Kong,N/A,N/A
-106,Sun Yat Sen University,China,N/A,N/A
-106,University of Florida,United States,N/A,N/A
-108,Wuhan University,China,N/A,N/A
-109,Ghent University,Belgium,N/A,N/A
-109,University of Texas Southwestern Medical Center Dallas,United States,N/A,N/A
-111,University of Bern,Switzerland,N/A,N/A
-112,Universite PSL,France,N/A,N/A
+96,University of California Davis,United States,N/A,N/A
+96,University of California Irvine,United States,N/A,N/A
+98,University of Western Australia,Australia,N/A,N/A
+99,University of Adelaide,Australia,N/A,N/A
+100,University of Oslo,Norway,N/A,N/A
+101,Hong Kong University of Science & Technology,Hong Kong,N/A,N/A
+102,King Abdulaziz University,Saudi Arabia|jeddah,N/A,N/A
+103,University of Texas Southwestern Medical Center Dallas,United States,N/A,N/A
+104,Rockefeller University,United States,N/A,N/A
+105,Universite PSL,France,N/A,N/A
+105,University of Bristol,United Kingdom,N/A,N/A
+107,Ghent University,Belgium,N/A,N/A
+107,University of Colorado Boulder,United States,N/A,N/A
+109,Hunan University,China,N/A,N/A
+109,University of Florida,United States,N/A,N/A
+109,University of Illinois Urbana-Champaign,United States,N/A,N/A
+112,King Abdullah University of Science & Technology,Saudi Arabia|thuwal,N/A,N/A
 113,University of Helsinki,Finland,N/A,N/A
-113,Wageningen University & Research,Netherlands,N/A,N/A
+114,University of Bern,Switzerland,N/A,N/A
 115,University of Arizona,United States,N/A,N/A
-116,University of Cape Town,South Africa|cape Town,N/A,N/A
+115,Wageningen University & Research,Netherlands,N/A,N/A
 117,Aarhus University,Denmark,N/A,N/A
-117,Radboud University Nijmegen,Netherlands,N/A,N/A
-119,Hunan University,China,N/A,N/A
-119,University of Geneva,Switzerland,N/A,N/A
-121,London School of Hygiene & Tropical Medicine,United Kingdom,N/A,N/A
-122,University of Exeter,United Kingdom,N/A,N/A
-123,Michigan State University,United States,N/A,N/A
-123,University of Southampton,United Kingdom,N/A,N/A
-125,Lund University,Sweden,N/A,N/A
-125,University of Virginia,United States,N/A,N/A
-127,McMaster University,Canada,N/A,N/A
-127,Universidade de Sao Paulo,Brazil,N/A,N/A
-129,University of California Santa Cruz,United States,N/A,N/A
-130,University of Bologna,Italy,N/A,N/A
-130,University of Padua,Italy,N/A,N/A
-132,University of Auckland,New Zealand|auckland,N/A,N/A
-133,Autonomous University of Barcelona,Spain,N/A,N/A
-134,Carnegie Mellon University,United States,N/A,N/A
-135,Indiana University Bloomington,United States,N/A,N/A
-135,Seoul National University (SNU),South Korea,N/A,N/A
-137,Baylor College of Medicine,United States,N/A,N/A
+118,London School of Hygiene & Tropical Medicine,United Kingdom,N/A,N/A
+118,University of Southampton,United Kingdom,N/A,N/A
+120,University of Geneva,Switzerland,N/A,N/A
+121,Lund University,Sweden,N/A,N/A
+122,Radboud University Nijmegen,Netherlands,N/A,N/A
+123,Southern University of Science & Technology,China,N/A,N/A
+124,Tongji University,China,N/A,N/A
+124,University of Cape Town,South Africa|cape Town,N/A,N/A
+126,Carnegie Mellon University,United States,N/A,N/A
+127,University of Exeter,United Kingdom,N/A,N/A
+128,Harbin Institute of Technology,China,N/A,N/A
+128,University of Auckland,New Zealand|auckland,N/A,N/A
+130,Autonomous University of Barcelona,Spain,N/A,N/A
+131,Baylor College of Medicine,United States,N/A,N/A
+131,Weizmann Institute of Science,Israel,N/A,N/A
+133,Michigan State University,United States,N/A,N/A
+133,Seoul National University (SNU),South Korea,N/A,N/A
+133,University of California Santa Cruz,United States,N/A,N/A
+133,University of Leeds,United Kingdom,N/A,N/A
+137,University of Electronic Science & Technology of China,China,N/A,N/A
 137,University of Liverpool,United Kingdom,N/A,N/A
-137,Weizmann Institute of Science,Israel,N/A,N/A
-140,Sapienza University Rome,Italy,N/A,N/A
-141,University of Leeds,United Kingdom,N/A,N/A
-142,King Saud University,Saudi Arabia|riyadh,N/A,N/A
-142,Swinburne University of Technology,Australia,N/A,N/A
-142,University of Colorado Anschutz Medical Campus,United States,N/A,N/A
-142,University of Nottingham,United Kingdom,N/A,N/A
-146,University of Hamburg,Germany,N/A,N/A
-146,University of Milan,Italy,N/A,N/A
-148,Oregon Health & Science University,United States,N/A,N/A
-148,Rutgers University New Brunswick,United States,N/A,N/A
-150,University of Alberta,Canada,N/A,N/A
-150,University of Utah,United States,N/A,N/A
-150,Uppsala University,Sweden,N/A,N/A
-153,Brown University,United States,N/A,N/A
-153,Stockholm University,Sweden,N/A,N/A
-153,Tongji University,China,N/A,N/A
-153,University of Electronic Science & Technology of China,China,N/A,N/A
-157,Southern University of Science & Technology,China,N/A,N/A
-157,University of Bonn,Germany,N/A,N/A
-159,Newcastle University - UK,United Kingdom,N/A,N/A
-160,Case Western Reserve University,United States,N/A,N/A
-160,Harbin Institute of Technology,China,N/A,N/A
-160,University of Gothenburg,Sweden,N/A,N/A
-160,University of Sheffield,United Kingdom,N/A,N/A
-164,Cankaya University,Turkey|ankara,N/A,N/A
-164,Curtin University,Australia,N/A,N/A
-164,University of Alabama Birmingham,United States,N/A,N/A
-167,Purdue University West Lafayette Campus,United States,N/A,N/A
-168,Central South University,China,N/A,N/A
-168,Kyoto University,Japan,N/A,N/A
-168,University of Basel,Switzerland,N/A,N/A
-171,Texas A&M University College Station,United States,N/A,N/A
-172,University of Gottingen,Germany,N/A,N/A
-172,University of Warwick,United Kingdom,N/A,N/A
-174,Universite de Montreal,Canada,N/A,N/A
-175,University of Lausanne,United States,N/A,N/A
-175,University of Massachusetts Amherst,United States,N/A,N/A
-177,Deakin University,Australia,N/A,N/A
-177,Tel Aviv University,Israel,N/A,N/A
-179,Arizona State University-Tempe,United States,N/A,N/A
-179,Beijing Institute of Technology,China,N/A,N/A
-179,Maastricht University,Netherlands,N/A,N/A
-179,Xi'an Jiaotong University,China,N/A,N/A
-183,Southeast University - China,China,N/A,N/A
-184,Cardiff University,United Kingdom,N/A,N/A
-184,Queensland University of Technology (QUT),Australia,N/A,N/A
-184,Technical University of Denmark,Denmark,N/A,N/A
-187,Delft University of Technology,Netherlands,N/A,N/A
-187,Shenzhen University,China,N/A,N/A
-187,South China University of Technology,China,N/A,N/A
-187,University of Naples Federico II,Italy,N/A,N/A
-191,Nankai University,China,N/A,N/A
-192,Macquarie University,Australia,N/A,N/A
-192,University of Waterloo,Canada,N/A,N/A
-194,University of Leicester,United Kingdom,N/A,N/A
-195,Royal Melbourne Institute of Technology (RMIT),Australia,N/A,N/A
-195,Tianjin University,China,N/A,N/A
-197,Eberhard Karls University of Tubingen,Germany,N/A,N/A
-198,Xiamen University,China,N/A,N/A
-199,Aix-Marseille Universite,France,N/A,N/A
-199,University of Rochester,United States,N/A,N/A
-201,Technische Universitat Dresden,Germany,N/A,N/A
-201,Universite Catholique Louvain,Belgium,N/A,N/A
-203,Medical University of Vienna,Austria,N/A,N/A
-204,University of Wollongong,Australia,N/A,N/A
-205,Yonsei University,South Korea,N/A,N/A
-206,Beijing Normal University,China,N/A,N/A
-206,Trinity College Dublin,Ireland|dublin,N/A,N/A
-206,University of Calgary,Canada,N/A,N/A
-209,Vita-Salute San Raffaele University,Italy,N/A,N/A
-210,University of Cincinnati,United States,N/A,N/A
-210,University of Freiburg,Germany,N/A,N/A
-210,University of Wurzburg,Germany,N/A,N/A
-213,University of Antwerp,Belgium,N/A,N/A
-213,Zhengzhou University,China,N/A,N/A
-215,National & Kapodistrian University of Athens,Greece|athens,N/A,N/A
-215,University of Vienna,Austria,N/A,N/A
-217,Sichuan University,China,N/A,N/A
-218,RWTH Aachen University,Germany,N/A,N/A
-218,Universite de Montpellier,France,N/A,N/A
-218,University of Ottawa,Canada,N/A,N/A
-221,China University of Geosciences,China,N/A,N/A
+137,University of Padua,Italy,N/A,N/A
+137,University of Virginia,United States,N/A,N/A
+141,University of Bologna,Italy,N/A,N/A
+141,University of Hamburg,Germany,N/A,N/A
+141,University of Utah,United States,N/A,N/A
+141,Uppsala University,Sweden,N/A,N/A
+141,Xi'an Jiaotong University,China,N/A,N/A
+146,Central South University,China,N/A,N/A
+146,King Saud University,Saudi Arabia|riyadh,N/A,N/A
+146,McMaster University,Canada,N/A,N/A
+146,Universidade de Sao Paulo,Brazil,N/A,N/A
+150,Brown University,United States,N/A,N/A
+150,University of Milan,Italy,N/A,N/A
+152,Curtin University,Australia,N/A,N/A
+153,University of Lausanne,United States,N/A,N/A
+153,University of Nottingham,United Kingdom,N/A,N/A
+155,Southeast University - China,China,N/A,N/A
+156,Beijing Institute of Technology,China,N/A,N/A
+156,Rutgers University New Brunswick,United States,N/A,N/A
+156,Shenzhen University,China,N/A,N/A
+156,Stockholm University,Sweden,N/A,N/A
+156,University of Alberta,Canada,N/A,N/A
+161,Sapienza University Rome,Italy,N/A,N/A
+162,University of Massachusetts Amherst,United States,N/A,N/A
+163,Indiana University Bloomington,United States,N/A,N/A
+164,University of Bonn,Germany,N/A,N/A
+164,University of Gothenburg,Sweden,N/A,N/A
+166,Nankai University,China,N/A,N/A
+166,South China University of Technology,China,N/A,N/A
+166,University of Leicester,United Kingdom,N/A,N/A
+166,University of Sheffield,United Kingdom,N/A,N/A
+170,Newcastle University - UK,United Kingdom,N/A,N/A
+170,University of Alabama Birmingham,United States,N/A,N/A
+172,University of Colorado Anschutz Medical Campus,United States,N/A,N/A
+173,Beijing Normal University,China,N/A,N/A
+173,Deakin University,Australia,N/A,N/A
+173,Purdue University,United States,N/A,N/A
+176,Case Western Reserve University,United States,N/A,N/A
+176,Maastricht University,Netherlands,N/A,N/A
+178,Macquarie University,Australia,N/A,N/A
+178,Technical University of Denmark,Denmark,N/A,N/A
+180,University of Basel,Switzerland,N/A,N/A
+180,Yonsei University,South Korea,N/A,N/A
+182,Queensland University of Technology (QUT),Australia,N/A,N/A
+182,Sichuan University,China,N/A,N/A
+182,Tianjin University,China,N/A,N/A
+182,University of Gottingen,Germany,N/A,N/A
+182,University of Warwick,United Kingdom,N/A,N/A
+187,Kyoto University,Japan,N/A,N/A
+187,Texas A&M University College Station,United States,N/A,N/A
+189,Medical University of Vienna,Austria,N/A,N/A
+189,Xiamen University,China,N/A,N/A
+191,Delft University of Technology,Netherlands,N/A,N/A
+192,Arizona State University-Tempe,United States,N/A,N/A
+192,Cardiff University,United Kingdom,N/A,N/A
+192,Universite de Montreal,Canada,N/A,N/A
+192,University of Naples Federico II,Italy,N/A,N/A
+196,Oregon Health & Science University,United States,N/A,N/A
+197,University of Waterloo,Canada,N/A,N/A
+198,Royal Melbourne Institute of Technology (RMIT),Australia,N/A,N/A
+199,Tel Aviv University,Israel,N/A,N/A
+200,Eberhard Karls University of Tubingen,Germany,N/A,N/A
+201,University of Rochester,United States,N/A,N/A
+202,China Agricultural University,China,N/A,N/A
+203,Zhengzhou University,China,N/A,N/A
+204,University of Antwerp,Belgium,N/A,N/A
+204,University of Calgary,Canada,N/A,N/A
+206,Universite Catholique Louvain,Belgium,N/A,N/A
+207,Beihang University,China,N/A,N/A
+207,Northwestern Polytechnical University,China,N/A,N/A
+207,Trinity College Dublin,Ireland|dublin,N/A,N/A
+207,University of Cincinnati,United States,N/A,N/A
+211,China University of Geosciences,China,N/A,N/A
+212,Chongqing University,China,N/A,N/A
+212,University of Freiburg,Germany,N/A,N/A
+212,University of Vienna,Austria,N/A,N/A
+212,University of Wollongong,Australia,N/A,N/A
+216,National & Kapodistrian University of Athens,Greece|athens,N/A,N/A
+216,Technische Universitat Dresden,Germany,N/A,N/A
+218,Vita-Salute San Raffaele University,Italy,N/A,N/A
+219,Rice University,United States,N/A,N/A
+220,Northeastern University,United States,N/A,N/A
+221,Goethe University Frankfurt,N/A,N/A,N/A
 221,University of Turin,Italy,N/A,N/A
-223,Rice University,United States,N/A,N/A
-223,University of California Riverside,United States,N/A,N/A
-225,Universidade de Lisboa,Portugal|lisbon,N/A,N/A
-225,University of Iowa,United States,N/A,N/A
-227,Beihang University,China,N/A,N/A
-227,Goethe University Frankfurt,N/A,N/A,N/A
-227,Northeastern University,United States,N/A,N/A
-227,State University of New York (SUNY) Stony Brook,United States,N/A,N/A
-227,University of Southern Denmark,Denmark,N/A,N/A
-232,Lancaster University,United Kingdom,N/A,N/A
-233,Johannes Gutenberg University of Mainz,Germany,N/A,N/A
-233,National Taiwan University,Taiwan,N/A,N/A
-235,University of Munster,Germany,N/A,N/A
-235,University of Newcastle,Australia,N/A,N/A
-237,China Agricultural University,China,N/A,N/A
-237,Universite Grenoble Alpes (UGA),France,N/A,N/A
-239,Griffith University,Australia,N/A,N/A
-239,London School Economics & Political Science,United Kingdom,N/A,N/A
-241,Sejong University,South Korea,N/A,N/A
-241,University of Cologne,Germany,N/A,N/A
-241,University of Miami,United States,N/A,N/A
-244,University of Tartu,Estonia|tartu,N/A,N/A
-245,Chongqing University,China,N/A,N/A
-245,University of Florence,Italy,N/A,N/A
-245,University of Pisa,Italy,N/A,N/A
-245,University of Sussex,United Kingdom,N/A,N/A
-245,University of Tennessee Knoxville,United States,N/A,N/A
-245,University of York - UK,United Kingdom,N/A,N/A
-251,Royal Institute of Technology,Sweden,N/A,N/A
-251,University of Valencia,Spain,N/A,N/A
-253,Charles University Prague,Czech Republic|prague,N/A,N/A
-253,East China Normal University,China,N/A,N/A
-253,Northwestern Polytechnical University,China,N/A,N/A
-253,Ton Duc Thang University,N/A,N/A,N/A
-253,University College Dublin,Ireland|dublin,N/A,N/A
-253,University of Milano-Bicocca,Italy,N/A,N/A
-259,University of Bergen,Norway,N/A,N/A
-260,Universite Libre de Bruxelles,Belgium,N/A,N/A
-261,University of Sharjah,N/A,N/A,N/A
-262,North Carolina State University,United States,N/A,N/A
-262,University of Macau,Macau|taipa,N/A,N/A
-264,Hebrew University of Jerusalem,United States,N/A,N/A
-264,Queens University Belfast,United Kingdom,N/A,N/A
-264,University of Witwatersrand,South Africa|johannesburg,N/A,N/A
-267,Norwegian University of Science & Technology (NTNU),Norway,N/A,N/A
-267,University of Illinois Chicago,United States,N/A,N/A
-269,Pompeu Fabra University,Spain,N/A,N/A
-269,University of Texas Health Science Center at San Antonio,United States,N/A,N/A
-271,Cairo University,Egypt|giza,N/A,N/A
-271,George Washington University,United States,N/A,N/A
-271,Tufts University,United States,N/A,N/A
+221,University of Wurzburg,Germany,N/A,N/A
+224,Johannes Gutenberg University of Mainz,Germany,N/A,N/A
+225,RWTH Aachen University,Germany,N/A,N/A
+226,Aix-Marseille Universite,France,N/A,N/A
+226,Stony Brook University,United States,N/A,N/A
+228,University of Cologne,Germany,N/A,N/A
+228,University of Munster,Germany,N/A,N/A
+230,East China Normal University,China,N/A,N/A
+230,Queens University Belfast,United Kingdom,N/A,N/A
+230,University of Macau,Macau|taipa,N/A,N/A
+233,Universite de Montpellier,France,N/A,N/A
+234,London School Economics & Political Science,United Kingdom,N/A,N/A
+234,University of Miami,United States,N/A,N/A
+236,Universidade de Lisboa,Portugal|lisbon,N/A,N/A
+236,University of Tartu,Estonia|tartu,N/A,N/A
+238,Griffith University,Australia,N/A,N/A
+238,Sejong University,South Korea,N/A,N/A
+238,Shandong University,China,N/A,N/A
+238,University of Iowa,United States,N/A,N/A
+242,Charles University Prague,Czech Republic|prague,N/A,N/A
+242,University of California Riverside,United States,N/A,N/A
+244,University of Newcastle,Australia,N/A,N/A
+245,George Washington University,United States,N/A,N/A
+245,University College Dublin,Ireland|dublin,N/A,N/A
+245,University of Sharjah,N/A,N/A,N/A
+248,Cairo University,Egypt|giza,N/A,N/A
+248,National Taiwan University,Taiwan,N/A,N/A
+248,Norwegian University of Science & Technology (NTNU),Norway,N/A,N/A
+251,University of Milano-Bicocca,Italy,N/A,N/A
+252,Royal Institute of Technology,Sweden,N/A,N/A
+252,Universite Libre de Bruxelles,Belgium,N/A,N/A
+252,University of Pisa,Italy,N/A,N/A
+255,University of Southern Denmark,Denmark,N/A,N/A
+256,Universite Grenoble Alpes (UGA),France,N/A,N/A
+256,University of Florence,Italy,N/A,N/A
+256,University of Ottawa,Canada,N/A,N/A
+259,University of Sussex,United Kingdom,N/A,N/A
+260,Wuhan University of Technology,China,N/A,N/A
+261,Dalian University of Technology,China,N/A,N/A
+261,University of Bergen,Norway,N/A,N/A
+261,University of Illinois Chicago,United States,N/A,N/A
+261,University of Valencia,Spain,N/A,N/A
+265,University of Witwatersrand,South Africa|johannesburg,N/A,N/A
+265,Western Sydney University,Australia,N/A,N/A
+267,Cankaya University,Turkey|ankara,N/A,N/A
+267,Lancaster University,United Kingdom,N/A,N/A
+269,North Carolina State University,United States,N/A,N/A
+270,Technical University of Berlin,Germany,N/A,N/A
+271,Aalto University,Finland,N/A,N/A
+271,Hebrew University of Jerusalem,United States,N/A,N/A
+271,Jiangsu University,China,N/A,N/A
+271,Sungkyunkwan University (SKKU),South Korea,N/A,N/A
 271,Universidade do Porto,Portugal|porto,N/A,N/A
-275,Sungkyunkwan University (SKKU),South Korea,N/A,N/A
-275,University of Tehran,Iran|tehran,N/A,N/A
-277,Autonomous University of Madrid,Spain,N/A,N/A
-278,Aalborg University,Denmark,N/A,N/A
-278,Virginia Polytechnic Institute & State University,United States,N/A,N/A
-278,Western Sydney University,Australia,N/A,N/A
-281,Universite de Bordeaux,France,N/A,N/A
-281,Universiti Malaya,Malaysia|kuala Lumpur,N/A,N/A
-281,University of Erlangen Nuremberg,Germany,N/A,N/A
-284,La Trobe University,Australia,N/A,N/A
-285,China Medical University Taiwan,Taiwan,N/A,N/A
-285,University of Otago,New Zealand|dunedin,N/A,N/A
-285,University of Tasmania,Australia,N/A,N/A
-285,Yeshiva University,United States,N/A,N/A
-289,COMSATS University Islamabad (CUI),Pakistan|islamabad,N/A,N/A
-289,Karlsruhe Institute of Technology,Germany,N/A,N/A
-289,University of Maryland Baltimore,United States,N/A,N/A
-292,Dalian University of Technology,China,N/A,N/A
-292,Shandong University,China,N/A,N/A
-292,Technical University of Berlin,Germany,N/A,N/A
-292,Universite Toulouse III - Paul Sabatier,France,N/A,N/A
-296,Aalto University,Finland,N/A,N/A
-296,Duy Tan University,Vietnam|danang,N/A,N/A
-296,Korea Advanced Institute of Science & Technology (KAIST),South Korea,N/A,N/A
-296,University of Colorado Denver,United States,N/A,N/A
-300,Korea University,South Korea,N/A,N/A
-300,Linkoping University,Sweden,N/A,N/A
-300,University of Texas Health Science Center Houston,United States,N/A,N/A
-300,Wuhan University of Technology,China,N/A,N/A
-304,University of Southern Queensland,Australia,N/A,N/A
-305,Florida State University,United States,N/A,N/A
-306,University of Duisburg Essen,Germany,N/A,N/A
-306,University of Pavia,Italy,N/A,N/A
-306,Vrije Universiteit Brussel,Belgium,N/A,N/A
-309,Durham University,United Kingdom,N/A,N/A
-310,Georgetown University,United States,N/A,N/A
-311,Colorado State University,United States,N/A,N/A
-311,Stellenbosch University,South Africa|stellenbosch,N/A,N/A
-311,Tohoku University,Japan,N/A,N/A
-311,Western University (University of Western Ontario),Canada,N/A,N/A
-315,Osaka University,Japan,N/A,N/A
-315,University of Connecticut,United States,N/A,N/A
-317,Polytechnic University of Milan,Italy,N/A,N/A
-317,Soochow University - China,China,N/A,N/A
-317,South Ural State University,Russia|chelyabins,N/A,N/A
-320,Dartmouth College,United States,N/A,N/A
-320,University of Trento,Italy,N/A,N/A
-322,Universite de Strasbourg,France,N/A,N/A
-323,Complutense University of Madrid,Spain,N/A,N/A
-323,King Fahd University of Petroleum & Minerals,Saudi Arabia|dhahran,N/A,N/A
-323,University of Kiel,Germany,N/A,N/A
-323,University of Lagos,Nigeria|lagos,N/A,N/A
-327,Al Azhar University,Egypt|cairo,N/A,N/A
-327,Leipzig University,Germany,N/A,N/A
-327,Shanghai University,China,N/A,N/A
-327,State University of New York (SUNY) Buffalo,United States,N/A,N/A
-327,University of Surrey,United Kingdom,N/A,N/A
-332,University of Genoa,Italy,N/A,N/A
-332,University of Kansas,United States,N/A,N/A
-332,University of South Florida,United States,N/A,N/A
-335,Mansoura University,Egypt|mansoura,N/A,N/A
-335,Temple University,United States,N/A,N/A
-337,Beijing University of Chemical Technology,China,N/A,N/A
-337,Nanjing Agricultural University,China,N/A,N/A
-337,Qatar University,Qatar|doha,N/A,N/A
-337,Universidade Estadual de Campinas,Brazil,N/A,N/A
-341,Catholic University of the Sacred Heart,Italy,N/A,N/A
-341,Chalmers University of Technology,Sweden,N/A,N/A
-341,Jiangsu University,China,N/A,N/A
-344,Iowa State University,United States,N/A,N/A
-344,Jilin University,China,N/A,N/A
-344,Technion Israel Institute of Technology,Israel,N/A,N/A
-344,Universite Claude Bernard Lyon 1,France,N/A,N/A
-344,Universiti Teknologi Malaysia,Malaysia|johor,N/A,N/A
-349,University of Georgia,United States,N/A,N/A
-350,St Georges University London,United Kingdom,N/A,N/A
-350,University of Ibadan,Nigeria|ibadan,N/A,N/A
-352,Dalhousie University,Canada,N/A,N/A
-352,University of Granada,Spain,N/A,N/A
-354,Ulm University,Germany,N/A,N/A
-355,Singapore University of Technology & Design,Singapore,N/A,N/A
-355,University of Turku,Finland,N/A,N/A
-357,Kyushu University,United Kingdom,N/A,N/A
-357,University of Johannesburg,South Africa|johannesburg,N/A,N/A
-359,Pontificia Universidad Catolica de Chile,Chile|santiago,N/A,N/A
-359,Queens University - Canada,Canada,N/A,N/A
-359,Taif University,Saudi Arabia|taif,N/A,N/A
-362,Australian Catholic University,Australia,N/A,N/A
-362,University of Dundee,United Kingdom,N/A,N/A
-362,Zagazig University,Egypt|zagazig,N/A,N/A
-365,Oregon State University,United States,N/A,N/A
-365,Universite Cote d'Azur,France,N/A,N/A
-367,Nagoya University,Japan,N/A,N/A
-367,University of Aberdeen,United Kingdom,N/A,N/A
-369,Huazhong Agricultural University,China,N/A,N/A
-369,ShanghaiTech University,China,N/A,N/A
-369,University of Kentucky,United States,N/A,N/A
-369,University of Rome Tor Vergata,Italy,N/A,N/A
-373,Medical University of Graz,Austria,N/A,N/A
-374,Eindhoven University of Technology,Netherlands,N/A,N/A
-374,Islamic Azad University,Iran|tehran,N/A,N/A
-374,Northwest A&F University - China,China,N/A,N/A
-374,University of Potsdam,Germany,N/A,N/A
-378,University of Notre Dame,United States,N/A,N/A
-378,University of Reading,United Kingdom,N/A,N/A
-378,University of South Australia,Australia,N/A,N/A
-381,American University of Beirut,Lebanon|beirut,N/A,N/A
-381,Quaid I Azam University,Pakistan|islamabad,N/A,N/A
-381,University of Liege,Belgium,N/A,N/A
-381,University of Science & Technology Beijing,China,N/A,N/A
-385,Friedrich Schiller University of Jena,Germany,N/A,N/A
-385,Pohang University of Science & Technology (POSTECH),South Korea,N/A,N/A
-385,University of Navarra,Spain,N/A,N/A
-385,University of Victoria,Canada,N/A,N/A
-389,Changsha University of Science & Technology,China,N/A,N/A
-389,Ruhr University Bochum,Germany,N/A,N/A
-391,Jagiellonian University,Poland|krakow,N/A,N/A
-391,Ulsan National Institute of Science & Technology (UNIST),South Korea,N/A,N/A
-391,University of New Mexico,United States,N/A,N/A
-394,Aristotle University of Thessaloniki,Greece|thessaloniki,N/A,N/A
-394,University of Oregon,United States,N/A,N/A
-394,University of St Andrews,United Kingdom,N/A,N/A
-397,Alexandria University,Egypt|alexandria,N/A,N/A
-397,Nanjing University of Information Science & Technology,China,N/A,N/A
-397,University of East Anglia,United Kingdom,N/A,N/A
-397,Washington State University,United States,N/A,N/A
-401,Ain Shams University,Egypt|cairo,N/A,N/A
-401,Umea University,Sweden,N/A,N/A
-401,United Arab Emirates University,United Arab Emirates|al,N/A,N/A
-401,Universite de Lille,France,N/A,N/A
-401,Universiti Sains Malaysia,Malaysia|penang,N/A,N/A
-401,University of Kwazulu Natal,South Africa|durban,N/A,N/A
-401,Virginia Commonwealth University,United States,N/A,N/A
-408,Jinan University,China,N/A,N/A
-408,Simon Fraser University,Canada,N/A,N/A
-408,Tulane University,United States,N/A,N/A
-408,Westlake University,China,N/A,N/A
-412,James Cook University,Australia,N/A,N/A
-412,Sechenov First Moscow State Medical University,Russia|moscow,N/A,N/A
-412,Universita degli Studi di Bari Aldo Moro,Italy,N/A,N/A
-412,University College Cork,Ireland|cork,N/A,N/A
-412,University of Twente,Netherlands,N/A,N/A
-417,Central China Normal University,China,N/A,N/A
-417,Hannover Medical School,Germany,N/A,N/A
-417,Qingdao University,China,N/A,N/A
-417,University of Manitoba,Canada,N/A,N/A
-421,Flinders University South Australia,Australia,N/A,N/A
-421,Humanitas University,Italy,N/A,N/A
-421,University of Houston,United States,N/A,N/A
-421,University of Oulu,Finland,N/A,N/A
-425,Baylor University,United States,N/A,N/A
-425,Fuzhou University,China,N/A,N/A
-425,Louisiana State University,United States,N/A,N/A
-428,Drexel University,United States,N/A,N/A
-428,Heinrich Heine University Dusseldorf,Germany,N/A,N/A
-428,University of Delaware,United States,N/A,N/A
-428,University of Mississippi,United States,N/A,N/A
-432,Universidad Nacional Autonoma de Mexico,Mexico,N/A,N/A
-432,University of Bath,United Kingdom,N/A,N/A
-432,University of Central Florida,United States,N/A,N/A
-432,University of Strathclyde,United Kingdom,N/A,N/A
-436,Prince Sultan University,Jordan|columbia,N/A,N/A
-436,Universidade Federal do Rio Grande do Sul,Brazil,N/A,N/A
-438,Nantes Universite,France,N/A,N/A
-439,Hokkaido University,Japan,N/A,N/A
-439,Laval University,Canada,N/A,N/A
-439,Swansea University,United Kingdom,N/A,N/A
-439,Swedish University of Agricultural Sciences,Sweden,N/A,N/A
-439,University of Belgrade,Serbia|belgrade,N/A,N/A
-439,University of Pretoria,N/A,N/A,N/A
-445,Hanyang University,South Korea,N/A,N/A
-445,Medical University of Innsbruck,Austria,N/A,N/A
-445,Tokyo Institute of Technology,Japan,N/A,N/A
-445,Universidad de Chile,Chile|santiago,N/A,N/A
-445,University of Verona,Italy,N/A,N/A
-450,Universitat Politecnica de Catalunya,Spain,N/A,N/A
-451,King Khalid University,Saudi Arabia|abha,N/A,N/A
-451,Lomonosov Moscow State University,Russia|moscow,N/A,N/A
-451,Renmin University of China,China,N/A,N/A
-451,Scuola Normale Superiore di Pisa,Italy,N/A,N/A
-451,Universite de Lorraine,France,N/A,N/A
+276,Aalborg University,Denmark,N/A,N/A
+276,Pompeu Fabra University,Spain,N/A,N/A
+278,Karlsruhe Institute of Technology,Germany,N/A,N/A
+278,La Trobe University,Australia,N/A,N/A
+278,University of Southern Queensland,Australia,N/A,N/A
+281,Al Azhar University,Egypt|cairo,N/A,N/A
+281,Autonomous University of Madrid,Spain,N/A,N/A
+281,Korea Advanced Institute of Science & Technology (KAIST),South Korea,N/A,N/A
+281,University of Tasmania,Australia,N/A,N/A
+281,University of Tehran,Iran|tehran,N/A,N/A
+281,University of Tennessee Knoxville,United States,N/A,N/A
+281,Virginia Polytechnic Institute & State University,United States,N/A,N/A
+288,Duy Tan University,Vietnam|danang,N/A,N/A
+288,Korea University,South Korea,N/A,N/A
+288,Northwest A&F University - China,China,N/A,N/A
+288,University of Erlangen Nuremberg,Germany,N/A,N/A
+292,Durham University,United Kingdom,N/A,N/A
+292,Soochow University - China,China,N/A,N/A
+292,Universite de Bordeaux,France,N/A,N/A
+292,University of Connecticut,United States,N/A,N/A
+296,Jilin University,China,N/A,N/A
+296,Leipzig University,Germany,N/A,N/A
+296,Shanghai University,China,N/A,N/A
+296,Tufts University,United States,N/A,N/A
+296,University of Otago,New Zealand|dunedin,N/A,N/A
+301,Mansoura University,Egypt|mansoura,N/A,N/A
+302,Georgetown University,United States,N/A,N/A
+302,Linkoping University,Sweden,N/A,N/A
+302,Nanjing Agricultural University,China,N/A,N/A
+302,Singapore University of Technology & Design,Singapore,N/A,N/A
+302,University of Duisburg Essen,Germany,N/A,N/A
+302,University of York - UK,United Kingdom,N/A,N/A
+308,Tohoku University,Japan,N/A,N/A
+308,Westlake University,China,N/A,N/A
+310,Florida State University,United States,N/A,N/A
+310,Qatar University,Qatar|doha,N/A,N/A
+310,Universite Toulouse III - Paul Sabatier,France,N/A,N/A
+310,University of Maryland Baltimore,United States,N/A,N/A
+314,China Medical University Taiwan,Taiwan,N/A,N/A
+314,King Fahd University of Petroleum & Minerals,Saudi Arabia|dhahran,N/A,N/A
+314,The University of Osaka,Japan,N/A,N/A
+314,Western University (University of Western Ontario),Canada,N/A,N/A
+314,Zagazig University,Egypt|zagazig,N/A,N/A
+319,Beijing University of Chemical Technology,China,N/A,N/A
+319,"City St George’s, University of London",United Kingdom,N/A,N/A
+319,University of Johannesburg,South Africa|johannesburg,N/A,N/A
+322,Stellenbosch University,South Africa|stellenbosch,N/A,N/A
+323,Institut Polytechnique de Paris,France,N/A,N/A
+323,University of Texas Health Science Center Houston,United States,N/A,N/A
+323,Yeshiva University,United States,N/A,N/A
+326,Complutense University of Madrid,Spain,N/A,N/A
+326,Dartmouth College,United States,N/A,N/A
+326,University of Lagos,Nigeria|lagos,N/A,N/A
+326,University of Surrey,United Kingdom,N/A,N/A
+330,ShanghaiTech University,China,N/A,N/A
+331,Universita Cattolica del Sacro Cuore,Italy,N/A,N/A
+331,Universiti Malaya,Malaysia|kuala Lumpur,N/A,N/A
+333,COMSATS University Islamabad (CUI),Pakistan|islamabad,N/A,N/A
+333,United Arab Emirates University,United Arab Emirates|al,N/A,N/A
+333,Universite de Strasbourg,France,N/A,N/A
+333,University of Potsdam,Germany,N/A,N/A
+333,University of Trento,Italy,N/A,N/A
+338,Polytechnic University of Milan,Italy,N/A,N/A
+338,University of Kiel,Germany,N/A,N/A
+340,Colorado State University,United States,N/A,N/A
+340,Huazhong Agricultural University,China,N/A,N/A
+340,Universite Claude Bernard Lyon 1,France,N/A,N/A
+340,University of Kansas,United States,N/A,N/A
+340,University of Pavia,Italy,N/A,N/A
+345,Jinan University,China,N/A,N/A
+345,South Ural State University,Russia|chelyabins,N/A,N/A
+345,University of Georgia,United States,N/A,N/A
+345,University of Turku,Finland,N/A,N/A
+349,Universite de Lille,France,N/A,N/A
+349,University of Genoa,Italy,N/A,N/A
+349,Vrije Universiteit Brussel,Belgium,N/A,N/A
+352,Chalmers University of Technology,Sweden,N/A,N/A
+352,Kyushu University,United Kingdom,N/A,N/A
+354,Australian Catholic University,Australia,N/A,N/A
+354,King Khalid University,Saudi Arabia|abha,N/A,N/A
+354,Nagoya University,Japan,N/A,N/A
+357,Ain Shams University,Egypt|cairo,N/A,N/A
+357,University of Science & Technology Beijing,China,N/A,N/A
+357,University of South Florida,United States,N/A,N/A
+360,Alexandria University,Egypt|alexandria,N/A,N/A
+360,Temple University,United States,N/A,N/A
+360,Universite Cote d'Azur,France,N/A,N/A
+360,University of Ibadan,Nigeria|ibadan,N/A,N/A
+360,University of Liege,Belgium,N/A,N/A
+360,Zhejiang Normal University,China,N/A,N/A
+366,University of Granada,Spain,N/A,N/A
+366,University of Navarra,Spain,N/A,N/A
+366,University of Texas Health Science Center at San Antonio,United States,N/A,N/A
+369,Ruhr University Bochum,Germany,N/A,N/A
+369,"University at Buffalo, SUNY",United States,N/A,N/A
+371,Institute of Science Tokyo,Japan,N/A,N/A
+371,Qingdao University,China,N/A,N/A
+371,University of Aberdeen,United Kingdom,N/A,N/A
+374,Nanjing Forestry University,China,N/A,N/A
+374,Scuola Normale Superiore di Pisa,Italy,N/A,N/A
+376,Jiangnan University,China,N/A,N/A
+376,Medical University of Graz,Austria,N/A,N/A
+376,Technion Israel Institute of Technology,Israel,N/A,N/A
+376,Universiti Teknologi Malaysia,Malaysia|johor,N/A,N/A
+380,Iowa State University,United States,N/A,N/A
+380,Pohang University of Science & Technology (POSTECH),South Korea,N/A,N/A
+380,Universidade Estadual de Campinas,Brazil,N/A,N/A
+383,Fuzhou University,China,N/A,N/A
+383,Ton Duc Thang University,N/A,N/A,N/A
+385,Dalhousie University,Canada,N/A,N/A
+385,Humanitas University,Italy,N/A,N/A
+385,Louisiana State University,United States,N/A,N/A
+385,Ulm University,Germany,N/A,N/A
+385,University of Reading,United Kingdom,N/A,N/A
+390,Pontificia Universidad Catolica de Chile,Chile|santiago,N/A,N/A
+390,University of South Carolina Columbia,United States,N/A,N/A
+392,University of Oulu,Finland,N/A,N/A
+392,University of Rome Tor Vergata,Italy,N/A,N/A
+394,Central China Normal University,China,N/A,N/A
+394,Friedrich Schiller University of Jena,Germany,N/A,N/A
+394,Renmin University of China,China,N/A,N/A
+394,Tulane University,United States,N/A,N/A
+394,University of Victoria,Canada,N/A,N/A
+399,Khalifa University of Science & Technology,N/A,N/A,N/A
+399,Oregon State University,United States,N/A,N/A
+399,University College Cork,Ireland|cork,N/A,N/A
+399,University of Dundee,United Kingdom,N/A,N/A
+403,Islamic Azad University,Iran|tehran,N/A,N/A
+403,Ulsan National Institute of Science & Technology (UNIST),South Korea,N/A,N/A
+403,University of Bath,United Kingdom,N/A,N/A
+403,University of St Andrews,United Kingdom,N/A,N/A
+407,University of Kentucky,United States,N/A,N/A
+407,University of Notre Dame,United States,N/A,N/A
+409,Eindhoven University of Technology,Netherlands,N/A,N/A
+409,Nanjing University of Information Science & Technology,China,N/A,N/A
+411,Hannover Medical School,Germany,N/A,N/A
+411,Quaid I Azam University,Pakistan|islamabad,N/A,N/A
+411,Umea University,Sweden,N/A,N/A
+411,University of Oregon,United States,N/A,N/A
+411,Virginia Commonwealth University,United States,N/A,N/A
+416,Aristotle University of Thessaloniki,Greece|thessaloniki,N/A,N/A
+416,James Cook University,Australia,N/A,N/A
+416,Queens University,Canada,N/A,N/A
+416,Universidad Nacional Autonoma de Mexico,Mexico,N/A,N/A
+416,Universiti Sains Malaysia,Malaysia|penang,N/A,N/A
+416,University of Houston,United States,N/A,N/A
+416,Washington State University,United States,N/A,N/A
+423,University of East Anglia,United Kingdom,N/A,N/A
+424,Simon Fraser University,Canada,N/A,N/A
+424,University of Kwazulu Natal,South Africa|durban,N/A,N/A
+424,University of South Australia,Australia,N/A,N/A
+427,Assiut University,Egypt|assiut,N/A,N/A
+427,Jagiellonian University,Poland|krakow,N/A,N/A
+427,Swansea University,United Kingdom,N/A,N/A
+427,University of Strathclyde,United Kingdom,N/A,N/A
+427,University of Twente,Netherlands,N/A,N/A
+432,Heinrich Heine University Dusseldorf,Germany,N/A,N/A
+432,University of Mississippi,United States,N/A,N/A
+434,Flinders University,Australia,N/A,N/A
+434,Hanyang University,South Korea,N/A,N/A
+434,Hokkaido University,Japan,N/A,N/A
+434,Universita degli Studi di Bari Aldo Moro,Italy,N/A,N/A
+434,University of Central Florida,United States,N/A,N/A
+439,Hong Kong Baptist University,Hong Kong,N/A,N/A
+440,Baylor University,United States,N/A,N/A
+440,Medical University of Innsbruck,Austria,N/A,N/A
+440,Taif University,Saudi Arabia|taif,N/A,N/A
+440,University of Colorado Denver,United States,N/A,N/A
+440,University of Manitoba,Canada,N/A,N/A
+445,Nantes Universite,France,N/A,N/A
+445,Northeastern University - China,China,N/A,N/A
+445,Prince Sultan University,Jordan|columbia,N/A,N/A
+445,University of Massachusetts Worcester,United States,N/A,N/A
+445,University of New Mexico,United States,N/A,N/A
+445,Xidian University,China,N/A,N/A
+451,Laval University,Canada,N/A,N/A
+451,Nanjing University of Science & Technology,China,N/A,N/A
 451,University of Buenos Aires,Argentina|buenos Aires,N/A,N/A
-451,Zhejiang Normal University,China,N/A,N/A
-458,Edith Cowan University,Australia,N/A,N/A
-458,University of Trieste,Italy,N/A,N/A
-460,Kafrelsheikh University,Egypt|kafr El,N/A,N/A
-460,Medical University of South Carolina,United States,N/A,N/A
-460,University of Basque Country,Spain,N/A,N/A
-460,University of Brescia,Italy,N/A,N/A
-460,University of Catania,Italy,N/A,N/A
-460,University of Texas Dallas,United States,N/A,N/A
-466,University of Innsbruck,Austria,N/A,N/A
-466,University of Massachusetts Worcester,United States,N/A,N/A
-466,University of Missouri Columbia,United States,N/A,N/A
-466,Wayne State University,United States,N/A,N/A
-466,York University - Canada,Canada,N/A,N/A
-471,Guangzhou University,China,N/A,N/A
-471,Hong Kong Baptist University,Hong Kong,N/A,N/A
-471,Tampere University,Finland,N/A,N/A
-474,Jefferson University,United States,N/A,N/A
-474,Southwestern University of Finance & Economics - China,China,N/A,N/A
-474,Universidade de Coimbra,Portugal|coimbra,N/A,N/A
-477,Nanjing Forestry University,China,N/A,N/A
-477,University of Hawaii Manoa,United States,N/A,N/A
-479,Rush University,United States,N/A,N/A
-479,Syracuse University,United States,N/A,N/A
-479,Universite de Rennes,France,N/A,N/A
-479,University of the Philippines Manila,Philippines|manila,N/A,N/A
-479,University of Warsaw,Poland|warsaw,N/A,N/A
-479,Wake Forest University,United States,N/A,N/A
-485,Eotvos Lorand University,Hungary|budapest,N/A,N/A
-485,Lanzhou University,China,N/A,N/A
-487,Xidian University,China,N/A,N/A
-488,University of Tsukuba,United Kingdom,N/A,N/A
-489,Assiut University,Egypt|assiut,N/A,N/A
-489,Nanjing University of Science & Technology,China,N/A,N/A
-491,Florida International University,United States,N/A,N/A
-492,Bogazici University,Turkey|istanbul,N/A,N/A
-492,Brunel University,United Kingdom,N/A,N/A
-492,Northeastern University - China,China,N/A,N/A
-492,Prince Sattam Bin Abdulaziz University,Saudi Arabia|al Kharj,N/A,N/A
-492,Universidade Federal do Rio de Janeiro,Brazil,N/A,N/A
-497,China University of Petroleum,China,N/A,N/A
-497,Jiangnan University,China,N/A,N/A
-497,University of Ljubljana,Slovenia|ljubljana,N/A,N/A
-497,University of Nebraska Lincoln,United States,N/A,N/A
-501,Indiana University-Purdue University Indianapolis,United States,N/A,N/A
-501,Moscow Institute of Physics & Technology,Russia|dolgoprudny,N/A,N/A
-503,George Mason University,United States,N/A,N/A
-503,Hohai University,China,N/A,N/A
-503,Ocean University of China,China,N/A,N/A
-503,University of Oklahoma - Norman,United States,N/A,N/A
-503,Victoria University Wellington,New Zealand|wellington,N/A,N/A
-508,National Technical University of Athens,Greece|athens,N/A,N/A
-509,Donghua University,China,N/A,N/A
-509,Justus Liebig University Giessen,Germany,N/A,N/A
-509,National Tsing Hua University,Taiwan,N/A,N/A
-509,Polytechnic University of Turin,Italy,N/A,N/A
-509,Universita della Campania Vanvitelli,Italy,N/A,N/A
-509,University of Luxembourg,Luxembourg|esch,N/A,N/A
-509,University of Zagreb,Croatia|zagreb,N/A,N/A
-516,Kyung Hee University,South Korea,N/A,N/A
-516,Sharif University of Technology,Iran|tehran,N/A,N/A
-516,Tehran University of Medical Sciences,Iran|tehran,N/A,N/A
-519,Auckland University of Technology,New Zealand|auckland,N/A,N/A
-519,Northern Arizona University,United States,N/A,N/A
-521,Hamad Bin Khalifa University-Qatar,Qatar|doha,N/A,N/A
-521,Peking Union Medical College,China,N/A,N/A
-521,Universidade de Santiago de Compostela,Spain,N/A,N/A
-521,University of Iceland,Iceland|reykjavik,N/A,N/A
-521,University of Sevilla,Spain,N/A,N/A
-521,University of Tabriz,Iran|tabriz,N/A,N/A
-527,International School for Advanced Studies (SISSA),Italy,N/A,N/A
-527,Loughborough University,United Kingdom,N/A,N/A
-527,Southwest University - China,China,N/A,N/A
-527,University of Perugia,Italy,N/A,N/A
-531,Bocconi University,Italy,N/A,N/A
-531,Khalifa University of Science & Technology,N/A,N/A,N/A
-531,Universidade Federal de Minas Gerais,Brazil,N/A,N/A
-534,Boston College,United States,N/A,N/A
-534,Chulalongkorn University,Thailand|bangkok,N/A,N/A
-534,Keio University,Japan,N/A,N/A
-534,Murdoch University,Australia,N/A,N/A
-534,Shandong University of Science & Technology,China,N/A,N/A
-534,Universidade Nova de Lisboa,Portugal|lisbon,N/A,N/A
-540,Mahidol University,Thailand|salaya,N/A,N/A
-540,North West University - South Africa,South Africa|potchefstroom,N/A,N/A
-540,Universiti Kebangsaan Malaysia,Malaysia|bangi Selangor,N/A,N/A
-540,University of Guelph,Canada,N/A,N/A
-544,Koc University,Turkey|istanbul,N/A,N/A
-544,Universiti Putra Malaysia,Malaysia|serdang,N/A,N/A
-544,University of Canterbury,New Zealand|christchurch,N/A,N/A
-544,University of Saskatchewan,Canada,N/A,N/A
-544,University of Vermont,United States,N/A,N/A
-549,Beijing University of Posts & Telecommunications,China,N/A,N/A
-549,Beijing University of Technology,China,N/A,N/A
-549,Mekelle University,Ethiopia|mekelle,N/A,N/A
-549,Technische Universitat Wien,Austria,N/A,N/A
-549,Universidade de Aveiro,Portugal|aveiro,N/A,N/A
-549,University of Eastern Finland,Finland,N/A,N/A
-555,Ollscoil na Gaillimhe-University of Galway,Ireland|galway,N/A,N/A
-556,Taylor's University,Malaysia|new Delhi,N/A,N/A
-556,University of Ferrara,Italy,N/A,N/A
-558,University of Palermo,Italy,N/A,N/A
-558,University of Salerno,Italy,N/A,N/A
-560,Ben Gurion University,Israel,N/A,N/A
-560,China University of Mining & Technology,China,N/A,N/A
-560,Georgia State University,United States,N/A,N/A
-560,Martin Luther University Halle Wittenberg,Germany,N/A,N/A
-560,Middle East Technical University,Turkey|ankara,N/A,N/A
-560,Nanjing Tech University,China,N/A,N/A
-560,Nanjing University of Aeronautics & Astronautics,China,N/A,N/A
-560,University of Dhaka,Bangladesh|dhaka,N/A,N/A
-560,Zhejiang University of Technology,China,N/A,N/A
-569,Institut National Polytechnique de Grenoble,France,N/A,N/A
-569,Nanjing Normal University,China,N/A,N/A
-569,South China Agricultural University,China,N/A,N/A
-569,University of Regensburg,Germany,N/A,N/A
-573,Ahmadu Bello University,Nigeria|zaria,N/A,N/A
-573,Benha University,Egypt|benha,N/A,N/A
-573,Liverpool John Moores University,United Kingdom,N/A,N/A
-573,University of Messina,Italy,N/A,N/A
-577,East China University of Science & Technology,China,N/A,N/A
-577,Government College University Faisalabad,Pakistan|faisalabad,N/A,N/A
-577,Singapore Management University,Singapore,N/A,N/A
-577,Southwest Jiaotong University,China,N/A,N/A
-577,UiT The Arctic University of Tromso,Norway,N/A,N/A
-577,University of Kent,United Kingdom,N/A,N/A
-577,University of Portsmouth,United Kingdom,N/A,N/A
-584,HSE University (National Research University Higher School of Economics),Russia|moscow,N/A,N/A
-584,Leibniz University Hannover,Germany,N/A,N/A
-586,Guangdong University of Technology,China,N/A,N/A
-586,Universita della Svizzera Italiana,Switzerland,N/A,N/A
-586,University of Siena,Italy,N/A,N/A
-586,Waseda University,Japan,N/A,N/A
-590,National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),Russia|moscow,N/A,N/A
-590,National University of Sciences & Technology - Pakistan,Pakistan|islamabad,N/A,N/A
-590,Semmelweis University,Hungary|budapest,N/A,N/A
-590,Universidade Estadual Paulista,Brazil,N/A,N/A
-590,Universite Clermont Auvergne (UCA),France,N/A,N/A
-590,University of Texas at San Antonio (UTSA),United States,N/A,N/A
-596,Beijing Jiaotong University,China,N/A,N/A
-596,Medical College of Wisconsin,United States,N/A,N/A
-596,Philipps University Marburg,Germany,N/A,N/A
-596,Tanta University,Egypt|tanta,N/A,N/A
-596,University of Parma,Italy,N/A,N/A
-601,State University of New York (SUNY) Albany,United States,N/A,N/A
-601,Texas Tech University,United States,N/A,N/A
-601,Universita di Modena e Reggio Emilia,Italy,N/A,N/A
-601,Universite Paris-Est-Creteil-Val-de-Marne (UPEC),France,N/A,N/A
-601,University of Jyvaskyla,Finland,N/A,N/A
-606,University of Bremen,Germany,N/A,N/A
-606,University of Essex,United Kingdom,N/A,N/A
-606,University of Konstanz,Germany,N/A,N/A
-606,West Virginia University,United States,N/A,N/A
-610,Brandeis University,United States,N/A,N/A
-610,Universidade do Minho,Portugal|braga,N/A,N/A
-612,Indian Institute of Science (IISC) - Bangalore,India,N/A,N/A
-612,Masaryk University Brno,Czech Republic|brno,N/A,N/A
-612,Nanchang University,China,N/A,N/A
-612,Nottingham Trent University,United Kingdom,N/A,N/A
-616,Kansas State University,United States,N/A,N/A
-617,Carleton University,Canada,N/A,N/A
-617,Institut Agro,France,N/A,N/A
-617,University of Agriculture Faisalabad,Pakistan|faisalabad,N/A,N/A
-620,Auburn University,United States,N/A,N/A
-620,Universidade Federal de Sao Paulo (UNIFESP),Brazil,N/A,N/A
-622,South China Normal University,China,N/A,N/A
-623,Imam Abdulrahman Bin Faisal University,Saudi Arabia|dammam,N/A,N/A
-623,National Cheng Kung University,Taiwan,N/A,N/A
-623,National Yang Ming Chiao Tung University,Taiwan,N/A,N/A
-623,"University of Natural Resources & Life Sciences, Vienna",Austria,N/A,N/A
-623,University of Tennessee Health Science Center,United States,N/A,N/A
-628,Minia University,Egypt|minya,N/A,N/A
-629,Roma Tre University,Italy,N/A,N/A
-629,Saint Louis University,United States,N/A,N/A
-631,Rutgers University Newark,United States,N/A,N/A
-631,Tilburg University,Netherlands,N/A,N/A
-631,Universidad Politecnica de Madrid,Spain,N/A,N/A
-631,University of Cagliari,Italy,N/A,N/A
-635,Copenhagen Business School,Denmark,N/A,N/A
-635,Indian Institute of Technology (IIT) - Bombay,India,N/A,N/A
-635,Indian Institute of Technology (IIT) - Madras,India,N/A,N/A
-635,Liverpool School of Tropical Medicine,United Kingdom,N/A,N/A
-635,Southern Medical University - China,China,N/A,N/A
-635,Universitat Politecnica de Valencia,Spain,N/A,N/A
-635,University of Alabama Tuscaloosa,United States,N/A,N/A
-642,Sultan Qaboos University,Oman|muscat,N/A,N/A
-642,University of Luebeck,Germany,N/A,N/A
-642,University of Oklahoma Health Sciences Center,United States,N/A,N/A
-645,Alfaisal University,Saudi Arabia|riyadh,N/A,N/A
-645,Hiroshima University,Japan,N/A,N/A
-645,Massey University,New Zealand|palmerston North,N/A,N/A
-645,Tata Institute of Fundamental Research (TIFR),India,N/A,N/A
-649,Amirkabir University of Technology,Iran|tehran,N/A,N/A
-649,Hacettepe University,Turkey|ankara,N/A,N/A
-649,Kobe University,Japan,N/A,N/A
-649,Umm Al Qura University,Saudi Arabia|makkah,N/A,N/A
-649,University of Bielefeld,Germany,N/A,N/A
-649,Wenzhou University,China,N/A,N/A
-655,Chiang Mai University,Thailand|chiang Mai,N/A,N/A
-655,Sabanci University,Turkey|tuzla,N/A,N/A
-655,Tecnologico de Monterrey,Mexico,N/A,N/A
-655,University of Plymouth,United Kingdom,N/A,N/A
-659,Aston University,United Kingdom,N/A,N/A
-659,King Faisal University,Saudi Arabia|al Ahsa,N/A,N/A
-659,Suez Canal University,Egypt|ismailia,N/A,N/A
-659,University of Fribourg,Switzerland,N/A,N/A
-663,Addis Ababa University,Ethiopia|addis Ababa,N/A,N/A
-663,Lappeenranta-Lahti University of Technology LUT,Finland,N/A,N/A
-665,Aligarh Muslim University,India,N/A,N/A
-665,Concordia University - Canada,Canada,N/A,N/A
-665,Ecole Normale Superieure de Lyon (ENS de LYON),France,N/A,N/A
-665,Tarbiat Modares University,Iran|tehran,N/A,N/A
-665,University of Lahore,Pakistan|lahore,N/A,N/A
-665,University of North Carolina Charlotte,United States,N/A,N/A
-671,Palacky University Olomouc,Czech Republic|olomouc,N/A,N/A
-671,Technical University of Darmstadt,Germany,N/A,N/A
-671,University of Louisville,United States,N/A,N/A
-671,Zayed University,United Arab Emirates|dubai,N/A,N/A
-675,Bournemouth University,United Kingdom,N/A,N/A
-675,Manchester Metropolitan University,United Kingdom,N/A,N/A
-675,University of Massachusetts Boston,United States,N/A,N/A
-678,Huzhou University,China,N/A,N/A
-678,Jordan University of Science & Technology,Jordan|irbid,N/A,N/A
-678,Menofia University,Egypt|shebin El Koum,N/A,N/A
-678,University of Cyprus,Cyprus|nicosia,N/A,N/A
-678,University of Haifa,Israel,N/A,N/A
-678,University of Texas Medical Branch Galveston,United States,N/A,N/A
-678,University of Wuppertal,Germany,N/A,N/A
-685,Colorado School of Mines,United States,N/A,N/A
-685,Universitat Rovira i Virgili,Spain,N/A,N/A
-687,University of Missouri Kansas City,United States,N/A,N/A
-687,Vellore Institute of Technology (VIT),India,N/A,N/A
-689,Indian Institute of Technology (IIT) - Delhi,India,N/A,N/A
-689,Istanbul Technical University,Turkey|istanbul,N/A,N/A
-689,Lulea University of Technology,Sweden,N/A,N/A
-689,Near East University,Turkey|nicosia,N/A,N/A
-689,University of Crete,Greece|rethymnon,N/A,N/A
-694,Eastern Mediterranean University,Turkey|famagusta,N/A,N/A
-694,Oklahoma State University - Stillwater,United States,N/A,N/A
-694,University of Canberra,Australia,N/A,N/A
-694,University of Jordan,Jordan|amman,N/A,N/A
-698,Kyungpook National University,South Korea,N/A,N/A
-698,North China Electric Power University,China,N/A,N/A
-698,University of California Merced,United States,N/A,N/A
-698,University of Graz,Austria,N/A,N/A
-698,University of North Texas Denton,United States,N/A,N/A
-703,Aga Khan University,Pakistan|karachi,N/A,N/A
-703,Clemson University,United States,N/A,N/A
-703,Marche Polytechnic University,Italy,N/A,N/A
-703,Shandong Normal University,China,N/A,N/A
-703,Universidad Nacional de Colombia,Colombia|bogota,N/A,N/A
-708,Dortmund University of Technology,Germany,N/A,N/A
-708,Education University of Hong Kong (EdUHK),Hong Kong,N/A,N/A
-708,Hangzhou Normal University,China,N/A,N/A
-708,San Diego State University,United States,N/A,N/A
-708,Universidad de los Andes (Colombia),Colombia|bogota,N/A,N/A
-713,Universidad de Cantabria,Spain,N/A,N/A
-713,University Djillali Liabes Sidi Bel Abbes,Algeria|sidi Bel Abbes,N/A,N/A
-713,University of Udine,Italy,N/A,N/A
-713,University of Waikato,New Zealand|hamilton,N/A,N/A
-713,University of Wisconsin Milwaukee,United States,N/A,N/A
-718,Banaras Hindu University (BHU),India,N/A,N/A
-718,Comenius University Bratislava,Slovakia|bratislava,N/A,N/A
-718,Jamia Millia Islamia,India,N/A,N/A
-718,Pusan National University,United States,N/A,N/A
-722,Universidade Federal de Santa Catarina (UFSC),Brazil,N/A,N/A
-722,University of International Business & Economics,China,N/A,N/A
-722,University of New Hampshire,United States,N/A,N/A
-722,University of Texas Arlington,United States,N/A,N/A
-726,Peoples Friendship University of Russia,Russia|moscow,N/A,N/A
-726,Politecnico di Bari,Italy,N/A,N/A
-726,Tabriz University of Medical Science,Iran|tabriz,N/A,N/A
-726,University of the Western Cape,South Africa|belville,N/A,N/A
-730,Beijing Forestry University,China,N/A,N/A
-730,Fayoum University,Egypt|al Fayoum,N/A,N/A
-730,Memorial University Newfoundland,Canada,N/A,N/A
-730,Nguyen Tat Thanh University (NTTU),N/A,N/A,N/A
-730,Northwest University Xi'an,China,N/A,N/A
-730,University of Stirling,United Kingdom,N/A,N/A
-730,Victoria University,Australia,N/A,N/A
-737,Nanjing Medical University,China,N/A,N/A
-737,Nanjing University of Posts & Telecommunications,China,N/A,N/A
-737,Novosibirsk State University,Russia|novosibirsk,N/A,N/A
-737,Panjab University,India,N/A,N/A
-737,University of Cape Coast,Ghana|cape Coast,N/A,N/A
-737,University of Stuttgart,Germany,N/A,N/A
-743,Iran University of Medical Sciences,Iran|tehran,N/A,N/A
-743,Saint Petersburg State University,Russia|st. Petersburg,N/A,N/A
-743,Universitetet i Stavanger,Norway,N/A,N/A
-743,University of Ulsan,South Korea,N/A,N/A
-743,Yeungnam University,South Korea,N/A,N/A
-748,Chang'an University,China,N/A,N/A
-749,Fujian Agriculture & Forestry University,China,N/A,N/A
-749,Indian Institute of Technology (IIT) - Kharagpur,India,N/A,N/A
-749,Kwame Nkrumah University Science & Technology,Ghana|kumasi,N/A,N/A
-749,Taibah University,Saudi Arabia|medina,N/A,N/A
-749,University of Rhode Island,United States,N/A,N/A
-749,Utah State University,United States,N/A,N/A
-755,Asia University Taiwan,Taiwan,N/A,N/A
-755,Babes Bolyai University from Cluj,Romania|cluj,N/A,N/A
-755,Okinawa Institute of Science & Technology Graduate University,Japan,N/A,N/A
-758,European University Institute,Italy,N/A,N/A
-758,Shahid Beheshti University Medical Sciences,Iran|tehran,N/A,N/A
-758,University of Shanghai for Science & Technology,China,N/A,N/A
-761,AgroParisTech,France,N/A,N/A
-761,Cranfield University,United Kingdom,N/A,N/A
-761,Hasselt University,Belgium,N/A,N/A
-761,Ihsan Dogramaci Bilkent University,Turkey|ankara,N/A,N/A
-761,Lebanese American University,Lebanon|beirut,N/A,N/A
-761,Mashhad University Medical Science,Iran|mahshad,N/A,N/A
-761,University Hohenheim,Germany,N/A,N/A
-761,University of Quebec Montreal,Canada,N/A,N/A
-769,Ankara University,Turkey|ankara,N/A,N/A
-769,Babol Noshirvani University of Technology,Iran|babol,N/A,N/A
-769,Chengdu University,China,N/A,N/A
-769,City College of New York (CUNY),United States,N/A,N/A
-769,Istanbul University,Turkey|istanbul,N/A,N/A
-769,Qingdao University of Science & Technology,China,N/A,N/A
-769,Shoolini University,India,N/A,N/A
-769,Universitat de les Illes Balears,Spain,N/A,N/A
-769,University of Salamanca,Spain,N/A,N/A
-769,Ural Federal University,Russia|ekaterinburg,N/A,N/A
-779,Bar Ilan University,Israel,N/A,N/A
-779,Brigham Young University,United States,N/A,N/A
-779,Harbin Engineering University,China,N/A,N/A
-779,University of Mannheim,Germany,N/A,N/A
-779,University of Nevada Reno,United States,N/A,N/A
-784,American University,United States,N/A,N/A
-784,Shanghai University of Finance & Economics,China,N/A,N/A
-784,Universiti Teknologi Petronas,Malaysia|darul Ridzuan,N/A,N/A
-784,University of Arkansas Fayetteville,United States,N/A,N/A
-784,University of Management & Technology (UMT),Pakistan|punjab,N/A,N/A
-789,Czech University of Life Sciences Prague,Czech Republic|prague,N/A,N/A
-789,Hefei University of Technology,China,N/A,N/A
-789,Iran University Science & Technology,Iran|tehran,N/A,N/A
-789,ITMO University,Russia|st. Petersburg,N/A,N/A
-789,Rochester Institute of Technology,United States,N/A,N/A
-789,Tomsk State University,Russia|tomsk,N/A,N/A
-789,University of Hull,United Kingdom,N/A,N/A
-796,Illinois Institute of Technology,United States,N/A,N/A
-796,Istanbul Bilgi University,Turkey|istanbul,N/A,N/A
-796,Ohio University,United States,N/A,N/A
-796,Szeged University,Hungary|szeged,N/A,N/A
-796,University of Zaragoza,Spain,N/A,N/A
-801,Universite de Franche-Comte,France,N/A,N/A
-802,Universidad de la Laguna,Spain,N/A,N/A
-802,University of Nevada Las Vegas,United States,N/A,N/A
-804,Makerere University,Uganda|kampala,N/A,N/A
-804,Manipal Academy of Higher Education (MAHE),India,N/A,N/A
-804,Shaanxi Normal University,China,N/A,N/A
-804,Universidad de Concepcion,Chile|concepcion,N/A,N/A
-804,University of Bayreuth,Germany,N/A,N/A
-809,Peter the Great St. Petersburg Polytechnic University,Russia|st. Petersburg,N/A,N/A
-809,Universidade de Brasilia,Brazil,N/A,N/A
-809,Universidad Peruana Cayetano Heredia,Peru|lima,N/A,N/A
-809,University of Nairobi,Kenya|nairobi,N/A,N/A
-809,Xi'an Jiaotong-Liverpool University,China,N/A,N/A
-814,Anglia Ruskin University,United Kingdom,N/A,N/A
-814,Edinburgh Napier University,United Kingdom,N/A,N/A
-814,Macau University of Science & Technology,Macau|taipa,N/A,N/A
-814,Northumbria University,United Kingdom,N/A,N/A
-818,Charles Darwin University,Australia,N/A,N/A
-818,Isfahan University of Technology,Iran|isfahan,N/A,N/A
-818,Northeast Normal University - China,China,N/A,N/A
-818,Universidade de Vigo,Spain,N/A,N/A
-822,Graduate University for Advanced Studies - Japan,Japan,N/A,N/A
-822,Mazandaran University Medical Sciences,Iran|sari,N/A,N/A
-822,Rensselaer Polytechnic Institute,United States,N/A,N/A
-822,Scuola Superiore Sant'Anna,Italy,N/A,N/A
-822,Shiraz University of Medical Science,Iran|shiraz,N/A,N/A
-822,Skolkovo Institute of Science & Technology,Russia|moscow,N/A,N/A
-822,University of Salento,Italy,N/A,N/A
-822,University of Wyoming,United States,N/A,N/A
-822,Yunnan University,China,N/A,N/A
-822,Zhongnan University of Economics & Law,China,N/A,N/A
-832,Heriot Watt University,United Kingdom,N/A,N/A
-832,Mississippi State University,United States,N/A,N/A
-832,Missouri University of Science & Technology,United States,N/A,N/A
-832,Princess Nourah bint Abdulrahman University,Saudi Arabia|riyadh,N/A,N/A
-832,Universite de Bretagne Occidentale,France,N/A,N/A
-832,Universiti Brunei Darussalam,Brunei Darussalam|brunei,N/A,N/A
-832,University of Murcia,Spain,N/A,N/A
-839,AGH University of Krakow,Poland|krakow,N/A,N/A
-839,Dalian Maritime University,China,N/A,N/A
-839,Henan University,China,N/A,N/A
-839,University of Ghana,Ghana|legon,N/A,N/A
-839,University of Ioannina,Greece|ioannina,N/A,N/A
-844,Jimma University,Ethiopia|jimma,N/A,N/A
-844,Northeast Agricultural University - China,China,N/A,N/A
-844,University of Calabria,Italy,N/A,N/A
-844,University of Delhi,India,N/A,N/A
-844,University of Peshawar,Pakistan|peshawar,N/A,N/A
-844,University of Rostock,Germany,N/A,N/A
-844,Vietnam National University Hanoi,Vietnam|hanoi,N/A,N/A
-851,Imam Mohammad Ibn Saud Islamic University (IMSIU),Saudi Arabia|riyadh,N/A,N/A
-851,Mohammed V University in Rabat,Taiwan,N/A,N/A
-851,National Yunlin University Science & Technology,Taiwan,N/A,N/A
-851,Ulster University,United Kingdom,N/A,N/A
-851,Universidad de Antioquia,Colombia|antioquia,N/A,N/A
-856,Hassan II University of Casablanca,Taiwan,N/A,N/A
-856,Indian Institute of Technology (IIT) - Roorkee,India,N/A,N/A
-856,National Taiwan University of Science & Technology,Taiwan,N/A,N/A
-856,Southwest University of Science & Technology - China,China,N/A,N/A
-856,Sunway University,Malaysia|petaling Jaya,N/A,N/A
-861,Dublin City University,Ireland|dublin,N/A,N/A
-861,"Royal Holloway, University of London",United Kingdom,N/A,N/A
-861,University of Punjab,Pakistan|lahore,N/A,N/A
-861,University of South Africa,South Africa|pretoria,N/A,N/A
-865,Fujian Normal University,China,N/A,N/A
-865,Orebro University,Sweden,N/A,N/A
-865,Southern Methodist University,United States,N/A,N/A
-865,Universidad de Alcala,Spain,N/A,N/A
-865,University of Split,Croatia|split,N/A,N/A
-865,Vietnam National University Hochiminh City,N/A,N/A,N/A
-871,Capital Medical University,China,N/A,N/A
-872,All India Institute of Medical Sciences (AIIMS) New Delhi,India,N/A,N/A
-872,Beni Suef University,Egypt|beni Suef,N/A,N/A
-872,California State University Los Angeles,United States,N/A,N/A
-872,Michigan Technological University,United States,N/A,N/A
-872,Montana State University,United States,N/A,N/A
-872,New Jersey Institute of Technology,United States,N/A,N/A
-872,Universitat de Girona,Spain,N/A,N/A
-872,University of Alaska Fairbanks,United States,N/A,N/A
-880,Athens Medical School,Greece|athens,N/A,N/A
-880,INSEAD Business School,France,N/A,N/A
-880,Norwegian University of Life Sciences,Norway,N/A,N/A
-880,Qingdao University of Technology,China,N/A,N/A
-880,Transilvania University of Brasov,Romania|brasov,N/A,N/A
-880,Universiti Malaysia Terengganu,Malaysia|terengganu,N/A,N/A
-880,University of West Scotland,United Kingdom,N/A,N/A
-880,Yangzhou University,China,N/A,N/A
-888,Czech Technical University Prague,Czech Republic|prague,N/A,N/A
-888,Hainan University,China,N/A,N/A
-888,Indian Institute of Technology (IIT) - Kanpur,India,N/A,N/A
-888,Open University - UK,United Kingdom,N/A,N/A
-888,University of Maryland Baltimore County,United States,N/A,N/A
-888,University of Thessaly,Greece|volos,N/A,N/A
-894,Chiba University,Japan,N/A,N/A
-894,China Pharmaceutical University,China,N/A,N/A
-894,Kent State University,United States,N/A,N/A
-894,London Business School,United Kingdom,N/A,N/A
-894,University of Patras,Greece|rio Achaia,N/A,N/A
-894,Villanova University,United States,N/A,N/A
-900,Bangor University,United Kingdom,N/A,N/A
-900,Dongguk University,South Korea,N/A,N/A
-902,Ewha Womans University,South Korea,N/A,N/A
-902,Keele University,United Kingdom,N/A,N/A
-902,Otto von Guericke University,Germany,N/A,N/A
-902,State University of New York (SUNY) Upstate Medical Center,United States,N/A,N/A
-902,University of Agder,Norway,N/A,N/A
-902,University of Debrecen,Hungary|debrecen,N/A,N/A
-902,University of New England,Australia,N/A,N/A
-909,American University Cairo,Egypt|cairo,N/A,N/A
-909,Carol Davila University of Medicine & Pharmacy,Romania|bucharest,N/A,N/A
-909,Parthenope University Naples,Italy,N/A,N/A
-912,University of the Free State,South Africa|bloemfontein,N/A,N/A
-913,Babol University of Medical Sciences,Iran|babol,N/A,N/A
-913,Qufu Normal University,China,N/A,N/A
-913,University of Montana,United States,N/A,N/A
-913,University of Seoul,South Korea,N/A,N/A
-917,Charles Sturt University,Australia,N/A,N/A
-917,Tokyo Medical & Dental University (TMDU),Japan,N/A,N/A
-917,Tomsk Polytechnic University,Russia|tomsk,N/A,N/A
-917,Wuhan Institute of Technology,China,N/A,N/A
+454,Guangzhou University,China,N/A,N/A
+455,Universite de Lorraine,France,N/A,N/A
+455,University of Delaware,United States,N/A,N/A
+457,Edith Cowan University,Australia,N/A,N/A
+457,Universitat Politecnica de Catalunya,Spain,N/A,N/A
+457,University of Trieste,Italy,N/A,N/A
+460,Lanzhou University,China,N/A,N/A
+460,University of Belgrade,Serbia|belgrade,N/A,N/A
+460,University of Pretoria,N/A,N/A,N/A
+460,University of Verona,Italy,N/A,N/A
+464,Donghua University,China,N/A,N/A
+464,Ocean University of China,China,N/A,N/A
+464,Universidade Federal do Rio Grande do Sul,Brazil,N/A,N/A
+464,Wayne State University,United States,N/A,N/A
+468,Peking Union Medical College,China,N/A,N/A
+468,Southwestern University of Finance & Economics - China,China,N/A,N/A
+468,Tampere University,Finland,N/A,N/A
+468,University of Missouri,United States,N/A,N/A
+468,University of Warsaw,Poland|warsaw,N/A,N/A
+473,Guangdong University of Technology,China,N/A,N/A
+473,Medical University of South Carolina,United States,N/A,N/A
+473,Southwest University - China,China,N/A,N/A
+473,Swedish University of Agricultural Sciences,Sweden,N/A,N/A
+473,Universidad de Chile,Chile|santiago,N/A,N/A
+473,University of Luxembourg,Luxembourg|esch,N/A,N/A
+479,Bogazici University,Turkey|istanbul,N/A,N/A
+479,Hamad Bin Khalifa University-Qatar,Qatar|doha,N/A,N/A
+479,University of Brescia,Italy,N/A,N/A
+479,University of Catania,Italy,N/A,N/A
+483,Hohai University,China,N/A,N/A
+483,Syracuse University,United States,N/A,N/A
+483,University of Hawaii Manoa,United States,N/A,N/A
+483,University of Innsbruck,Austria,N/A,N/A
+487,Kyung Hee University,South Korea,N/A,N/A
+487,Prince Sattam Bin Abdulaziz University,Saudi Arabia|al Kharj,N/A,N/A
+487,University of Basque Country,Spain,N/A,N/A
+490,Universidade de Coimbra,Portugal|coimbra,N/A,N/A
+490,University of Nebraska Lincoln,United States,N/A,N/A
+492,Nanjing Normal University,China,N/A,N/A
+493,Drexel University,United States,N/A,N/A
+493,Tanta University,Egypt|tanta,N/A,N/A
+495,Eotvos Lorand University,Hungary|budapest,N/A,N/A
+495,Sechenov First Moscow State Medical University,Russia|moscow,N/A,N/A
+497,Koc University,Turkey|istanbul,N/A,N/A
+497,University of the Philippines Manila,Philippines|manila,N/A,N/A
+497,Wake Forest University,United States,N/A,N/A
+500,Anhui University of Finance & Economics,China,N/A,N/A
+500,China University of Petroleum,China,N/A,N/A
+500,Jefferson University,United States,N/A,N/A
+500,Rush University,United States,N/A,N/A
+504,Florida International University,United States,N/A,N/A
+504,Universite de Rennes,France,N/A,N/A
+506,International School for Advanced Studies (SISSA),Italy,N/A,N/A
+506,National Tsing Hua University,Taiwan,N/A,N/A
+506,University of Ljubljana,Slovenia|ljubljana,N/A,N/A
+506,Victoria University Wellington,New Zealand|wellington,N/A,N/A
+510,George Mason University,United States,N/A,N/A
+510,Murdoch University,Australia,N/A,N/A
+510,Nanjing University of Aeronautics & Astronautics,China,N/A,N/A
+510,University of Tsukuba,United Kingdom,N/A,N/A
+514,Changsha University of Science & Technology,China,N/A,N/A
+514,Southwest Jiaotong University,China,N/A,N/A
+514,University of Santiago of Compostela,Spain,N/A,N/A
+514,York University - Canada,Canada,N/A,N/A
+518,Boston College,United States,N/A,N/A
+518,Kafrelsheikh University,Egypt|kafr El,N/A,N/A
+518,University of Seville,Spain,N/A,N/A
+521,Lomonosov Moscow State University,Russia|moscow,N/A,N/A
+521,Loughborough University,United Kingdom,N/A,N/A
+521,Princess Nourah bint Abdulrahman University,Saudi Arabia|riyadh,N/A,N/A
+521,Zhejiang University of Technology,China,N/A,N/A
+525,Brunel University London,United Kingdom,N/A,N/A
+525,Nottingham Trent University,United Kingdom,N/A,N/A
+527,Politecnico di Torino,Italy,N/A,N/A
+528,Beijing University of Technology,China,N/A,N/A
+528,Ollscoil na Gaillimhe-University of Galway,Ireland|galway,N/A,N/A
+528,Umm Al Qura University,Saudi Arabia|makkah,N/A,N/A
+528,University of Iceland,Iceland|reykjavik,N/A,N/A
+528,University of Oklahoma,United States,N/A,N/A
+533,East China University of Science & Technology,China,N/A,N/A
+533,Liverpool John Moores University,United Kingdom,N/A,N/A
+533,South China Normal University,China,N/A,N/A
+533,Universidade Federal do Rio de Janeiro,Brazil,N/A,N/A
+537,Nanchang University,China,N/A,N/A
+537,University of Eastern Finland,Finland,N/A,N/A
+537,University of Texas at Dallas,United States,N/A,N/A
+540,Chulalongkorn University,Thailand|bangkok,N/A,N/A
+540,South China Agricultural University,China,N/A,N/A
+542,Beijing Jiaotong University,China,N/A,N/A
+542,Universita della Campania Vanvitelli,Italy,N/A,N/A
+542,University of Canterbury,New Zealand|christchurch,N/A,N/A
+542,University of Perugia,Italy,N/A,N/A
+546,Beijing University of Posts & Telecommunications,China,N/A,N/A
+546,Ben-Gurion University of the Negev,Israel,N/A,N/A
+546,Justus Liebig University Giessen,Germany,N/A,N/A
+546,Medical College of Wisconsin,United States,N/A,N/A
+550,Benha University,Egypt|benha,N/A,N/A
+550,Bocconi University,Italy,N/A,N/A
+550,China University of Mining & Technology,China,N/A,N/A
+550,Keio University,Japan,N/A,N/A
+550,Universidade Federal de Minas Gerais,Brazil,N/A,N/A
+550,USI - Universita della Svizzera italiana,Switzerland,N/A,N/A
+556,Nanjing Tech University,China,N/A,N/A
+556,University of Guelph,Canada,N/A,N/A
+558,Leibniz University Hannover,Germany,N/A,N/A
+558,Southern Medical University - China,China,N/A,N/A
+558,University of Ferrara,Italy,N/A,N/A
+558,University of Portsmouth,United Kingdom,N/A,N/A
+562,Semmelweis University,Hungary|budapest,N/A,N/A
+562,University of Jyvaskyla,Finland,N/A,N/A
+562,University of Zagreb,Croatia|zagreb,N/A,N/A
+565,Imam Abdulrahman Bin Faisal University,Saudi Arabia|dammam,N/A,N/A
+565,Sharif University of Technology,Iran|tehran,N/A,N/A
+565,Universidade Nova de Lisboa,Portugal|lisbon,N/A,N/A
+568,Philipps University Marburg,Germany,N/A,N/A
+568,Texas Tech University,United States,N/A,N/A
+568,Universite Paris-Est-Creteil-Val-de-Marne (UPEC),France,N/A,N/A
+568,University of Saskatchewan,Canada,N/A,N/A
+572,American University of Beirut,Lebanon|beirut,N/A,N/A
+572,Auckland University of Technology,New Zealand|auckland,N/A,N/A
+572,Universiti Kebangsaan Malaysia,Malaysia|bangi Selangor,N/A,N/A
+572,University of Konstanz,Germany,N/A,N/A
+572,University of Tennessee Health Science Center,United States,N/A,N/A
+572,University of Vermont,United States,N/A,N/A
+578,King Faisal University,Saudi Arabia|al Ahsa,N/A,N/A
+578,Northern Arizona University,United States,N/A,N/A
+578,Sunway University,Malaysia|petaling Jaya,N/A,N/A
+578,UiT The Arctic University of Tromso,Norway,N/A,N/A
+578,Universiti Putra Malaysia,Malaysia|serdang,N/A,N/A
+578,Waseda University,Japan,N/A,N/A
+584,Masaryk University,Czech Republic|brno,N/A,N/A
+584,National University of Sciences & Technology - Pakistan,Pakistan|islamabad,N/A,N/A
+584,Sultan Qaboos University,Oman|muscat,N/A,N/A
+584,University of Tabriz,Iran|tabriz,N/A,N/A
+588,Georgia State University,United States,N/A,N/A
+588,Institut National Polytechnique de Grenoble,France,N/A,N/A
+588,North West University - South Africa,South Africa|potchefstroom,N/A,N/A
+588,Technische Universitat Wien,Austria,N/A,N/A
+588,Tehran University of Medical Sciences,Iran|tehran,N/A,N/A
+588,University of Lahore,Pakistan|lahore,N/A,N/A
+594,Aston University,United Kingdom,N/A,N/A
+594,Government College University Faisalabad,Pakistan|faisalabad,N/A,N/A
+594,Mahidol University,Thailand|salaya,N/A,N/A
+594,Middle East Technical University,Turkey|ankara,N/A,N/A
+594,Taylor's University,Malaysia|new Delhi,N/A,N/A
+594,University of Agriculture Faisalabad,Pakistan|faisalabad,N/A,N/A
+594,University of Siena,Italy,N/A,N/A
+601,Copenhagen Business School,Denmark,N/A,N/A
+601,University of Bremen,Germany,N/A,N/A
+601,University of Regensburg,Germany,N/A,N/A
+604,National Technical University of Athens,Greece|athens,N/A,N/A
+604,University of Aveiro,Portugal|aveiro,N/A,N/A
+604,University of Dhaka,Bangladesh|dhaka,N/A,N/A
+604,University of Messina,Italy,N/A,N/A
+608,HSE University (National Research University Higher School of Economics),Russia|moscow,N/A,N/A
+608,Moscow Institute of Physics & Technology,Russia|dolgoprudny,N/A,N/A
+608,Wenzhou University,China,N/A,N/A
+611,Liverpool School of Tropical Medicine,United Kingdom,N/A,N/A
+611,University of Palermo,Italy,N/A,N/A
+613,Al Jouf University,Saudi Arabia|sakaka,N/A,N/A
+613,Capital Medical University,China,N/A,N/A
+613,University of Salerno,Italy,N/A,N/A
+616,Carleton University,Canada,N/A,N/A
+616,Singapore Management University,Singapore,N/A,N/A
+618,Martin Luther University Halle Wittenberg,Germany,N/A,N/A
+618,University of Kent,United Kingdom,N/A,N/A
+620,National Cheng Kung University,Taiwan,N/A,N/A
+620,Universidade Estadual Paulista,Brazil,N/A,N/A
+620,University of Parma,Italy,N/A,N/A
+623,Auburn University,United States,N/A,N/A
+623,Saint Louis University,United States,N/A,N/A
+625,Institut Agro,France,N/A,N/A
+625,National Yang Ming Chiao Tung University,Taiwan,N/A,N/A
+625,University of Texas at San Antonio (UTSA),United States,N/A,N/A
+628,Hiroshima University,Japan,N/A,N/A
+628,University of Essex,United Kingdom,N/A,N/A
+630,Mekelle University,Ethiopia|mekelle,N/A,N/A
+630,Universita di Modena e Reggio Emilia,Italy,N/A,N/A
+630,University of Management & Technology (UMT),Pakistan|punjab,N/A,N/A
+633,Education University of Hong Kong (EdUHK),Hong Kong,N/A,N/A
+633,Hangzhou Normal University,China,N/A,N/A
+633,Indian Institute of Science (IISC) - Bangalore,India,N/A,N/A
+633,Roma Tre University,Italy,N/A,N/A
+633,Universidade Federal de Sao Paulo (UNIFESP),Brazil,N/A,N/A
+638,"University at Albany, SUNY",United States,N/A,N/A
+638,University of Minho,Portugal|braga,N/A,N/A
+638,University of Rajshahi,Bangladesh|rajshahi,N/A,N/A
+641,Indian Institute of Technology (IIT) - Madras,India,N/A,N/A
+641,Menofia University,Egypt|shebin El Koum,N/A,N/A
+641,Minia University,Egypt|minya,N/A,N/A
+641,University of Cagliari,Italy,N/A,N/A
+645,Ahmadu Bello University,Nigeria|zaria,N/A,N/A
+645,Chengdu University,China,N/A,N/A
+645,Ecole Normale Superieure de Lyon (ENS de LYON),France,N/A,N/A
+645,Nanjing Medical University,China,N/A,N/A
+645,Rochester Institute of Technology,United States,N/A,N/A
+645,Rutgers University Newark,United States,N/A,N/A
+645,Technical University of Darmstadt,Germany,N/A,N/A
+645,Tecnologico de Monterrey,Mexico,N/A,N/A
+653,Abdul Wali Khan University,Pakistan|mardan,N/A,N/A
+653,AgroParisTech,France,N/A,N/A
+653,BOKU University,Austria,N/A,N/A
+653,Suez Canal University,Egypt|ismailia,N/A,N/A
+653,Tilburg University,Netherlands,N/A,N/A
+653,University of Alabama,United States,N/A,N/A
+653,University of Luebeck,Germany,N/A,N/A
+660,Hacettepe University,Turkey|ankara,N/A,N/A
+660,Massey University,New Zealand|palmerston North,N/A,N/A
+660,Shandong University of Science & Technology,China,N/A,N/A
+660,Tata Institute of Fundamental Research (TIFR),India,N/A,N/A
+664,Brandeis University,United States,N/A,N/A
+664,Hainan University,China,N/A,N/A
+664,University of Fribourg,Switzerland,N/A,N/A
+667,Fujian Agriculture & Forestry University,China,N/A,N/A
+667,Manchester Metropolitan University,United Kingdom,N/A,N/A
+667,National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),Russia|moscow,N/A,N/A
+667,Shoolini University,India,N/A,N/A
+667,Universitat Politecnica de Valencia,Spain,N/A,N/A
+667,University of Crete,Greece|rethymnon,N/A,N/A
+667,University of Louisville,United States,N/A,N/A
+667,University of Plymouth,United Kingdom,N/A,N/A
+667,West Virginia University,United States,N/A,N/A
+676,Aligarh Muslim University,India,N/A,N/A
+676,Beijing Forestry University,China,N/A,N/A
+676,Beni-Suef University,Egypt|beni Suef,N/A,N/A
+676,Clemson University,United States,N/A,N/A
+676,University of Texas Medical Branch Galveston,United States,N/A,N/A
+681,Indian Institute of Technology (IIT) - Bombay,India,N/A,N/A
+681,Near East University,Turkey|nicosia,N/A,N/A
+681,Shanghai University of Finance & Economics,China,N/A,N/A
+681,Universidad de Cantabria,Spain,N/A,N/A
+681,Universite Clermont Auvergne (UCA),France,N/A,N/A
+681,University of Missouri Kansas City,United States,N/A,N/A
+687,Eastern Mediterranean University,Turkey|famagusta,N/A,N/A
+687,Istanbul Technical University,Turkey|istanbul,N/A,N/A
+687,Universidad Politecnica de Madrid,Spain,N/A,N/A
+687,University of Bielefeld,Germany,N/A,N/A
+687,Ural Federal University,Russia|ekaterinburg,N/A,N/A
+687,Zayed University,United Arab Emirates|dubai,N/A,N/A
+693,Chiang Mai University,Thailand|chiang Mai,N/A,N/A
+693,University of Ha'il,Saudi Arabia|ha'il,N/A,N/A
+693,University of International Business & Economics,China,N/A,N/A
+696,Kansas State University,United States,N/A,N/A
+696,Memorial University Newfoundland,Canada,N/A,N/A
+696,University of Shanghai for Science & Technology,China,N/A,N/A
+699,Harbin Engineering University,China,N/A,N/A
+699,Macau University of Science & Technology,Macau|taipa,N/A,N/A
+699,University of Oklahoma Health Sciences Center,United States,N/A,N/A
+699,Vellore Institute of Technology (include only VIT Vellore and VIT Chennai campuses),India,N/A,N/A
+703,Asia University,Taiwan,N/A,N/A
+703,Indian Institute of Technology (IIT) - Delhi,India,N/A,N/A
+703,Jamia Millia Islamia,India,N/A,N/A
+703,Jazan University,Saudi Arabia|jazan,N/A,N/A
+703,North China Electric Power University,China,N/A,N/A
+703,Yunnan University,China,N/A,N/A
+709,Addis Ababa University,Ethiopia|addis Ababa,N/A,N/A
+709,Kobe University,Japan,N/A,N/A
+709,Pusan National University,United States,N/A,N/A
+712,Amirkabir University of Technology,Iran|tehran,N/A,N/A
+712,Universitetet i Stavanger,Norway,N/A,N/A
+714,Nanjing University of Posts & Telecommunications,China,N/A,N/A
+714,Okinawa Institute of Science & Technology Graduate University,Japan,N/A,N/A
+714,Sabanci University,Turkey|tuzla,N/A,N/A
+714,Universidad Peruana Cayetano Heredia,Peru|lima,N/A,N/A
+714,University of Graz,Austria,N/A,N/A
+714,University of North Carolina - Charlotte,United States,N/A,N/A
+714,University of North Texas Denton,United States,N/A,N/A
+714,University of the Western Cape,South Africa|belville,N/A,N/A
+722,Lappeenranta-Lahti University of Technology LUT,Finland,N/A,N/A
+722,University of the Andes,Colombia|bogota,N/A,N/A
+722,University of Waikato,New Zealand|hamilton,N/A,N/A
+722,University of Wisconsin Milwaukee,United States,N/A,N/A
+722,Xi'an Jiaotong-Liverpool University,China,N/A,N/A
+727,Symbiosis International University,India,N/A,N/A
+727,Taibah University,Saudi Arabia|medina,N/A,N/A
+727,Universidad Nacional de Colombia,Colombia|bogota,N/A,N/A
+727,University of Hull,United Kingdom,N/A,N/A
+731,Alfaisal University,Saudi Arabia|riyadh,N/A,N/A
+731,Chang'an University,China,N/A,N/A
+731,Northwest University Xi'an,China,N/A,N/A
+731,Politecnico di Bari,Italy,N/A,N/A
+731,University of Haifa,Israel,N/A,N/A
+731,University of Jordan,Jordan|amman,N/A,N/A
+737,Islamia University of Bahawalpur,Pakistan|bahawalpur,N/A,N/A
+737,Palacky University Olomouc,Czech Republic|olomouc,N/A,N/A
+737,Qingdao University of Science & Technology,China,N/A,N/A
+737,Tarbiat Modares University,Iran|tehran,N/A,N/A
+741,European University Institute,Italy,N/A,N/A
+741,Lulea University of Technology,Sweden,N/A,N/A
+743,Hefei University of Technology,China,N/A,N/A
+743,Marche Polytechnic University,Italy,N/A,N/A
+743,University of Cyprus,Cyprus|nicosia,N/A,N/A
+743,University of Tabuk,United Kingdom,N/A,N/A
+747,American University,United States,N/A,N/A
+747,Chandigarh University,India,N/A,N/A
+747,Czech University of Life Sciences Prague,Czech Republic|prague,N/A,N/A
+747,Haramaya University,Ethiopia|harar,N/A,N/A
+747,Makerere University,Uganda|kampala,N/A,N/A
+747,Oklahoma State University - Stillwater,United States,N/A,N/A
+747,University of Nevada Las Vegas,United States,N/A,N/A
+747,University of Northumbria at Newcastle,United Kingdom,N/A,N/A
+755,Colorado School of Mines,United States,N/A,N/A
+755,Concordia University - Canada,Canada,N/A,N/A
+755,Dortmund University of Technology,Germany,N/A,N/A
+755,Future University in Egypt,N/A,N/A,N/A
+755,Zhejiang Gongshang University,China,N/A,N/A
+760,Graduate University for Advanced Studies - Japan,Japan,N/A,N/A
+760,University Djillali Liabes Sidi Bel Abbes,Algeria|sidi Bel Abbes,N/A,N/A
+760,University of Punjab,Pakistan|lahore,N/A,N/A
+763,Hasselt University,Belgium,N/A,N/A
+763,Henan University,China,N/A,N/A
+763,Indian Institute of Technology (IIT) - Kharagpur,India,N/A,N/A
+763,Kyungpook National University (KNU),South Korea,N/A,N/A
+763,University of California Merced,United States,N/A,N/A
+763,University of Udine,Italy,N/A,N/A
+769,Dalian Maritime University,China,N/A,N/A
+769,Jordan University of Science & Technology,Jordan|irbid,N/A,N/A
+769,University of Ulsan,South Korea,N/A,N/A
+772,Anglia Ruskin University,United Kingdom,N/A,N/A
+772,University of Rhode Island,United States,N/A,N/A
+772,Zhongnan University of Economics & Law,China,N/A,N/A
+775,Banaras Hindu University (BHU),India,N/A,N/A
+775,Panjab University,India,N/A,N/A
+775,Peoples Friendship University of Russia,Russia|moscow,N/A,N/A
+775,Universidad de la Laguna,Spain,N/A,N/A
+775,University of New Hampshire,United States,N/A,N/A
+775,University of Stirling,United Kingdom,N/A,N/A
+781,Tabriz University of Medical Science,Iran|tabriz,N/A,N/A
+781,Universidad de Antioquia,Colombia|antioquia,N/A,N/A
+781,University of Stuttgart,Germany,N/A,N/A
+781,University of Vigo,Spain,N/A,N/A
+785,Aga Khan University,Pakistan|karachi,N/A,N/A
+785,Babes-Bolyai University,Romania|cluj,N/A,N/A
+785,Illinois Institute of Technology,United States,N/A,N/A
+785,University of Mannheim,Germany,N/A,N/A
+785,Victoria University,Australia,N/A,N/A
+790,Fujian Normal University,China,N/A,N/A
+790,University of Wuppertal,Germany,N/A,N/A
+790,University of Zaragoza,Spain,N/A,N/A
+793,London Business School,United Kingdom,N/A,N/A
+793,Northeast Normal University - China,China,N/A,N/A
+793,Saint Petersburg State University,Russia|st. Petersburg,N/A,N/A
+793,University of Texas Arlington,United States,N/A,N/A
+797,Bournemouth University,United Kingdom,N/A,N/A
+797,Charles Darwin University,Australia,N/A,N/A
+797,Universidade Federal de Santa Catarina (UFSC),Brazil,N/A,N/A
+797,Universitat Rovira i Virgili,Spain,N/A,N/A
+797,University of Salamanca,Spain,N/A,N/A
+802,Ankara University,Turkey|ankara,N/A,N/A
+802,Bar Ilan University,Israel,N/A,N/A
+802,Manipal Academy of Higher Education,India,N/A,N/A
+802,Shaanxi Normal University,China,N/A,N/A
+806,Carol Davila University of Medicine & Pharmacy,Romania|bucharest,N/A,N/A
+806,Comenius University Bratislava,Slovakia|bratislava,N/A,N/A
+806,University of Arkansas,United States,N/A,N/A
+809,University of Nevada Reno,United States,N/A,N/A
+810,Mashhad University of Medical Sciences,Iran|mahshad,N/A,N/A
+810,Mississippi State University,United States,N/A,N/A
+810,Mohammed V University in Rabat,Taiwan,N/A,N/A
+810,Nguyen Tat Thanh University (NTTU),N/A,N/A,N/A
+810,Ohio University,United States,N/A,N/A
+810,Prince Mohammad Bin Fahd University,Saudi Arabia|dhahran,N/A,N/A
+810,University of Ghana,Ghana|legon,N/A,N/A
+817,Brigham Young University,United States,N/A,N/A
+817,Cranfield University,United Kingdom,N/A,N/A
+817,University of Murcia,Spain,N/A,N/A
+817,University of Szeged,Hungary|szeged,N/A,N/A
+817,Villanova University,United States,N/A,N/A
+822,Istanbul University,Turkey|istanbul,N/A,N/A
+822,Keele University,United Kingdom,N/A,N/A
+822,San Diego State University,United States,N/A,N/A
+822,Universidad de Concepcion,Chile|concepcion,N/A,N/A
+822,Universiti Teknologi Petronas,Malaysia|darul Ridzuan,N/A,N/A
+827,Central Queensland University,Taiwan,N/A,N/A
+827,Hassan II University of Casablanca,Taiwan,N/A,N/A
+827,University of Agder,Norway,N/A,N/A
+827,University of Delhi,India,N/A,N/A
+827,University of Massachusetts Boston,United States,N/A,N/A
+827,Utah State University,United States,N/A,N/A
+833,Beijing Technology & Business University,China,N/A,N/A
+833,City College of New York (CUNY),United States,N/A,N/A
+835,Bilkent University,Turkey|ankara,N/A,N/A
+835,Orebro University,Sweden,N/A,N/A
+835,University of Bayreuth,Germany,N/A,N/A
+835,University of Rostock,Germany,N/A,N/A
+839,Missouri University of Science and Technology,United States,N/A,N/A
+839,Montana State University Bozeman,United States,N/A,N/A
+841,Edinburgh Napier University,United Kingdom,N/A,N/A
+841,Indiana University Indianapolis,United States,N/A,N/A
+841,Shiraz University of Medical Sciences,Iran|shiraz,N/A,N/A
+841,Sichuan Agricultural University,China,N/A,N/A
+841,Universitat de les Illes Balears,Spain,N/A,N/A
+841,Yangzhou University,China,N/A,N/A
+847,AGH University of Krakow,Poland|krakow,N/A,N/A
+847,California State University Los Angeles,United States,N/A,N/A
+847,China Pharmaceutical University,China,N/A,N/A
+847,Indian Institute of Technology (IIT) - Kanpur,India,N/A,N/A
+847,Southwest University of Science & Technology - China,China,N/A,N/A
+847,Universiti Malaysia Terengganu,Malaysia|terengganu,N/A,N/A
+847,University of Canberra,Australia,N/A,N/A
+847,University of Maryland Baltimore County,United States,N/A,N/A
+847,University of Quebec Montreal,Canada,N/A,N/A
+856,Dublin City University,Ireland|dublin,N/A,N/A
+857,Chiba University,Japan,N/A,N/A
+857,Iran University of Medical Sciences,Iran|tehran,N/A,N/A
+857,Iran University of Science and Technology,Iran|tehran,N/A,N/A
+857,Kwame Nkrumah University Science & Technology,Ghana|kumasi,N/A,N/A
+857,Shahid Beheshti University Medical Sciences,Iran|tehran,N/A,N/A
+857,University Hohenheim,Germany,N/A,N/A
+857,University of Ioannina,Greece|ioannina,N/A,N/A
+864,Charles Sturt University,Australia,N/A,N/A
+864,Universidade de Brasilia,Brazil,N/A,N/A
+864,University of Calabria,Italy,N/A,N/A
+864,Yeungnam University,South Korea,N/A,N/A
+868,Guangxi University,China,N/A,N/A
+869,Novosibirsk State University,Russia|novosibirsk,N/A,N/A
+869,University of South Africa,South Africa|pretoria,N/A,N/A
+869,University of Wyoming,United States,N/A,N/A
+869,Wuhan University of Science & Technology,China,N/A,N/A
+873,Foshan University,China,N/A,N/A
+873,New Jersey Institute of Technology,United States,N/A,N/A
+873,Tomsk State University,Russia|tomsk,N/A,N/A
+873,University of Alcala,Spain,N/A,N/A
+877,Anhui University,China,N/A,N/A
+877,Ewha Womans University,South Korea,N/A,N/A
+877,Indian Institute of Technology (IIT) - Roorkee,India,N/A,N/A
+877,Sohag University,Egypt|nasir City,N/A,N/A
+877,Southern Methodist University,United States,N/A,N/A
+877,University of Indonesia,Indonesia|depok,N/A,N/A
+877,University of Patras,Greece|rio Achaia,N/A,N/A
+884,Bayero University,Nigeria|kano,N/A,N/A
+884,Birkbeck University London,United Kingdom,N/A,N/A
+884,Jiangsu University of Science & Technology,China,N/A,N/A
+884,Port Said University,Egypt|port Said Governorate,N/A,N/A
+884,Scuola Superiore Sant'Anna,Italy,N/A,N/A
+884,UCSI University,Malaysia|cheras,N/A,N/A
+884,Wuhan Institute of Technology,China,N/A,N/A
+891,Gorgan University of Agricultural Sciences & Natural Resources,Iran|gorgan,N/A,N/A
+891,Huzhou University,China,N/A,N/A
+891,National Taiwan University of Science and Technology,Taiwan,N/A,N/A
+891,Northeast Agricultural University - China,China,N/A,N/A
+891,Open University - UK,United Kingdom,N/A,N/A
+891,Ulster University,United Kingdom,N/A,N/A
+897,All India Institute of Medical Sciences (AIIMS) New Delhi,India,N/A,N/A
+897,Imam Mohammad Ibn Saud Islamic University (IMSIU),Saudi Arabia|riyadh,N/A,N/A
+897,University of Hertfordshire,United Kingdom,N/A,N/A
+897,University of Salento,Italy,N/A,N/A
+901,Fayoum University,Egypt|al Fayoum,N/A,N/A
+901,Free University of Bozen-Bolzano,Italy,N/A,N/A
+901,Guangzhou Medical University,China,N/A,N/A
+901,Jeonbuk National University,South Korea,N/A,N/A
+901,Michigan Technological University,United States,N/A,N/A
+901,Skolkovo Institute of Science & Technology,Russia|moscow,N/A,N/A
+901,University of Peshawar,Pakistan|peshawar,N/A,N/A
+908,Isfahan University of Technology,Iran|isfahan,N/A,N/A
+908,ITMO University,Russia|st. Petersburg,N/A,N/A
+908,Loyola University Chicago,United States,N/A,N/A
+911,Shanghai Maritime University,China,N/A,N/A
+911,University of Montana,United States,N/A,N/A
+913,Guizhou University,China,N/A,N/A
+913,Qassim University,Saudi Arabia|buraydah,N/A,N/A
+913,"Royal Holloway, University of London",United Kingdom,N/A,N/A
+913,State University of New York (SUNY) Upstate Medical Center,United States,N/A,N/A
+913,The American University in Cairo,Egypt|cairo,N/A,N/A
+913,University of Cape Coast,Ghana|cape Coast,N/A,N/A
+919,Otto von Guericke University,Germany,N/A,N/A
+919,Peter the Great St. Petersburg Polytechnic University,Russia|st. Petersburg,N/A,N/A
+919,Tribhuvan University,Nepal|kirtipur,N/A,N/A
+919,University of Malta,Malta|msida,N/A,N/A
+919,University of New Brunswick,Canada,N/A,N/A
+919,University of New England,Australia,N/A,N/A
+919,University of Petroleum & Energy Studies (UPES),India,N/A,N/A
+926,Adam Mickiewicz University,Poland|poznan,N/A,N/A
+926,Bahauddin Zakariya University,Pakistan|multan,N/A,N/A
+926,Royal College of Surgeons - Ireland,Ireland|dublin,N/A,N/A
+926,Shanxi University,China,N/A,N/A
+930,National Taiwan Normal University,Taiwan,N/A,N/A
+930,Oslo Metropolitan University (OsloMet),Norway,N/A,N/A
+930,University of Bucharest,Romania|bucharest,N/A,N/A
+933,Czech Technical University Prague,Czech Republic|prague,N/A,N/A
+933,"Universidad de la Republica, Uruguay",Uruguay|montevideo,N/A,N/A
+933,Universitat de Girona,Spain,N/A,N/A
+933,University of Nairobi,Kenya|nairobi,N/A,N/A
+937,Aswan University,Egypt|sahara City,N/A,N/A
+937,Dongguk University,South Korea,N/A,N/A
+937,Heriot-Watt University,United Kingdom,N/A,N/A
+937,Kent State University,United States,N/A,N/A
+937,Mazandaran University of Medical Sciences,Iran|sari,N/A,N/A
+937,Norwegian University of Life Sciences,Norway,N/A,N/A
+937,Rensselaer Polytechnic Institute,United States,N/A,N/A
+937,Shandong Normal University,China,N/A,N/A
+937,Taipei Medical University,Taiwan,N/A,N/A
+937,Universidad de Malaga,Spain,N/A,N/A
+937,University of Debrecen,Hungary|debrecen,N/A,N/A
+937,University of Greenwich,United Kingdom,N/A,N/A
+937,University of Mons,Belgium,N/A,N/A
+937,University of Thessaly,Greece|volos,N/A,N/A
+951,Carlos III University of Madrid,Spain,N/A,N/A
+951,"International Islamic University, Pakistan",Pakistan|islamabad,N/A,N/A
+951,New Mexico State University,United States,N/A,N/A
+951,Universite Savoie Mont Blanc,France,N/A,N/A
+951,University of Split,Croatia|split,N/A,N/A
+956,Bohai University,China,N/A,N/A
+956,University of Sfax,Tunisia|sfax,N/A,N/A
+956,Wroclaw Medical University,Taiwan,N/A,N/A
+959,Amity University Uttar Pradesh,India,N/A,N/A
+959,Harbin Medical University,China,N/A,N/A
+959,Tomsk Polytechnic University,Russia|tomsk,N/A,N/A
+959,Universite de Bretagne Occidentale,France,N/A,N/A
+959,University of Oviedo,Spain,N/A,N/A
+959,Vilnius University,Lithuania|vilnius,N/A,N/A
+959,Western Norway University of Applied Sciences,Norway,N/A,N/A
+966,Chongqing University of Posts & Telecommunications,China,N/A,N/A
+966,Transilvania University of Brasov,Romania|brasov,N/A,N/A
+966,University of Kragujevac,Serbia|kragujevac,N/A,N/A
+966,University of Texas Rio Grande Valley,United States,N/A,N/A
+970,Bangor University,United Kingdom,N/A,N/A
+970,Universidade Federal do Parana,Brazil,N/A,N/A
+972,Shanghai Normal University,China,N/A,N/A
+972,Vienna University of Economics & Business,Austria,N/A,N/A
+974,Hosei University,Japan,N/A,N/A
+974,Istanbul Bilgi University,Turkey|istanbul,N/A,N/A
+974,Mohammed VI Polytechnic University,N/A,N/A,N/A
+974,Okayama University,Japan,N/A,N/A
+974,University of the Free State,South Africa|bloemfontein,N/A,N/A
+979,Airlangga University,Indonesia|surabaya,N/A,N/A
+979,Braunschweig University of Technology,Germany,N/A,N/A
