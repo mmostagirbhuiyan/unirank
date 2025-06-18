@@ -19223,7 +19223,7 @@
   },
   {
     "name": "National & Kapodistrian University of Athens",
-    "country": "Greece|athens",
+    "country": "Greece",
     "aggregatedScore": 246.171875,
     "originalRankings": {
       "usnews": {
@@ -19232,7 +19232,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 980,
-    "countryRank": 1
+    "countryRank": 6
   },
   {
     "name": "Technische Universitat Dresden",
@@ -19265,7 +19265,7 @@
   },
   {
     "name": "Goethe University Frankfurt",
-    "country": "N/A",
+    "country": "",
     "aggregatedScore": 245.390625,
     "originalRankings": {
       "usnews": {
@@ -19304,7 +19304,7 @@
   },
   {
     "name": "Universidade de Lisboa",
-    "country": "Portugal|lisbon",
+    "country": "Portugal",
     "aggregatedScore": 243.046875,
     "originalRankings": {
       "usnews": {
@@ -19313,7 +19313,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 986,
-    "countryRank": 1
+    "countryRank": 8
   },
   {
     "name": "University of Newcastle",
@@ -19385,7 +19385,7 @@
   },
   {
     "name": "Universidade do Porto",
-    "country": "Portugal|porto",
+    "country": "Portugal",
     "aggregatedScore": 237.578125,
     "originalRankings": {
       "usnews": {
@@ -19394,7 +19394,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 992,
-    "countryRank": 1
+    "countryRank": 9
   },
   {
     "name": "Kent State University",
@@ -19511,7 +19511,7 @@
   },
   {
     "name": "Qatar University",
-    "country": "Qatar|doha",
+    "country": "Qatar",
     "aggregatedScore": 231.484375,
     "originalRankings": {
       "usnews": {
@@ -19520,7 +19520,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1001,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Universite Toulouse III - Paul Sabatier",
@@ -19595,7 +19595,7 @@
   },
   {
     "name": "Stellenbosch University",
-    "country": "South Africa|stellenbosch",
+    "country": "South Africa",
     "aggregatedScore": 229.609375,
     "originalRankings": {
       "usnews": {
@@ -19604,7 +19604,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1007,
-    "countryRank": 1
+    "countryRank": 10
   },
   {
     "name": "Wuhan University of Science & Technology",
@@ -19624,7 +19624,7 @@
   },
   {
     "name": "University of Lagos",
-    "country": "Nigeria|lagos",
+    "country": "Nigeria",
     "aggregatedScore": 228.984375,
     "originalRankings": {
       "usnews": {
@@ -19811,7 +19811,7 @@
   },
   {
     "name": "University of Ibadan",
-    "country": "Nigeria|ibadan",
+    "country": "Nigeria",
     "aggregatedScore": 223.671875,
     "originalRankings": {
       "usnews": {
@@ -19820,7 +19820,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1022,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Skolkovo Institute of Science & Technology",
@@ -19908,7 +19908,7 @@
   },
   {
     "name": "Universiti Teknologi Malaysia",
-    "country": "Malaysia|johor",
+    "country": "Malaysia",
     "aggregatedScore": 221.171875,
     "originalRankings": {
       "usnews": {
@@ -19917,7 +19917,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1029,
-    "countryRank": 1
+    "countryRank": 13
   },
   {
     "name": "Ulm University",
@@ -19989,7 +19989,7 @@
   },
   {
     "name": "Khalifa University of Science & Technology",
-    "country": "N/A",
+    "country": "",
     "aggregatedScore": 217.578125,
     "originalRankings": {
       "usnews": {
@@ -20002,7 +20002,7 @@
   },
   {
     "name": "Islamic Azad University",
-    "country": "Iran|tehran",
+    "country": "Iran",
     "aggregatedScore": 216.953125,
     "originalRankings": {
       "usnews": {
@@ -20011,7 +20011,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1036,
-    "countryRank": 1
+    "countryRank": 17
   },
   {
     "name": "University of St Andrews",
@@ -20056,7 +20056,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1039,
-    "countryRank": 6
+    "countryRank": 7
   },
   {
     "name": "Hannover Medical School",
@@ -20089,7 +20089,7 @@
   },
   {
     "name": "Universiti Sains Malaysia",
-    "country": "Malaysia|penang",
+    "country": "Malaysia",
     "aggregatedScore": 214.921875,
     "originalRankings": {
       "usnews": {
@@ -20098,7 +20098,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1042,
-    "countryRank": 1
+    "countryRank": 14
   },
   {
     "name": "Royal College of Surgeons",
@@ -20115,7 +20115,7 @@
   },
   {
     "name": "Assiut University",
-    "country": "Egypt|assiut",
+    "country": "Egypt",
     "aggregatedScore": 213.203125,
     "originalRankings": {
       "usnews": {
@@ -20124,7 +20124,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1044,
-    "countryRank": 1
+    "countryRank": 12
   },
   {
     "name": "Heinrich Heine University Dusseldorf",
@@ -20460,7 +20460,7 @@
   },
   {
     "name": "Universidad de Chile",
-    "country": "Chile|santiago",
+    "country": "Chile",
     "aggregatedScore": 206.015625,
     "originalRankings": {
       "usnews": {
@@ -20469,11 +20469,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1068,
-    "countryRank": 1
+    "countryRank": 3
   },
   {
     "name": "Hamad Bin Khalifa University-Qatar",
-    "country": "Qatar|doha",
+    "country": "Qatar",
     "aggregatedScore": 205.078125,
     "originalRankings": {
       "usnews": {
@@ -20482,7 +20482,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1069,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "Hohai University",
@@ -20512,7 +20512,7 @@
   },
   {
     "name": "Universidade de Coimbra",
-    "country": "Portugal|coimbra",
+    "country": "Portugal",
     "aggregatedScore": 203.359375,
     "originalRankings": {
       "usnews": {
@@ -20521,7 +20521,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1072,
-    "countryRank": 1
+    "countryRank": 10
   },
   {
     "name": "Anhui University of Finance & Economics",
@@ -20590,7 +20590,7 @@
   },
   {
     "name": "Victoria University Wellington",
-    "country": "New Zealand|wellington",
+    "country": "New Zealand",
     "aggregatedScore": 200.859375,
     "originalRankings": {
       "usnews": {
@@ -20599,7 +20599,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1078,
-    "countryRank": 1
+    "countryRank": 9
   },
   {
     "name": "Saarland University",
@@ -20723,7 +20723,7 @@
   },
   {
     "name": "Ollscoil na Gaillimhe-University of Galway",
-    "country": "Ireland|galway",
+    "country": "Ireland",
     "aggregatedScore": 197.421875,
     "originalRankings": {
       "usnews": {
@@ -20732,11 +20732,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1088,
-    "countryRank": 1
+    "countryRank": 9
   },
   {
     "name": "Umm Al Qura University",
-    "country": "Saudi Arabia|makkah",
+    "country": "Saudi Arabia",
     "aggregatedScore": 197.421875,
     "originalRankings": {
       "usnews": {
@@ -20745,7 +20745,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1089,
-    "countryRank": 1
+    "countryRank": 21
   },
   {
     "name": "National University of Colombia",
@@ -20817,7 +20817,7 @@
   },
   {
     "name": "Benha University",
-    "country": "Egypt|benha",
+    "country": "Egypt",
     "aggregatedScore": 193.984375,
     "originalRankings": {
       "usnews": {
@@ -20826,7 +20826,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1095,
-    "countryRank": 1
+    "countryRank": 13
   },
   {
     "name": "Bocconi University",
@@ -20924,7 +20924,7 @@
   },
   {
     "name": "Universidade Nova de Lisboa",
-    "country": "Portugal|lisbon",
+    "country": "Portugal",
     "aggregatedScore": 191.640625,
     "originalRankings": {
       "usnews": {
@@ -20933,7 +20933,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1103,
-    "countryRank": 2
+    "countryRank": 11
   },
   {
     "name": "Philipps University Marburg",
@@ -21024,7 +21024,7 @@
   },
   {
     "name": "Universiti Kebangsaan Malaysia",
-    "country": "Malaysia|bangi Selangor",
+    "country": "Malaysia",
     "aggregatedScore": 190.546875,
     "originalRankings": {
       "usnews": {
@@ -21033,7 +21033,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1110,
-    "countryRank": 1
+    "countryRank": 15
   },
   {
     "name": "University of Vaasa",
@@ -21115,7 +21115,7 @@
   },
   {
     "name": "Universiti Putra Malaysia",
-    "country": "Malaysia|serdang",
+    "country": "Malaysia",
     "aggregatedScore": 189.609375,
     "originalRankings": {
       "usnews": {
@@ -21124,11 +21124,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1117,
-    "countryRank": 1
+    "countryRank": 16
   },
   {
     "name": "National University of Sciences & Technology - Pakistan",
-    "country": "Pakistan|islamabad",
+    "country": "Pakistan",
     "aggregatedScore": 188.671875,
     "originalRankings": {
       "usnews": {
@@ -21137,7 +21137,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1118,
-    "countryRank": 1
+    "countryRank": 14
   },
   {
     "name": "Institut National Polytechnique de Grenoble",
@@ -21154,7 +21154,7 @@
   },
   {
     "name": "North West University - South Africa",
-    "country": "South Africa|potchefstroom",
+    "country": "South Africa",
     "aggregatedScore": 188.046875,
     "originalRankings": {
       "usnews": {
@@ -21163,7 +21163,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1120,
-    "countryRank": 1
+    "countryRank": 11
   },
   {
     "name": "Technische Universitat Wien",
@@ -21196,7 +21196,7 @@
   },
   {
     "name": "Government College University Faisalabad",
-    "country": "Pakistan|faisalabad",
+    "country": "Pakistan",
     "aggregatedScore": 187.109375,
     "originalRankings": {
       "usnews": {
@@ -21205,11 +21205,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1123,
-    "countryRank": 1
+    "countryRank": 15
   },
   {
     "name": "HSE University (National Research University Higher School of Economics)",
-    "country": "Russia|moscow",
+    "country": "Russia",
     "aggregatedScore": 184.921875,
     "originalRankings": {
       "usnews": {
@@ -21218,7 +21218,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1124,
-    "countryRank": 1
+    "countryRank": 19
   },
   {
     "name": "Liverpool School of Tropical Medicine",
@@ -21235,7 +21235,7 @@
   },
   {
     "name": "Al Jouf University",
-    "country": "Saudi Arabia|sakaka",
+    "country": "Saudi Arabia",
     "aggregatedScore": 184.140625,
     "originalRankings": {
       "usnews": {
@@ -21244,7 +21244,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1126,
-    "countryRank": 1
+    "countryRank": 22
   },
   {
     "name": "Capital Medical University",
@@ -21300,7 +21300,7 @@
   },
   {
     "name": "Mekelle University",
-    "country": "Ethiopia|mekelle",
+    "country": "Ethiopia",
     "aggregatedScore": 181.484375,
     "originalRankings": {
       "usnews": {
@@ -21309,7 +21309,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1131,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Universita di Modena e Reggio Emilia",
@@ -21365,7 +21365,7 @@
   },
   {
     "name": "University of Rajshahi",
-    "country": "Bangladesh|rajshahi",
+    "country": "Bangladesh",
     "aggregatedScore": 180.234375,
     "originalRankings": {
       "usnews": {
@@ -21374,11 +21374,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1136,
-    "countryRank": 1
+    "countryRank": 3
   },
   {
     "name": "Menofia University",
-    "country": "Egypt|shebin El Koum",
+    "country": "Egypt",
     "aggregatedScore": 179.765625,
     "originalRankings": {
       "usnews": {
@@ -21387,11 +21387,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1137,
-    "countryRank": 1
+    "countryRank": 14
   },
   {
     "name": "Minia University",
-    "country": "Egypt|minya",
+    "country": "Egypt",
     "aggregatedScore": 179.765625,
     "originalRankings": {
       "usnews": {
@@ -21400,11 +21400,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1138,
-    "countryRank": 1
+    "countryRank": 15
   },
   {
     "name": "Ahmadu Bello University",
-    "country": "Nigeria|zaria",
+    "country": "Nigeria",
     "aggregatedScore": 179.140625,
     "originalRankings": {
       "usnews": {
@@ -21413,7 +21413,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1139,
-    "countryRank": 1
+    "countryRank": 3
   },
   {
     "name": "Chengdu University",
@@ -21456,7 +21456,7 @@
   },
   {
     "name": "Abdul Wali Khan University",
-    "country": "Pakistan|mardan",
+    "country": "Pakistan",
     "aggregatedScore": 177.890625,
     "originalRankings": {
       "usnews": {
@@ -21465,7 +21465,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1143,
-    "countryRank": 1
+    "countryRank": 16
   },
   {
     "name": "AgroParisTech",
@@ -21673,7 +21673,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1159,
-    "countryRank": 17
+    "countryRank": 18
   },
   {
     "name": "University of Nicosia",
@@ -21725,7 +21725,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1163,
-    "countryRank": 12
+    "countryRank": 16
   },
   {
     "name": "ENSTA Bretagne",
@@ -21755,7 +21755,7 @@
   },
   {
     "name": "Beni-Suef University",
-    "country": "Egypt|beni Suef",
+    "country": "Egypt",
     "aggregatedScore": 174.296875,
     "originalRankings": {
       "usnews": {
@@ -21764,7 +21764,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1166,
-    "countryRank": 1
+    "countryRank": 17
   },
   {
     "name": "Universidad de Cantabria",
@@ -21865,7 +21865,7 @@
   },
   {
     "name": "Universidad Peruana Cayetano Heredia",
-    "country": "Peru|lima",
+    "country": "Peru",
     "aggregatedScore": 168.359375,
     "originalRankings": {
       "usnews": {
@@ -21891,7 +21891,7 @@
   },
   {
     "name": "University of the Andes",
-    "country": "Colombia|bogota",
+    "country": "Colombia",
     "aggregatedScore": 167.109375,
     "originalRankings": {
       "usnews": {
@@ -21900,11 +21900,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1176,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Taibah University",
-    "country": "Saudi Arabia|medina",
+    "country": "Saudi Arabia",
     "aggregatedScore": 166.328125,
     "originalRankings": {
       "usnews": {
@@ -21913,11 +21913,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1177,
-    "countryRank": 1
+    "countryRank": 23
   },
   {
     "name": "Universidad Nacional de Colombia",
-    "country": "Colombia|bogota",
+    "country": "Colombia",
     "aggregatedScore": 166.328125,
     "originalRankings": {
       "usnews": {
@@ -21926,7 +21926,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1178,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "Northwest University Xi'an",
@@ -21956,7 +21956,7 @@
   },
   {
     "name": "University of Jordan",
-    "country": "Jordan|amman",
+    "country": "Jordan",
     "aggregatedScore": 165.703125,
     "originalRankings": {
       "usnews": {
@@ -21965,11 +21965,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1181,
-    "countryRank": 1
+    "countryRank": 5
   },
   {
     "name": "Palacky University Olomouc",
-    "country": "Czech Republic|olomouc",
+    "country": "Czech Republic",
     "aggregatedScore": 164.765625,
     "originalRankings": {
       "usnews": {
@@ -21978,7 +21978,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1182,
-    "countryRank": 1
+    "countryRank": 5
   },
   {
     "name": "European University Institute",
@@ -22008,7 +22008,7 @@
   },
   {
     "name": "Haramaya University",
-    "country": "Ethiopia|harar",
+    "country": "Ethiopia",
     "aggregatedScore": 163.203125,
     "originalRankings": {
       "usnews": {
@@ -22017,7 +22017,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1185,
-    "countryRank": 1
+    "countryRank": 3
   },
   {
     "name": "Oklahoma State University - Stillwater",
@@ -22060,7 +22060,7 @@
   },
   {
     "name": "University Djillali Liabes Sidi Bel Abbes",
-    "country": "Algeria|sidi Bel Abbes",
+    "country": "Algeria",
     "aggregatedScore": 161.171875,
     "originalRankings": {
       "usnews": {
@@ -22073,7 +22073,7 @@
   },
   {
     "name": "University of Punjab",
-    "country": "Pakistan|lahore",
+    "country": "Pakistan",
     "aggregatedScore": 161.171875,
     "originalRankings": {
       "usnews": {
@@ -22082,7 +22082,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1190,
-    "countryRank": 1
+    "countryRank": 17
   },
   {
     "name": "Cyprus International University",
@@ -22147,7 +22147,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1195,
-    "countryRank": 7
+    "countryRank": 8
   },
   {
     "name": "Babol University of Medical Sciences",
@@ -22160,7 +22160,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1196,
-    "countryRank": 18
+    "countryRank": 19
   },
   {
     "name": "Kurdistan University of Medical Sciences",
@@ -22173,7 +22173,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1197,
-    "countryRank": 19
+    "countryRank": 20
   },
   {
     "name": "Mazandaran University Medical Sciences",
@@ -22186,7 +22186,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1198,
-    "countryRank": 20
+    "countryRank": 21
   },
   {
     "name": "Qazvin University of Medical Sciences",
@@ -22199,7 +22199,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1199,
-    "countryRank": 21
+    "countryRank": 22
   },
   {
     "name": "Urmia University of Medical Sciences",
@@ -22212,7 +22212,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1200,
-    "countryRank": 22
+    "countryRank": 23
   },
   {
     "name": "University of Aquila",
@@ -22264,7 +22264,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1204,
-    "countryRank": 14
+    "countryRank": 18
   },
   {
     "name": "University of Beira Interior",
@@ -22277,7 +22277,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1205,
-    "countryRank": 8
+    "countryRank": 12
   },
   {
     "name": "St. Petersburg State Mining Institute (Technical University)",
@@ -22290,7 +22290,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1206,
-    "countryRank": 19
+    "countryRank": 20
   },
   {
     "name": "Jönköping University College",
@@ -22485,7 +22485,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1221,
-    "countryRank": 13
+    "countryRank": 17
   },
   {
     "name": "Óbuda University",
@@ -22511,7 +22511,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1223,
-    "countryRank": 23
+    "countryRank": 24
   },
   {
     "name": "Baqiyatallah University of Medical Sciences",
@@ -22524,7 +22524,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1224,
-    "countryRank": 24
+    "countryRank": 25
   },
   {
     "name": "Golestan University",
@@ -22537,7 +22537,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1225,
-    "countryRank": 25
+    "countryRank": 26
   },
   {
     "name": "Innopolis University",
@@ -22550,7 +22550,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1226,
-    "countryRank": 20
+    "countryRank": 21
   },
   {
     "name": "Sukkur IBA University",
@@ -22563,7 +22563,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1227,
-    "countryRank": 15
+    "countryRank": 19
   },
   {
     "name": "Capital University of Science and Technology",
@@ -22576,7 +22576,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1228,
-    "countryRank": 16
+    "countryRank": 20
   },
   {
     "name": "Chitkara University",
@@ -22628,7 +22628,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1232,
-    "countryRank": 21
+    "countryRank": 24
   },
   {
     "name": "University of Malakand",
@@ -22641,7 +22641,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1233,
-    "countryRank": 17
+    "countryRank": 21
   },
   {
     "name": "Malaviya National Institute of Technology",
@@ -22684,7 +22684,7 @@
   },
   {
     "name": "Universidad de Antioquia",
-    "country": "Colombia|antioquia",
+    "country": "Colombia",
     "aggregatedScore": 157.890625,
     "originalRankings": {
       "usnews": {
@@ -22693,11 +22693,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1237,
-    "countryRank": 1
+    "countryRank": 4
   },
   {
     "name": "Aga Khan University",
-    "country": "Pakistan|karachi",
+    "country": "Pakistan",
     "aggregatedScore": 157.265625,
     "originalRankings": {
       "usnews": {
@@ -22706,7 +22706,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1238,
-    "countryRank": 1
+    "countryRank": 22
   },
   {
     "name": "London Business School",
@@ -22788,7 +22788,7 @@
   },
   {
     "name": "Comenius University Bratislava",
-    "country": "Slovakia|bratislava",
+    "country": "Slovakia",
     "aggregatedScore": 153.984375,
     "originalRankings": {
       "usnews": {
@@ -22826,7 +22826,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1247,
-    "countryRank": 5
+    "countryRank": 6
   },
   {
     "name": "Toulouse 1 University Capitole",
@@ -22859,7 +22859,7 @@
   },
   {
     "name": "Nguyen Tat Thanh University (NTTU)",
-    "country": "N/A",
+    "country": "",
     "aggregatedScore": 153.359375,
     "originalRankings": {
       "usnews": {
@@ -22885,7 +22885,7 @@
   },
   {
     "name": "Universidad de Concepcion",
-    "country": "Chile|concepcion",
+    "country": "Chile",
     "aggregatedScore": 151.484375,
     "originalRankings": {
       "usnews": {
@@ -22894,11 +22894,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1252,
-    "countryRank": 1
+    "countryRank": 4
   },
   {
     "name": "Universiti Teknologi Petronas",
-    "country": "Malaysia|darul Ridzuan",
+    "country": "Malaysia",
     "aggregatedScore": 151.484375,
     "originalRankings": {
       "usnews": {
@@ -22907,7 +22907,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1253,
-    "countryRank": 1
+    "countryRank": 18
   },
   {
     "name": "University of Agder",
@@ -22976,7 +22976,7 @@
   },
   {
     "name": "Shiraz University of Medical Sciences",
-    "country": "Iran|shiraz",
+    "country": "Iran",
     "aggregatedScore": 148.515625,
     "originalRankings": {
       "usnews": {
@@ -22985,7 +22985,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1259,
-    "countryRank": 1
+    "countryRank": 27
   },
   {
     "name": "Universitat de les Illes Balears",
@@ -23002,7 +23002,7 @@
   },
   {
     "name": "AGH University of Krakow",
-    "country": "Poland|krakow",
+    "country": "Poland",
     "aggregatedScore": 147.578125,
     "originalRankings": {
       "usnews": {
@@ -23011,7 +23011,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1261,
-    "countryRank": 1
+    "countryRank": 4
   },
   {
     "name": "California State University Los Angeles",
@@ -23041,7 +23041,7 @@
   },
   {
     "name": "Universiti Malaysia Terengganu",
-    "country": "Malaysia|terengganu",
+    "country": "Malaysia",
     "aggregatedScore": 147.578125,
     "originalRankings": {
       "usnews": {
@@ -23050,11 +23050,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1264,
-    "countryRank": 1
+    "countryRank": 19
   },
   {
     "name": "Kwame Nkrumah University Science & Technology",
-    "country": "Ghana|kumasi",
+    "country": "Ghana",
     "aggregatedScore": 146.015625,
     "originalRankings": {
       "usnews": {
@@ -23063,7 +23063,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1265,
-    "countryRank": 1
+    "countryRank": 3
   },
   {
     "name": "University Hohenheim",
@@ -23080,7 +23080,7 @@
   },
   {
     "name": "University of Ioannina",
-    "country": "Greece|ioannina",
+    "country": "Greece",
     "aggregatedScore": 146.015625,
     "originalRankings": {
       "usnews": {
@@ -23089,7 +23089,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1267,
-    "countryRank": 1
+    "countryRank": 9
   },
   {
     "name": "Universidade de Brasilia",
@@ -23132,7 +23132,7 @@
   },
   {
     "name": "Sohag University",
-    "country": "Egypt|nasir City",
+    "country": "Egypt",
     "aggregatedScore": 142.890625,
     "originalRankings": {
       "usnews": {
@@ -23141,7 +23141,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1271,
-    "countryRank": 1
+    "countryRank": 18
   },
   {
     "name": "Brno University of Technology",
@@ -23157,11 +23157,11 @@
     },
     "appearances": 2,
     "aggregatedRank": 1272,
-    "countryRank": 6
+    "countryRank": 7
   },
   {
     "name": "Bayero University",
-    "country": "Nigeria|kano",
+    "country": "Nigeria",
     "aggregatedScore": 141.796875,
     "originalRankings": {
       "usnews": {
@@ -23170,7 +23170,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1273,
-    "countryRank": 1
+    "countryRank": 4
   },
   {
     "name": "Birkbeck University London",
@@ -23200,7 +23200,7 @@
   },
   {
     "name": "Port Said University",
-    "country": "Egypt|port Said Governorate",
+    "country": "Egypt",
     "aggregatedScore": 141.796875,
     "originalRankings": {
       "usnews": {
@@ -23209,7 +23209,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1276,
-    "countryRank": 1
+    "countryRank": 19
   },
   {
     "name": "Scuola Superiore Sant'Anna",
@@ -23265,7 +23265,7 @@
   },
   {
     "name": "Fayoum University",
-    "country": "Egypt|al Fayoum",
+    "country": "Egypt",
     "aggregatedScore": 139.140625,
     "originalRankings": {
       "usnews": {
@@ -23274,7 +23274,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1281,
-    "countryRank": 1
+    "countryRank": 20
   },
   {
     "name": "Jeonbuk National University",
@@ -23303,7 +23303,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1283,
-    "countryRank": 3
+    "countryRank": 5
   },
   {
     "name": "Loyola University Chicago",
@@ -23372,7 +23372,7 @@
   },
   {
     "name": "Tribhuvan University",
-    "country": "Nepal|kirtipur",
+    "country": "Nepal",
     "aggregatedScore": 136.328125,
     "originalRankings": {
       "usnews": {
@@ -23398,7 +23398,7 @@
   },
   {
     "name": "Adam Mickiewicz University",
-    "country": "Poland|poznan",
+    "country": "Poland",
     "aggregatedScore": 135.234375,
     "originalRankings": {
       "usnews": {
@@ -23407,11 +23407,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1291,
-    "countryRank": 1
+    "countryRank": 5
   },
   {
     "name": "Bahauddin Zakariya University",
-    "country": "Pakistan|multan",
+    "country": "Pakistan",
     "aggregatedScore": 135.234375,
     "originalRankings": {
       "usnews": {
@@ -23420,11 +23420,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1292,
-    "countryRank": 1
+    "countryRank": 23
   },
   {
     "name": "Royal College of Surgeons - Ireland",
-    "country": "Ireland|dublin",
+    "country": "Ireland",
     "aggregatedScore": 135.234375,
     "originalRankings": {
       "usnews": {
@@ -23433,7 +23433,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1293,
-    "countryRank": 1
+    "countryRank": 10
   },
   {
     "name": "Tokyo University of Science",
@@ -23466,7 +23466,7 @@
   },
   {
     "name": "Universidad de la Republica, Uruguay",
-    "country": "Uruguay|montevideo",
+    "country": "Uruguay",
     "aggregatedScore": 134.140625,
     "originalRankings": {
       "usnews": {
@@ -23492,7 +23492,7 @@
   },
   {
     "name": "Aswan University",
-    "country": "Egypt|sahara City",
+    "country": "Egypt",
     "aggregatedScore": 133.515625,
     "originalRankings": {
       "usnews": {
@@ -23501,11 +23501,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1298,
-    "countryRank": 1
+    "countryRank": 21
   },
   {
     "name": "Mazandaran University of Medical Sciences",
-    "country": "Iran|sari",
+    "country": "Iran",
     "aggregatedScore": 133.515625,
     "originalRankings": {
       "usnews": {
@@ -23514,7 +23514,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1299,
-    "countryRank": 1
+    "countryRank": 28
   },
   {
     "name": "Universidad de Malaga",
@@ -23557,7 +23557,7 @@
   },
   {
     "name": "International Islamic University, Pakistan",
-    "country": "Pakistan|islamabad",
+    "country": "Pakistan",
     "aggregatedScore": 131.328125,
     "originalRankings": {
       "usnews": {
@@ -23566,7 +23566,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1303,
-    "countryRank": 2
+    "countryRank": 24
   },
   {
     "name": "Universite Savoie Mont Blanc",
@@ -23583,7 +23583,7 @@
   },
   {
     "name": "University of Split",
-    "country": "Croatia|split",
+    "country": "Croatia",
     "aggregatedScore": 131.328125,
     "originalRankings": {
       "usnews": {
@@ -23592,7 +23592,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1305,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Bohai University",
@@ -23609,7 +23609,7 @@
   },
   {
     "name": "University of Sfax",
-    "country": "Tunisia|sfax",
+    "country": "Tunisia",
     "aggregatedScore": 130.546875,
     "originalRankings": {
       "usnews": {
@@ -23618,7 +23618,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1307,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Amity University Uttar Pradesh",
@@ -23648,7 +23648,7 @@
   },
   {
     "name": "Transilvania University of Brasov",
-    "country": "Romania|brasov",
+    "country": "Romania",
     "aggregatedScore": 128.984375,
     "originalRankings": {
       "usnews": {
@@ -23657,11 +23657,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1310,
-    "countryRank": 1
+    "countryRank": 4
   },
   {
     "name": "University of Kragujevac",
-    "country": "Serbia|kragujevac",
+    "country": "Serbia",
     "aggregatedScore": 128.984375,
     "originalRankings": {
       "usnews": {
@@ -23670,7 +23670,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1311,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Universidade Federal do Parana",
@@ -23713,7 +23713,7 @@
   },
   {
     "name": "Istanbul Bilgi University",
-    "country": "Turkey|istanbul",
+    "country": "Turkey",
     "aggregatedScore": 127.734375,
     "originalRankings": {
       "usnews": {
@@ -23722,11 +23722,11 @@
     },
     "appearances": 1,
     "aggregatedRank": 1315,
-    "countryRank": 1
+    "countryRank": 12
   },
   {
     "name": "University of the Free State",
-    "country": "South Africa|bloemfontein",
+    "country": "South Africa",
     "aggregatedScore": 127.734375,
     "originalRankings": {
       "usnews": {
@@ -23735,7 +23735,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1316,
-    "countryRank": 1
+    "countryRank": 12
   },
   {
     "name": "Kermanshah University of Medical Sciences",
@@ -23748,7 +23748,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1317,
-    "countryRank": 26
+    "countryRank": 29
   },
   {
     "name": "Lorestan University of Medical Sciences",
@@ -23761,7 +23761,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1318,
-    "countryRank": 27
+    "countryRank": 30
   },
   {
     "name": "Pmas Arid Agricultural University of Rawalpindi",
@@ -23774,7 +23774,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1319,
-    "countryRank": 18
+    "countryRank": 25
   },
   {
     "name": "University of Leoben",
@@ -23800,7 +23800,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1321,
-    "countryRank": 3
+    "countryRank": 4
   },
   {
     "name": "Jahangirnagar University",
@@ -23813,7 +23813,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1322,
-    "countryRank": 4
+    "countryRank": 5
   },
   {
     "name": "University of Ontario Institute of Technology",
@@ -23969,7 +23969,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1334,
-    "countryRank": 28
+    "countryRank": 31
   },
   {
     "name": "Birjand University of Medical Sciences",
@@ -23982,7 +23982,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1335,
-    "countryRank": 29
+    "countryRank": 32
   },
   {
     "name": "Guilan University of Medical Sciences",
@@ -23995,7 +23995,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1336,
-    "countryRank": 30
+    "countryRank": 33
   },
   {
     "name": "Isfahan University of Medical Sciences",
@@ -24008,7 +24008,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1337,
-    "countryRank": 31
+    "countryRank": 34
   },
   {
     "name": "K.N.Toosi University of Technology",
@@ -24021,7 +24021,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1338,
-    "countryRank": 32
+    "countryRank": 35
   },
   {
     "name": "Kashan University",
@@ -24034,7 +24034,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1339,
-    "countryRank": 33
+    "countryRank": 36
   },
   {
     "name": "Shiraz University of Medical Science",
@@ -24047,7 +24047,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1340,
-    "countryRank": 34
+    "countryRank": 37
   },
   {
     "name": "Urmia University",
@@ -24060,7 +24060,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1341,
-    "countryRank": 35
+    "countryRank": 38
   },
   {
     "name": "Zahedan University of Medical Sciences",
@@ -24073,7 +24073,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1342,
-    "countryRank": 36
+    "countryRank": 39
   },
   {
     "name": "Reykjavík University",
@@ -24138,7 +24138,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1347,
-    "countryRank": 5
+    "countryRank": 6
   },
   {
     "name": "Tokyo Medical University",
@@ -24190,7 +24190,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1351,
-    "countryRank": 1
+    "countryRank": 5
   },
   {
     "name": "University of Central Punjab",
@@ -24203,7 +24203,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1352,
-    "countryRank": 19
+    "countryRank": 26
   },
   {
     "name": "University of Engineering and Technology Peshawar",
@@ -24216,7 +24216,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1353,
-    "countryRank": 20
+    "countryRank": 27
   },
   {
     "name": "University of Gujrat",
@@ -24229,7 +24229,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1354,
-    "countryRank": 21
+    "countryRank": 28
   },
   {
     "name": "University of Veterinary and Animal Sciences",
@@ -24242,7 +24242,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1355,
-    "countryRank": 22
+    "countryRank": 29
   },
   {
     "name": "Medical University of Lodz",
@@ -24255,7 +24255,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1356,
-    "countryRank": 4
+    "countryRank": 6
   },
   {
     "name": "King Saud bin Abdulaziz University for Health Sciences",
@@ -24268,7 +24268,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1357,
-    "countryRank": 22
+    "countryRank": 25
   },
   {
     "name": "Bahcesehir University",
@@ -24281,7 +24281,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1358,
-    "countryRank": 12
+    "countryRank": 13
   },
   {
     "name": "Kadir Has University",
@@ -24294,7 +24294,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1359,
-    "countryRank": 13
+    "countryRank": 14
   },
   {
     "name": "Yuan Ze University",
@@ -24554,7 +24554,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1379,
-    "countryRank": 37
+    "countryRank": 40
   },
   {
     "name": "Birmingham City University",
@@ -24580,7 +24580,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1381,
-    "countryRank": 4
+    "countryRank": 5
   },
   {
     "name": "International Islamic University Islamabad",
@@ -24593,7 +24593,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1382,
-    "countryRank": 23
+    "countryRank": 30
   },
   {
     "name": "JSS Academy of Higher Education and Research",
@@ -24645,7 +24645,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1386,
-    "countryRank": 14
+    "countryRank": 15
   },
   {
     "name": "Universitat Internacional de Catalunya",
@@ -24671,7 +24671,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1388,
-    "countryRank": 5
+    "countryRank": 6
   },
   {
     "name": "European University Cyprus",
@@ -24697,7 +24697,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1390,
-    "countryRank": 6
+    "countryRank": 7
   },
   {
     "name": "Khwaja Fareed University of Engineering and Information Technology",
@@ -24710,7 +24710,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1391,
-    "countryRank": 24
+    "countryRank": 31
   },
   {
     "name": "University of Nova Gorica",
@@ -24788,7 +24788,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1397,
-    "countryRank": 23
+    "countryRank": 26
   },
   {
     "name": "University of Namur",
@@ -24827,7 +24827,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1400,
-    "countryRank": 38
+    "countryRank": 41
   },
   {
     "name": "Shri Mata Vaishno Devi University",
@@ -24940,7 +24940,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1408,
-    "countryRank": 2
+    "countryRank": 5
   },
   {
     "name": "Hamad Bin Khalifa University",
@@ -24953,7 +24953,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1409,
-    "countryRank": 2
+    "countryRank": 4
   },
   {
     "name": "Warsaw University of Technology",
@@ -24969,7 +24969,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1410,
-    "countryRank": 5
+    "countryRank": 7
   },
   {
     "name": "University of Brasília",
@@ -25133,7 +25133,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1421,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Comenius University in Bratislava",
@@ -25149,7 +25149,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1422,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Pontificia Universidad Javeriana",
@@ -25162,7 +25162,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1423,
-    "countryRank": 3
+    "countryRank": 6
   },
   {
     "name": "Technical University of Bergakademie Freiberg",
@@ -25233,7 +25233,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1428,
-    "countryRank": 6
+    "countryRank": 8
   },
   {
     "name": "National Taipei University of Technology",
@@ -25285,7 +25285,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1432,
-    "countryRank": 4
+    "countryRank": 6
   },
   {
     "name": "University of Calcutta",
@@ -25333,7 +25333,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1435,
-    "countryRank": 7
+    "countryRank": 9
   },
   {
     "name": "Pontifical Catholic University Argentina",
@@ -25398,7 +25398,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1440,
-    "countryRank": 14
+    "countryRank": 20
   },
   {
     "name": "Canadian University Dubai",
@@ -25547,7 +25547,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1451,
-    "countryRank": 21
+    "countryRank": 22
   },
   {
     "name": "University of Chemistry and Technology - Prague",
@@ -25560,7 +25560,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1452,
-    "countryRank": 7
+    "countryRank": 8
   },
   {
     "name": "University Adolfo Ibáñez",
@@ -25573,7 +25573,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1453,
-    "countryRank": 5
+    "countryRank": 7
   },
   {
     "name": "Sepuluh Nopember Institute of Technology",
@@ -25599,7 +25599,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1455,
-    "countryRank": 15
+    "countryRank": 21
   },
   {
     "name": "University of Valladolid",
@@ -25647,7 +25647,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1458,
-    "countryRank": 8
+    "countryRank": 10
   },
   {
     "name": "Padjadjaran University",
@@ -25699,7 +25699,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1462,
-    "countryRank": 16
+    "countryRank": 22
   },
   {
     "name": "Universidad de Palermo",
@@ -25751,7 +25751,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1466,
-    "countryRank": 22
+    "countryRank": 23
   },
   {
     "name": "University of Texas MD Anderson Cancer Center",
@@ -25822,7 +25822,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1471,
-    "countryRank": 9
+    "countryRank": 11
   },
   {
     "name": "Hankuk University of Foreign Studies",
@@ -25874,7 +25874,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1475,
-    "countryRank": 17
+    "countryRank": 23
   },
   {
     "name": "University of the Republic",
@@ -25887,7 +25887,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1476,
-    "countryRank": 1
+    "countryRank": 2
   },
   {
     "name": "Kazakh National Pedagogical University",
@@ -25978,7 +25978,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1483,
-    "countryRank": 25
+    "countryRank": 32
   },
   {
     "name": "Kumamoto University",
@@ -26075,7 +26075,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1490,
-    "countryRank": 23
+    "countryRank": 24
   },
   {
     "name": "Saint Joseph University of Beirut",
@@ -26140,7 +26140,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1495,
-    "countryRank": 24
+    "countryRank": 27
   },
   {
     "name": "Vytautas Magnus University",
@@ -26166,7 +26166,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1497,
-    "countryRank": 24
+    "countryRank": 25
   },
   {
     "name": "University of Montevideo",
@@ -26179,7 +26179,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1498,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "Catholic University Andres Bello",
@@ -26257,7 +26257,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1504,
-    "countryRank": 7
+    "countryRank": 8
   },
   {
     "name": "University of Rosario",
@@ -26270,7 +26270,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1505,
-    "countryRank": 4
+    "countryRank": 7
   },
   {
     "name": "University of Pecs",
@@ -26387,7 +26387,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1514,
-    "countryRank": 5
+    "countryRank": 8
   },
   {
     "name": "Tbilisi State University",
@@ -26413,7 +26413,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1516,
-    "countryRank": 6
+    "countryRank": 8
   },
   {
     "name": "University San Francisco de Quito",
@@ -26478,7 +26478,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1521,
-    "countryRank": 18
+    "countryRank": 24
   },
   {
     "name": "National Technical University of Ukraine",
@@ -26556,7 +26556,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1527,
-    "countryRank": 25
+    "countryRank": 26
   },
   {
     "name": "Khoja Akhmet Yassawi International Kazakh-Turkish University",
@@ -26608,7 +26608,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1531,
-    "countryRank": 8
+    "countryRank": 9
   },
   {
     "name": "Kyrgyz Russian Slavic University",
@@ -26686,7 +26686,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1537,
-    "countryRank": 10
+    "countryRank": 12
   },
   {
     "name": "University of Wroclaw",
@@ -26699,7 +26699,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1538,
-    "countryRank": 11
+    "countryRank": 13
   },
   {
     "name": "Pavol Jozef Safarik University in Kosice",
@@ -26712,7 +26712,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1539,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "University ORT Uruguay",
@@ -26725,7 +26725,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1540,
-    "countryRank": 3
+    "countryRank": 4
   },
   {
     "name": "Clarkson University",
@@ -26777,7 +26777,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1544,
-    "countryRank": 9
+    "countryRank": 11
   },
   {
     "name": "Poznan University of Life Sciences",
@@ -26790,7 +26790,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1545,
-    "countryRank": 12
+    "countryRank": 14
   },
   {
     "name": "Indiana University-Purdue University Indianapolis",
@@ -26855,7 +26855,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1550,
-    "countryRank": 6
+    "countryRank": 9
   },
   {
     "name": "University Externado de Colombia",
@@ -26868,7 +26868,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1551,
-    "countryRank": 7
+    "countryRank": 10
   },
   {
     "name": "University Marta Abreu of Las Villas",
@@ -26920,7 +26920,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1555,
-    "countryRank": 6
+    "countryRank": 7
   },
   {
     "name": "Princess Sumaya University for Technology",
@@ -26933,7 +26933,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1556,
-    "countryRank": 7
+    "countryRank": 8
   },
   {
     "name": "Ritsumeikan Asia Pacific University",
@@ -26985,7 +26985,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1560,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "University of Lodz",
@@ -26998,7 +26998,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1561,
-    "countryRank": 13
+    "countryRank": 15
   },
   {
     "name": "Saratov State University",
@@ -27011,7 +27011,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1562,
-    "countryRank": 26
+    "countryRank": 27
   },
   {
     "name": "University of Maribor",
@@ -27037,7 +27037,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1564,
-    "countryRank": 15
+    "countryRank": 16
   },
   {
     "name": "University of East London",
@@ -27063,7 +27063,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1566,
-    "countryRank": 4
+    "countryRank": 5
   },
   {
     "name": "Wroclaw University of Science and Technology",
@@ -27076,7 +27076,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1567,
-    "countryRank": 14
+    "countryRank": 16
   },
   {
     "name": "Vietnam National University Hochiminh City",
@@ -27102,7 +27102,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1569,
-    "countryRank": 8
+    "countryRank": 11
   },
   {
     "name": "D. Serikbayev East Kazakhstan State Technical University",
@@ -27128,7 +27128,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1571,
-    "countryRank": 27
+    "countryRank": 28
   },
   {
     "name": "Buenos Aires Institute of Technology",
@@ -27219,7 +27219,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1578,
-    "countryRank": 7
+    "countryRank": 9
   },
   {
     "name": "University of the Andes - Chile",
@@ -27232,7 +27232,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1579,
-    "countryRank": 8
+    "countryRank": 10
   },
   {
     "name": "University of La Sabana",
@@ -27245,7 +27245,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1580,
-    "countryRank": 9
+    "countryRank": 12
   },
   {
     "name": "University of South Bohemia",
@@ -27258,7 +27258,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1581,
-    "countryRank": 9
+    "countryRank": 10
   },
   {
     "name": "Pontifical Catholic University of Ecuador",
@@ -27310,7 +27310,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1585,
-    "countryRank": 8
+    "countryRank": 10
   },
   {
     "name": "Bina Nusantara University",
@@ -27336,7 +27336,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1587,
-    "countryRank": 8
+    "countryRank": 9
   },
   {
     "name": "Niigata University",
@@ -27427,7 +27427,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1594,
-    "countryRank": 10
+    "countryRank": 13
   },
   {
     "name": "Southern Federal University",
@@ -27440,7 +27440,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1595,
-    "countryRank": 28
+    "countryRank": 29
   },
   {
     "name": "Riga Stradins University",
@@ -27973,7 +27973,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1636,
-    "countryRank": 16
+    "countryRank": 17
   },
   {
     "name": "Federal University of Santa Maria",
@@ -28532,7 +28532,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1679,
-    "countryRank": 17
+    "countryRank": 18
   },
   {
     "name": "SUNY Downstate Health Sciences University",
@@ -28636,7 +28636,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1687,
-    "countryRank": 9
+    "countryRank": 11
   },
   {
     "name": "Dalian Medical University",
@@ -28831,7 +28831,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1702,
-    "countryRank": 18
+    "countryRank": 19
   },
   {
     "name": "Cukurova University",
@@ -28844,7 +28844,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1703,
-    "countryRank": 19
+    "countryRank": 20
   },
   {
     "name": "Augusta State University",
@@ -28922,7 +28922,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1709,
-    "countryRank": 2
+    "countryRank": 3
   },
   {
     "name": "University of Alabama in Huntsville",

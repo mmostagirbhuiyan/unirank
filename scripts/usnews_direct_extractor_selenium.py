@@ -601,39 +601,53 @@ class USNewsFixedExtractor:
         return len(new_universities)
 
     def _extract_country_from_container(self, container_text, university_name):
-        """
-        Extract country from container text with improved logic
-        """
-        # Split text into lines
+        """Extract and normalize country name from container text"""
         lines = [line.strip() for line in container_text.split('\n') if line.strip()]
-        
-        # Find the line with university name
+
+        # Identify the university line
         uni_index = -1
         for i, line in enumerate(lines):
             if university_name in line:
                 uni_index = i
                 break
-        
-        # Look for country in lines after university name
+
         if uni_index >= 0:
             for i in range(uni_index + 1, min(uni_index + 4, len(lines))):
                 line = lines[i]
-                
-                # Skip obvious non-location lines
+
                 if any(skip in line.lower() for skip in ['#', 'score', 'enrollment', 'read more', 'global', 'rank']):
                     continue
-                
-                # Check if this could be a location
+
                 if self._is_likely_location(line):
-                    mapped = self._map_location_to_country(line)
-                    if mapped != 'N/A':
-                        return mapped
-                    
-                    # Clean and return if it looks like a location
-                    cleaned = self._clean_location_text(line)
-                    if cleaned and len(cleaned) > 2:
-                        return cleaned
-        
+                    segments = re.split(r'[|,;]', line)
+                    for segment in segments:
+                        segment = segment.strip()
+                        if not segment:
+                            continue
+
+                        mapped = self._map_location_to_country(segment)
+                        if mapped != 'N/A':
+                            return mapped
+
+                        cleaned = self._clean_location_text(segment)
+                        if cleaned in self.country_mapping.values():
+                            return cleaned
+
+                    mapped_full = self._map_location_to_country(line)
+                    if mapped_full != 'N/A':
+                        return mapped_full
+
+                    cleaned_line = self._clean_location_text(line)
+
+                    if '|' in cleaned_line:
+                        cleaned_line = cleaned_line.split('|')[0].strip()
+                    elif ',' in cleaned_line:
+                        parts = [p.strip() for p in cleaned_line.split(',') if p.strip()]
+                        if parts:
+                            cleaned_line = parts[-1]
+
+                    return cleaned_line
+
         return 'N/A'
 
     def _is_likely_location(self, text):
@@ -720,10 +734,13 @@ class USNewsFixedExtractor:
         cleaned = re.sub(r'\s*-.*$', '', cleaned)
         cleaned = re.sub(r'^\s*[^A-Za-z]*', '', cleaned)
         cleaned = cleaned.strip()
-        
+
+        # Remove any city details separated by pipe or comma
+        cleaned = re.split(r'[|,]', cleaned)[0].strip()
+
         if len(cleaned) > 1:
             cleaned = ' '.join(word.capitalize() for word in cleaned.split())
-        
+
         return cleaned
 
     def _save_batch_to_csv(self, universities):

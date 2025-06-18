@@ -116,7 +116,7 @@ Our advanced pattern-based matching system automatically handles systematic nami
 
 ```bash
 # Step 1: Update US News data (other sources auto-loaded)
-python scripts/usnews_playwright_extractor.py -o frontend/public/data/usnews_rankings.csv
+python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
 
 # Step 2: Process and aggregate all rankings
 node scripts/scrape-rankings.js
@@ -286,7 +286,7 @@ node scripts/scrape-rankings.js | grep "Consolidated data"
 **Q: Source data seems outdated**
 ```bash
 # Update individual source files
-python scripts/usnews_playwright_extractor.py -o frontend/public/data/usnews_rankings.csv
+python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
 # Download latest QS, THE, ARWU from universityrankings.ch
 ```
 
