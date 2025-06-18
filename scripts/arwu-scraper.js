@@ -61,7 +61,7 @@ async function scrapeARWURankings(limit) {
 
         // --- Start of parsing logic with csv-parser ---
         await new Promise((resolve, reject) => {
-            fs.createReadStream(ARWU_FILE_PATH)
+            fs.createReadStream(ARWU_FILE_PATH, { encoding: 'latin1' })
                 .pipe(csv({
                     // Explicitly define headers as found in the CSV file (line 5)
                     headers: ['# World Rank', ' Institution', ' Country'], 
