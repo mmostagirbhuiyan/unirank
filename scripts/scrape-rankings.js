@@ -73,6 +73,8 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/\s*-\s*/g, ' ');
     cleaned = cleaned.replace(/[.,]/g, '');
     cleaned = cleaned.replace(/\s+/g, ' ');
+    // Fix common encoding issues where 'ü' becomes 'u' is dropped entirely
+    cleaned = cleaned.replace(/Mnchen/g, 'Munchen');
     cleaned = cleaned.trim();
     return cleaned;
 }
