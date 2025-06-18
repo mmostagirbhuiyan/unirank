@@ -2,15 +2,11 @@
 name: Update University Rankings
 
 on:
-  # Manual run
   workflow_dispatch:
     inputs:
       target_branch:
         description: 'Branch to push updates to (default: main)'
-        required: false
         default: main
-
-  # Run on PRs that touch data or scripts
   pull_request:
     paths:
       - 'frontend/public/data/*.xlsx'
@@ -25,17 +21,18 @@ jobs:
       contents: write
 
     steps:
+      # ------------ checkout ------------
       - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
-      # ---------- change detection ----------
+      # ------------ change detection ------------
       - name: Detect changed paths
         id: changed
         uses: dorny/paths-filter@v3
-        with: |
-          filters:
+        with:
+          filters: |
             usnews:
               - 'scripts/usnews_direct_extractor_selenium.py'
             data:
@@ -43,55 +40,53 @@ jobs:
               - 'frontend/public/data/*.xlsx'
               - 'scripts/**'
 
-      # ---------- runtimes ----------
-      - name: Setup Node
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-
+      # ------------ runtimes & deps ------------
       - name: Setup Python
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
           cache: pip
 
-      # ---------- Python deps ----------
       - name: Install Python deps
         if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: pip install -r requirements.txt
 
-      # ---------- US News fetch (only when file changes or manual) ----------
-      - name: Fetch US News rankings
+      - name: Setup Node
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install Node deps
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm install
+
+      # ------------ US-News fetch ------------
+      - name: Fetch US-News rankings
         if: steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           python scripts/usnews_direct_extractor_selenium.py \
             -o frontend/public/data/usnews_rankings.csv \
             -n 1000 -t 1500
 
-      # ---------- Node install & aggregation ----------
-      - name: Install Node deps
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
-        run: npm install
-
+      # ------------ data processing ------------
       - name: Generate university name mapping
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: node scripts/match-universities.js
 
       - name: Aggregate rankings
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: node scripts/scrape-rankings.js
 
-      # ---------- Validate output ----------
       - name: Validate aggregated JSON
-        if: steps.changed.outputs.data == 'true' || github.event_name == 'workflow_dispatch'
+        if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           test -f frontend/public/data/aggregated-rankings.json
           jq empty frontend/public/data/aggregated-rankings.json
 
-      # ---------- Commit & push ----------
+      # ------------ commit & push ------------
       - name: Commit and push
         if: steps.changed.outputs.data == 'true' || steps.changed.outputs.usnews == 'true' || github.event_name == 'workflow_dispatch'
         run: |
@@ -110,8 +105,7 @@ jobs:
             git push origin HEAD:${{ inputs.target_branch }}
           fi
 
-      # ---------- Summary ----------
+      # ------------ summary ------------
       - name: Job summary
         if: always()
-        run: |
-          echo "Update finished at $(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_STEP_SUMMARY"
+        run: echo "Update finished at $(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_STEP_SUMMARY"
