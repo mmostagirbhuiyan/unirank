@@ -76,6 +76,16 @@ function canonicalizeName(name) {
     // Fix common encoding issues where 'ü' becomes 'u' is dropped entirely
     cleaned = cleaned.replace(/Mnchen/g, 'Munchen');
     cleaned = cleaned.trim();
+        // At location removal automation (e.g., "University of Colorado at Boulder" -> "University of Colorado Boulder")
+    cleaned = cleaned.replace(/^(.+) at (.+)$/, '$1 $2');
+        // And to ampersand automation (e.g., "University of Science and Technology" -> "University of Science & Technology")
+    cleaned = cleaned.replace(/ and /g, ' & ');
+        // Hyphen to space automation (e.g., "University of Wisconsin-Madison" -> "University of Wisconsin Madison")
+    cleaned = cleaned.replace(/-/g, ' ');
+        // The prefix removal automation (e.g., "The University of Tokyo" -> "University of Tokyo")
+    cleaned = cleaned.replace(/^The /, '');
+        // Medical Sciences automation (e.g., "University of Medical Sciences" -> "University of Medical Science")
+    cleaned = cleaned.replace(/Medical Sciences/g, 'Medical Science');
     return cleaned;
 }
 
