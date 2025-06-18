@@ -34,6 +34,7 @@ A sophisticated, production-ready platform that aggregates and visualizes global
 - [Development & Extension](#-development--extension)
 - [Troubleshooting](#-troubleshooting)
 - [Documentation](#-documentation)
+- [Automated Workflows](#automated-workflows)
 
 ---
 
@@ -325,6 +326,22 @@ npm start
 - `scripts/aggregation.js` - Borda Count implementation
 - `frontend/public/data/manual-university-mapping.json` - Manual mappings
 - `frontend/public/data/aggregated-rankings.json` - Final output
+
+---
+
+## Automated Workflows
+
+This project uses two GitHub Actions to keep ranking data up to date.
+
+### `fetch-usnews.yml`
+- Triggers manually or when `scripts/usnews_direct_extractor_selenium.py` changes.
+- Installs Python dependencies and runs the US‑News scraper.
+- Commits `frontend/public/data/usnews_rankings.csv` back to the triggering branch.
+
+### `aggregate-rankings.yml`
+- Runs for pull requests that modify files in `scripts/` or `frontend/public/data/` and on pushes to `main`.
+- Installs Python and Node dependencies, runs the matching and aggregation scripts and validates the JSON output.
+- Pushes any updated data back to the same branch.
 
 ---
 

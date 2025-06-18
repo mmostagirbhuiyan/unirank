@@ -1,0 +1,63 @@
+name: Fetch US-News Rankings
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/usnews_direct_extractor_selenium.py'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-usnews:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Detect scraper changes
+        id: changed
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            scraper:
+              - 'scripts/usnews_direct_extractor_selenium.py'
+
+      - name: Setup Python
+        if: steps.changed.outputs.scraper == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: pip
+
+      - name: Install dependencies
+        if: steps.changed.outputs.scraper == 'true' || github.event_name == 'workflow_dispatch'
+        run: pip install -r requirements.txt
+
+      - name: Run US-News scraper
+        if: steps.changed.outputs.scraper == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          python scripts/usnews_direct_extractor_selenium.py \
+            -o frontend/public/data/usnews_rankings.csv \
+            -n 1000 -t 1500
+
+      - name: Commit results
+        if: steps.changed.outputs.scraper == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name  "github-actions"
+          git add frontend/public/data/usnews_rankings.csv
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update US-News rankings ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          REF="${{ github.head_ref }}"
+          if [ -z "$REF" ]; then
+            REF="${{ github.ref_name }}"
+          fi
+          git push origin HEAD:$REF
