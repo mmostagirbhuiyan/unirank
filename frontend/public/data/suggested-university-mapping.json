@@ -430,44 +430,44 @@
     "suggestedStandardizedName": "Yale University"
   },
   {
-    "originalName": "Universit� Paris-Saclay",
+    "originalName": "Université Paris-Saclay",
     "source": "arwu",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
-    "originalName": "universit� parissaclay",
+    "originalName": "universite parissaclay",
     "source": "arwu",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
-    "originalName": "Universit� Paris-Saclay",
+    "originalName": "Université Paris-Saclay",
     "source": "the",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
-    "originalName": "universit� parissaclay",
+    "originalName": "universite parissaclay",
     "source": "the",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
     "originalName": "Universite Paris Saclay",
     "source": "usnews",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
     "originalName": "universite paris saclay",
     "source": "usnews",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
-    "originalName": "Universit� Paris-Saclay",
+    "originalName": "Université Paris-Saclay",
     "source": "qs",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
-    "originalName": "universit� parissaclay",
+    "originalName": "universite parissaclay",
     "source": "qs",
-    "suggestedStandardizedName": "Universit� Paris-Saclay"
+    "suggestedStandardizedName": "Université Paris-Saclay"
   },
   {
     "originalName": "Cornell University",
@@ -1640,34 +1640,44 @@
     "suggestedStandardizedName": "University of Electronic Science and Technology of China"
   },
   {
-    "originalName": "University of M�nchen",
+    "originalName": "University of München",
     "source": "arwu",
-    "suggestedStandardizedName": "University of M�nchen"
+    "suggestedStandardizedName": "University of München"
   },
   {
-    "originalName": "university of m�nchen",
+    "originalName": "university of munchen",
     "source": "arwu",
-    "suggestedStandardizedName": "University of M�nchen"
+    "suggestedStandardizedName": "University of München"
   },
   {
-    "originalName": "University of M�nchen",
+    "originalName": "University of München",
     "source": "the",
-    "suggestedStandardizedName": "University of M�nchen"
+    "suggestedStandardizedName": "University of München"
   },
   {
-    "originalName": "university of m�nchen",
+    "originalName": "university of munchen",
     "source": "the",
-    "suggestedStandardizedName": "University of M�nchen"
+    "suggestedStandardizedName": "University of München"
   },
   {
-    "originalName": "University of M�nchen",
-    "source": "qs",
-    "suggestedStandardizedName": "University of M�nchen"
+    "originalName": "University of Munich",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of München"
   },
   {
-    "originalName": "university of m�nchen",
+    "originalName": "university of munich",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of München"
+  },
+  {
+    "originalName": "University of München",
     "source": "qs",
-    "suggestedStandardizedName": "University of M�nchen"
+    "suggestedStandardizedName": "University of München"
+  },
+  {
+    "originalName": "university of munchen",
+    "source": "qs",
+    "suggestedStandardizedName": "University of München"
   },
   {
     "originalName": "Karolinska Institute",
@@ -1820,34 +1830,34 @@
     "suggestedStandardizedName": "University of British Columbia"
   },
   {
-    "originalName": "Technical University of M�nchen",
+    "originalName": "Technical University of München",
     "source": "arwu",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
-    "originalName": "technical of m�nchen",
+    "originalName": "technical of munchen",
     "source": "arwu",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
-    "originalName": "Technical University of M�nchen",
+    "originalName": "Technical University of München",
     "source": "the",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
-    "originalName": "technical of m�nchen",
+    "originalName": "technical of munchen",
     "source": "the",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
-    "originalName": "Technical University of M�nchen",
+    "originalName": "Technical University of München",
     "source": "qs",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
-    "originalName": "technical of m�nchen",
+    "originalName": "technical of munchen",
     "source": "qs",
-    "suggestedStandardizedName": "Technical University of M�nchen"
+    "suggestedStandardizedName": "Technical University of München"
   },
   {
     "originalName": "University of Minnesota - Twin Cities",
@@ -2270,34 +2280,34 @@
     "suggestedStandardizedName": "University of Maryland at College Park"
   },
   {
-    "originalName": "Paris Cit� University",
+    "originalName": "Paris Cité University",
     "source": "arwu",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
-    "originalName": "paris cit�",
+    "originalName": "paris cite",
     "source": "arwu",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
-    "originalName": "Paris Cit� University",
+    "originalName": "Paris Cité University",
     "source": "the",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
-    "originalName": "paris cit�",
+    "originalName": "paris cite",
     "source": "the",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
-    "originalName": "Paris Cit� University",
+    "originalName": "Paris Cité University",
     "source": "qs",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
-    "originalName": "paris cit�",
+    "originalName": "paris cite",
     "source": "qs",
-    "suggestedStandardizedName": "Paris Cit� University"
+    "suggestedStandardizedName": "Paris Cité University"
   },
   {
     "originalName": "University of Bonn",
@@ -4010,44 +4020,44 @@
     "suggestedStandardizedName": "University of Western Australia"
   },
   {
-    "originalName": "Universit� Libre de Bruxelles",
+    "originalName": "Université Libre de Bruxelles",
     "source": "arwu",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
-    "originalName": "universit� libre de bruxelles",
+    "originalName": "universite libre de bruxelles",
     "source": "arwu",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
-    "originalName": "Universit� Libre de Bruxelles",
+    "originalName": "Université Libre de Bruxelles",
     "source": "the",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
-    "originalName": "universit� libre de bruxelles",
+    "originalName": "universite libre de bruxelles",
     "source": "the",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
     "originalName": "Universite Libre de Bruxelles",
     "source": "usnews",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
     "originalName": "universite libre de bruxelles",
     "source": "usnews",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
-    "originalName": "Universit� Libre de Bruxelles",
+    "originalName": "Université Libre de Bruxelles",
     "source": "qs",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
-    "originalName": "universit� libre de bruxelles",
+    "originalName": "universite libre de bruxelles",
     "source": "qs",
-    "suggestedStandardizedName": "Universit� Libre de Bruxelles"
+    "suggestedStandardizedName": "Université Libre de Bruxelles"
   },
   {
     "originalName": "University of Sao Paulo",
@@ -4950,34 +4960,34 @@
     "suggestedStandardizedName": "Moscow State University"
   },
   {
-    "originalName": "G�teborg University",
+    "originalName": "Göteborg University",
     "source": "arwu",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
-    "originalName": "g�teborg",
+    "originalName": "goteborg",
     "source": "arwu",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
-    "originalName": "G�teborg University",
+    "originalName": "Göteborg University",
     "source": "the",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
-    "originalName": "g�teborg",
+    "originalName": "goteborg",
     "source": "the",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
-    "originalName": "G�teborg University",
+    "originalName": "Göteborg University",
     "source": "qs",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
-    "originalName": "g�teborg",
+    "originalName": "goteborg",
     "source": "qs",
-    "suggestedStandardizedName": "G�teborg University"
+    "suggestedStandardizedName": "Göteborg University"
   },
   {
     "originalName": "Lund University",
@@ -6360,74 +6370,74 @@
     "suggestedStandardizedName": "Zhengzhou University"
   },
   {
-    "originalName": "University of T�bingen",
+    "originalName": "University of Tübingen",
     "source": "arwu",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "university of t�bingen",
+    "originalName": "university of tubingen",
     "source": "arwu",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "University of T�bingen",
+    "originalName": "University of Tübingen",
     "source": "the",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "university of t�bingen",
+    "originalName": "university of tubingen",
     "source": "the",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "University of T�bingen",
+    "originalName": "University of Tübingen",
     "source": "qs",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "university of t�bingen",
+    "originalName": "university of tubingen",
     "source": "qs",
-    "suggestedStandardizedName": "University of T�bingen"
+    "suggestedStandardizedName": "University of Tübingen"
   },
   {
-    "originalName": "University of G�ttingen",
+    "originalName": "University of Göttingen",
     "source": "arwu",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
-    "originalName": "university of g�ttingen",
+    "originalName": "university of gottingen",
     "source": "arwu",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
-    "originalName": "University of G�ttingen",
+    "originalName": "University of Göttingen",
     "source": "the",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
-    "originalName": "university of g�ttingen",
+    "originalName": "university of gottingen",
     "source": "the",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
     "originalName": "University of Gottingen",
     "source": "usnews",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
     "originalName": "university of gottingen",
     "source": "usnews",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
-    "originalName": "University of G�ttingen",
+    "originalName": "University of Göttingen",
     "source": "qs",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
-    "originalName": "university of g�ttingen",
+    "originalName": "university of gottingen",
     "source": "qs",
-    "suggestedStandardizedName": "University of G�ttingen"
+    "suggestedStandardizedName": "University of Göttingen"
   },
   {
     "originalName": "University of Frankfurt am Main",
@@ -6530,44 +6540,44 @@
     "suggestedStandardizedName": "University of Cologne"
   },
   {
-    "originalName": "University of M�nster",
+    "originalName": "University of Münster",
     "source": "arwu",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
-    "originalName": "university of m�nster",
+    "originalName": "university of munster",
     "source": "arwu",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
-    "originalName": "University of M�nster",
+    "originalName": "University of Münster",
     "source": "the",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
-    "originalName": "university of m�nster",
+    "originalName": "university of munster",
     "source": "the",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
     "originalName": "University of Munster",
     "source": "usnews",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
     "originalName": "university of munster",
     "source": "usnews",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
-    "originalName": "University of M�nster",
+    "originalName": "University of Münster",
     "source": "qs",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
-    "originalName": "university of m�nster",
+    "originalName": "university of munster",
     "source": "qs",
-    "suggestedStandardizedName": "University of M�nster"
+    "suggestedStandardizedName": "University of Münster"
   },
   {
     "originalName": "Technical University of Denmark",
@@ -8750,44 +8760,44 @@
     "suggestedStandardizedName": "University of Science and Technology Beijing"
   },
   {
-    "originalName": "University of W�rzburg",
+    "originalName": "University of Würzburg",
     "source": "arwu",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
-    "originalName": "university of w�rzburg",
+    "originalName": "university of wurzburg",
     "source": "arwu",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
-    "originalName": "University of W�rzburg",
+    "originalName": "University of Würzburg",
     "source": "the",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
-    "originalName": "university of w�rzburg",
+    "originalName": "university of wurzburg",
     "source": "the",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
     "originalName": "University of Wurzburg",
     "source": "usnews",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
     "originalName": "university of wurzburg",
     "source": "usnews",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
-    "originalName": "University of W�rzburg",
+    "originalName": "University of Würzburg",
     "source": "qs",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
-    "originalName": "university of w�rzburg",
+    "originalName": "university of wurzburg",
     "source": "qs",
-    "suggestedStandardizedName": "University of W�rzburg"
+    "suggestedStandardizedName": "University of Würzburg"
   },
   {
     "originalName": "University of Kiel",
@@ -8830,64 +8840,74 @@
     "suggestedStandardizedName": "University of Kiel"
   },
   {
-    "originalName": "University of Erlangen-N�rnberg",
+    "originalName": "University of Erlangen-Nürnberg",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "university of erlangenn�rnberg",
+    "originalName": "university of erlangennurnberg",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "University of Erlangen-N�rnberg",
+    "originalName": "University of Erlangen-Nürnberg",
     "source": "the",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "university of erlangenn�rnberg",
+    "originalName": "university of erlangennurnberg",
     "source": "the",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "University of Erlangen-N�rnberg",
+    "originalName": "University of Erlangen Nuremberg",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
+  },
+  {
+    "originalName": "university of erlangen nuremberg",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
+  },
+  {
+    "originalName": "University of Erlangen-Nürnberg",
     "source": "qs",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "university of erlangenn�rnberg",
+    "originalName": "university of erlangennurnberg",
     "source": "qs",
-    "suggestedStandardizedName": "University of Erlangen-N�rnberg"
+    "suggestedStandardizedName": "University of Erlangen Nuremberg"
   },
   {
-    "originalName": "University of D�sseldorf",
+    "originalName": "University of Düsseldorf",
     "source": "arwu",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
-    "originalName": "university of d�sseldorf",
+    "originalName": "university of dusseldorf",
     "source": "arwu",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
-    "originalName": "University of D�sseldorf",
+    "originalName": "University of Düsseldorf",
     "source": "the",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
-    "originalName": "university of d�sseldorf",
+    "originalName": "university of dusseldorf",
     "source": "the",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
-    "originalName": "University of D�sseldorf",
+    "originalName": "University of Düsseldorf",
     "source": "qs",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
-    "originalName": "university of d�sseldorf",
+    "originalName": "university of dusseldorf",
     "source": "qs",
-    "suggestedStandardizedName": "University of D�sseldorf"
+    "suggestedStandardizedName": "University of Düsseldorf"
   },
   {
     "originalName": "University of Bochum",
@@ -11490,44 +11510,44 @@
     "suggestedStandardizedName": "University of Antwerp"
   },
   {
-    "originalName": "University of Li�ge",
+    "originalName": "University of Liège",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
-    "originalName": "university of li�ge",
+    "originalName": "university of liege",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
-    "originalName": "University of Li�ge",
+    "originalName": "University of Liège",
     "source": "the",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
-    "originalName": "university of li�ge",
+    "originalName": "university of liege",
     "source": "the",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
     "originalName": "University of Liege",
     "source": "usnews",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
     "originalName": "university of liege",
     "source": "usnews",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
-    "originalName": "University of Li�ge",
+    "originalName": "University of Liège",
     "source": "qs",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
-    "originalName": "university of li�ge",
+    "originalName": "university of liege",
     "source": "qs",
-    "suggestedStandardizedName": "University of Li�ge"
+    "suggestedStandardizedName": "University of Liège"
   },
   {
     "originalName": "Vrije Universiteit Brussel",
@@ -12180,12 +12200,32 @@
     "suggestedStandardizedName": "University of Jena"
   },
   {
+    "originalName": "University of Jaén",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Jena"
+  },
+  {
+    "originalName": "university of jaen",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Jena"
+  },
+  {
     "originalName": "University of Jena",
     "source": "the",
     "suggestedStandardizedName": "University of Jena"
   },
   {
     "originalName": "university of jena",
+    "source": "the",
+    "suggestedStandardizedName": "University of Jena"
+  },
+  {
+    "originalName": "University of Jaén",
+    "source": "the",
+    "suggestedStandardizedName": "University of Jena"
+  },
+  {
+    "originalName": "university of jaen",
     "source": "the",
     "suggestedStandardizedName": "University of Jena"
   },
@@ -12730,22 +12770,22 @@
     "suggestedStandardizedName": "University Pompeu Fabra"
   },
   {
-    "originalName": "Ecole Normale Sup�rieure de Lyon",
+    "originalName": "Ecole Normale Supérieure de Lyon",
     "source": "arwu",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
   {
-    "originalName": "ecole normale sup�rieure de lyon",
+    "originalName": "ecole normale superieure de lyon",
     "source": "arwu",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
   {
-    "originalName": "Ecole Normale Sup�rieure de Lyon",
+    "originalName": "Ecole Normale Supérieure de Lyon",
     "source": "the",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
   {
-    "originalName": "ecole normale sup�rieure de lyon",
+    "originalName": "ecole normale superieure de lyon",
     "source": "the",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
@@ -12760,12 +12800,12 @@
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
   {
-    "originalName": "Ecole Normale Sup�rieure de Lyon",
+    "originalName": "Ecole Normale Supérieure de Lyon",
     "source": "qs",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
   {
-    "originalName": "ecole normale sup�rieure de lyon",
+    "originalName": "ecole normale superieure de lyon",
     "source": "qs",
     "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
   },
@@ -16210,6 +16250,16 @@
     "suggestedStandardizedName": "University of Malaya"
   },
   {
+    "originalName": "University of Málaga",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Malaya"
+  },
+  {
+    "originalName": "university of malaga",
+    "source": "arwu",
+    "suggestedStandardizedName": "University of Malaya"
+  },
+  {
     "originalName": "University of Malaya",
     "source": "the",
     "suggestedStandardizedName": "University of Malaya"
@@ -17770,34 +17820,44 @@
     "suggestedStandardizedName": "Macau University of Science and Technology"
   },
   {
-    "originalName": "University of C�te d'Azur",
+    "originalName": "University of Côte d'Azur",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
-    "originalName": "university of c�te d'azur",
+    "originalName": "university of cote d'azur",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
-    "originalName": "University of C�te d'Azur",
+    "originalName": "University of Côte d'Azur",
     "source": "the",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
-    "originalName": "university of c�te d'azur",
+    "originalName": "university of cote d'azur",
     "source": "the",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
-    "originalName": "University of C�te d'Azur",
-    "source": "qs",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "originalName": "Universite Cote d'Azur",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
-    "originalName": "university of c�te d'azur",
+    "originalName": "universite cote d'azur",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Côte d'Azur"
+  },
+  {
+    "originalName": "University of Côte d'Azur",
     "source": "qs",
-    "suggestedStandardizedName": "University of C�te d'Azur"
+    "suggestedStandardizedName": "University of Côte d'Azur"
+  },
+  {
+    "originalName": "university of cote d'azur",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Côte d'Azur"
   },
   {
     "originalName": "National Yang Ming Chiao Tung University",
@@ -18860,34 +18920,44 @@
     "suggestedStandardizedName": "Aristotle University of Thessaloniki"
   },
   {
-    "originalName": "E�tv�s Lorand University",
+    "originalName": "Eötvös Lorand University",
     "source": "arwu",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
-    "originalName": "e�tv�s lorand",
+    "originalName": "eotvos lorand",
     "source": "arwu",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
-    "originalName": "E�tv�s Lorand University",
+    "originalName": "Eötvös Lorand University",
     "source": "the",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
-    "originalName": "e�tv�s lorand",
+    "originalName": "eotvos lorand",
     "source": "the",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
-    "originalName": "E�tv�s Lorand University",
-    "source": "qs",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "originalName": "Eotvos Lorand University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
-    "originalName": "e�tv�s lorand",
+    "originalName": "eotvos lorand",
+    "source": "usnews",
+    "suggestedStandardizedName": "Eötvös Lorand University"
+  },
+  {
+    "originalName": "Eötvös Lorand University",
     "source": "qs",
-    "suggestedStandardizedName": "E�tv�s Lorand University"
+    "suggestedStandardizedName": "Eötvös Lorand University"
+  },
+  {
+    "originalName": "eotvos lorand",
+    "source": "qs",
+    "suggestedStandardizedName": "Eötvös Lorand University"
   },
   {
     "originalName": "Vellore Institute of Technology",
@@ -23560,54 +23630,54 @@
     "suggestedStandardizedName": "Federal University of Sao Paulo"
   },
   {
-    "originalName": "Federal University of Paran�",
+    "originalName": "Federal University of Paraná",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Paran�"
+    "suggestedStandardizedName": "Federal University of Paraná"
   },
   {
-    "originalName": "federal of paran�",
+    "originalName": "federal of parana",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Paran�"
+    "suggestedStandardizedName": "Federal University of Paraná"
   },
   {
-    "originalName": "University of Bras�lia",
+    "originalName": "University of Brasília",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Bras�lia"
+    "suggestedStandardizedName": "University of Brasília"
   },
   {
-    "originalName": "university of bras�lia",
+    "originalName": "university of brasilia",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Bras�lia"
+    "suggestedStandardizedName": "University of Brasília"
   },
   {
-    "originalName": "University of Bras�lia",
+    "originalName": "University of Brasília",
     "source": "qs",
-    "suggestedStandardizedName": "University of Bras�lia"
+    "suggestedStandardizedName": "University of Brasília"
   },
   {
-    "originalName": "university of bras�lia",
+    "originalName": "university of brasilia",
     "source": "qs",
-    "suggestedStandardizedName": "University of Bras�lia"
+    "suggestedStandardizedName": "University of Brasília"
   },
   {
-    "originalName": "University of Concepci�n",
+    "originalName": "University of Concepción",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Concepci�n"
+    "suggestedStandardizedName": "University of Concepción"
   },
   {
-    "originalName": "university of concepci�n",
+    "originalName": "university of concepcion",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Concepci�n"
+    "suggestedStandardizedName": "University of Concepción"
   },
   {
-    "originalName": "University of Concepci�n",
+    "originalName": "University of Concepción",
     "source": "qs",
-    "suggestedStandardizedName": "University of Concepci�n"
+    "suggestedStandardizedName": "University of Concepción"
   },
   {
-    "originalName": "university of concepci�n",
+    "originalName": "university of concepcion",
     "source": "qs",
-    "suggestedStandardizedName": "University of Concepci�n"
+    "suggestedStandardizedName": "University of Concepción"
   },
   {
     "originalName": "Beijing Forestry University",
@@ -23990,34 +24060,34 @@
     "suggestedStandardizedName": "Zagazig University"
   },
   {
-    "originalName": "University of Alcal� de Henares",
+    "originalName": "University of Alcalá de Henares",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
-    "originalName": "university of alcal� de henares",
+    "originalName": "university of alcala de henares",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
-    "originalName": "University of Alcal� de Henares",
+    "originalName": "University of Alcalá de Henares",
     "source": "the",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
-    "originalName": "university of alcal� de henares",
+    "originalName": "university of alcala de henares",
     "source": "the",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
-    "originalName": "University of Alcal� de Henares",
+    "originalName": "University of Alcalá de Henares",
     "source": "qs",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
-    "originalName": "university of alcal� de henares",
+    "originalName": "university of alcala de henares",
     "source": "qs",
-    "suggestedStandardizedName": "University of Alcal� de Henares"
+    "suggestedStandardizedName": "University of Alcalá de Henares"
   },
   {
     "originalName": "University of Castilla-La Mancha",
@@ -24048,16 +24118,6 @@
     "originalName": "university of extremadura",
     "source": "arwu",
     "suggestedStandardizedName": "University of Extremadura"
-  },
-  {
-    "originalName": "University of M�laga",
-    "source": "arwu",
-    "suggestedStandardizedName": "University of M�laga"
-  },
-  {
-    "originalName": "university of m�laga",
-    "source": "arwu",
-    "suggestedStandardizedName": "University of M�laga"
   },
   {
     "originalName": "University of Rovira i Virgili",
@@ -25610,12 +25670,12 @@
     "suggestedStandardizedName": "King Fahd University of Petroleum & Minerals"
   },
   {
-    "originalName": "University Paris-Est Cr�teil Val de Marne",
+    "originalName": "University Paris-Est Créteil Val de Marne",
     "source": "arwu",
     "suggestedStandardizedName": "Universite Paris-Est-Creteil-Val-de-Marne (UPEC)"
   },
   {
-    "originalName": "university parisest cr�teil val de marne",
+    "originalName": "university parisest creteil val de marne",
     "source": "arwu",
     "suggestedStandardizedName": "Universite Paris-Est-Creteil-Val-de-Marne (UPEC)"
   },
@@ -25690,24 +25750,34 @@
     "suggestedStandardizedName": "Shahid Beheshti University of Medical Sciences"
   },
   {
-    "originalName": "�rebro University",
+    "originalName": "Örebro University",
     "source": "arwu",
-    "suggestedStandardizedName": "�rebro University"
+    "suggestedStandardizedName": "Örebro University"
   },
   {
-    "originalName": "�rebro",
+    "originalName": "orebro",
     "source": "arwu",
-    "suggestedStandardizedName": "�rebro University"
+    "suggestedStandardizedName": "Örebro University"
   },
   {
-    "originalName": "�rebro University",
+    "originalName": "Örebro University",
     "source": "the",
-    "suggestedStandardizedName": "�rebro University"
+    "suggestedStandardizedName": "Örebro University"
   },
   {
-    "originalName": "�rebro",
+    "originalName": "orebro",
     "source": "the",
-    "suggestedStandardizedName": "�rebro University"
+    "suggestedStandardizedName": "Örebro University"
+  },
+  {
+    "originalName": "Orebro University",
+    "source": "usnews",
+    "suggestedStandardizedName": "Örebro University"
+  },
+  {
+    "originalName": "orebro",
+    "source": "usnews",
+    "suggestedStandardizedName": "Örebro University"
   },
   {
     "originalName": "Army Medical University",
@@ -25990,24 +26060,24 @@
     "suggestedStandardizedName": "Suzhou University of Science and Technology"
   },
   {
-    "originalName": "National University de C�rdoba",
+    "originalName": "National University de Córdoba",
     "source": "arwu",
-    "suggestedStandardizedName": "National University de C�rdoba"
+    "suggestedStandardizedName": "National University de Córdoba"
   },
   {
-    "originalName": "national de c�rdoba",
+    "originalName": "national de cordoba",
     "source": "arwu",
-    "suggestedStandardizedName": "National University de C�rdoba"
+    "suggestedStandardizedName": "National University de Córdoba"
   },
   {
-    "originalName": "National University de C�rdoba",
+    "originalName": "National University de Córdoba",
     "source": "qs",
-    "suggestedStandardizedName": "National University de C�rdoba"
+    "suggestedStandardizedName": "National University de Córdoba"
   },
   {
-    "originalName": "national de c�rdoba",
+    "originalName": "national de cordoba",
     "source": "qs",
-    "suggestedStandardizedName": "National University de C�rdoba"
+    "suggestedStandardizedName": "National University de Córdoba"
   },
   {
     "originalName": "United Arab Emirates University",
@@ -26180,24 +26250,24 @@
     "suggestedStandardizedName": "University of Canberra"
   },
   {
-    "originalName": "Federal University of S�o Carlos",
+    "originalName": "Federal University of São Carlos",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of S�o Carlos"
+    "suggestedStandardizedName": "Federal University of São Carlos"
   },
   {
-    "originalName": "federal of s�o carlos",
+    "originalName": "federal of sao carlos",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of S�o Carlos"
+    "suggestedStandardizedName": "Federal University of São Carlos"
   },
   {
-    "originalName": "Federal University of Vi�osa",
+    "originalName": "Federal University of Viçosa",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Vi�osa"
+    "suggestedStandardizedName": "Federal University of Viçosa"
   },
   {
-    "originalName": "federal of vi�osa",
+    "originalName": "federal of vicosa",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Vi�osa"
+    "suggestedStandardizedName": "Federal University of Viçosa"
   },
   {
     "originalName": "Memorial University of Newfoundland",
@@ -26240,14 +26310,24 @@
     "suggestedStandardizedName": "Memorial University of Newfoundland"
   },
   {
-    "originalName": "University of Qu�bec at Montreal",
+    "originalName": "University of Québec at Montreal",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Qu�bec at Montreal"
+    "suggestedStandardizedName": "University of Québec at Montreal"
   },
   {
-    "originalName": "university of qu�bec at montreal",
+    "originalName": "university of quebec at montreal",
     "source": "arwu",
-    "suggestedStandardizedName": "University of Qu�bec at Montreal"
+    "suggestedStandardizedName": "University of Québec at Montreal"
+  },
+  {
+    "originalName": "University of Quebec Montreal",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Québec at Montreal"
+  },
+  {
+    "originalName": "university of quebec montreal",
+    "source": "usnews",
+    "suggestedStandardizedName": "University of Québec at Montreal"
   },
   {
     "originalName": "University of Regina",
@@ -26630,34 +26710,34 @@
     "suggestedStandardizedName": "University of Vigo"
   },
   {
-    "originalName": "Institut National des Sciences Appliqu�es de Toulouse",
+    "originalName": "Institut National des Sciences Appliquées de Toulouse",
     "source": "arwu",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
-    "originalName": "institut national des sciences appliqu�es de toulouse",
+    "originalName": "institut national des sciences appliquees de toulouse",
     "source": "arwu",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
-    "originalName": "Institut National des Sciences Appliqu�es de Lyon",
+    "originalName": "Institut National des Sciences Appliquées de Lyon",
     "source": "the",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
-    "originalName": "institut national des sciences appliqu�es de lyon",
+    "originalName": "institut national des sciences appliquees de lyon",
     "source": "the",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
-    "originalName": "Institut National des Sciences Appliqu�es de Lyon",
+    "originalName": "Institut National des Sciences Appliquées de Lyon",
     "source": "qs",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
-    "originalName": "institut national des sciences appliqu�es de lyon",
+    "originalName": "institut national des sciences appliquees de lyon",
     "source": "qs",
-    "suggestedStandardizedName": "Institut National des Sciences Appliqu�es de Toulouse"
+    "suggestedStandardizedName": "Institut National des Sciences Appliquées de Toulouse"
   },
   {
     "originalName": "University of Burgundy",
@@ -28110,24 +28190,24 @@
     "suggestedStandardizedName": "Royal Holloway - University of London"
   },
   {
-    "originalName": "Gda�sk University of Technology",
+    "originalName": "Gdañsk University of Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Gda�sk University of Technology"
+    "suggestedStandardizedName": "Gdañsk University of Technology"
   },
   {
-    "originalName": "gda�sk",
+    "originalName": "gdansk",
     "source": "arwu",
-    "suggestedStandardizedName": "Gda�sk University of Technology"
+    "suggestedStandardizedName": "Gdañsk University of Technology"
   },
   {
-    "originalName": "Gda�sk University of Technology",
+    "originalName": "Gdañsk University of Technology",
     "source": "qs",
-    "suggestedStandardizedName": "Gda�sk University of Technology"
+    "suggestedStandardizedName": "Gdañsk University of Technology"
   },
   {
-    "originalName": "gda�sk",
+    "originalName": "gdansk",
     "source": "qs",
-    "suggestedStandardizedName": "Gda�sk University of Technology"
+    "suggestedStandardizedName": "Gdañsk University of Technology"
   },
   {
     "originalName": "Royal Veterinary College",
@@ -28440,14 +28520,14 @@
     "suggestedStandardizedName": "Federal University of Bahia"
   },
   {
-    "originalName": "Federal University of Goi�s",
+    "originalName": "Federal University of Goiás",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Goi�s"
+    "suggestedStandardizedName": "Federal University of Goiás"
   },
   {
-    "originalName": "federal of goi�s",
+    "originalName": "federal of goias",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Goi�s"
+    "suggestedStandardizedName": "Federal University of Goiás"
   },
   {
     "originalName": "Federal University of Pelotas",
@@ -28470,14 +28550,14 @@
     "suggestedStandardizedName": "Federal University of Pernambuco"
   },
   {
-    "originalName": "Federal University of Cear�",
+    "originalName": "Federal University of Ceará",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Cear�"
+    "suggestedStandardizedName": "Federal University of Ceará"
   },
   {
-    "originalName": "federal of cear�",
+    "originalName": "federal of ceara",
     "source": "arwu",
-    "suggestedStandardizedName": "Federal University of Cear�"
+    "suggestedStandardizedName": "Federal University of Ceará"
   },
   {
     "originalName": "Lakehead University",
@@ -28530,14 +28610,14 @@
     "suggestedStandardizedName": "University of New Brunswick"
   },
   {
-    "originalName": "National University Andr�s Bello",
+    "originalName": "National University Andrés Bello",
     "source": "arwu",
-    "suggestedStandardizedName": "National University Andr�s Bello"
+    "suggestedStandardizedName": "National University Andrés Bello"
   },
   {
-    "originalName": "nationalr�s bello",
+    "originalName": "nationalres bello",
     "source": "arwu",
-    "suggestedStandardizedName": "National University Andr�s Bello"
+    "suggestedStandardizedName": "National University Andrés Bello"
   },
   {
     "originalName": "Dalian Medical University",
@@ -28810,64 +28890,44 @@
     "suggestedStandardizedName": "University Carlos III de Madrid"
   },
   {
-    "originalName": "University of C�diz",
+    "originalName": "University of Cádiz",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�diz"
+    "suggestedStandardizedName": "University of Cádiz"
   },
   {
-    "originalName": "university of c�diz",
+    "originalName": "university of cadiz",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�diz"
+    "suggestedStandardizedName": "University of Cádiz"
   },
   {
-    "originalName": "University of C�rdoba",
+    "originalName": "University of Córdoba",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�rdoba"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
-    "originalName": "university of c�rdoba",
+    "originalName": "university of cordoba",
     "source": "arwu",
-    "suggestedStandardizedName": "University of C�rdoba"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
-    "originalName": "University of C�rdoba",
+    "originalName": "University of Córdoba",
     "source": "the",
-    "suggestedStandardizedName": "University of C�rdoba"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
-    "originalName": "university of c�rdoba",
+    "originalName": "university of cordoba",
     "source": "the",
-    "suggestedStandardizedName": "University of C�rdoba"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
-    "originalName": "University of C�rdoba",
+    "originalName": "University of Córdoba",
     "source": "qs",
-    "suggestedStandardizedName": "University of C�rdoba"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
-    "originalName": "university of c�rdoba",
+    "originalName": "university of cordoba",
     "source": "qs",
-    "suggestedStandardizedName": "University of C�rdoba"
-  },
-  {
-    "originalName": "University of Ja�n",
-    "source": "arwu",
-    "suggestedStandardizedName": "University of Ja�n"
-  },
-  {
-    "originalName": "university of ja�n",
-    "source": "arwu",
-    "suggestedStandardizedName": "University of Ja�n"
-  },
-  {
-    "originalName": "University of Ja�n",
-    "source": "the",
-    "suggestedStandardizedName": "University of Ja�n"
-  },
-  {
-    "originalName": "university of ja�n",
-    "source": "the",
-    "suggestedStandardizedName": "University of Ja�n"
+    "suggestedStandardizedName": "University of Córdoba"
   },
   {
     "originalName": "University of Valladolid",
@@ -30390,14 +30450,14 @@
     "suggestedStandardizedName": "Humboldt University of Berlin"
   },
   {
-    "originalName": "Charit� - University Medicine Berlin",
+    "originalName": "Charité - University Medicine Berlin",
     "source": "the",
-    "suggestedStandardizedName": "Charit� - University Medicine Berlin"
+    "suggestedStandardizedName": "Charité - University Medicine Berlin"
   },
   {
-    "originalName": "charit�  medicine berlin",
+    "originalName": "charite  medicine berlin",
     "source": "the",
-    "suggestedStandardizedName": "Charit� - University Medicine Berlin"
+    "suggestedStandardizedName": "Charité - University Medicine Berlin"
   },
   {
     "originalName": "Free University of Berlin",
@@ -31150,14 +31210,14 @@
     "suggestedStandardizedName": "Missouri University of Science and Technology"
   },
   {
-    "originalName": "Federal University of Toulouse Midi-Pyr�n�es",
+    "originalName": "Federal University of Toulouse Midi-Pyrénées",
     "source": "the",
-    "suggestedStandardizedName": "Federal University of Toulouse Midi-Pyr�n�es"
+    "suggestedStandardizedName": "Federal University of Toulouse Midi-Pyrénées"
   },
   {
-    "originalName": "federal of toulouse midipyr�n�es",
+    "originalName": "federal of toulouse midipyrenees",
     "source": "the",
-    "suggestedStandardizedName": "Federal University of Toulouse Midi-Pyr�n�es"
+    "suggestedStandardizedName": "Federal University of Toulouse Midi-Pyrénées"
   },
   {
     "originalName": "Federation University Australia",
@@ -32720,14 +32780,14 @@
     "suggestedStandardizedName": "Imam Mohammad Ibn Saud Islamic University (IMSIU)"
   },
   {
-    "originalName": "J�nk�ping University College",
+    "originalName": "Jönköping University College",
     "source": "the",
-    "suggestedStandardizedName": "J�nk�ping University College"
+    "suggestedStandardizedName": "Jönköping University College"
   },
   {
-    "originalName": "j�nk�ping",
+    "originalName": "jonkoping",
     "source": "the",
-    "suggestedStandardizedName": "J�nk�ping University College"
+    "suggestedStandardizedName": "Jönköping University College"
   },
   {
     "originalName": "Bilkent University",
@@ -33270,14 +33330,14 @@
     "suggestedStandardizedName": "University of the West Scotland"
   },
   {
-    "originalName": "�cole des Mines de Saint-�tienne",
+    "originalName": "École des Mines de Saint-Étienne",
     "source": "the",
-    "suggestedStandardizedName": "�cole des Mines de Saint-�tienne"
+    "suggestedStandardizedName": "École des Mines de Saint-Étienne"
   },
   {
-    "originalName": "�cole des mines de saint�tienne",
+    "originalName": "ecole des mines de saintetienne",
     "source": "the",
-    "suggestedStandardizedName": "�cole des Mines de Saint-�tienne"
+    "suggestedStandardizedName": "École des Mines de Saint-Étienne"
   },
   {
     "originalName": "University of Insubria",
@@ -33460,14 +33520,14 @@
     "suggestedStandardizedName": "Sultan Idris Education University"
   },
   {
-    "originalName": "�buda University",
+    "originalName": "Óbuda University",
     "source": "the",
-    "suggestedStandardizedName": "�buda University"
+    "suggestedStandardizedName": "Óbuda University"
   },
   {
-    "originalName": "�buda",
+    "originalName": "obuda",
     "source": "the",
-    "suggestedStandardizedName": "�buda University"
+    "suggestedStandardizedName": "Óbuda University"
   },
   {
     "originalName": "Tashkent Institute Irrigation and Agricultural Mechanization Engineers",
@@ -33740,6 +33800,16 @@
     "suggestedStandardizedName": "University of Leoben"
   },
   {
+    "originalName": "University of León",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Leoben"
+  },
+  {
+    "originalName": "university of leon",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Leoben"
+  },
+  {
     "originalName": "Daffodil International University",
     "source": "the",
     "suggestedStandardizedName": "Daffodil International University"
@@ -33860,14 +33930,14 @@
     "suggestedStandardizedName": "University of the South Pacific"
   },
   {
-    "originalName": "Arts et M�tiers",
+    "originalName": "Arts et Métiers",
     "source": "the",
-    "suggestedStandardizedName": "Arts et M�tiers"
+    "suggestedStandardizedName": "Arts et Métiers"
   },
   {
-    "originalName": "arts et m�tiers",
+    "originalName": "arts et metiers",
     "source": "the",
-    "suggestedStandardizedName": "Arts et M�tiers"
+    "suggestedStandardizedName": "Arts et Métiers"
   },
   {
     "originalName": "National Veterinary School of Alfort",
@@ -33880,24 +33950,24 @@
     "suggestedStandardizedName": "National Veterinary School of Alfort"
   },
   {
-    "originalName": "University Panth�on-Sorbonne (Paris I)",
+    "originalName": "University Panthéon-Sorbonne (Paris I)",
     "source": "the",
-    "suggestedStandardizedName": "University Panth�on-Sorbonne (Paris I)"
+    "suggestedStandardizedName": "University Panthéon-Sorbonne (Paris I)"
   },
   {
-    "originalName": "university panth�onsorbonne",
+    "originalName": "university pantheonsorbonne",
     "source": "the",
-    "suggestedStandardizedName": "University Panth�on-Sorbonne (Paris I)"
+    "suggestedStandardizedName": "University Panthéon-Sorbonne (Paris I)"
   },
   {
-    "originalName": "University Panth�on-Sorbonne (Paris I)",
+    "originalName": "University Panthéon-Sorbonne (Paris I)",
     "source": "qs",
-    "suggestedStandardizedName": "University Panth�on-Sorbonne (Paris I)"
+    "suggestedStandardizedName": "University Panthéon-Sorbonne (Paris I)"
   },
   {
-    "originalName": "university panth�onsorbonne",
+    "originalName": "university pantheonsorbonne",
     "source": "qs",
-    "suggestedStandardizedName": "University Panth�on-Sorbonne (Paris I)"
+    "suggestedStandardizedName": "University Panthéon-Sorbonne (Paris I)"
   },
   {
     "originalName": "University of Western Brittany",
@@ -34260,14 +34330,14 @@
     "suggestedStandardizedName": "Zahedan University of Medical Sciences"
   },
   {
-    "originalName": "Reykjav�k University",
+    "originalName": "Reykjavík University",
     "source": "the",
-    "suggestedStandardizedName": "Reykjav�k University"
+    "suggestedStandardizedName": "Reykjavík University"
   },
   {
-    "originalName": "reykjav�k",
+    "originalName": "reykjavik",
     "source": "the",
-    "suggestedStandardizedName": "Reykjav�k University"
+    "suggestedStandardizedName": "Reykjavík University"
   },
   {
     "originalName": "University of Camerino",
@@ -35470,16 +35540,6 @@
     "suggestedStandardizedName": "Leiden University"
   },
   {
-    "originalName": "University of Munich",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Munich"
-  },
-  {
-    "originalName": "university of munich",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Munich"
-  },
-  {
     "originalName": "Ruprecht Karls University Heidelberg",
     "source": "usnews",
     "suggestedStandardizedName": "Ruprecht Karls University Heidelberg"
@@ -35860,16 +35920,6 @@
     "suggestedStandardizedName": "Northwest A&F University - China"
   },
   {
-    "originalName": "University of Erlangen Nuremberg",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Erlangen Nuremberg"
-  },
-  {
-    "originalName": "university of erlangen nuremberg",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Erlangen Nuremberg"
-  },
-  {
     "originalName": "Durham University",
     "source": "usnews",
     "suggestedStandardizedName": "Durham University"
@@ -36048,16 +36098,6 @@
     "originalName": "universite de lille",
     "source": "usnews",
     "suggestedStandardizedName": "Universite de Lille"
-  },
-  {
-    "originalName": "Universite Cote d'Azur",
-    "source": "usnews",
-    "suggestedStandardizedName": "Universite Cote d'Azur"
-  },
-  {
-    "originalName": "universite cote d'azur",
-    "source": "usnews",
-    "suggestedStandardizedName": "Universite Cote d'Azur"
   },
   {
     "originalName": "University of Ibadan",
@@ -36398,16 +36438,6 @@
     "originalName": "universidade de coimbra",
     "source": "usnews",
     "suggestedStandardizedName": "Universidade de Coimbra"
-  },
-  {
-    "originalName": "Eotvos Lorand University",
-    "source": "usnews",
-    "suggestedStandardizedName": "Eotvos Lorand University"
-  },
-  {
-    "originalName": "eotvos lorand",
-    "source": "usnews",
-    "suggestedStandardizedName": "Eotvos Lorand University"
   },
   {
     "originalName": "Sechenov First Moscow State Medical University",
@@ -37500,16 +37530,6 @@
     "suggestedStandardizedName": "University of Massachusetts Boston"
   },
   {
-    "originalName": "Orebro University",
-    "source": "usnews",
-    "suggestedStandardizedName": "Orebro University"
-  },
-  {
-    "originalName": "orebro",
-    "source": "usnews",
-    "suggestedStandardizedName": "Orebro University"
-  },
-  {
     "originalName": "Montana State University Bozeman",
     "source": "usnews",
     "suggestedStandardizedName": "Montana State University Bozeman"
@@ -37578,16 +37598,6 @@
     "originalName": "universiti malaysia terengganu",
     "source": "usnews",
     "suggestedStandardizedName": "Universiti Malaysia Terengganu"
-  },
-  {
-    "originalName": "University of Quebec Montreal",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Quebec Montreal"
-  },
-  {
-    "originalName": "university of quebec montreal",
-    "source": "usnews",
-    "suggestedStandardizedName": "University of Quebec Montreal"
   },
   {
     "originalName": "Kwame Nkrumah University Science & Technology",
@@ -38220,14 +38230,14 @@
     "suggestedStandardizedName": "L.N. Gumilyov Eurasian National University"
   },
   {
-    "originalName": "Pontifical Catholic University of Per�",
+    "originalName": "Pontifical Catholic University of Perú",
     "source": "qs",
-    "suggestedStandardizedName": "Pontifical Catholic University of Per�"
+    "suggestedStandardizedName": "Pontifical Catholic University of Perú"
   },
   {
-    "originalName": "pontifical catholic of per�",
+    "originalName": "pontifical catholic of peru",
     "source": "qs",
-    "suggestedStandardizedName": "Pontifical Catholic University of Per�"
+    "suggestedStandardizedName": "Pontifical Catholic University of Perú"
   },
   {
     "originalName": "Pontificia Universidad Javeriana",
@@ -38460,14 +38470,14 @@
     "suggestedStandardizedName": "University of Chemistry and Technology - Prague"
   },
   {
-    "originalName": "University Adolfo Ib��ez",
+    "originalName": "University Adolfo Ibáñez",
     "source": "qs",
-    "suggestedStandardizedName": "University Adolfo Ib��ez"
+    "suggestedStandardizedName": "University Adolfo Ibáñez"
   },
   {
-    "originalName": "university adolfo ib��ez",
+    "originalName": "university adolfo ibanez",
     "source": "qs",
-    "suggestedStandardizedName": "University Adolfo Ib��ez"
+    "suggestedStandardizedName": "University Adolfo Ibáñez"
   },
   {
     "originalName": "Sepuluh Nopember Institute of Technology",
@@ -38710,14 +38720,14 @@
     "suggestedStandardizedName": "Al Ahlia University"
   },
   {
-    "originalName": "University of Franche-Comt�",
+    "originalName": "University of Franche-Comté",
     "source": "qs",
-    "suggestedStandardizedName": "University of Franche-Comt�"
+    "suggestedStandardizedName": "University of Franche-Comté"
   },
   {
-    "originalName": "university of franchecomt�",
+    "originalName": "university of franchecomte",
     "source": "qs",
-    "suggestedStandardizedName": "University of Franche-Comt�"
+    "suggestedStandardizedName": "University of Franche-Comté"
   },
   {
     "originalName": "Lingnan University",
@@ -38860,14 +38870,14 @@
     "suggestedStandardizedName": "Kaunas University of Technology"
   },
   {
-    "originalName": "M�xico Autonomous Institute of Technology",
+    "originalName": "México Autonomous Institute of Technology",
     "source": "qs",
-    "suggestedStandardizedName": "M�xico Autonomous Institute of Technology"
+    "suggestedStandardizedName": "México Autonomous Institute of Technology"
   },
   {
-    "originalName": "m�xico autonomous",
+    "originalName": "mexico autonomous",
     "source": "qs",
-    "suggestedStandardizedName": "M�xico Autonomous Institute of Technology"
+    "suggestedStandardizedName": "México Autonomous Institute of Technology"
   },
   {
     "originalName": "Bangladesh University of Engineering and Technology (BUET)",
@@ -38970,14 +38980,14 @@
     "suggestedStandardizedName": "Zurich University of Applied Sciences"
   },
   {
-    "originalName": "University of Antioqu�a",
+    "originalName": "University of Antioquía",
     "source": "qs",
-    "suggestedStandardizedName": "University of Antioqu�a"
+    "suggestedStandardizedName": "University of Antioquía"
   },
   {
-    "originalName": "university of antioqu�a",
+    "originalName": "university of antioquia",
     "source": "qs",
-    "suggestedStandardizedName": "University of Antioqu�a"
+    "suggestedStandardizedName": "University of Antioquía"
   },
   {
     "originalName": "Tbilisi State University",
@@ -39030,14 +39040,14 @@
     "suggestedStandardizedName": "Kuwait University"
   },
   {
-    "originalName": "An�huac University",
+    "originalName": "Anáhuac University",
     "source": "qs",
-    "suggestedStandardizedName": "An�huac University"
+    "suggestedStandardizedName": "Anáhuac University"
   },
   {
-    "originalName": "an�huac",
+    "originalName": "anahuac",
     "source": "qs",
-    "suggestedStandardizedName": "An�huac University"
+    "suggestedStandardizedName": "Anáhuac University"
   },
   {
     "originalName": "University of Tunku Abdul Rahman",
@@ -39330,14 +39340,14 @@
     "suggestedStandardizedName": "University Marta Abreu of Las Villas"
   },
   {
-    "originalName": "University Panth�on-Assas (Paris II)",
+    "originalName": "University Panthéon-Assas (Paris II)",
     "source": "qs",
-    "suggestedStandardizedName": "University Panth�on-Assas (Paris II)"
+    "suggestedStandardizedName": "University Panthéon-Assas (Paris II)"
   },
   {
-    "originalName": "university panth�onassas",
+    "originalName": "university pantheonassas",
     "source": "qs",
-    "suggestedStandardizedName": "University Panth�on-Assas (Paris II)"
+    "suggestedStandardizedName": "University Panthéon-Assas (Paris II)"
   },
   {
     "originalName": "Georgian Technical University",
@@ -39580,14 +39590,14 @@
     "suggestedStandardizedName": "University of Bahrain"
   },
   {
-    "originalName": "Federico Santa Mar�a Technical University",
+    "originalName": "Federico Santa María Technical University",
     "source": "qs",
-    "suggestedStandardizedName": "Federico Santa Mar�a Technical University"
+    "suggestedStandardizedName": "Federico Santa María Technical University"
   },
   {
-    "originalName": "federico santa mar�a technical",
+    "originalName": "federico santa maria technical",
     "source": "qs",
-    "suggestedStandardizedName": "Federico Santa Mar�a Technical University"
+    "suggestedStandardizedName": "Federico Santa María Technical University"
   },
   {
     "originalName": "University of the Andes - Chile",
@@ -39628,16 +39638,6 @@
     "originalName": "pontifical catholic of ecuador",
     "source": "qs",
     "suggestedStandardizedName": "Pontifical Catholic University of Ecuador"
-  },
-  {
-    "originalName": "University of Le�n",
-    "source": "qs",
-    "suggestedStandardizedName": "University of Le�n"
-  },
-  {
-    "originalName": "university of le�n",
-    "source": "qs",
-    "suggestedStandardizedName": "University of Le�n"
   },
   {
     "originalName": "University Paris Nord (Paris XIII)",
