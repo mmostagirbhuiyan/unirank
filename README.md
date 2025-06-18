@@ -20,6 +20,7 @@ A sophisticated, production-ready platform that aggregates and visualizes global
 - **Source-agnostic mappings** - one mapping works across all sources
 - **Consolidated from 363 to 123 entries** by removing duplicates
 - **Clean architecture** with clear separation of automated vs manual handling
+- **CSV parsing uses Latin-1 encoding** to fix corrupted names like "Technical University of München"
 
 ---
 
@@ -287,6 +288,12 @@ node scripts/scrape-rankings.js | grep "Consolidated data"
 # Update individual source files
 python scripts/usnews_playwright_extractor.py -o frontend/public/data/usnews_rankings.csv
 # Download latest QS, THE, ARWU from universityrankings.ch
+```
+
+**Q: Names appear garbled (e.g., 'Technical University of Mnchen')**
+```bash
+# Ensure the CSV files are read using Latin-1 encoding
+node scripts/scrape-rankings.js 200
 ```
 
 **Q: Frontend build fails**

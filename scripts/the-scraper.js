@@ -54,7 +54,7 @@ async function scrapeTHERankings() {
         console.log(`Reading THE rankings from local CSV file ${THE_FILE_PATH}...`);
 
         await new Promise((resolve, reject) => {
-            createReadStream(THE_FILE_PATH)
+            createReadStream(THE_FILE_PATH, { encoding: 'latin1' })
                 .pipe(csv({
                     // Explicitly define headers as found in the CSV file
                     headers: ['#    World Rank', 'Institution', 'Country', ''], 
