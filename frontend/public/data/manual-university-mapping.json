@@ -44,10 +44,6 @@
     "suggestedStandardizedName": "Hanover Medical School"
   },
   {
-    "originalName": "Hong Kong University of Science and Technology",
-    "suggestedStandardizedName": "Hong Kong University of Science & Technology"
-  },
-  {
     "originalName": "I.M. Sechenov First Moscow State Medical University",
     "suggestedStandardizedName": "Sechenov First Moscow State Medical University"
   },
@@ -124,10 +120,6 @@
     "suggestedStandardizedName": "Newcastle University"
   },
   {
-    "originalName": "Okinawa Institute of Science and Technology Graduate University",
-    "suggestedStandardizedName": "Okinawa Institute of Science & Technology Graduate University"
-  },
-  {
     "originalName": "Örebro University",
     "suggestedStandardizedName": "Orebro University"
   },
@@ -200,10 +192,6 @@
     "suggestedStandardizedName": "Shandong University of Science & Technology"
   },
   {
-    "originalName": "Shiraz University of Medical Sciences",
-    "suggestedStandardizedName": "Shiraz University of Medical Science"
-  },
-  {
     "originalName": "Sorbonne University",
     "suggestedStandardizedName": "Sorbonne Universite"
   },
@@ -240,10 +228,6 @@
     "suggestedStandardizedName": "ETH Zurich"
   },
   {
-    "originalName": "Tabriz University of Medical Sciences",
-    "suggestedStandardizedName": "Tabriz University of Medical Science"
-  },
-  {
     "originalName": "Tampere University",
     "suggestedStandardizedName": "University of Tampere"
   },
@@ -252,16 +236,8 @@
     "suggestedStandardizedName": "Technical University of Munich"
   },
   {
-    "originalName": "The Manchester Metropolitan University",
-    "suggestedStandardizedName": "Manchester Metropolitan University"
-  },
-  {
     "originalName": "The University of Osaka",
     "suggestedStandardizedName": "Osaka University"
-  },
-  {
-    "originalName": "The University of Tokyo",
-    "suggestedStandardizedName": "University of Tokyo"
   },
   {
     "originalName": "Ulm University",
@@ -312,18 +288,6 @@
     "suggestedStandardizedName": "University of California Santa Cruz"
   },
   {
-    "originalName": "University of Colorado at Boulder",
-    "suggestedStandardizedName": "University of Colorado Boulder"
-  },
-  {
-    "originalName": "University of Colorado at Denver",
-    "suggestedStandardizedName": "University of Colorado Denver"
-  },
-  {
-    "originalName": "University of Duisburg-Essen",
-    "suggestedStandardizedName": "University of Duisburg Essen"
-  },
-  {
     "originalName": "University of Durham",
     "suggestedStandardizedName": "Durham University"
   },
@@ -336,14 +300,6 @@
     "suggestedStandardizedName": "Ruprecht Karls University Heidelberg"
   },
   {
-    "originalName": "University of Illinois at Chicago",
-    "suggestedStandardizedName": "University of Illinois Chicago"
-  },
-  {
-    "originalName": "University of Illinois at Urbana-Champaign",
-    "suggestedStandardizedName": "University of Illinois Urbana-Champaign"
-  },
-  {
     "originalName": "University of KwaZulu-Natal",
     "suggestedStandardizedName": "University of Kwazulu Natal"
   },
@@ -354,10 +310,6 @@
   {
     "originalName": "University of Malaya",
     "suggestedStandardizedName": "Universiti Malaya"
-  },
-  {
-    "originalName": "University of Maryland at College Park",
-    "suggestedStandardizedName": "University of Maryland College Park"
   },
   {
     "originalName": "university of massachusetts",
@@ -388,10 +340,6 @@
     "suggestedStandardizedName": "University of New South Wales Sydney"
   },
   {
-    "originalName": "University of North Carolina at Chapel Hill",
-    "suggestedStandardizedName": "University of North Carolina Chapel Hill"
-  },
-  {
     "originalName": "University of Rome - La Sapienza",
     "suggestedStandardizedName": "Sapienza University Rome"
   },
@@ -412,26 +360,6 @@
     "suggestedStandardizedName": "University of St. Andrews"
   },
   {
-    "originalName": "University of Texas at Arlington",
-    "suggestedStandardizedName": "University of Texas Arlington"
-  },
-  {
-    "originalName": "University of Texas at Austin",
-    "suggestedStandardizedName": "University of Texas Austin"
-  },
-  {
-    "originalName": "University of Texas at Dallas",
-    "suggestedStandardizedName": "University of Texas Dallas"
-  },
-  {
-    "originalName": "University of Texas Health Science Center at Houston",
-    "suggestedStandardizedName": "University of Texas Health Science Center Houston"
-  },
-  {
-    "originalName": "University of Texas Southwestern Medical Center at Dallas",
-    "suggestedStandardizedName": "University of Texas Southwestern Medical Center Dallas"
-  },
-  {
     "originalName": "University of Tsukuba",
     "suggestedStandardizedName": "Tsukuba University"
   },
@@ -442,10 +370,6 @@
   {
     "originalName": "University of Washington",
     "suggestedStandardizedName": "University of Washington Seattle"
-  },
-  {
-    "originalName": "University of Wisconsin-Madison",
-    "suggestedStandardizedName": "University of Wisconsin Madison"
   },
   {
     "originalName": "University Pompeu Fabra",
@@ -464,10 +388,6 @@
     "suggestedStandardizedName": "Vietnam National University Hochiminh City"
   },
   {
-    "originalName": "Virginia Polytechnic Institute and State University",
-    "suggestedStandardizedName": "Virginia Polytechnic Institute & State University"
-  },
-  {
     "originalName": "Wageningen University & Research Center",
     "suggestedStandardizedName": "Wageningen University & Research"
   },
@@ -484,14 +404,10 @@
     "suggestedStandardizedName": "University at Buffalo, SUNY"
   },
   {
-    "originalName": "Macau University of Science and Technology",
-    "suggestedStandardizedName": "Macau University of Science & Technology"
-  },
-  {
     "originalName": "Queen's University",
     "suggestedStandardizedName": "Queens University"
-  }
-  ,{
+  },
+  {
     "originalName": "University of Porto",
     "suggestedStandardizedName": "Universidade do Porto"
   },
@@ -506,9 +422,5 @@
   {
     "originalName": "University of the Republic",
     "suggestedStandardizedName": "Universidad de la Republica, Uruguay"
-  },
-  {
-    "originalName": "Sun Yat-Sen University",
-    "suggestedStandardizedName": "Sun Yat Sen University"
   }
 ]
