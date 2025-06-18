@@ -491,4 +491,20 @@
     "originalName": "Queen's University",
     "suggestedStandardizedName": "Queens University"
   }
+  ,{
+    "originalName": "University of Porto",
+    "suggestedStandardizedName": "Universidade do Porto"
+  },
+  {
+    "originalName": "University of Lisbon",
+    "suggestedStandardizedName": "Universidade de Lisboa"
+  },
+  {
+    "originalName": "New University of Lisbon",
+    "suggestedStandardizedName": "Universidade Nova de Lisboa"
+  },
+  {
+    "originalName": "University of the Republic",
+    "suggestedStandardizedName": "Universidad de la Republica, Uruguay"
+  }
 ]
