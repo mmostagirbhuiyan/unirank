@@ -14,7 +14,8 @@ on:
       # Optionally exclude other non-deployment files
       - 'README.md'
       - 'docs/**'
-      - '.github/workflows/update-rankings.yml'
+      - '.github/workflows/aggregate-rankings.yml'
+      - '.github/workflows/fetch-usnews.yml'
 
 # Set permissions for GitHub Pages deployment
 permissions:
