@@ -628,6 +628,10 @@ const processBatch = (names, batchSize = 1000) => {
 };
 ```
 
+#### Issue: Garbled Characters in CSV Files
+**Symptoms**: Names show missing accents (e.g., `Technical University of Mnchen`)
+**Solution**: Read ranking CSVs with `encoding: 'latin1'` when calling `fs.createReadStream`
+
 ### Debugging Tools
 
 #### Transformation Logging
