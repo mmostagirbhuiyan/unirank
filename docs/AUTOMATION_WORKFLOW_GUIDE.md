@@ -54,8 +54,8 @@ The University Rankings Aggregator uses automated patterns to normalize universi
 
 ### 📊 **Current Performance**
 
-- **Total Universities**: 1711 (stable baseline)
-- **Manual Mappings**: 106 (down from 363 originally)
+- **Total Universities**: 1708 (stable baseline)
+- **Manual Mappings**: 94 (down from 363 originally)
 - **Automation Rate**: ~73% of original manual mappings automated
 - **Processing Time**: <30 seconds for full aggregation
 
@@ -164,10 +164,10 @@ node scripts/automation-helpers/baseline-monitor.js status
 
 # Manual baseline check  
 node scripts/scrape-rankings.js 2>&1 | grep "Consolidated data"
-# Expected: "Consolidated data for 1711 unique universities"
+# Expected: "Consolidated data for 1708 unique universities"
 
 # Store baseline for comparison
-echo "1711" > debug/baseline_count.txt
+echo "1708" > debug/baseline_count.txt
 ```
 
 ### 🧪 **Step 2: Pattern Validation**
@@ -438,7 +438,7 @@ echo "$(date): Rollback due to [reason]" >> debug/rollback_log.txt
 
 ### 🔍 **University Count Increased Unexpectedly**
 
-**Symptoms**: Count went from 1711 to 1713+ universities
+**Symptoms**: Count went from 1708 to 1710+ universities
 
 **Cause**: Pattern created duplicates instead of merging them
 
@@ -576,8 +576,8 @@ const testCases = [
 
 **3. Baseline**
 ```bash
-# Current: 1711 universities
-# Manual mappings: 106
+# Current: 1708 universities
+# Manual mappings: 94
 ```
 
 **4. Implementation**
@@ -588,7 +588,7 @@ cleaned = cleaned.replace(/^Medical University of (.+)$/, 'Medical University $1
 
 **5. Validation**
 ```bash
-# After: 1711 universities ✅ (stable)
+# After: 1708 universities ✅ (stable)
 # Test aggregation: Success ✅
 # No duplicates: Confirmed ✅
 ```
@@ -596,7 +596,7 @@ cleaned = cleaned.replace(/^Medical University of (.+)$/, 'Medical University $1
 **6. Cleanup**
 ```bash
 # Removed 3 medical university mappings from manual file
-# Manual mappings: 106 → 103 ✅
+# Manual mappings: 94 → 85 ✅
 ```
 
 **7. Commit**
@@ -606,7 +606,7 @@ git commit -m "feat: automate Medical University of [City] pattern
 
 - Add Medical University of [City] → Medical University [City] pattern
 - Remove 3 automated mappings from manual file  
-- University count stable: 1711 universities
+ - University count stable: 1708 universities
 - Zero-risk implementation with 100% test success"
 ```
 

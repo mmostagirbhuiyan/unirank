@@ -236,6 +236,48 @@ The system implements 7 automated transformation rules based on analysis of real
 **Confidence**: High (standardization pattern)
 **Risk**: Minimal (safe standardization pattern)
 
+### 8. Medical University "of" Removal ✅ AUTOMATED
+**Pattern**: `/^Medical University of (.+)$/i` → `'Medical University $1'`
+**Description**: Removes the word "of" from medical university names that follow the "Medical University of [City]" structure.
+
+**Examples**:
+```
+"Medical University of Vienna" → "Medical University Vienna"
+"Medical University of Graz" → "Medical University Graz"
+```
+
+**Enhancement Status**: ✅ **MOVED TO CANONICALIZATION** (June 2025)
+- **Previous**: Required manual mappings for Austrian medical universities
+- **Now**: Direct canonicalization in `scripts/scrape-rankings.js`
+- **Code**: `cleaned = cleaned.replace(/^Medical University of (.+)$/i, 'Medical University $1');`
+- **Manual Mappings Removed**: 3 entries no longer needed
+- **Performance**: Faster processing, more reliable matching
+
+**Frequency**: 3 automated occurrences
+**Confidence**: High (specific institution format)
+**Risk**: Very Low (exact-match pattern)
+
+### 9. UC System Campus Names ✅ AUTOMATED
+**Pattern**: `/^University of California - (.+)$/` → `'University of California $1'`
+**Description**: Normalizes University of California campus names by removing the hyphen between the system name and campus.
+
+**Examples**:
+```
+"University of California - Berkeley" → "University of California Berkeley"
+"University of California - Los Angeles" → "University of California Los Angeles"
+```
+
+**Enhancement Status**: ✅ **MOVED TO CANONICALIZATION** (June 2025)
+- **Previous**: Handled via manual mappings
+- **Now**: Direct canonicalization in `scripts/scrape-rankings.js`
+- **Code**: `cleaned = cleaned.replace(/^University of California - (.+)$/, 'University of California $1');`
+- **Manual Mappings Removed**: 9 entries no longer needed
+- **Performance**: Faster processing, more reliable matching
+
+**Frequency**: 9 automated occurrences
+**Confidence**: Very High (UC-specific naming)
+**Risk**: Very Low (campus list is finite)
+
 ---
 
 ## Pattern Recognition Engine
