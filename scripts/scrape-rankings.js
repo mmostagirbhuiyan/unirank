@@ -28,10 +28,10 @@ const sourceWeights = {
 
 // Define estimated maximum ranks for each source based on the number of universities typically included in their latest rankings
 const sourceMaxRanks = {
-    qs: 1503,     // Based on QS World University Rankings 2025
-    the: 2092,    // Based on Times Higher Education World University Rankings 2025
+    qs: 1000,     // Based on QS World University Rankings 2025
+    the: 999,    // Based on Times Higher Education World University Rankings 2025
     arwu: 1000,   // Based on ARWU, which publishes the top 1000
-    usnews: 2250  // Based on US News Best Global Universities Ranking 2024-2025
+    usnews: 980  // Based on US News Best Global Universities Ranking 2024-2025
 };
 
 const totalSources = Object.keys(sourceWeights).length;
