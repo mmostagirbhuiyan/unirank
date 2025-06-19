@@ -100,8 +100,20 @@ scripts/scrape-rankings.js (lines 56-90)
 
 ### 🔍 **Step 1: Analyze Manual Mappings**
 
-Create a pattern analysis script to identify automation opportunities:
+Use the automated pattern discovery helper:
 
+```bash
+# Discover automation opportunities
+node scripts/automation-helpers/pattern-discovery.js
+
+# Generate test scripts for found patterns  
+node scripts/automation-helpers/pattern-discovery.js --generate-tests
+
+# Get detailed analysis with verbose output
+node scripts/automation-helpers/pattern-discovery.js --verbose
+```
+
+**Manual Analysis** (if needed):
 ```javascript
 // debug/pattern_analysis.js
 const fs = require('fs');
@@ -147,7 +159,10 @@ Focus on patterns with:
 **ALWAYS start with baseline measurement:**
 
 ```bash
-# Get current university count
+# Automated baseline check with helper script
+node scripts/automation-helpers/baseline-monitor.js status
+
+# Manual baseline check  
 node scripts/scrape-rankings.js 2>&1 | grep "Consolidated data"
 # Expected: "Consolidated data for 1711 unique universities"
 
@@ -157,8 +172,20 @@ echo "1711" > debug/baseline_count.txt
 
 ### 🧪 **Step 2: Pattern Validation**
 
-Create individual test scripts for each pattern:
+**Use the automated pattern tester:**
 
+```bash
+# Test pattern logic only (safe - no file modifications)
+node scripts/automation-helpers/pattern-tester.js "Pattern Name" "pattern.code()" --dry-run
+
+# Test full implementation (with automatic rollback)
+node scripts/automation-helpers/pattern-tester.js "UC Campuses" "cleaned.replace(/^University of California - (.+)$/, \"University of California \$1\")"
+
+# Verbose testing with detailed output
+node scripts/automation-helpers/pattern-tester.js "Pattern Name" "pattern.code()" --verbose
+```
+
+**Manual test scripts** (if needed):
 ```javascript
 // debug/test_[pattern_name]_automation.js
 console.log('🧪 TESTING [PATTERN_NAME] AUTOMATION');
@@ -587,6 +614,7 @@ git commit -m "feat: automate Medical University of [City] pattern
 
 ## 🔗 **Related Documentation**
 
+- [Automation Helper Scripts](../scripts/automation-helpers/README.md) - Tools for accelerated development
 - [Enhanced Matching System](ENHANCED_MATCHING.md) - Technical details of current patterns
 - [Main README](../README.md) - System overview and current performance metrics
 - [Aggregation Logic](../scripts/aggregation.js) - Borda Count implementation
@@ -596,6 +624,22 @@ git commit -m "feat: automate Medical University of [City] pattern
 
 ## 🚀 **Quick Reference Commands**
 
+### **Helper Scripts (Recommended)**
+```bash
+# Discover automation patterns
+node scripts/automation-helpers/pattern-discovery.js
+
+# Test a pattern safely
+node scripts/automation-helpers/pattern-tester.js "Pattern Name" "pattern.code()" --dry-run
+
+# Check system health
+node scripts/automation-helpers/baseline-monitor.js health
+
+# Find duplicates
+node scripts/automation-helpers/baseline-monitor.js duplicates
+```
+
+### **Manual Commands**
 ```bash
 # Check current university count
 node scripts/scrape-rankings.js 2>&1 | grep "Consolidated data"
