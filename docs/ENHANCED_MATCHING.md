@@ -199,7 +199,7 @@ The system implements 7 automated transformation rules based on analysis of real
 **Confidence**: Medium (may affect specificity in rare cases)
 **Risk**: Low (definite article removal is generally safe)
 
-### 6. Apostrophe Normalization
+### 6. Apostrophe Normalization ✅ AUTOMATED
 **Pattern**: `/'/g` → `''`
 **Description**: Removes apostrophes from university names
 
@@ -210,7 +210,14 @@ The system implements 7 automated transformation rules based on analysis of real
 "King's College London" → "Kings College London"
 ```
 
-**Frequency**: 5 occurrences in manual mappings
+**Enhancement Status**: ✅ **MOVED TO CANONICALIZATION** (November 2024)
+- **Previous**: Handled via fuzzy matching and manual mappings
+- **Now**: Direct canonicalization in `scripts/scrape-rankings.js`
+- **Code**: `cleaned = cleaned.replace(/'/g, '');`
+- **Manual Mappings Removed**: 4 entries no longer needed
+- **Performance**: Faster processing, more reliable matching
+
+**Frequency**: 5 automated occurrences
 **Confidence**: High (punctuation normalization)
 
 ### 7. And/Ampersand Normalization ✅ AUTOMATED

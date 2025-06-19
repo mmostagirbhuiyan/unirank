@@ -86,6 +86,8 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/^The /, '');
         // Medical Sciences automation (e.g., "University of Medical Sciences" -> "University of Medical Science")
     cleaned = cleaned.replace(/Medical Sciences/g, 'Medical Science');
+        // Apostrophe normalization automation (e.g., "Queen's University" -> "Queens University")
+    cleaned = cleaned.replace(/'/g, '');
     return cleaned;
 }
 
