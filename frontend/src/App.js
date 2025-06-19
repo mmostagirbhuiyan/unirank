@@ -256,14 +256,35 @@ function App() {
   }, [universities, uniqueCountries]);
 
   const filteredAndSortedUniversities = useMemo(() => {
-    const normalize = str => str.toLowerCase().replace(/\s+/g, '');
-    const term = normalize(searchTerm.trim());
+    const basicNormalize = (str) => str.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    const searchTokens = basicNormalize(searchTerm)
+      .split(/\s+/)
+      .filter(Boolean);
+
     let filtered = universities;
     if (selectedCountry) {
-      filtered = filtered.filter(uni => uni.country === selectedCountry);
+      filtered = filtered.filter((uni) => uni.country === selectedCountry);
     }
-    if (term) {
-      filtered = filtered.filter(uni => normalize(uni.name).includes(term));
+
+    if (searchTokens.length) {
+      filtered = filtered.filter((uni) => {
+        const name = basicNormalize(uni.name);
+        // Quick substring match for performance
+        const nameNoSpaces = name.replace(/\s+/g, '');
+        const termNoSpaces = searchTokens.join('');
+        if (nameNoSpaces.includes(termNoSpaces)) return true;
+
+        // Token-based prefix matching ignoring order
+        const nameTokens = name.split(/\s+/);
+        const tokensMatch = searchTokens.every((token) =>
+          nameTokens.some((nt) => nt.startsWith(token))
+        );
+        if (tokensMatch) return true;
+
+        // Acronym match (e.g., MIT for Massachusetts Institute of Technology)
+        const acronym = nameTokens.map((t) => t[0]).join('');
+        return acronym.includes(termNoSpaces);
+      });
     }
 
     return filtered.sort((a, b) => {
