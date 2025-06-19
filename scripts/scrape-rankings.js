@@ -90,6 +90,10 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/^Medical University of (.+)$/i, 'Medical University $1');
         // UC system campus name automation (e.g., "University of California - Berkeley" -> "University of California Berkeley")
     cleaned = cleaned.replace(/^University of California - (.+)$/, 'University of California $1');
+        // Of preposition normalization automation
+    cleaned = cleaned.replace(/^(.*\bUniversity)\s([A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?)$/, '$1 of $2');
+    cleaned = cleaned.replace(/University of Medical Science(s?)/, 'University Medical Science$1');
+    cleaned = cleaned.replace(/(University .*?)University of ([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+)?)$/, '$1University $2');
     return cleaned;
 }
 
