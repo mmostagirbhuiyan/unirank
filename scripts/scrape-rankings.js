@@ -88,6 +88,8 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/Medical Sciences/g, 'Medical Science');
         // Medical University "of" removal automation (e.g., "Medical University of Graz" -> "Medical University Graz")
     cleaned = cleaned.replace(/^Medical University of (.+)$/i, 'Medical University $1');
+        // UC system campus name automation (e.g., "University of California - Berkeley" -> "University of California Berkeley")
+    cleaned = cleaned.replace(/^University of California - (.+)$/, 'University of California $1');
     return cleaned;
 }
 
