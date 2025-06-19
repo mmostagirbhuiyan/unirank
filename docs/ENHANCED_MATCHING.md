@@ -88,7 +88,7 @@ class EnhancedNameMatcher {
 
 ## Transformation Rules
 
-The system implements 7 automated transformation rules based on analysis of real university naming patterns:
+The system implements 8 automated transformation rules based on analysis of real university naming patterns:
 
 ### 1. Hyphen/Space Normalization ✅ AUTOMATED
 **Pattern**: `/-/g` → `' '`
@@ -277,6 +277,33 @@ The system implements 7 automated transformation rules based on analysis of real
 **Frequency**: 9 automated occurrences
 **Confidence**: Very High (UC-specific naming)
 **Risk**: Very Low (campus list is finite)
+
+### 10. Of Preposition Normalization ✅ AUTOMATED
+**Pattern**: Adds or removes the word "of" between "University" and a trailing location.
+**Description**: Ensures consistent use of the preposition "of" in university names.
+
+**Examples**:
+```
+"Chinese University Hong Kong" → "Chinese University of Hong Kong"
+"Memorial University Newfoundland" → "Memorial University of Newfoundland"
+"Indiana University-Purdue University of Indianapolis" → "Indiana University-Purdue University Indianapolis"
+```
+
+**Enhancement Status**: ✅ **MOVED TO CANONICALIZATION** (June 2025)
+- **Previous**: Handled via manual mappings
+- **Now**: Direct canonicalization in `scripts/scrape-rankings.js`
+- **Code**:
+  ```javascript
+  cleaned = cleaned.replace(/^(.*\bUniversity)\s([A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?)/, '$1 of $2');
+  cleaned = cleaned.replace(/University of Medical Science(s?)/, 'University Medical Science$1');
+  cleaned = cleaned.replace(/(University .*?)University of ([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+)?)/, '$1University $2');
+  ```
+- **Manual Mappings Removed**: 6 entries no longer needed
+- **Performance**: Faster processing, more reliable matching
+
+**Frequency**: 6 automated occurrences
+**Confidence**: Medium (regex-based)
+**Risk**: Low (specific wording changes)
 
 ---
 
