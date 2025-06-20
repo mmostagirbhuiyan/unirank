@@ -5,7 +5,8 @@
   "main": "scripts/scrape-rankings.js",
   "scripts": {
     "start": "node scripts/matchUniversities.js && node scripts/aggregateRankings.js",
-    "test": "jest"
+    "test": "jest",
+    "test:full": "npm run test && node v2-pipeline/test-suite.js"
   },
   "keywords": [
     "university",

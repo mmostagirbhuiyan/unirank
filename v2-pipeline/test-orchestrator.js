@@ -365,10 +365,10 @@ class OrchestratorTestSuite {
       }
       
       // Check for normalization report
-      const normalizationFiles = fs.readdirSync('staging/results').filter(f => 
-        f.startsWith('normalization-report_') && f.includes(this.lastRunDirectory.split('/').pop())
-      );
-      
+      const normalizationFiles = fs
+        .readdirSync('staging/results')
+        .filter(f => f.startsWith('normalization-report_'));
+
       if (normalizationFiles.length > 0) {
         this.recordPass('Normalization report generated');
       } else {

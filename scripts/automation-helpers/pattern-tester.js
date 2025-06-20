@@ -23,8 +23,9 @@ console.log('=' .repeat(60));
 
 // Parse command line arguments
 const args = process.argv.slice(2);
-const patternName = args[0];
-const patternCode = args[1];
+const useV2 = args.includes('--v2');
+const patternName = args[0] && args[0] !== '--v2' ? args[0] : args[1];
+const patternCode = args[1] && args[0] !== '--v2' ? args[1] : args[2];
 
 if (!patternName || !patternCode) {
     console.log('Usage: node pattern-tester.js <pattern-name> <pattern-code>');
@@ -113,7 +114,8 @@ try {
 function establishBaseline() {
     try {
         // Get current university count
-        const output = execSync('node scripts/scrape-rankings.js 2>&1', { encoding: 'utf8' });
+        const baselineCmd = useV2 ? 'node v2-pipeline/orchestrator.js --dry-run' : 'node scripts/scrape-rankings.js';
+        const output = execSync(`${baselineCmd} 2>&1`, { encoding: 'utf8' });
         const countMatch = output.match(/Consolidated data for (\d+) unique universities/);
         const count = countMatch ? parseInt(countMatch[1]) : null;
         
@@ -122,7 +124,9 @@ function establishBaseline() {
         }
         
         // Get manual mappings count
-        const mappingsPath = path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+        const mappingsPath = useV2
+            ? path.resolve(__dirname, '../../canonical-universities.json')
+            : path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
         const mappings = JSON.parse(fs.readFileSync(mappingsPath, 'utf8'));
         
         // Store baseline for later comparison
@@ -144,7 +148,9 @@ function testPatternLogic(patternCode) {
     console.log('-' .repeat(40));
     
     // Load manual mappings to find test cases
-    const mappingsPath = path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+    const mappingsPath = useV2
+        ? path.resolve(__dirname, '../../canonical-universities.json')
+        : path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
     const mappings = JSON.parse(fs.readFileSync(mappingsPath, 'utf8'));
     
     // Create test function
@@ -189,15 +195,22 @@ function createBackup() {
     const backupDir = `/tmp/automation_backup_${timestamp}`;
     
     execSync(`mkdir -p ${backupDir}`);
-    execSync(`cp scripts/scrape-rankings.js ${backupDir}/`);
-    execSync(`cp frontend/public/data/manual-university-mapping.json ${backupDir}/`);
+    if (useV2) {
+        execSync(`cp v2-pipeline/orchestrator.js ${backupDir}/`);
+        execSync(`cp canonical-universities.json ${backupDir}/`);
+    } else {
+        execSync(`cp scripts/scrape-rankings.js ${backupDir}/`);
+        execSync(`cp frontend/public/data/manual-university-mapping.json ${backupDir}/`);
+    }
     
     // Store backup location
     fs.writeFileSync('/tmp/automation_backup_location.txt', backupDir);
 }
 
 function implementPattern(patternCode, patternName) {
-    const scriptPath = path.resolve(__dirname, '../scrape-rankings.js');
+    const scriptPath = useV2
+        ? path.resolve(__dirname, '../../v2-pipeline/orchestrator.js')
+        : path.resolve(__dirname, '../scrape-rankings.js');
     let content = fs.readFileSync(scriptPath, 'utf8');
     
     // Find the insertion point (before return statement in canonicalizeName)
@@ -220,7 +233,8 @@ function testAggregation(baseline) {
     try {
         console.log('Running aggregation with new pattern...');
         
-        const output = execSync('node scripts/scrape-rankings.js 2>&1', { 
+        const cmd = useV2 ? 'node v2-pipeline/orchestrator.js --dry-run' : 'node scripts/scrape-rankings.js';
+        const output = execSync(`${cmd} 2>&1`, {
             encoding: 'utf8',
             timeout: 60000  // 60 second timeout
         });
@@ -257,8 +271,13 @@ function revertChanges() {
     
     try {
         // Restore from git
-        execSync('git checkout HEAD -- scripts/scrape-rankings.js');
-        execSync('git checkout HEAD -- frontend/public/data/manual-university-mapping.json');
+        if (useV2) {
+            execSync('git checkout HEAD -- v2-pipeline/orchestrator.js');
+            execSync('git checkout HEAD -- canonical-universities.json');
+        } else {
+            execSync('git checkout HEAD -- scripts/scrape-rankings.js');
+            execSync('git checkout HEAD -- frontend/public/data/manual-university-mapping.json');
+        }
         
         console.log('✅ Files restored from git');
         

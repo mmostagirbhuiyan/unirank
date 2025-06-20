@@ -15,7 +15,12 @@ console.log('📊 UNIVERSITY RANKINGS BASELINE MONITOR');
 console.log('=' .repeat(60));
 
 const args = process.argv.slice(2);
-const command = args[0] || 'status';
+const useV2 = args.includes('--v2');
+const command = args[0] && args[0] !== '--v2' ? args[0] : (args[1] && args[1] !== '--v2' ? args[1] : 'status');
+
+if (useV2) {
+    console.log('Running in V2 mode');
+}
 
 switch (command) {
     case 'status':
@@ -66,7 +71,9 @@ function checkSystemStatus() {
         console.log(`🏛️  Universities: ${count}`);
         
         // Check manual mappings
-        const mappingsPath = path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+        const mappingsPath = useV2
+            ? path.resolve(__dirname, '../../canonical-universities.json')
+            : path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
         const mappings = JSON.parse(fs.readFileSync(mappingsPath, 'utf8'));
         console.log(`📋 Manual mappings: ${mappings.length}`);
         
@@ -102,9 +109,10 @@ function compareWithBaseline(baselineFile) {
     console.log('-' .repeat(40));
     
     const currentCount = getCurrentUniversityCount();
-    const currentMappings = JSON.parse(fs.readFileSync(
-        path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json'), 'utf8'
-    )).length;
+    const mappingsPath = useV2
+        ? path.resolve(__dirname, '../../canonical-universities.json')
+        : path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+    const currentMappings = JSON.parse(fs.readFileSync(mappingsPath, 'utf8')).length;
     
     // Try to load baseline from various sources
     let baseline = null;
@@ -208,11 +216,16 @@ function runHealthCheck() {
         
         // 4. Check file integrity
         console.log('4. Checking file integrity...');
-        const requiredFiles = [
-            '../../frontend/public/data/aggregated-rankings.json',
-            '../../frontend/public/data/manual-university-mapping.json',
-            '../scrape-rankings.js'
-        ];
+        const requiredFiles = useV2
+            ? [
+                '../../canonical-universities.json',
+                '../..//v2-pipeline/orchestrator.js'
+            ]
+            : [
+                '../../frontend/public/data/aggregated-rankings.json',
+                '../../frontend/public/data/manual-university-mapping.json',
+                '../scrape-rankings.js'
+            ];
         
         for (const file of requiredFiles) {
             const fullPath = path.resolve(__dirname, file);

@@ -23,9 +23,22 @@ const CONFIG = {
 console.log('🔍 UNIVERSITY NAME PATTERN DISCOVERY TOOL');
 console.log('=' .repeat(60));
 
-// Load manual mappings
-const mappingsPath = path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+// Parse CLI arguments
+const args = process.argv.slice(2);
+const useV2 = args.includes('--v2');
+
+// Load manual mappings or canonical list
+const mappingsPath = useV2
+  ? path.resolve(__dirname, '../../canonical-universities.json')
+  : path.resolve(__dirname, '../../frontend/public/data/manual-university-mapping.json');
+
 const mappings = JSON.parse(fs.readFileSync(mappingsPath, 'utf8'));
+
+if (useV2) {
+  console.log('Running in V2 mode with canonical list:', mappingsPath);
+  console.log('Pattern discovery for canonical list is not yet implemented.');
+  process.exit(0);
+}
 
 console.log(`📋 Analyzing ${mappings.length} manual mappings...\n`);
 
