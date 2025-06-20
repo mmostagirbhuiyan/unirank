@@ -1,0 +1,77 @@
+{
+  "validation": {
+    "configPath": "staging/config/qs-2026-rules.json",
+    "timestamp": "2025-06-20T18:07:02.571Z",
+    "processingTime": 12,
+    "valid": true,
+    "summary": {
+      "errors": 0,
+      "warnings": 1,
+      "suggestions": 0
+    }
+  },
+  "details": {
+    "errors": [],
+    "warnings": [
+      "Transformation rule 'commaReplacement' appears to be ineffective on sample data"
+    ],
+    "suggestions": []
+  },
+  "compatibility": {
+    "columnMappings": {
+      "availableColumns": [
+        "Rank",
+        "Institution",
+        "Country/Territory",
+        "Overall Score"
+      ],
+      "mappedColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "unmappedColumns": [
+        "Overall Score"
+      ]
+    },
+    "transformations": {
+      "totalTransformations": 3,
+      "effectiveTransformations": 2,
+      "ineffectiveRules": [
+        "commaReplacement"
+      ]
+    }
+  },
+  "performance": {
+    "processingTimeMs": 6,
+    "memoryUsage": {
+      "heapUsed": -6939728,
+      "heapTotal": -999424,
+      "rss": -1966080
+    },
+    "throughput": {
+      "rowsPerSecond": 2333.3333333333335
+    },
+    "success": true,
+    "stats": {
+      "totalRows": 14,
+      "validRows": 14,
+      "invalidRows": 0,
+      "transformedRows": 14,
+      "errors": [],
+      "warnings": [],
+      "startTime": "2025-06-20T18:07:02.565Z",
+      "endTime": "2025-06-20T18:07:02.570Z"
+    }
+  },
+  "quality": {
+    "score": 100,
+    "factors": {
+      "schemaCompleteness": 25,
+      "ruleQuality": 25,
+      "maintainability": 25,
+      "documentation": 25
+    },
+    "recommendations": []
+  }
+}

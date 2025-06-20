@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "runId": "2074a1250345ab58",
+    "startTime": "2025-06-20T18:20:48.310Z",
+    "endTime": "2025-06-20T18:20:48.347Z",
+    "totalDuration": 37,
+    "status": "completed"
+  },
+  "phases": {
+    "validation": {
+      "status": "completed",
+      "startTime": "2025-06-20T18:20:48.333Z",
+      "endTime": "2025-06-20T18:20:48.344Z",
+      "duration": 11
+    },
+    "normalization": {
+      "status": "completed",
+      "startTime": "2025-06-20T18:20:48.344Z",
+      "endTime": "2025-06-20T18:20:48.345Z",
+      "duration": 1
+    },
+    "matching": {
+      "status": "completed",
+      "startTime": "2025-06-20T18:20:48.345Z",
+      "endTime": "2025-06-20T18:20:48.346Z",
+      "duration": 1
+    },
+    "review": {
+      "status": "skipped",
+      "startTime": "2025-06-20T18:20:48.346Z",
+      "endTime": "2025-06-20T18:20:48.346Z",
+      "duration": 0
+    },
+    "compilation": {
+      "status": "completed",
+      "startTime": "2025-06-20T18:20:48.346Z",
+      "endTime": "2025-06-20T18:20:48.347Z",
+      "duration": 1
+    }
+  },
+  "summary": {
+    "totalInput": 10,
+    "matched": 10,
+    "unmatched": 0,
+    "manualReviewRequired": false,
+    "matchRate": "100.00%"
+  },
+  "performance": {
+    "totalDuration": 37,
+    "averageProcessingTime": "0.10ms",
+    "normalizationTime": 0,
+    "matchingTime": 1
+  },
+  "outputs": {
+    "json": "staging/runs/2074a1250345ab58/final-results.json",
+    "csv": "staging/runs/2074a1250345ab58/final-results.csv"
+  }
+}

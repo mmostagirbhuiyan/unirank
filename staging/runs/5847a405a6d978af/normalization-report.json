@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "stats": {
+    "totalRows": 5,
+    "validRows": 5,
+    "invalidRows": 0,
+    "transformedRows": 5,
+    "errors": [],
+    "warnings": [],
+    "startTime": "2025-06-20T18:15:02.011Z",
+    "endTime": "2025-06-20T18:15:02.012Z"
+  },
+  "report": {
+    "metadata": {
+      "source": "the",
+      "year": 2025,
+      "format": "csv",
+      "processedAt": "2025-06-20T18:15:02.012Z",
+      "processingTimeMs": 1
+    },
+    "statistics": {
+      "totalRows": 5,
+      "validRows": 5,
+      "invalidRows": 0,
+      "transformedRows": 5,
+      "successRate": "100.00%"
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "outputPath": "staging/runs/5847a405a6d978af/normalized-data.csv"
+}

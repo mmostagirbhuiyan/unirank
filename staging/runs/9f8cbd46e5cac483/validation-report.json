@@ -1,0 +1,81 @@
+{
+  "validation": {
+    "configPath": "staging/config/the-2025-rules.json",
+    "timestamp": "2025-06-20T18:14:36.558Z",
+    "processingTime": 10,
+    "valid": true,
+    "summary": {
+      "errors": 3,
+      "warnings": 0,
+      "suggestions": 0
+    }
+  },
+  "details": {
+    "errors": [
+      "Column mapping for 'rank': No matching headers found in data",
+      "Column mapping for 'name': No matching headers found in data",
+      "Column mapping for 'country': No matching headers found in data"
+    ],
+    "warnings": [],
+    "suggestions": []
+  },
+  "compatibility": {
+    "columnMappings": {
+      "availableColumns": [
+        "# University Ranking Results - www.universityrankings.ch",
+        "_1",
+        "_2"
+      ],
+      "mappedColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "unmappedColumns": [
+        "# University Ranking Results - www.universityrankings.ch",
+        "_1",
+        "_2"
+      ]
+    },
+    "transformations": {
+      "totalTransformations": 0,
+      "effectiveTransformations": 0,
+      "ineffectiveRules": []
+    }
+  },
+  "performance": {
+    "processingTimeMs": 4,
+    "memoryUsage": {
+      "heapUsed": -6905904,
+      "heapTotal": -475136,
+      "rss": -2342912
+    },
+    "throughput": {
+      "rowsPerSecond": 3500
+    },
+    "success": false,
+    "stats": {
+      "totalRows": 14,
+      "validRows": 0,
+      "invalidRows": 1,
+      "transformedRows": 0,
+      "errors": [
+        "Error processing row 0: Required column 'rank' not found",
+        "Required column 'rank' not found"
+      ],
+      "warnings": [],
+      "startTime": "2025-06-20T18:14:36.554Z",
+      "endTime": "2025-06-20T18:14:36.557Z"
+    }
+  },
+  "quality": {
+    "score": 100,
+    "factors": {
+      "schemaCompleteness": 25,
+      "ruleQuality": 25,
+      "maintainability": 25,
+      "documentation": 25
+    },
+    "recommendations": []
+  }
+}

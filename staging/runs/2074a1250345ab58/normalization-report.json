@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "stats": {
+    "totalRows": 10,
+    "validRows": 10,
+    "invalidRows": 0,
+    "transformedRows": 10,
+    "errors": [],
+    "warnings": [],
+    "startTime": "2025-06-20T18:20:48.344Z",
+    "endTime": "2025-06-20T18:20:48.345Z"
+  },
+  "report": {
+    "metadata": {
+      "source": "usnews",
+      "year": 2025,
+      "format": "csv",
+      "processedAt": "2025-06-20T18:20:48.345Z",
+      "processingTimeMs": 1
+    },
+    "statistics": {
+      "totalRows": 10,
+      "validRows": 10,
+      "invalidRows": 0,
+      "transformedRows": 10,
+      "successRate": "100.00%"
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "outputPath": "staging/runs/2074a1250345ab58/normalized-data.csv"
+}

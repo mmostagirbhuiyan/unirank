@@ -1,0 +1,255 @@
+[
+  {
+    "original": {
+      "rank": "1",
+      "name": "harvard university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Harvard University",
+      "country": "USA",
+      "id": "canonical-0087",
+      "aliases": [
+        "Harvard University",
+        "The Harvard University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "2",
+      "name": "stanford university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Stanford University",
+      "country": "USA",
+      "id": "canonical-0088",
+      "aliases": [
+        "Stanford University",
+        "The Stanford University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "3",
+      "name": "massachusetts institute of technology",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Massachusetts Institute of Technology (MIT)",
+      "country": "USA",
+      "id": "canonical-0086",
+      "aliases": [
+        "Massachusetts Institute of Technology (MIT)",
+        "The Massachusetts Institute of Technology (MIT)"
+      ],
+      "metadata": {
+        "institution_type": "institute",
+        "specializations": [
+          "technology",
+          "engineering"
+        ]
+      }
+    },
+    "matchType": "normalized",
+    "confidence": 0.95,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "4",
+      "name": "university of cambridge",
+      "country": "United Kingdom"
+    },
+    "canonical": {
+      "name": "University of Cambridge",
+      "country": "UK",
+      "id": "canonical-0090",
+      "aliases": [
+        "University of Cambridge",
+        "The University of Cambridge"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "5",
+      "name": "university of california berkeley",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "University of California Berkeley",
+      "country": "USA",
+      "id": "canonical-0091",
+      "aliases": [
+        "University of California Berkeley",
+        "The University of California Berkeley"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "6",
+      "name": "university of oxford",
+      "country": "United Kingdom"
+    },
+    "canonical": {
+      "name": "University of Oxford",
+      "country": "UK",
+      "id": "canonical-0089",
+      "aliases": [
+        "University of Oxford",
+        "The University of Oxford"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "7",
+      "name": "princeton university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Princeton University",
+      "country": "USA",
+      "id": "canonical-0094",
+      "aliases": [
+        "Princeton University",
+        "The Princeton University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "8",
+      "name": "california institute of technology",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "California Institute of Technology",
+      "country": "Unknown",
+      "id": "canonical-0003",
+      "aliases": [
+        "California Institute of Technology",
+        "California Institute of Technology - Caltech",
+        "The California Institute of Technology"
+      ],
+      "metadata": {
+        "institution_type": "institute",
+        "specializations": [
+          "technology",
+          "engineering"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "8",
+      "name": "columbia university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Columbia University",
+      "country": "USA",
+      "id": "canonical-0101",
+      "aliases": [
+        "Columbia University",
+        "The Columbia University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "10",
+      "name": "university of chicago",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "University of Chicago",
+      "country": "USA",
+      "id": "canonical-0098",
+      "aliases": [
+        "University of Chicago",
+        "The University of Chicago"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  }
+]

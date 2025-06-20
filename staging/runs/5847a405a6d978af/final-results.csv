@@ -1,0 +1,6 @@
+original_name,canonical_name,canonical_id,country,match_type,confidence,processing_time_ms
+"university of oxford","University of Oxford","canonical-0089","UK",canonical,1,
+"massachusetts institute of technology","Massachusetts Institute of Technology (MIT)","canonical-0086","USA",normalized,0.95,
+"harvard university","Harvard University","canonical-0087","USA",canonical,1,
+"princeton university","Princeton University","canonical-0094","USA",canonical,1,
+"university of cambridge","University of Cambridge","canonical-0090","UK",canonical,1,

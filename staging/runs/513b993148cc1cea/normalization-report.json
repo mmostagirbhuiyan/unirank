@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "stats": {
+    "totalRows": 14,
+    "validRows": 14,
+    "invalidRows": 0,
+    "transformedRows": 14,
+    "errors": [],
+    "warnings": [],
+    "startTime": "2025-06-20T18:07:02.571Z",
+    "endTime": "2025-06-20T18:07:02.572Z"
+  },
+  "report": {
+    "metadata": {
+      "source": "qs",
+      "year": 2026,
+      "format": "xlsx",
+      "processedAt": "2025-06-20T18:07:02.572Z",
+      "processingTimeMs": 1
+    },
+    "statistics": {
+      "totalRows": 14,
+      "validRows": 14,
+      "invalidRows": 0,
+      "transformedRows": 14,
+      "successRate": "100.00%"
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "outputPath": "staging/runs/513b993148cc1cea/normalized-data.csv"
+}

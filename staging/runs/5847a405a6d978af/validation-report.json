@@ -1,0 +1,76 @@
+{
+  "validation": {
+    "configPath": "staging/config/the-2025-rules.json",
+    "timestamp": "2025-06-20T18:15:02.010Z",
+    "processingTime": 10,
+    "valid": true,
+    "summary": {
+      "errors": 0,
+      "warnings": 2,
+      "suggestions": 0
+    }
+  },
+  "details": {
+    "errors": [],
+    "warnings": [
+      "Transformation rule 'institutionSuffixRemoval' appears to be ineffective on sample data",
+      "Transformation rule 'thePrefixGeneral' appears to be ineffective on sample data"
+    ],
+    "suggestions": []
+  },
+  "compatibility": {
+    "columnMappings": {
+      "availableColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "mappedColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "unmappedColumns": []
+    },
+    "transformations": {
+      "totalTransformations": 2,
+      "effectiveTransformations": 0,
+      "ineffectiveRules": [
+        "institutionSuffixRemoval",
+        "thePrefixGeneral"
+      ]
+    }
+  },
+  "performance": {
+    "processingTimeMs": 5,
+    "memoryUsage": {
+      "heapUsed": -6794400,
+      "heapTotal": 49152,
+      "rss": -2228224
+    },
+    "throughput": {
+      "rowsPerSecond": 1000
+    },
+    "success": true,
+    "stats": {
+      "totalRows": 5,
+      "validRows": 5,
+      "invalidRows": 0,
+      "transformedRows": 5,
+      "errors": [],
+      "warnings": [],
+      "startTime": "2025-06-20T18:15:02.005Z",
+      "endTime": "2025-06-20T18:15:02.010Z"
+    }
+  },
+  "quality": {
+    "score": 100,
+    "factors": {
+      "schemaCompleteness": 25,
+      "ruleQuality": 25,
+      "maintainability": 25,
+      "documentation": 25
+    },
+    "recommendations": []
+  }
+}

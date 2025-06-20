@@ -1,0 +1,81 @@
+{
+  "validation": {
+    "configPath": "staging/config/the-2025-rules.json",
+    "timestamp": "2025-06-20T18:13:37.343Z",
+    "processingTime": 10,
+    "valid": true,
+    "summary": {
+      "errors": 3,
+      "warnings": 0,
+      "suggestions": 0
+    }
+  },
+  "details": {
+    "errors": [
+      "Column mapping for 'rank': No matching headers found in data",
+      "Column mapping for 'name': No matching headers found in data",
+      "Column mapping for 'country': No matching headers found in data"
+    ],
+    "warnings": [],
+    "suggestions": []
+  },
+  "compatibility": {
+    "columnMappings": {
+      "availableColumns": [
+        "    1  ",
+        "   University of Oxford   ",
+        "UK   "
+      ],
+      "mappedColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "unmappedColumns": [
+        "    1  ",
+        "   University of Oxford   ",
+        "UK   "
+      ]
+    },
+    "transformations": {
+      "totalTransformations": 0,
+      "effectiveTransformations": 0,
+      "ineffectiveRules": []
+    }
+  },
+  "performance": {
+    "processingTimeMs": 4,
+    "memoryUsage": {
+      "heapUsed": -6952656,
+      "heapTotal": -737280,
+      "rss": -2342912
+    },
+    "throughput": {
+      "rowsPerSecond": 6000
+    },
+    "success": false,
+    "stats": {
+      "totalRows": 24,
+      "validRows": 0,
+      "invalidRows": 1,
+      "transformedRows": 0,
+      "errors": [
+        "Error processing row 0: Required column 'rank' not found",
+        "Required column 'rank' not found"
+      ],
+      "warnings": [],
+      "startTime": "2025-06-20T18:13:37.339Z",
+      "endTime": "2025-06-20T18:13:37.342Z"
+    }
+  },
+  "quality": {
+    "score": 100,
+    "factors": {
+      "schemaCompleteness": 25,
+      "ruleQuality": 25,
+      "maintainability": 25,
+      "documentation": 25
+    },
+    "recommendations": []
+  }
+}

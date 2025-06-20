@@ -1,0 +1,128 @@
+[
+  {
+    "original": {
+      "rank": "1",
+      "name": "university of oxford",
+      "country": "United Kingdom"
+    },
+    "canonical": {
+      "name": "University of Oxford",
+      "country": "UK",
+      "id": "canonical-0089",
+      "aliases": [
+        "University of Oxford",
+        "The University of Oxford"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "2",
+      "name": "massachusetts institute of technology",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Massachusetts Institute of Technology (MIT)",
+      "country": "USA",
+      "id": "canonical-0086",
+      "aliases": [
+        "Massachusetts Institute of Technology (MIT)",
+        "The Massachusetts Institute of Technology (MIT)"
+      ],
+      "metadata": {
+        "institution_type": "institute",
+        "specializations": [
+          "technology",
+          "engineering"
+        ]
+      }
+    },
+    "matchType": "normalized",
+    "confidence": 0.95,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "3",
+      "name": "harvard university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Harvard University",
+      "country": "USA",
+      "id": "canonical-0087",
+      "aliases": [
+        "Harvard University",
+        "The Harvard University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "4",
+      "name": "princeton university",
+      "country": "United States"
+    },
+    "canonical": {
+      "name": "Princeton University",
+      "country": "USA",
+      "id": "canonical-0094",
+      "aliases": [
+        "Princeton University",
+        "The Princeton University"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  },
+  {
+    "original": {
+      "rank": "5",
+      "name": "university of cambridge",
+      "country": "United Kingdom"
+    },
+    "canonical": {
+      "name": "University of Cambridge",
+      "country": "UK",
+      "id": "canonical-0090",
+      "aliases": [
+        "University of Cambridge",
+        "The University of Cambridge"
+      ],
+      "metadata": {
+        "institution_type": "university",
+        "specializations": [
+          "comprehensive"
+        ]
+      }
+    },
+    "matchType": "canonical",
+    "confidence": 1,
+    "processingTime": 0
+  }
+]

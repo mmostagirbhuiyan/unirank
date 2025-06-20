@@ -1,0 +1,304 @@
+[
+  {
+    "originalData": {
+      "rank": "1",
+      "name": "harvard university",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 0,
+      "query": "harvard university",
+      "match": {
+        "name": "Harvard University",
+        "country": "USA",
+        "id": "canonical-0087",
+        "aliases": [
+          "Harvard University",
+          "The Harvard University"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "2",
+      "name": "massachusetts institute of technology",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 1,
+      "query": "massachusetts institute of technology",
+      "match": {
+        "name": "Massachusetts Institute of Technology (MIT)",
+        "country": "USA",
+        "id": "canonical-0086",
+        "aliases": [
+          "Massachusetts Institute of Technology (MIT)",
+          "The Massachusetts Institute of Technology (MIT)"
+        ],
+        "metadata": {
+          "institution_type": "institute",
+          "specializations": [
+            "technology",
+            "engineering"
+          ]
+        }
+      },
+      "confidence": 0.95,
+      "matchType": "normalized",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "3",
+      "name": "stanford university",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 2,
+      "query": "stanford university",
+      "match": {
+        "name": "Stanford University",
+        "country": "USA",
+        "id": "canonical-0088",
+        "aliases": [
+          "Stanford University",
+          "The Stanford University"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "4",
+      "name": "university of oxford",
+      "country": "UK"
+    },
+    "matchResult": {
+      "index": 3,
+      "query": "university of oxford",
+      "match": {
+        "name": "University of Oxford",
+        "country": "UK",
+        "id": "canonical-0089",
+        "aliases": [
+          "University of Oxford",
+          "The University of Oxford"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "5",
+      "name": "university of cambridge",
+      "country": "UK"
+    },
+    "matchResult": {
+      "index": 4,
+      "query": "university of cambridge",
+      "match": {
+        "name": "University of Cambridge",
+        "country": "UK",
+        "id": "canonical-0090",
+        "aliases": [
+          "University of Cambridge",
+          "The University of Cambridge"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "6",
+      "name": "university of california berkeley",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 5,
+      "query": "university of california berkeley",
+      "match": {
+        "name": "University of California Berkeley",
+        "country": "USA",
+        "id": "canonical-0091",
+        "aliases": [
+          "University of California Berkeley",
+          "The University of California Berkeley"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "7",
+      "name": "university college london",
+      "country": "UK"
+    },
+    "matchResult": {
+      "index": 6,
+      "query": "university college london",
+      "match": {
+        "name": "University College London",
+        "country": "UK",
+        "id": "canonical-0095",
+        "aliases": [
+          "University College London",
+          "The University College London"
+        ],
+        "metadata": {
+          "institution_type": "college",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "8",
+      "name": "university of washington seattle",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 7,
+      "query": "university of washington seattle",
+      "match": {
+        "name": "University of Washington Seattle",
+        "country": "Unknown",
+        "id": "canonical-0072",
+        "aliases": [
+          "University of Washington Seattle",
+          "University of Washington",
+          "The University of Washington Seattle"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "9",
+      "name": "yale university",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 8,
+      "query": "yale university",
+      "match": {
+        "name": "Yale University",
+        "country": "USA",
+        "id": "canonical-0093",
+        "aliases": [
+          "Yale University",
+          "The Yale University"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  },
+  {
+    "originalData": {
+      "rank": "10",
+      "name": "columbia university",
+      "country": "United States"
+    },
+    "matchResult": {
+      "index": 9,
+      "query": "columbia university",
+      "match": {
+        "name": "Columbia University",
+        "country": "USA",
+        "id": "canonical-0101",
+        "aliases": [
+          "Columbia University",
+          "The Columbia University"
+        ],
+        "metadata": {
+          "institution_type": "university",
+          "specializations": [
+            "comprehensive"
+          ]
+        }
+      },
+      "confidence": 1,
+      "matchType": "canonical",
+      "suggestions": [],
+      "processingTimeMs": 0
+    }
+  }
+]

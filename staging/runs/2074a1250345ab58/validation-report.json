@@ -1,0 +1,82 @@
+{
+  "validation": {
+    "configPath": "staging/config/usnews-2025-rules.json",
+    "timestamp": "2025-06-20T18:20:48.344Z",
+    "processingTime": 11,
+    "valid": true,
+    "summary": {
+      "errors": 0,
+      "warnings": 6,
+      "suggestions": 0
+    }
+  },
+  "details": {
+    "errors": [],
+    "warnings": [
+      "Redundant exact mapping: \"University of Michigan\" → \"University of Michigan\"",
+      "Redundant exact mapping: \"California Institute of Technology\" → \"California Institute of Technology\"",
+      "Redundant exact mapping: \"United States\" → \"United States\"",
+      "Redundant exact mapping: \"United Kingdom\" → \"United Kingdom\"",
+      "Circular mapping detected: \"University of Michigan\" ↔ \"University of Michigan\"",
+      "Circular mapping detected: \"California Institute of Technology\" ↔ \"California Institute of Technology\""
+    ],
+    "suggestions": []
+  },
+  "compatibility": {
+    "columnMappings": {
+      "availableColumns": [
+        "Rank",
+        "University",
+        "Country",
+        "Score",
+        "Enrollment"
+      ],
+      "mappedColumns": [
+        "rank",
+        "name",
+        "country"
+      ],
+      "unmappedColumns": [
+        "Score",
+        "Enrollment"
+      ]
+    },
+    "transformations": {
+      "totalTransformations": 0,
+      "effectiveTransformations": 0,
+      "ineffectiveRules": []
+    }
+  },
+  "performance": {
+    "processingTimeMs": 5,
+    "memoryUsage": {
+      "heapUsed": -6867520,
+      "heapTotal": -212992,
+      "rss": -2031616
+    },
+    "throughput": {
+      "rowsPerSecond": 2000
+    },
+    "success": true,
+    "stats": {
+      "totalRows": 10,
+      "validRows": 10,
+      "invalidRows": 0,
+      "transformedRows": 10,
+      "errors": [],
+      "warnings": [],
+      "startTime": "2025-06-20T18:20:48.338Z",
+      "endTime": "2025-06-20T18:20:48.343Z"
+    }
+  },
+  "quality": {
+    "score": 100,
+    "factors": {
+      "schemaCompleteness": 25,
+      "ruleQuality": 25,
+      "maintainability": 25,
+      "documentation": 25
+    },
+    "recommendations": []
+  }
+}
