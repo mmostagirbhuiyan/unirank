@@ -37,7 +37,7 @@ async function downloadQSCSV() {
 function parseQSCSV(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
-    fs.createReadStream(filePath, { encoding: 'latin1' })
+    fs.createReadStream(filePath, { encoding: 'utf-8' })
       .pipe(
         csv({
           headers: ['# World Rank', ' Institution', ' Country'],

@@ -62,10 +62,6 @@ async function scrapeTHERankings() {
                     mapValues: ({ header, index, value }) => value.trim() // Trim whitespace from values
                 }))
                 .on('data', (row) => {
-                    // TEMPORARY LOG: Inspect the raw row and the rank value
-                    console.log('THE Scraper - Raw row data:', row);
-                    console.log('THE Scraper - Raw rank value:', row['#    World Rank']);
-
                     const rankString = row['#    World Rank']; // Get the raw rank string
                     let rank;
 
