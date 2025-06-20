@@ -37,7 +37,7 @@ async function downloadQSCSV() {
 function parseQSCSV(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
-    fs.createReadStream(filePath, { encoding: 'utf-8' })
+    fs.createReadStream(filePath, { encoding: 'utf-8' }) // Change this to 'utf-8' to handle the encoding issue, but it need to be changed back to 'latin1' when the third party csv is downloaded for 2026
       .pipe(
         csv({
           headers: ['# World Rank', ' Institution', ' Country'],
