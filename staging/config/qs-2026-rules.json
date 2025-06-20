@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "source": "qs",
+    "year": 2026,
+    "format": "xlsx",
+    "encoding": "utf-8",
+    "description": "QS World University Rankings 2026 - Extracted from convert-qs-2026-to-csv.js",
+    "version": "1.0.0",
+    "created_date": "2024-06-20",
+    "author": "V2 Pipeline Migration",
+    "notes": "Battle-tested transformations extracted from existing QS 2026 processing script"
+  },
+  "fileProcessing": {
+    "skipLines": 2,
+    "xlsxSheetIndex": 0,
+    "headerProcessing": {
+      "trimWhitespace": true,
+      "removeEmptyColumns": true
+    },
+    "errorHandling": {
+      "skipMalformedRows": true,
+      "maximumErrors": 10,
+      "stopOnCriticalError": true
+    }
+  },
+  "columnMappings": {
+    "rank": {
+      "primaryHeaders": ["Rank"],
+      "alternativeHeaders": ["World Rank", "Ranking"],
+      "columnIndex": 1,
+      "processing": "handleRangeRanks",
+      "required": true,
+      "validation": {
+        "allowRanges": true,
+        "minimumRank": 1,
+        "maximumRank": 1500
+      }
+    },
+    "name": {
+      "primaryHeaders": ["Institution"],
+      "alternativeHeaders": ["University", "Institution Name", "Name"],
+      "columnIndex": 3,
+      "processing": "normalizeUniversityName",
+      "required": true,
+      "validation": {
+        "minimumLength": 2,
+        "allowEmpty": false
+      }
+    },
+    "country": {
+      "primaryHeaders": ["Country/Territory"],
+      "alternativeHeaders": ["Country", "Territory", "Location"],
+      "columnIndex": 4,
+      "processing": "standardizeCountry",
+      "required": true,
+      "validation": {
+        "allowEmpty": false,
+        "standardizeFirst": true
+      }
+    }
+  },
+  "transformationRules": {
+    "universityNames": {
+      "basic": [
+        "stringValidation",
+        "caseNormalization",
+        "diacriticsRemoval",
+        "whitespaceNormalization"
+      ],
+      "enhanced": [
+        {
+          "name": "acronymRemoval",
+          "type": "regex_replace",
+          "pattern": " \\([A-Z]{2,}\\)$",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "LOW",
+          "frequency": 45,
+          "description": "Remove parenthetical acronyms at end of university names"
+        },
+        {
+          "name": "commaReplacement",
+          "type": "regex_replace",
+          "pattern": ",",
+          "replacement": " -",
+          "flags": "g",
+          "riskLevel": "LOW",
+          "frequency": 23,
+          "description": "Replace commas with hyphens for consistency"
+        },
+        {
+          "name": "thePrefixGeneral",
+          "type": "regex_replace",
+          "pattern": "^The ",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "VERY_LOW",
+          "frequency": 12,
+          "description": "Remove 'The' prefix from university names (after whitelist check)"
+        }
+      ],
+      "sourceSpecific": {
+        "exactMappings": {
+          "Massachusetts Institute of Technology (MIT)": "Massachusetts Institute of Technology - MIT",
+          "ETH Zurich (Swiss Federal Institute of Technology)": "Swiss Federal Institute of Technology Zurich - ETHZ",
+          "National University of Singapore (NUS)": "National University of Singapore",
+          "UCL (University College London)": "University College London",
+          "California Institute of Technology (Caltech)": "California Institute of Technology - Caltech",
+          "London School of Economics and Political Science (LSE)": "London School of Economics and Political Science",
+          "Australian National University (ANU)": "Australian National University",
+          "University of California, Berkeley (UCB)": "University of California - Berkeley",
+          "University of California, Los Angeles (UCLA)": "University of California - Los Angeles",
+          "University of Hong Kong (HKU)": "University of Hong Kong",
+          "University of New South Wales (UNSW)": "University of New South Wales",
+          "University of Queensland (UQ)": "University of Queensland"
+        },
+        "thePrefixWhitelist": [
+          "The University of Hong Kong",
+          "The University of Melbourne",
+          "The University of New South Wales",
+          "The University of Sydney",
+          "The Chinese University of Hong Kong",
+          "The University of Manchester",
+          "The University of Queensland",
+          "The University of Adelaide",
+          "The University of Western Australia",
+          "The Hong Kong University of Science and Technology",
+          "The University of Auckland",
+          "The Australian National University"
+        ]
+      }
+    },
+    "countries": {
+      "mappings": {
+        "United States of America": "USA",
+        "United States": "USA",
+        "US": "USA",
+        "United Kingdom": "UK",
+        "Great Britain": "UK",
+        "Britain": "UK",
+        "China (Mainland)": "China",
+        "People's Republic of China": "China",
+        "Hong Kong SAR, China": "Hong Kong",
+        "Hong Kong SAR": "Hong Kong",
+        "Macao SAR, China": "Macao",
+        "Macau SAR": "Macao",
+        "Korea, South": "South Korea",
+        "Republic of Korea": "South Korea",
+        "Russian Federation": "Russia",
+        "Iran, Islamic Republic of": "Iran",
+        "Taiwan, Province of China": "Taiwan",
+        "Republic of China (Taiwan)": "Taiwan",
+        "Czech Republic": "Czechia",
+        "Slovak Republic": "Slovakia",
+        "The Netherlands": "Netherlands"
+      }
+    },
+    "ranks": {
+      "handleRanges": true,
+      "rangeStrategy": "lowerBound",
+      "maximumRank": 1000,
+      "patterns": [
+        {
+          "name": "hyphenRanges",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)-(\\d+)$",
+          "replacement": "$1",
+          "description": "Convert range ranks like '701-710' to lower bound"
+        },
+        {
+          "name": "plusRanks",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)\\+$",
+          "replacement": "$1",
+          "description": "Convert '1000+' style ranks to numeric"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "names": {
+      "minimumLength": 2,
+      "maximumLength": 200,
+      "skipHeaders": ["Rank", "Institution", "Country/Territory"],
+      "allowEmpty": false,
+      "patterns": {
+        "invalid": ["^\\s*$", "^\\d+$"],
+        "suspicious": ["test", "example", "unknown"]
+      }
+    },
+    "ranks": {
+      "minimumRank": 1,
+      "maximumRank": 1500,
+      "allowRanges": true,
+      "allowEmpty": false,
+      "rangeFormats": ["\\d+-\\d+", "\\d+\\+"]
+    },
+    "countries": {
+      "allowEmpty": false,
+      "standardizeFirst": true,
+      "minimumLength": 2,
+      "maximumLength": 50
+    }
+  },
+  "outputFormat": {
+    "columns": ["rank", "name", "country"],
+    "encoding": "utf-8",
+    "includeHeaders": true,
+    "csvFormat": {
+      "delimiter": ",",
+      "quoteChar": "\"",
+      "includeComments": true,
+      "commentLines": [
+        "# University Ranking Results - www.universityrankings.ch",
+        "# Ranking: QS",
+        "# Year: 2026",
+        "#",
+        "   #    World Rank   ,  Institution   ,  Country   ,   "
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "expectedMinimumRows": 500,
+    "expectedMaximumRows": 1200,
+    "duplicateHandling": "warn",
+    "missingDataHandling": "skip",
+    "outlierDetection": {
+      "enabled": true,
+      "suspiciousPatterns": ["test", "example", "unknown university"]
+    }
+  }
+}

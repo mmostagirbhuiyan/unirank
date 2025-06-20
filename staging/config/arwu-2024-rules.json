@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "source": "arwu",
+    "year": 2024,
+    "format": "csv",
+    "encoding": "latin1",
+    "description": "Academic Ranking of World Universities (Shanghai Rankings) 2024 - Extracted from arwu-scraper.js",
+    "version": "1.0.0",
+    "created_date": "2025-06-20",
+    "author": "V2 Pipeline Migration",
+    "notes": "Battle-tested transformations extracted from existing ARWU 2024 processing script"
+  },
+  "fileProcessing": {
+    "skipLines": 0,
+    "csvOptions": {
+      "encoding": "utf-8",
+      "mapValues": "trim"
+    },
+    "headerProcessing": {
+      "trimWhitespace": true,
+      "removeEmptyColumns": true
+    },
+    "errorHandling": {
+      "skipMalformedRows": true,
+      "maximumErrors": 10,
+      "stopOnCriticalError": true
+    }
+  },
+  "columnMappings": {
+    "rank": {
+      "primaryHeaders": ["rank"],
+      "alternativeHeaders": ["# World Rank", "World Rank", "Ranking"],
+      "columnIndex": 0,
+      "processing": "handleRangeRanks",
+      "required": true,
+      "validation": {
+        "allowRanges": true,
+        "minimumRank": 1,
+        "maximumRank": 1000
+      }
+    },
+    "name": {
+      "primaryHeaders": ["name"],
+      "alternativeHeaders": [" Institution", "Institution", "University"],
+      "columnIndex": 1,
+      "processing": "normalizeUniversityName",
+      "required": true,
+      "validation": {
+        "minimumLength": 2,
+        "allowEmpty": false
+      }
+    },
+    "country": {
+      "primaryHeaders": ["country"],
+      "alternativeHeaders": [" Country", "Country", "Territory"],
+      "columnIndex": 2,
+      "processing": "standardizeCountry",
+      "required": true,
+      "validation": {
+        "allowEmpty": false,
+        "standardizeFirst": true
+      }
+    }
+  },
+  "transformationRules": {
+    "universityNames": {
+      "basic": [
+        "stringValidation",
+        "caseNormalization",
+        "diacriticsRemoval",
+        "whitespaceNormalization"
+      ],
+      "enhanced": [
+        {
+          "name": "institutionSuffixRemoval",
+          "type": "regex_replace",
+          "pattern": "\\s*-\\s*[A-Z]{2,}$",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "LOW",
+          "frequency": 20,
+          "description": "Remove acronym suffixes like ' - MIT', ' - ETHZ'"
+        },
+        {
+          "name": "universityOfPattern",
+          "type": "regex_replace",
+          "pattern": "^University of (.+) - (.+)$",
+          "replacement": "University of $1, $2",
+          "flags": "",
+          "riskLevel": "LOW",
+          "frequency": 15,
+          "description": "Standardize 'University of X - Y' to 'University of X, Y'"
+        },
+        {
+          "name": "thePrefixGeneral",
+          "type": "regex_replace",
+          "pattern": "^The ",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "VERY_LOW",
+          "frequency": 5,
+          "description": "Remove 'The' prefix from university names"
+        }
+      ],
+      "sourceSpecific": {
+        "exactMappings": {
+          "Massachusetts Institute of Technology - MIT": "Massachusetts Institute of Technology",
+          "California Institute of Technology - Caltech": "California Institute of Technology",
+          "University of California - Berkeley": "University of California, Berkeley",
+          "University of California - Los Angeles": "University of California, Los Angeles",
+          "University of California - San Diego": "University of California, San Diego",
+          "University of California - San Francisco": "University of California, San Francisco",
+          "Swiss Federal Institute of Technology Zurich - ETHZ": "ETH Zurich",
+          "University College London": "UCL",
+          "Université Paris-Saclay": "Paris-Saclay University",
+          "Washington University in St. Louis": "Washington University in St Louis"
+        },
+        "thePrefixWhitelist": []
+      }
+    },
+    "countries": {
+      "mappings": {
+        "UK": "United Kingdom",
+        "USA": "United States"
+      }
+    },
+    "ranks": {
+      "handleRanges": true,
+      "rangeStrategy": "lowerBound",
+      "maximumRank": 1000,
+      "patterns": [
+        {
+          "name": "tiedRanks",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)$",
+          "replacement": "$1",
+          "description": "Handle single rank numbers including tied ranks"
+        },
+        {
+          "name": "hyphenRanges",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)-(\\d+)$",
+          "replacement": "$1",
+          "description": "Convert range ranks like '101-150' to lower bound"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "names": {
+      "minimumLength": 2,
+      "maximumLength": 200,
+      "skipHeaders": ["# World Rank", " Institution", " Country"],
+      "allowEmpty": false,
+      "patterns": {
+        "invalid": ["^\\s*$", "^\\d+$"],
+        "suspicious": ["test", "example", "unknown"]
+      }
+    },
+    "ranks": {
+      "minimumRank": 1,
+      "maximumRank": 1000,
+      "allowRanges": true,
+      "allowEmpty": false,
+      "rangeFormats": ["\\d+-\\d+", "\\d+"]
+    },
+    "countries": {
+      "allowEmpty": false,
+      "standardizeFirst": true,
+      "minimumLength": 2,
+      "maximumLength": 50
+    }
+  },
+  "outputFormat": {
+    "columns": ["rank", "name", "country"],
+    "encoding": "utf-8",
+    "includeHeaders": true,
+    "csvFormat": {
+      "delimiter": ",",
+      "quoteChar": "\"",
+      "includeComments": true,
+      "commentLines": [
+        "# University Ranking Results - www.universityrankings.ch",
+        "# Ranking: ARWU",
+        "# Year: 2024",
+        "#",
+        "   #    World Rank   ,  Institution   ,  Country   ,   "
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "expectedMinimumRows": 800,
+    "expectedMaximumRows": 1200,
+    "duplicateHandling": "warn",
+    "missingDataHandling": "skip",
+    "outlierDetection": {
+      "enabled": true,
+      "suspiciousPatterns": ["test", "example", "unknown university"]
+    }
+  }
+}

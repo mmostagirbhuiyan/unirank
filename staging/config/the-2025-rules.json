@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "source": "the",
+    "year": 2025,
+    "format": "csv",
+    "encoding": "latin1",
+    "description": "Times Higher Education World University Rankings 2025 - Extracted from the-scraper.js",
+    "version": "1.0.0",
+    "created_date": "2025-06-20",
+    "author": "V2 Pipeline Migration",
+    "notes": "Battle-tested transformations extracted from existing THE 2025 processing script"
+  },
+  "fileProcessing": {
+    "skipLines": 0,
+    "csvOptions": {
+      "encoding": "utf-8",
+      "mapValues": "trim"
+    },
+    "headerProcessing": {
+      "trimWhitespace": true,
+      "removeEmptyColumns": true
+    },
+    "errorHandling": {
+      "skipMalformedRows": true,
+      "maximumErrors": 10,
+      "stopOnCriticalError": true
+    }
+  },
+  "columnMappings": {
+    "rank": {
+      "primaryHeaders": ["rank"],
+      "alternativeHeaders": ["World Rank", "Ranking", "#    World Rank"],
+      "columnIndex": 0,
+      "processing": "handleRangeRanks",
+      "required": true,
+      "validation": {
+        "allowRanges": true,
+        "minimumRank": 1,
+        "maximumRank": 2000
+      }
+    },
+    "name": {
+      "primaryHeaders": ["name"],
+      "alternativeHeaders": ["Institution", "University", "Institution Name"],
+      "columnIndex": 1,
+      "processing": "normalizeUniversityName",
+      "required": true,
+      "validation": {
+        "minimumLength": 2,
+        "allowEmpty": false
+      }
+    },
+    "country": {
+      "primaryHeaders": ["country"],
+      "alternativeHeaders": ["Country", "Territory", "Location"],
+      "columnIndex": 2,
+      "processing": "standardizeCountry",
+      "required": true,
+      "validation": {
+        "allowEmpty": false,
+        "standardizeFirst": true
+      }
+    }
+  },
+  "transformationRules": {
+    "universityNames": {
+      "basic": [
+        "stringValidation",
+        "caseNormalization",
+        "diacriticsRemoval",
+        "whitespaceNormalization"
+      ],
+      "enhanced": [
+        {
+          "name": "institutionSuffixRemoval",
+          "type": "regex_replace",
+          "pattern": "\\s*-\\s*[A-Z]{2,}$",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "LOW",
+          "frequency": 25,
+          "description": "Remove acronym suffixes like ' - MIT', ' - ETHZ'"
+        },
+        {
+          "name": "thePrefixGeneral",
+          "type": "regex_replace",
+          "pattern": "^The ",
+          "replacement": "",
+          "flags": "",
+          "riskLevel": "VERY_LOW",
+          "frequency": 8,
+          "description": "Remove 'The' prefix from university names"
+        }
+      ],
+      "sourceSpecific": {
+        "exactMappings": {
+          "Massachusetts Institute of Technology - MIT": "Massachusetts Institute of Technology",
+          "California Institute of Technology - Caltech": "California Institute of Technology",
+          "University of California - Berkeley": "University of California, Berkeley",
+          "Swiss Federal Institute of Technology Zurich - ETHZ": "ETH Zurich",
+          "University of California - Los Angeles": "University of California, Los Angeles",
+          "University of Michigan - Ann Arbor": "University of Michigan",
+          "University College London": "UCL"
+        },
+        "thePrefixWhitelist": []
+      }
+    },
+    "countries": {
+      "mappings": {
+        "UK": "United Kingdom",
+        "USA": "United States"
+      }
+    },
+    "ranks": {
+      "handleRanges": true,
+      "rangeStrategy": "lowerBound",
+      "maximumRank": 2000,
+      "patterns": [
+        {
+          "name": "hyphenRanges",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)-(\\d+)$",
+          "replacement": "$1",
+          "description": "Convert range ranks like '201-250' to lower bound"
+        },
+        {
+          "name": "tiedRanks",
+          "type": "regex_replace",
+          "pattern": "^(\\d+)$",
+          "replacement": "$1",
+          "description": "Handle single rank numbers including tied ranks"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "names": {
+      "minimumLength": 2,
+      "maximumLength": 200,
+      "skipHeaders": ["#    World Rank", "Institution", "Country"],
+      "allowEmpty": false,
+      "patterns": {
+        "invalid": ["^\\s*$", "^\\d+$"],
+        "suspicious": ["test", "example", "unknown"]
+      }
+    },
+    "ranks": {
+      "minimumRank": 1,
+      "maximumRank": 2000,
+      "allowRanges": true,
+      "allowEmpty": false,
+      "rangeFormats": ["\\d+-\\d+", "\\d+"]
+    },
+    "countries": {
+      "allowEmpty": false,
+      "standardizeFirst": true,
+      "minimumLength": 2,
+      "maximumLength": 50
+    }
+  },
+  "outputFormat": {
+    "columns": ["rank", "name", "country"],
+    "encoding": "utf-8",
+    "includeHeaders": true,
+    "csvFormat": {
+      "delimiter": ",",
+      "quoteChar": "\"",
+      "includeComments": true,
+      "commentLines": [
+        "# University Ranking Results - www.universityrankings.ch",
+        "# Ranking: THE",
+        "# Year: 2025",
+        "#",
+        "   #    World Rank   ,  Institution   ,  Country   ,   "
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "expectedMinimumRows": 1000,
+    "expectedMaximumRows": 2500,
+    "duplicateHandling": "warn",
+    "missingDataHandling": "skip",
+    "outlierDetection": {
+      "enabled": true,
+      "suspiciousPatterns": ["test", "example", "unknown university"]
+    }
+  }
+}
