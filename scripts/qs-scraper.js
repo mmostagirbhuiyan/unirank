@@ -49,8 +49,12 @@ function parseQSCSV(filePath) {
         const rank = parseInt(row['# World Rank'], 10);
         const name = row[' Institution'];
         const country = row[' Country'];
-        if (name && !isNaN(rank)) {
+        if (name && !isNaN(rank) && country) {
           results.push({ name: name.trim(), rank, country: country.trim() });
+        } else if (name && !isNaN(rank)) {
+          // Handle rows with missing country
+          console.warn(`Warning: Missing country for ${name} (rank ${rank})`);
+          results.push({ name: name.trim(), rank, country: 'Unknown' });
         }
       })
       .on('end', () => resolve(results))
