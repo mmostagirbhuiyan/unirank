@@ -1,0 +1,228 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://university-ranking-aggregator.com/schemas/canonical-university.json",
+  "title": "Canonical University Schema",
+  "description": "Schema for canonical university entries in the V2 pipeline master list",
+  "type": "object",
+  "required": ["canonical_id", "canonical_name", "country", "aliases"],
+  "additionalProperties": false,
+  "properties": {
+    "canonical_id": {
+      "type": "string",
+      "pattern": "^canonical-[0-9]{4}$",
+      "description": "Unique identifier in format 'canonical-NNNN' (e.g., canonical-0001)",
+      "examples": ["canonical-0001", "canonical-1729"]
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 200,
+      "description": "Official, preferred name of the university",
+      "examples": [
+        "Massachusetts Institute of Technology",
+        "University of Cambridge",
+        "Swiss Federal Institute of Technology Zurich"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50,
+      "description": "Standardized country name following V2 pipeline conventions",
+      "examples": ["USA", "UK", "China", "Germany", "Australia"]
+    },
+    "aliases": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Array of all known name variations for matching",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "examples": [
+        ["MIT", "Massachusetts Institute of Technology", "M.I.T.", "MIT Cambridge"]
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional information about the university",
+      "additionalProperties": false,
+      "properties": {
+        "founding_year": {
+          "type": "integer",
+          "minimum": 800,
+          "maximum": 2100,
+          "description": "Year the university was founded"
+        },
+        "institution_type": {
+          "type": "string",
+          "enum": [
+            "university",
+            "college", 
+            "institute",
+            "school",
+            "academy",
+            "polytechnic",
+            "conservatory",
+            "seminary"
+          ],
+          "description": "Primary type of educational institution"
+        },
+        "public_private": {
+          "type": "string",
+          "enum": ["public", "private", "mixed", "unknown"],
+          "description": "Funding/ownership structure of the institution"
+        },
+        "student_enrollment": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Approximate total student enrollment"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official university website URL"
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Primary city where university is located"
+        },
+        "region_state": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "State, province, or region where university is located"
+        },
+        "languages": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Primary languages of instruction",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 50
+          }
+        },
+        "specializations": {
+          "type": "array",
+          "uniqueItems": true,
+          "description": "Major academic specializations or focus areas",
+          "items": {
+            "type": "string",
+            "enum": [
+              "technology",
+              "medicine",
+              "business",
+              "arts",
+              "sciences",
+              "engineering",
+              "law",
+              "education",
+              "agriculture",
+              "comprehensive"
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "description": "Information about which ranking sources include this university",
+      "additionalProperties": false,
+      "properties": {
+        "qs": {
+          "type": "object",
+          "description": "QS World University Rankings presence",
+          "properties": {
+            "included": {
+              "type": "boolean",
+              "description": "Whether university appears in QS rankings"
+            },
+            "best_rank": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Best rank ever achieved in QS rankings"
+            },
+            "years_included": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 2000,
+                "maximum": 2100
+              },
+              "description": "Years university appeared in QS rankings"
+            }
+          }
+        },
+        "the": {
+          "type": "object", 
+          "description": "Times Higher Education Rankings presence",
+          "properties": {
+            "included": {"type": "boolean"},
+            "best_rank": {"type": "integer", "minimum": 1},
+            "years_included": {
+              "type": "array",
+              "items": {"type": "integer", "minimum": 2000, "maximum": 2100}
+            }
+          }
+        },
+        "arwu": {
+          "type": "object",
+          "description": "ARWU Shanghai Rankings presence", 
+          "properties": {
+            "included": {"type": "boolean"},
+            "best_rank": {"type": "integer", "minimum": 1},
+            "years_included": {
+              "type": "array", 
+              "items": {"type": "integer", "minimum": 2000, "maximum": 2100}
+            }
+          }
+        },
+        "usnews": {
+          "type": "object",
+          "description": "US News Global Rankings presence",
+          "properties": {
+            "included": {"type": "boolean"},
+            "best_rank": {"type": "integer", "minimum": 1},
+            "years_included": {
+              "type": "array",
+              "items": {"type": "integer", "minimum": 2000, "maximum": 2100}
+            }
+          }
+        }
+      }
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when entry was created"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date-time", 
+      "description": "ISO 8601 timestamp when entry was last updated"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of this entry (e.g., 1.0.0)",
+      "default": "1.0.0"
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence score for this canonical entry (0.0 = low, 1.0 = high)",
+      "default": 1.0
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Free-form notes about this university or its canonical entry"
+    }
+  }
+}

@@ -34,5 +34,20 @@ frontend/public/data/qs_rankings.xlsx # QS rankings
 frontend/public/data/the_rankings.json # THE rankings
 frontend/public/data/usnews_rankings.csv # US News rankings
 
+# V2 Pipeline Staging Files
+staging/raw/*.xlsx
+staging/raw/*.csv
+staging/raw/*.json
+staging/normalized/*.csv
+staging/results/*.json
+staging/results/*.log
+
+# Keep config files and structure
+!staging/config/
+!staging/README.md
+!staging/raw/README.md
+!staging/normalized/README.md
+!staging/results/README.md
+
 
 

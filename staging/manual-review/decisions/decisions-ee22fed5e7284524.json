@@ -1,0 +1,128 @@
+{
+  "reviewId": "ee22fed5e7284524",
+  "reviewedBy": "test-reviewer",
+  "reviewedAt": "2025-06-20T17:45:00.000Z",
+  "decisions": [
+    {
+      "id": "ee22fed5e7284524-0000",
+      "action": "NEW",
+      "originalData": {
+        "name": "Institute of Advanced Technology Berlin",
+        "country": "Germany",
+        "rank": 45,
+        "score": 78.5,
+        "source": "test"
+      },
+      "newUniversityData": {
+        "canonicalName": "Institute of Advanced Technology Berlin",
+        "country": "Germany",
+        "aliases": [
+          "Institute of Advanced Technology Berlin",
+          "IAT Berlin"
+        ],
+        "institutionType": "institute",
+        "specializations": [
+          "technology",
+          "engineering"
+        ]
+      },
+      "notes": "New technical institute in Berlin, verified as legitimate institution",
+      "reviewedBy": "test-reviewer",
+      "reviewedAt": "2025-06-20T17:45:00.000Z",
+      "confidence": 0.95
+    },
+    {
+      "id": "ee22fed5e7284524-0003",
+      "action": "MATCH",
+      "originalData": {
+        "name": "Harvard Medical School",
+        "country": "USA",
+        "rank": 12,
+        "score": 89.3,
+        "source": "test"
+      },
+      "selectedMatch": {
+        "name": "Harvard University",
+        "country": "USA",
+        "id": "canonical-0087"
+      },
+      "notes": "Medical school is part of Harvard University",
+      "reviewedBy": "test-reviewer",
+      "reviewedAt": "2025-06-20T17:45:00.000Z",
+      "confidence": 0.9
+    },
+    {
+      "id": "ee22fed5e7284524-0007",
+      "action": "IGNORE",
+      "originalData": {
+        "name": "Invalid Univ XYZ123",
+        "rank": 999,
+        "score": 10,
+        "source": "test"
+      },
+      "notes": "Clearly invalid/test data, ignoring",
+      "reviewedBy": "test-reviewer",
+      "reviewedAt": "2025-06-20T17:45:00.000Z",
+      "confidence": 1
+    },
+    {
+      "id": "ee22fed5e7284524-0008",
+      "action": "DEFER",
+      "originalData": {
+        "name": "Tech Institute",
+        "country": "Unknown Region",
+        "rank": 888,
+        "score": 15.5,
+        "source": "test"
+      },
+      "notes": "Need more information to make decision",
+      "reviewedBy": "test-reviewer",
+      "reviewedAt": "2025-06-20T17:45:00.000Z",
+      "confidence": 0.1
+    }
+  ],
+  "appliedAt": "2025-06-20T17:44:50.667Z",
+  "appliedBy": "system",
+  "results": {
+    "applied": 4,
+    "errors": [],
+    "newUniversities": [
+      {
+        "canonical_id": "canonical-1844",
+        "canonical_name": "Institute of Advanced Technology Berlin",
+        "country": "Germany",
+        "aliases": [
+          "Institute of Advanced Technology Berlin",
+          "Institute of Advanced Technology Berlin",
+          "IAT Berlin"
+        ],
+        "metadata": {
+          "institution_type": "institute",
+          "specializations": [
+            "technology",
+            "engineering"
+          ],
+          "added_via": "manual_review",
+          "added_at": "2025-06-20T17:44:50.660Z",
+          "added_by": "test-reviewer"
+        },
+        "sources": {
+          "manual_review": {
+            "included": true,
+            "source_name": "Institute of Advanced Technology Berlin",
+            "review_notes": "New technical institute in Berlin, verified as legitimate institution"
+          }
+        }
+      }
+    ],
+    "matchedUniversities": [
+      {
+        "originalName": "Harvard Medical School",
+        "matchedTo": "Harvard University",
+        "confidence": 0.9
+      }
+    ],
+    "ignored": 1,
+    "deferred": 1
+  }
+}

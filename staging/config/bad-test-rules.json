@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "source": "invalid-source",
+    "year": 2050,
+    "format": "csv",
+    "description": "Bad configuration for testing validation"
+  },
+  "fileProcessing": {
+    "skipLines": -5,
+    "maximumErrors": 0
+  },
+  "columnMappings": {
+    "rank": {
+      "primaryHeaders": [],
+      "processing": "invalid-processing"
+    }
+  },
+  "transformationRules": {
+    "universityNames": {
+      "enhanced": [
+        {
+          "name": "bad-regex",
+          "type": "regex_replace",
+          "pattern": "[unclosed",
+          "replacement": "test"
+        }
+      ]
+    }
+  }
+}

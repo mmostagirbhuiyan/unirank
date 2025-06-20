@@ -1,0 +1,247 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://university-ranking-aggregator.com/schemas/config-validation-rules.json",
+  "title": "Configuration Validation Rules Schema",
+  "description": "Schema for validation rules that ensure configuration files are compatible with actual data",
+  "type": "object",
+  "required": ["validationRules", "compatibilityChecks", "qualityThresholds"],
+  "additionalProperties": false,
+  "properties": {
+    "validationRules": {
+      "type": "object",
+      "description": "Rules for validating configuration syntax and structure",
+      "additionalProperties": false,
+      "properties": {
+        "schemaValidation": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "Enable JSON schema validation"
+            },
+            "strictMode": {
+              "type": "boolean",
+              "default": true,
+              "description": "Strict validation mode"
+            },
+            "allowAdditionalProperties": {
+              "type": "boolean",
+              "default": false,
+              "description": "Allow additional properties not in schema"
+            }
+          }
+        },
+        "regexValidation": {
+          "type": "object",
+          "properties": {
+            "validatePatterns": {
+              "type": "boolean",
+              "default": true,
+              "description": "Validate regex patterns in transformation rules"
+            },
+            "testPatterns": {
+              "type": "boolean",
+              "default": true,
+              "description": "Test regex patterns with sample data"
+            },
+            "maxPatternComplexity": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 100,
+              "description": "Maximum regex pattern complexity score"
+            }
+          }
+        },
+        "logicalValidation": {
+          "type": "object",
+          "properties": {
+            "checkRuleConflicts": {
+              "type": "boolean",
+              "default": true,
+              "description": "Check for conflicting transformation rules"
+            },
+            "validateDependencies": {
+              "type": "boolean",
+              "default": true,
+              "description": "Validate rule dependencies and order"
+            },
+            "checkCircularReferences": {
+              "type": "boolean",
+              "default": true,
+              "description": "Check for circular rule references"
+            }
+          }
+        }
+      }
+    },
+    "compatibilityChecks": {
+      "type": "object",
+      "description": "Checks for configuration compatibility with actual data",
+      "additionalProperties": false,
+      "properties": {
+        "columnMapping": {
+          "type": "object",
+          "properties": {
+            "validateHeaders": {
+              "type": "boolean",
+              "default": true,
+              "description": "Validate column headers exist in actual data"
+            },
+            "requirePrimaryHeaders": {
+              "type": "boolean",
+              "default": true,
+              "description": "Require at least one primary header to exist"
+            },
+            "warnOnAlternativeHeaders": {
+              "type": "boolean",
+              "default": true,
+              "description": "Warn when using alternative headers"
+            }
+          }
+        },
+        "dataTypeCompatibility": {
+          "type": "object",
+          "properties": {
+            "validateDataTypes": {
+              "type": "boolean",
+              "default": true,
+              "description": "Validate data types match expected formats"
+            },
+            "sampleSize": {
+              "type": "integer",
+              "minimum": 10,
+              "maximum": 1000,
+              "default": 100,
+              "description": "Number of rows to sample for validation"
+            },
+            "toleranceThreshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.05,
+              "description": "Tolerance for data type mismatches (5%)"
+            }
+          }
+        },
+        "transformationEffectiveness": {
+          "type": "object",
+          "properties": {
+            "measureEffectiveness": {
+              "type": "boolean",
+              "default": true,
+              "description": "Measure transformation rule effectiveness"
+            },
+            "minimumEffectiveness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.01,
+              "description": "Minimum effectiveness threshold (1%)"
+            },
+            "warnOnIneffectiveRules": {
+              "type": "boolean",
+              "default": true,
+              "description": "Warn about rules that don't affect any data"
+            }
+          }
+        }
+      }
+    },
+    "qualityThresholds": {
+      "type": "object",
+      "description": "Quality thresholds for configuration validation",
+      "additionalProperties": false,
+      "properties": {
+        "processingSuccess": {
+          "type": "object",
+          "properties": {
+            "minimumSuccessRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.95,
+              "description": "Minimum processing success rate (95%)"
+            },
+            "maximumErrorRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.05,
+              "description": "Maximum acceptable error rate (5%)"
+            }
+          }
+        },
+        "dataQuality": {
+          "type": "object",
+          "properties": {
+            "minimumDataRows": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 50,
+              "description": "Minimum data rows for meaningful validation"
+            },
+            "requiredFieldCoverage": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0.98,
+              "description": "Required coverage for mandatory fields (98%)"
+            }
+          }
+        },
+        "performance": {
+          "type": "object",
+          "properties": {
+            "maxProcessingTimeMs": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 30000,
+              "description": "Maximum processing time in milliseconds"
+            },
+            "maxMemoryUsageMB": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 512,
+              "description": "Maximum memory usage in MB"
+            }
+          }
+        }
+      }
+    },
+    "reportingOptions": {
+      "type": "object",
+      "description": "Options for validation reporting",
+      "additionalProperties": false,
+      "properties": {
+        "verbosity": {
+          "type": "string",
+          "enum": ["minimal", "standard", "detailed", "debug"],
+          "default": "standard",
+          "description": "Validation report verbosity level"
+        },
+        "includeWarnings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include warnings in validation reports"
+        },
+        "includeSuggestions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include improvement suggestions"
+        },
+        "generateReport": {
+          "type": "boolean",
+          "default": true,
+          "description": "Generate detailed validation report file"
+        },
+        "reportFormat": {
+          "type": "string",
+          "enum": ["json", "html", "text"],
+          "default": "json",
+          "description": "Validation report format"
+        }
+      }
+    }
+  }
+}

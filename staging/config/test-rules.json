@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "source": "test",
+    "year": 2024,
+    "format": "csv",
+    "encoding": "utf-8",
+    "description": "Test configuration for normalization engine validation",
+    "version": "1.0.0",
+    "author": "V2 Pipeline Development",
+    "created_date": "2024-06-20T00:00:00Z"
+  },
+  "fileProcessing": {
+    "skipLines": 0,
+    "delimiter": ",",
+    "quoteChar": "\"",
+    "headerProcessing": {
+      "trimWhitespace": true,
+      "removeEmptyColumns": true
+    },
+    "errorHandling": {
+      "skipMalformedRows": true,
+      "logMalformedRows": true,
+      "maximumErrors": 5,
+      "stopOnCriticalError": false
+    }
+  },
+  "columnMappings": {
+    "rank": {
+      "primaryHeaders": ["rank", "Rank", "World Rank"],
+      "alternativeHeaders": ["position"],
+      "processing": "handleRangeRanks",
+      "required": true
+    },
+    "name": {
+      "primaryHeaders": ["name", "Name", "University", "Institution"],
+      "processing": "normalizeUniversityName",
+      "required": true
+    },
+    "country": {
+      "primaryHeaders": ["country", "Country", "Location"],
+      "processing": "standardizeCountry", 
+      "required": true
+    },
+    "score": {
+      "primaryHeaders": ["score", "Score", "Total Score"],
+      "processing": "parseNumeric",
+      "required": false
+    }
+  },
+  "transformationRules": {
+    "universityNames": {
+      "basic": [
+        "stringValidation",
+        "diacriticsRemoval",
+        "thePrefixRemoval", 
+        "parentheticalRemoval",
+        "whitespaceNormalization"
+      ],
+      "enhanced": [
+        {
+          "name": "hyphenSpaces",
+          "type": "regex_replace",
+          "pattern": " - ",
+          "replacement": " ",
+          "flags": "g",
+          "riskLevel": "LOW",
+          "enabled": true,
+          "description": "Replace hyphen with space in compound names"
+        },
+        {
+          "name": "atPreposition",
+          "type": "regex_replace",
+          "pattern": " at ([A-Z])",
+          "replacement": " $1", 
+          "flags": "g",
+          "riskLevel": "LOW",
+          "enabled": true,
+          "description": "Remove 'at' preposition from university names"
+        }
+      ],
+      "sourceSpecific": {
+        "exactMappings": {
+          "MIT": "Massachusetts Institute of Technology",
+          "Stanford": "Stanford University"
+        }
+      }
+    },
+    "countries": {
+      "mappings": {
+        "United States": "USA",
+        "United Kingdom": "UK",
+        "United States of America": "USA"
+      },
+      "cityMappings": {
+        "cambridge": "USA",
+        "oxford": "UK"
+      }
+    },
+    "ranks": {
+      "handleRanges": true,
+      "rangeStrategy": "lowerBound",
+      "maximumRank": 1000,
+      "invalidRankHandling": "skip"
+    },
+    "scores": {
+      "normalize": false,
+      "decimalPlaces": 2,
+      "invalidScoreHandling": "null"
+    }
+  },
+  "validation": {
+    "requiredFields": ["rank", "name", "country"],
+    "skipInvalidRows": true,
+    "minimumDataRows": 1,
+    "maximumDataRows": 10000
+  },
+  "outputFormat": {
+    "columns": ["rank", "name", "country", "score"],
+    "encoding": "utf-8",
+    "includeHeaders": true
+  }
+}

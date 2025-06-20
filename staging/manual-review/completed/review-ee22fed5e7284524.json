@@ -1,0 +1,1317 @@
+{
+  "metadata": {
+    "reviewId": "ee22fed5e7284524",
+    "timestamp": "2025-06-20T17:44:24.670Z",
+    "source": "test-data",
+    "totalItems": 10,
+    "status": "pending",
+    "createdBy": "system",
+    "priority": "normal"
+  },
+  "instructions": {
+    "overview": "This review list contains universities that could not be automatically matched to the canonical master list.",
+    "actions": [
+      "MATCH: Select the correct match from suggestions",
+      "NEW: Add as a new university to the canonical list",
+      "IGNORE: Skip this university (will not be included)",
+      "DEFER: Skip for now (will be included in future reviews)"
+    ],
+    "notes": "Please review each university carefully and make the appropriate decision."
+  },
+  "items": [
+    {
+      "id": "ee22fed5e7284524-0000",
+      "originalData": {
+        "name": "Institute of Advanced Technology Berlin",
+        "country": "Germany",
+        "rank": 45,
+        "score": 78.5,
+        "source": "test"
+      },
+      "queryName": "Institute of Advanced Technology Berlin",
+      "context": {
+        "country": "Germany",
+        "rank": 45,
+        "score": 78.5
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Institute of Chemical Technology",
+            "country": "India",
+            "id": "canonical-1624",
+            "aliases": [
+              "Institute of Chemical Technology",
+              "The Institute of Chemical Technology"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering"
+              ]
+            }
+          },
+          "confidence": 0.5632284382284382,
+          "reason": "Fuzzy match (56% similar)"
+        },
+        {
+          "university": {
+            "name": "University of Science & Technology Beijing",
+            "country": "China",
+            "id": "canonical-0448",
+            "aliases": [
+              "University of Science & Technology Beijing",
+              "The University of Science & Technology Beijing",
+              "University of Science and Technology Beijing"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.45346153846153847,
+          "reason": "Fuzzy match (45% similar)"
+        },
+        {
+          "university": {
+            "name": "University of Science & Technology Beijing",
+            "country": "China",
+            "id": "canonical-0448",
+            "aliases": [
+              "University of Science & Technology Beijing",
+              "The University of Science & Technology Beijing",
+              "University of Science and Technology Beijing"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.4380952380952381,
+          "reason": "Fuzzy match (44% similar)"
+        },
+        {
+          "university": {
+            "name": "Korea Advanced Institute of Science & Technology (KAIST)",
+            "country": "Unknown",
+            "id": "canonical-0016",
+            "aliases": [
+              "Korea Advanced Institute of Science & Technology (KAIST)",
+              "Korea Advanced Institute of Science and Technology",
+              "The Korea Advanced Institute of Science & Technology (KAIST)",
+              "Korea Advanced Institute of Science and Technology (KAIST)"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.4286829112916069,
+          "reason": "Fuzzy match (43% similar)"
+        },
+        {
+          "university": {
+            "name": "Iran University of Science and Technology Tehran",
+            "country": "Iran",
+            "id": "canonical-0868",
+            "aliases": [
+              "Iran University of Science and Technology Tehran",
+              "The Iran University of Science and Technology Tehran"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.4245540691192865,
+          "reason": "Fuzzy match (42% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Institute of Chemical Technology",
+          "country": "India",
+          "id": "canonical-1624",
+          "aliases": [
+            "Institute of Chemical Technology",
+            "The Institute of Chemical Technology"
+          ],
+          "metadata": {
+            "institution_type": "institute",
+            "specializations": [
+              "technology",
+              "engineering"
+            ]
+          }
+        },
+        "confidence": 0.5632284382284382,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0001",
+      "originalData": {
+        "name": "University of Applied Sciences Munich",
+        "country": "Germany",
+        "rank": 78,
+        "score": 65.2,
+        "source": "test"
+      },
+      "queryName": "University of Applied Sciences Munich",
+      "context": {
+        "country": "Germany",
+        "rank": 78,
+        "score": 65.2,
+        "inferredType": "university"
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "University of Health Sciences Turkey",
+            "country": "Turkey",
+            "id": "canonical-1292",
+            "aliases": [
+              "University of Health Sciences Turkey",
+              "The University of Health Sciences Turkey"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.5726959879133792,
+          "reason": "Fuzzy match (57% similar)"
+        },
+        {
+          "university": {
+            "name": "University of Munich",
+            "country": "Unknown",
+            "id": "canonical-0062",
+            "aliases": [
+              "University of Munich",
+              "University of München",
+              "The University of Munich"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.568943488943489,
+          "reason": "Fuzzy match (57% similar)"
+        },
+        {
+          "university": {
+            "name": "Zurich University of Applied Sciences",
+            "country": "Switzerland",
+            "id": "canonical-1536",
+            "aliases": [
+              "Zurich University of Applied Sciences",
+              "The Zurich University of Applied Sciences"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.5581081081081081,
+          "reason": "Fuzzy match (56% similar)"
+        },
+        {
+          "university": {
+            "name": "University of Oklahoma Health Sciences Center",
+            "country": "USA",
+            "id": "canonical-1457",
+            "aliases": [
+              "University of Oklahoma Health Sciences Center",
+              "The University of Oklahoma Health Sciences Center"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.4995588235294117,
+          "reason": "Fuzzy match (50% similar)"
+        },
+        {
+          "university": {
+            "name": "University of Chinese Academy of Sciences, CAS",
+            "country": "China",
+            "id": "canonical-0587",
+            "aliases": [
+              "University of Chinese Academy of Sciences, CAS",
+              "The University of Chinese Academy of Sciences, CAS"
+            ],
+            "metadata": {
+              "institution_type": "academy",
+              "specializations": [
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.49303140096618353,
+          "reason": "Fuzzy match (49% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "University of Health Sciences Turkey",
+          "country": "Turkey",
+          "id": "canonical-1292",
+          "aliases": [
+            "University of Health Sciences Turkey",
+            "The University of Health Sciences Turkey"
+          ],
+          "metadata": {
+            "institution_type": "university",
+            "specializations": [
+              "sciences"
+            ]
+          }
+        },
+        "confidence": 0.5726959879133792,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0002",
+      "originalData": {
+        "name": "Tokyo Institute of Science and Technology",
+        "country": "Japan",
+        "rank": 92,
+        "score": 62.1,
+        "source": "test"
+      },
+      "queryName": "Tokyo Institute of Science and Technology",
+      "context": {
+        "country": "Japan",
+        "rank": 92,
+        "score": 62.1
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Skolkovo Institute of Science & Technology",
+            "country": "Russia",
+            "id": "canonical-1349",
+            "aliases": [
+              "Skolkovo Institute of Science & Technology",
+              "The Skolkovo Institute of Science & Technology",
+              "Skolkovo Institute of Science and Technology"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.726236559139785,
+          "reason": "Fuzzy match (73% similar)"
+        },
+        {
+          "university": {
+            "name": "SRM Institute Of Science and Technology ( Deemed University)",
+            "country": "India",
+            "id": "canonical-1727",
+            "aliases": [
+              "SRM Institute Of Science and Technology ( Deemed University)",
+              "The SRM Institute Of Science and Technology ( Deemed University)"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.7231673052362708,
+          "reason": "Fuzzy match (72% similar)"
+        },
+        {
+          "university": {
+            "name": "Iran University of Science and Technology",
+            "country": "Iran (Islamic Republic of)",
+            "id": "canonical-0702",
+            "aliases": [
+              "Iran University of Science and Technology",
+              "The Iran University of Science and Technology"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.7159259259259259,
+          "reason": "Fuzzy match (72% similar)"
+        },
+        {
+          "university": {
+            "name": "Macau University of Science & Technology",
+            "country": "Macao",
+            "id": "canonical-0345",
+            "aliases": [
+              "Macau University of Science & Technology",
+              "The Macau University of Science & Technology",
+              "Macau University of Science and Technology"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.7091517323775389,
+          "reason": "Fuzzy match (71% similar)"
+        },
+        {
+          "university": {
+            "name": "Wuhan University of Science & Technology",
+            "country": "China",
+            "id": "canonical-1241",
+            "aliases": [
+              "Wuhan University of Science & Technology",
+              "The Wuhan University of Science & Technology",
+              "Wuhan University of Science and Technology"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.7091517323775389,
+          "reason": "Fuzzy match (71% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Skolkovo Institute of Science & Technology",
+          "country": "Russia",
+          "id": "canonical-1349",
+          "aliases": [
+            "Skolkovo Institute of Science & Technology",
+            "The Skolkovo Institute of Science & Technology",
+            "Skolkovo Institute of Science and Technology"
+          ],
+          "metadata": {
+            "institution_type": "institute",
+            "specializations": [
+              "technology",
+              "engineering",
+              "sciences"
+            ]
+          }
+        },
+        "confidence": 0.726236559139785,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "high_confidence_match",
+          "message": "High confidence automatic match found - verify correctness",
+          "severity": "info"
+        },
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "ee22fed5e7284524-0003",
+      "originalData": {
+        "name": "Harvard Medical School",
+        "country": "USA",
+        "rank": 12,
+        "score": 89.3,
+        "source": "test"
+      },
+      "queryName": "Harvard Medical School",
+      "context": {
+        "country": "USA",
+        "rank": 12,
+        "score": 89.3,
+        "inferredType": "medical"
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Hanover Medical School",
+            "country": "Unknown",
+            "id": "canonical-0010",
+            "aliases": [
+              "Hanover Medical School",
+              "Hannover Medical School",
+              "The Hanover Medical School"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "medicine"
+              ]
+            }
+          },
+          "confidence": 0.6503496503496503,
+          "reason": "Fuzzy match (65% similar)"
+        },
+        {
+          "university": {
+            "name": "Hannover Medical School",
+            "country": "Germany",
+            "id": "canonical-1110",
+            "aliases": [
+              "Hannover Medical School",
+              "The Hannover Medical School"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "medicine"
+              ]
+            }
+          },
+          "confidence": 0.6297101449275363,
+          "reason": "Fuzzy match (63% similar)"
+        },
+        {
+          "university": {
+            "name": "Mayo Medical School",
+            "country": "USA",
+            "id": "canonical-0892",
+            "aliases": [
+              "Mayo Medical School",
+              "The Mayo Medical School"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "medicine"
+              ]
+            }
+          },
+          "confidence": 0.615909090909091,
+          "reason": "Fuzzy match (62% similar)"
+        },
+        {
+          "university": {
+            "name": "Duke-NUS Medical School",
+            "country": "Singapore",
+            "id": "canonical-1288",
+            "aliases": [
+              "Duke-NUS Medical School",
+              "The Duke-NUS Medical School"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "medicine"
+              ]
+            }
+          },
+          "confidence": 0.5782828282828283,
+          "reason": "Fuzzy match (58% similar)"
+        },
+        {
+          "university": {
+            "name": "Harbin Medical University",
+            "country": "China",
+            "id": "canonical-1234",
+            "aliases": [
+              "Harbin Medical University",
+              "The Harbin Medical University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "medicine"
+              ]
+            }
+          },
+          "confidence": 0.4,
+          "reason": "Fuzzy match (40% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Hanover Medical School",
+          "country": "Unknown",
+          "id": "canonical-0010",
+          "aliases": [
+            "Hanover Medical School",
+            "Hannover Medical School",
+            "The Hanover Medical School"
+          ],
+          "metadata": {
+            "institution_type": "school",
+            "specializations": [
+              "medicine"
+            ]
+          }
+        },
+        "confidence": 0.6503496503496503,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "high"
+    },
+    {
+      "id": "ee22fed5e7284524-0004",
+      "originalData": {
+        "name": "MIT Sloan School of Management",
+        "country": "USA",
+        "rank": 8,
+        "score": 91.7,
+        "source": "test"
+      },
+      "queryName": "MIT Sloan School of Management",
+      "context": {
+        "country": "USA",
+        "rank": 8,
+        "score": 91.7,
+        "inferredType": "business"
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Colorado School of Mines",
+            "country": "USA",
+            "id": "canonical-0441",
+            "aliases": [
+              "Colorado School of Mines",
+              "The Colorado School of Mines"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.40238095238095234,
+          "reason": "Fuzzy match (40% similar)"
+        },
+        {
+          "university": {
+            "name": "London School Economics & Political Science",
+            "country": "UK",
+            "id": "canonical-0018",
+            "aliases": [
+              "London School Economics & Political Science",
+              "London School of Economics",
+              "The London School Economics & Political Science",
+              "London School Economics and Political Science"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "business",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.3858944658944659,
+          "reason": "Fuzzy match (39% similar)"
+        },
+        {
+          "university": {
+            "name": "Shoolini University of Biotechnology and Management Sciences",
+            "country": "India",
+            "id": "canonical-0727",
+            "aliases": [
+              "Shoolini University of Biotechnology and Management Sciences",
+              "The Shoolini University of Biotechnology and Management Sciences"
+            ],
+            "metadata": {
+              "institution_type": "institute",
+              "specializations": [
+                "technology",
+                "engineering",
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.36986111111111114,
+          "reason": "Fuzzy match (37% similar)"
+        },
+        {
+          "university": {
+            "name": "Lahore University of Management Sciences",
+            "country": "Pakistan",
+            "id": "canonical-0931",
+            "aliases": [
+              "Lahore University of Management Sciences",
+              "The Lahore University of Management Sciences"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "sciences"
+              ]
+            }
+          },
+          "confidence": 0.3597683397683397,
+          "reason": "Fuzzy match (36% similar)"
+        },
+        {
+          "university": {
+            "name": "Higher School of Economics",
+            "country": "Russia",
+            "id": "canonical-0809",
+            "aliases": [
+              "Higher School of Economics",
+              "The Higher School of Economics"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "business"
+              ]
+            }
+          },
+          "confidence": 0.3468524970963995,
+          "reason": "Fuzzy match (35% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Colorado School of Mines",
+          "country": "USA",
+          "id": "canonical-0441",
+          "aliases": [
+            "Colorado School of Mines",
+            "The Colorado School of Mines"
+          ],
+          "metadata": {
+            "institution_type": "school",
+            "specializations": [
+              "comprehensive"
+            ]
+          }
+        },
+        "confidence": 0.40238095238095234,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0005",
+      "originalData": {
+        "name": "Stanford Graduate School of Business",
+        "country": "USA",
+        "rank": 3,
+        "score": 95.2,
+        "source": "test"
+      },
+      "queryName": "Stanford Graduate School of Business",
+      "context": {
+        "country": "USA",
+        "rank": 3,
+        "score": 95.2,
+        "inferredType": "business"
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Colorado School of Mines",
+            "country": "USA",
+            "id": "canonical-0441",
+            "aliases": [
+              "Colorado School of Mines",
+              "The Colorado School of Mines"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.41389856755710414,
+          "reason": "Fuzzy match (41% similar)"
+        },
+        {
+          "university": {
+            "name": "Athens University of Economics And Business",
+            "country": "Greece",
+            "id": "canonical-1797",
+            "aliases": [
+              "Athens University of Economics And Business",
+              "The Athens University of Economics And Business"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "business"
+              ]
+            }
+          },
+          "confidence": 0.3147392290249433,
+          "reason": "Fuzzy match (31% similar)"
+        },
+        {
+          "university": {
+            "name": "London Business School",
+            "country": "UK",
+            "id": "canonical-1652",
+            "aliases": [
+              "London Business School",
+              "The London Business School"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "business"
+              ]
+            }
+          },
+          "confidence": 0.313550135501355,
+          "reason": "Fuzzy match (31% similar)"
+        },
+        {
+          "university": {
+            "name": "Stockholm School of Economics",
+            "country": "Sweden",
+            "id": "canonical-1444",
+            "aliases": [
+              "Stockholm School of Economics",
+              "The Stockholm School of Economics"
+            ],
+            "metadata": {
+              "institution_type": "school",
+              "specializations": [
+                "business"
+              ]
+            }
+          },
+          "confidence": 0.30726984126984125,
+          "reason": "Fuzzy match (31% similar)"
+        },
+        {
+          "university": {
+            "name": "Vienna University of Economics & Business",
+            "country": "Austria",
+            "id": "canonical-1838",
+            "aliases": [
+              "Vienna University of Economics & Business",
+              "The Vienna University of Economics & Business",
+              "Vienna University of Economics and Business"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "business"
+              ]
+            }
+          },
+          "confidence": 0.3059757236227824,
+          "reason": "Fuzzy match (31% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Colorado School of Mines",
+          "country": "USA",
+          "id": "canonical-0441",
+          "aliases": [
+            "Colorado School of Mines",
+            "The Colorado School of Mines"
+          ],
+          "metadata": {
+            "institution_type": "school",
+            "specializations": [
+              "comprehensive"
+            ]
+          }
+        },
+        "confidence": 0.41389856755710414,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        }
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0006",
+      "originalData": {
+        "name": "École Polytechnique",
+        "country": "France",
+        "rank": 34,
+        "score": 81.9,
+        "source": "test"
+      },
+      "queryName": "École Polytechnique",
+      "context": {
+        "country": "France",
+        "rank": 34,
+        "score": 81.9
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Marche Polytechnic University",
+            "country": "Italy",
+            "id": "canonical-0663",
+            "aliases": [
+              "Marche Polytechnic University",
+              "The Marche Polytechnic University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.4172932330827068,
+          "reason": "Fuzzy match (42% similar)"
+        },
+        {
+          "university": {
+            "name": "Tomsk Polytechnic University",
+            "country": "Russia",
+            "id": "canonical-0889",
+            "aliases": [
+              "Tomsk Polytechnic University",
+              "The Tomsk Polytechnic University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3952153110047847,
+          "reason": "Fuzzy match (40% similar)"
+        },
+        {
+          "university": {
+            "name": "Macao Polytechnic University",
+            "country": "Macao",
+            "id": "canonical-1714",
+            "aliases": [
+              "Macao Polytechnic University",
+              "The Macao Polytechnic University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3952153110047847,
+          "reason": "Fuzzy match (40% similar)"
+        },
+        {
+          "university": {
+            "name": "Henan Polytechnic University",
+            "country": "China",
+            "id": "canonical-1767",
+            "aliases": [
+              "Henan Polytechnic University",
+              "The Henan Polytechnic University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3952153110047847,
+          "reason": "Fuzzy match (40% similar)"
+        },
+        {
+          "university": {
+            "name": "Dalian Polytechnic University",
+            "country": "China",
+            "id": "canonical-1770",
+            "aliases": [
+              "Dalian Polytechnic University",
+              "The Dalian Polytechnic University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3670480549199085,
+          "reason": "Fuzzy match (37% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Marche Polytechnic University",
+          "country": "Italy",
+          "id": "canonical-0663",
+          "aliases": [
+            "Marche Polytechnic University",
+            "The Marche Polytechnic University"
+          ],
+          "metadata": {
+            "institution_type": "university",
+            "specializations": [
+              "comprehensive"
+            ]
+          }
+        },
+        "confidence": 0.4172932330827068,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "multiple_suggestions",
+          "message": "Multiple similar universities found - check for duplicates",
+          "severity": "warning"
+        },
+        {
+          "type": "special_characters",
+          "message": "Name contains unusual characters",
+          "severity": "info"
+        }
+      ],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0007",
+      "originalData": {
+        "name": "Invalid Univ XYZ123",
+        "rank": 999,
+        "score": 10,
+        "source": "test"
+      },
+      "queryName": "Invalid Univ XYZ123",
+      "context": {
+        "rank": 999,
+        "score": 10
+      },
+      "suggestions": [],
+      "bestMatch": null,
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "missing_country",
+          "message": "Country information missing",
+          "severity": "warning"
+        }
+      ],
+      "priority": "low"
+    },
+    {
+      "id": "ee22fed5e7284524-0008",
+      "originalData": {
+        "name": "Tech Institute",
+        "country": "Unknown Region",
+        "rank": 888,
+        "score": 15.5,
+        "source": "test"
+      },
+      "queryName": "Tech Institute",
+      "context": {
+        "country": "Unknown Region",
+        "rank": 888,
+        "score": 15.5,
+        "inferredType": "technical"
+      },
+      "suggestions": [
+        {
+          "university": {
+            "name": "Texas Tech University",
+            "country": "USA",
+            "id": "canonical-0914",
+            "aliases": [
+              "Texas Tech University",
+              "The Texas Tech University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.4225,
+          "reason": "Fuzzy match (42% similar)"
+        },
+        {
+          "university": {
+            "name": "Nanjing Tech University",
+            "country": "China",
+            "id": "canonical-1248",
+            "aliases": [
+              "Nanjing Tech University",
+              "The Nanjing Tech University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3651515151515151,
+          "reason": "Fuzzy match (37% similar)"
+        },
+        {
+          "university": {
+            "name": "Utrecht University",
+            "country": "Netherlands",
+            "id": "canonical-0327",
+            "aliases": [
+              "Utrecht University",
+              "The Utrecht University"
+            ],
+            "metadata": {
+              "institution_type": "university",
+              "specializations": [
+                "comprehensive"
+              ]
+            }
+          },
+          "confidence": 0.3142857142857143,
+          "reason": "Fuzzy match (31% similar)"
+        }
+      ],
+      "bestMatch": {
+        "university": {
+          "name": "Texas Tech University",
+          "country": "USA",
+          "id": "canonical-0914",
+          "aliases": [
+            "Texas Tech University",
+            "The Texas Tech University"
+          ],
+          "metadata": {
+            "institution_type": "university",
+            "specializations": [
+              "comprehensive"
+            ]
+          }
+        },
+        "confidence": 0.4225,
+        "matchType": "fuzzy"
+      },
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [],
+      "priority": "normal"
+    },
+    {
+      "id": "ee22fed5e7284524-0009",
+      "originalData": {
+        "name": "中国科学技术大学",
+        "country": "China",
+        "rank": 56,
+        "score": 74.8,
+        "source": "test"
+      },
+      "queryName": "中国科学技术大学",
+      "context": {
+        "country": "China",
+        "rank": 56,
+        "score": 74.8
+      },
+      "suggestions": [],
+      "bestMatch": null,
+      "decision": {
+        "action": null,
+        "selectedMatch": null,
+        "newUniversityData": null,
+        "notes": "",
+        "reviewedBy": null,
+        "reviewedAt": null,
+        "confidence": null
+      },
+      "flags": [
+        {
+          "type": "special_characters",
+          "message": "Name contains unusual characters",
+          "severity": "info"
+        }
+      ],
+      "priority": "normal"
+    }
+  ],
+  "statistics": {
+    "totalItems": 10,
+    "withSuggestions": 8,
+    "withoutSuggestions": 2,
+    "highPriority": 2,
+    "normalPriority": 7,
+    "lowPriority": 1,
+    "flaggedItems": 9,
+    "byCountry": {
+      "Germany": 2,
+      "Japan": 1,
+      "USA": 3,
+      "France": 1,
+      "Unknown": 1,
+      "Unknown Region": 1,
+      "China": 1
+    },
+    "byInferredType": {
+      "university": 1,
+      "medical": 1,
+      "business": 2,
+      "technical": 1
+    }
+  }
+}

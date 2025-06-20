@@ -1,0 +1,482 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://university-ranking-aggregator.com/schemas/normalization-rules.json",
+  "title": "Normalization Rules Schema",
+  "description": "Schema for source-specific normalization rule configuration files",
+  "type": "object",
+  "required": ["metadata", "fileProcessing", "columnMappings", "transformationRules"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["source", "year", "format", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["qs", "the", "arwu", "usnews"],
+          "description": "Ranking source identifier"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000,
+          "maximum": 2100,
+          "description": "Year of the ranking data"
+        },
+        "format": {
+          "type": "string",
+          "enum": ["csv", "xlsx", "json", "xml"],
+          "description": "Input file format"
+        },
+        "encoding": {
+          "type": "string",
+          "enum": ["utf-8", "latin1", "ascii", "utf-16"],
+          "default": "utf-8",
+          "description": "File encoding"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "description": "Human-readable description of this configuration"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "default": "1.0.0",
+          "description": "Configuration version"
+        },
+        "author": {
+          "type": "string",
+          "description": "Configuration author"
+        },
+        "created_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Configuration creation date"
+        }
+      }
+    },
+    "fileProcessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "skipLines": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Number of lines to skip at the beginning"
+        },
+        "skipLinesEnd": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Number of lines to skip at the end"
+        },
+        "delimiter": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5,
+          "default": ",",
+          "description": "CSV delimiter character"
+        },
+        "quoteChar": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1,
+          "default": "\"",
+          "description": "CSV quote character"
+        },
+        "escapeChar": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1,
+          "description": "CSV escape character"
+        },
+        "xlsxSheetName": {
+          "type": "string",
+          "description": "XLSX sheet name to process"
+        },
+        "xlsxSheetIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "XLSX sheet index to process (0-based)"
+        },
+        "headerProcessing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "trimWhitespace": {
+              "type": "boolean",
+              "default": true,
+              "description": "Trim whitespace from headers"
+            },
+            "normalizeCase": {
+              "type": "boolean",
+              "default": false,
+              "description": "Normalize header case"
+            },
+            "removeEmptyColumns": {
+              "type": "boolean",
+              "default": true,
+              "description": "Remove columns with empty headers"
+            }
+          }
+        },
+        "errorHandling": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "skipMalformedRows": {
+              "type": "boolean",
+              "default": true,
+              "description": "Skip rows that cannot be parsed"
+            },
+            "logMalformedRows": {
+              "type": "boolean",
+              "default": true,
+              "description": "Log malformed rows for debugging"
+            },
+            "maximumErrors": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 10,
+              "description": "Maximum errors before stopping"
+            },
+            "stopOnCriticalError": {
+              "type": "boolean",
+              "default": true,
+              "description": "Stop processing on critical errors"
+            }
+          }
+        }
+      }
+    },
+    "columnMappings": {
+      "type": "object",
+      "required": ["rank", "name", "country"],
+      "additionalProperties": false,
+      "properties": {
+        "rank": {
+          "$ref": "#/definitions/columnMapping",
+          "description": "University rank column mapping"
+        },
+        "name": {
+          "$ref": "#/definitions/columnMapping",
+          "description": "University name column mapping"
+        },
+        "country": {
+          "$ref": "#/definitions/columnMapping",
+          "description": "Country column mapping"
+        },
+        "score": {
+          "$ref": "#/definitions/columnMapping",
+          "description": "Score column mapping (optional)"
+        },
+        "enrollment": {
+          "$ref": "#/definitions/columnMapping",
+          "description": "Enrollment column mapping (optional)"
+        }
+      }
+    },
+    "transformationRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "universityNames": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "basic": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "stringValidation",
+                  "caseNormalization",
+                  "diacriticsRemoval",
+                  "thePrefixRemoval",
+                  "parentheticalRemoval",
+                  "whitespaceNormalization",
+                  "institutionTypeRemoval",
+                  "locationIndicators"
+                ]
+              },
+              "description": "Basic transformation rules to apply"
+            },
+            "enhanced": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/transformationRule"
+              },
+              "description": "Enhanced pattern-based transformations"
+            },
+            "sourceSpecific": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "exactMappings": {
+                  "type": "object",
+                  "patternProperties": {
+                    ".*": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Exact name mappings for source-specific cases"
+                },
+                "patternMappings": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/transformationRule"
+                  },
+                  "description": "Pattern-based mappings for source-specific cases"
+                }
+              }
+            }
+          }
+        },
+        "countries": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mappings": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "string"
+                }
+              },
+              "description": "Direct country name mappings"
+            },
+            "cityMappings": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "string"
+                }
+              },
+              "description": "City to country mappings for inference"
+            },
+            "patterns": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/transformationRule"
+              },
+              "description": "Pattern-based country standardization"
+            }
+          }
+        },
+        "ranks": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "handleRanges": {
+              "type": "boolean",
+              "default": true,
+              "description": "Handle range ranks (e.g., '101-150')"
+            },
+            "rangeStrategy": {
+              "type": "string",
+              "enum": ["lowerBound", "upperBound", "midpoint"],
+              "default": "lowerBound",
+              "description": "Strategy for handling range ranks"
+            },
+            "maximumRank": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Maximum valid rank for this source"
+            },
+            "invalidRankHandling": {
+              "type": "string",
+              "enum": ["skip", "error", "log"],
+              "default": "skip",
+              "description": "How to handle invalid ranks"
+            }
+          }
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "normalize": {
+              "type": "boolean",
+              "default": false,
+              "description": "Normalize scores to 0-100 range"
+            },
+            "decimalPlaces": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10,
+              "default": 2,
+              "description": "Number of decimal places to keep"
+            },
+            "invalidScoreHandling": {
+              "type": "string",
+              "enum": ["skip", "zero", "null"],
+              "default": "null",
+              "description": "How to handle invalid scores"
+            }
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requiredFields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["rank", "name", "country", "score", "enrollment"]
+          },
+          "default": ["rank", "name", "country"],
+          "description": "Fields that must be present and non-empty"
+        },
+        "skipInvalidRows": {
+          "type": "boolean",
+          "default": true,
+          "description": "Skip rows that fail validation"
+        },
+        "minimumDataRows": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 10,
+          "description": "Minimum number of valid data rows required"
+        },
+        "maximumDataRows": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum number of data rows to process"
+        }
+      }
+    },
+    "outputFormat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["rank", "name", "country", "score", "enrollment"]
+          },
+          "default": ["rank", "name", "country", "score"],
+          "description": "Columns to include in output"
+        },
+        "encoding": {
+          "type": "string",
+          "enum": ["utf-8", "latin1", "ascii"],
+          "default": "utf-8",
+          "description": "Output file encoding"
+        },
+        "includeHeaders": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include column headers in output"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "columnMapping": {
+      "type": "object",
+      "required": ["primaryHeaders"],
+      "additionalProperties": false,
+      "properties": {
+        "primaryHeaders": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Primary column headers to look for"
+        },
+        "alternativeHeaders": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Alternative column headers to try"
+        },
+        "processing": {
+          "type": "string",
+          "enum": [
+            "none",
+            "trimWhitespace",
+            "parseNumeric",
+            "parseInteger",
+            "standardizeCountry",
+            "handleRangeRanks",
+            "normalizeUniversityName"
+          ],
+          "default": "trimWhitespace",
+          "description": "Processing function to apply to this column"
+        },
+        "required": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether this column is required"
+        },
+        "defaultValue": {
+          "description": "Default value if column is missing"
+        }
+      }
+    },
+    "transformationRule": {
+      "type": "object",
+      "required": ["name", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Rule name for identification"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["regex_replace", "exact_replace", "function", "conditional"],
+          "description": "Type of transformation rule"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Regex pattern for regex_replace type"
+        },
+        "replacement": {
+          "type": "string",
+          "description": "Replacement string or pattern"
+        },
+        "flags": {
+          "type": "string",
+          "pattern": "^[gimuy]*$",
+          "description": "Regex flags (g, i, m, u, y)"
+        },
+        "condition": {
+          "type": "string",
+          "description": "Condition for conditional transformations"
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether this rule is enabled"
+        },
+        "riskLevel": {
+          "type": "string",
+          "enum": ["VERY_LOW", "LOW", "MEDIUM", "HIGH"],
+          "description": "Risk level of this transformation"
+        },
+        "frequency": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Expected frequency of this pattern"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of this rule"
+        }
+      }
+    }
+  }
+}
