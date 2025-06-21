@@ -44,6 +44,22 @@ const IVY_LEAGUE_UNIVERSITIES = [
   "Yale University",
 ];
 
+const IVY_PLUS_UNIVERSITIES = [
+  "Brown University",
+  "Columbia University",
+  "Cornell University",
+  "Dartmouth College",
+  "Duke University",
+  "Harvard University",
+  "Johns Hopkins University",
+  "Massachusetts Institute of Technology (MIT)",
+  "Princeton University",
+  "Stanford University",
+  "University of Chicago",
+  "University of Pennsylvania",
+  "Yale University",
+];
+
 const BIG_TEN_UNIVERSITIES = [
   "University of Illinois Urbana-Champaign",
   "Indiana University Bloomington",
@@ -208,6 +224,10 @@ function App() {
     return Array.from(setCountries).sort();
   }, [universities]);
 
+  const uniqueGroupOptions = useMemo(() => {
+    return ["", "Ivy League", "Big Ten", "Russell Group", "Ivy Plus"];
+  }, []);
+
   const metrics = useMemo(() => {
     const totalUniversities = universities.length;
     const totalCountries = uniqueCountries.length;
@@ -348,14 +368,14 @@ function App() {
     }
 
     // Apply university group filter
-    if (selectedGroup) {
-      if (selectedGroup === "Ivy League") {
-        filtered = filtered.filter(uni => IVY_LEAGUE_UNIVERSITIES.includes(uni.name));
-      } else if (selectedGroup === "Big Ten") {
-        filtered = filtered.filter(uni => BIG_TEN_UNIVERSITIES.includes(uni.name));
-      } else if (selectedGroup === "Russell Group") {
-        filtered = filtered.filter(uni => RUSSELL_GROUP_UNIVERSITIES.includes(uni.name));
-      }
+    if (selectedGroup === "Ivy League") {
+      filtered = filtered.filter(uni => IVY_LEAGUE_UNIVERSITIES.includes(uni.name));
+    } else if (selectedGroup === "Big Ten") {
+      filtered = filtered.filter(uni => BIG_TEN_UNIVERSITIES.includes(uni.name));
+    } else if (selectedGroup === "Russell Group") {
+      filtered = filtered.filter(uni => RUSSELL_GROUP_UNIVERSITIES.includes(uni.name));
+    } else if (selectedGroup === "Ivy Plus") {
+      filtered = filtered.filter(uni => IVY_PLUS_UNIVERSITIES.includes(uni.name));
     }
 
     return filtered.sort((a, b) => {
@@ -635,6 +655,7 @@ function App() {
                 <option value="Ivy League" className="bg-gray-800">Ivy League</option>
                 <option value="Big Ten" className="bg-gray-800">Big Ten</option>
                 <option value="Russell Group" className="bg-gray-800">Russell Group</option>
+                <option value="Ivy Plus" className="bg-gray-800">Ivy Plus</option>
               </select>
             </div>
           </div>
