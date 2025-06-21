@@ -5,13 +5,15 @@ const stringSimilarity = require('string-similarity');
 const EnhancedNameMatcher = require('./enhanced_name_matcher');
 
 class NewMappingSuggester {
-    constructor() {
+    constructor(ignorePreviouslyIgnored = false) {
         this.enhancedMatcher = new EnhancedNameMatcher();
         this.dataDir = path.join(__dirname, '..', 'frontend', 'public', 'data');
         this.duplicateThreshold = 0.90; // High similarity threshold for potential duplicates
         this.lowConfidenceThreshold = 0.85; // Lower threshold for low-confidence potential duplicates (similarity)
         this.lowConfidenceMinConfidence = 0.90; // Minimum confidence threshold for low-confidence duplicates
         this.suggestionThreshold = 0.85; // Threshold for suggesting new mappings
+        this.ignoredMappingsPath = path.join(this.dataDir, 'ignored-suggestions.json'); // Path for ignored suggestions
+        this.ignorePreviouslyIgnored = ignorePreviouslyIgnored;
     }
 
     async loadData() {
@@ -30,7 +32,15 @@ class NewMappingSuggester {
             console.warn('No existing manual mappings found');
         }
 
-        return { aggregatedData, existingMappings };
+        // Load ignored suggestions
+        let ignoredMappings = [];
+        try {
+            ignoredMappings = JSON.parse(await fs.readFile(this.ignoredMappingsPath, 'utf8'));
+        } catch (error) {
+            console.warn('No ignored suggestions found, starting fresh with ignored list.');
+        }
+
+        return { aggregatedData, existingMappings, ignoredMappings };
     }
 
     // Find potential duplicates that could be merged with manual mappings
@@ -143,14 +153,23 @@ class NewMappingSuggester {
         );
     }
 
+    // Check if a potential mapping has been ignored
+    isIgnored(originalName, suggestedName, ignoredMappings) {
+        return ignoredMappings.some(mapping => 
+            (mapping.originalName === originalName && mapping.suggestedStandardizedName === suggestedName) ||
+            (mapping.originalName === suggestedName && mapping.suggestedStandardizedName === originalName)
+        );
+    }
+
     // Generate new mapping suggestions
-    generateSuggestions(duplicates, existingMappings) {
+    generateSuggestions(duplicates, existingMappings, ignoredMappings, ignorePreviouslyIgnored = false) {
         console.log('💡 Generating mapping suggestions...');
         
         const suggestions = duplicates
             .filter(dup => dup.confidence >= 85) // Only high-confidence suggestions
             .filter(dup => !this.mappingExists(dup.university1, dup.suggestedMapping, existingMappings))
             .filter(dup => !this.mappingExists(dup.university2, dup.suggestedMapping, existingMappings))
+            .filter(dup => ignorePreviouslyIgnored || !this.isIgnored(dup.university1, dup.suggestedMapping, ignoredMappings))
             .map(dup => {
                 const originalName = dup.university1 === dup.suggestedMapping ? dup.university2 : dup.university1;
                 return {
@@ -318,13 +337,13 @@ class NewMappingSuggester {
         try {
             console.log('🚀 Starting new mapping suggestion analysis...\n');
             
-            const { aggregatedData, existingMappings } = await this.loadData();
+            const { aggregatedData, existingMappings, ignoredMappings } = await this.loadData();
             
             const duplicateResults = this.findPotentialDuplicates(aggregatedData);
             const duplicates = duplicateResults.duplicates;
             const lowConfidenceDuplicates = duplicateResults.lowConfidenceDuplicates;
             
-            const suggestions = this.generateSuggestions(duplicates, existingMappings);
+            const suggestions = this.generateSuggestions(duplicates, existingMappings, ignoredMappings, this.ignorePreviouslyIgnored);
             
             // Filter duplicates to exclude those with existing mappings
             const filteredDuplicates = duplicates.filter(dup => {
@@ -360,7 +379,9 @@ class NewMappingSuggester {
 
 // CLI execution
 if (require.main === module) {
-    const suggester = new NewMappingSuggester();
+    const args = process.argv.slice(2);
+    const ignorePreviouslyIgnored = args.includes('--fresh') || args.includes('--ignore-ignored');
+    const suggester = new NewMappingSuggester(ignorePreviouslyIgnored);
     suggester.run();
 }
 

@@ -33,7 +33,16 @@ class MappingApplicator {
             console.warn('No existing manual mappings found, will create new file');
         }
 
-        return { suggestedData, manualMappings };
+        // Load ignored suggestions
+        const ignoredPath = path.join(this.dataDir, 'ignored-suggestions.json');
+        let ignoredMappings = [];
+        try {
+            ignoredMappings = JSON.parse(await fs.readFile(ignoredPath, 'utf8'));
+        } catch (error) {
+            console.warn('No ignored suggestions found.');
+        }
+
+        return { suggestedData, manualMappings, ignoredMappings };
     }
 
     // Convert potential duplicates to mapping format
@@ -66,21 +75,23 @@ class MappingApplicator {
     }
 
     // Interactive review of suggestions
-    async reviewSuggestions(suggestions, existingMappings) {
+    async reviewSuggestions(suggestions, existingMappings, ignoredMappings) {
         console.log('\n🔍 INTERACTIVE MAPPING REVIEW');
         console.log('=' .repeat(50));
-        console.log('Commands: (y)es, (n)o, (s)kip, (q)uit, (a)ll remaining, (h)elp\n');
+        console.log('Commands: (y)es, (n)o, (s)kip, (q)uit, (a)ll remaining, (i)gnore, (h)elp\n');
 
         const approved = [];
         const rejected = [];
+        const ignored = [];
         let autoApprove = false;
 
         for (let i = 0; i < suggestions.length; i++) {
             const suggestion = suggestions[i];
             
-            // Skip if mapping already exists
-            if (this.mappingExists(suggestion.originalName, suggestion.suggestedStandardizedName, existingMappings)) {
-                console.log(`⏭️  Skipping ${i + 1}/${suggestions.length}: Mapping already exists`);
+            // Skip if mapping already exists in manual mappings or ignored mappings
+            if (this.mappingExists(suggestion.originalName, suggestion.suggestedStandardizedName, existingMappings) ||
+                this.isIgnored(suggestion.originalName, suggestion.suggestedStandardizedName, ignoredMappings)) {
+                console.log(`⏭️  Skipping ${i + 1}/${suggestions.length}: Mapping already exists or is ignored`);
                 continue;
             }
 
@@ -91,7 +102,7 @@ class MappingApplicator {
                 console.log(`   Confidence: ${suggestion.confidence.toFixed(1)}%`);
                 console.log(`   Similarity: ${suggestion.similarity}%`);
                 
-                const answer = await this.askQuestion('Apply this mapping? (y/n/s/q/a/h): ');
+                const answer = await this.askQuestion('Apply this mapping? (y/n/s/q/a/i/h): ');
                 
                 switch (answer.toLowerCase()) {
                     case 'y':
@@ -111,12 +122,17 @@ class MappingApplicator {
                     case 'q':
                     case 'quit':
                         console.log('🛑 Quitting review process');
-                        return { approved, rejected };
+                        return { approved, rejected, ignored };
                     case 'a':
                     case 'all':
                         autoApprove = true;
                         approved.push(suggestion);
                         console.log('✅ Approved (auto-approving remaining)');
+                        break;
+                    case 'i':
+                    case 'ignore':
+                        ignored.push(suggestion);
+                        console.log('🙈 Ignored');
                         break;
                     case 'h':
                     case 'help':
@@ -124,7 +140,7 @@ class MappingApplicator {
                         i--; // Repeat this suggestion
                         break;
                     default:
-                        console.log('❓ Invalid input. Use y/n/s/q/a/h');
+                        console.log('❓ Invalid input. Use y/n/s/q/a/i/h');
                         i--; // Repeat this suggestion
                 }
             } else {
@@ -134,7 +150,7 @@ class MappingApplicator {
             }
         }
 
-        return { approved, rejected };
+        return { approved, rejected, ignored };
     }
 
     // Batch apply high-confidence suggestions
@@ -191,6 +207,46 @@ class MappingApplicator {
         console.log(`📊 Total manual mappings: ${updatedMappings.length}`);
         
         return updatedMappings;
+    }
+
+    // Save ignored mappings to a file
+    async saveIgnoredMappings(ignored, existingIgnored) {
+        if (ignored.length === 0) {
+            console.log('No new mappings to ignore');
+            return existingIgnored;
+        }
+
+        console.log(`\n💾 Saving ${ignored.length} ignored mappings...`);
+
+        const newIgnored = ignored.map(suggestion => ({
+            originalName: suggestion.originalName,
+            suggestedStandardizedName: suggestion.suggestedStandardizedName
+        }));
+
+        const updatedIgnored = [...existingIgnored, ...newIgnored];
+
+        // Remove duplicates and sort
+        const uniqueIgnored = Array.from(new Map(updatedIgnored.map(item => [
+            JSON.stringify([item.originalName, item.suggestedStandardizedName].sort()), item
+        ])).values());
+
+        uniqueIgnored.sort((a, b) => a.originalName.localeCompare(b.originalName));
+
+        const ignoredPath = path.join(this.dataDir, 'ignored-suggestions.json');
+        await fs.writeFile(ignoredPath, JSON.stringify(uniqueIgnored, null, 2));
+
+        console.log(`✅ Updated ignored suggestions file with ${ignored.length} new entries`);
+        console.log(`📊 Total ignored mappings: ${uniqueIgnored.length}`);
+
+        return uniqueIgnored;
+    }
+
+    // Check if a potential mapping has been ignored
+    isIgnored(originalName, suggestedName, ignoredMappings) {
+        return ignoredMappings.some(mapping => 
+            (mapping.originalName === originalName && mapping.suggestedStandardizedName === suggestedName) ||
+            (mapping.originalName === suggestedName && mapping.suggestedStandardizedName === originalName)
+        );
     }
 
     // Helper methods
@@ -270,6 +326,7 @@ class MappingApplicator {
         console.log('  s/skip - Skip this mapping (neutral)');
         console.log('  q/quit - Stop review process');
         console.log('  a/all  - Approve this and all remaining mappings');
+        console.log('  i/ignore - Ignore this mapping');
         console.log('  h/help - Show this help message');
     }
 
@@ -300,7 +357,7 @@ class MappingApplicator {
         try {
             console.log('🚀 Starting mapping application process...\n');
             
-            const { suggestedData, manualMappings } = await this.loadData();
+            const { suggestedData, manualMappings, ignoredMappings } = await this.loadData();
             
             // Show summary of available data
             console.log('📊 MAPPING DATA SUMMARY:');
@@ -335,6 +392,7 @@ class MappingApplicator {
             
             let approved = [];
             let rejected = [];
+            let ignored = [];
             
             if (mode === 'batch') {
                 // Batch mode - apply high confidence only
@@ -345,16 +403,22 @@ class MappingApplicator {
                 approved = selectedSuggestions;
             } else {
                 // Interactive mode
-                const result = await this.reviewSuggestions(selectedSuggestions, manualMappings);
+                const result = await this.reviewSuggestions(selectedSuggestions, manualMappings, ignoredMappings);
                 approved = result.approved;
                 rejected = result.rejected;
+                ignored = result.ignored;
             }
             
             // Apply approved mappings
-            await this.applyMappings(approved, manualMappings);
+            const finalManualMappings = await this.applyMappings(approved, manualMappings);
+            
+            // Save ignored mappings
+            await this.saveIgnoredMappings(ignored, ignoredMappings);
             
             // Generate report
             this.generateReport(approved, rejected, selectedSuggestions.length);
+            
+            return finalManualMappings;
             
         } catch (error) {
             console.error('❌ Error during mapping application:', error.message);
