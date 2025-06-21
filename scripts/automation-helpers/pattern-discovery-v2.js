@@ -65,14 +65,30 @@ function analyzeManualMappingsAgainstFinalData(manualMappings, aggregatedData) {
         const suggestedExists = finalUniversities.has(suggestedLower);
         
         if (originalExists && suggestedExists) {
-            // Both exist - this suggests the mapping isn't working properly
-            // This is a potential duplicate in final data that needs the manual mapping
-            results.duplicatesFound.push({
-                ...mapping,
-                reason: 'Both original and suggested names exist in final data - potential duplicate',
-                status: 'duplicate_detected',
-                similarity: stringSimilarity.compareTwoStrings(originalLower, suggestedLower) * 100
-            });
+            // NEW: Check ranking variance before flagging as duplicate
+            const uni1 = finalUniversities.get(originalLower);
+            const uni2 = finalUniversities.get(suggestedLower);
+            const rankingVarianceCheck = checkRankingVariance(uni1, uni2);
+            
+            // If ranking variance suggests different institutions, don't flag as duplicate
+            if (rankingVarianceCheck.shouldSkip) {
+                results.potentiallyRedundant.push({
+                    ...mapping,
+                    reason: `Ranking variance indicates different institutions: ${rankingVarianceCheck.reason}`,
+                    status: 'different_institutions',
+                    rankingVariance: rankingVarianceCheck
+                });
+            } else {
+                // Both exist - this suggests the mapping isn't working properly
+                // This is a potential duplicate in final data that needs the manual mapping
+                results.duplicatesFound.push({
+                    ...mapping,
+                    reason: 'Both original and suggested names exist in final data - potential duplicate',
+                    status: 'duplicate_detected',
+                    similarity: stringSimilarity.compareTwoStrings(originalLower, suggestedLower) * 100,
+                    rankingVariance: rankingVarianceCheck
+                });
+            }
         } else if (!originalExists && suggestedExists) {
             // Original doesn't exist, suggested does - mapping is working
             results.potentiallyRedundant.push({
@@ -98,6 +114,109 @@ function analyzeManualMappingsAgainstFinalData(manualMappings, aggregatedData) {
     }
     
     return results;
+}
+
+// NEW: Check ranking variance to prevent false merge detection
+function checkRankingVariance(uni1, uni2) {
+    const rankings1 = uni1.originalRankings || {};
+    const rankings2 = uni2.originalRankings || {};
+    
+    // Check if they have common sources
+    const sources1 = Object.keys(rankings1);
+    const sources2 = Object.keys(rankings2);
+    const hasCommonSources = sources1.some(s => sources2.includes(s));
+    
+    // If no common sources, can't check variance
+    if (!hasCommonSources) {
+        return { shouldSkip: false, reason: 'No common sources to compare rankings' };
+    }
+    
+    const varianceAnalysis = [];
+    let maxVariance = 0;
+    let commonSourceCount = 0;
+    
+    // Check variance for each common source
+    ['qs', 'the', 'arwu', 'usnews'].forEach(source => {
+        if (rankings1[source] && rankings2[source]) {
+            const rank1 = rankings1[source].rank;
+            const rank2 = rankings2[source].rank;
+            
+            // Parse ranks (handle ranges like "201-250")
+            const numRank1 = parseRank(rank1);
+            const numRank2 = parseRank(rank2);
+            
+            if (numRank1 && numRank2) {
+                const variance = Math.abs(numRank1 - numRank2);
+                const percentageVariance = (variance / Math.max(numRank1, numRank2)) * 100;
+                
+                varianceAnalysis.push({
+                    source,
+                    rank1: numRank1,
+                    rank2: numRank2,
+                    variance,
+                    percentageVariance
+                });
+                
+                maxVariance = Math.max(maxVariance, percentageVariance);
+                commonSourceCount++;
+            }
+        }
+    });
+    
+    // Determine if we should skip based on ranking variance
+    let shouldSkip = false;
+    let reason = '';
+    
+    if (commonSourceCount === 0) {
+        return { shouldSkip: false, reason: 'No parseable ranking data for comparison' };
+    }
+    
+    // High variance threshold: if rankings differ by >50% in any source, likely different schools
+    if (maxVariance > 50) {
+        shouldSkip = true;
+        reason = `High ranking variance detected (max: ${maxVariance.toFixed(1)}%) suggests different institutions`;
+    }
+    
+    // Medium variance threshold: if multiple sources show >30% variance, be cautious
+    const highVarianceSources = varianceAnalysis.filter(v => v.percentageVariance > 30);
+    if (highVarianceSources.length >= 2) {
+        shouldSkip = true;
+        reason = `Multiple sources show significant ranking variance (${highVarianceSources.length} sources >30%)`;
+    }
+    
+    return {
+        shouldSkip,
+        reason,
+        varianceAnalysis,
+        maxVariance: maxVariance.toFixed(1),
+        commonSourceCount
+    };
+}
+
+// Helper function to parse rank strings (handles ranges like "201-250")
+function parseRank(rank) {
+    if (typeof rank === 'number') return rank;
+    if (typeof rank !== 'string') return null;
+    
+    // Handle ranges like "201-250" - use the middle value
+    if (rank.includes('-')) {
+        const parts = rank.split('-');
+        if (parts.length === 2) {
+            const start = parseInt(parts[0]);
+            const end = parseInt(parts[1]);
+            if (!isNaN(start) && !isNaN(end)) {
+                return Math.floor((start + end) / 2);
+            }
+        }
+    }
+    
+    // Handle single numbers with potential suffixes like "100+"
+    const numMatch = rank.match(/^(\d+)/);
+    if (numMatch) {
+        return parseInt(numMatch[1]);
+    }
+    
+    return null;
 }
 
 function findAutomationPatterns(duplicatesFound) {

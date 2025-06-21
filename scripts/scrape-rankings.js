@@ -95,6 +95,10 @@ function canonicalizeName(name) {
     cleaned = cleaned.replace(/^(.*\bUniversity)\s([A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)?)$/, '$1 of $2');
     cleaned = cleaned.replace(/University of Medical Science(s?)/, 'University Medical Science$1');
     cleaned = cleaned.replace(/(University .*?)University of ([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+)?)$/, '$1University $2');
+    
+    // Science and Technology automation (e.g., "Jordan University of Science and Technology" -> "Jordan University of Science & Technology")
+    cleaned = cleaned.replace(/Science and Technology/g, 'Science & Technology');
+    
     return cleaned;
 }
 

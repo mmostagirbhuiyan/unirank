@@ -65,6 +65,16 @@ class NewMappingSuggester {
                     const sources2 = Object.keys(uni2.rankings || {});
                     const hasCommonSources = sources1.some(s => sources2.includes(s));
                     
+                    // NEW: Check ranking variance for common sources (false merge prevention)
+                    const rankingVarianceCheck = this.checkRankingVariance(uni1, uni2, hasCommonSources);
+                    
+                    // Skip if ranking variance indicates different institutions
+                    if (rankingVarianceCheck.shouldSkip) {
+                        console.log(`⚠️ Skipping potential false merge: "${uni1.name}" vs "${uni2.name}"`);
+                        console.log(`   Reason: ${rankingVarianceCheck.reason}`);
+                        continue;
+                    }
+                    
                     duplicates.push({
                         university1: uni1.name,
                         university2: uni2.name,
@@ -73,7 +83,8 @@ class NewMappingSuggester {
                         sources2,
                         hasCommonSources,
                         confidence: this.calculateConfidence(similarity, sources1, sources2),
-                        suggestedMapping: this.suggestBestName(uni1, uni2)
+                        suggestedMapping: this.suggestBestName(uni1, uni2),
+                        rankingVariance: rankingVarianceCheck
                     });
                 } else if (similarity >= this.lowConfidenceThreshold) {
                     // Check if they have different source coverage
@@ -81,21 +92,31 @@ class NewMappingSuggester {
                     const sources2 = Object.keys(uni2.rankings || {});
                     const hasCommonSources = sources1.some(s => sources2.includes(s));
                     
+                    // NEW: Check ranking variance for low confidence as well
+                    const rankingVarianceCheck = this.checkRankingVariance(uni1, uni2, hasCommonSources);
+                    
                     const confidence = this.calculateConfidence(similarity, sources1, sources2);
                     
-                    // Only include if confidence meets minimum threshold
-                    if (confidence >= this.lowConfidenceMinConfidence) {
-                        lowConfidenceDuplicates.push({
-                            university1: uni1.name,
-                            university2: uni2.name,
-                            similarity: (similarity * 100).toFixed(1),
-                            sources1,
-                            sources2,
-                            hasCommonSources,
-                            confidence: confidence,
-                            suggestedMapping: this.suggestBestName(uni1, uni2)
-                        });
+                    // Skip if ranking variance indicates different institutions or confidence too low
+                    if (rankingVarianceCheck.shouldSkip || confidence < this.lowConfidenceMinConfidence) {
+                        if (rankingVarianceCheck.shouldSkip) {
+                            console.log(`⚠️ Skipping low-confidence false merge: "${uni1.name}" vs "${uni2.name}"`);
+                            console.log(`   Reason: ${rankingVarianceCheck.reason}`);
+                        }
+                        continue;
                     }
+                    
+                    lowConfidenceDuplicates.push({
+                        university1: uni1.name,
+                        university2: uni2.name,
+                        similarity: (similarity * 100).toFixed(1),
+                        sources1,
+                        sources2,
+                        hasCommonSources,
+                        confidence: confidence,
+                        suggestedMapping: this.suggestBestName(uni1, uni2),
+                        rankingVariance: rankingVarianceCheck
+                    });
                 }
             }
         }
@@ -331,6 +352,104 @@ class NewMappingSuggester {
         console.log('2. Add approved mappings to manual-university-mapping.json');
         console.log('3. Run aggregation to see the impact');
         console.log('4. Use scripts/apply-suggested-mappings.js for batch application');
+    }
+
+    // NEW: Check ranking variance to prevent false merges
+    checkRankingVariance(uni1, uni2, hasCommonSources) {
+        const rankings1 = uni1.rankings || {};
+        const rankings2 = uni2.rankings || {};
+        
+        // If no common sources, can't check variance (rely on other signals)
+        if (!hasCommonSources) {
+            return { shouldSkip: false, reason: 'No common sources to compare rankings' };
+        }
+        
+        const varianceAnalysis = [];
+        let maxVariance = 0;
+        let commonSourceCount = 0;
+        
+        // Check variance for each common source
+        ['qs', 'the', 'arwu', 'usnews'].forEach(source => {
+            if (rankings1[source] && rankings2[source]) {
+                const rank1 = rankings1[source].rank;
+                const rank2 = rankings2[source].rank;
+                
+                // Parse ranks (handle ranges like "201-250")
+                const numRank1 = this.parseRank(rank1);
+                const numRank2 = this.parseRank(rank2);
+                
+                if (numRank1 && numRank2) {
+                    const variance = Math.abs(numRank1 - numRank2);
+                    const percentageVariance = (variance / Math.max(numRank1, numRank2)) * 100;
+                    
+                    varianceAnalysis.push({
+                        source,
+                        rank1: numRank1,
+                        rank2: numRank2,
+                        variance,
+                        percentageVariance
+                    });
+                    
+                    maxVariance = Math.max(maxVariance, percentageVariance);
+                    commonSourceCount++;
+                }
+            }
+        });
+        
+        // Determine if we should skip based on ranking variance
+        let shouldSkip = false;
+        let reason = '';
+        
+        if (commonSourceCount === 0) {
+            return { shouldSkip: false, reason: 'No parseable ranking data for comparison' };
+        }
+        
+        // High variance threshold: if rankings differ by >50% in any source, likely different schools
+        if (maxVariance > 50) {
+            shouldSkip = true;
+            reason = `High ranking variance detected (max: ${maxVariance.toFixed(1)}%) suggests different institutions`;
+        }
+        
+        // Medium variance threshold: if multiple sources show >30% variance, be cautious
+        const highVarianceSources = varianceAnalysis.filter(v => v.percentageVariance > 30);
+        if (highVarianceSources.length >= 2) {
+            shouldSkip = true;
+            reason = `Multiple sources show significant ranking variance (${highVarianceSources.length} sources >30%)`;
+        }
+        
+        return {
+            shouldSkip,
+            reason,
+            varianceAnalysis,
+            maxVariance: maxVariance.toFixed(1),
+            commonSourceCount
+        };
+    }
+    
+    // Helper function to parse rank strings (handles ranges like "201-250")
+    parseRank(rank) {
+        if (typeof rank === 'number') return rank;
+        if (typeof rank !== 'string') return null;
+        
+        // Handle ranges like "201-250" - use the middle value
+        if (rank.includes('-')) {
+            const parts = rank.split('-');
+            if (parts.length === 2) {
+                const start = parseInt(parts[0]);
+                const end = parseInt(parts[1]);
+                if (!isNaN(start) && !isNaN(end)) {
+                    return Math.floor((start + end) / 2);
+                }
+            }
+        }
+        
+        // Handle single numbers with potential suffixes like "100+"
+        const numMatch = rank.match(/^(\d+)/);
+        if (numMatch) {
+            return parseInt(numMatch[1]);
+        }
+        
+        return null;
     }
 
     async run() {
