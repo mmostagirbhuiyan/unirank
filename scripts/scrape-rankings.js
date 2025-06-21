@@ -245,6 +245,7 @@ function standardizeCountry(country) {
         'UK': 'United Kingdom',
         'United Kingdom': 'United Kingdom',
         'S. Korea': 'South Korea',
+        'Republic of Korea': 'South Korea',
     };
     return map[country.trim()] || country.trim();
 }
