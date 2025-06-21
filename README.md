@@ -90,17 +90,23 @@ cd frontend && npm install && npm start
 
 Our advanced pattern-based matching system automatically handles systematic naming variations:
 
-### Automated Transformation Rules
+### Currently Active Automation Patterns (8 Total)
 
-| Pattern | Examples | Count |
-|---------|----------|-------|
-| **Hyphen/Space Removal** | "MIT - Cambridge" → "MIT Cambridge" | 22 cases |
-| **"At" Preposition** | "University of Texas at Austin" → "University of Texas Austin" | 12 cases |
-| **Diacritics Removal** | "Technical University of München" → "Technical University of Munich" | 5 cases |
-| **Medical Science Variations** | "Medical Sciences" ↔ "Medical Science" | 4 cases |
-| **"The" Prefix Removal** | "The University of Tokyo" → "University of Tokyo" | 3 cases |
-| **Apostrophe Normalization** | "Queen's University" → "Queens University" | 5 cases |
-| **And/Ampersand** | "Science and Technology" → "Science & Technology" | 8 cases |
+| Pattern | Examples | Implementation |
+|---------|----------|---------------|
+| **1. Diacritics Normalization** | "Technical University of München" → "Technical University of Munich" | `cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '')` |
+| **2. Character Cleanup** | Remove question marks, replacement chars | `cleaned.replace(/[?\uFFFD]/g, '')` |
+| **3. At Location Removal** | "University of Texas at Austin" → "University of Texas Austin" | `cleaned.replace(/^(.+) at (.+)$/, '$1 $2')` |
+| **4. And/Ampersand Standardization** | "Science and Technology" → "Science & Technology" | `cleaned.replace(/ and /g, ' & ')` |
+| **5. Hyphen to Space** | "University of Wisconsin-Madison" → "University of Wisconsin Madison" | `cleaned.replace(/-/g, ' ')` |
+| **6. "The" Prefix Removal** | "The University of Tokyo" → "University of Tokyo" | `cleaned.replace(/^The /, '')` |
+| **7. Medical Sciences Normalization** | "University of Medical Sciences" → "University of Medical Science" | `cleaned.replace(/Medical Sciences/g, 'Medical Science')` |
+| **8. Medical University "of" Removal** | "Medical University of Graz" → "Medical University Graz" | `cleaned.replace(/^Medical University of (.+)$/i, 'Medical University $1')` |
+
+### Additional Complex Patterns
+- **UC System Campus Names**: "University of California - Berkeley" → "University of California Berkeley"
+- **"Of" Preposition Normalization**: Adds/removes "of" between University and location names
+- **Encoding Fixes**: "Mnchen" → "Munchen" for corrupted UTF-8
 
 ### Matching Confidence Levels
 - **🟢 High (≥0.95)**: Automatic matching applied
@@ -165,7 +171,7 @@ graph TD
    - US News: Automated scraping with Playwright/Selenium
 
 2. **🔍 Enhanced Name Matching** (Multi-tier System)
-   - **Primary**: Pattern-based transformations (10 automated rules)
+   - **Primary**: Pattern-based transformations (8 active automation rules)
    - **Secondary**: High-confidence fuzzy matching (≥93% similarity)  
    - **Tertiary**: Manual mapping lookup (89 curated cases)
    - **Fallback**: Auto-generated mappings (~39k fuzzy matches)
