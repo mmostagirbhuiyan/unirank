@@ -1542,32 +1542,32 @@
   {
     "originalName": "Sorbonne University",
     "source": "arwu",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
     "originalName": "sorbonne",
     "source": "arwu",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
     "originalName": "Sorbonne University",
     "source": "the",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
     "originalName": "sorbonne",
     "source": "the",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
-    "originalName": "Sorbonne University (merged from Paris IV & UPMC)",
+    "originalName": "Sorbonne University",
     "source": "qs",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
     "originalName": "sorbonne",
     "source": "qs",
-    "suggestedStandardizedName": "Sorbonne University (merged from Paris IV & UPMC)"
+    "suggestedStandardizedName": "Sorbonne University"
   },
   {
     "originalName": "University of Science and Technology of China",
@@ -1877,6 +1877,16 @@
   {
     "originalName": "university of minnesota twin cities",
     "source": "usnews",
+    "suggestedStandardizedName": "University of Minnesota - Twin Cities"
+  },
+  {
+    "originalName": "University of Minnesota Twin Cities",
+    "source": "qs",
+    "suggestedStandardizedName": "University of Minnesota - Twin Cities"
+  },
+  {
+    "originalName": "university of minnesota twin cities",
+    "source": "qs",
     "suggestedStandardizedName": "University of Minnesota - Twin Cities"
   },
   {
@@ -5642,42 +5652,42 @@
   {
     "originalName": "Southern University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "southern of science technology",
     "source": "arwu",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "Southern University of Science and Technology",
     "source": "the",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "southern of science technology",
     "source": "the",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "Southern University of Science & Technology",
     "source": "usnews",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "southern of science & technology",
     "source": "usnews",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
-    "originalName": "Southern University of Science and Technology (SUSTech)",
+    "originalName": "Southern University of Science and Technology",
     "source": "qs",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "southern of science technology",
     "source": "qs",
-    "suggestedStandardizedName": "Southern University of Science and Technology (SUSTech)"
+    "suggestedStandardizedName": "Southern University of Science and Technology"
   },
   {
     "originalName": "University of Adelaide",
@@ -23462,42 +23472,42 @@
   {
     "originalName": "National Taiwan University of Science and Technology",
     "source": "arwu",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "national taiwan of science technology",
     "source": "arwu",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "National Taiwan University of Science and Technology",
     "source": "the",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "national taiwan of science technology",
     "source": "the",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "National Taiwan University of Science and Technology",
     "source": "usnews",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "national taiwan of science technology",
     "source": "usnews",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
-    "originalName": "National Taiwan University of Science and Technology (Taiwan Tech)",
+    "originalName": "National Taiwan University of Science and Technology",
     "source": "qs",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "national taiwan of science technology",
     "source": "qs",
-    "suggestedStandardizedName": "National Taiwan University of Science and Technology (Taiwan Tech)"
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology"
   },
   {
     "originalName": "Taipei Medical University",
@@ -37208,16 +37218,6 @@
     "originalName": "rheinische friedrichwilhelmsuniversitat bonn",
     "source": "qs",
     "suggestedStandardizedName": "Rheinische Friedrich-Wilhelms-Universität Bonn"
-  },
-  {
-    "originalName": "University of Minnesota (System)",
-    "source": "qs",
-    "suggestedStandardizedName": "University of Minnesota (System)"
-  },
-  {
-    "originalName": "university of minnesota",
-    "source": "qs",
-    "suggestedStandardizedName": "University of Minnesota (System)"
   },
   {
     "originalName": "Universidad de Los Andes Colombia",

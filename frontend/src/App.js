@@ -80,7 +80,7 @@ const RUSSELL_GROUP_UNIVERSITIES = [
   "University of Liverpool",
   "London School Economics & Political Science",
   "University of Manchester",
-  "Newcastle University - Newcastle-upon-Tyne",
+  "Newcastle University - UK",
   "University of Nottingham",
   "University of Oxford",
   "Queen Mary University London",
