@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-06-21T19:13:32.421Z",
+  "totalOriginalMappings": 7948,
+  "totalCleanedMappings": 7945,
+  "removedCount": 3,
+  "removedMappings": [
+    {
+      "originalName": "Henan University of Science and Technology",
+      "source": "arwu",
+      "incorrectTarget": "Jordan University of Science and Technology",
+      "reason": "Henan University (China) incorrectly mapped to Jordan University"
+    },
+    {
+      "originalName": "Xi'an University of Science and Technology",
+      "source": "arwu",
+      "incorrectTarget": "Jordan University of Science and Technology",
+      "reason": "Xi'an University (China) incorrectly mapped to Jordan University"
+    },
+    {
+      "originalName": "Wuhan University of Science and Technology",
+      "source": "arwu",
+      "incorrectTarget": "Jordan University of Science and Technology",
+      "reason": "Wuhan University (China) incorrectly mapped to Jordan University"
+    }
+  ],
+  "corruptionPatterns": [
+    {
+      "description": "Pohang University (South Korea) incorrectly mapped to Nanjing University (China)",
+      "pattern": "/Pohang University/i",
+      "incorrectTarget": "Nanjing University of Science and Technology"
+    },
+    {
+      "description": "Tianjin University incorrectly mapped to Nanjing University",
+      "pattern": "/Tianjin University of Science and Technology/i",
+      "incorrectTarget": "Nanjing University of Science and Technology"
+    },
+    {
+      "description": "Ajman University (UAE) incorrectly mapped to Jordan University (Jordan)",
+      "pattern": "/Ajman University of Science and Technology/i",
+      "incorrectTarget": "Jordan University of Science and Technology"
+    },
+    {
+      "description": "Iran University incorrectly mapped to Jordan University",
+      "pattern": "/Iran University of Science and Technology/i",
+      "incorrectTarget": "Jordan University of Science and Technology"
+    },
+    {
+      "description": "Henan University (China) incorrectly mapped to Jordan University",
+      "pattern": "/Henan University of Science and Technology/i",
+      "incorrectTarget": "Jordan University of Science and Technology"
+    },
+    {
+      "description": "Xi'an University (China) incorrectly mapped to Jordan University",
+      "pattern": "/Xi'an University of Science and Technology/i",
+      "incorrectTarget": "Jordan University of Science and Technology"
+    },
+    {
+      "description": "Wuhan University (China) incorrectly mapped to Jordan University",
+      "pattern": "/Wuhan University of Science and Technology/i",
+      "incorrectTarget": "Jordan University of Science and Technology"
+    }
+  ]
+}

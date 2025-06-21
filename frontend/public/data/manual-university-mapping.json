@@ -628,5 +628,10 @@
     "originalName": "China Medical University",
     "suggestedStandardizedName": "China Medical University Taiwan",
     "reason": "Canonicalized form of \"China Medical University (Taiwan)\""
+  },
+  {
+    "originalName": "Pohang University of Science And Technology",
+    "suggestedStandardizedName": "Pohang University of Science and Technology",
+    "reason": "Capitalization difference - same university (South Korea)"
   }
 ]
