@@ -58,6 +58,8 @@ const IVY_PLUS_UNIVERSITIES = [
   "University of Chicago",
   "University of Pennsylvania",
   "Yale University",
+  "California Institute of Technology",
+  "Northwestern University",
 ];
 
 const BIG_TEN_UNIVERSITIES = [
