@@ -4,20 +4,8 @@
     "suggestedStandardizedName": "Aix-Marseille Universite"
   },
   {
-    "originalName": "Al Jouf University",
-    "suggestedStandardizedName": "Jouf University"
-  },
-  {
     "originalName": "Arizona State University",
     "suggestedStandardizedName": "Arizona State University-Tempe"
-  },
-  {
-    "originalName": "Bar-Ilan University",
-    "suggestedStandardizedName": "Bar Ilan University"
-  },
-  {
-    "originalName": "Brunel University of London",
-    "suggestedStandardizedName": "Brunel University London"
   },
   {
     "originalName": "California Institute of Technology - Caltech",
@@ -36,20 +24,8 @@
     "suggestedStandardizedName": "China Medical University (Taiwan)"
   },
   {
-    "originalName": "China University of Geosciences Wuhan",
-    "suggestedStandardizedName": "China University of Geosciences"
-  },
-  {
     "originalName": "China University of Mining Technology",
     "suggestedStandardizedName": "China University of Mining & Technology"
-  },
-  {
-    "originalName": "City University of Hong Kong",
-    "suggestedStandardizedName": "University of Hong Kong"
-  },
-  {
-    "originalName": "Comenius University in Bratislava",
-    "suggestedStandardizedName": "Comenius University Bratislava"
   },
   {
     "originalName": "Ecole Normale Supérieure de Lyon",
@@ -60,32 +36,8 @@
     "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
   },
   {
-    "originalName": "Guangzhou University",
-    "suggestedStandardizedName": "Yangzhou University"
-  },
-  {
-    "originalName": "Guilan University of Medical Sciences",
-    "suggestedStandardizedName": "Iran University of Medical Sciences"
-  },
-  {
     "originalName": "Hannover Medical School",
     "suggestedStandardizedName": "Hanover Medical School"
-  },
-  {
-    "originalName": "Hefei University of Technology",
-    "suggestedStandardizedName": "Hebei University of Technology"
-  },
-  {
-    "originalName": "Hohai University",
-    "suggestedStandardizedName": "Bohai University"
-  },
-  {
-    "originalName": "Hunan Normal University",
-    "suggestedStandardizedName": "Henan Normal University"
-  },
-  {
-    "originalName": "Huzhou University",
-    "suggestedStandardizedName": "Fuzhou University"
   },
   {
     "originalName": "I.M. Sechenov First Moscow State Medical University",
@@ -104,22 +56,6 @@
     "suggestedStandardizedName": "Indiana University Bloomington"
   },
   {
-    "originalName": "Iran University of Medical Sciences",
-    "suggestedStandardizedName": "Arak University of Medical Sciences"
-  },
-  {
-    "originalName": "Iran University of Science and Technology Tehran",
-    "suggestedStandardizedName": "Iran University of Science and Technology"
-  },
-  {
-    "originalName": "Jordan University of Science and Technology",
-    "suggestedStandardizedName": "Jordan University of Science & Technology"
-  },
-  {
-    "originalName": "Jordan University of Science and Technology",
-    "suggestedStandardizedName": "Iran University of Science and Technology"
-  },
-  {
     "originalName": "Karolinska Institute",
     "suggestedStandardizedName": "Karolinska Institutet"
   },
@@ -136,10 +72,6 @@
     "suggestedStandardizedName": "London School Economics & Political Science"
   },
   {
-    "originalName": "Loyola University of Chicago",
-    "suggestedStandardizedName": "Loyola University Chicago"
-  },
-  {
     "originalName": "Maastricht University",
     "suggestedStandardizedName": "University of Maastricht"
   },
@@ -148,28 +80,12 @@
     "suggestedStandardizedName": "Lomonosov Moscow State University"
   },
   {
-    "originalName": "Nanjing University of Posts & Telecommunications",
-    "suggestedStandardizedName": "Beijing University of Posts & Telecommunications"
-  },
-  {
-    "originalName": "Nanjing University of Science and Technology",
-    "suggestedStandardizedName": "Nanjing University of Science & Technology"
-  },
-  {
     "originalName": "Nanyang Technological University Singapore",
     "suggestedStandardizedName": "Nanyang Technological University"
   },
   {
     "originalName": "National Autonomous University of Mexico",
     "suggestedStandardizedName": "Universidad Nacional Autonoma de Mexico"
-  },
-  {
-    "originalName": "National Chung Cheng University",
-    "suggestedStandardizedName": "National Cheng Kung University"
-  },
-  {
-    "originalName": "New University of Lisbon",
-    "suggestedStandardizedName": "Universidade Nova de Lisboa"
   },
   {
     "originalName": "Newcastle University Newcastle upon Tyne",
@@ -224,16 +140,8 @@
     "suggestedStandardizedName": "Queens University - Canada"
   },
   {
-    "originalName": "Queen's University",
-    "suggestedStandardizedName": "Queens University"
-  },
-  {
     "originalName": "Queens University Belfast",
     "suggestedStandardizedName": "Queen's University Belfast"
-  },
-  {
-    "originalName": "Radboud University of Nijmegen",
-    "suggestedStandardizedName": "Radboud University Nijmegen"
   },
   {
     "originalName": "Rutgers - The State University of New Jersey",
@@ -248,24 +156,8 @@
     "suggestedStandardizedName": "Shandong University of Science & Technology"
   },
   {
-    "originalName": "Shiraz University of Medical Sciences",
-    "suggestedStandardizedName": "Iran University of Medical Sciences"
-  },
-  {
-    "originalName": "Shiraz University of Technology",
-    "suggestedStandardizedName": "Graz University of Technology"
-  },
-  {
     "originalName": "Sorbonne University",
     "suggestedStandardizedName": "Sorbonne Universite"
-  },
-  {
-    "originalName": "South China Agricultural University",
-    "suggestedStandardizedName": "China Agricultural University"
-  },
-  {
-    "originalName": "South China University of Technology",
-    "suggestedStandardizedName": "North China University of Technology"
   },
   {
     "originalName": "Southern Medical University",
@@ -284,20 +176,12 @@
     "suggestedStandardizedName": "University at Buffalo"
   },
   {
-    "originalName": "State University of New York at Buffalo",
-    "suggestedStandardizedName": "University at Buffalo, SUNY"
-  },
-  {
     "originalName": "State University of New York at Stony Brook",
     "suggestedStandardizedName": "Stony Brook University"
   },
   {
     "originalName": "Stellenbosch University",
     "suggestedStandardizedName": "University of Stellenbosch"
-  },
-  {
-    "originalName": "Sun Yat-Sen University",
-    "suggestedStandardizedName": "Sun Yat Sen University"
   },
   {
     "originalName": "Swiss Federal Institute of Technology Lausanne - EPFL",
@@ -316,10 +200,6 @@
     "suggestedStandardizedName": "Technical University of Munich"
   },
   {
-    "originalName": "Tehran University of Medical Sciences",
-    "suggestedStandardizedName": "Iran University of Medical Sciences"
-  },
-  {
     "originalName": "The University of Osaka",
     "suggestedStandardizedName": "Osaka University"
   },
@@ -328,20 +208,12 @@
     "suggestedStandardizedName": "University of Ulm"
   },
   {
-    "originalName": "Umm Al-Qura University",
-    "suggestedStandardizedName": "Umm Al Qura University"
-  },
-  {
     "originalName": "Université Paris-Saclay",
     "suggestedStandardizedName": "Universite Paris Saclay"
   },
   {
     "originalName": "University of Basque Country",
     "suggestedStandardizedName": "University of the Basque Country"
-  },
-  {
-    "originalName": "University of Duisburg-Essen",
-    "suggestedStandardizedName": "University of Duisburg Essen"
   },
   {
     "originalName": "University of Durham",
@@ -360,24 +232,12 @@
     "suggestedStandardizedName": "University of Kwazulu Natal"
   },
   {
-    "originalName": "University of La Laguna",
-    "suggestedStandardizedName": "Universidad de la Laguna"
-  },
-  {
     "originalName": "University of Leiden",
     "suggestedStandardizedName": "Leiden University"
   },
   {
-    "originalName": "University of Lisbon",
-    "suggestedStandardizedName": "Universidade de Lisboa"
-  },
-  {
     "originalName": "University of Malaya",
     "suggestedStandardizedName": "Universiti Malaya"
-  },
-  {
-    "originalName": "University of Maryland Baltimore County",
-    "suggestedStandardizedName": "University of Maryland Baltimore"
   },
   {
     "originalName": "university of massachusetts",
@@ -396,10 +256,6 @@
     "suggestedStandardizedName": "University of Michigan"
   },
   {
-    "originalName": "University of Milan - Bicocca",
-    "suggestedStandardizedName": "University of Milano-Bicocca"
-  },
-  {
     "originalName": "University of München",
     "suggestedStandardizedName": "University of Munich"
   },
@@ -412,24 +268,8 @@
     "suggestedStandardizedName": "University of New South Wales Sydney"
   },
   {
-    "originalName": "University of Northumbria at Newcastle",
-    "suggestedStandardizedName": "Northumbria University at Newcastle"
-  },
-  {
-    "originalName": "University of Porto",
-    "suggestedStandardizedName": "Universidade do Porto"
-  },
-  {
     "originalName": "University of Rome - La Sapienza",
     "suggestedStandardizedName": "Sapienza University Rome"
-  },
-  {
-    "originalName": "University of Rovira i Virgili",
-    "suggestedStandardizedName": "Rovira i Virgili University"
-  },
-  {
-    "originalName": "University of Santiago of Compostela",
-    "suggestedStandardizedName": "University of Santiago de Compostela"
   },
   {
     "originalName": "University of Sao Paulo",
@@ -444,20 +284,8 @@
     "suggestedStandardizedName": "University of Sevilla"
   },
   {
-    "originalName": "University of Siegen",
-    "suggestedStandardizedName": "University of Siena"
-  },
-  {
     "originalName": "University of St Andrews",
     "suggestedStandardizedName": "University of St. Andrews"
-  },
-  {
-    "originalName": "University of the Republic",
-    "suggestedStandardizedName": "Universidad de la Republica, Uruguay"
-  },
-  {
-    "originalName": "University of The Witwatersrand",
-    "suggestedStandardizedName": "University of Witwatersrand"
   },
   {
     "originalName": "University of Tsukuba",
@@ -476,10 +304,6 @@
     "suggestedStandardizedName": "Pompeu Fabra University"
   },
   {
-    "originalName": "University Savoie Mont Blanc",
-    "suggestedStandardizedName": "Universite Savoie Mont Blanc"
-  },
-  {
     "originalName": "Victoria University Wellington",
     "suggestedStandardizedName": "Victoria University of Wellington"
   },
@@ -490,10 +314,6 @@
   {
     "originalName": "Viet Nam National University - Ho Chi Minh City",
     "suggestedStandardizedName": "Vietnam National University Hochiminh City"
-  },
-  {
-    "originalName": "Virginia Polytechnic Institute and State University",
-    "suggestedStandardizedName": "Virginia Polytechnic Institute & State University"
   },
   {
     "originalName": "Wageningen University & Research Center",
@@ -508,7 +328,31 @@
     "suggestedStandardizedName": "University of Western Sydney"
   },
   {
-    "originalName": "Xinjiang University",
-    "suggestedStandardizedName": "Nanjing University"
+    "originalName": "State University of New York at Buffalo",
+    "suggestedStandardizedName": "University at Buffalo, SUNY"
+  },
+  {
+    "originalName": "Queen's University",
+    "suggestedStandardizedName": "Queens University"
+  },
+  {
+    "originalName": "University of Porto",
+    "suggestedStandardizedName": "Universidade do Porto"
+  },
+  {
+    "originalName": "University of Lisbon",
+    "suggestedStandardizedName": "Universidade de Lisboa"
+  },
+  {
+    "originalName": "New University of Lisbon",
+    "suggestedStandardizedName": "Universidade Nova de Lisboa"
+  },
+  {
+    "originalName": "University of the Republic",
+    "suggestedStandardizedName": "Universidad de la Republica, Uruguay"
+  },
+  {
+    "originalName": "University of La Laguna",
+    "suggestedStandardizedName": "Universidad de la Laguna"
   }
 ]
