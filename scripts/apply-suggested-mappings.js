@@ -36,6 +36,17 @@ class MappingApplicator {
         return { suggestedData, manualMappings };
     }
 
+    // Convert potential duplicates to mapping format
+    convertDuplicatesToMappings(duplicates) {
+        return duplicates.map(dup => ({
+            originalName: dup.university1 === dup.suggestedMapping ? dup.university2 : dup.university1,
+            suggestedStandardizedName: dup.suggestedMapping,
+            confidence: dup.confidence,
+            similarity: dup.similarity,
+            reason: `Potential duplicate (${dup.similarity}% similarity)`
+        }));
+    }
+
     // Create backup of current manual mappings
     async createBackup(manualMappings) {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -191,6 +202,67 @@ class MappingApplicator {
         });
     }
 
+    // Choose which type of suggestions to process
+    async chooseSuggestionType(suggestedData) {
+        const suggestions = suggestedData.suggestions || [];
+        const potentialDuplicates = suggestedData.potentialDuplicates || [];
+        const lowConfidenceDuplicates = suggestedData.lowConfidencePotentialDuplicates || [];
+
+        console.log('\n📋 AVAILABLE SUGGESTION TYPES:');
+        console.log('=' .repeat(50));
+        console.log(`1. High-Confidence Suggestions: ${suggestions.length} items`);
+        console.log(`2. Potential Duplicates (90%+ similarity): ${potentialDuplicates.length} items`);
+        console.log(`3. Low-Confidence Duplicates (85-90% similarity, ≥90% confidence): ${lowConfidenceDuplicates.length} items`);
+        console.log(`4. All Types Combined: ${suggestions.length + potentialDuplicates.length + lowConfidenceDuplicates.length} items`);
+
+        if (suggestions.length + potentialDuplicates.length + lowConfidenceDuplicates.length === 0) {
+            console.log('\n❌ No suggestions available to process');
+            return null;
+        }
+
+        const choice = await this.askQuestion('\nWhich type would you like to process? (1/2/3/4): ');
+
+        switch (choice) {
+            case '1':
+                if (suggestions.length === 0) {
+                    console.log('❌ No high-confidence suggestions available');
+                    return null;
+                }
+                console.log(`\n🎯 Processing ${suggestions.length} high-confidence suggestions...`);
+                return { type: 'suggestions', data: suggestions };
+            
+            case '2':
+                if (potentialDuplicates.length === 0) {
+                    console.log('❌ No potential duplicates available');
+                    return null;
+                }
+                console.log(`\n🔍 Processing ${potentialDuplicates.length} potential duplicates...`);
+                return { type: 'duplicates', data: this.convertDuplicatesToMappings(potentialDuplicates) };
+            
+            case '3':
+                if (lowConfidenceDuplicates.length === 0) {
+                    console.log('❌ No low-confidence duplicates available');
+                    return null;
+                }
+                console.log(`\n💭 Processing ${lowConfidenceDuplicates.length} low-confidence duplicates (≥90% confidence)...`);
+                return { type: 'lowConfidence', data: this.convertDuplicatesToMappings(lowConfidenceDuplicates) };
+            
+            case '4':
+                const allSuggestions = [
+                    ...suggestions,
+                    ...this.convertDuplicatesToMappings(potentialDuplicates),
+                    ...this.convertDuplicatesToMappings(lowConfidenceDuplicates)
+                ].sort((a, b) => b.confidence - a.confidence); // Sort by confidence descending
+                
+                console.log(`\n🌟 Processing all ${allSuggestions.length} suggestions (sorted by confidence)...`);
+                return { type: 'all', data: allSuggestions };
+            
+            default:
+                console.log('❌ Invalid choice. Please select 1, 2, 3, or 4');
+                return await this.chooseSuggestionType(suggestedData);
+        }
+    }
+
     showHelp() {
         console.log('\n📖 HELP:');
         console.log('  y/yes  - Approve this mapping');
@@ -229,15 +301,34 @@ class MappingApplicator {
             console.log('🚀 Starting mapping application process...\n');
             
             const { suggestedData, manualMappings } = await this.loadData();
-            const suggestions = suggestedData.suggestions || [];
             
-            if (suggestions.length === 0) {
-                console.log('No mapping suggestions found to apply');
-                return;
+            // Show summary of available data
+            console.log('📊 MAPPING DATA SUMMARY:');
+            console.log(`   High-Confidence Suggestions: ${(suggestedData.suggestions || []).length}`);
+            console.log(`   Potential Duplicates: ${(suggestedData.potentialDuplicates || []).length}`);
+            console.log(`   Low-Confidence Duplicates: ${(suggestedData.lowConfidencePotentialDuplicates || []).length}`);
+            console.log(`   Current Manual Mappings: ${manualMappings.length}`);
+            
+            let selectedSuggestions;
+            
+            if (mode === 'interactive') {
+                // Interactive mode - let user choose suggestion type
+                const selection = await this.chooseSuggestionType(suggestedData);
+                if (!selection) {
+                    console.log('❌ No suggestions selected or available');
+                    return;
+                }
+                selectedSuggestions = selection.data;
+            } else {
+                // For batch/auto modes, default to high-confidence suggestions
+                selectedSuggestions = suggestedData.suggestions || [];
+                if (selectedSuggestions.length === 0) {
+                    console.log('❌ No high-confidence suggestions found for batch/auto mode');
+                    return;
+                }
             }
-
-            console.log(`📊 Found ${suggestions.length} mapping suggestions`);
-            console.log(`📋 Current manual mappings: ${manualMappings.length}`);
+            
+            console.log(`\n📋 Processing ${selectedSuggestions.length} suggestions...`);
             
             // Create backup
             await this.createBackup(manualMappings);
@@ -247,14 +338,14 @@ class MappingApplicator {
             
             if (mode === 'batch') {
                 // Batch mode - apply high confidence only
-                approved = await this.batchApply(suggestions);
+                approved = await this.batchApply(selectedSuggestions);
             } else if (mode === 'auto') {
-                // Auto mode - apply all suggestions
-                console.log('\n⚡ AUTO MODE: Applying all suggestions');
-                approved = suggestions;
+                // Auto mode - apply all selected suggestions
+                console.log('\n⚡ AUTO MODE: Applying all selected suggestions');
+                approved = selectedSuggestions;
             } else {
                 // Interactive mode
-                const result = await this.reviewSuggestions(suggestions, manualMappings);
+                const result = await this.reviewSuggestions(selectedSuggestions, manualMappings);
                 approved = result.approved;
                 rejected = result.rejected;
             }
@@ -263,7 +354,7 @@ class MappingApplicator {
             await this.applyMappings(approved, manualMappings);
             
             // Generate report
-            this.generateReport(approved, rejected, suggestions.length);
+            this.generateReport(approved, rejected, selectedSuggestions.length);
             
         } catch (error) {
             console.error('❌ Error during mapping application:', error.message);

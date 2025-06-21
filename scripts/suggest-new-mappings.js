@@ -9,6 +9,8 @@ class NewMappingSuggester {
         this.enhancedMatcher = new EnhancedNameMatcher();
         this.dataDir = path.join(__dirname, '..', 'frontend', 'public', 'data');
         this.duplicateThreshold = 0.90; // High similarity threshold for potential duplicates
+        this.lowConfidenceThreshold = 0.85; // Lower threshold for low-confidence potential duplicates (similarity)
+        this.lowConfidenceMinConfidence = 0.90; // Minimum confidence threshold for low-confidence duplicates
         this.suggestionThreshold = 0.85; // Threshold for suggesting new mappings
     }
 
@@ -35,6 +37,7 @@ class NewMappingSuggester {
     findPotentialDuplicates(universities) {
         console.log('🔍 Analyzing potential duplicates...');
         const duplicates = [];
+        const lowConfidenceDuplicates = [];
         
         for (let i = 0; i < universities.length; i++) {
             for (let j = i + 1; j < universities.length; j++) {
@@ -62,11 +65,35 @@ class NewMappingSuggester {
                         confidence: this.calculateConfidence(similarity, sources1, sources2),
                         suggestedMapping: this.suggestBestName(uni1, uni2)
                     });
+                } else if (similarity >= this.lowConfidenceThreshold) {
+                    // Check if they have different source coverage
+                    const sources1 = Object.keys(uni1.rankings || {});
+                    const sources2 = Object.keys(uni2.rankings || {});
+                    const hasCommonSources = sources1.some(s => sources2.includes(s));
+                    
+                    const confidence = this.calculateConfidence(similarity, sources1, sources2);
+                    
+                    // Only include if confidence meets minimum threshold
+                    if (confidence >= this.lowConfidenceMinConfidence) {
+                        lowConfidenceDuplicates.push({
+                            university1: uni1.name,
+                            university2: uni2.name,
+                            similarity: (similarity * 100).toFixed(1),
+                            sources1,
+                            sources2,
+                            hasCommonSources,
+                            confidence: confidence,
+                            suggestedMapping: this.suggestBestName(uni1, uni2)
+                        });
+                    }
                 }
             }
         }
 
-        return duplicates.sort((a, b) => b.confidence - a.confidence);
+        return {
+            duplicates: duplicates.sort((a, b) => b.confidence - a.confidence),
+            lowConfidenceDuplicates: lowConfidenceDuplicates.sort((a, b) => b.confidence - a.confidence)
+        };
     }
 
     // Calculate confidence score for a potential mapping
@@ -143,17 +170,63 @@ class NewMappingSuggester {
     }
 
     // Save suggestions to a file for review
-    async saveSuggestions(suggestions) {
+    async saveSuggestions(suggestions, duplicates, lowConfidenceDuplicates, existingMappings) {
+        // Filter out potential duplicates that already have manual mappings
+        const filteredDuplicates = duplicates.filter(dup => {
+            // Check if either university in the duplicate pair already has a mapping
+            const uni1HasMapping = this.mappingExists(dup.university1, dup.suggestedMapping, existingMappings) ||
+                                 existingMappings.some(m => m.originalName === dup.university1 || m.suggestedStandardizedName === dup.university1);
+            const uni2HasMapping = this.mappingExists(dup.university2, dup.suggestedMapping, existingMappings) ||
+                                 existingMappings.some(m => m.originalName === dup.university2 || m.suggestedStandardizedName === dup.university2);
+            
+            // Only include if neither university already has a mapping
+            return !uni1HasMapping && !uni2HasMapping;
+        });
+
+        // Filter low-confidence duplicates similarly
+        const filteredLowConfidenceDuplicates = lowConfidenceDuplicates.filter(dup => {
+            const uni1HasMapping = this.mappingExists(dup.university1, dup.suggestedMapping, existingMappings) ||
+                                 existingMappings.some(m => m.originalName === dup.university1 || m.suggestedStandardizedName === dup.university1);
+            const uni2HasMapping = this.mappingExists(dup.university2, dup.suggestedMapping, existingMappings) ||
+                                 existingMappings.some(m => m.originalName === dup.university2 || m.suggestedStandardizedName === dup.university2);
+            
+            return !uni1HasMapping && !uni2HasMapping;
+        });
+
         const outputPath = path.join(this.dataDir, 'suggested-new-mappings.json');
         const outputData = {
             generatedAt: new Date().toISOString(),
             totalSuggestions: suggestions.length,
+            totalPotentialDuplicates: filteredDuplicates.length,
+            totalLowConfidenceDuplicates: filteredLowConfidenceDuplicates.length,
+            totalRawDuplicatesFound: duplicates.length,
+            totalRawLowConfidenceDuplicatesFound: lowConfidenceDuplicates.length,
             suggestions: suggestions.map(s => ({
                 originalName: s.originalName,
                 suggestedStandardizedName: s.suggestedStandardizedName,
                 confidence: s.confidence,
                 similarity: s.similarity,
                 reason: s.reason
+            })),
+            potentialDuplicates: filteredDuplicates.map(d => ({
+                university1: d.university1,
+                university2: d.university2,
+                similarity: d.similarity,
+                confidence: d.confidence,
+                suggestedMapping: d.suggestedMapping,
+                sources1: d.sources1,
+                sources2: d.sources2,
+                hasCommonSources: d.hasCommonSources
+            })),
+            lowConfidencePotentialDuplicates: filteredLowConfidenceDuplicates.map(d => ({
+                university1: d.university1,
+                university2: d.university2,
+                similarity: d.similarity,
+                confidence: d.confidence,
+                suggestedMapping: d.suggestedMapping,
+                sources1: d.sources1,
+                sources2: d.sources2,
+                hasCommonSources: d.hasCommonSources
             }))
         };
         
@@ -163,18 +236,61 @@ class NewMappingSuggester {
     }
 
     // Generate a report
-    generateReport(duplicates, suggestions, universities) {
+    generateReport(duplicates, suggestions, universities, filteredDuplicates, filteredLowConfidenceDuplicates, lowConfidenceDuplicates) {
         console.log('\n🎯 NEW MAPPING SUGGESTIONS REPORT');
         console.log('=' .repeat(50));
         
         console.log('\n📊 ANALYSIS SUMMARY:');
         console.log(`Total Universities Analyzed: ${universities.length}`);
-        console.log(`Potential Duplicates Found: ${duplicates.length}`);
+        console.log(`Raw Potential Duplicates Found (90%+ similarity): ${duplicates.length}`);
+        console.log(`Raw Low-Confidence Duplicates Found (85-90% similarity, ≥90% confidence): ${lowConfidenceDuplicates.length}`);
+        console.log(`Potential Duplicates (excluding existing mappings): ${filteredDuplicates.length}`);
+        console.log(`Low-Confidence Duplicates (excluding existing mappings): ${filteredLowConfidenceDuplicates.length}`);
         console.log(`High-Confidence Suggestions: ${suggestions.length}`);
         
         if (suggestions.length === 0) {
             console.log('\n✅ No new mapping suggestions found.');
             console.log('This indicates the current manual mappings are comprehensive.');
+            
+            if (filteredDuplicates.length > 0) {
+                console.log(`\n🔍 However, ${filteredDuplicates.length} potential duplicates were found.`);
+                console.log('These are included in the output file for manual review.');
+                console.log('\n💡 TOP POTENTIAL DUPLICATES (excluding existing mappings):');
+                filteredDuplicates.slice(0, 5).forEach((duplicate, i) => {
+                    console.log(`\n${i + 1}. CONFIDENCE: ${duplicate.confidence.toFixed(1)}%`);
+                    console.log(`   "${duplicate.university1}"`);
+                    console.log(`   "${duplicate.university2}"`);
+                    console.log(`   Similarity: ${duplicate.similarity}%`);
+                    console.log(`   Sources: [${duplicate.sources1.join(', ')}] vs [${duplicate.sources2.join(', ')}]`);
+                });
+                
+                if (filteredDuplicates.length > 5) {
+                    console.log(`\n... and ${filteredDuplicates.length - 5} more potential duplicates in the output file`);
+                }
+            } else if (duplicates.length > 0) {
+                console.log(`\n✅ All ${duplicates.length} potential duplicates already have manual mappings.`);
+                console.log('Your manual mapping coverage is excellent!');
+            }
+
+            if (filteredLowConfidenceDuplicates.length > 0) {
+                console.log(`\n🔍 LOW-CONFIDENCE ANALYSIS: ${filteredLowConfidenceDuplicates.length} potential duplicates found.`);
+                console.log('These require more careful manual review due to lower similarity scores (but ≥90% confidence).');
+                console.log('\n💭 TOP LOW-CONFIDENCE DUPLICATES (excluding existing mappings):');
+                filteredLowConfidenceDuplicates.slice(0, 3).forEach((duplicate, i) => {
+                    console.log(`\n${i + 1}. CONFIDENCE: ${duplicate.confidence.toFixed(1)}%`);
+                    console.log(`   "${duplicate.university1}"`);
+                    console.log(`   "${duplicate.university2}"`);
+                    console.log(`   Similarity: ${duplicate.similarity}%`);
+                    console.log(`   Sources: [${duplicate.sources1.join(', ')}] vs [${duplicate.sources2.join(', ')}]`);
+                });
+                
+                if (filteredLowConfidenceDuplicates.length > 3) {
+                    console.log(`\n... and ${filteredLowConfidenceDuplicates.length - 3} more low-confidence duplicates in the output file`);
+                }
+            } else if (lowConfidenceDuplicates.length > 0) {
+                console.log(`\n✅ All ${lowConfidenceDuplicates.length} low-confidence duplicates already have manual mappings.`);
+            }
+            
             return;
         }
 
@@ -204,11 +320,34 @@ class NewMappingSuggester {
             
             const { aggregatedData, existingMappings } = await this.loadData();
             
-            const duplicates = this.findPotentialDuplicates(aggregatedData);
+            const duplicateResults = this.findPotentialDuplicates(aggregatedData);
+            const duplicates = duplicateResults.duplicates;
+            const lowConfidenceDuplicates = duplicateResults.lowConfidenceDuplicates;
+            
             const suggestions = this.generateSuggestions(duplicates, existingMappings);
             
-            await this.saveSuggestions(suggestions);
-            this.generateReport(duplicates, suggestions, aggregatedData);
+            // Filter duplicates to exclude those with existing mappings
+            const filteredDuplicates = duplicates.filter(dup => {
+                const uni1HasMapping = this.mappingExists(dup.university1, dup.suggestedMapping, existingMappings) ||
+                                     existingMappings.some(m => m.originalName === dup.university1 || m.suggestedStandardizedName === dup.university1);
+                const uni2HasMapping = this.mappingExists(dup.university2, dup.suggestedMapping, existingMappings) ||
+                                     existingMappings.some(m => m.originalName === dup.university2 || m.suggestedStandardizedName === dup.university2);
+                
+                return !uni1HasMapping && !uni2HasMapping;
+            });
+
+            // Filter low-confidence duplicates similarly
+            const filteredLowConfidenceDuplicates = lowConfidenceDuplicates.filter(dup => {
+                const uni1HasMapping = this.mappingExists(dup.university1, dup.suggestedMapping, existingMappings) ||
+                                     existingMappings.some(m => m.originalName === dup.university1 || m.suggestedStandardizedName === dup.university1);
+                const uni2HasMapping = this.mappingExists(dup.university2, dup.suggestedMapping, existingMappings) ||
+                                     existingMappings.some(m => m.originalName === dup.university2 || m.suggestedStandardizedName === dup.university2);
+                
+                return !uni1HasMapping && !uni2HasMapping;
+            });
+            
+            await this.saveSuggestions(suggestions, duplicates, lowConfidenceDuplicates, existingMappings);
+            this.generateReport(duplicates, suggestions, aggregatedData, filteredDuplicates, filteredLowConfidenceDuplicates, lowConfidenceDuplicates);
             
             return suggestions;
             
