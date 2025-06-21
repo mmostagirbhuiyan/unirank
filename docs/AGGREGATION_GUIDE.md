@@ -111,7 +111,7 @@ node scripts/scrape-rankings.js [limit]
 
 This script integrates with several other core components:
 
--   **Individual Scrapers**: `qs-scraper.js`, `the-scraper.js`, `arwu-scraper.js`, `usnews_direct_extractor_selenium.py`, `usnews_direct_extractor_legacy.py`
+-   **Individual Scrapers**: `qs-scraper.js`, `the-scraper.js`, `arwu-scraper.js`, `usnews_direct_extractor_selenium.py`
 -   **Aggregation Logic**: `aggregation.js` (Borda Count implementation)
 -   **Name Standardization Engine**: `enhanced_name_matcher.js`
 -   **Mapping Files**: `manual-university-mapping.json`, `suggested-university-mapping.json`

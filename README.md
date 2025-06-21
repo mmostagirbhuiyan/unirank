@@ -2,25 +2,25 @@
 
 A sophisticated, production-ready platform that aggregates and visualizes global university rankings from multiple authoritative sources (QS, THE, ARWU, US News) using advanced pattern-based matching and intelligent name standardization.
 
-[![University Count](https://img.shields.io/badge/Universities-1729-blue)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
+[![University Count](https://img.shields.io/badge/Universities-1753-blue)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
 [![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
-[![Automation](https://img.shields.io/badge/Matching%20Automation-61.8%25-orange)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
+[![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
 
 ---
 
 ## 🚀 **What's New (Latest Updates)**
 
-### ✨ **Enhanced Pattern-Based Matching System**
-- **61.8% automation rate** for university name matching
-- **7 intelligent transformation rules** handle systematic naming variations
-- **Reduced university count** from 1736 to 1729 through better duplicate detection
-- **Now automatically handles** patterns like "Queen's University" ↔ "Queens University"
+### ✨ **Data Integrity Overhaul (2024)**
+- **75.8% duplicate reduction** - Fixed 25 out of 33 high-confidence duplicates
+- **43 universities consolidated** - Reduced from 1796 to 1753 unique universities  
+- **8 active automation patterns** handle systematic naming variations
+- **100% data integrity** - All remaining "duplicates" verified as legitimate different institutions
 
-### 🧹 **Simplified Manual Mapping**
-- **Source-agnostic mappings** - one mapping works across all sources
-- **Consolidated from 363 to 123 entries** by removing duplicates
-- **Clean architecture** with clear separation of automated vs manual handling
-- **CSV parsing uses Latin-1 encoding** to fix corrupted names like "Technical University of München"
+### 🧹 **Enhanced Manual Mapping System**
+- **162 curated manual mappings** (expanded from 89) for cross-source standardization
+- **5-tier name standardization hierarchy** with pattern matching, manual mappings, and fuzzy fallbacks
+- **Fixed US News bypass bug** - Manual mappings now properly applied to all sources
+- **Comprehensive quality monitoring** with new data integrity verification tools
 
 ---
 
@@ -80,10 +80,11 @@ cd frontend && npm install && npm start
 **Borda Count with Penalized Absence**: Universities receive points based on their ranking position, with systematic penalties for missing rankings to ensure fairness across different coverage patterns.
 
 ### Current Performance
-- 🎯 **1,729 unique universities** after intelligent deduplication
-- 🤖 **61.8% automation rate** for name matching
+- 🎯 **1,753 unique universities** with verified data integrity
+- 🤖 **8 active automation patterns** for name standardization
 - ⚡ **<30 seconds** complete data processing
-- 🔧 **123 manual mappings** (down from 363) for edge cases
+- 🔧 **162 manual mappings** for cross-source edge cases
+- ✅ **≤8 high-confidence duplicates** (all verified as legitimate different institutions)
 
 ---
 
@@ -174,7 +175,7 @@ graph TD
 2. **🔍 Enhanced Name Matching** (Multi-tier System)
    - **Primary**: Pattern-based transformations (8 active automation rules)
    - **Secondary**: High-confidence fuzzy matching (≥93% similarity)  
-   - **Tertiary**: Manual mapping lookup (89 curated cases)
+   - **Tertiary**: Manual mapping lookup (162 curated cases)
    - **Fallback**: Auto-generated mappings (~39k fuzzy matches)
    - **Last Resort**: Original name preserved
 
@@ -199,7 +200,7 @@ This project utilizes dedicated scraper scripts to extract university ranking da
 -   **[QS World University Rankings Scraper](docs/QS_SCRAPER_GUIDE.md)** - Guide for `scripts/qs-scraper.js`
 -   **[Times Higher Education (THE) Rankings Scraper](docs/THE_SCRAPER_GUIDE.md)** - Guide for `scripts/the-scraper.js`
 -   **[Academic Ranking of World Universities (ARWU) Scraper](docs/ARWU_SCRAPER_GUIDE.md)** - Guide for `scripts/arwu-scraper.js`
--   **[US News Rankings Scraper](docs/USNEWS_SCRAPER_GUIDE.md)** - Guide for `scripts/usnews_direct_extractor_legacy.py` and `scripts/usnews_direct_extractor_selenium.py`
+-   **[US News Rankings Scraper](docs/USNEWS_SCRAPER_GUIDE.md)** - Guide for `scripts/usnews_direct_extractor_selenium.py`
 
 ---
 

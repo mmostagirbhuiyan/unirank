@@ -67,7 +67,8 @@ function canonicalizeName(name) {
     // Remove parenthetical notes
     cleaned = cleaned.replace(/\s*\([^)]*\)\s*$/, '');
     // Remove trailing short tokens like "- MIT" while keeping campus names
-    cleaned = cleaned.replace(/\s*-\s*[A-Za-z.&]{1,5}$/, '');
+    // More specific pattern to avoid removing city names like "Essen"
+    cleaned = cleaned.replace(/\s*-\s*(?:MIT|UCLA|USC|NYU|USC|GT)$/i, '');
     // Remove campus designations at the end
     cleaned = cleaned.replace(/\s*-?\s*(?:main|city|west|east|north|south)?\s*\w*\s*campus$/i, '');
     cleaned = cleaned.replace(/\s*-\s*/g, ' ');
@@ -164,8 +165,18 @@ async function loadUniversityMapping() {
 function standardizeUniversityName(originalName, source) {
     const cleaned = canonicalizeName(originalName);
     
-    // 1. US News names are already canonical - just clean them
+    // 1. US News names - first check manual mappings, then use canonical form
     if (source === 'usnews') {
+        // Check manual mappings first (for cross-source merging)
+        if (manualMappingToUSNews.has(originalName)) {
+            return manualMappingToUSNews.get(originalName);
+        }
+        
+        if (manualMappingToUSNews.has(cleaned)) {
+            return manualMappingToUSNews.get(cleaned);
+        }
+        
+        // Fall back to canonical US News name
         return usnewsNameMap.get(cleaned) || originalName.trim();
     }
     
