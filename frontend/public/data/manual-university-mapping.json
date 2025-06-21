@@ -72,10 +72,6 @@
     "suggestedStandardizedName": "Yangzhou University"
   },
   {
-    "originalName": "Guilan University of Medical Sciences",
-    "suggestedStandardizedName": "Iran University of Medical Sciences"
-  },
-  {
     "originalName": "Hamad Bin Khalifa University-Qatar",
     "suggestedStandardizedName": "Hamad Bin Khalifa University"
   },
@@ -126,10 +122,6 @@
   {
     "originalName": "Jordan University of Science and Technology",
     "suggestedStandardizedName": "Jordan University of Science & Technology"
-  },
-  {
-    "originalName": "Jordan University of Science and Technology",
-    "suggestedStandardizedName": "Iran University of Science and Technology"
   },
   {
     "originalName": "Karolinska Institute",
@@ -274,10 +266,6 @@
   {
     "originalName": "Shiraz University of Medical Sciences",
     "suggestedStandardizedName": "Iran University of Medical Sciences"
-  },
-  {
-    "originalName": "Shiraz University of Technology",
-    "suggestedStandardizedName": "Graz University of Technology"
   },
   {
     "originalName": "Sorbonne University",
@@ -618,5 +606,47 @@
   {
     "originalName": "Xinjiang University",
     "suggestedStandardizedName": "Nanjing University"
+  },
+  {
+    "originalName": "Universidad de Sevilla",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "Universität Duisburg-Essen",
+    "suggestedStandardizedName": "University of Duisburg Essen"
+  },
+  {
+    "originalName": "Southern Medical University - China",
+    "suggestedStandardizedName": "Southern Medical University China"
+  },
+  {
+    "originalName": "Sapienza University of Rome",
+    "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "Northeastern University in China",
+    "suggestedStandardizedName": "Northeastern University - China"
+  },
+  {
+    "originalName": "Sun Yat-sen University",
+    "suggestedStandardizedName": "Sun Yat Sen University"
+  },
+  {
+    "originalName": "Queen's University of Belfast",
+    "suggestedStandardizedName": "Queen's University Belfast"
+  },
+  {
+    "originalName": "China Medical University Taiwan",
+    "suggestedStandardizedName": "China Medical University (Taiwan)"
+  },
+  {
+    "originalName": "China Medical University (Taiwan)",
+    "suggestedStandardizedName": "China Medical University Taiwan",
+    "reason": "Direct mapping for duplicate"
+  },
+  {
+    "originalName": "China Medical University",
+    "suggestedStandardizedName": "China Medical University Taiwan",
+    "reason": "Canonicalized form of \"China Medical University (Taiwan)\""
   }
 ]

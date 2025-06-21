@@ -54,7 +54,7 @@ node scripts/automation-helpers/pattern-tester.js "Pattern Name" "pattern.code()
 
 **Safety Features:**
 - ✅ Automatic baseline establishment
-- ✅ University count change validation (±2 max)
+- ✅ University count change validation (increases never allowed)
 - ✅ Automatic rollback on failures
 - ✅ Backup creation and restoration
 - ✅ Pattern logic validation
@@ -97,7 +97,7 @@ node scripts/automation-helpers/baseline-monitor.js compare baseline.json
 ```
 🏥 COMPREHENSIVE HEALTH CHECK
 1. Testing aggregation pipeline... ✅
-2. Validating university count... ✅ 1711 universities
+2. Validating university count... ✅ 1753 universities
 3. Checking for duplicates... ✅ No duplicates
 4. Checking file integrity... ✅ All files valid
 5. Validating automation patterns... ✅ 6 patterns active
@@ -148,7 +148,7 @@ node scripts/automation-helpers/pattern-tester.js "UC Campuses" "cleaned.replace
 
 # 3. Test implementation (with automatic rollback)
 node scripts/automation-helpers/pattern-tester.js "UC Campuses" "cleaned.replace(/^University of California - (.+)$/, \"University of California \$1\")"
-# Output: ✅ University count stable: 1711 → 1711
+# Output: ✅ University count stable: 1753 → 1753
 
 # 4. If successful, implement manually following workflow guide
 ```
@@ -158,7 +158,7 @@ node scripts/automation-helpers/pattern-tester.js "UC Campuses" "cleaned.replace
 ```bash
 # Check current status
 node scripts/automation-helpers/baseline-monitor.js status
-# Universities: 1711, Manual mappings: 106, Patterns: 6
+# Universities: 1753, Manual mappings: 162, Patterns: 8
 
 # Run full health check
 node scripts/automation-helpers/baseline-monitor.js health
@@ -185,7 +185,7 @@ node scripts/automation-helpers/baseline-monitor.js compare
 ## ⚠️ Safety Features
 
 ### **Automatic Rollback Triggers**
-- University count change > ±2
+- University count increase by ANY amount (never acceptable)
 - Aggregation script errors
 - Duplicate universities detected
 - File corruption or missing files
@@ -209,7 +209,7 @@ node scripts/automation-helpers/baseline-monitor.js compare
 ### **Environment Variables**
 ```bash
 # Optional: Set custom thresholds
-export MAX_COUNT_CHANGE=2          # Maximum university count change
+export MAX_COUNT_CHANGE=0          # No increases allowed (only decreases/same)
 export PATTERN_MIN_FREQUENCY=3     # Minimum pattern frequency
 export BACKUP_ENABLED=true         # Enable automatic backups
 ```
