@@ -18,7 +18,7 @@ const stringSimilarity = require('string-similarity');
 const TARGET_UNIVERSITIES = 1753;
 const TARGET_VARIANCE = 2;
 const MAX_DUPLICATES = 8;
-const SIMILARITY_THRESHOLD = 0.90;
+const SIMILARITY_THRESHOLD = 0.91;
 
 function loadAggregatedData() {
     const filePath = path.join(__dirname, '..', 'frontend', 'public', 'data', 'aggregated-rankings.json');
