@@ -1,13 +1,5 @@
 [
   {
-    "originalName": "Abdul Wali Khan University Mardan",
-    "suggestedStandardizedName": "Abdul Wali Khan University"
-  },
-  {
-    "originalName": "Adam Mickiewicz University in Poznan",
-    "suggestedStandardizedName": "Adam Mickiewicz University"
-  },
-  {
     "originalName": "Aix-Marseille University",
     "suggestedStandardizedName": "Aix-Marseille Universite"
   },
@@ -142,10 +134,6 @@
   {
     "originalName": "KTH - Royal Institute of Technology",
     "suggestedStandardizedName": "Royal Institute of Technology"
-  },
-  {
-    "originalName": "Lappeenranta-Lahti University of Technology LUT",
-    "suggestedStandardizedName": "Lappeenranta University of Technology"
   },
   {
     "originalName": "Leibniz Universität Hannover",
@@ -292,16 +280,8 @@
     "suggestedStandardizedName": "North China University of Technology"
   },
   {
-    "originalName": "Southeast University - China",
-    "suggestedStandardizedName": "Southeast University"
-  },
-  {
     "originalName": "Southern Medical University",
     "suggestedStandardizedName": "Southern Medical University China"
-  },
-  {
-    "originalName": "Southwest University - China",
-    "suggestedStandardizedName": "Southwest University"
   },
   {
     "originalName": "St. Petersburg State University",
@@ -340,10 +320,6 @@
     "suggestedStandardizedName": "ETH Zurich"
   },
   {
-    "originalName": "Symbiosis International (Deemed University)",
-    "suggestedStandardizedName": "Symbiosis International University"
-  },
-  {
     "originalName": "Tampere University",
     "suggestedStandardizedName": "University of Tampere"
   },
@@ -360,10 +336,6 @@
     "suggestedStandardizedName": "Osaka University"
   },
   {
-    "originalName": "Thomas Jefferson University",
-    "suggestedStandardizedName": "Jefferson University"
-  },
-  {
     "originalName": "Ulm University",
     "suggestedStandardizedName": "University of Ulm"
   },
@@ -376,14 +348,6 @@
     "suggestedStandardizedName": "Universidade de Brasilia"
   },
   {
-    "originalName": "Universitas Airlangga",
-    "suggestedStandardizedName": "Airlangga University"
-  },
-  {
-    "originalName": "Universitat Ramon Llull",
-    "suggestedStandardizedName": "Ramon Llull University"
-  },
-  {
     "originalName": "Université Paris-Saclay",
     "suggestedStandardizedName": "Universite Paris Saclay"
   },
@@ -394,10 +358,6 @@
   {
     "originalName": "University of Basque Country",
     "suggestedStandardizedName": "University of the Basque Country"
-  },
-  {
-    "originalName": "University of Catania",
-    "suggestedStandardizedName": "Catania University"
   },
   {
     "originalName": "University of Duisburg-Essen",
@@ -420,10 +380,6 @@
     "suggestedStandardizedName": "University Hohenheim"
   },
   {
-    "originalName": "University of Jordan",
-    "suggestedStandardizedName": "Jordan University"
-  },
-  {
     "originalName": "University of KwaZulu-Natal",
     "suggestedStandardizedName": "University of Kwazulu Natal"
   },
@@ -434,10 +390,6 @@
   {
     "originalName": "University of Leiden",
     "suggestedStandardizedName": "Leiden University"
-  },
-  {
-    "originalName": "University of Leipzig",
-    "suggestedStandardizedName": "Leipzig University"
   },
   {
     "originalName": "University of Lisbon",
@@ -488,20 +440,8 @@
     "suggestedStandardizedName": "Northumbria University at Newcastle"
   },
   {
-    "originalName": "University of Perugia",
-    "suggestedStandardizedName": "Perugia University"
-  },
-  {
-    "originalName": "University of Petroleum (East China)",
-    "suggestedStandardizedName": "China University of Petroleum"
-  },
-  {
     "originalName": "University of Porto",
     "suggestedStandardizedName": "Universidade do Porto"
-  },
-  {
-    "originalName": "University of Putra Malaysia",
-    "suggestedStandardizedName": "Universiti Putra Malaysia"
   },
   {
     "originalName": "University of Rome - La Sapienza",
@@ -524,10 +464,6 @@
     "suggestedStandardizedName": "University of Science & Technology of China, CAS"
   },
   {
-    "originalName": "University of Seoul",
-    "suggestedStandardizedName": "Seoul University"
-  },
-  {
     "originalName": "University of Seville",
     "suggestedStandardizedName": "University of Sevilla"
   },
@@ -538,10 +474,6 @@
   {
     "originalName": "University of St Andrews",
     "suggestedStandardizedName": "University of St. Andrews"
-  },
-  {
-    "originalName": "University of the Punjab",
-    "suggestedStandardizedName": "University of Punjab"
   },
   {
     "originalName": "University of the Republic",
@@ -556,28 +488,12 @@
     "suggestedStandardizedName": "Tsukuba University"
   },
   {
-    "originalName": "University of Ulsan",
-    "suggestedStandardizedName": "Ulsan University"
-  },
-  {
-    "originalName": "University of Ulster",
-    "suggestedStandardizedName": "Ulster University"
-  },
-  {
-    "originalName": "University of Verona",
-    "suggestedStandardizedName": "Verona University"
-  },
-  {
     "originalName": "University of Victoria",
     "suggestedStandardizedName": "Victoria University"
   },
   {
     "originalName": "University of Washington",
     "suggestedStandardizedName": "University of Washington Seattle"
-  },
-  {
-    "originalName": "University Paul Sabatier - Toulouse III",
-    "suggestedStandardizedName": "Universite Toulouse III - Paul Sabatier"
   },
   {
     "originalName": "University Pompeu Fabra",

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-06-21T13:52:22.586Z",
+  "generatedAt": "2025-06-21T14:36:38.590Z",
   "totalSuggestions": 0,
   "totalPotentialDuplicates": 0,
-  "totalLowConfidenceDuplicates": 124,
-  "totalRawDuplicatesFound": 34,
-  "totalRawLowConfidenceDuplicatesFound": 185,
+  "totalLowConfidenceDuplicates": 115,
+  "totalRawDuplicatesFound": 33,
+  "totalRawLowConfidenceDuplicatesFound": 182,
   "suggestions": [],
   "potentialDuplicates": [],
   "lowConfidencePotentialDuplicates": [
@@ -49,41 +49,11 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Hohenheim",
-      "university2": "University Hohenheim",
-      "similarity": "89.5",
-      "confidence": 94.47368421052632,
-      "suggestedMapping": "University Hohenheim",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universidade de Brasilia (UnB)",
-      "university2": "Universidade de Brasilia",
-      "similarity": "89.4",
-      "confidence": 94.36170212765957,
-      "suggestedMapping": "Universidade de Brasilia",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Beijing University of Technology",
       "university2": "Nanjing University of Technology",
       "similarity": "89.3",
       "confidence": 94.28571428571429,
       "suggestedMapping": "Beijing University of Technology",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Johannes Gutenberg University of Mainz",
-      "university2": "Johannes Gutenberg Universität Mainz",
-      "similarity": "89.2",
-      "confidence": 94.23076923076924,
-      "suggestedMapping": "Johannes Gutenberg Universität Mainz",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -99,41 +69,11 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of the West of England - Bristol",
-      "university2": "UWE Bristol (University of the West of England)",
-      "similarity": "89.2",
-      "confidence": 94.1891891891892,
-      "suggestedMapping": "University of the West of England - Bristol",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "University of Kansas",
       "university2": "University of Arkansas",
       "similarity": "88.9",
       "confidence": 93.88888888888889,
       "suggestedMapping": "University of Kansas",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Adelaide",
-      "university2": "Adelaide University",
-      "similarity": "88.9",
-      "confidence": 93.88888888888889,
-      "suggestedMapping": "Adelaide University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Complutense University of Madrid",
-      "university2": "University Complutense Madrid",
-      "similarity": "88.9",
-      "confidence": 93.88888888888889,
-      "suggestedMapping": "University Complutense Madrid",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -154,26 +94,6 @@
       "similarity": "88.9",
       "confidence": 93.88888888888889,
       "suggestedMapping": "Inha University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Northeast Normal University",
-      "university2": "Northeast Normal University - China",
-      "similarity": "88.9",
-      "confidence": 93.88888888888889,
-      "suggestedMapping": "Northeast Normal University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Hamad Bin Khalifa University",
-      "university2": "Hamad Bin Khalifa University-Qatar",
-      "similarity": "88.9",
-      "confidence": 93.88888888888889,
-      "suggestedMapping": "Hamad Bin Khalifa University",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -664,16 +584,6 @@
       "similarity": "86.5",
       "confidence": 91.48648648648648,
       "suggestedMapping": "Airlangga University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universität Hohenheim",
-      "university2": "University Hohenheim",
-      "similarity": "86.5",
-      "confidence": 91.48648648648648,
-      "suggestedMapping": "University Hohenheim",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
