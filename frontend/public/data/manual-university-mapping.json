@@ -624,8 +624,47 @@
     "suggestedStandardizedName": "China Medical University (Taiwan)"
   },
   {
+    "originalName": "Nanjing University of Science and Technology",
+    "suggestedStandardizedName": "Nanjing University of Science & Technology"
+  },
+  {
+    "originalName": "Jordan University of Science and Technology",
+    "suggestedStandardizedName": "Jordan University of Science & Technology"
+  },
+  {
+    "originalName": "Ajman University of Science and Technology",
+    "suggestedStandardizedName": "Ajman University of Science & Technology"
+  },
+  {
+    "originalName": "Iran University of Science and Technology",
+    "suggestedStandardizedName": "Iran University of Science & Technology"
+  },
+  {
+    "originalName": "Tianjin University of Science and Technology",
+    "suggestedStandardizedName": "Tianjin University of Science & Technology"
+  },
+  {
+    "originalName": "Henan University of Science and Technology",
+    "suggestedStandardizedName": "Henan University of Science & Technology"
+  },
+  {
+    "originalName": "Xi'an University of Science and Technology",
+    "suggestedStandardizedName": "Xi'an University of Science & Technology"
+  },
+  {
+    "originalName": "Wuhan University of Science and Technology",
+    "suggestedStandardizedName": "Wuhan University of Science & Technology"
+  },
+  {
+    "originalName": "Pohang University of Science and Technology",
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
+  },
+  {
     "originalName": "Pohang University of Science And Technology",
-    "suggestedStandardizedName": "Pohang University of Science and Technology",
-    "reason": "Capitalization difference - same university (South Korea)"
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
+  },
+  {
+    "originalName": "Pohang University of Science & Technology (POSTECH)",
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
   }
 ]
