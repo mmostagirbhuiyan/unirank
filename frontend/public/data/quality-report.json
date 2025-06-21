@@ -8,23 +8,9 @@
       "sources2": []
     },
     {
-      "name1": "Nanjing University",
-      "name2": "Xinjiang University",
-      "similarity": "90.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "South China University of Technology",
-      "name2": "North China University of Technology",
-      "similarity": "90.3",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "National Cheng Kung University",
-      "name2": "National Chung Cheng University",
-      "similarity": "90.6",
+      "name1": "Sun Yat Sen University",
+      "name2": "Sun Yat-Sen University",
+      "similarity": "91.9",
       "sources1": [],
       "sources2": []
     },
@@ -32,13 +18,6 @@
       "name1": "Sapienza University Rome",
       "name2": "Sapienza University of Rome",
       "similarity": "90.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Sun Yat-Sen University",
-      "name2": "Sun Yat Sen University",
-      "similarity": "91.9",
       "sources1": [],
       "sources2": []
     },
@@ -64,13 +43,6 @@
       "sources2": []
     },
     {
-      "name1": "University of Siena",
-      "name2": "University of Siegen",
-      "similarity": "90.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
       "name1": "University of Duisburg Essen",
       "name2": "University of Duisburg-Essen",
       "similarity": "93.9",
@@ -78,16 +50,9 @@
       "sources2": []
     },
     {
-      "name1": "University of Witwatersrand",
-      "name2": "University of The Witwatersrand",
-      "similarity": "90.2",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "China Agricultural University",
-      "name2": "South China Agricultural University",
-      "similarity": "91.2",
+      "name1": "University of Maryland Baltimore",
+      "name2": "University of Maryland Baltimore County",
+      "similarity": "90.3",
       "sources1": [],
       "sources2": []
     },
@@ -113,16 +78,23 @@
       "sources2": []
     },
     {
-      "name1": "Fuzhou University",
-      "name2": "Huzhou University",
-      "similarity": "93.3",
+      "name1": "China Agricultural University",
+      "name2": "South China Agricultural University",
+      "similarity": "91.2",
       "sources1": [],
       "sources2": []
     },
     {
-      "name1": "University of Maryland Baltimore",
-      "name2": "University of Maryland Baltimore County",
-      "similarity": "90.3",
+      "name1": "National Cheng Kung University",
+      "name2": "National Chung Cheng University",
+      "similarity": "90.6",
+      "sources1": [],
+      "sources2": []
+    },
+    {
+      "name1": "Fuzhou University",
+      "name2": "Huzhou University",
+      "similarity": "93.3",
       "sources1": [],
       "sources2": []
     },
@@ -134,37 +106,16 @@
       "sources2": []
     },
     {
-      "name1": "Guangzhou University",
-      "name2": "Yangzhou University",
-      "similarity": "91.4",
+      "name1": "North China University of Technology",
+      "name2": "South China University of Technology",
+      "similarity": "90.3",
       "sources1": [],
       "sources2": []
     },
     {
-      "name1": "Tehran University of Medical Sciences",
-      "name2": "Iran University of Medical Sciences",
-      "similarity": "93.5",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Radboud University of Nijmegen",
-      "name2": "Radboud University Nijmegen",
-      "similarity": "92.0",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Bar-Ilan University",
-      "name2": "Bar Ilan University",
-      "similarity": "90.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Umm Al-Qura University",
-      "name2": "Umm Al Qura University",
-      "similarity": "91.9",
+      "name1": "Northumbria University at Newcastle",
+      "name2": "University of Northumbria at Newcastle",
+      "similarity": "90.6",
       "sources1": [],
       "sources2": []
     },
@@ -190,27 +141,6 @@
       "sources2": []
     },
     {
-      "name1": "University of Northumbria at Newcastle",
-      "name2": "Northumbria University at Newcastle",
-      "similarity": "90.6",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "University of Milan - Bicocca",
-      "name2": "University of Milano-Bicocca",
-      "similarity": "93.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Jordan University of Science & Technology",
-      "name2": "Jordan University of Science and Technology",
-      "similarity": "91.7",
-      "sources1": [],
-      "sources2": []
-    },
-    {
       "name1": "Iran University of Science and Technology",
       "name2": "Jordan University of Science and Technology",
       "similarity": "91.7",
@@ -218,23 +148,9 @@
       "sources2": []
     },
     {
-      "name1": "Iran University of Science and Technology",
-      "name2": "Iran University of Science and Technology Tehran",
-      "similarity": "92.1",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "University of the Basque Country",
-      "name2": "University of Basque Country",
-      "similarity": "90.2",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Iran University of Medical Sciences",
-      "name2": "Shiraz University of Medical Sciences",
-      "similarity": "90.3",
+      "name1": "Yangzhou University",
+      "name2": "Guangzhou University",
+      "similarity": "91.4",
       "sources1": [],
       "sources2": []
     },
@@ -247,8 +163,29 @@
     },
     {
       "name1": "Iran University of Medical Sciences",
+      "name2": "Tehran University of Medical Sciences",
+      "similarity": "93.5",
+      "sources1": [],
+      "sources2": []
+    },
+    {
+      "name1": "Iran University of Medical Sciences",
       "name2": "Guilan University of Medical Sciences",
       "similarity": "90.3",
+      "sources1": [],
+      "sources2": []
+    },
+    {
+      "name1": "Iran University of Medical Sciences",
+      "name2": "Shiraz University of Medical Sciences",
+      "similarity": "90.3",
+      "sources1": [],
+      "sources2": []
+    },
+    {
+      "name1": "University of the Basque Country",
+      "name2": "University of Basque Country",
+      "similarity": "90.2",
       "sources1": [],
       "sources2": []
     },
@@ -260,9 +197,9 @@
       "sources2": []
     },
     {
-      "name1": "China University of Geosciences",
-      "name2": "China University of Geosciences Wuhan",
-      "similarity": "91.5",
+      "name1": "Jordan University of Science and Technology",
+      "name2": "Jordan University of Science & Technology",
+      "similarity": "91.7",
       "sources1": [],
       "sources2": []
     },
@@ -274,44 +211,9 @@
       "sources2": []
     },
     {
-      "name1": "Hefei University of Technology",
-      "name2": "Hebei University of Technology",
-      "similarity": "92.3",
-      "sources1": [],
-      "sources2": []
-    },
-    {
       "name1": "University of Sevilla",
       "name2": "University of Seville",
       "similarity": "94.4",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "University of Rovira i Virgili",
-      "name2": "Rovira i Virgili University",
-      "similarity": "91.7",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Comenius University Bratislava",
-      "name2": "Comenius University in Bratislava",
-      "similarity": "92.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Al Jouf University",
-      "name2": "Jouf University",
-      "similarity": "92.9",
-      "sources1": [],
-      "sources2": []
-    },
-    {
-      "name1": "Brunel University of London",
-      "name2": "Brunel University London",
-      "similarity": "90.9",
       "sources1": [],
       "sources2": []
     },
@@ -323,13 +225,6 @@
       "sources2": []
     },
     {
-      "name1": "University Savoie Mont Blanc",
-      "name2": "Universite Savoie Mont Blanc",
-      "similarity": "91.7",
-      "sources1": [],
-      "sources2": []
-    },
-    {
       "name1": "Hohai University",
       "name2": "Bohai University",
       "similarity": "92.9",
@@ -337,16 +232,16 @@
       "sources2": []
     },
     {
-      "name1": "Henan Normal University",
-      "name2": "Hunan Normal University",
-      "similarity": "90.0",
+      "name1": "Jouf University",
+      "name2": "Al Jouf University",
+      "similarity": "92.9",
       "sources1": [],
       "sources2": []
     },
     {
-      "name1": "Loyola University of Chicago",
-      "name2": "Loyola University Chicago",
-      "similarity": "91.3",
+      "name1": "Hebei University of Technology",
+      "name2": "Hefei University of Technology",
+      "similarity": "92.3",
       "sources1": [],
       "sources2": []
     }
@@ -440,10 +335,6 @@
       "normalizedName": "Jordan University Of Science & Technology",
       "variations": [
         {
-          "originalName": "Jordan University of Science & Technology",
-          "transformations": []
-        },
-        {
           "originalName": "Jordan University of Science and Technology",
           "transformations": [
             {
@@ -453,17 +344,21 @@
               "after": "Jordan University of Science & Technology"
             }
           ]
+        },
+        {
+          "originalName": "Jordan University of Science & Technology",
+          "transformations": []
         }
       ],
       "count": 2
     }
   ],
   "mappingAnalysis": {
-    "totalMappings": 89,
-    "effectiveMappings": 86,
+    "totalMappings": 128,
+    "effectiveMappings": 124,
     "redundantMappings": [
       {
-        "index": 5,
+        "index": 8,
         "mapping": {
           "originalName": "China Medical University - Taiwan",
           "suggestedStandardizedName": "China Medical University Taiwan"
@@ -471,7 +366,7 @@
         "reason": "Enhanced matching produces same result"
       },
       {
-        "index": 14,
+        "index": 26,
         "mapping": {
           "originalName": "Indiana University Bloomington",
           "suggestedStandardizedName": "Indiana University Bloomington"
@@ -479,10 +374,18 @@
         "reason": "Enhanced matching produces same result"
       },
       {
-        "index": 84,
+        "index": 57,
         "mapping": {
           "originalName": "Queen's University",
           "suggestedStandardizedName": "Queens University"
+        },
+        "reason": "Enhanced matching produces same result"
+      },
+      {
+        "index": 124,
+        "mapping": {
+          "originalName": "Virginia Polytechnic Institute and State University",
+          "suggestedStandardizedName": "Virginia Polytechnic Institute & State University"
         },
         "reason": "Enhanced matching produces same result"
       }
@@ -499,13 +402,13 @@
     {
       "type": "duplicates",
       "priority": "high",
-      "message": "Review 50 potential duplicates for manual mapping",
+      "message": "Review 35 potential duplicates for manual mapping",
       "action": "Add manual mappings to merge similar universities"
     },
     {
       "type": "cleanup",
       "priority": "medium",
-      "message": "Remove 3 redundant manual mappings",
+      "message": "Remove 4 redundant manual mappings",
       "action": "Clean up manual-university-mapping.json"
     }
   ]
