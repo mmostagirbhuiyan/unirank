@@ -1,12 +1,31 @@
 {
-  "generatedAt": "2025-06-21T14:36:38.590Z",
-  "totalSuggestions": 0,
-  "totalPotentialDuplicates": 0,
-  "totalLowConfidenceDuplicates": 115,
-  "totalRawDuplicatesFound": 33,
-  "totalRawLowConfidenceDuplicatesFound": 182,
-  "suggestions": [],
-  "potentialDuplicates": [],
+  "generatedAt": "2025-06-21T19:00:32.110Z",
+  "totalSuggestions": 1,
+  "totalPotentialDuplicates": 1,
+  "totalLowConfidenceDuplicates": 91,
+  "totalRawDuplicatesFound": 8,
+  "totalRawLowConfidenceDuplicatesFound": 145,
+  "suggestions": [
+    {
+      "originalName": "Shiraz University of Technology",
+      "suggestedStandardizedName": "Graz University of Technology",
+      "confidence": 97.3076923076923,
+      "similarity": "92.3",
+      "reason": "High similarity (92.3%) suggests these are the same university"
+    }
+  ],
+  "potentialDuplicates": [
+    {
+      "university1": "Graz University of Technology",
+      "university2": "Shiraz University of Technology",
+      "similarity": "92.3",
+      "confidence": 97.3076923076923,
+      "suggestedMapping": "Graz University of Technology",
+      "sources1": [],
+      "sources2": [],
+      "hasCommonSources": false
+    }
+  ],
   "lowConfidencePotentialDuplicates": [
     {
       "university1": "New York University",
@@ -169,56 +188,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Catania",
-      "university2": "Catania University",
-      "similarity": "88.2",
-      "confidence": 93.23529411764706,
-      "suggestedMapping": "Catania University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Perugia",
-      "university2": "Perugia University",
-      "similarity": "88.2",
-      "confidence": 93.23529411764706,
-      "suggestedMapping": "Perugia University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Leipzig",
-      "university2": "Leipzig University",
-      "similarity": "88.2",
-      "confidence": 93.23529411764706,
-      "suggestedMapping": "Leipzig University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Abdul Wali Khan University Mardan",
-      "university2": "Abdul Wali Khan University",
-      "similarity": "88.0",
-      "confidence": 93,
-      "suggestedMapping": "Abdul Wali Khan University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universite Toulouse III - Paul Sabatier",
-      "university2": "University Paul Sabatier - Toulouse III",
-      "similarity": "87.9",
-      "confidence": 92.87878787878788,
-      "suggestedMapping": "Universite Toulouse III - Paul Sabatier",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Isfahan University of Medical Sciences",
       "university2": "Zahedan University of Medical Sciences",
       "similarity": "87.9",
@@ -269,26 +238,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Ulsan",
-      "university2": "University of Tulsa",
-      "similarity": "87.5",
-      "confidence": 92.5,
-      "suggestedMapping": "University of Tulsa",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Verona",
-      "university2": "Verona University",
-      "similarity": "87.5",
-      "confidence": 92.5,
-      "suggestedMapping": "Verona University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Nanjing Forestry University",
       "university2": "Beijing Forestry University",
       "similarity": "87.5",
@@ -304,36 +253,6 @@
       "similarity": "87.5",
       "confidence": 92.5,
       "suggestedMapping": "Lanzhou University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Southeast University - China",
-      "university2": "Southwest University - China",
-      "similarity": "87.5",
-      "confidence": 92.5,
-      "suggestedMapping": "Southeast University - China",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Ulster",
-      "university2": "Ulster University",
-      "similarity": "87.5",
-      "confidence": 92.5,
-      "suggestedMapping": "Ulster University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of Jordan",
-      "university2": "Jordan University",
-      "similarity": "87.5",
-      "confidence": 92.5,
-      "suggestedMapping": "Jordan University",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -379,31 +298,11 @@
       "hasCommonSources": false
     },
     {
-      "university1": "Universitat Ramon Llull",
-      "university2": "Ramon Llull University",
-      "similarity": "87.2",
-      "confidence": 92.17948717948718,
-      "suggestedMapping": "Ramon Llull University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Nanjing Medical University",
       "university2": "Tianjin Medical University",
       "similarity": "87.0",
       "confidence": 91.95652173913044,
       "suggestedMapping": "Nanjing Medical University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universiti Putra Malaysia",
-      "university2": "University of Putra Malaysia",
-      "similarity": "87.0",
-      "confidence": 91.95652173913044,
-      "suggestedMapping": "Universiti Putra Malaysia",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -499,16 +398,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Ulsan",
-      "university2": "Ulsan University",
-      "similarity": "86.7",
-      "confidence": 91.66666666666667,
-      "suggestedMapping": "Ulsan University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "National Taiwan University of Science and Technology",
       "university2": "National Yunlin University of Science and Technology",
       "similarity": "86.7",
@@ -549,41 +438,11 @@
       "hasCommonSources": false
     },
     {
-      "university1": "Seoul University",
-      "university2": "University of Seoul",
-      "similarity": "86.7",
-      "confidence": 91.66666666666667,
-      "suggestedMapping": "Seoul University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Zhejiang University",
       "university2": "Zhejiang A & F University",
       "similarity": "86.5",
       "confidence": 91.48648648648648,
       "suggestedMapping": "Zhejiang University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "University of the Punjab",
-      "university2": "University of Punjab",
-      "similarity": "86.5",
-      "confidence": 91.48648648648648,
-      "suggestedMapping": "University of Punjab",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universitas Airlangga",
-      "university2": "Airlangga University",
-      "similarity": "86.5",
-      "confidence": 91.48648648648648,
-      "suggestedMapping": "Airlangga University",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -604,16 +463,6 @@
       "similarity": "86.4",
       "confidence": 91.36363636363636,
       "suggestedMapping": "Jiangxi Normal University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Universiti Putra Malaysia",
-      "university2": "Universiti Utara Malaysia",
-      "similarity": "86.4",
-      "confidence": 91.36363636363636,
-      "suggestedMapping": "Universiti Putra Malaysia",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -654,6 +503,26 @@
       "similarity": "86.3",
       "confidence": 91.27450980392157,
       "suggestedMapping": "Henan Polytechnic University",
+      "sources1": [],
+      "sources2": [],
+      "hasCommonSources": false
+    },
+    {
+      "university1": "Guilan University of Medical Sciences",
+      "university2": "Isfahan University of Medical Sciences",
+      "similarity": "86.2",
+      "confidence": 91.15384615384616,
+      "suggestedMapping": "Guilan University of Medical Sciences",
+      "sources1": [],
+      "sources2": [],
+      "hasCommonSources": false
+    },
+    {
+      "university1": "Guilan University of Medical Sciences",
+      "university2": "Zahedan University of Medical Sciences",
+      "similarity": "86.2",
+      "confidence": 91.15384615384616,
+      "suggestedMapping": "Guilan University of Medical Sciences",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -729,16 +598,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "Northeastern University",
-      "university2": "Northeastern University in China",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "Northeastern University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Umea University",
       "university2": "Jaume I University",
       "similarity": "85.7",
@@ -779,26 +638,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Verona",
-      "university2": "University of Vermont",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "University of Verona",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Southeast University",
-      "university2": "Southeast University - China",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "Southeast University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Khalifa University of Science & Technology",
       "university2": "Wuhan University of Science & Technology",
       "similarity": "85.7",
@@ -829,16 +668,6 @@
       "hasCommonSources": false
     },
     {
-      "university1": "University of Petroleum (East China)",
-      "university2": "China University of Petroleum",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "China University of Petroleum",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Henan University",
       "university2": "Jinan University",
       "similarity": "85.7",
@@ -859,41 +688,11 @@
       "hasCommonSources": false
     },
     {
-      "university1": "Symbiosis International University",
-      "university2": "Symbiosis International (Deemed University)",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "Symbiosis International University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Southwest University - China",
-      "university2": "Southwest University",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "Southwest University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
       "university1": "Anhui Medical University",
       "university2": "Hanoi Medical University",
       "similarity": "85.7",
       "confidence": 90.71428571428571,
       "suggestedMapping": "Anhui Medical University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Jefferson University",
-      "university2": "Thomas Jefferson University",
-      "similarity": "85.7",
-      "confidence": 90.71428571428571,
-      "suggestedMapping": "Jefferson University",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -984,16 +783,6 @@
       "similarity": "85.3",
       "confidence": 90.33333333333334,
       "suggestedMapping": "Indian Institute of Technology (IIT) - Delhi",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Lappeenranta-Lahti University of Technology LUT",
-      "university2": "Lappeenranta University of Technology",
-      "similarity": "85.3",
-      "confidence": 90.33333333333334,
-      "suggestedMapping": "Lappeenranta University of Technology",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
@@ -1124,16 +913,6 @@
       "similarity": "85.2",
       "confidence": 90.18518518518519,
       "suggestedMapping": "Henan Agricultural University",
-      "sources1": [],
-      "sources2": [],
-      "hasCommonSources": false
-    },
-    {
-      "university1": "Adam Mickiewicz University",
-      "university2": "Adam Mickiewicz University in Poznan",
-      "similarity": "85.2",
-      "confidence": 90.18518518518519,
-      "suggestedMapping": "Adam Mickiewicz University",
       "sources1": [],
       "sources2": [],
       "hasCommonSources": false
