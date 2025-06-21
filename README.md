@@ -29,6 +29,7 @@ A sophisticated, production-ready platform that aggregates and visualizes global
 - [System Overview](#-system-overview)
 - [Enhanced Matching System](#-enhanced-matching-system)
 - [Data Pipeline](#-data-pipeline)
+- [Source Scrapers](#-source-scrapers)
 - [Manual Mapping System](#-manual-mapping-system)
 - [Frontend Application](#-frontend-application)
 - [Development & Extension](#-development--extension)
@@ -186,6 +187,19 @@ graph TD
    - React-based responsive interface
    - Real-time search and filtering
    - Source-specific ranking views
+
+---
+
+## 🕷️ **Source Scrapers**
+
+This project utilizes dedicated scraper scripts to extract university ranking data from various authoritative sources. Each scraper is tailored to its specific source's data format and structure.
+
+### Currently Documented Scrapers:
+
+-   **[QS World University Rankings Scraper](docs/QS_SCRAPER_GUIDE.md)** - Guide for `scripts/qs-scraper.js`
+-   **[Times Higher Education (THE) Rankings Scraper](docs/THE_SCRAPER_GUIDE.md)** - Guide for `scripts/the-scraper.js`
+-   **[Academic Ranking of World Universities (ARWU) Scraper](docs/ARWU_SCRAPER_GUIDE.md)** - Guide for `scripts/arwu-scraper.js`
+-   **[US News Rankings Scraper](docs/USNEWS_SCRAPER_GUIDE.md)** - Guide for `scripts/usnews_direct_extractor_legacy.py` and `scripts/usnews_direct_extractor_selenium.py`
 
 ---
 
