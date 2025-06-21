@@ -57,6 +57,14 @@ class EnhancedNameMatcher {
                 pattern: / and /g,
                 replacement: ' & ',
                 description: 'Normalize "and" to "&"'
+            },
+            
+            // 8. Trailing Geographical Indicator Removal (new rule)
+            {
+                name: 'trailingGeo',
+                pattern: /\s-\s(?:Canada|USA|UK|Australia|China|Germany|Japan|Korea|France|India|Singapore|Brazil|Mexico|Spain|Italy|Russia)$/i,
+                replacement: '',
+                description: 'Remove common trailing geographical indicators (e.g., - Canada)'
             }
         ];
     }

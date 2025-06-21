@@ -384,6 +384,7 @@ npm start
 
 ### Complete Documentation Suite
 - **[Enhanced Matching System](docs/ENHANCED_MATCHING.md)** - Detailed technical documentation of the pattern-based matching engine
+- **[University Mapping Tools Usage Guide](docs/MAPPING_TOOLS_GUIDE.md)** - Comprehensive guide for automated mapping suggestion and application
 - **[API Reference](docs/API.md)** - Data formats and aggregation methods  
 - **[Data Sources](docs/DATA_SOURCES.md)** - Source specifications and update procedures
 - **[Contributing Guide](docs/CONTRIBUTING.md)** - Development setup and contribution guidelines
