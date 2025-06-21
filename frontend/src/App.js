@@ -224,10 +224,6 @@ function App() {
     return Array.from(setCountries).sort();
   }, [universities]);
 
-  const uniqueGroupOptions = useMemo(() => {
-    return ["", "Ivy League", "Big Ten", "Russell Group", "Ivy Plus"];
-  }, []);
-
   const metrics = useMemo(() => {
     const totalUniversities = universities.length;
     const totalCountries = uniqueCountries.length;
