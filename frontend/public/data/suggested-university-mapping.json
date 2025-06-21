@@ -10460,12 +10460,12 @@
     "suggestedStandardizedName": "Virginia Polytechnic Institute and State University"
   },
   {
-    "originalName": "Virginia Polytechnic Institute (Virginia Tech)",
+    "originalName": "Virginia Polytechnic Institute & State University",
     "source": "qs",
     "suggestedStandardizedName": "Virginia Polytechnic Institute and State University"
   },
   {
-    "originalName": "virginia polytechnic",
+    "originalName": "virginia polytechnic & state",
     "source": "qs",
     "suggestedStandardizedName": "Virginia Polytechnic Institute and State University"
   },
@@ -11400,8 +11400,33 @@
     "suggestedStandardizedName": "Nanjing University of Science and Technology"
   },
   {
+    "originalName": "Pohang University of Science and Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "pohang of science technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "Tianjin University of Science and Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
     "originalName": "tianjin of science technology",
     "source": "arwu",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "Pohang University of Science and Technology",
+    "source": "the",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "pohang of science technology",
+    "source": "the",
     "suggestedStandardizedName": "Nanjing University of Science and Technology"
   },
   {
@@ -11412,6 +11437,16 @@
   {
     "originalName": "nanjing of science & technology",
     "source": "usnews",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "Pohang University of Science And Technology",
+    "source": "qs",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology"
+  },
+  {
+    "originalName": "pohang of science technology",
+    "source": "qs",
     "suggestedStandardizedName": "Nanjing University of Science and Technology"
   },
   {
@@ -24325,7 +24360,17 @@
     "suggestedStandardizedName": "Army Medical University"
   },
   {
+    "originalName": "Henan University of Science and Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
     "originalName": "henan of science technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
+    "originalName": "Xi'an University of Science and Technology",
     "source": "arwu",
     "suggestedStandardizedName": "Jordan University of Science and Technology"
   },
@@ -24335,8 +24380,18 @@
     "suggestedStandardizedName": "Jordan University of Science and Technology"
   },
   {
+    "originalName": "Wuhan University of Science and Technology",
+    "source": "arwu",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
     "originalName": "wuhan of science technology",
     "source": "arwu",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
+    "originalName": "Ajman University of Science and Technology",
+    "source": "the",
     "suggestedStandardizedName": "Jordan University of Science and Technology"
   },
   {
@@ -24355,8 +24410,18 @@
     "suggestedStandardizedName": "Jordan University of Science and Technology"
   },
   {
+    "originalName": "Iran University of Science and Technology",
+    "source": "usnews",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
     "originalName": "iran of science technology",
     "source": "usnews",
+    "suggestedStandardizedName": "Jordan University of Science and Technology"
+  },
+  {
+    "originalName": "Iran University of Science and Technology",
+    "source": "qs",
     "suggestedStandardizedName": "Jordan University of Science and Technology"
   },
   {

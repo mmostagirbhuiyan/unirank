@@ -620,14 +620,8 @@
     "suggestedStandardizedName": "China Medical University (Taiwan)"
   },
   {
-    "originalName": "China Medical University (Taiwan)",
-    "suggestedStandardizedName": "China Medical University Taiwan",
-    "reason": "Direct mapping for duplicate"
-  },
-  {
-    "originalName": "China Medical University",
-    "suggestedStandardizedName": "China Medical University Taiwan",
-    "reason": "Canonicalized form of \"China Medical University (Taiwan)\""
+    "originalName": "China Medical University - Taiwan",
+    "suggestedStandardizedName": "China Medical University (Taiwan)"
   },
   {
     "originalName": "Pohang University of Science And Technology",

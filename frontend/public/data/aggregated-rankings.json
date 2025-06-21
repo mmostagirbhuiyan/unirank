@@ -7485,25 +7485,6 @@
     "countryRank": 5
   },
   {
-    "name": "Pohang University of Science and Technology",
-    "country": "South Korea",
-    "aggregatedScore": 514.0625,
-    "originalRankings": {
-      "qs": {
-        "rank": 102
-      },
-      "the": {
-        "rank": 151
-      },
-      "arwu": {
-        "rank": 301
-      }
-    },
-    "appearances": 3,
-    "aggregatedRank": 343,
-    "countryRank": 9
-  },
-  {
     "name": "University of Cologne",
     "country": "Germany",
     "aggregatedScore": 513.1875,
@@ -7519,7 +7500,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 344,
+    "aggregatedRank": 343,
     "countryRank": 13
   },
   {
@@ -7538,7 +7519,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 345,
+    "aggregatedRank": 344,
     "countryRank": 12
   },
   {
@@ -7560,7 +7541,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 346,
+    "aggregatedRank": 345,
     "countryRank": 38
   },
   {
@@ -7582,7 +7563,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 347,
+    "aggregatedRank": 346,
     "countryRank": 89
   },
   {
@@ -7604,7 +7585,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 348,
+    "aggregatedRank": 347,
     "countryRank": 2
   },
   {
@@ -7626,7 +7607,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 349,
+    "aggregatedRank": 348,
     "countryRank": 12
   },
   {
@@ -7645,8 +7626,8 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 350,
-    "countryRank": 10
+    "aggregatedRank": 349,
+    "countryRank": 9
   },
   {
     "name": "Drexel University",
@@ -7667,7 +7648,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 351,
+    "aggregatedRank": 350,
     "countryRank": 90
   },
   {
@@ -7689,7 +7670,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 352,
+    "aggregatedRank": 351,
     "countryRank": 17
   },
   {
@@ -7711,7 +7692,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 353,
+    "aggregatedRank": 352,
     "countryRank": 1
   },
   {
@@ -7733,7 +7714,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 354,
+    "aggregatedRank": 353,
     "countryRank": 91
   },
   {
@@ -7752,7 +7733,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 355,
+    "aggregatedRank": 354,
     "countryRank": 14
   },
   {
@@ -7771,7 +7752,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 356,
+    "aggregatedRank": 355,
     "countryRank": 2
   },
   {
@@ -7793,7 +7774,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 357,
+    "aggregatedRank": 356,
     "countryRank": 6
   },
   {
@@ -7815,7 +7796,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 358,
+    "aggregatedRank": 357,
     "countryRank": 92
   },
   {
@@ -7837,7 +7818,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 359,
+    "aggregatedRank": 358,
     "countryRank": 32
   },
   {
@@ -7856,7 +7837,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 360,
+    "aggregatedRank": 359,
     "countryRank": 33
   },
   {
@@ -7875,7 +7856,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 361,
+    "aggregatedRank": 360,
     "countryRank": 15
   },
   {
@@ -7894,7 +7875,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 362,
+    "aggregatedRank": 361,
     "countryRank": 5
   },
   {
@@ -7916,7 +7897,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 363,
+    "aggregatedRank": 362,
     "countryRank": 1
   },
   {
@@ -7938,7 +7919,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 364,
+    "aggregatedRank": 363,
     "countryRank": 3
   },
   {
@@ -7957,7 +7938,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 365,
+    "aggregatedRank": 364,
     "countryRank": 24
   },
   {
@@ -7979,7 +7960,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 366,
+    "aggregatedRank": 365,
     "countryRank": 93
   },
   {
@@ -7998,7 +7979,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 367,
+    "aggregatedRank": 366,
     "countryRank": 34
   },
   {
@@ -8017,7 +7998,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 368,
+    "aggregatedRank": 367,
     "countryRank": 10
   },
   {
@@ -8039,7 +8020,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 369,
+    "aggregatedRank": 368,
     "countryRank": 5
   },
   {
@@ -8061,7 +8042,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 370,
+    "aggregatedRank": 369,
     "countryRank": 94
   },
   {
@@ -8080,7 +8061,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 371,
+    "aggregatedRank": 370,
     "countryRank": 95
   },
   {
@@ -8102,7 +8083,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 372,
+    "aggregatedRank": 371,
     "countryRank": 13
   },
   {
@@ -8124,8 +8105,8 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 373,
-    "countryRank": 11
+    "aggregatedRank": 372,
+    "countryRank": 10
   },
   {
     "name": "Universidade Nova de Lisboa",
@@ -8146,7 +8127,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 374,
+    "aggregatedRank": 373,
     "countryRank": 4
   },
   {
@@ -8165,7 +8146,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 375,
+    "aggregatedRank": 374,
     "countryRank": 25
   },
   {
@@ -8184,7 +8165,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 376,
+    "aggregatedRank": 375,
     "countryRank": 35
   },
   {
@@ -8206,7 +8187,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 377,
+    "aggregatedRank": 376,
     "countryRank": 96
   },
   {
@@ -8228,7 +8209,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 378,
+    "aggregatedRank": 377,
     "countryRank": 36
   },
   {
@@ -8247,7 +8228,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 379,
+    "aggregatedRank": 378,
     "countryRank": 14
   },
   {
@@ -8269,7 +8250,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 380,
+    "aggregatedRank": 379,
     "countryRank": 1
   },
   {
@@ -8288,7 +8269,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 381,
+    "aggregatedRank": 380,
     "countryRank": 6
   },
   {
@@ -8310,7 +8291,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 382,
+    "aggregatedRank": 381,
     "countryRank": 18
   },
   {
@@ -8332,7 +8313,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 383,
+    "aggregatedRank": 382,
     "countryRank": 37
   },
   {
@@ -8351,7 +8332,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 384,
+    "aggregatedRank": 383,
     "countryRank": 3
   },
   {
@@ -8370,7 +8351,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 385,
+    "aggregatedRank": 384,
     "countryRank": 97
   },
   {
@@ -8392,7 +8373,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 386,
+    "aggregatedRank": 385,
     "countryRank": 2
   },
   {
@@ -8414,7 +8395,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 387,
+    "aggregatedRank": 386,
     "countryRank": 6
   },
   {
@@ -8436,7 +8417,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 388,
+    "aggregatedRank": 387,
     "countryRank": 11
   },
   {
@@ -8458,7 +8439,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 389,
+    "aggregatedRank": 388,
     "countryRank": 5
   },
   {
@@ -8480,8 +8461,8 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 390,
-    "countryRank": 12
+    "aggregatedRank": 389,
+    "countryRank": 11
   },
   {
     "name": "Istanbul Technical University",
@@ -8502,7 +8483,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 391,
+    "aggregatedRank": 390,
     "countryRank": 2
   },
   {
@@ -8524,7 +8505,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 392,
+    "aggregatedRank": 391,
     "countryRank": 7
   },
   {
@@ -8546,7 +8527,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 393,
+    "aggregatedRank": 392,
     "countryRank": 98
   },
   {
@@ -8565,7 +8546,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 394,
+    "aggregatedRank": 393,
     "countryRank": 16
   },
   {
@@ -8587,7 +8568,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 395,
+    "aggregatedRank": 394,
     "countryRank": 6
   },
   {
@@ -8606,7 +8587,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 396,
+    "aggregatedRank": 395,
     "countryRank": 17
   },
   {
@@ -8628,7 +8609,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 397,
+    "aggregatedRank": 396,
     "countryRank": 1
   },
   {
@@ -8650,7 +8631,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 398,
+    "aggregatedRank": 397,
     "countryRank": 1
   },
   {
@@ -8672,7 +8653,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 399,
+    "aggregatedRank": 398,
     "countryRank": 7
   },
   {
@@ -8694,7 +8675,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 400,
+    "aggregatedRank": 399,
     "countryRank": 26
   },
   {
@@ -8716,7 +8697,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 401,
+    "aggregatedRank": 400,
     "countryRank": 8
   },
   {
@@ -8738,7 +8719,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 402,
+    "aggregatedRank": 401,
     "countryRank": 12
   },
   {
@@ -8760,7 +8741,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 403,
+    "aggregatedRank": 402,
     "countryRank": 1
   },
   {
@@ -8782,7 +8763,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 404,
+    "aggregatedRank": 403,
     "countryRank": 15
   },
   {
@@ -8801,7 +8782,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 405,
+    "aggregatedRank": 404,
     "countryRank": 38
   },
   {
@@ -8823,7 +8804,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 406,
+    "aggregatedRank": 405,
     "countryRank": 99
   },
   {
@@ -8845,7 +8826,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 407,
+    "aggregatedRank": 406,
     "countryRank": 6
   },
   {
@@ -8867,7 +8848,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 408,
+    "aggregatedRank": 407,
     "countryRank": 2
   },
   {
@@ -8886,7 +8867,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 409,
+    "aggregatedRank": 408,
     "countryRank": 8
   },
   {
@@ -8905,7 +8886,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 410,
+    "aggregatedRank": 409,
     "countryRank": 1
   },
   {
@@ -8927,7 +8908,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 411,
+    "aggregatedRank": 410,
     "countryRank": 39
   },
   {
@@ -8949,7 +8930,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 412,
+    "aggregatedRank": 411,
     "countryRank": 3
   },
   {
@@ -8971,7 +8952,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 413,
+    "aggregatedRank": 412,
     "countryRank": 13
   },
   {
@@ -8993,7 +8974,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 414,
+    "aggregatedRank": 413,
     "countryRank": 1
   },
   {
@@ -9015,7 +8996,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 415,
+    "aggregatedRank": 414,
     "countryRank": 16
   },
   {
@@ -9034,7 +9015,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 416,
+    "aggregatedRank": 415,
     "countryRank": 9
   },
   {
@@ -9056,7 +9037,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 417,
+    "aggregatedRank": 416,
     "countryRank": 5
   },
   {
@@ -9078,7 +9059,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 418,
+    "aggregatedRank": 417,
     "countryRank": 17
   },
   {
@@ -9097,7 +9078,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 419,
+    "aggregatedRank": 418,
     "countryRank": 40
   },
   {
@@ -9116,7 +9097,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 420,
+    "aggregatedRank": 419,
     "countryRank": 4
   },
   {
@@ -9138,7 +9119,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 421,
+    "aggregatedRank": 420,
     "countryRank": 100
   },
   {
@@ -9160,7 +9141,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 422,
+    "aggregatedRank": 421,
     "countryRank": 101
   },
   {
@@ -9182,7 +9163,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 423,
+    "aggregatedRank": 422,
     "countryRank": 4
   },
   {
@@ -9204,7 +9185,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 424,
+    "aggregatedRank": 423,
     "countryRank": 1
   },
   {
@@ -9226,7 +9207,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 425,
+    "aggregatedRank": 424,
     "countryRank": 7
   },
   {
@@ -9248,7 +9229,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 426,
+    "aggregatedRank": 425,
     "countryRank": 7
   },
   {
@@ -9270,8 +9251,27 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 427,
+    "aggregatedRank": 426,
     "countryRank": 102
+  },
+  {
+    "name": "China Medical University (Taiwan)",
+    "country": "Taiwan",
+    "aggregatedScore": 408.1875,
+    "originalRankings": {
+      "the": {
+        "rank": 301
+      },
+      "arwu": {
+        "rank": 401
+      },
+      "usnews": {
+        "rank": 314
+      }
+    },
+    "appearances": 3,
+    "aggregatedRank": 427,
+    "countryRank": 5
   },
   {
     "name": "University of Hull",
@@ -9706,7 +9706,7 @@
     },
     "appearances": 4,
     "aggregatedRank": 448,
-    "countryRank": 13
+    "countryRank": 12
   },
   {
     "name": "National Cheng Kung University",
@@ -9728,7 +9728,7 @@
     },
     "appearances": 4,
     "aggregatedRank": 449,
-    "countryRank": 5
+    "countryRank": 6
   },
   {
     "name": "University of Plymouth",
@@ -10245,7 +10245,7 @@
     },
     "appearances": 4,
     "aggregatedRank": 474,
-    "countryRank": 14
+    "countryRank": 13
   },
   {
     "name": "Liverpool John Moores University",
@@ -10472,7 +10472,7 @@
     },
     "appearances": 4,
     "aggregatedRank": 485,
-    "countryRank": 6
+    "countryRank": 7
   },
   {
     "name": "Nanjing Normal University",
@@ -11406,7 +11406,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 534,
-    "countryRank": 15
+    "countryRank": 14
   },
   {
     "name": "Ocean University of China",
@@ -11628,7 +11628,7 @@
     },
     "appearances": 4,
     "aggregatedRank": 546,
-    "countryRank": 16
+    "countryRank": 15
   },
   {
     "name": "University of Santiago de Compostela",
@@ -11685,7 +11685,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 549,
-    "countryRank": 7
+    "countryRank": 8
   },
   {
     "name": "Indian Institute of Technology (IIT) - Madras",
@@ -12288,7 +12288,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 582,
-    "countryRank": 17
+    "countryRank": 16
   },
   {
     "name": "Alexandria University",
@@ -12596,7 +12596,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 599,
-    "countryRank": 8
+    "countryRank": 9
   },
   {
     "name": "Ural Federal University",
@@ -12872,7 +12872,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 614,
-    "countryRank": 9
+    "countryRank": 10
   },
   {
     "name": "Khalifa University of Science & Technology",
@@ -12996,7 +12996,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 621,
-    "countryRank": 10
+    "countryRank": 11
   },
   {
     "name": "Missouri University of Science and Technology",
@@ -13543,7 +13543,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 652,
-    "countryRank": 18
+    "countryRank": 17
   },
   {
     "name": "Marche Polytechnic University",
@@ -13629,7 +13629,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 657,
-    "countryRank": 19
+    "countryRank": 18
   },
   {
     "name": "Education University of Hong Kong (EdUHK)",
@@ -13855,7 +13855,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 670,
-    "countryRank": 20
+    "countryRank": 19
   },
   {
     "name": "University of Texas Health Science Center at San Antonio",
@@ -13950,7 +13950,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 675,
-    "countryRank": 21
+    "countryRank": 20
   },
   {
     "name": "Symbiosis International University",
@@ -14755,7 +14755,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 721,
-    "countryRank": 22
+    "countryRank": 21
   },
   {
     "name": "Keele University",
@@ -15070,7 +15070,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 739,
-    "countryRank": 23
+    "countryRank": 22
   },
   {
     "name": "Chonnam National University",
@@ -15089,7 +15089,7 @@
     },
     "appearances": 3,
     "aggregatedRank": 740,
-    "countryRank": 24
+    "countryRank": 23
   },
   {
     "name": "Bond University",
@@ -15229,22 +15229,6 @@
     "countryRank": 85
   },
   {
-    "name": "China Medical University Taiwan",
-    "country": "Taiwan",
-    "aggregatedScore": 150.1875,
-    "originalRankings": {
-      "the": {
-        "rank": 301
-      },
-      "arwu": {
-        "rank": 701
-      }
-    },
-    "appearances": 2,
-    "aggregatedRank": 749,
-    "countryRank": 11
-  },
-  {
     "name": "St George's - University of London",
     "country": "United Kingdom",
     "aggregatedScore": 150.1875,
@@ -15257,7 +15241,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 750,
+    "aggregatedRank": 749,
     "countryRank": 64
   },
   {
@@ -15273,7 +15257,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 751,
+    "aggregatedRank": 750,
     "countryRank": 37
   },
   {
@@ -15289,7 +15273,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 752,
+    "aggregatedRank": 751,
     "countryRank": 7
   },
   {
@@ -15305,7 +15289,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 753,
+    "aggregatedRank": 752,
     "countryRank": 8
   },
   {
@@ -15321,7 +15305,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 754,
+    "aggregatedRank": 753,
     "countryRank": 86
   },
   {
@@ -15337,7 +15321,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 755,
+    "aggregatedRank": 754,
     "countryRank": 142
   },
   {
@@ -15353,7 +15337,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 756,
+    "aggregatedRank": 755,
     "countryRank": 5
   },
   {
@@ -15369,7 +15353,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 757,
+    "aggregatedRank": 756,
     "countryRank": 16
   },
   {
@@ -15385,7 +15369,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 758,
+    "aggregatedRank": 757,
     "countryRank": 23
   },
   {
@@ -15401,7 +15385,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 759,
+    "aggregatedRank": 758,
     "countryRank": 143
   },
   {
@@ -15417,7 +15401,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 760,
+    "aggregatedRank": 759,
     "countryRank": 24
   },
   {
@@ -15436,7 +15420,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 761,
+    "aggregatedRank": 760,
     "countryRank": 144
   },
   {
@@ -15452,7 +15436,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 762,
+    "aggregatedRank": 761,
     "countryRank": 42
   },
   {
@@ -15468,7 +15452,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 763,
+    "aggregatedRank": 762,
     "countryRank": 1
   },
   {
@@ -15484,7 +15468,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 764,
+    "aggregatedRank": 763,
     "countryRank": 43
   },
   {
@@ -15500,7 +15484,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 765,
+    "aggregatedRank": 764,
     "countryRank": 87
   },
   {
@@ -15516,7 +15500,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 766,
+    "aggregatedRank": 765,
     "countryRank": 25
   },
   {
@@ -15532,7 +15516,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 767,
+    "aggregatedRank": 766,
     "countryRank": 65
   },
   {
@@ -15551,7 +15535,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 768,
+    "aggregatedRank": 767,
     "countryRank": 88
   },
   {
@@ -15570,7 +15554,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 769,
+    "aggregatedRank": 768,
     "countryRank": 89
   },
   {
@@ -15586,7 +15570,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 770,
+    "aggregatedRank": 769,
     "countryRank": 66
   },
   {
@@ -15602,7 +15586,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 771,
+    "aggregatedRank": 770,
     "countryRank": 7
   },
   {
@@ -15618,7 +15602,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 772,
+    "aggregatedRank": 771,
     "countryRank": 17
   },
   {
@@ -15634,7 +15618,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 773,
+    "aggregatedRank": 772,
     "countryRank": 10
   },
   {
@@ -15647,6 +15631,22 @@
       },
       "the": {
         "rank": 501
+      }
+    },
+    "appearances": 2,
+    "aggregatedRank": 773,
+    "countryRank": 24
+  },
+  {
+    "name": "Nanjing University of Science and Technology",
+    "country": "South Korea",
+    "aggregatedScore": 140.8125,
+    "originalRankings": {
+      "the": {
+        "rank": 151
+      },
+      "arwu": {
+        "rank": 901
       }
     },
     "appearances": 2,
@@ -15982,6 +15982,22 @@
     "countryRank": 148
   },
   {
+    "name": "Jordan University of Science and Technology",
+    "country": "United Arab Emirates",
+    "aggregatedScore": 131.4375,
+    "originalRankings": {
+      "the": {
+        "rank": 401
+      },
+      "arwu": {
+        "rank": 701
+      }
+    },
+    "appearances": 2,
+    "aggregatedRank": 794,
+    "countryRank": 9
+  },
+  {
     "name": "University of Greifswald",
     "country": "Germany",
     "aggregatedScore": 131.4375,
@@ -15994,7 +16010,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 794,
+    "aggregatedRank": 795,
     "countryRank": 44
   },
   {
@@ -16010,7 +16026,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 795,
+    "aggregatedRank": 796,
     "countryRank": 10
   },
   {
@@ -16026,7 +16042,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 796,
+    "aggregatedRank": 797,
     "countryRank": 45
   },
   {
@@ -16042,7 +16058,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 797,
+    "aggregatedRank": 798,
     "countryRank": 46
   },
   {
@@ -16058,7 +16074,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 798,
+    "aggregatedRank": 799,
     "countryRank": 92
   },
   {
@@ -16074,7 +16090,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 799,
+    "aggregatedRank": 800,
     "countryRank": 6
   },
   {
@@ -16090,7 +16106,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 800,
+    "aggregatedRank": 801,
     "countryRank": 26
   },
   {
@@ -16106,7 +16122,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 801,
+    "aggregatedRank": 802,
     "countryRank": 149
   },
   {
@@ -16122,7 +16138,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 802,
+    "aggregatedRank": 803,
     "countryRank": 18
   },
   {
@@ -16138,7 +16154,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 803,
+    "aggregatedRank": 804,
     "countryRank": 150
   },
   {
@@ -16157,7 +16173,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 804,
+    "aggregatedRank": 805,
     "countryRank": 93
   },
   {
@@ -16173,7 +16189,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 805,
+    "aggregatedRank": 806,
     "countryRank": 151
   },
   {
@@ -16189,7 +16205,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 806,
+    "aggregatedRank": 807,
     "countryRank": 94
   },
   {
@@ -16208,7 +16224,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 807,
+    "aggregatedRank": 808,
     "countryRank": 4
   },
   {
@@ -16224,7 +16240,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 808,
+    "aggregatedRank": 809,
     "countryRank": 19
   },
   {
@@ -16240,7 +16256,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 809,
+    "aggregatedRank": 810,
     "countryRank": 17
   },
   {
@@ -16256,7 +16272,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 810,
+    "aggregatedRank": 811,
     "countryRank": 33
   },
   {
@@ -16272,7 +16288,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 811,
+    "aggregatedRank": 812,
     "countryRank": 9
   },
   {
@@ -16291,7 +16307,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 812,
+    "aggregatedRank": 813,
     "countryRank": 17
   },
   {
@@ -16307,7 +16323,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 813,
+    "aggregatedRank": 814,
     "countryRank": 9
   },
   {
@@ -16323,7 +16339,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 814,
+    "aggregatedRank": 815,
     "countryRank": 4
   },
   {
@@ -16342,7 +16358,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 815,
+    "aggregatedRank": 816,
     "countryRank": 20
   },
   {
@@ -16358,7 +16374,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 816,
+    "aggregatedRank": 817,
     "countryRank": 10
   },
   {
@@ -16377,7 +16393,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 817,
+    "aggregatedRank": 818,
     "countryRank": 152
   },
   {
@@ -16393,7 +16409,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 818,
+    "aggregatedRank": 819,
     "countryRank": 68
   },
   {
@@ -16412,7 +16428,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 819,
+    "aggregatedRank": 820,
     "countryRank": 8
   },
   {
@@ -16428,7 +16444,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 820,
+    "aggregatedRank": 821,
     "countryRank": 39
   },
   {
@@ -16447,7 +16463,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 821,
+    "aggregatedRank": 822,
     "countryRank": 40
   },
   {
@@ -16463,7 +16479,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 822,
+    "aggregatedRank": 823,
     "countryRank": 7
   },
   {
@@ -16479,7 +16495,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 823,
+    "aggregatedRank": 824,
     "countryRank": 153
   },
   {
@@ -16495,7 +16511,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 824,
+    "aggregatedRank": 825,
     "countryRank": 11
   },
   {
@@ -16511,7 +16527,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 825,
+    "aggregatedRank": 826,
     "countryRank": 8
   },
   {
@@ -16530,7 +16546,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 826,
+    "aggregatedRank": 827,
     "countryRank": 18
   },
   {
@@ -16552,7 +16568,7 @@
       }
     },
     "appearances": 4,
-    "aggregatedRank": 827,
+    "aggregatedRank": 828,
     "countryRank": 34
   },
   {
@@ -16568,7 +16584,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 828,
+    "aggregatedRank": 829,
     "countryRank": 95
   },
   {
@@ -16584,7 +16600,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 829,
+    "aggregatedRank": 830,
     "countryRank": 96
   },
   {
@@ -16603,7 +16619,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 830,
+    "aggregatedRank": 831,
     "countryRank": 25
   },
   {
@@ -16622,7 +16638,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 831,
+    "aggregatedRank": 832,
     "countryRank": 6
   },
   {
@@ -16638,7 +16654,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 832,
+    "aggregatedRank": 833,
     "countryRank": 154
   },
   {
@@ -16654,7 +16670,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 833,
+    "aggregatedRank": 834,
     "countryRank": 97
   },
   {
@@ -16670,7 +16686,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 834,
+    "aggregatedRank": 835,
     "countryRank": 98
   },
   {
@@ -16689,7 +16705,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 835,
+    "aggregatedRank": 836,
     "countryRank": 3
   },
   {
@@ -16708,7 +16724,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 836,
+    "aggregatedRank": 837,
     "countryRank": 3
   },
   {
@@ -16724,7 +16740,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 837,
+    "aggregatedRank": 838,
     "countryRank": 9
   },
   {
@@ -16740,7 +16756,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 838,
+    "aggregatedRank": 839,
     "countryRank": 99
   },
   {
@@ -16756,7 +16772,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 839,
+    "aggregatedRank": 840,
     "countryRank": 10
   },
   {
@@ -16772,7 +16788,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 840,
+    "aggregatedRank": 841,
     "countryRank": 155
   },
   {
@@ -16788,7 +16804,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 841,
+    "aggregatedRank": 842,
     "countryRank": 156
   },
   {
@@ -16804,7 +16820,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 842,
+    "aggregatedRank": 843,
     "countryRank": 1
   },
   {
@@ -16823,7 +16839,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 843,
+    "aggregatedRank": 844,
     "countryRank": 157
   },
   {
@@ -16839,7 +16855,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 844,
+    "aggregatedRank": 845,
     "countryRank": 69
   },
   {
@@ -16858,7 +16874,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 845,
+    "aggregatedRank": 846,
     "countryRank": 19
   },
   {
@@ -16874,7 +16890,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 846,
+    "aggregatedRank": 847,
     "countryRank": 27
   },
   {
@@ -16893,7 +16909,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 847,
+    "aggregatedRank": 848,
     "countryRank": 1
   },
   {
@@ -16912,7 +16928,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 848,
+    "aggregatedRank": 849,
     "countryRank": 70
   },
   {
@@ -16928,7 +16944,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 849,
+    "aggregatedRank": 850,
     "countryRank": 28
   },
   {
@@ -16944,7 +16960,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 850,
+    "aggregatedRank": 851,
     "countryRank": 100
   },
   {
@@ -16960,7 +16976,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 851,
+    "aggregatedRank": 852,
     "countryRank": 20
   },
   {
@@ -16979,7 +16995,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 852,
+    "aggregatedRank": 853,
     "countryRank": 19
   },
   {
@@ -16995,7 +17011,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 853,
+    "aggregatedRank": 854,
     "countryRank": 158
   },
   {
@@ -17011,7 +17027,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 854,
+    "aggregatedRank": 855,
     "countryRank": 11
   },
   {
@@ -17030,7 +17046,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 855,
+    "aggregatedRank": 856,
     "countryRank": 12
   },
   {
@@ -17046,7 +17062,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 856,
+    "aggregatedRank": 857,
     "countryRank": 7
   },
   {
@@ -17062,7 +17078,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 857,
+    "aggregatedRank": 858,
     "countryRank": 21
   },
   {
@@ -17078,7 +17094,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 858,
+    "aggregatedRank": 859,
     "countryRank": 4
   },
   {
@@ -17094,7 +17110,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 859,
+    "aggregatedRank": 860,
     "countryRank": 47
   },
   {
@@ -17110,7 +17126,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 860,
+    "aggregatedRank": 861,
     "countryRank": 3
   },
   {
@@ -17123,7 +17139,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 861,
+    "aggregatedRank": 862,
     "countryRank": 48
   },
   {
@@ -17139,7 +17155,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 862,
+    "aggregatedRank": 863,
     "countryRank": 101
   },
   {
@@ -17155,7 +17171,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 863,
+    "aggregatedRank": 864,
     "countryRank": 1
   },
   {
@@ -17171,7 +17187,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 864,
+    "aggregatedRank": 865,
     "countryRank": 2
   },
   {
@@ -17184,7 +17200,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 865,
+    "aggregatedRank": 866,
     "countryRank": 2
   },
   {
@@ -17197,7 +17213,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 866,
+    "aggregatedRank": 867,
     "countryRank": 159
   },
   {
@@ -17213,7 +17229,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 867,
+    "aggregatedRank": 868,
     "countryRank": 160
   },
   {
@@ -17229,7 +17245,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 868,
+    "aggregatedRank": 869,
     "countryRank": 102
   },
   {
@@ -17245,7 +17261,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 869,
+    "aggregatedRank": 870,
     "countryRank": 29
   },
   {
@@ -17258,7 +17274,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 870,
+    "aggregatedRank": 871,
     "countryRank": 49
   },
   {
@@ -17274,7 +17290,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 871,
+    "aggregatedRank": 872,
     "countryRank": 3
   },
   {
@@ -17287,7 +17303,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 872,
+    "aggregatedRank": 873,
     "countryRank": 18
   },
   {
@@ -17303,7 +17319,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 873,
+    "aggregatedRank": 874,
     "countryRank": 161
   },
   {
@@ -17319,7 +17335,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 874,
+    "aggregatedRank": 875,
     "countryRank": 71
   },
   {
@@ -17332,7 +17348,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 875,
+    "aggregatedRank": 876,
     "countryRank": 50
   },
   {
@@ -17351,7 +17367,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 876,
+    "aggregatedRank": 877,
     "countryRank": 13
   },
   {
@@ -17367,7 +17383,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 877,
+    "aggregatedRank": 878,
     "countryRank": 21
   },
   {
@@ -17386,7 +17402,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 878,
+    "aggregatedRank": 879,
     "countryRank": 103
   },
   {
@@ -17399,7 +17415,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 879,
+    "aggregatedRank": 880,
     "countryRank": 41
   },
   {
@@ -17412,7 +17428,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 880,
+    "aggregatedRank": 881,
     "countryRank": 162
   },
   {
@@ -17425,7 +17441,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 881,
+    "aggregatedRank": 882,
     "countryRank": 30
   },
   {
@@ -17441,7 +17457,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 882,
+    "aggregatedRank": 883,
     "countryRank": 72
   },
   {
@@ -17457,7 +17473,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 883,
+    "aggregatedRank": 884,
     "countryRank": 8
   },
   {
@@ -17473,7 +17489,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 884,
+    "aggregatedRank": 885,
     "countryRank": 42
   },
   {
@@ -17489,7 +17505,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 885,
+    "aggregatedRank": 886,
     "countryRank": 43
   },
   {
@@ -17505,7 +17521,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 886,
+    "aggregatedRank": 887,
     "countryRank": 44
   },
   {
@@ -17521,7 +17537,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 887,
+    "aggregatedRank": 888,
     "countryRank": 73
   },
   {
@@ -17537,7 +17553,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 888,
+    "aggregatedRank": 889,
     "countryRank": 35
   },
   {
@@ -17553,7 +17569,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 889,
+    "aggregatedRank": 890,
     "countryRank": 9
   },
   {
@@ -17569,8 +17585,21 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 890,
+    "aggregatedRank": 891,
     "countryRank": 104
+  },
+  {
+    "name": "Pohang University of Science and Technology",
+    "country": "South Korea",
+    "aggregatedScore": 93.921875,
+    "originalRankings": {
+      "qs": {
+        "rank": 102
+      }
+    },
+    "appearances": 1,
+    "aggregatedRank": 892,
+    "countryRank": 26
   },
   {
     "name": "Near East University",
@@ -17585,7 +17614,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 891,
+    "aggregatedRank": 893,
     "countryRank": 2
   },
   {
@@ -17598,7 +17627,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 892,
+    "aggregatedRank": 894,
     "countryRank": 51
   },
   {
@@ -17614,7 +17643,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 893,
+    "aggregatedRank": 895,
     "countryRank": 52
   },
   {
@@ -17633,7 +17662,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 894,
+    "aggregatedRank": 896,
     "countryRank": 1
   },
   {
@@ -17649,7 +17678,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 895,
+    "aggregatedRank": 897,
     "countryRank": 22
   },
   {
@@ -17665,7 +17694,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 896,
+    "aggregatedRank": 898,
     "countryRank": 25
   },
   {
@@ -17681,7 +17710,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 897,
+    "aggregatedRank": 899,
     "countryRank": 31
   },
   {
@@ -17697,7 +17726,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 898,
+    "aggregatedRank": 900,
     "countryRank": 14
   },
   {
@@ -17713,7 +17742,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 899,
+    "aggregatedRank": 901,
     "countryRank": 163
   },
   {
@@ -17729,7 +17758,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 900,
+    "aggregatedRank": 902,
     "countryRank": 15
   },
   {
@@ -17745,7 +17774,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 901,
+    "aggregatedRank": 903,
     "countryRank": 74
   },
   {
@@ -17761,7 +17790,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 902,
+    "aggregatedRank": 904,
     "countryRank": 6
   },
   {
@@ -17777,7 +17806,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 903,
+    "aggregatedRank": 905,
     "countryRank": 105
   },
   {
@@ -17790,7 +17819,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 904,
+    "aggregatedRank": 906,
     "countryRank": 53
   },
   {
@@ -17803,7 +17832,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 905,
+    "aggregatedRank": 907,
     "countryRank": 45
   },
   {
@@ -17819,7 +17848,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 906,
+    "aggregatedRank": 908,
     "countryRank": 164
   },
   {
@@ -17832,7 +17861,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 907,
+    "aggregatedRank": 909,
     "countryRank": 54
   },
   {
@@ -17848,7 +17877,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 908,
+    "aggregatedRank": 910,
     "countryRank": 23
   },
   {
@@ -17864,7 +17893,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 909,
+    "aggregatedRank": 911,
     "countryRank": 75
   },
   {
@@ -17880,7 +17909,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 910,
+    "aggregatedRank": 912,
     "countryRank": 22
   },
   {
@@ -17896,7 +17925,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 911,
+    "aggregatedRank": 913,
     "countryRank": 165
   },
   {
@@ -17912,7 +17941,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 912,
+    "aggregatedRank": 914,
     "countryRank": 36
   },
   {
@@ -17931,7 +17960,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 913,
+    "aggregatedRank": 915,
     "countryRank": 6
   },
   {
@@ -17944,7 +17973,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 914,
+    "aggregatedRank": 916,
     "countryRank": 1
   },
   {
@@ -17960,7 +17989,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 915,
+    "aggregatedRank": 917,
     "countryRank": 8
   },
   {
@@ -17976,7 +18005,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 916,
+    "aggregatedRank": 918,
     "countryRank": 55
   },
   {
@@ -17992,7 +18021,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 917,
+    "aggregatedRank": 919,
     "countryRank": 106
   },
   {
@@ -18008,7 +18037,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 918,
+    "aggregatedRank": 920,
     "countryRank": 4
   },
   {
@@ -18024,7 +18053,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 919,
+    "aggregatedRank": 921,
     "countryRank": 23
   },
   {
@@ -18040,8 +18069,8 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 920,
-    "countryRank": 26
+    "aggregatedRank": 922,
+    "countryRank": 27
   },
   {
     "name": "Universitat Autónoma de Barcelona",
@@ -18053,7 +18082,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 921,
+    "aggregatedRank": 923,
     "countryRank": 24
   },
   {
@@ -18069,7 +18098,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 922,
+    "aggregatedRank": 924,
     "countryRank": 4
   },
   {
@@ -18085,7 +18114,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 923,
+    "aggregatedRank": 925,
     "countryRank": 107
   },
   {
@@ -18101,7 +18130,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 924,
+    "aggregatedRank": 926,
     "countryRank": 16
   },
   {
@@ -18117,7 +18146,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 925,
+    "aggregatedRank": 927,
     "countryRank": 24
   },
   {
@@ -18130,7 +18159,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 926,
+    "aggregatedRank": 928,
     "countryRank": 2
   },
   {
@@ -18146,7 +18175,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 927,
+    "aggregatedRank": 929,
     "countryRank": 9
   },
   {
@@ -18159,7 +18188,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 928,
+    "aggregatedRank": 930,
     "countryRank": 56
   },
   {
@@ -18172,7 +18201,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 929,
+    "aggregatedRank": 931,
     "countryRank": 166
   },
   {
@@ -18185,7 +18214,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 930,
+    "aggregatedRank": 932,
     "countryRank": 57
   },
   {
@@ -18198,7 +18227,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 931,
+    "aggregatedRank": 933,
     "countryRank": 167
   },
   {
@@ -18211,7 +18240,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 932,
+    "aggregatedRank": 934,
     "countryRank": 46
   },
   {
@@ -18224,7 +18253,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 933,
+    "aggregatedRank": 935,
     "countryRank": 12
   },
   {
@@ -18240,7 +18269,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 934,
+    "aggregatedRank": 936,
     "countryRank": 4
   },
   {
@@ -18253,7 +18282,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 935,
+    "aggregatedRank": 937,
     "countryRank": 25
   },
   {
@@ -18266,7 +18295,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 936,
+    "aggregatedRank": 938,
     "countryRank": 58
   },
   {
@@ -18282,7 +18311,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 937,
+    "aggregatedRank": 939,
     "countryRank": 108
   },
   {
@@ -18295,7 +18324,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 938,
+    "aggregatedRank": 940,
     "countryRank": 168
   },
   {
@@ -18308,7 +18337,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 939,
+    "aggregatedRank": 941,
     "countryRank": 2
   },
   {
@@ -18321,7 +18350,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 940,
+    "aggregatedRank": 942,
     "countryRank": 26
   },
   {
@@ -18334,7 +18363,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 941,
+    "aggregatedRank": 943,
     "countryRank": 59
   },
   {
@@ -18350,7 +18379,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 942,
+    "aggregatedRank": 944,
     "countryRank": 169
   },
   {
@@ -18366,7 +18395,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 943,
+    "aggregatedRank": 945,
     "countryRank": 1
   },
   {
@@ -18382,7 +18411,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 944,
+    "aggregatedRank": 946,
     "countryRank": 109
   },
   {
@@ -18398,7 +18427,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 945,
+    "aggregatedRank": 947,
     "countryRank": 17
   },
   {
@@ -18411,7 +18440,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 946,
+    "aggregatedRank": 948,
     "countryRank": 37
   },
   {
@@ -18427,7 +18456,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 947,
+    "aggregatedRank": 949,
     "countryRank": 19
   },
   {
@@ -18443,7 +18472,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 948,
+    "aggregatedRank": 950,
     "countryRank": 20
   },
   {
@@ -18459,7 +18488,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 949,
+    "aggregatedRank": 951,
     "countryRank": 76
   },
   {
@@ -18475,7 +18504,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 950,
+    "aggregatedRank": 952,
     "countryRank": 77
   },
   {
@@ -18491,7 +18520,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 951,
+    "aggregatedRank": 953,
     "countryRank": 78
   },
   {
@@ -18507,7 +18536,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 952,
+    "aggregatedRank": 954,
     "countryRank": 170
   },
   {
@@ -18523,7 +18552,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 953,
+    "aggregatedRank": 955,
     "countryRank": 11
   },
   {
@@ -18539,7 +18568,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 954,
+    "aggregatedRank": 956,
     "countryRank": 26
   },
   {
@@ -18555,7 +18584,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 955,
+    "aggregatedRank": 957,
     "countryRank": 171
   },
   {
@@ -18571,8 +18600,8 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 956,
-    "countryRank": 27
+    "aggregatedRank": 958,
+    "countryRank": 28
   },
   {
     "name": "Jaume I University",
@@ -18587,7 +18616,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 957,
+    "aggregatedRank": 959,
     "countryRank": 27
   },
   {
@@ -18603,7 +18632,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 958,
+    "aggregatedRank": 960,
     "countryRank": 28
   },
   {
@@ -18616,7 +18645,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 959,
+    "aggregatedRank": 961,
     "countryRank": 60
   },
   {
@@ -18629,7 +18658,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 960,
+    "aggregatedRank": 962,
     "countryRank": 3
   },
   {
@@ -18645,7 +18674,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 961,
+    "aggregatedRank": 963,
     "countryRank": 5
   },
   {
@@ -18658,7 +18687,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 962,
+    "aggregatedRank": 964,
     "countryRank": 10
   },
   {
@@ -18671,7 +18700,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 963,
+    "aggregatedRank": 965,
     "countryRank": 47
   },
   {
@@ -18687,7 +18716,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 964,
+    "aggregatedRank": 966,
     "countryRank": 110
   },
   {
@@ -18703,7 +18732,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 965,
+    "aggregatedRank": 967,
     "countryRank": 10
   },
   {
@@ -18722,7 +18751,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 966,
+    "aggregatedRank": 968,
     "countryRank": 32
   },
   {
@@ -18735,7 +18764,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 967,
+    "aggregatedRank": 969,
     "countryRank": 61
   },
   {
@@ -18748,7 +18777,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 968,
+    "aggregatedRank": 970,
     "countryRank": 1
   },
   {
@@ -18761,7 +18790,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 969,
+    "aggregatedRank": 971,
     "countryRank": 9
   },
   {
@@ -18777,7 +18806,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 970,
+    "aggregatedRank": 972,
     "countryRank": 12
   },
   {
@@ -18790,7 +18819,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 971,
+    "aggregatedRank": 973,
     "countryRank": 13
   },
   {
@@ -18803,7 +18832,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 972,
+    "aggregatedRank": 974,
     "countryRank": 62
   },
   {
@@ -18822,7 +18851,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 973,
+    "aggregatedRank": 975,
     "countryRank": 1
   },
   {
@@ -18835,7 +18864,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 974,
+    "aggregatedRank": 976,
     "countryRank": 4
   },
   {
@@ -18851,7 +18880,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 975,
+    "aggregatedRank": 977,
     "countryRank": 172
   },
   {
@@ -18864,7 +18893,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 976,
+    "aggregatedRank": 978,
     "countryRank": 33
   },
   {
@@ -18880,7 +18909,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 977,
+    "aggregatedRank": 979,
     "countryRank": 111
   },
   {
@@ -18899,7 +18928,7 @@
       }
     },
     "appearances": 3,
-    "aggregatedRank": 978,
+    "aggregatedRank": 980,
     "countryRank": 5
   },
   {
@@ -18915,7 +18944,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 979,
+    "aggregatedRank": 981,
     "countryRank": 173
   },
   {
@@ -18928,7 +18957,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 980,
+    "aggregatedRank": 982,
     "countryRank": 5
   },
   {
@@ -18941,7 +18970,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 981,
+    "aggregatedRank": 983,
     "countryRank": 29
   },
   {
@@ -18957,7 +18986,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 982,
+    "aggregatedRank": 984,
     "countryRank": 174
   },
   {
@@ -18970,7 +18999,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 983,
+    "aggregatedRank": 985,
     "countryRank": 63
   },
   {
@@ -18986,7 +19015,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 984,
+    "aggregatedRank": 986,
     "countryRank": 5
   },
   {
@@ -19002,7 +19031,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 985,
+    "aggregatedRank": 987,
     "countryRank": 175
   },
   {
@@ -19018,7 +19047,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 986,
+    "aggregatedRank": 988,
     "countryRank": 112
   },
   {
@@ -19034,7 +19063,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 987,
+    "aggregatedRank": 989,
     "countryRank": 10
   },
   {
@@ -19050,7 +19079,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 988,
+    "aggregatedRank": 990,
     "countryRank": 11
   },
   {
@@ -19066,7 +19095,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 989,
+    "aggregatedRank": 991,
     "countryRank": 113
   },
   {
@@ -19082,7 +19111,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 990,
+    "aggregatedRank": 992,
     "countryRank": 3
   },
   {
@@ -19095,7 +19124,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 991,
+    "aggregatedRank": 993,
     "countryRank": 34
   },
   {
@@ -19108,7 +19137,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 992,
+    "aggregatedRank": 994,
     "countryRank": 176
   },
   {
@@ -19121,7 +19150,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 993,
+    "aggregatedRank": 995,
     "countryRank": 177
   },
   {
@@ -19134,7 +19163,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 994,
+    "aggregatedRank": 996,
     "countryRank": 114
   },
   {
@@ -19147,7 +19176,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 995,
+    "aggregatedRank": 997,
     "countryRank": 64
   },
   {
@@ -19160,7 +19189,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 996,
+    "aggregatedRank": 998,
     "countryRank": 115
   },
   {
@@ -19173,7 +19202,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 997,
+    "aggregatedRank": 999,
     "countryRank": 116
   },
   {
@@ -19186,7 +19215,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 998,
+    "aggregatedRank": 1000,
     "countryRank": 65
   },
   {
@@ -19199,7 +19228,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 999,
+    "aggregatedRank": 1001,
     "countryRank": 2
   },
   {
@@ -19215,7 +19244,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1000,
+    "aggregatedRank": 1002,
     "countryRank": 13
   },
   {
@@ -19228,21 +19257,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1001,
+    "aggregatedRank": 1003,
     "countryRank": 3
-  },
-  {
-    "name": "China Medical University (Taiwan)",
-    "country": "Taiwan",
-    "aggregatedScore": 57.359375,
-    "originalRankings": {
-      "usnews": {
-        "rank": 314
-      }
-    },
-    "appearances": 1,
-    "aggregatedRank": 1002,
-    "countryRank": 14
   },
   {
     "name": "Tallinn University of Technology",
@@ -19257,7 +19273,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1003,
+    "aggregatedRank": 1004,
     "countryRank": 2
   },
   {
@@ -19273,7 +19289,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1004,
+    "aggregatedRank": 1005,
     "countryRank": 7
   },
   {
@@ -19289,7 +19305,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1005,
+    "aggregatedRank": 1006,
     "countryRank": 79
   },
   {
@@ -19305,7 +19321,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1006,
+    "aggregatedRank": 1007,
     "countryRank": 25
   },
   {
@@ -19321,7 +19337,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1007,
+    "aggregatedRank": 1008,
     "countryRank": 11
   },
   {
@@ -19337,7 +19353,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1008,
+    "aggregatedRank": 1009,
     "countryRank": 66
   },
   {
@@ -19353,7 +19369,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1009,
+    "aggregatedRank": 1010,
     "countryRank": 21
   },
   {
@@ -19369,7 +19385,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1010,
+    "aggregatedRank": 1011,
     "countryRank": 12
   },
   {
@@ -19385,7 +19401,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1011,
+    "aggregatedRank": 1012,
     "countryRank": 30
   },
   {
@@ -19401,7 +19417,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1012,
+    "aggregatedRank": 1013,
     "countryRank": 31
   },
   {
@@ -19417,7 +19433,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1013,
+    "aggregatedRank": 1014,
     "countryRank": 32
   },
   {
@@ -19433,7 +19449,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1014,
+    "aggregatedRank": 1015,
     "countryRank": 48
   },
   {
@@ -19449,7 +19465,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1015,
+    "aggregatedRank": 1016,
     "countryRank": 178
   },
   {
@@ -19462,7 +19478,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1016,
+    "aggregatedRank": 1017,
     "countryRank": 1
   },
   {
@@ -19475,7 +19491,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1017,
+    "aggregatedRank": 1018,
     "countryRank": 12
   },
   {
@@ -19488,7 +19504,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1018,
+    "aggregatedRank": 1019,
     "countryRank": 11
   },
   {
@@ -19501,7 +19517,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1019,
+    "aggregatedRank": 1020,
     "countryRank": 80
   },
   {
@@ -19514,7 +19530,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1020,
+    "aggregatedRank": 1021,
     "countryRank": 35
   },
   {
@@ -19530,7 +19546,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1021,
+    "aggregatedRank": 1022,
     "countryRank": 5
   },
   {
@@ -19543,7 +19559,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1022,
+    "aggregatedRank": 1023,
     "countryRank": 12
   },
   {
@@ -19556,7 +19572,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1023,
+    "aggregatedRank": 1024,
     "countryRank": 49
   },
   {
@@ -19572,7 +19588,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1024,
+    "aggregatedRank": 1025,
     "countryRank": 6
   },
   {
@@ -19585,7 +19601,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1025,
+    "aggregatedRank": 1026,
     "countryRank": 18
   },
   {
@@ -19598,7 +19614,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1026,
+    "aggregatedRank": 1027,
     "countryRank": 117
   },
   {
@@ -19611,7 +19627,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1027,
+    "aggregatedRank": 1028,
     "countryRank": 3
   },
   {
@@ -19627,7 +19643,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1028,
+    "aggregatedRank": 1029,
     "countryRank": 26
   },
   {
@@ -19643,7 +19659,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1029,
+    "aggregatedRank": 1030,
     "countryRank": 9
   },
   {
@@ -19656,7 +19672,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1030,
+    "aggregatedRank": 1031,
     "countryRank": 36
   },
   {
@@ -19669,7 +19685,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1031,
+    "aggregatedRank": 1032,
     "countryRank": 2
   },
   {
@@ -19682,7 +19698,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1032,
+    "aggregatedRank": 1033,
     "countryRank": 118
   },
   {
@@ -19698,7 +19714,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1033,
+    "aggregatedRank": 1034,
     "countryRank": 8
   },
   {
@@ -19711,7 +19727,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1034,
+    "aggregatedRank": 1035,
     "countryRank": 67
   },
   {
@@ -19727,7 +19743,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1035,
+    "aggregatedRank": 1036,
     "countryRank": 179
   },
   {
@@ -19740,7 +19756,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1036,
+    "aggregatedRank": 1037,
     "countryRank": 22
   },
   {
@@ -19753,7 +19769,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1037,
+    "aggregatedRank": 1038,
     "countryRank": 68
   },
   {
@@ -19769,7 +19785,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1038,
+    "aggregatedRank": 1039,
     "countryRank": 119
   },
   {
@@ -19782,7 +19798,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1039,
+    "aggregatedRank": 1040,
     "countryRank": 5
   },
   {
@@ -19798,8 +19814,8 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1040,
-    "countryRank": 28
+    "aggregatedRank": 1041,
+    "countryRank": 29
   },
   {
     "name": "University of Chile",
@@ -19811,7 +19827,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1041,
+    "aggregatedRank": 1042,
     "countryRank": 4
   },
   {
@@ -19824,7 +19840,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1042,
+    "aggregatedRank": 1043,
     "countryRank": 120
   },
   {
@@ -19837,7 +19853,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1043,
+    "aggregatedRank": 1044,
     "countryRank": 121
   },
   {
@@ -19850,7 +19866,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1044,
+    "aggregatedRank": 1045,
     "countryRank": 69
   },
   {
@@ -19863,7 +19879,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1045,
+    "aggregatedRank": 1046,
     "countryRank": 70
   },
   {
@@ -19876,7 +19892,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1046,
+    "aggregatedRank": 1047,
     "countryRank": 180
   },
   {
@@ -19889,7 +19905,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1047,
+    "aggregatedRank": 1048,
     "countryRank": 122
   },
   {
@@ -19905,7 +19921,7 @@
       }
     },
     "appearances": 2,
-    "aggregatedRank": 1048,
+    "aggregatedRank": 1049,
     "countryRank": 27
   },
   {
@@ -19918,21 +19934,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1049,
-    "countryRank": 29
-  },
-  {
-    "name": "Ajman University of Science and Technology",
-    "country": "United Arab Emirates",
-    "aggregatedScore": 47.03125,
-    "originalRankings": {
-      "the": {
-        "rank": 401
-      }
-    },
-    "appearances": 1,
     "aggregatedRank": 1050,
-    "countryRank": 9
+    "countryRank": 30
   },
   {
     "name": "Victoria University - Melbourne",
@@ -20258,7 +20261,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1073,
-    "countryRank": 15
+    "countryRank": 14
   },
   {
     "name": "Islamic Azad University",
@@ -21237,7 +21240,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1143,
-    "countryRank": 16
+    "countryRank": 15
   },
   {
     "name": "University of Tulsa",
@@ -21516,7 +21519,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1164,
-    "countryRank": 30
+    "countryRank": 31
   },
   {
     "name": "Anhui University of Finance & Economics",
@@ -22138,7 +22141,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1207,
-    "countryRank": 17
+    "countryRank": 16
   },
   {
     "name": "Philipps University Marburg",
@@ -23197,7 +23200,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1288,
-    "countryRank": 18
+    "countryRank": 17
   },
   {
     "name": "National University of Sciences & Technology - Pakistan",
@@ -24003,7 +24006,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1347,
-    "countryRank": 31
+    "countryRank": 32
   },
   {
     "name": "Ritsumeikan University",
@@ -24314,7 +24317,7 @@
     "countryRank": 7
   },
   {
-    "name": "Hubei University",
+    "name": "China Medical University",
     "country": "China",
     "aggregatedScore": 0.3281249999999991,
     "originalRankings": {
@@ -24327,7 +24330,7 @@
     "countryRank": 163
   },
   {
-    "name": "Shantou University",
+    "name": "Hubei University",
     "country": "China",
     "aggregatedScore": 0.3281249999999991,
     "originalRankings": {
@@ -24340,6 +24343,19 @@
     "countryRank": 164
   },
   {
+    "name": "Shantou University",
+    "country": "China",
+    "aggregatedScore": 0.3281249999999991,
+    "originalRankings": {
+      "arwu": {
+        "rank": 701
+      }
+    },
+    "appearances": 1,
+    "aggregatedRank": 1373,
+    "countryRank": 165
+  },
+  {
     "name": "University of Oldenburg",
     "country": "Germany",
     "aggregatedScore": 0.3281249999999991,
@@ -24349,7 +24365,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1373,
+    "aggregatedRank": 1374,
     "countryRank": 98
   },
   {
@@ -24362,7 +24378,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1374,
+    "aggregatedRank": 1375,
     "countryRank": 99
   },
   {
@@ -24375,7 +24391,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1375,
+    "aggregatedRank": 1376,
     "countryRank": 100
   },
   {
@@ -24388,7 +24404,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1376,
+    "aggregatedRank": 1377,
     "countryRank": 46
   },
   {
@@ -24401,7 +24417,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1377,
+    "aggregatedRank": 1378,
     "countryRank": 47
   },
   {
@@ -24414,7 +24430,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1378,
+    "aggregatedRank": 1379,
     "countryRank": 31
   },
   {
@@ -24427,7 +24443,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1379,
+    "aggregatedRank": 1380,
     "countryRank": 32
   },
   {
@@ -24440,8 +24456,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1380,
-    "countryRank": 32
+    "aggregatedRank": 1381,
+    "countryRank": 33
   },
   {
     "name": "Stockholm School of Economics",
@@ -24453,7 +24469,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1381,
+    "aggregatedRank": 1382,
     "countryRank": 14
   },
   {
@@ -24466,24 +24482,11 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1382,
+    "aggregatedRank": 1383,
     "countryRank": 200
   },
   {
     "name": "Army Medical University",
-    "country": "China",
-    "aggregatedScore": 0.3281249999999991,
-    "originalRankings": {
-      "arwu": {
-        "rank": 701
-      }
-    },
-    "appearances": 1,
-    "aggregatedRank": 1383,
-    "countryRank": 165
-  },
-  {
-    "name": "Henan University of Science and Technology",
     "country": "China",
     "aggregatedScore": 0.3281249999999991,
     "originalRankings": {
@@ -24587,7 +24590,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1391,
-    "countryRank": 19
+    "countryRank": 18
   },
   {
     "name": "ISCTE - Instituto Universitario de Lisboa",
@@ -25798,7 +25801,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1483,
-    "countryRank": 33
+    "countryRank": 34
   },
   {
     "name": "Northeast Forestry University",
@@ -26461,7 +26464,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1534,
-    "countryRank": 20
+    "countryRank": 19
   },
   {
     "name": "Sumy State University",
@@ -27111,7 +27114,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1584,
-    "countryRank": 21
+    "countryRank": 20
   },
   {
     "name": "Nguyen Tat Thanh University (NTTU)",
@@ -28229,7 +28232,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1670,
-    "countryRank": 34
+    "countryRank": 35
   },
   {
     "name": "Hallym University",
@@ -28242,7 +28245,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1671,
-    "countryRank": 35
+    "countryRank": 36
   },
   {
     "name": "Nicolaus Copernicus University",
@@ -28362,7 +28365,7 @@
     "countryRank": 221
   },
   {
-    "name": "Tianjin University of Science and Technology",
+    "name": "Liaoning University of Technology",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28375,19 +28378,6 @@
     "countryRank": 197
   },
   {
-    "name": "Liaoning University of Technology",
-    "country": "China",
-    "aggregatedScore": -30.921875,
-    "originalRankings": {
-      "arwu": {
-        "rank": 901
-      }
-    },
-    "appearances": 1,
-    "aggregatedRank": 1682,
-    "countryRank": 198
-  },
-  {
     "name": "Linnaeus University",
     "country": "Sweden",
     "aggregatedScore": -30.921875,
@@ -28397,7 +28387,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1683,
+    "aggregatedRank": 1682,
     "countryRank": 16
   },
   {
@@ -28410,11 +28400,24 @@
       }
     },
     "appearances": 1,
+    "aggregatedRank": 1683,
+    "countryRank": 198
+  },
+  {
+    "name": "Henan Polytechnic University",
+    "country": "China",
+    "aggregatedScore": -30.921875,
+    "originalRankings": {
+      "arwu": {
+        "rank": 901
+      }
+    },
+    "appearances": 1,
     "aggregatedRank": 1684,
     "countryRank": 199
   },
   {
-    "name": "Henan Polytechnic University",
+    "name": "Yangtze University",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28427,7 +28430,7 @@
     "countryRank": 200
   },
   {
-    "name": "Yangtze University",
+    "name": "Zhejiang A & F University",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28440,7 +28443,7 @@
     "countryRank": 201
   },
   {
-    "name": "Zhejiang A & F University",
+    "name": "Dalian Polytechnic University",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28453,7 +28456,7 @@
     "countryRank": 202
   },
   {
-    "name": "Dalian Polytechnic University",
+    "name": "Guangdong Ocean University",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28466,7 +28469,7 @@
     "countryRank": 203
   },
   {
-    "name": "Guangdong Ocean University",
+    "name": "Guilin University of Electronic Technology",
     "country": "China",
     "aggregatedScore": -30.921875,
     "originalRankings": {
@@ -28479,19 +28482,6 @@
     "countryRank": 204
   },
   {
-    "name": "Guilin University of Electronic Technology",
-    "country": "China",
-    "aggregatedScore": -30.921875,
-    "originalRankings": {
-      "arwu": {
-        "rank": 901
-      }
-    },
-    "appearances": 1,
-    "aggregatedRank": 1690,
-    "countryRank": 205
-  },
-  {
     "name": "Bayero University",
     "country": "Nigeria",
     "aggregatedScore": -31.703124999999996,
@@ -28501,7 +28491,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1691,
+    "aggregatedRank": 1690,
     "countryRank": 5
   },
   {
@@ -28514,7 +28504,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1692,
+    "aggregatedRank": 1691,
     "countryRank": 103
   },
   {
@@ -28527,8 +28517,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1693,
-    "countryRank": 206
+    "aggregatedRank": 1692,
+    "countryRank": 205
   },
   {
     "name": "Port Said University",
@@ -28540,7 +28530,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1694,
+    "aggregatedRank": 1693,
     "countryRank": 19
   },
   {
@@ -28553,7 +28543,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1695,
+    "aggregatedRank": 1694,
     "countryRank": 75
   },
   {
@@ -28566,7 +28556,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1696,
+    "aggregatedRank": 1695,
     "countryRank": 71
   },
   {
@@ -28579,7 +28569,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1697,
+    "aggregatedRank": 1696,
     "countryRank": 20
   },
   {
@@ -28592,8 +28582,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1698,
-    "countryRank": 36
+    "aggregatedRank": 1697,
+    "countryRank": 37
   },
   {
     "name": "Shanghai Maritime University",
@@ -28605,8 +28595,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1699,
-    "countryRank": 207
+    "aggregatedRank": 1698,
+    "countryRank": 206
   },
   {
     "name": "University of Montana",
@@ -28618,7 +28608,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1700,
+    "aggregatedRank": 1699,
     "countryRank": 222
   },
   {
@@ -28631,7 +28621,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1701,
+    "aggregatedRank": 1700,
     "countryRank": 223
   },
   {
@@ -28644,7 +28634,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1702,
+    "aggregatedRank": 1701,
     "countryRank": 109
   },
   {
@@ -28657,7 +28647,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1703,
+    "aggregatedRank": 1702,
     "countryRank": 1
   },
   {
@@ -28670,7 +28660,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1704,
+    "aggregatedRank": 1703,
     "countryRank": 41
   },
   {
@@ -28683,7 +28673,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1705,
+    "aggregatedRank": 1704,
     "countryRank": 31
   },
   {
@@ -28696,7 +28686,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1706,
+    "aggregatedRank": 1705,
     "countryRank": 12
   },
   {
@@ -28709,7 +28699,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1707,
+    "aggregatedRank": 1706,
     "countryRank": 1
   },
   {
@@ -28722,7 +28712,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1708,
+    "aggregatedRank": 1707,
     "countryRank": 10
   },
   {
@@ -28735,7 +28725,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1709,
+    "aggregatedRank": 1708,
     "countryRank": 2
   },
   {
@@ -28748,7 +28738,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1710,
+    "aggregatedRank": 1709,
     "countryRank": 1
   },
   {
@@ -28761,7 +28751,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1711,
+    "aggregatedRank": 1710,
     "countryRank": 10
   },
   {
@@ -28774,7 +28764,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1712,
+    "aggregatedRank": 1711,
     "countryRank": 224
   },
   {
@@ -28787,7 +28777,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1713,
+    "aggregatedRank": 1712,
     "countryRank": 3
   },
   {
@@ -28800,7 +28790,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1714,
+    "aggregatedRank": 1713,
     "countryRank": 72
   },
   {
@@ -28813,7 +28803,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1715,
+    "aggregatedRank": 1714,
     "countryRank": 12
   },
   {
@@ -28826,7 +28816,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1716,
+    "aggregatedRank": 1715,
     "countryRank": 29
   },
   {
@@ -28839,7 +28829,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1717,
+    "aggregatedRank": 1716,
     "countryRank": 73
   },
   {
@@ -28852,7 +28842,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1718,
+    "aggregatedRank": 1717,
     "countryRank": 1
   },
   {
@@ -28865,7 +28855,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1719,
+    "aggregatedRank": 1718,
     "countryRank": 6
   },
   {
@@ -28878,7 +28868,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1720,
+    "aggregatedRank": 1719,
     "countryRank": 2
   },
   {
@@ -28891,7 +28881,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1721,
+    "aggregatedRank": 1720,
     "countryRank": 13
   },
   {
@@ -28904,7 +28894,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1722,
+    "aggregatedRank": 1721,
     "countryRank": 4
   },
   {
@@ -28917,7 +28907,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1723,
+    "aggregatedRank": 1722,
     "countryRank": 38
   },
   {
@@ -28930,7 +28920,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1724,
+    "aggregatedRank": 1723,
     "countryRank": 11
   },
   {
@@ -28943,7 +28933,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1725,
+    "aggregatedRank": 1724,
     "countryRank": 9
   },
   {
@@ -28956,7 +28946,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1726,
+    "aggregatedRank": 1725,
     "countryRank": 62
   },
   {
@@ -28969,7 +28959,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1727,
+    "aggregatedRank": 1726,
     "countryRank": 8
   },
   {
@@ -28982,7 +28972,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1728,
+    "aggregatedRank": 1727,
     "countryRank": 4
   },
   {
@@ -28995,7 +28985,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1729,
+    "aggregatedRank": 1728,
     "countryRank": 9
   },
   {
@@ -29008,7 +28998,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1730,
+    "aggregatedRank": 1729,
     "countryRank": 2
   },
   {
@@ -29021,7 +29011,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1731,
+    "aggregatedRank": 1730,
     "countryRank": 10
   },
   {
@@ -29034,7 +29024,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1732,
+    "aggregatedRank": 1731,
     "countryRank": 76
   },
   {
@@ -29047,7 +29037,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1733,
+    "aggregatedRank": 1732,
     "countryRank": 77
   },
   {
@@ -29060,7 +29050,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1734,
+    "aggregatedRank": 1733,
     "countryRank": 4
   },
   {
@@ -29073,7 +29063,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1735,
+    "aggregatedRank": 1734,
     "countryRank": 33
   },
   {
@@ -29086,7 +29076,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1736,
+    "aggregatedRank": 1735,
     "countryRank": 13
   },
   {
@@ -29099,7 +29089,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1737,
+    "aggregatedRank": 1736,
     "countryRank": 63
   },
   {
@@ -29112,7 +29102,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1738,
+    "aggregatedRank": 1737,
     "countryRank": 1
   },
   {
@@ -29125,7 +29115,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1739,
+    "aggregatedRank": 1738,
     "countryRank": 21
   },
   {
@@ -29138,7 +29128,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1740,
+    "aggregatedRank": 1739,
     "countryRank": 64
   },
   {
@@ -29151,7 +29141,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1741,
+    "aggregatedRank": 1740,
     "countryRank": 65
   },
   {
@@ -29164,7 +29154,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1742,
+    "aggregatedRank": 1741,
     "countryRank": 32
   },
   {
@@ -29177,7 +29167,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1743,
+    "aggregatedRank": 1742,
     "countryRank": 2
   },
   {
@@ -29190,8 +29180,8 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1744,
-    "countryRank": 208
+    "aggregatedRank": 1743,
+    "countryRank": 207
   },
   {
     "name": "University of Sfax",
@@ -29203,7 +29193,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1745,
+    "aggregatedRank": 1744,
     "countryRank": 3
   },
   {
@@ -29216,7 +29206,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1746,
+    "aggregatedRank": 1745,
     "countryRank": 74
   },
   {
@@ -29229,7 +29219,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1747,
+    "aggregatedRank": 1746,
     "countryRank": 55
   },
   {
@@ -29242,7 +29232,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1748,
+    "aggregatedRank": 1747,
     "countryRank": 5
   },
   {
@@ -29255,7 +29245,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1749,
+    "aggregatedRank": 1748,
     "countryRank": 3
   },
   {
@@ -29268,7 +29258,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1750,
+    "aggregatedRank": 1749,
     "countryRank": 28
   },
   {
@@ -29281,7 +29271,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1751,
+    "aggregatedRank": 1750,
     "countryRank": 20
   },
   {
@@ -29294,7 +29284,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1752,
+    "aggregatedRank": 1751,
     "countryRank": 39
   },
   {
@@ -29307,7 +29297,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1753,
+    "aggregatedRank": 1752,
     "countryRank": 10
   },
   {
@@ -29320,7 +29310,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1754,
+    "aggregatedRank": 1753,
     "countryRank": 11
   },
   {
@@ -29333,7 +29323,7 @@
       }
     },
     "appearances": 1,
-    "aggregatedRank": 1755,
+    "aggregatedRank": 1754,
     "countryRank": 110
   }
 ]
