@@ -385,6 +385,8 @@ npm start
 ### Complete Documentation Suite
 - **[Enhanced Matching System](docs/ENHANCED_MATCHING.md)** - Detailed technical documentation of the pattern-based matching engine
 - **[University Mapping Tools Usage Guide](docs/MAPPING_TOOLS_GUIDE.md)** - Comprehensive guide for automated mapping suggestion and application
+- **[Scrape Rankings Script Usage Guide](docs/SCRAPE_RANKINGS_GUIDE.md)** - Comprehensive guide for the main data scraping, standardization, and aggregation script
+- **[Ranking Aggregation Guide](docs/AGGREGATION_GUIDE.md)** - Detailed explanation of the Borda Count methodology
 - **[API Reference](docs/API.md)** - Data formats and aggregation methods  
 - **[Data Sources](docs/DATA_SOURCES.md)** - Source specifications and update procedures
 - **[Contributing Guide](docs/CONTRIBUTING.md)** - Development setup and contribution guidelines
