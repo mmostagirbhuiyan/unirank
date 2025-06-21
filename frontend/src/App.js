@@ -33,6 +33,65 @@ ChartJS.register(
   ArcElement
 );
 
+const IVY_LEAGUE_UNIVERSITIES = [
+  "Brown University",
+  "Columbia University",
+  "Cornell University",
+  "Dartmouth College",
+  "Harvard University",
+  "University of Pennsylvania",
+  "Princeton University",
+  "Yale University",
+];
+
+const BIG_TEN_UNIVERSITIES = [
+  "University of Illinois Urbana-Champaign",
+  "Indiana University Bloomington",
+  "University of Iowa",
+  "University of Maryland College Park",
+  "University of Michigan",
+  "Michigan State University",
+  "University of Minnesota Twin Cities",
+  "University of Nebraska Lincoln",
+  "Northwestern University",
+  "Ohio State University",
+  "University of Oregon",
+  "Pennsylvania State University",
+  "Purdue University",
+  "Rutgers University New Brunswick",
+  "University of California Los Angeles",
+  "University of Southern California",
+  "University of Washington Seattle",
+  "University of Wisconsin Madison",
+];
+
+const RUSSELL_GROUP_UNIVERSITIES = [
+  "University of Birmingham",
+  "University of Bristol",
+  "University of Cambridge",
+  "Cardiff University",
+  "Durham University",
+  "University of Edinburgh",
+  "University of Exeter",
+  "University of Glasgow",
+  "Imperial College London",
+  "King's College London",
+  "University of Leeds",
+  "University of Liverpool",
+  "London School Economics & Political Science",
+  "University of Manchester",
+  "Newcastle University - Newcastle-upon-Tyne",
+  "University of Nottingham",
+  "University of Oxford",
+  "Queen Mary University London",
+  "Queens University Belfast",
+  "University of Sheffield",
+  "University of Southampton",
+  "University College London",
+  "University of Warwick",
+  "University of York - UK",
+];
+
 // Helper: Animated Circular Progress Bar
 function CircularProgressBar({ value, max = 100, size = 64, stroke = 8, gradientId, label, colorFrom, colorTo }) {
   const radius = (size - stroke) / 2;
@@ -121,6 +180,7 @@ function App() {
   const universitiesPerPage = 50;
   const [showMethodology, setShowMethodology] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedGroup, setSelectedGroup] = useState('');
   const firstCardRef = useRef(null);
 
   useEffect(() => {
@@ -287,6 +347,17 @@ function App() {
       });
     }
 
+    // Apply university group filter
+    if (selectedGroup) {
+      if (selectedGroup === "Ivy League") {
+        filtered = filtered.filter(uni => IVY_LEAGUE_UNIVERSITIES.includes(uni.name));
+      } else if (selectedGroup === "Big Ten") {
+        filtered = filtered.filter(uni => BIG_TEN_UNIVERSITIES.includes(uni.name));
+      } else if (selectedGroup === "Russell Group") {
+        filtered = filtered.filter(uni => RUSSELL_GROUP_UNIVERSITIES.includes(uni.name));
+      }
+    }
+
     return filtered.sort((a, b) => {
       if (sortBy === 'name') return a.name.localeCompare(b.name);
       if (sortBy === 'aggregatedScore') return b.aggregatedScore - a.aggregatedScore;
@@ -299,7 +370,7 @@ function App() {
       }
       return 0;
     });
-  }, [universities, searchTerm, sortBy, selectedCountry]);
+  }, [universities, searchTerm, sortBy, selectedCountry, selectedGroup]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredAndSortedUniversities.length / universitiesPerPage);
@@ -505,7 +576,7 @@ function App() {
       {/* Search and Filter */}
       <div className="container mx-auto px-6 mb-12">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 mb-6">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
               <input
@@ -516,16 +587,17 @@ function App() {
                 className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
               />
             </div>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="relative">
               <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
               >
                 <option value="aggregatedRank" className="bg-gray-800">Aggregated Rank</option>
-                <option value="aggregatedScore" className="bg-gray-800">Aggregated Score</option>
                 <option value="qs" className="bg-gray-800">QS Ranking</option>
                 <option value="the" className="bg-gray-800">THE Ranking</option>
                 <option value="arwu" className="bg-gray-800">ARWU Ranking</option>
@@ -540,7 +612,7 @@ function App() {
               <select
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
               >
                 <option value="" className="bg-gray-800">All Countries</option>
                 {uniqueCountries.map((c) => (
@@ -548,6 +620,21 @@ function App() {
                     {c}
                   </option>
                 ))}
+              </select>
+            </div>
+
+            {/* New University Group Filter */}
+            <div className="relative">
+              <Users className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+              <select
+                value={selectedGroup}
+                onChange={(e) => setSelectedGroup(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
+              >
+                <option value="" className="bg-gray-800">All Groups</option>
+                <option value="Ivy League" className="bg-gray-800">Ivy League</option>
+                <option value="Big Ten" className="bg-gray-800">Big Ten</option>
+                <option value="Russell Group" className="bg-gray-800">Russell Group</option>
               </select>
             </div>
           </div>
