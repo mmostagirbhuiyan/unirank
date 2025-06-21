@@ -41,22 +41,30 @@ The University Rankings Aggregator uses automated patterns to normalize universi
 
 ## Current Automation Status
 
-### 🚀 **Implemented Automation Patterns**
+### 🚀 **Currently Active Automation Patterns (8 Total)**
 
-| Pattern | Code Location | Risk | Impact | Status |
-|---------|---------------|------|--------|--------|
-| **Hyphen to Space** | `scripts/scrape-rankings.js:84` | Low | 22 cases | ✅ Active |
-| **"At" Location Removal** | `scripts/scrape-rankings.js:80` | Low | 12 cases | ✅ Active |
-| **And/Ampersand** | `scripts/scrape-rankings.js:82` | Low | 8 cases | ✅ Active |
-| **Diacritics Removal** | `scripts/scrape-rankings.js:60` | Low | 5 cases | ✅ Active |
-| **Medical Sciences** | `scripts/scrape-rankings.js:88` | Very Low | 4 cases | ✅ Active |
-| **"The" Prefix Removal** | `scripts/scrape-rankings.js:86` | Low | 3 cases | ✅ Active |
+| Pattern | Code Location | Risk | Description | Status |
+|---------|---------------|------|-------------|--------|
+| **1. Diacritics Normalization** | `scripts/scrape-rankings.js:60` | Very Low | Remove accents (ü→u, é→e) | ✅ Active |
+| **2. Character Cleanup** | `scripts/scrape-rankings.js:62-64` | Very Low | Remove ?, replacement chars | ✅ Active |
+| **3. At Location Removal** | `scripts/scrape-rankings.js:80` | Low | "at Austin" → "Austin" | ✅ Active |
+| **4. And/Ampersand** | `scripts/scrape-rankings.js:82` | Low | "and" → "&" | ✅ Active |
+| **5. Hyphen to Space** | `scripts/scrape-rankings.js:84` | Low | "-" → " " | ✅ Active |
+| **6. "The" Prefix Removal** | `scripts/scrape-rankings.js:86` | Low | "The University" → "University" | ✅ Active |
+| **7. Medical Sciences** | `scripts/scrape-rankings.js:88` | Very Low | "Sciences" → "Science" | ✅ Active |
+| **8. Medical University "of"** | `scripts/scrape-rankings.js:90` | Very Low | "Medical University of X" → "Medical University X" | ✅ Active |
+
+### 🔧 **Additional Complex Patterns**
+- **UC System Campus Names** (`line 92`): "University of California - Berkeley" → "University of California Berkeley"
+- **Of Preposition Normalization** (`lines 94-96`): Adds/removes "of" between University and location names
+- **Encoding Fixes** (`line 77`): "Mnchen" → "Munchen" for corrupted UTF-8
 
 ### 📊 **Current Performance**
 
-- **Total Universities**: 1708 (stable baseline)
-- **Manual Mappings**: 94 (down from 363 originally)
-- **Automation Rate**: ~73% of original manual mappings automated
+- **Total Universities**: 1834 (stable baseline)
+- **Manual Mappings**: 89 (down from 106+ originally)
+- **Automation Patterns Active**: 8 core patterns + 3 complex patterns
+- **System Health**: All automation patterns functional
 - **Processing Time**: <30 seconds for full aggregation
 
 ### 💻 **Implementation Location**
