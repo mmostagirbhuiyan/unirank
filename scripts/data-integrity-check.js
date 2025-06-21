@@ -14,8 +14,8 @@ const fs = require('fs');
 const path = require('path');
 const stringSimilarity = require('string-similarity');
 
-// Target metrics for data integrity
-const TARGET_UNIVERSITIES = 1753;
+// Target metrics for data integrity (updated after cross-country mapping bug fix)
+const TARGET_UNIVERSITIES = 1756;
 const TARGET_VARIANCE = 2;
 const MAX_DUPLICATES = 8;
 const SIMILARITY_THRESHOLD = 0.91;
