@@ -512,8 +512,8 @@ function App() {
               <span className="text-white font-medium">University Rankings</span>
             </div>
             
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-blue-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg">
+            <div className="flex items-center justify-center flex-wrap gap-4 mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-blue-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg flex-shrink-0">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-blue-200 leading-tight">
@@ -921,7 +921,7 @@ function App() {
         <div className="container mx-auto px-6 py-8">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12 flex-shrink-0">
                 <BookOpen className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-semibold text-lg">Aggregated University Rankings</span>
