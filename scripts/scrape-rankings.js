@@ -252,6 +252,7 @@ function standardizeCountry(country) {
         'Czechia': 'Czech Republic',
         'Brunei Darussalam': 'Brunei',
         'Viet Nam': 'Vietnam',
+        'Türkiye': 'Turkey'
     };
     return map[country.trim()] || country.trim();
 }

@@ -7275,7 +7275,7 @@
   },
   {
     "name": "Koc University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 527.75,
     "originalRankings": {
       "qs": {
@@ -8488,7 +8488,7 @@
   },
   {
     "name": "Istanbul Technical University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 449,
     "originalRankings": {
       "qs": {
@@ -9902,7 +9902,7 @@
   },
   {
     "name": "Middle East Technical University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 364.875,
     "originalRankings": {
       "qs": {
@@ -10928,7 +10928,7 @@
   },
   {
     "name": "Bogazici University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 313.03125,
     "originalRankings": {
       "qs": {
@@ -10966,7 +10966,7 @@
   },
   {
     "name": "Hacettepe University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 312.5,
     "originalRankings": {
       "qs": {
@@ -11039,7 +11039,7 @@
   },
   {
     "name": "Sabanci University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 309.09375,
     "originalRankings": {
       "qs": {
@@ -12892,7 +12892,7 @@
   },
   {
     "name": "Istanbul University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 225.77187499999997,
     "originalRankings": {
       "qs": {
@@ -12930,7 +12930,7 @@
   },
   {
     "name": "Bilkent University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 225.53125,
     "originalRankings": {
       "qs": {
@@ -15842,7 +15842,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 785,
-    "countryRank": 1
+    "countryRank": 9
   },
   {
     "name": "Universiti Teknologi Petronas",
@@ -19635,7 +19635,7 @@
   },
   {
     "name": "Yildiz Technical University",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 50.8125,
     "originalRankings": {
       "qs": {
@@ -19647,7 +19647,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1029,
-    "countryRank": 9
+    "countryRank": 10
   },
   {
     "name": "Universite Cote d'Azur",
@@ -20818,7 +20818,7 @@
     },
     "appearances": 2,
     "aggregatedRank": 1111,
-    "countryRank": 2
+    "countryRank": 11
   },
   {
     "name": "Universidad de Santiago de Chile - USACH",
@@ -22469,7 +22469,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1232,
-    "countryRank": 3
+    "countryRank": 12
   },
   {
     "name": "University of Mons-Hainaut",
@@ -24133,7 +24133,7 @@
   },
   {
     "name": "Ankara Üniversitesi",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": 0.9531249999999991,
     "originalRankings": {
       "qs": {
@@ -24142,7 +24142,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1357,
-    "countryRank": 10
+    "countryRank": 13
   },
   {
     "name": "Kazakh National Agrarian University",
@@ -25905,7 +25905,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1491,
-    "countryRank": 4
+    "countryRank": 14
   },
   {
     "name": "SUNY Downstate Health Sciences University",
@@ -26451,7 +26451,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1533,
-    "countryRank": 5
+    "countryRank": 15
   },
   {
     "name": "Kadir Has University",
@@ -26464,7 +26464,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1534,
-    "countryRank": 6
+    "countryRank": 16
   },
   {
     "name": "Yuan Ze University",
@@ -26854,7 +26854,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1564,
-    "countryRank": 7
+    "countryRank": 17
   },
   {
     "name": "Universitat Internacional de Catalunya",
@@ -27729,7 +27729,7 @@
   },
   {
     "name": "Gazi Üniversitesi",
-    "country": "Türkiye",
+    "country": "Turkey",
     "aggregatedScore": -30.921875,
     "originalRankings": {
       "qs": {
@@ -27738,7 +27738,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1632,
-    "countryRank": 11
+    "countryRank": 18
   },
   {
     "name": "Gulf University for Science and Technology",
@@ -28284,7 +28284,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1674,
-    "countryRank": 8
+    "countryRank": 19
   },
   {
     "name": "Cukurova University",
@@ -28297,7 +28297,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1675,
-    "countryRank": 9
+    "countryRank": 20
   },
   {
     "name": "Augusta State University",
@@ -29324,7 +29324,7 @@
     },
     "appearances": 1,
     "aggregatedRank": 1754,
-    "countryRank": 10
+    "countryRank": 21
   },
   {
     "name": "University of the Free State",
