@@ -248,31 +248,33 @@ class NewMappingSuggester {
                 similarity: s.similarity,
                 reason: s.reason
             })),
-            potentialDuplicates: filteredDuplicates.map(d => ({
-                university1: d.university1,
-                university2: d.university2,
-                similarity: d.similarity,
-                confidence: d.confidence,
-                suggestedMapping: d.suggestedMapping,
-                sources1: d.sources1,
-                sources2: d.sources2,
-                hasCommonSources: d.hasCommonSources
+            lowConfidenceSuggestions: filteredLowConfidenceDuplicates.map(s => ({
+                originalName: s.originalName,
+                suggestedStandardizedName: s.suggestedStandardizedName,
+                confidence: s.confidence,
+                similarity: s.similarity,
+                reason: s.reason
             })),
-            lowConfidencePotentialDuplicates: filteredLowConfidenceDuplicates.map(d => ({
-                university1: d.university1,
-                university2: d.university2,
-                similarity: d.similarity,
-                confidence: d.confidence,
-                suggestedMapping: d.suggestedMapping,
-                sources1: d.sources1,
-                sources2: d.sources2,
-                hasCommonSources: d.hasCommonSources
+            allDuplicates: filteredDuplicates.map(dup => ({
+                university1: dup.university1,
+                university2: dup.university2,
+                similarity: dup.similarity,
+                confidence: dup.confidence,
+                suggestedMapping: dup.suggestedMapping,
+                rankingVariance: dup.rankingVariance
+            })),
+            allLowConfidenceDuplicates: filteredLowConfidenceDuplicates.map(dup => ({
+                university1: dup.university1,
+                university2: dup.university2,
+                similarity: dup.similarity,
+                confidence: dup.confidence,
+                suggestedMapping: dup.suggestedMapping,
+                rankingVariance: dup.rankingVariance
             }))
         };
         
         await fs.writeFile(outputPath, JSON.stringify(outputData, null, 2));
-        console.log(`💾 Suggestions saved to ${outputPath}`);
-        return outputPath;
+        console.log(`✅ Suggestions saved to ${outputPath}`);
     }
 
     // Generate a report
@@ -484,7 +486,7 @@ class NewMappingSuggester {
                 return !uni1HasMapping && !uni2HasMapping;
             });
             
-            await this.saveSuggestions(suggestions, duplicates, lowConfidenceDuplicates, existingMappings);
+            await this.saveSuggestions(suggestions, filteredDuplicates, filteredLowConfidenceDuplicates, existingMappings);
             this.generateReport(duplicates, suggestions, aggregatedData, filteredDuplicates, filteredLowConfidenceDuplicates, lowConfidenceDuplicates);
             
             return suggestions;
