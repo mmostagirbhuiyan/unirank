@@ -517,10 +517,10 @@ function App() {
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-blue-200 leading-tight">
-                UniRank
+                Aggregated Global 
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">
-                  Global
+                  University Rankings
                 </span>
               </h1>
             </div>
@@ -542,7 +542,7 @@ function App() {
               <MetricCard icon={<Globe className="w-6 h-6 text-blue-400" />} title="Universities" value={metrics.totalUniversities} />
               <MetricCard icon={<Award className="w-6 h-6 text-yellow-300" />} title="Countries" value={metrics.totalCountries} />
               <MetricCard icon={<TrendingUp className="w-6 h-6 text-pink-400" />} title="Avg. Score" value={metrics.averageScore} />
-              <MetricCard icon={<Star className="w-6 h-6 text-green-400" />} title="Top University" value={metrics.topUniversity?.name || '-'} sub={metrics.topUniversity?.country ? `#${metrics.topUniversity.aggregatedRank} • ${metrics.topUniversity.country}` : ''} />
+              <MetricCard icon={<Star className="w-6 h-6 text-green-400" />} title="Top University" value={metrics.topUniversity?.name || '-'} sub={metrics.topUniversity?.country } />
               <MetricCard icon={<Users className="w-6 h-6 text-purple-400" />} title="Most Country" value={metrics.mostCountry || '-'} sub={`${metrics.mostCountryCount} universities`} />
               <MetricCard icon={<BarChart className="w-6 h-6 text-orange-400" />} title="Median Score" value={metrics.medianScore} />
               <MetricCard icon={<Globe className="w-6 h-6 text-cyan-400" />} title="Diversity Index" value={<CircularProgressBar value={parseFloat(metrics.diversityIndex)} max={100} gradientId="diversity" colorFrom="#06b6d4" colorTo="#6366f1" label="" />} />
@@ -924,7 +924,7 @@ function App() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12">
                 <BookOpen className="w-4 h-4 text-white" />
               </div>
-              <span className="text-white font-semibold text-lg">UniRank Global</span>
+              <span className="text-white font-semibold text-lg">Aggregated Global Rankings</span>
             </div>
             <p className="text-purple-200 mb-6">
               Aggregating university rankings from QS, Times Higher Education, ARWU, and US News

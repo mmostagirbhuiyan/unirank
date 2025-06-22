@@ -246,6 +246,12 @@ function standardizeCountry(country) {
         'United Kingdom': 'United Kingdom',
         'S. Korea': 'South Korea',
         'Republic of Korea': 'South Korea',
+        'Iran (Islamic Republic of)': 'Iran',
+        'Venezuela (Bolivarian Republic of)': 'Venezuela',
+        'Northern Cyprus': 'Cyprus',
+        'Czechia': 'Czech Republic',
+        'Brunei Darussalam': 'Brunei',
+        'Viet Nam': 'Vietnam',
     };
     return map[country.trim()] || country.trim();
 }
