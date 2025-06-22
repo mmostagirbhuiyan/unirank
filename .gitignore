@@ -25,7 +25,7 @@ complete_university_ranking_system.md
 *.sln
 *.sw?
 .cursor/*
-CLAUDE.md
+.claude/*
 userinput.py
 
 # Local Data
