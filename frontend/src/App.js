@@ -332,7 +332,7 @@ const MainApp = () => {
       <div className="noise-bg"></div>
 
       {/* --- HEADER --- */}
-      <header className="relative z-10 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 transition-colors duration-300">
+      <header className="relative z-50 border-b border-border bg-background/95 backdrop-blur-xl sticky top-0 transition-colors duration-300 supports-[backdrop-filter]:bg-background/80">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-tr from-primary to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
@@ -385,7 +385,7 @@ const MainApp = () => {
 
 
         {/* --- CONTROLS (DOCKED TOOLBAR) --- */}
-        <section className="sticky top-16 z-40 border-b border-border/40 bg-background/80 backdrop-blur-xl transition-all duration-300">
+        <section className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur-xl transition-all duration-300 shadow-sm supports-[backdrop-filter]:bg-background/80">
           <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row gap-3">
             <div className="relative flex-grow">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
