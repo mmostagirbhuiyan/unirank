@@ -338,7 +338,7 @@ const MainApp = () => {
             <div className="w-8 h-8 bg-gradient-to-tr from-primary to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
               <BookOpen className="text-white w-5 h-5" />
             </div>
-            <span className="text-lg font-bold font-space tracking-tight">Rankings<span className="text-primary">.AI</span></span>
+            <span className="text-lg font-bold font-space tracking-tight">UniRank<span className="text-primary">.AI</span></span>
             <Badge variant="primary" className="ml-2 hidden sm:flex">BETA</Badge>
           </div>
 
