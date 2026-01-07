@@ -400,7 +400,7 @@ const MainApp = () => {
 
             <div className="flex gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[140px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[180px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
@@ -413,7 +413,7 @@ const MainApp = () => {
               </select>
 
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[140px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
               >
@@ -422,7 +422,7 @@ const MainApp = () => {
               </select>
 
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[140px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={selectedGroup}
                 onChange={(e) => setSelectedGroup(e.target.value)}
               >
@@ -436,7 +436,7 @@ const MainApp = () => {
         </section>
 
         {/* --- LIST --- */}
-        <section className="space-y-3">
+        <section className="mt-6 space-y-3">
           <div className="px-4 text-xs font-mono text-muted-foreground uppercase tracking-widest flex justify-between items-center">
             <span>Showing {paginatedData.length} of {filteredData.length} Results</span>
             <span>Page {currentPage}</span>
