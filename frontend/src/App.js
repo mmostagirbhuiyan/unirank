@@ -215,7 +215,7 @@ const UniversityCard = ({ university, expanded, onToggle }) => {
                 </div>
                 <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
                   <div className="text-xs text-muted-foreground mb-1 font-medium">Consistency Score</div>
-                  <div className="text-2xl font-bold">{(university.aggregatedScore / 100).toFixed(1)}/20</div>
+                  <div className="text-2xl font-bold">{(university.aggregatedScore / 100).toFixed(1)}/10</div>
                 </div>
                 <div className="p-4 rounded-lg bg-card border border-border shadow-sm col-span-2">
                   <div className="text-xs text-muted-foreground mb-2 font-medium">Ranking Sources</div>
