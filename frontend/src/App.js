@@ -2,16 +2,14 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import {
   Search,
   TrendingUp,
-  Star,
   Globe,
-  BookOpen,
   Award,
   ChevronDown,
   ChevronUp,
-  Users,
-  BarChart,
-  Calendar,
-  Layers,
+  BarChart2,
+  Filter,
+  ArrowUpRight,
+  BookOpen,
 } from 'lucide-react';
 import { Doughnut } from 'react-chartjs-2';
 import {
@@ -33,946 +31,395 @@ ChartJS.register(
   ArcElement
 );
 
-const IVY_LEAGUE_UNIVERSITIES = [
-  "Brown University",
-  "Columbia University",
-  "Cornell University",
-  "Dartmouth College",
-  "Harvard University",
-  "University of Pennsylvania",
-  "Princeton University",
-  "Yale University",
-];
+// --- Constants ---
+const IVY_LEAGUE = ["Brown University", "Columbia University", "Cornell University", "Dartmouth College", "Harvard University", "University of Pennsylvania", "Princeton University", "Yale University"];
+const BIG_TEN = ["University of Illinois Urbana-Champaign", "Indiana University Bloomington", "University of Iowa", "University of Maryland College Park", "University of Michigan", "Michigan State University", "University of Minnesota Twin Cities", "University of Nebraska Lincoln", "Northwestern University", "Ohio State University", "University of Oregon", "Pennsylvania State University", "Purdue University", "Rutgers University New Brunswick", "University of California Los Angeles", "University of Southern California", "University of Washington Seattle", "University of Wisconsin Madison"];
+const RUSSELL_GROUP = ["University of Birmingham", "University of Bristol", "University of Cambridge", "Cardiff University", "Durham University", "University of Edinburgh", "University of Exeter", "University of Glasgow", "Imperial College London", "King's College London", "University of Leeds", "University of Liverpool", "London School Economics & Political Science", "University of Manchester", "Newcastle University - UK", "University of Nottingham", "University of Oxford", "Queen Mary University London", "Queens University Belfast", "University of Sheffield", "University of Southampton", "University College London", "University of Warwick", "University of York - UK"];
 
-const IVY_PLUS_UNIVERSITIES = [
-  "Brown University",
-  "Columbia University",
-  "Cornell University",
-  "Dartmouth College",
-  "Duke University",
-  "Harvard University",
-  "Johns Hopkins University",
-  "Massachusetts Institute of Technology (MIT)",
-  "Princeton University",
-  "Stanford University",
-  "University of Chicago",
-  "University of Pennsylvania",
-  "Yale University",
-  "California Institute of Technology",
-  "Northwestern University",
-];
+// --- Components ---
 
-const BIG_TEN_UNIVERSITIES = [
-  "University of Illinois Urbana-Champaign",
-  "Indiana University Bloomington",
-  "University of Iowa",
-  "University of Maryland College Park",
-  "University of Michigan",
-  "Michigan State University",
-  "University of Minnesota Twin Cities",
-  "University of Nebraska Lincoln",
-  "Northwestern University",
-  "Ohio State University",
-  "University of Oregon",
-  "Pennsylvania State University",
-  "Purdue University",
-  "Rutgers University New Brunswick",
-  "University of California Los Angeles",
-  "University of Southern California",
-  "University of Washington Seattle",
-  "University of Wisconsin Madison",
-];
-
-const RUSSELL_GROUP_UNIVERSITIES = [
-  "University of Birmingham",
-  "University of Bristol",
-  "University of Cambridge",
-  "Cardiff University",
-  "Durham University",
-  "University of Edinburgh",
-  "University of Exeter",
-  "University of Glasgow",
-  "Imperial College London",
-  "King's College London",
-  "University of Leeds",
-  "University of Liverpool",
-  "London School Economics & Political Science",
-  "University of Manchester",
-  "Newcastle University - UK",
-  "University of Nottingham",
-  "University of Oxford",
-  "Queen Mary University London",
-  "Queens University Belfast",
-  "University of Sheffield",
-  "University of Southampton",
-  "University College London",
-  "University of Warwick",
-  "University of York - UK",
-];
-
-// Helper: Animated Circular Progress Bar
-function CircularProgressBar({ value, max = 100, size = 64, stroke = 8, gradientId, label, colorFrom, colorTo }) {
-  const radius = (size - stroke) / 2;
-  const circ = 2 * Math.PI * radius;
-  const pct = Math.max(0, Math.min(1, value / max));
-  return (
-    <svg width={size} height={size} className="block mx-auto">
-      <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={colorFrom} />
-          <stop offset="100%" stopColor={colorTo} />
-        </linearGradient>
-      </defs>
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="#334155"
-        strokeWidth={stroke}
-        opacity={0.2}
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke={`url(#${gradientId})`}
-        strokeWidth={stroke}
-        strokeDasharray={circ}
-        strokeDashoffset={circ * (1 - pct)}
-        strokeLinecap="round"
-        style={{ transition: 'stroke-dashoffset 1.5s ease-out' }}
-      />
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dy=".3em"
-        fontSize={size * 0.22}
-        fill="#fff"
-        fontWeight="bold"
-      >
-        {Math.round(value)}%
-      </text>
-      {label && (
-        <text x="50%" y={size * 0.82} textAnchor="middle" fontSize={size * 0.13} fill="#a5b4fc">{label}</text>
-      )}
-    </svg>
-  );
-}
-
-// Helper: Metric Card
-function MetricCard({ icon, title, value, sub, children, className = "" }) {
-  return (
-    <div className={`relative bg-gray-800/60 rounded-2xl text-center p-4 flex flex-col items-center 
-      shadow-xl hover:shadow-purple-500/30 transition-all duration-300 
-      border border-transparent hover:border-purple-500/50 backdrop-blur-md 
-      overflow-hidden group ${className}`}
-      style={{ minWidth: 120 }}>
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-800/20 via-purple-800/20 to-pink-800/20 
-        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      
-      <div className="absolute inset-0 rounded-2xl pointer-events-none 
-        border-2 border-transparent group-hover:border-purple-600/50 transition-colors duration-300"></div>
-
-      <div className="relative z-10 mb-2 transform group-hover:scale-110 transition-transform duration-300 text-purple-400">
-        {icon}
+const StatCard = ({ label, value, sub, icon: Icon, trend }) => (
+  <div className="glass-card p-6 rounded-2xl relative overflow-hidden group hover:border-violet-500/30">
+    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+      <Icon size={48} className="text-white" />
+    </div>
+    <div className="relative z-10">
+      <div className="flex items-center gap-2 mb-2 text-zinc-400 text-sm font-medium uppercase tracking-wider">
+        {label}
       </div>
-      <div className="relative z-10 text-xs text-blue-300 uppercase mb-1 tracking-wider">{title}</div>
-      <div className="relative z-10 text-xl font-extrabold text-transparent bg-clip-text 
-        bg-gradient-to-r from-blue-300 to-purple-300 leading-tight">{value}</div>
-      {sub && <div className="relative z-10 text-xs text-purple-200 opacity-80 mt-1">{sub}</div>}
-      {children && <div className="relative z-10 mt-2">{children}</div>}
+      <div className="text-3xl font-bold text-white mb-1 font-space tracking-tight">
+        {value}
+      </div>
+      {sub && (
+        <div className="text-sm text-zinc-500 flex items-center gap-2">
+          {trend && <span className="text-emerald-400 flex items-center"><ArrowUpRight size={12} className="mr-1" />{trend}</span>}
+          {sub}
+        </div>
+      )}
+    </div>
+  </div>
+);
+
+const Badge = ({ children, className = "", variant = "neutral" }) => {
+  const variants = {
+    neutral: "bg-zinc-800 text-zinc-300 border-zinc-700",
+    primary: "bg-violet-500/10 text-violet-300 border-violet-500/20",
+    success: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
+    warning: "bg-amber-500/10 text-amber-300 border-amber-500/20"
+  };
+  return (
+    <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${variants[variant]} ${className}`}>
+      {children}
+    </span>
+  );
+};
+
+const UniversityCard = ({ university, expanded, onToggle }) => {
+  const bestRank = Math.min(...Object.values(university.originalRankings).map(r => r.rank));
+
+  return (
+    <div className={`glass-card rounded-xl border-white/5 overflow-hidden hover:border-white/10 ${expanded ? 'bg-zinc-800/40' : ''}`}>
+      <div
+        className="p-5 flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer"
+        onClick={onToggle}
+      >
+        {/* Rank Box */}
+        <div className="flex-shrink-0 flex flex-row md:flex-col items-center gap-3 md:gap-1 min-w-[80px]">
+          <div className="text-3xl md:text-4xl font-bold text-white font-space">
+            #{university.aggregatedRank}
+          </div>
+          <div className="text-xs text-zinc-500 uppercase tracking-widest font-semibold">Rank</div>
+        </div>
+
+        {/* Info */}
+        <div className="flex-grow min-w-0">
+          <h3 className="text-xl font-bold text-white mb-2 truncate group-hover:text-violet-300 transition-colors">
+            {university.name}
+          </h3>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-400">
+            <span className="flex items-center gap-1.5">
+              <Globe size={14} className="text-zinc-500" />
+              {university.country}
+            </span>
+            <span className="w-1 h-1 rounded-full bg-zinc-700"></span>
+            <span className="font-mono text-zinc-500">Score: <span className="text-zinc-300">{university.aggregatedScore.toFixed(1)}</span></span>
+            <span className="w-1 h-1 rounded-full bg-zinc-700"></span>
+            <span className="text-zinc-500">Best: <span className="text-emerald-400">#{bestRank}</span></span>
+          </div>
+        </div>
+
+        {/* Mini Grid */}
+        <div className="hidden md:grid grid-cols-4 gap-2 w-full md:w-auto">
+          {Object.entries(university.originalRankings).map(([source, data]) => (
+            <div key={source} className="text-center px-3 py-2 bg-black/20 rounded-lg border border-white/5">
+              <div className="text-xs text-zinc-500 uppercase mb-0.5">{source === 'usnews' ? 'USN' : source.toUpperCase()}</div>
+              <div className="font-mono text-sm text-zinc-300">#{data.rank}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="ml-auto text-zinc-600">
+          {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        </div>
+      </div>
+
+      {/* Expanded Details */}
+      {expanded && (
+        <div className="border-t border-white/5 bg-black/20 p-6 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-4">Rankings Breakdown</h4>
+              <div className="space-y-3">
+                {Object.entries(university.originalRankings).map(([source, data]) => (
+                  <div key={source} className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5">
+                    <div className="flex items-center gap-3">
+                      <span className={`w-2 h-2 rounded-full ${source === 'qs' ? 'bg-orange-500' : source === 'the' ? 'bg-yellow-500' : source === 'arwu' ? 'bg-red-500' : 'bg-blue-500'}`}></span>
+                      <span className="capitalize text-zinc-300 font-medium">
+                        {source === 'usnews' ? 'US News & World Report' :
+                          source === 'the' ? 'Times Higher Education' :
+                            source === 'qs' ? 'QS World University' : 'ARWU (Shanghai)'}
+                      </span>
+                    </div>
+                    <div className="font-mono text-white text-lg">#{data.rank}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-4">Performance Metrics</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-white/5 border border-white/5">
+                  <div className="text-xs text-zinc-500 mb-1">National Rank</div>
+                  <div className="text-2xl font-bold text-white">#{university.countryRank}</div>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 border border-white/5">
+                  <div className="text-xs text-zinc-500 mb-1">Consistency Score</div>
+                  <div className="text-2xl font-bold text-white">{(university.aggregatedScore / 100).toFixed(1)}/20</div>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 border border-white/5 col-span-2">
+                  <div className="text-xs text-zinc-500 mb-1">Ranking Sources</div>
+                  <div className="flex gap-2 mt-2">
+                    {Object.keys(university.originalRankings).map(source => (
+                      <Badge key={source} variant="neutral" className="uppercase">{source}</Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+// --- Main App ---
 
 function App() {
   const [universities, setUniversities] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('aggregatedRank');
-  const [expandedCard, setExpandedCard] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const universitiesPerPage = 50;
-  const [showMethodology, setShowMethodology] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
-  const firstCardRef = useRef(null);
+  const itemsPerPage = 50;
 
   useEffect(() => {
-    const loadRankings = async () => {
-      try {
-        const response = await fetch(process.env.PUBLIC_URL + '/data/aggregated-rankings.json');
-        if (!response.ok) {
-          throw new Error('Failed to load rankings data');
-        }
-        const data = await response.json();
-        setUniversities(data);
-      } catch (error) {
-        console.error('Error loading rankings:', error);
-        // You might want to show an error message to the user here
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadRankings();
+    fetch(process.env.PUBLIC_URL + '/data/aggregated-rankings.json')
+      .then(res => res.json())
+      .then(data => { setUniversities(data); setIsLoading(false); })
+      .catch(err => console.error(err));
   }, []);
 
-  const uniqueCountries = useMemo(() => {
-    const setCountries = new Set(universities.map(u => u.country).filter(Boolean));
-    return Array.from(setCountries).sort();
-  }, [universities]);
+  // --- Derived State ---
+  const uniqueCountries = useMemo(() => [...new Set(universities.map(u => u.country).filter(Boolean))].sort(), [universities]);
 
   const metrics = useMemo(() => {
-    const totalUniversities = universities.length;
-    const totalCountries = uniqueCountries.length;
-    const averageScore = universities.reduce((acc, u) => acc + u.aggregatedScore, 0) / (universities.length || 1);
+    if (!universities.length) return null;
+    const avgScore = universities.reduce((a, b) => a + b.aggregatedScore, 0) / universities.length;
+    const topUni = universities.reduce((a, b) => a.aggregatedRank < b.aggregatedRank ? a : b);
+
+    // Country Counts
     const counts = {};
-    const sourceSet = new Set();
-    universities.forEach(u => {
-      counts[u.country] = (counts[u.country] || 0) + 1;
-      Object.keys(u.originalRankings).forEach(s => sourceSet.add(s));
-    });
-    const sorted = Object.entries(counts)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5);
-    const palette = [
-      '#FF4D4D', // Bright Red
-      '#4CAF50', // Bright Green
-      '#2196F3', // Bright Blue
-      '#FFC107', // Bright Amber
-      '#9C27B0', // Bright Purple
-    ];
+    universities.forEach(u => counts[u.country] = (counts[u.country] || 0) + 1);
+    const sortedCountries = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
-    const darkerPalette = [
-      '#B20000', // Darker Red
-      '#2E7D32', // Darker Green
-      '#1565C0', // Darker Blue
-      '#FF8F00', // Darker Amber
-      '#6A1B9A', // Darker Purple
-    ];
-
-    // Generate CSS linear-gradient strings for the legend
-    const legendGradientColors = sorted.map((_, index) => {
-        return `linear-gradient(135deg, ${darkerPalette[index]}, ${palette[index]})`;
-    });
-
-    const chartData = {
-      labels: sorted.map(([c]) => c),
-      datasets: [
-        {
-          data: sorted.map(([, count]) => count),
-          backgroundColor: (context) => {
-            const chart = context.chart;
-            const { ctx, chartArea } = chart;
-
-            if (!chartArea) {
-                return palette; 
-            }
-            
-            const gradients = palette.map((color, index) => {
-                // Create a diagonal linear gradient across the entire chart area
-                const gradient = ctx.createLinearGradient(chartArea.left, chartArea.top, chartArea.right, chartArea.bottom);
-                gradient.addColorStop(0, darkerPalette[index]); // Start with darker shade
-                gradient.addColorStop(1, color); // End with original color
-                return gradient;
-            });
-            return gradients;
-          },
-          hoverOffset: 8,
-        },
-      ],
-    };
-    const barData = {
-      labels: sorted.map(([c]) => c).reverse(),
-      datasets: [
-        {
-          data: sorted.map(([, count]) => count).reverse(),
-          backgroundColor: palette,
-          borderRadius: 4,
-        },
-      ],
-    };
-    // Top university
-    const topUniversity = universities.reduce((best, u) => (u.aggregatedRank < (best?.aggregatedRank ?? Infinity) ? u : best), null);
-    // Most represented country
-    const [mostCountry, mostCountryCount] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] || [null, 0];
-    // Median score
-    const sortedScores = universities.map(u => u.aggregatedScore).sort((a, b) => a - b);
-    const medianScore = sortedScores.length ? (sortedScores.length % 2 === 1 ? sortedScores[Math.floor(sortedScores.length / 2)] : (sortedScores[sortedScores.length / 2 - 1] + sortedScores[sortedScores.length / 2]) / 2) : 0;
-    // Diversity index (countries/universities ratio)
-    const diversityIndex = totalCountries && totalUniversities ? (totalCountries / totalUniversities * 100).toFixed(1) : '0.0';
-    // Source coverage: % of universities in all 4 sources
-    const fullCoverage = universities.filter(u => Object.keys(u.originalRankings).length === 4).length;
-    const sourceCoverage = totalUniversities ? ((fullCoverage / totalUniversities) * 100).toFixed(1) : '0.0';
-    // Last updated (if available)
-    let lastUpdated = '';
-    if (universities.length && universities[0].lastUpdated) {
-      lastUpdated = universities[0].lastUpdated;
-    }
     return {
-      totalUniversities,
-      totalCountries,
-      averageScore: averageScore.toFixed(1),
-      totalSources: sourceSet.size,
-      chartData,
-      barData,
-      topUniversity,
-      mostCountry,
-      mostCountryCount,
-      medianScore: medianScore.toFixed(1),
-      diversityIndex,
-      sourceCoverage,
-      lastUpdated,
-      palette,
-      darkerPalette,
-      legendGradientColors,
+      total: universities.length,
+      countries: uniqueCountries.length,
+      avgScore: avgScore.toFixed(1),
+      topUni,
+      topCountries: sortedCountries,
+      chartData: {
+        labels: sortedCountries.map(c => c[0]),
+        datasets: [{
+          data: sortedCountries.map(c => c[1]),
+          backgroundColor: ['#8b5cf6', '#6366f1', '#ec4899', '#14b8a6', '#f59e0b'],
+          borderWidth: 0,
+          hoverOffset: 10
+        }]
+      }
     };
   }, [universities, uniqueCountries]);
 
-  const filteredAndSortedUniversities = useMemo(() => {
-    const basicNormalize = (str) => str.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
-    const searchTokens = basicNormalize(searchTerm)
-      .split(/\s+/)
-      .filter(Boolean);
+  const filteredData = useMemo(() => {
+    let result = universities;
 
-    let filtered = universities;
-    if (selectedCountry) {
-      filtered = filtered.filter((uni) => uni.country === selectedCountry);
+    // Filter
+    if (selectedCountry) result = result.filter(u => u.country === selectedCountry);
+    if (selectedGroup === "Ivy League") result = result.filter(u => IVY_LEAGUE.includes(u.name));
+    if (selectedGroup === "Big Ten") result = result.filter(u => BIG_TEN.includes(u.name));
+    if (selectedGroup === "Russell Group") result = result.filter(u => RUSSELL_GROUP.includes(u.name));
+
+    // Search
+    if (searchTerm) {
+      const token = searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
+      result = result.filter(u => u.name.toLowerCase().replace(/[^a-z0-9]/g, '').includes(token));
     }
 
-    if (searchTokens.length) {
-      filtered = filtered.filter((uni) => {
-        const name = basicNormalize(uni.name);
-        // Quick substring match for performance
-        const nameNoSpaces = name.replace(/\s+/g, '');
-        const termNoSpaces = searchTokens.join('');
-        if (nameNoSpaces.includes(termNoSpaces)) return true;
-
-        // Token-based prefix matching ignoring order
-        const nameTokens = name.split(/\s+/);
-        const tokensMatch = searchTokens.every((token) =>
-          nameTokens.some((nt) => nt.startsWith(token))
-        );
-        if (tokensMatch) return true;
-
-        // Acronym match (e.g., MIT for Massachusetts Institute of Technology)
-        const acronym = nameTokens.map((t) => t[0]).join('');
-        return acronym.includes(termNoSpaces);
-      });
-    }
-
-    // Apply university group filter
-    if (selectedGroup === "Ivy League") {
-      filtered = filtered.filter(uni => IVY_LEAGUE_UNIVERSITIES.includes(uni.name));
-    } else if (selectedGroup === "Big Ten") {
-      filtered = filtered.filter(uni => BIG_TEN_UNIVERSITIES.includes(uni.name));
-    } else if (selectedGroup === "Russell Group") {
-      filtered = filtered.filter(uni => RUSSELL_GROUP_UNIVERSITIES.includes(uni.name));
-    } else if (selectedGroup === "Ivy Plus") {
-      filtered = filtered.filter(uni => IVY_PLUS_UNIVERSITIES.includes(uni.name));
-    }
-
-    return filtered.sort((a, b) => {
+    // Sort
+    return result.sort((a, b) => {
       if (sortBy === 'name') return a.name.localeCompare(b.name);
       if (sortBy === 'aggregatedScore') return b.aggregatedScore - a.aggregatedScore;
       if (sortBy === 'aggregatedRank') return a.aggregatedRank - b.aggregatedRank;
-      if (sortBy === 'appearances') return b.appearances - a.appearances;
-      
-      // Sort by specific ranking source
-      if (a.originalRankings[sortBy] && b.originalRankings[sortBy]) {
-        return a.originalRankings[sortBy].rank - b.originalRankings[sortBy].rank;
+      if (['qs', 'the', 'arwu', 'usnews'].includes(sortBy)) {
+        const rankA = a.originalRankings[sortBy]?.rank ?? 9999;
+        const rankB = b.originalRankings[sortBy]?.rank ?? 9999;
+        return rankA - rankB;
       }
       return 0;
     });
-  }, [universities, searchTerm, sortBy, selectedCountry, selectedGroup]);
+  }, [universities, selectedCountry, selectedGroup, searchTerm, sortBy]);
 
-  // Pagination logic
-  const totalPages = Math.ceil(filteredAndSortedUniversities.length / universitiesPerPage);
-  const paginatedUniversities = filteredAndSortedUniversities.slice(
-    (currentPage - 1) * universitiesPerPage,
-    currentPage * universitiesPerPage
-  );
+  // Pagination
+  const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
-  // Pagination window logic
-  const getPaginationWindow = () => {
-    const windowSize = 5;
-    const pages = [];
-    if (totalPages <= windowSize + 2) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      const start = Math.max(2, currentPage - Math.floor(windowSize / 2));
-      const end = Math.min(totalPages - 1, currentPage + Math.floor(windowSize / 2));
-      pages.push(1);
-      if (start > 2) pages.push('ellipsis-prev');
-      for (let i = start; i <= end; i++) pages.push(i);
-      if (end < totalPages - 1) pages.push('ellipsis-next');
-      pages.push(totalPages);
-    }
-    return pages;
-  };
-  const paginationWindow = getPaginationWindow();
-
-  // Reset to page 1 when search, sort, or country filter changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchTerm, sortBy, selectedCountry]);
-
-  // Smoothly scroll to the first card on page change with slight offset
-  useEffect(() => {
-    if (typeof window !== 'undefined' && firstCardRef.current) {
-      const top =
-        firstCardRef.current.getBoundingClientRect().top +
-        window.pageYOffset -
-        60;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  }, [currentPage]);
-
-  const getRankingBadgeColor = (rank) => {
-    if (rank <= 3) return 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white';
-    if (rank <= 10) return 'bg-gradient-to-r from-blue-500 to-purple-600 text-white';
-    if (rank <= 25) return 'bg-gradient-to-r from-green-500 to-teal-500 text-white';
-    return 'bg-gradient-to-r from-gray-400 to-gray-600 text-white';
-  };
-
-  const getScoreBadgeColor = (score) => {
-    if (score >= 1710) return 'bg-gradient-to-r from-pink-500 to-rose-500 text-white';
-    if (score >= 1700) return 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white';
-    if (score >= 1650) return 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white';
-    return 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white';
-  };
-
-  const getBestRanking = (originalRankings) => {
-    const ranks = Object.values(originalRankings).map(r => r.rank);
-    return Math.min(...ranks);
-  };
-
-  const getWorstRanking = (originalRankings) => {
-    const ranks = Object.values(originalRankings).map(r => r.rank);
-    return Math.max(...ranks);
-  };
-
-  const getRankingConsistency = (originalRankings) => {
-    const ranks = Object.values(originalRankings).map(r => r.rank);
-    const avg = ranks.reduce((a, b) => a + b, 0) / ranks.length;
-    const variance = ranks.reduce((acc, rank) => acc + Math.pow(rank - avg, 2), 0) / ranks.length;
-    return Math.sqrt(variance);
-  };
-
-  const getAverageRanking = (originalRankings) => {
-    const ranks = Object.values(originalRankings).map((r) => r.rank);
-    const avg = ranks.reduce((a, b) => a + b, 0) / ranks.length;
-    return Math.round(avg);
-  };
-
-  const donutOptions = {
-    cutout: '70%',
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: 'rgba(30,41,59,0.95)',
-        borderColor: '#6366f1',
-        borderWidth: 1,
-        titleColor: '#fff',
-        bodyColor: '#fff',
-      },
-    },
-  };
-
-  if (isLoading) {
+  if (isLoading || !metrics) {
     return (
-      <div className="min-h-screen gradient-bg flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-2xl font-bold text-white mb-2">Loading Universities</h2>
-          <p className="text-purple-200">Aggregating global rankings...</p>
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-8 h-8 border-2 border-violet-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-zinc-500 font-mono text-sm animate-pulse">Initializing System...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen gradient-bg">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 via-slate-800/30 to-black/20 animate-pulse"></div>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/15 rounded-full blur-3xl animate-bounce"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-600/15 rounded-full blur-3xl animate-pulse"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-6 py-12">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-6 text-base md:text-lg" style={{ fontSize: '95%' }}>
-              <Globe className="w-5 h-5 text-blue-400" />
-              <span className="text-white font-medium">University Rankings</span>
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-violet-500/30">
+      <div className="noise-bg"></div>
+
+      {/* --- HEADER --- */}
+      <header className="relative z-10 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md sticky top-0">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-gradient-to-tr from-violet-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-violet-500/20">
+              <BookOpen className="text-white w-5 h-5" />
             </div>
-            
-            <div className="flex items-center justify-center flex-wrap gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-slate-700 via-blue-700 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-lg flex-shrink-0">
-                <BookOpen className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-blue-200 leading-tight">
-                Aggregated
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">
-                  University Rankings
-                </span>
-              </h1>
-            </div>
-            
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed" style={{ fontSize: '95%' }}>
-              Your comprehensive guide to global university rankings, aggregating data from QS, Times Higher Education, ARWU, and US News
-            </p>
+            <span className="text-lg font-bold font-space tracking-tight">Rankings<span className="text-violet-400">.AI</span></span>
+            <Badge variant="primary" className="ml-2 hidden sm:flex">BETA</Badge>
           </div>
-
-        </div>
-      </div>
-
-      {/* Metrics Overview */}
-      <div className="container mx-auto px-6 py-4">
-        <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-8 flex flex-col gap-8 transition-transform hover:-translate-y-1 hover:shadow-2xl pulse-glow">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {/* Metrics Cards Grid */}
-            <div className="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4">
-              <MetricCard icon={<Globe className="w-6 h-6 text-blue-400" />} title="Universities" value={metrics.totalUniversities} />
-              <MetricCard icon={<Award className="w-6 h-6 text-yellow-300" />} title="Countries" value={metrics.totalCountries} />
-              <MetricCard icon={<TrendingUp className="w-6 h-6 text-pink-400" />} title="Avg. Score" value={metrics.averageScore} />
-              <MetricCard icon={<Star className="w-6 h-6 text-green-400" />} title="Top University" value={metrics.topUniversity?.name || '-'} sub={metrics.topUniversity?.country } />
-              <MetricCard icon={<Users className="w-6 h-6 text-purple-400" />} title="Most Country" value={metrics.mostCountry || '-'} sub={`${metrics.mostCountryCount} universities`} />
-              <MetricCard icon={<BarChart className="w-6 h-6 text-orange-400" />} title="Median Score" value={metrics.medianScore} />
-              <MetricCard icon={<Globe className="w-6 h-6 text-cyan-400" />} title="Diversity Index" value={<CircularProgressBar value={parseFloat(metrics.diversityIndex)} max={100} gradientId="diversity" colorFrom="#06b6d4" colorTo="#6366f1" label="" />} />
-              <MetricCard icon={<Layers className="w-6 h-6 text-fuchsia-400" />} title="Source Coverage" value={<CircularProgressBar value={parseFloat(metrics.sourceCoverage)} max={100} gradientId="coverage" colorFrom="#f59e42" colorTo="#e11d48" label="" />} />
-              {metrics.lastUpdated && <MetricCard icon={<Calendar className="w-6 h-6 text-white/80" />} title="Last Updated" value={metrics.lastUpdated} />}
-            </div>
-            {/* Donut Chart with World Map BG */}
-            <div className="relative flex flex-col items-center justify-center h-full">
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-                {/* Faint world map SVG background */}
-                <svg width="100%" height="100%" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <ellipse cx="200" cy="100" rx="180" ry="80" fill="#64748b" fillOpacity="0.08" />
-                  <ellipse cx="200" cy="100" rx="140" ry="60" fill="#64748b" fillOpacity="0.06" />
-                  <ellipse cx="200" cy="100" rx="100" ry="40" fill="#64748b" fillOpacity="0.04" />
-                  {/* You can replace with a more detailed SVG world map if desired */}
-                </svg>
-              </div>
-              <div className="relative z-10 w-64 h-64 flex items-center justify-center">
-                <Doughnut data={metrics.chartData} options={donutOptions} />
-              </div>
-              <div className="flex justify-center mt-4 flex-wrap gap-2 z-10">
-                {metrics.chartData.labels.map((label, i) => {
-                  return (
-                    <span
-                      key={label}
-                      className="inline-flex items-center gap-1 text-xs text-blue-100 bg-white/10 rounded-full px-2 py-1"
-                    >
-                      <span
-                        className="w-2 h-2 inline-block rounded-full"
-                        style={{ background: metrics.legendGradientColors[i] }}
-                      />
-                      {label}
-                    </span>
-                  );
-                })}
-              </div>
-              {/* Source logos row */}
-              <div className="flex flex-wrap gap-4 justify-center items-center mt-4">
-                <img src={`${process.env.PUBLIC_URL}/logos/qs.png`} alt="QS" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src={`${process.env.PUBLIC_URL}/logos/the.png`} alt="THE" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src={`${process.env.PUBLIC_URL}/logos/arwu.png`} alt="ARWU" className="h-8 grayscale hover:grayscale-0 transition" />
-                <img src={`${process.env.PUBLIC_URL}/logos/usnews.png`} alt="US News" className="h-8 grayscale hover:grayscale-0 transition" />
-              </div>
-            </div>
+          <div className="text-xs text-zinc-500 font-mono hidden md:block">
+            Global Database • Updated {new Date().toLocaleDateString()}
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Search and Filter */}
-      <div className="container mx-auto px-6 mb-12">
-        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-          <div className="grid grid-cols-1 gap-6 mb-6">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+      <main className="relative z-10 container mx-auto px-4 sm:px-6 py-12">
+
+        {/* --- HERO --- */}
+        <section className="mb-16 mt-8">
+          <h1 className="text-6xl md:text-8xl font-black font-space mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400">
+            Rankings.<br />
+            <span className="text-white">Redefined.</span>
+          </h1>
+          <p className="text-xl text-zinc-400 max-w-2xl font-light leading-relaxed">
+            A unified intelligence platform Aggregating global university data from QS, THE, ARWU, and US News into a single, decisive metric.
+          </p>
+        </section>
+
+        {/* --- METRICS GRID --- */}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+          <StatCard icon={Globe} label="Universities Tracked" value={metrics.total} sub={`${metrics.countries} Countries Represented`} />
+          <StatCard icon={Award} label="Top Performer" value={metrics.topUni.name} sub="Highest Aggregate Score" trend="#1 Globally" />
+          <StatCard icon={TrendingUp} label="Global Average" value={metrics.avgScore} sub="Aggregate Index Score" />
+
+          {/* Chart Card */}
+          <div className="glass-card p-6 rounded-2xl flex items-center justify-between">
+            <div>
+              <div className="text-zinc-400 text-sm font-medium uppercase tracking-wider mb-2">Top Region</div>
+              <div className="text-2xl font-bold font-space">{metrics.topCountries[0][0]}</div>
+              <div className="text-sm text-zinc-500">{metrics.topCountries[0][1]} Universities</div>
+            </div>
+            <div className="w-20 h-20">
+              <Doughnut data={metrics.chartData} options={{ cutout: '70%', plugins: { legend: { display: false }, tooltip: { enabled: false } } }} />
+            </div>
+          </div>
+        </section>
+
+
+        {/* --- CONTROLS --- */}
+        <section className="sticky top-20 z-20 mb-8">
+          <div className="glass-panel rounded-2xl p-2 flex flex-col md:flex-row gap-2">
+            <div className="relative flex-grow">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search universities..."
+                placeholder="Search by name..."
+                className="w-full bg-black/20 text-white pl-12 pr-4 py-3 rounded-xl border border-white/5 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 outline-none transition-all placeholder:text-zinc-600"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
               />
             </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="relative">
-              <TrendingUp className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+            <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
               <select
+                className="bg-black/20 text-zinc-300 px-4 py-3 rounded-xl border border-white/5 outline-none focus:border-violet-500/50 appearance-none min-w-[160px]"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
               >
-                <option value="aggregatedRank" className="bg-gray-800">Aggregated Rank</option>
-                <option value="qs" className="bg-gray-800">QS Ranking</option>
-                <option value="the" className="bg-gray-800">THE Ranking</option>
-                <option value="arwu" className="bg-gray-800">ARWU Ranking</option>
-                <option value="usnews" className="bg-gray-800">US News Ranking</option>
-                <option value="name" className="bg-gray-800">Name (A-Z)</option>
-                <option value="appearances" className="bg-gray-800">Appearances</option>
+                <option value="aggregatedRank">Rank (Aggregated)</option>
+                <option value="qs">Rank (QS)</option>
+                <option value="the">Rank (THE)</option>
+                <option value="arwu">Rank (ARWU)</option>
+                <option value="usnews">Rank (US News)</option>
+                <option value="name">Name (A-Z)</option>
               </select>
-            </div>
 
-            <div className="relative">
-              <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
               <select
+                className="bg-black/20 text-zinc-300 px-4 py-3 rounded-xl border border-white/5 outline-none focus:border-violet-500/50 appearance-none min-w-[160px]"
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
               >
-                <option value="" className="bg-gray-800">All Countries</option>
-                {uniqueCountries.map((c) => (
-                  <option key={c} value={c} className="bg-gray-800">
-                    {c}
-                  </option>
-                ))}
+                <option value="">All Countries</option>
+                {uniqueCountries.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
-            </div>
 
-            {/* New University Group Filter */}
-            <div className="relative">
-              <Users className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
               <select
+                className="bg-black/20 text-zinc-300 px-4 py-3 rounded-xl border border-white/5 outline-none focus:border-violet-500/50 appearance-none min-w-[140px]"
                 value={selectedGroup}
                 onChange={(e) => setSelectedGroup(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/30 border border-white/40 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all appearance-none"
               >
-                <option value="" className="bg-gray-800">All Groups</option>
-                <option value="Ivy League" className="bg-gray-800">Ivy League</option>
-                <option value="Big Ten" className="bg-gray-800">Big Ten</option>
-                <option value="Russell Group" className="bg-gray-800">Russell Group</option>
-                <option value="Ivy Plus" className="bg-gray-800">Ivy Plus</option>
+                <option value="">All Groups</option>
+                <option value="Ivy League">Ivy League</option>
+                <option value="Russell Group">Russell Group</option>
+                <option value="Big Ten">Big Ten</option>
               </select>
             </div>
           </div>
+        </section>
 
-          <div className="mt-6 text-center">
-            <span className="text-purple-200">
-              Found {filteredAndSortedUniversities.length} universities
-            </span>
+        {/* --- LIST --- */}
+        <section className="space-y-3">
+          <div className="px-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center">
+            <span>Showing {paginatedData.length} of {filteredData.length} Results</span>
+            <span>Page {currentPage}</span>
           </div>
-        </div>
-      </div>
 
-      {/* University Cards */}
-      <div className="container mx-auto px-6 pb-20">
-        <div className="grid gap-8">
-          {paginatedUniversities.map((university, index) => (
-            <div
-              key={index}
-              ref={index === 0 ? firstCardRef : null}
-              className="group bg-gradient-to-br from-slate-800/50  via-blue-800/40 to-black/60 backdrop-blur-md rounded-3xl border border-white/20 overflow-hidden hover:brightness-110 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
-              style={{
-                animationDelay: `${index * 100}ms`
-              }}
-            >
-              <div className="p-8">
-                <div className="flex flex-wrap md:flex-nowrap items-start gap-6">
-                  {/* Ranking Badge */}
-                  <div className={`${getRankingBadgeColor(university.aggregatedRank)} rounded-2xl px-6 py-3 shadow-lg mb-4 md:mb-0 w-full md:w-auto`}>
-                    <div className="text-center">
-                      <div className="text-3xl font-black">#{university.aggregatedRank}</div>
-                      <div className="text-xs opacity-90">OVERALL</div>
-                    </div>
-                  </div>
-                  
-                  {/* Score Badge */}
-                  <div className={`${getScoreBadgeColor(university.aggregatedScore)} rounded-2xl px-6 py-3 shadow-lg mb-4 md:mb-0 w-full md:w-auto`}>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold">{university.aggregatedScore.toFixed(1)}</div>
-                      <div className="text-xs opacity-90">SCORE</div>
-                    </div>
-                  </div>
-                  
-                  {/* University Info */}
-                  <div className="flex-1 min-w-0 w-full">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
-                      <div className="w-full">
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors break-words">
-                          {university.name}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-4 text-purple-200 mb-3 text-sm md:text-base">
-                          <div className="flex items-center gap-1">
-                            <Star className="w-4 h-4" />
-                            <span>{university.appearances} rankings</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Award className="w-4 h-4" />
-                            <span>Best: #{getBestRanking(university.originalRankings)}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Globe className="w-4 h-4" />
-                            <span>{university.country}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <TrendingUp className="w-4 h-4" />
-                            <span>#{university.countryRank}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="text-white/60 hover:text-white transition-colors self-end"
-                      >
-                        {expandedCard === index ? <ChevronUp /> : <ChevronDown />}
-                      </button>
-                    </div>
-                    
-                    {/* Rankings Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                      {Object.entries(university.originalRankings).map(([source, data]) => (
-                        <div key={source} className="bg-white/10 rounded-xl p-3 text-center border border-white/10 text-xs md:text-base">
-                          <div className="text-lg font-bold text-white">#{data.rank}</div>
-                          <div className="text-xs text-purple-200 uppercase tracking-wide">
-                            {source === 'qs' ? 'QS World' : 
-                             source === 'the' ? 'THE' :
-                             source === 'arwu' ? 'ARWU' : 
-                             source === 'usnews' ? 'US News' : source}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Expanded Content */}
-                {expandedCard === index && (
-                  <div className="mt-8 pt-8 border-t border-white/20 animate-in slide-in-from-top duration-300">
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <TrendingUp className="w-5 h-5" />
-                          Ranking Analysis
-                        </h4>
-                        
-                        <div className="space-y-4">
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div className="flex justify-between items-center mb-2">
-                              <span className="text-purple-200">Best Ranking</span>
-                              <span className="text-green-400 font-bold">#{getBestRanking(university.originalRankings)}</span>
-                            </div>
-                            <div className="flex justify-between items-center mb-2">
-                              <span className="text-purple-200">Worst Ranking</span>
-                              <span className="text-orange-400 font-bold">#{getWorstRanking(university.originalRankings)}</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-purple-200">Average Rank</span>
-                              <span className="text-yellow-300 font-bold">#{getAverageRanking(university.originalRankings)}</span>
-                            </div>
-                            <div className="flex justify-between items-center mt-2">
-                              <span className="text-purple-200">Consistency</span>
-                              <span className="text-blue-400 font-bold">
-                                {getRankingConsistency(university.originalRankings) < 2 ? 'Very High' :
-                                 getRankingConsistency(university.originalRankings) < 5 ? 'High' :
-                                 getRankingConsistency(university.originalRankings) < 10 ? 'Medium' : 'Variable'}
-                              </span>
-                            </div>
-                          </div>
-                          
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                            <h5 className="text-white font-semibold mb-3">Ranking Sources</h5>
-                            <div className="space-y-2 text-sm">
-                              <div className="flex justify-between">
-                                <span className="text-purple-200">QS World University Rankings</span>
-                                <span className="text-white">Global</span>
-                              </div>
-                              <div className="flex justify-between">
-                                <span className="text-purple-200">Times Higher Education</span>
-                                <span className="text-white">Global</span>
-                              </div>
-                              <div className="flex justify-between">
-                                <span className="text-purple-200">ARWU (Shanghai)</span>
-                                <span className="text-white">Global</span>
-                              </div>
-                              <div className="flex justify-between">
-                                <span className="text-purple-200">US News Global</span>
-                                <span className="text-white">Global</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                          <Award className="w-5 h-5" />
-                          Performance Metrics
-                        </h4>
-                        
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                            <div className="text-2xl font-bold text-yellow-400 mb-1">
-                              {university.aggregatedScore.toFixed(2)}
-                            </div>
-                            <div className="text-xs text-purple-200">Aggregated Score</div>
-                          </div>
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                            <div className="text-2xl font-bold text-green-400 mb-1">
-                              {university.appearances}
-                            </div>
-                            <div className="text-xs text-purple-200">Rankings Featured</div>
-                          </div>
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                            <div className="text-2xl font-bold text-blue-400 mb-1">
-                              #{university.countryRank}
-                            </div>
-                            <div className="text-xs text-purple-200">Country Rank</div>
-                          </div>
-                          <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-                            <div className="text-2xl font-bold text-yellow-300 mb-1">
-                              #{getAverageRanking(university.originalRankings)}
-                            </div>
-                            <div className="text-xs text-purple-200">Avg Rank</div>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                          <h5 className="text-white font-semibold mb-3">Ranking Distribution</h5>
-                          <div className="space-y-3">
-                            {Object.entries(university.originalRankings).map(([source, data]) => {
-                              const percentage = Math.max(10, 100 - (data.rank - 1) * 2);
-                              return (
-                                <div key={source} className="space-y-1">
-                                  <div className="flex justify-between text-sm">
-                                    <span className="text-purple-200 uppercase">{source}</span>
-                                    <span className="text-white font-semibold">#{data.rank}</span>
-                                  </div>
-                                  <div className="w-full bg-white/10 rounded-full h-2">
-                                    <div 
-                                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000"
-                                      style={{ width: `${percentage}%` }}
-                                    />
-                                  </div>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+          {paginatedData.map((uni, i) => (
+            <UniversityCard
+              key={uni.name}
+              university={uni}
+              expanded={expandedId === i}
+              onToggle={() => setExpandedId(expandedId === i ? null : i)}
+            />
           ))}
-        </div>
-        
-        {/* Pagination Controls */}
-        {totalPages > 1 && (
-          <div className="flex justify-center mt-12 gap-2 flex-wrap">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition"
-            >
-              Previous
-            </button>
-            {paginationWindow.map((page, idx) =>
-              page === 'ellipsis-prev' || page === 'ellipsis-next' ? (
-                <span key={page + idx} className="px-3 py-2 text-white/60">...</span>
-              ) : (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-4 py-2 rounded-lg border border-white/20 mx-1 ${
-                    page === currentPage
-                      ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold shadow-lg'
-                      : 'bg-white/10 text-white hover:bg-white/20 transition'
-                  }`}
-                  disabled={page === currentPage}
-                >
-                  {page}
-                </button>
-              )
-            )}
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition"
-            >
-              Next
-            </button>
-          </div>
-        )}
-        
-        {filteredAndSortedUniversities.length === 0 && (
-          <div className="text-center py-20">
-            <div className="text-6xl mb-4">🎓</div>
-            <h3 className="text-2xl font-bold text-white mb-2">No universities found</h3>
-            <p className="text-purple-200">Try adjusting your search or filter criteria</p>
-          </div>
-        )}
-      </div>
-      
-      {/* Footer */}
-      <footer className="border-t border-white/10 bg-black/20 backdrop-blur-md">
-        <div className="container mx-auto px-6 py-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center transform rotate-12 flex-shrink-0">
-                <BookOpen className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white font-semibold text-lg">Aggregated University Rankings</span>
+
+          {paginatedData.length === 0 && (
+            <div className="text-center py-20">
+              <div className="text-zinc-600 text-lg">No universities found matching your criteria.</div>
             </div>
-            <p className="text-purple-200 mb-6">
-              Aggregating university rankings from QS, Times Higher Education, ARWU, and US News
-            </p>
-            {/* Methodology Collapsible Section */}
-            <div className="max-w-2xl mx-auto">
-              <button
-                onClick={() => setShowMethodology((v) => !v)}
-                className="w-full flex items-center justify-between px-6 py-3 bg-white/10 border border-white/20 rounded-xl text-white font-semibold text-lg hover:bg-white/20 transition mb-2"
-                aria-expanded={showMethodology}
-              >
-                <span>Our Methodology</span>
-                <span className="ml-2">{showMethodology ? '▲' : '▼'}</span>
-              </button>
-              {showMethodology && (
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left text-purple-100 text-base animate-in mt-2">
-                  <div className="mb-4">
-                    <span className="block text-white font-bold mb-2">Advanced Borda Count with Penalized Absence</span>
-                    <span>
-                      Our aggregation uses an advanced Borda Count with Penalized Absence, based on research in rank aggregation theory.
-                    </span>
-                  </div>
-                  <ul className="list-disc list-inside mb-4 space-y-1">
-                    <li><b>Borda Count:</b> Each ranking position contributes proportionally to the final score.</li>
-                    <li><b>Penalized Absence:</b> Missing universities are penalized based on likely rank, not ignored.</li>
-                    <li><b>Confidence Weighting:</b> More credible sources and universities appearing in more sources are weighted higher.</li>
-                    <li><b>Weighted Sources:</b> Each ranking source can be assigned a different importance.</li>
-                  </ul>
-                  <div className="mb-4">
-                    <span className="block text-white font-semibold mb-1">Data Sources:</span>
-                    <span>QS, Times Higher Education (THE), ARWU, US News Global Universities</span>
-                  </div>
-                  <ul className="list-disc list-inside mb-4 space-y-1">
-                    <li>Normalization for different scales</li>
-                    <li>Confidence scoring</li>
-                    <li>Outlier detection</li>
-                    <li>Export options (CSV, JSON)</li>
-                  </ul>
-                  <div className="mt-4">
-                    <span className="block text-white font-semibold mb-1">References:</span>
-                    <span>Fox, N. B., & Bruyns, B. (2024). An Evaluation of Borda Count Variations Using Ranked Choice Voting Data. arXiv:2501.00618.</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          )}
+        </section>
+
+        {/* --- PAGINATION --- */}
+        <div className="mt-12 flex justify-center gap-2">
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(p => p - 1)}
+            className="px-4 py-2 rounded-lg bg-white/5 text-zinc-300 disabled:opacity-30 hover:bg-white/10 transition-colors"
+          >
+            Previous
+          </button>
+          <span className="px-4 py-2 text-zinc-500 font-mono">
+            Page {currentPage}
+          </span>
+          <button
+            disabled={paginatedData.length < itemsPerPage}
+            onClick={() => {
+              setCurrentPage(p => p + 1);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="px-4 py-2 rounded-lg bg-white/5 text-zinc-300 disabled:opacity-30 hover:bg-white/10 transition-colors"
+          >
+            Next
+          </button>
         </div>
-      </footer>
+
+      </main>
     </div>
   );
 }
