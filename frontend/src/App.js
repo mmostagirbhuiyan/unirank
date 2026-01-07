@@ -386,13 +386,13 @@ const MainApp = () => {
 
         {/* --- CONTROLS (DOCKED TOOLBAR) --- */}
         <section className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur-xl transition-all duration-300 shadow-sm supports-[backdrop-filter]:bg-background/80">
-          <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row gap-3">
+          <div className="container mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row gap-6">
             <div className="relative flex-grow">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search universities..."
-                className="w-full bg-muted/50 text-foreground pl-10 pr-4 py-2.5 rounded-lg border border-transparent focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-muted-foreground/70 text-sm font-medium"
+                className="w-full bg-muted/50 text-foreground pl-12 pr-4 py-3 rounded-xl border border-transparent focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-muted-foreground/70 text-sm font-medium"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -400,7 +400,7 @@ const MainApp = () => {
 
             <div className="flex gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[180px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-3 rounded-xl border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[180px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
@@ -413,7 +413,7 @@ const MainApp = () => {
               </select>
 
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-3 rounded-xl border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
               >
@@ -422,7 +422,7 @@ const MainApp = () => {
               </select>
 
               <select
-                className="bg-muted/50 text-foreground px-4 py-2.5 rounded-lg border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
+                className="bg-muted/50 text-foreground px-4 py-3 rounded-xl border border-transparent outline-none focus:bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 appearance-none min-w-[160px] text-sm font-medium cursor-pointer hover:bg-muted/80 transition-colors"
                 value={selectedGroup}
                 onChange={(e) => setSelectedGroup(e.target.value)}
               >
@@ -437,7 +437,7 @@ const MainApp = () => {
 
         {/* --- LIST --- */}
         <section className="mt-6 space-y-3">
-          <div className="px-4 text-xs font-mono text-muted-foreground uppercase tracking-widest flex justify-between items-center">
+          <div className="text-xs font-mono text-muted-foreground uppercase tracking-widest flex justify-between items-center">
             <span>Showing {paginatedData.length} of {filteredData.length} Results</span>
             <span>Page {currentPage}</span>
           </div>
