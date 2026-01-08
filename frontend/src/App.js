@@ -153,17 +153,17 @@ const UniversityCard = ({ university, expanded, onToggle }) => {
 
         {/* Info */}
         <div className="flex-grow min-w-0">
-          <h3 className="text-xl font-bold mb-2 truncate group-hover:text-primary transition-colors">
+          <h3 className="text-xl font-bold mb-2 break-words sm:truncate group-hover:text-primary transition-colors">
             {university.name}
           </h3>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Globe size={14} />
               {university.country}
             </span>
-            <span className="w-1 h-1 rounded-full bg-border"></span>
+            <span className="hidden sm:inline-flex w-1 h-1 rounded-full bg-border"></span>
             <span className="font-mono">Score: <span className="text-foreground font-medium">{university.aggregatedScore.toFixed(1)}</span></span>
-            <span className="w-1 h-1 rounded-full bg-border"></span>
+            <span className="hidden sm:inline-flex w-1 h-1 rounded-full bg-border"></span>
             <span>Best: <span className="text-emerald-500 font-medium">#{bestRank}</span></span>
           </div>
         </div>
