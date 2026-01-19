@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a university rankings aggregator that collects data from 4 major ranking sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The system maintains 1753 unique universities with comprehensive data integrity verification and a 5-tier name standardization hierarchy.
+**UniRank.AI** - A unified intelligence platform that aggregates global university rankings from 4 major sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The system maintains 1753 unique universities with comprehensive data integrity verification and a 5-tier name standardization hierarchy.
+
+**Live Site**: <https://unirank.mmostagirbhuiyan.com/>
 
 ## Core Architecture
 

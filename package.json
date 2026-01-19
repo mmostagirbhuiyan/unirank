@@ -1,7 +1,7 @@
 {
-  "name": "university-ranking-aggregator",
+  "name": "unirank",
   "version": "1.0.0",
-  "description": "A web application to aggregate university rankings from multiple sources.",
+  "description": "UniRank.AI - A unified intelligence platform aggregating global university rankings from QS, THE, ARWU, and US News.",
   "main": "scripts/scrape-rankings.js",
   "scripts": {
     "start": "node scripts/matchUniversities.js && node scripts/aggregateRankings.js",
