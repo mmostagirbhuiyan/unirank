@@ -1,8 +1,8 @@
 {
-  "name": "frontend",
+  "name": "unirank-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mmostagirbhuiyan.github.io/university-ranking-aggregator/",
+  "homepage": "https://unirank.mmostagirbhuiyan.com/",
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@testing-library/jest-dom": "^5.17.0",
