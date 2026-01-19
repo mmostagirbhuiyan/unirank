@@ -1,0 +1,670 @@
+[
+  {
+    "originalName": "Abdul Wali Khan University Mardan",
+    "suggestedStandardizedName": "Abdul Wali Khan University"
+  },
+  {
+    "originalName": "Adam Mickiewicz University in Poznan",
+    "suggestedStandardizedName": "Adam Mickiewicz University"
+  },
+  {
+    "originalName": "Aix-Marseille University",
+    "suggestedStandardizedName": "Aix-Marseille Universite"
+  },
+  {
+    "originalName": "Al Jouf University",
+    "suggestedStandardizedName": "Jouf University"
+  },
+  {
+    "originalName": "Arizona State University",
+    "suggestedStandardizedName": "Arizona State University-Tempe"
+  },
+  {
+    "originalName": "Bar-Ilan University",
+    "suggestedStandardizedName": "Bar Ilan University"
+  },
+  {
+    "originalName": "Brunel University of London",
+    "suggestedStandardizedName": "Brunel University London"
+  },
+  {
+    "originalName": "California Institute of Technology - Caltech",
+    "suggestedStandardizedName": "California Institute of Technology"
+  },
+  {
+    "originalName": "Catholic University of Leuven",
+    "suggestedStandardizedName": "KU Leuven"
+  },
+  {
+    "originalName": "China Medical University Taiwan",
+    "suggestedStandardizedName": "China Medical University (Taiwan)"
+  },
+  {
+    "originalName": "China University of Geosciences Wuhan",
+    "suggestedStandardizedName": "China University of Geosciences"
+  },
+  {
+    "originalName": "China University of Mining Technology",
+    "suggestedStandardizedName": "China University of Mining & Technology"
+  },
+  {
+    "originalName": "City University of Hong Kong",
+    "suggestedStandardizedName": "University of Hong Kong"
+  },
+  {
+    "originalName": "Comenius University in Bratislava",
+    "suggestedStandardizedName": "Comenius University Bratislava"
+  },
+  {
+    "originalName": "Complutense University of Madrid",
+    "suggestedStandardizedName": "University Complutense Madrid"
+  },
+  {
+    "originalName": "Ecole Normale Supérieure de Lyon",
+    "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
+  },
+  {
+    "originalName": "Grenoble Alpes University",
+    "suggestedStandardizedName": "Universite Grenoble Alpes (UGA)"
+  },
+  {
+    "originalName": "Guangzhou University",
+    "suggestedStandardizedName": "Yangzhou University"
+  },
+  {
+    "originalName": "Hamad Bin Khalifa University-Qatar",
+    "suggestedStandardizedName": "Hamad Bin Khalifa University"
+  },
+  {
+    "originalName": "Hanover Medical School",
+    "suggestedStandardizedName": "Hannover Medical School"
+  },
+  {
+    "originalName": "Hefei University of Technology",
+    "suggestedStandardizedName": "Hebei University of Technology"
+  },
+  {
+    "originalName": "Hohai University",
+    "suggestedStandardizedName": "Bohai University"
+  },
+  {
+    "originalName": "Hunan Normal University",
+    "suggestedStandardizedName": "Henan Normal University"
+  },
+  {
+    "originalName": "Huzhou University",
+    "suggestedStandardizedName": "Fuzhou University"
+  },
+  {
+    "originalName": "I.M. Sechenov First Moscow State Medical University",
+    "suggestedStandardizedName": "Sechenov First Moscow State Medical University"
+  },
+  {
+    "originalName": "Imam Muhammad Ibn Saud Islamic University",
+    "suggestedStandardizedName": "Imam Mohammad Ibn Saud Islamic University (IMSIU)"
+  },
+  {
+    "originalName": "Indian Institute of Science Bangalore",
+    "suggestedStandardizedName": "Indian Institute of Science"
+  },
+  {
+    "originalName": "Iran University of Medical Sciences",
+    "suggestedStandardizedName": "Arak University of Medical Sciences"
+  },
+  {
+    "originalName": "Iran University of Science and Technology Tehran",
+    "suggestedStandardizedName": "Iran University of Science and Technology"
+  },
+  {
+    "originalName": "Johannes Gutenberg University of Mainz",
+    "suggestedStandardizedName": "Johannes Gutenberg Universität Mainz"
+  },
+  {
+    "originalName": "Karolinska Institute",
+    "suggestedStandardizedName": "Karolinska Institutet"
+  },
+  {
+    "originalName": "KTH - Royal Institute of Technology",
+    "suggestedStandardizedName": "Royal Institute of Technology"
+  },
+  {
+    "originalName": "Lappeenranta-Lahti University of Technology LUT",
+    "suggestedStandardizedName": "Lappeenranta University of Technology"
+  },
+  {
+    "originalName": "Leibniz Universität Hannover",
+    "suggestedStandardizedName": "Leibniz University Hannover"
+  },
+  {
+    "originalName": "London School of Economics",
+    "suggestedStandardizedName": "London School Economics & Political Science"
+  },
+  {
+    "originalName": "Loyola University of Chicago",
+    "suggestedStandardizedName": "Loyola University Chicago"
+  },
+  {
+    "originalName": "Maastricht University",
+    "suggestedStandardizedName": "University of Maastricht"
+  },
+  {
+    "originalName": "Moscow State University",
+    "suggestedStandardizedName": "Lomonosov Moscow State University"
+  },
+  {
+    "originalName": "Nanjing University of Posts & Telecommunications",
+    "suggestedStandardizedName": "Beijing University of Posts & Telecommunications"
+  },
+  {
+    "originalName": "Nanyang Technological University Singapore",
+    "suggestedStandardizedName": "Nanyang Technological University"
+  },
+  {
+    "originalName": "National Autonomous University of Mexico",
+    "suggestedStandardizedName": "Universidad Nacional Autonoma de Mexico"
+  },
+  {
+    "originalName": "National Chung Cheng University",
+    "suggestedStandardizedName": "National Cheng Kung University"
+  },
+  {
+    "originalName": "New University of Lisbon",
+    "suggestedStandardizedName": "Universidade Nova de Lisboa"
+  },
+  {
+    "originalName": "Newcastle University",
+    "suggestedStandardizedName": "Newcastle University - UK"
+  },
+  {
+    "originalName": "Newcastle University - Newcastle-upon-Tyne",
+    "suggestedStandardizedName": "Newcastle University - UK"
+  },
+  {
+    "originalName": "Newcastle University Newcastle upon Tyne",
+    "suggestedStandardizedName": "Newcastle University"
+  },
+  {
+    "originalName": "Northeast Normal University - China",
+    "suggestedStandardizedName": "Northeast Normal University"
+  },
+  {
+    "originalName": "Örebro University",
+    "suggestedStandardizedName": "Orebro University"
+  },
+  {
+    "originalName": "Oregon Health & Science University",
+    "suggestedStandardizedName": "Oregon Health and Science University"
+  },
+  {
+    "originalName": "Paris Cité University",
+    "suggestedStandardizedName": "Universite Paris Cite"
+  },
+  {
+    "originalName": "Peoples' Friendship University of Russia",
+    "suggestedStandardizedName": "Peoples Friendship University of Russia"
+  },
+  {
+    "originalName": "Pontifical Catholic University of Chile",
+    "suggestedStandardizedName": "Pontificia Universidad Catolica de Chile"
+  },
+  {
+    "originalName": "PSL Research University Paris",
+    "suggestedStandardizedName": "Universite PSL"
+  },
+  {
+    "originalName": "Qatar University",
+    "suggestedStandardizedName": "University of Qatar"
+  },
+  {
+    "originalName": "Quaid-i-Azam University",
+    "suggestedStandardizedName": "Quaid I Azam University"
+  },
+  {
+    "originalName": "Queen Mary - University of London",
+    "suggestedStandardizedName": "Queen Mary University London"
+  },
+  {
+    "originalName": "Queen Mary University of London",
+    "suggestedStandardizedName": "Queen Mary University London"
+  },
+  {
+    "originalName": "Queens University Belfast",
+    "suggestedStandardizedName": "Queen's University Belfast"
+  },
+  {
+    "originalName": "Radboud University of Nijmegen",
+    "suggestedStandardizedName": "Radboud University Nijmegen"
+  },
+  {
+    "originalName": "Rutgers - The State University of New Jersey",
+    "suggestedStandardizedName": "Rutgers University New Brunswick"
+  },
+  {
+    "originalName": "Sao Paulo State University",
+    "suggestedStandardizedName": "Universidade Estadual Paulista"
+  },
+  {
+    "originalName": "Shandong University of Science Technology",
+    "suggestedStandardizedName": "Shandong University of Science & Technology"
+  },
+  {
+    "originalName": "Shiraz University of Medical Sciences",
+    "suggestedStandardizedName": "Iran University of Medical Sciences"
+  },
+  {
+    "originalName": "Sorbonne University",
+    "suggestedStandardizedName": "Sorbonne Universite"
+  },
+  {
+    "originalName": "South China Agricultural University",
+    "suggestedStandardizedName": "China Agricultural University"
+  },
+  {
+    "originalName": "South China University of Technology",
+    "suggestedStandardizedName": "North China University of Technology"
+  },
+  {
+    "originalName": "Southeast University - China",
+    "suggestedStandardizedName": "Southeast University"
+  },
+  {
+    "originalName": "Southern Medical University",
+    "suggestedStandardizedName": "Southern Medical University China"
+  },
+  {
+    "originalName": "Southwest University - China",
+    "suggestedStandardizedName": "Southwest University"
+  },
+  {
+    "originalName": "St. Petersburg State University",
+    "suggestedStandardizedName": "Saint Petersburg State University"
+  },
+  {
+    "originalName": "State University of Campinas",
+    "suggestedStandardizedName": "Universidade Estadual de Campinas"
+  },
+  {
+    "originalName": "State University of New York at Buffalo",
+    "suggestedStandardizedName": "University at Buffalo"
+  },
+  {
+    "originalName": "State University of New York at Buffalo",
+    "suggestedStandardizedName": "University at Buffalo, SUNY"
+  },
+  {
+    "originalName": "State University of New York at Stony Brook",
+    "suggestedStandardizedName": "Stony Brook University"
+  },
+  {
+    "originalName": "Stellenbosch University",
+    "suggestedStandardizedName": "University of Stellenbosch"
+  },
+  {
+    "originalName": "Sun Yat-Sen University",
+    "suggestedStandardizedName": "Sun Yat Sen University"
+  },
+  {
+    "originalName": "Swiss Federal Institute of Technology Lausanne - EPFL",
+    "suggestedStandardizedName": "Ecole Polytechnique Federale de Lausanne"
+  },
+  {
+    "originalName": "Swiss Federal Institute of Technology Zurich - ETHZ",
+    "suggestedStandardizedName": "ETH Zurich"
+  },
+  {
+    "originalName": "Symbiosis International (Deemed University)",
+    "suggestedStandardizedName": "Symbiosis International University"
+  },
+  {
+    "originalName": "Tampere University",
+    "suggestedStandardizedName": "University of Tampere"
+  },
+  {
+    "originalName": "Technical University of München",
+    "suggestedStandardizedName": "Technical University of Munich"
+  },
+  {
+    "originalName": "Tehran University of Medical Sciences",
+    "suggestedStandardizedName": "Iran University of Medical Sciences"
+  },
+  {
+    "originalName": "The University of Osaka",
+    "suggestedStandardizedName": "Osaka University"
+  },
+  {
+    "originalName": "Thomas Jefferson University",
+    "suggestedStandardizedName": "Jefferson University"
+  },
+  {
+    "originalName": "Ulm University",
+    "suggestedStandardizedName": "University of Ulm"
+  },
+  {
+    "originalName": "Umm Al-Qura University",
+    "suggestedStandardizedName": "Umm Al Qura University"
+  },
+  {
+    "originalName": "Universidade de Brasilia (UnB)",
+    "suggestedStandardizedName": "Universidade de Brasilia"
+  },
+  {
+    "originalName": "Universitas Airlangga",
+    "suggestedStandardizedName": "Airlangga University"
+  },
+  {
+    "originalName": "Universitat Ramon Llull",
+    "suggestedStandardizedName": "Ramon Llull University"
+  },
+  {
+    "originalName": "Université Paris-Saclay",
+    "suggestedStandardizedName": "Universite Paris Saclay"
+  },
+  {
+    "originalName": "University of Adelaide",
+    "suggestedStandardizedName": "Adelaide University"
+  },
+  {
+    "originalName": "University of Basque Country",
+    "suggestedStandardizedName": "University of the Basque Country"
+  },
+  {
+    "originalName": "University of Catania",
+    "suggestedStandardizedName": "Catania University"
+  },
+  {
+    "originalName": "University of Duisburg-Essen",
+    "suggestedStandardizedName": "University of Duisburg Essen"
+  },
+  {
+    "originalName": "University of Durham",
+    "suggestedStandardizedName": "Durham University"
+  },
+  {
+    "originalName": "University of Hawaii Manoa",
+    "suggestedStandardizedName": "University of Hawaii Manoa"
+  },
+  {
+    "originalName": "University of Heidelberg",
+    "suggestedStandardizedName": "Ruprecht Karls University Heidelberg"
+  },
+  {
+    "originalName": "University of Hohenheim",
+    "suggestedStandardizedName": "University Hohenheim"
+  },
+  {
+    "originalName": "University of Jordan",
+    "suggestedStandardizedName": "Jordan University"
+  },
+  {
+    "originalName": "University of KwaZulu-Natal",
+    "suggestedStandardizedName": "University of Kwazulu Natal"
+  },
+  {
+    "originalName": "University of La Laguna",
+    "suggestedStandardizedName": "Universidad de la Laguna"
+  },
+  {
+    "originalName": "University of Leiden",
+    "suggestedStandardizedName": "Leiden University"
+  },
+  {
+    "originalName": "University of Leipzig",
+    "suggestedStandardizedName": "Leipzig University"
+  },
+  {
+    "originalName": "University of Lisbon",
+    "suggestedStandardizedName": "Universidade de Lisboa"
+  },
+  {
+    "originalName": "University of Malaya",
+    "suggestedStandardizedName": "Universiti Malaya"
+  },
+  {
+    "originalName": "University of Maryland Baltimore County",
+    "suggestedStandardizedName": "University of Maryland Baltimore"
+  },
+  {
+    "originalName": "university of massachusetts",
+    "suggestedStandardizedName": "University of Massachusetts Amherst"
+  },
+  {
+    "originalName": "University of Massachusetts - Amherst",
+    "suggestedStandardizedName": "University of Massachusetts Amherst"
+  },
+  {
+    "originalName": "University of Massachusetts (System)",
+    "suggestedStandardizedName": "University of Massachusetts Amherst"
+  },
+  {
+    "originalName": "University of Michigan - Ann Arbor",
+    "suggestedStandardizedName": "University of Michigan"
+  },
+  {
+    "originalName": "University of Milan - Bicocca",
+    "suggestedStandardizedName": "University of Milano-Bicocca"
+  },
+  {
+    "originalName": "University of München",
+    "suggestedStandardizedName": "University of Munich"
+  },
+  {
+    "originalName": "University of Nevada - Reno",
+    "suggestedStandardizedName": "University of Nevada Reno"
+  },
+  {
+    "originalName": "University of New South Wales",
+    "suggestedStandardizedName": "University of New South Wales Sydney"
+  },
+  {
+    "originalName": "University of Northumbria at Newcastle",
+    "suggestedStandardizedName": "Northumbria University at Newcastle"
+  },
+  {
+    "originalName": "University of Perugia",
+    "suggestedStandardizedName": "Perugia University"
+  },
+  {
+    "originalName": "University of Petroleum (East China)",
+    "suggestedStandardizedName": "China University of Petroleum"
+  },
+  {
+    "originalName": "University of Porto",
+    "suggestedStandardizedName": "Universidade do Porto"
+  },
+  {
+    "originalName": "University of Putra Malaysia",
+    "suggestedStandardizedName": "Universiti Putra Malaysia"
+  },
+  {
+    "originalName": "University of Rome - La Sapienza",
+    "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "University of Rovira i Virgili",
+    "suggestedStandardizedName": "Rovira i Virgili University"
+  },
+  {
+    "originalName": "University of Santiago of Compostela",
+    "suggestedStandardizedName": "University of Santiago de Compostela"
+  },
+  {
+    "originalName": "University of Sao Paulo",
+    "suggestedStandardizedName": "Universidade de Sao Paulo"
+  },
+  {
+    "originalName": "University of Seoul",
+    "suggestedStandardizedName": "Seoul University"
+  },
+  {
+    "originalName": "University of Seville",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "University of Siegen",
+    "suggestedStandardizedName": "University of Siena"
+  },
+  {
+    "originalName": "University of St Andrews",
+    "suggestedStandardizedName": "University of St. Andrews"
+  },
+  {
+    "originalName": "University of the Punjab",
+    "suggestedStandardizedName": "University of Punjab"
+  },
+  {
+    "originalName": "University of the Republic",
+    "suggestedStandardizedName": "Universidad de la Republica, Uruguay"
+  },
+  {
+    "originalName": "University of The Witwatersrand",
+    "suggestedStandardizedName": "University of Witwatersrand"
+  },
+  {
+    "originalName": "University of Tsukuba",
+    "suggestedStandardizedName": "Tsukuba University"
+  },
+  {
+    "originalName": "University of Ulsan",
+    "suggestedStandardizedName": "Ulsan University"
+  },
+  {
+    "originalName": "University of Ulster",
+    "suggestedStandardizedName": "Ulster University"
+  },
+  {
+    "originalName": "University of Verona",
+    "suggestedStandardizedName": "Verona University"
+  },
+  {
+    "originalName": "University of Victoria",
+    "suggestedStandardizedName": "Victoria University"
+  },
+  {
+    "originalName": "University of Washington",
+    "suggestedStandardizedName": "University of Washington Seattle"
+  },
+  {
+    "originalName": "University Paul Sabatier - Toulouse III",
+    "suggestedStandardizedName": "Universite Toulouse III - Paul Sabatier"
+  },
+  {
+    "originalName": "University Pompeu Fabra",
+    "suggestedStandardizedName": "Pompeu Fabra University"
+  },
+  {
+    "originalName": "University Savoie Mont Blanc",
+    "suggestedStandardizedName": "Universite Savoie Mont Blanc"
+  },
+  {
+    "originalName": "UWE Bristol (University of the West of England)",
+    "suggestedStandardizedName": "University of the West of England - Bristol"
+  },
+  {
+    "originalName": "Victoria University Wellington",
+    "suggestedStandardizedName": "Victoria University of Wellington"
+  },
+  {
+    "originalName": "Viet Nam National University - Hanoi",
+    "suggestedStandardizedName": "Vietnam National University Hanoi"
+  },
+  {
+    "originalName": "Viet Nam National University - Ho Chi Minh City",
+    "suggestedStandardizedName": "Vietnam National University Hochiminh City"
+  },
+  {
+    "originalName": "Wageningen University & Research Center",
+    "suggestedStandardizedName": "Wageningen University & Research"
+  },
+  {
+    "originalName": "Washington University in St. Louis",
+    "suggestedStandardizedName": "Washington University (WUSTL)"
+  },
+  {
+    "originalName": "Western Sydney University",
+    "suggestedStandardizedName": "University of Western Sydney"
+  },
+  {
+    "originalName": "Xinjiang University",
+    "suggestedStandardizedName": "Nanjing University"
+  },
+  {
+    "originalName": "Universidad de Sevilla",
+    "suggestedStandardizedName": "University of Sevilla"
+  },
+  {
+    "originalName": "Universität Duisburg-Essen",
+    "suggestedStandardizedName": "University of Duisburg Essen"
+  },
+  {
+    "originalName": "Southern Medical University - China",
+    "suggestedStandardizedName": "Southern Medical University China"
+  },
+  {
+    "originalName": "Sapienza University of Rome",
+    "suggestedStandardizedName": "Sapienza University Rome"
+  },
+  {
+    "originalName": "Northeastern University in China",
+    "suggestedStandardizedName": "Northeastern University - China"
+  },
+  {
+    "originalName": "Sun Yat-sen University",
+    "suggestedStandardizedName": "Sun Yat Sen University"
+  },
+  {
+    "originalName": "Queen's University of Belfast",
+    "suggestedStandardizedName": "Queen's University Belfast"
+  },
+  {
+    "originalName": "China Medical University Taiwan",
+    "suggestedStandardizedName": "China Medical University (Taiwan)"
+  },
+  {
+    "originalName": "China Medical University - Taiwan",
+    "suggestedStandardizedName": "China Medical University (Taiwan)"
+  },
+  {
+    "originalName": "Nanjing University of Science and Technology",
+    "suggestedStandardizedName": "Nanjing University of Science & Technology"
+  },
+  {
+    "originalName": "Jordan University of Science and Technology",
+    "suggestedStandardizedName": "Jordan University of Science & Technology"
+  },
+  {
+    "originalName": "Ajman University of Science and Technology",
+    "suggestedStandardizedName": "Ajman University of Science & Technology"
+  },
+  {
+    "originalName": "Iran University of Science and Technology",
+    "suggestedStandardizedName": "Iran University of Science & Technology"
+  },
+  {
+    "originalName": "Tianjin University of Science and Technology",
+    "suggestedStandardizedName": "Tianjin University of Science & Technology"
+  },
+  {
+    "originalName": "Henan University of Science and Technology",
+    "suggestedStandardizedName": "Henan University of Science & Technology"
+  },
+  {
+    "originalName": "Xi'an University of Science and Technology",
+    "suggestedStandardizedName": "Xi'an University of Science & Technology"
+  },
+  {
+    "originalName": "Wuhan University of Science and Technology",
+    "suggestedStandardizedName": "Wuhan University of Science & Technology"
+  },
+  {
+    "originalName": "Pohang University of Science and Technology",
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
+  },
+  {
+    "originalName": "Pohang University of Science And Technology",
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
+  },
+  {
+    "originalName": "Pohang University of Science & Technology (POSTECH)",
+    "suggestedStandardizedName": "Pohang University of Science & Technology"
+  }
+]
