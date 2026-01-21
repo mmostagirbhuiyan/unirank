@@ -6,11 +6,14 @@ import {
   Award,
   ChevronDown,
   ChevronUp,
-  BookOpen,
   ArrowUpRight,
   Sun,
   Moon,
-  Monitor
+  Monitor,
+  Database,
+  GitMerge,
+  Layers,
+  BarChart3
 } from 'lucide-react';
 import { Doughnut } from 'react-chartjs-2';
 import {
@@ -22,6 +25,7 @@ import {
   BarElement,
   ArcElement
 } from 'chart.js';
+import EnhancedCardTabs from './components/EnhancedCardTabs';
 
 ChartJS.register(
   Tooltip,
@@ -134,8 +138,19 @@ const Badge = ({ children, className = "", variant = "neutral" }) => {
   );
 };
 
-const UniversityCard = ({ university, expanded, onToggle }) => {
+const UniversityCard = ({ university, expanded, onToggle, globalStats }) => {
   const bestRank = Math.min(...Object.values(university.originalRankings).map(r => r.rank));
+  const hasInsights = !!university.insights;
+
+  // Get consensus badge for mini display
+  const getConsensusBadge = () => {
+    if (!hasInsights || !university.insights.disagreement) return null;
+    const category = university.insights.disagreement.category;
+    if (category === 'high-consensus') return { label: 'High Consensus', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' };
+    if (category === 'high-disagreement') return { label: 'Disputed', color: 'bg-red-500/10 text-red-600 dark:text-red-400' };
+    return null;
+  };
+  const consensusBadge = getConsensusBadge();
 
   return (
     <div className={`bg-card text-card-foreground rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-colors duration-200 ${expanded ? 'ring-1 ring-primary/20' : ''} shadow-sm`}>
@@ -153,9 +168,16 @@ const UniversityCard = ({ university, expanded, onToggle }) => {
 
         {/* Info */}
         <div className="flex-grow min-w-0">
-          <h3 className="text-xl font-bold mb-2 break-words sm:truncate group-hover:text-primary transition-colors">
-            {university.name}
-          </h3>
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
+            <h3 className="text-xl font-bold break-words sm:truncate group-hover:text-primary transition-colors">
+              {university.name}
+            </h3>
+            {consensusBadge && (
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${consensusBadge.color}`}>
+                {consensusBadge.label}
+              </span>
+            )}
+          </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Globe size={14} />
@@ -186,48 +208,53 @@ const UniversityCard = ({ university, expanded, onToggle }) => {
       {/* Expanded Details */}
       {expanded && (
         <div className="border-t border-border bg-muted/30 p-6 animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4">Rankings Breakdown</h4>
-              <div className="space-y-3">
-                {Object.entries(university.originalRankings).map(([source, data]) => (
-                  <div key={source} className="flex items-center justify-between p-3 rounded-lg bg-card border border-border shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <span className={`w-2 h-2 rounded-full ${source === 'qs' ? 'bg-orange-500' : source === 'the' ? 'bg-yellow-500' : source === 'arwu' ? 'bg-red-500' : 'bg-blue-500'}`}></span>
-                      <span className="capitalize font-medium">
-                        {source === 'usnews' ? 'US News & World Report' :
-                          source === 'the' ? 'Times Higher Education' :
-                            source === 'qs' ? 'QS World University' : 'ARWU (Shanghai)'}
-                      </span>
+          {hasInsights ? (
+            <EnhancedCardTabs university={university} globalStats={globalStats} />
+          ) : (
+            /* Fallback to original view if no insights */
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4">Rankings Breakdown</h4>
+                <div className="space-y-3">
+                  {Object.entries(university.originalRankings).map(([source, data]) => (
+                    <div key={source} className="flex items-center justify-between p-3 rounded-lg bg-card border border-border shadow-sm">
+                      <div className="flex items-center gap-3">
+                        <span className={`w-2 h-2 rounded-full ${source === 'qs' ? 'bg-orange-500' : source === 'the' ? 'bg-yellow-500' : source === 'arwu' ? 'bg-red-500' : 'bg-blue-500'}`}></span>
+                        <span className="capitalize font-medium">
+                          {source === 'usnews' ? 'US News & World Report' :
+                            source === 'the' ? 'Times Higher Education' :
+                              source === 'qs' ? 'QS World University' : 'ARWU (Shanghai)'}
+                        </span>
+                      </div>
+                      <div className="font-mono text-lg font-bold">#{data.rank}</div>
                     </div>
-                    <div className="font-mono text-lg font-bold">#{data.rank}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div>
-              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4">Performance Metrics</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
-                  <div className="text-xs text-muted-foreground mb-1 font-medium">National Rank</div>
-                  <div className="text-2xl font-bold">#{university.countryRank}</div>
-                </div>
-                <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
-                  <div className="text-xs text-muted-foreground mb-1 font-medium">Consistency Score</div>
-                  <div className="text-2xl font-bold">{(university.aggregatedScore / 100).toFixed(1)}/10</div>
-                </div>
-                <div className="p-4 rounded-lg bg-card border border-border shadow-sm col-span-2">
-                  <div className="text-xs text-muted-foreground mb-2 font-medium">Ranking Sources</div>
-                  <div className="flex gap-2">
-                    {Object.keys(university.originalRankings).map(source => (
-                      <Badge key={source} variant="neutral" className="uppercase">{source}</Badge>
-                    ))}
+              <div>
+                <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4">Performance Metrics</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1 font-medium">National Rank</div>
+                    <div className="text-2xl font-bold">#{university.countryRank}</div>
+                  </div>
+                  <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+                    <div className="text-xs text-muted-foreground mb-1 font-medium">Consistency Score</div>
+                    <div className="text-2xl font-bold">{(university.aggregatedScore / 100).toFixed(1)}/10</div>
+                  </div>
+                  <div className="p-4 rounded-lg bg-card border border-border shadow-sm col-span-2">
+                    <div className="text-xs text-muted-foreground mb-2 font-medium">Ranking Sources</div>
+                    <div className="flex gap-2">
+                      {Object.keys(university.originalRankings).map(source => (
+                        <Badge key={source} variant="neutral" className="uppercase">{source}</Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       )}
     </div>
@@ -237,6 +264,7 @@ const UniversityCard = ({ university, expanded, onToggle }) => {
 // --- Main Content (Wrapped) ---
 const MainApp = () => {
   const [universities, setUniversities] = useState([]);
+  const [globalStats, setGlobalStats] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('aggregatedRank');
   const [expandedId, setExpandedId] = useState(null);
@@ -247,10 +275,24 @@ const MainApp = () => {
   const itemsPerPage = 50;
 
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + '/data/aggregated-rankings.json')
-      .then(res => res.json())
-      .then(data => { setUniversities(data); setIsLoading(false); })
-      .catch(err => console.error(err));
+    // Load enhanced rankings (with insights) and global stats in parallel
+    Promise.all([
+      fetch(process.env.PUBLIC_URL + '/data/enhanced-aggregated-rankings.json').then(res => res.json()),
+      fetch(process.env.PUBLIC_URL + '/data/global-stats.json').then(res => res.json())
+    ])
+      .then(([data, stats]) => {
+        setUniversities(data);
+        setGlobalStats(stats);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error('Error loading enhanced data, falling back to basic:', err);
+        // Fallback to basic aggregated rankings if enhanced not available
+        fetch(process.env.PUBLIC_URL + '/data/aggregated-rankings.json')
+          .then(res => res.json())
+          .then(data => { setUniversities(data); setIsLoading(false); })
+          .catch(e => console.error(e));
+      });
   }, []);
 
   // --- Derived State ---
@@ -335,10 +377,10 @@ const MainApp = () => {
       <header className="relative z-50 border-b border-border bg-background/95 backdrop-blur-xl sticky top-0 transition-colors duration-300 supports-[backdrop-filter]:bg-background/80">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-tr from-primary to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
-              <BookOpen className="text-white w-5 h-5" />
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-violet-600 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+              <BarChart3 className="text-white w-4 h-4" strokeWidth={2.5} />
             </div>
-            <span className="text-lg font-bold font-space tracking-tight">UniRank<span className="text-primary">.AI</span></span>
+            <span className="text-lg font-bold font-space tracking-tight"><span className="text-foreground">Uni</span><span className="text-primary">Rank</span></span>
             <Badge variant="primary" className="ml-2 hidden sm:flex">BETA</Badge>
           </div>
 
@@ -360,8 +402,37 @@ const MainApp = () => {
             <span className="text-foreground">Redefined.</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed">
-            A unified intelligence platform Aggregating global university data from QS, THE, ARWU, and US News into a single, decisive metric.
+            Aggregating global university data from QS, THE, ARWU, and US News into a single, decisive metric.
           </p>
+
+          {/* Pipeline Stats Banner */}
+          {globalStats && (
+            <div className="mt-10 inline-flex flex-wrap items-center gap-3 md:gap-0 py-3 px-1 md:px-0">
+              <div className="flex items-center gap-2.5 text-sm group">
+                <div className="p-1.5 rounded-md bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Database size={14} className="text-primary" />
+                </div>
+                <span className="font-mono font-semibold text-foreground">{globalStats.totalUniversities.toLocaleString()}</span>
+                <span className="text-muted-foreground">universities</span>
+              </div>
+              <span className="hidden md:block w-px h-4 bg-border mx-6" />
+              <div className="flex items-center gap-2.5 text-sm group">
+                <div className="p-1.5 rounded-md bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Layers size={14} className="text-primary" />
+                </div>
+                <span className="font-mono font-semibold text-foreground">{globalStats.totalSources}</span>
+                <span className="text-muted-foreground">ranking sources</span>
+              </div>
+              <span className="hidden md:block w-px h-4 bg-border mx-6" />
+              <div className="flex items-center gap-2.5 text-sm group">
+                <div className="p-1.5 rounded-md bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <GitMerge size={14} className="text-primary" />
+                </div>
+                <span className="font-mono font-semibold text-foreground">{(globalStats.manualMappingsCount + globalStats.autoMappingsCount).toLocaleString()}</span>
+                <span className="text-muted-foreground">name variations resolved</span>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* --- METRICS GRID --- */}
@@ -448,6 +519,7 @@ const MainApp = () => {
               university={uni}
               expanded={expandedId === i}
               onToggle={() => setExpandedId(expandedId === i ? null : i)}
+              globalStats={globalStats}
             />
           ))}
 

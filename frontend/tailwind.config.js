@@ -25,7 +25,9 @@ module.exports = {
         xs: '2px',
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
+        space: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        outfit: ['Outfit', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', '"SF Mono"', 'Monaco', 'Consolas', 'monospace'],
       }
     },
   },
