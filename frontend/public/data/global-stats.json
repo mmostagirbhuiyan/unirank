@@ -1,0 +1,127 @@
+{
+  "totalUniversities": 1687,
+  "totalCountries": 93,
+  "totalSources": 4,
+  "sourceConfig": {
+    "qs": {
+      "weight": 0.25,
+      "maxRank": 1000,
+      "fullName": "QS World University Rankings"
+    },
+    "the": {
+      "weight": 0.25,
+      "maxRank": 999,
+      "fullName": "Times Higher Education"
+    },
+    "arwu": {
+      "weight": 0.25,
+      "maxRank": 1000,
+      "fullName": "Academic Ranking of World Universities"
+    },
+    "usnews": {
+      "weight": 0.25,
+      "maxRank": 980,
+      "fullName": "US News Best Global Universities"
+    }
+  },
+  "manualMappingsCount": 167,
+  "autoMappingsCount": 7958,
+  "lastUpdated": "2026-01-21",
+  "disagreementDistribution": {
+    "high-consensus": 37,
+    "moderate-consensus": 96,
+    "moderate-disagreement": 384,
+    "high-disagreement": 493,
+    "insufficient-data": 677
+  },
+  "appearancesDistribution": {
+    "1": 677,
+    "2": 285,
+    "3": 258,
+    "4": 467
+  },
+  "topConsensus": [
+    {
+      "name": "Binghamton University",
+      "spread": 0
+    },
+    {
+      "name": "University of Toledo",
+      "spread": 0
+    },
+    {
+      "name": "Michigan Technological University",
+      "spread": 0
+    },
+    {
+      "name": "Tokyo University of Science",
+      "spread": 0
+    },
+    {
+      "name": "Azerbaijan State University Economics",
+      "spread": 0
+    },
+    {
+      "name": "German Jordanian University",
+      "spread": 0
+    },
+    {
+      "name": "University of Westminster",
+      "spread": 0
+    },
+    {
+      "name": "University of Namur",
+      "spread": 0
+    },
+    {
+      "name": "Chengdu University of Technology",
+      "spread": 0
+    },
+    {
+      "name": "University of Leiden",
+      "spread": 0
+    }
+  ],
+  "topControversial": [
+    {
+      "name": "George Mason University",
+      "spread": 750
+    },
+    {
+      "name": "Wuhan University of Technology",
+      "spread": 750
+    },
+    {
+      "name": "Nanjing Agricultural University",
+      "spread": 750
+    },
+    {
+      "name": "Rutgers University New Brunswick",
+      "spread": 745
+    },
+    {
+      "name": "Soochow University",
+      "spread": 700
+    },
+    {
+      "name": "Huazhong Agricultural University",
+      "spread": 700
+    },
+    {
+      "name": "University of Indonesia",
+      "spread": 688
+    },
+    {
+      "name": "Universiti Putra Malaysia",
+      "spread": 667
+    },
+    {
+      "name": "Universidad Nacional Autonoma de Mexico",
+      "spread": 665
+    },
+    {
+      "name": "University of Sharjah",
+      "spread": 656
+    }
+  ]
+}
