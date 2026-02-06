@@ -53,13 +53,13 @@ const ConsensusIndicator = ({ university }) => {
   const Icon = config.icon;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Main Status Badge */}
-      <div className={`rounded-lg p-4 ${config.bgColor} border ${config.borderColor}`}>
+      <div className={`rounded-xl p-4 ${config.bgColor} border ${config.borderColor}`}>
         <div className="flex items-start gap-3">
-          <Icon className={`${config.color} flex-shrink-0 mt-0.5`} size={24} />
+          <Icon className={`${config.color} flex-shrink-0 mt-0.5`} size={22} strokeWidth={2.5} />
           <div className="space-y-1">
-            <h4 className={`font-semibold ${config.color}`}>{config.label}</h4>
+            <h4 className={`font-bold ${config.color}`}>{config.label}</h4>
             <p className="text-sm text-muted-foreground">{config.description}</p>
           </div>
         </div>
@@ -68,24 +68,22 @@ const ConsensusIndicator = ({ university }) => {
       {/* Stats Grid */}
       {disagreement && disagreement.spread !== null && (
         <div className="grid grid-cols-2 gap-3">
-          {/* Spread */}
-          <div className="bg-muted/30 rounded-lg p-3">
-            <div className="text-xs text-muted-foreground mb-1">Rank Spread</div>
-            <div className="text-2xl font-bold font-mono text-foreground">
+          <div className="bg-muted/30 rounded-xl p-4">
+            <div className="text-xs text-muted-foreground mb-1.5 font-medium">Rank Spread</div>
+            <div className="text-2xl font-black font-mono text-foreground">
               {disagreement.spread}
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs text-muted-foreground mt-0.5">
               #{disagreement.minRank} to #{disagreement.maxRank}
             </div>
           </div>
 
-          {/* Consistency Percentile */}
-          <div className="bg-muted/30 rounded-lg p-3">
-            <div className="text-xs text-muted-foreground mb-1">Consistency</div>
-            <div className="text-2xl font-bold font-mono text-foreground">
-              {disagreement.consistencyPercentile ?? '—'}%
+          <div className="bg-muted/30 rounded-xl p-4">
+            <div className="text-xs text-muted-foreground mb-1.5 font-medium">Consistency</div>
+            <div className="text-2xl font-black font-mono text-foreground">
+              {disagreement.consistencyPercentile ?? '\u2014'}%
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-xs text-muted-foreground mt-0.5">
               percentile
             </div>
           </div>
@@ -94,11 +92,11 @@ const ConsensusIndicator = ({ university }) => {
 
       {/* Standard Deviation */}
       {disagreement && disagreement.stdDev !== null && (
-        <div className="bg-muted/30 rounded-lg p-3">
+        <div className="bg-muted/30 rounded-xl p-4">
           <div className="flex justify-between items-center">
-            <span className="text-sm text-muted-foreground">Standard Deviation</span>
-            <span className="font-mono font-medium text-foreground">
-              ±{disagreement.stdDev} ranks
+            <span className="text-sm text-muted-foreground font-medium">Standard Deviation</span>
+            <span className="font-mono font-bold text-foreground">
+              &plusmn;{disagreement.stdDev} ranks
             </span>
           </div>
         </div>
@@ -106,8 +104,8 @@ const ConsensusIndicator = ({ university }) => {
 
       {/* Similar Universities */}
       {similarUniversities && similarUniversities.length > 0 && (
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
             <Users size={14} />
             <span>Similar profiles</span>
           </div>
@@ -115,7 +113,7 @@ const ConsensusIndicator = ({ university }) => {
             {similarUniversities.map((name, index) => (
               <span
                 key={index}
-                className="px-2 py-1 bg-muted rounded-full text-xs text-muted-foreground"
+                className="px-2.5 py-1 bg-muted/50 rounded-full text-xs text-muted-foreground border border-border/30"
               >
                 {name}
               </span>
@@ -125,15 +123,15 @@ const ConsensusIndicator = ({ university }) => {
       )}
 
       {/* Interpretation Guide */}
-      <div className="pt-3 border-t border-border">
+      <div className="pt-4 border-t border-border/40">
         <details className="group">
-          <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground transition-colors list-none flex items-center gap-1">
-            <span className="group-open:rotate-90 transition-transform">▶</span>
+          <summary className="text-xs text-muted-foreground cursor-pointer hover:text-foreground transition-colors list-none flex items-center gap-1.5 font-medium">
+            <span className="group-open:rotate-90 transition-transform duration-200 text-[10px]">&#9654;</span>
             What does this mean?
           </summary>
-          <div className="mt-2 text-xs text-muted-foreground space-y-2">
+          <div className="mt-3 text-xs text-muted-foreground space-y-2.5 leading-relaxed">
             <p>
-              <strong className="text-foreground">High Consensus (≤10 spread):</strong> All ranking
+              <strong className="text-foreground">High Consensus (&le;10 spread):</strong> All ranking
               agencies agree this university performs at a similar level.
             </p>
             <p>
