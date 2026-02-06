@@ -16,7 +16,7 @@ const CalculationBreakdown = ({ university }) => {
 
   if (!calculation) {
     return (
-      <div className="text-sm text-muted-foreground italic">
+      <div className="text-sm text-muted-foreground italic p-4 text-center">
         Calculation data not available
       </div>
     );
@@ -25,15 +25,15 @@ const CalculationBreakdown = ({ university }) => {
   const { rawRanks, bordaScores, weightedScores, weightedSum, confidenceMultiplier, appearances } = calculation;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Summary */}
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-muted-foreground">Borda Count Method</span>
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
+          className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors font-medium"
         >
-          <Info size={14} />
+          <Info size={13} />
           {showDetails ? 'Hide details' : 'Show formula'}
         </button>
       </div>
@@ -47,15 +47,15 @@ const CalculationBreakdown = ({ university }) => {
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="bg-muted/50 rounded-lg p-3 text-xs space-y-2 border border-border">
+            <div className="bg-muted/40 rounded-xl p-4 text-xs space-y-2 border border-border/30">
               <p className="font-mono text-muted-foreground">
                 Borda Score = MaxRank - Rank + 1
               </p>
               <p className="font-mono text-muted-foreground">
-                Final = (ΣWeighted Scores) × Confidence
+                Final = (&Sigma;Weighted Scores) &times; Confidence
               </p>
               <p className="font-mono text-muted-foreground">
-                Confidence = 0.5 + 0.5 × (appearances / 4)
+                Confidence = 0.5 + 0.5 &times; (appearances / 4)
               </p>
             </div>
           </motion.div>
@@ -67,19 +67,19 @@ const CalculationBreakdown = ({ university }) => {
         {/* Step 1: Raw Ranks */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold">1</span>
-            <span className="text-sm font-medium text-foreground">Source Rankings</span>
+            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-primary/10 text-primary text-xs font-bold">1</span>
+            <span className="text-sm font-semibold text-foreground">Source Rankings</span>
           </div>
-          <div className="ml-7 grid grid-cols-2 gap-2">
+          <div className="ml-8 grid grid-cols-2 gap-2">
             {Object.entries(SOURCE_CONFIG).map(([key, config]) => {
               const rank = rawRanks[key];
               return (
-                <div key={key} className="flex items-center justify-between bg-muted/30 rounded px-2 py-1">
-                  <span className="text-xs font-medium" style={{ color: config.color }}>
+                <div key={key} className="flex items-center justify-between bg-muted/30 rounded-lg px-3 py-2">
+                  <span className="text-xs font-semibold" style={{ color: config.color }}>
                     {config.label}
                   </span>
-                  <span className="text-xs text-foreground font-mono">
-                    {rank !== null ? `#${rank}` : '—'}
+                  <span className="text-xs text-foreground font-mono font-medium">
+                    {rank !== null ? `#${rank}` : '\u2014'}
                   </span>
                 </div>
               );
@@ -89,26 +89,26 @@ const CalculationBreakdown = ({ university }) => {
 
         {/* Arrow */}
         <div className="flex justify-center">
-          <ChevronRight className="text-muted-foreground rotate-90" size={16} />
+          <ChevronRight className="text-muted-foreground/50 rotate-90" size={16} />
         </div>
 
         {/* Step 2: Borda Scores */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold">2</span>
-            <span className="text-sm font-medium text-foreground">Borda Transformation</span>
+            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-primary/10 text-primary text-xs font-bold">2</span>
+            <span className="text-sm font-semibold text-foreground">Borda Transformation</span>
           </div>
-          <div className="ml-7 grid grid-cols-2 gap-2">
+          <div className="ml-8 grid grid-cols-2 gap-2">
             {Object.entries(SOURCE_CONFIG).map(([key, config]) => {
               const borda = bordaScores[key];
               const isNegative = borda < 0;
               return (
-                <div key={key} className="flex items-center justify-between bg-muted/30 rounded px-2 py-1">
-                  <span className="text-xs text-muted-foreground">
+                <div key={key} className="flex items-center justify-between bg-muted/30 rounded-lg px-3 py-2">
+                  <span className="text-xs text-muted-foreground font-mono">
                     {config.maxRank} - {rawRanks[key] ?? 'N/A'} + 1
                   </span>
-                  <span className={`text-xs font-mono font-medium ${isNegative ? 'text-red-500' : 'text-foreground'}`}>
-                    {borda !== undefined ? (isNegative ? borda.toFixed(0) : borda) : '—'}
+                  <span className={`text-xs font-mono font-semibold ${isNegative ? 'text-red-500' : 'text-foreground'}`}>
+                    {borda !== undefined ? (isNegative ? borda.toFixed(0) : borda) : '\u2014'}
                   </span>
                 </div>
               );
@@ -118,21 +118,21 @@ const CalculationBreakdown = ({ university }) => {
 
         {/* Arrow */}
         <div className="flex justify-center">
-          <ChevronRight className="text-muted-foreground rotate-90" size={16} />
+          <ChevronRight className="text-muted-foreground/50 rotate-90" size={16} />
         </div>
 
         {/* Step 3: Weighted Sum */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold">3</span>
-            <span className="text-sm font-medium text-foreground">Weighted (×0.25 each)</span>
+            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-primary/10 text-primary text-xs font-bold">3</span>
+            <span className="text-sm font-semibold text-foreground">Weighted (&times;0.25 each)</span>
           </div>
-          <div className="ml-7 bg-muted/30 rounded px-3 py-2">
+          <div className="ml-8 bg-muted/30 rounded-lg px-4 py-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs text-muted-foreground font-mono">
                 {Object.values(weightedScores).map(s => s?.toFixed(1) || '0').join(' + ')}
               </span>
-              <span className="text-sm font-mono font-medium text-foreground">
+              <span className="text-sm font-mono font-bold text-foreground">
                 = {weightedSum}
               </span>
             </div>
@@ -141,21 +141,21 @@ const CalculationBreakdown = ({ university }) => {
 
         {/* Arrow */}
         <div className="flex justify-center">
-          <ChevronRight className="text-muted-foreground rotate-90" size={16} />
+          <ChevronRight className="text-muted-foreground/50 rotate-90" size={16} />
         </div>
 
         {/* Step 4: Confidence Multiplier */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold">4</span>
-            <span className="text-sm font-medium text-foreground">Confidence Multiplier</span>
+            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-primary/10 text-primary text-xs font-bold">4</span>
+            <span className="text-sm font-semibold text-foreground">Confidence Multiplier</span>
           </div>
-          <div className="ml-7 bg-muted/30 rounded px-3 py-2">
+          <div className="ml-8 bg-muted/30 rounded-lg px-4 py-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">
-                0.5 + 0.5 × ({appearances}/4)
+              <span className="text-xs text-muted-foreground font-mono">
+                0.5 + 0.5 &times; ({appearances}/4)
               </span>
-              <span className="text-sm font-mono font-medium text-foreground">
+              <span className="text-sm font-mono font-bold text-foreground">
                 = {confidenceMultiplier}
               </span>
             </div>
@@ -164,21 +164,23 @@ const CalculationBreakdown = ({ university }) => {
 
         {/* Arrow */}
         <div className="flex justify-center">
-          <ChevronRight className="text-muted-foreground rotate-90" size={16} />
+          <ChevronRight className="text-muted-foreground/50 rotate-90" size={16} />
         </div>
 
         {/* Final Result */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <Calculator className="text-primary" size={20} />
+            <div className="p-1.5 rounded-lg bg-primary/10">
+              <Calculator className="text-primary" size={16} />
+            </div>
             <span className="text-sm font-bold text-foreground">Final Score</span>
           </div>
-          <div className="ml-7 bg-primary/10 rounded-lg px-4 py-3 border border-primary/20">
+          <div className="ml-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl px-4 py-4 border border-primary/20">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">
-                {weightedSum} × {confidenceMultiplier}
+              <span className="text-sm text-muted-foreground font-mono">
+                {weightedSum} &times; {confidenceMultiplier}
               </span>
-              <span className="text-xl font-bold font-mono text-primary">
+              <span className="text-2xl font-black font-mono text-gradient">
                 {aggregatedScore.toFixed(2)}
               </span>
             </div>

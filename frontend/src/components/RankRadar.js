@@ -10,10 +10,10 @@ import {
 } from 'recharts';
 
 const SOURCE_COLORS = {
-  qs: '#f97316',      // orange
-  the: '#eab308',     // yellow
-  arwu: '#ef4444',    // red
-  usnews: '#3b82f6'   // blue
+  qs: '#f97316',
+  the: '#eab308',
+  arwu: '#ef4444',
+  usnews: '#3b82f6'
 };
 
 const SOURCE_LABELS = {
@@ -34,15 +34,10 @@ const RankRadar = ({ university }) => {
   const { originalRankings, insights } = university;
   const { disagreement } = insights || {};
 
-  // Transform data for radar chart
-  // Invert ranks so that #1 appears at the outer edge (higher is better)
   const radarData = Object.entries(SOURCE_LABELS).map(([key, label]) => {
     const ranking = originalRankings[key];
     const rank = ranking?.rank;
     const maxRank = SOURCE_MAX_RANKS[key];
-
-    // Convert rank to a score where lower rank = higher score
-    // If rank is 1, score approaches maxRank. If rank is maxRank, score is ~0
     const score = rank ? Math.max(0, maxRank - rank + 1) : 0;
 
     return {
@@ -54,25 +49,24 @@ const RankRadar = ({ university }) => {
     };
   });
 
-  // Determine color based on disagreement category
   const getCategoryColor = () => {
-    if (!disagreement) return 'rgba(59, 130, 246, 0.3)'; // blue default
+    if (!disagreement) return 'rgba(99, 102, 241, 0.25)';
     switch (disagreement.category) {
       case 'high-consensus':
-        return 'rgba(34, 197, 94, 0.4)'; // green
+        return 'rgba(34, 197, 94, 0.3)';
       case 'moderate-consensus':
-        return 'rgba(132, 204, 22, 0.4)'; // lime
+        return 'rgba(132, 204, 22, 0.3)';
       case 'moderate-disagreement':
-        return 'rgba(234, 179, 8, 0.4)'; // yellow
+        return 'rgba(234, 179, 8, 0.3)';
       case 'high-disagreement':
-        return 'rgba(239, 68, 68, 0.4)'; // red
+        return 'rgba(239, 68, 68, 0.3)';
       default:
-        return 'rgba(107, 114, 128, 0.3)'; // gray
+        return 'rgba(107, 114, 128, 0.25)';
     }
   };
 
   const getStrokeColor = () => {
-    if (!disagreement) return '#3b82f6';
+    if (!disagreement) return '#6366f1';
     switch (disagreement.category) {
       case 'high-consensus':
         return '#22c55e';
@@ -91,12 +85,12 @@ const RankRadar = ({ university }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-card border border-border rounded-lg p-2 shadow-lg text-sm">
-          <p className="font-medium text-foreground">{data.source}</p>
+        <div className="bg-card border border-border/60 rounded-xl p-3 shadow-lg text-sm backdrop-blur-sm">
+          <p className="font-semibold text-foreground">{data.source}</p>
           {data.rank ? (
-            <p className="text-muted-foreground">Rank #{data.rank}</p>
+            <p className="text-muted-foreground text-xs mt-0.5">Rank #{data.rank}</p>
           ) : (
-            <p className="text-muted-foreground italic">Not ranked</p>
+            <p className="text-muted-foreground italic text-xs mt-0.5">Not ranked</p>
           )}
         </div>
       );
@@ -104,23 +98,22 @@ const RankRadar = ({ university }) => {
     return null;
   };
 
-  // Get spread badge color
   const getSpreadBadgeStyle = () => {
     if (!disagreement || disagreement.spread === null) {
-      return 'bg-muted text-muted-foreground';
+      return 'bg-muted text-muted-foreground border-border/50';
     }
-    if (disagreement.spread <= 10) return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400';
-    if (disagreement.spread <= 50) return 'bg-lime-500/10 text-lime-600 dark:text-lime-400';
-    if (disagreement.spread <= 200) return 'bg-amber-500/10 text-amber-600 dark:text-amber-400';
-    return 'bg-red-500/10 text-red-600 dark:text-red-400';
+    if (disagreement.spread <= 10) return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20';
+    if (disagreement.spread <= 50) return 'bg-lime-500/10 text-lime-600 dark:text-lime-400 border-lime-500/20';
+    if (disagreement.spread <= 200) return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20';
+    return 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20';
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       {/* Spread Badge */}
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-muted-foreground">Source Agreement</span>
-        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getSpreadBadgeStyle()}`}>
+        <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getSpreadBadgeStyle()}`}>
           {disagreement?.spread !== null && disagreement?.spread !== undefined
             ? `Spread: ${disagreement.spread} ranks`
             : 'Limited data'}
@@ -138,7 +131,7 @@ const RankRadar = ({ university }) => {
             />
             <PolarAngleAxis
               dataKey="source"
-              tick={{ fill: 'currentColor', fontSize: 12 }}
+              tick={{ fill: 'currentColor', fontSize: 11, fontWeight: 500 }}
               className="text-muted-foreground"
             />
             <PolarRadiusAxis
@@ -165,19 +158,19 @@ const RankRadar = ({ university }) => {
       </div>
 
       {/* Legend */}
-      <div className="grid grid-cols-2 gap-2 text-xs">
+      <div className="grid grid-cols-2 gap-2">
         {Object.entries(SOURCE_LABELS).map(([key, label]) => {
           const ranking = originalRankings[key];
           const rank = ranking?.rank;
           return (
-            <div key={key} className="flex items-center gap-2">
+            <div key={key} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-muted/30">
               <div
-                className="w-3 h-3 rounded-full"
+                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: SOURCE_COLORS[key] }}
               />
-              <span className="text-muted-foreground">{label}:</span>
-              <span className="font-medium text-foreground">
-                {rank ? `#${rank}` : '—'}
+              <span className="text-xs text-muted-foreground">{label}:</span>
+              <span className="text-xs font-semibold text-foreground ml-auto font-mono">
+                {rank ? `#${rank}` : '\u2014'}
               </span>
             </div>
           );
@@ -186,9 +179,9 @@ const RankRadar = ({ university }) => {
 
       {/* Consistency Percentile */}
       {disagreement?.consistencyPercentile !== undefined && (
-        <div className="pt-2 border-t border-border">
+        <div className="pt-3 border-t border-border/40">
           <p className="text-xs text-muted-foreground text-center">
-            More consistent than <span className="font-semibold text-foreground">{disagreement.consistencyPercentile}%</span> of universities
+            More consistent than <span className="font-bold text-foreground">{disagreement.consistencyPercentile}%</span> of universities
           </p>
         </div>
       )}
