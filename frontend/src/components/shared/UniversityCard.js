@@ -65,6 +65,11 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
               <MapPin size={13} className="text-muted-foreground/70" />
               {university.country}
             </span>
+            {university.countryRank && (
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-primary/5 border border-primary/10 text-[10px] font-semibold text-primary/80">
+                #{university.countryRank}{university.countryTotal ? ` of ${university.countryTotal}` : ''} nationally
+              </span>
+            )}
             <span className="hidden sm:inline-flex w-1 h-1 rounded-full bg-border" />
             <span className="font-mono text-xs">
               Score: <span className="text-foreground font-semibold">{university.aggregatedScore.toFixed(1)}</span>
@@ -142,6 +147,9 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
                   <div className="p-4 rounded-xl bg-card border border-border/50">
                     <div className="text-xs text-muted-foreground mb-1 font-medium">National</div>
                     <div className="text-2xl font-bold font-space">#{university.countryRank}</div>
+                    {university.countryTotal && (
+                      <div className="text-[10px] text-muted-foreground mt-0.5">of {university.countryTotal} in {university.country}</div>
+                    )}
                   </div>
                   <div className="p-4 rounded-xl bg-card border border-border/50">
                     <div className="text-xs text-muted-foreground mb-1 font-medium">Consistency</div>

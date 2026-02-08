@@ -126,6 +126,12 @@ function aggregateRankings(universitiesData, sourceWeights, sourceMaxRanks, tota
         university.countryRank = countryCounters[country];
     });
 
+    // Add total universities per country so frontend can display "# X of Y"
+    aggregatedResults.forEach(university => {
+        const country = university.country || 'Unknown';
+        university.countryTotal = countryCounters[country];
+    });
+
     return aggregatedResults;
 }
 
