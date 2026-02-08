@@ -175,9 +175,14 @@ const BentoDashboardLayout = ({ data, actions }) => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <h3 className="font-bold text-base leading-snug">{uni.name}</h3>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
+                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1 flex-wrap">
                             <MapPin size={11} />
                             <span>{uni.country}</span>
+                            {uni.countryRank && (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-primary/5 border border-primary/10 text-[10px] font-semibold text-primary/80">
+                                #{uni.countryRank}{uni.countryTotal ? ` of ${uni.countryTotal}` : ''} nationally
+                              </span>
+                            )}
                           </div>
                         </div>
                         <div className={`p-1.5 rounded-lg transition-colors ${isExpanded ? 'bg-primary/10 text-primary' : 'text-muted-foreground'}`}>
