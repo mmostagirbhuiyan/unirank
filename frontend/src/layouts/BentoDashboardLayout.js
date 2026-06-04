@@ -271,7 +271,7 @@ const BentoDashboardLayout = ({ data, actions }) => {
 
         {/* Top 3 Podium */}
         {currentPage === 1 && top3.length > 0 && !searchTerm && !selectedCountry && !selectedGroup && (
-          <section id="rankings-start" className="py-10">
+          <section id="rankings-start" className="py-10 scroll-mt-6">
             {/* Section header with decorative gradient */}
             <div className="relative mb-8">
               <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-8 rounded-full bg-gradient-to-b from-amber-400 via-slate-300 to-amber-700" />
