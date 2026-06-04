@@ -9,12 +9,34 @@ const QS_CSV_DOWNLOAD_URL =
 const QS_CSV_FILE = 'qs_rankings.csv';
 const QS_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', QS_CSV_FILE);
 
+// Staleness threshold: 30 days in milliseconds
+const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Parse --force-refresh from CLI args
+const FORCE_REFRESH = process.argv.includes('--force-refresh');
+
+/**
+ * Returns true if the file exists, is non-empty, and is less than 30 days old.
+ */
+function isFresh(filePath) {
+  if (!fs.existsSync(filePath)) return false;
+  const stat = fs.statSync(filePath);
+  if (stat.size === 0) return false;
+  const ageMs = Date.now() - stat.mtimeMs;
+  return ageMs < STALENESS_MS;
+}
+
 // Download the latest QS CSV to the data directory
 async function downloadQSCSV() {
   try {
-    if (fs.existsSync(QS_FILE_PATH) && fs.statSync(QS_FILE_PATH).size > 0) {
-      console.log(`Using existing QS CSV at ${QS_FILE_PATH}`);
+    if (!FORCE_REFRESH && isFresh(QS_FILE_PATH)) {
+      console.log(`Using existing QS CSV at ${QS_FILE_PATH} (still fresh)`);
       return;
+    }
+    if (FORCE_REFRESH) {
+      console.log('--force-refresh: re-downloading QS CSV...');
+    } else if (fs.existsSync(QS_FILE_PATH)) {
+      console.log('QS CSV is stale (>30 days). Re-downloading...');
     }
     console.log(`Downloading QS CSV from ${QS_CSV_DOWNLOAD_URL}...`);
     const { exec } = require('child_process');

@@ -1,47 +1,19 @@
-# University Rankings Aggregator 🏛️
+# UniRank -- Global University Rankings Aggregated
 
-A sophisticated, production-ready platform that aggregates and visualizes global university rankings from multiple authoritative sources (QS, THE, ARWU, US News) using advanced pattern-based matching and intelligent name standardization.
+A production-grade platform that aggregates and visualizes global university rankings from four authoritative sources (QS, THE, ARWU, US News) using pattern-based matching, intelligent name standardization, and Borda Count scoring.
 
-[![University Count](https://img.shields.io/badge/Universities-1753-blue)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
-[![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
-[![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/university-ranking-aggregator)
+**Live:** [unirank.mmostagirbhuiyan.com](https://unirank.mmostagirbhuiyan.com/)
 
----
-
-## 🚀 **What's New (Latest Updates)**
-
-### ✨ **Data Integrity Overhaul (2024)**
-- **75.8% duplicate reduction** - Fixed 25 out of 33 high-confidence duplicates
-- **43 universities consolidated** - Reduced from 1796 to 1753 unique universities  
-- **8 active automation patterns** handle systematic naming variations
-- **100% data integrity** - All remaining "duplicates" verified as legitimate different institutions
-
-### 🧹 **Enhanced Manual Mapping System**
-- **162 curated manual mappings** (expanded from 89) for cross-source standardization
-- **5-tier name standardization hierarchy** with pattern matching, manual mappings, and fuzzy fallbacks
-- **Fixed US News bypass bug** - Manual mappings now properly applied to all sources
-- **Comprehensive quality monitoring** with new data integrity verification tools
+[![Universities](https://img.shields.io/badge/Universities-1687-blue)](https://github.com/mmostagirbhuiyan/unirank)
+[![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/unirank)
+[![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/unirank)
 
 ---
 
-## 📋 Table of Contents
-- [Quick Start](#-quick-start)
-- [System Overview](#-system-overview)
-- [Enhanced Matching System](#-enhanced-matching-system)
-- [Data Pipeline](#-data-pipeline)
-- [Source Scrapers](#-source-scrapers)
-- [Manual Mapping System](#-manual-mapping-system)
-- [Frontend Application](#-frontend-application)
-- [Development & Extension](#-development--extension)
-- [Troubleshooting](#-troubleshooting)
-- [Documentation](#-documentation)
-- [Automated Workflows](#automated-workflows)
-
----
-
-## 🚀 **Quick Start**
+## Quick Start
 
 ### Prerequisites
+
 ```bash
 # Node.js (v14+) and Python (3.8+)
 npm install
@@ -49,6 +21,7 @@ pip install -r requirements.txt
 ```
 
 ### 30-Second Setup
+
 ```bash
 # 1. Update university rankings data
 node scripts/scrape-rankings.js
@@ -57,75 +30,66 @@ node scripts/scrape-rankings.js
 cd frontend && npm install && npm start
 ```
 
-**That's it!** The system will automatically:
-- 📥 Load rankings from all 4 sources
-- 🔍 Apply intelligent pattern-based matching  
-- 🎯 Handle 61.8% of name variations automatically
-- 📊 Generate aggregated rankings using Borda Count with Penalized Absence
-- 🖥️ Launch the React frontend at `http://localhost:3000`
+The system will automatically load rankings from all 4 sources, apply intelligent pattern-based matching, generate aggregated rankings using Borda Count with Penalized Absence, and launch the React frontend at `http://localhost:3000`.
 
 ---
 
-## 🔍 **System Overview**
+## System Overview
 
-### Data Sources & Coverage
+### Data Sources and Coverage
+
 | Source | Universities | Focus | Update Frequency |
 |--------|-------------|-------|------------------|
-| **QS World Rankings** | 999 | Global comprehensive | Annual |
+| **QS World Rankings** | 1,000 | Global comprehensive | Annual |
 | **THE (Times Higher Education)** | 999 | Research excellence | Annual |
-| **ARWU (Shanghai Rankings)** | 1000 | Academic performance | Annual |
+| **ARWU (Shanghai Rankings)** | 1,000 | Academic performance | Annual |
 | **US News Global** | 980 | International reach | Annual |
 
 ### Aggregation Method
-**Borda Count with Penalized Absence**: Universities receive points based on their ranking position, with systematic penalties for missing rankings to ensure fairness across different coverage patterns.
+
+**Borda Count with Penalized Absence**: Universities receive points based on their ranking position (MaxRank - Rank + 1), with systematic confidence penalties for missing rankings to ensure fairness across different coverage patterns.
 
 ### Current Performance
-- 🎯 **1,753 unique universities** with verified data integrity
-- 🤖 **8 active automation patterns** for name standardization
-- ⚡ **<30 seconds** complete data processing
-- 🔧 **162 manual mappings** for cross-source edge cases
-- ✅ **≤8 high-confidence duplicates** (all verified as legitimate different institutions)
+
+- **1,687 unique universities** with verified data integrity
+- **8 active automation patterns** for name standardization
+- **167 curated manual mappings** for cross-source edge cases
+- **<30 seconds** complete data processing
 
 ---
 
-## 🧠 **Enhanced Matching System**
+## Enhanced Matching System
 
-Our advanced pattern-based matching system automatically handles systematic naming variations:
+The advanced pattern-based matching system automatically handles systematic naming variations.
 
-### Currently Active Automation Patterns (8 Total)
+### Active Automation Patterns (8 Total)
 
 | Pattern | Examples | Implementation |
 |---------|----------|---------------|
-| **1. Diacritics Normalization** | "Technical University of München" → "Technical University of Munich" | `cleaned.normalize('NFD').replace(/[\u0300-\u036f]/g, '')` |
-| **2. Character Cleanup** | Remove question marks, replacement chars | `cleaned.replace(/[?\uFFFD]/g, '')` |
-| **3. At Location Removal** | "University of Texas at Austin" → "University of Texas Austin" | `cleaned.replace(/^(.+) at (.+)$/, '$1 $2')` |
-| **4. And/Ampersand Standardization** | "Science and Technology" → "Science & Technology" | `cleaned.replace(/ and /g, ' & ')` |
-| **5. Hyphen to Space** | "University of Wisconsin-Madison" → "University of Wisconsin Madison" | `cleaned.replace(/-/g, ' ')` |
-| **6. "The" Prefix Removal** | "The University of Tokyo" → "University of Tokyo" | `cleaned.replace(/^The /, '')` |
-| **7. Medical Sciences Normalization** | "University of Medical Sciences" → "University of Medical Science" | `cleaned.replace(/Medical Sciences/g, 'Medical Science')` |
-| **8. Medical University "of" Removal** | "Medical University of Graz" → "Medical University Graz" | `cleaned.replace(/^Medical University of (.+)$/i, 'Medical University $1')` |
-
-### Additional Complex Patterns
-- **UC System Campus Names**: "University of California - Berkeley" → "University of California Berkeley"
-- **"Of" Preposition Normalization**: Adds/removes "of" between University and location names
-- **Encoding Fixes**: "Mnchen" → "Munchen" for corrupted UTF-8
+| **Diacritics Normalization** | "Munchen" -> "Munich" | NFD normalize + strip combining marks |
+| **Character Cleanup** | Remove question marks, replacement chars | Regex replacement |
+| **At Location Removal** | "University of Texas at Austin" -> "University of Texas Austin" | Regex |
+| **And/Ampersand** | "Science and Technology" -> "Science & Technology" | Regex |
+| **Hyphen to Space** | "University of Wisconsin-Madison" -> "University of Wisconsin Madison" | Regex |
+| **"The" Prefix Removal** | "The University of Tokyo" -> "University of Tokyo" | Regex |
+| **Medical Sciences** | "University of Medical Sciences" -> "University of Medical Science" | Regex |
+| **Medical University "of"** | "Medical University of Graz" -> "Medical University Graz" | Regex |
 
 ### Matching Confidence Levels
-- **🟢 High (≥0.95)**: Automatic matching applied
-- **🟡 Medium (0.85-0.94)**: Reviewed and added to manual mappings
-- **🔴 Low (<0.85)**: Requires manual review
 
-**📖 For complete technical details, see:** [**Enhanced Matching System Documentation**](docs/ENHANCED_MATCHING.md)
+- **High (>=0.95)**: Automatic matching applied
+- **Medium (0.85-0.94)**: Reviewed and added to manual mappings
+- **Low (<0.85)**: Requires manual review
 
 ---
 
-## 📊 **Data Pipeline**
+## Data Pipeline
 
-### Simple 3-Step Process (Standard Operation)
+### Standard Operation (3 steps)
 
 ```bash
-# Step 1: Update US News data (other sources auto-loaded)
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
+# Step 1: Update US News data (Playwright scraper)
+python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
 
 # Step 2: Process and aggregate all rankings
 node scripts/scrape-rankings.js
@@ -134,13 +98,13 @@ node scripts/scrape-rankings.js
 cd frontend && npm start
 ```
 
-### Full 4-Step Process (When Regenerating Mappings)
+### Full Regeneration (4 steps, rarely needed)
 
 ```bash
 # Step 1: Update US News data
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
+python scripts/usnews_direct_extractor.py -o frontend/public/data/usnews_rankings.csv
 
-# Step 2: Generate fuzzy matching mappings (optional - only when mapping quality degrades)
+# Step 2: Regenerate fuzzy matching mappings
 node scripts/match-universities.js
 
 # Step 3: Process and aggregate all rankings
@@ -150,64 +114,33 @@ node scripts/scrape-rankings.js
 cd frontend && npm start
 ```
 
-> **Note**: Step 2 is rarely needed since the enhanced pattern-based matching handles most cases automatically. Only run `match-universities.js` when you notice significant mapping quality issues or have substantially new data sources.
+### Pipeline Flow
 
-### Detailed Pipeline Flow
-
-```mermaid
-graph TD
-    A[Raw Rankings Data] --> B[Enhanced Name Matcher]
-    B --> C[Pattern Transformations]
-    C --> D[Fuzzy Matching ≥93%]
-    D --> E[Manual Mapping Lookup]
-    E --> F[Standardized Names]
-    F --> G[Borda Count Aggregation]
-    G --> H[Final Rankings JSON]
-    H --> I[React Frontend]
+```
+Raw Rankings Data
+  -> Enhanced Name Matcher (pattern transformations)
+  -> Fuzzy Matching (>=93%)
+  -> Manual Mapping Lookup (167 curated entries)
+  -> Standardized Names
+  -> Borda Count Aggregation
+  -> Final Rankings JSON
+  -> React Frontend
 ```
 
 ### Data Flow Architecture
 
-1. **📥 Data Ingestion**
-   - QS, THE, ARWU: CSV files from [universityrankings.ch](https://www.universityrankings.ch)
-   - US News: Automated scraping with Playwright/Selenium
-
-2. **🔍 Enhanced Name Matching** (Multi-tier System)
-   - **Primary**: Pattern-based transformations (8 active automation rules)
-   - **Secondary**: High-confidence fuzzy matching (≥93% similarity)  
-   - **Tertiary**: Manual mapping lookup (162 curated cases)
-   - **Fallback**: Auto-generated mappings (~39k fuzzy matches)
-   - **Last Resort**: Original name preserved
-
-3. **📊 Ranking Aggregation**
-   - Borda Count with Penalized Absence method
-   - Weighted scoring with source-specific penalties
-   - Comprehensive coverage analysis
-
-4. **🖥️ Frontend Visualization**
-   - React-based responsive interface
-   - Real-time search and filtering
-   - Source-specific ranking views
+1. **Data Ingestion**: QS, THE, ARWU from CSV files via universityrankings.ch. US News via automated Playwright scraping.
+2. **Enhanced Name Matching** (5-tier system): Pattern-based transformations, high-confidence fuzzy matching (>=93%), manual mapping lookup (167 entries), auto-generated mappings (~7.9k entries), original name preserved as fallback.
+3. **Ranking Aggregation**: Borda Count with Penalized Absence. Weighted scoring with source-specific penalties.
+4. **Frontend Visualization**: React-based responsive interface with real-time search and filtering.
 
 ---
 
-## 🕷️ **Source Scrapers**
+## Manual Mapping System
 
-This project utilizes dedicated scraper scripts to extract university ranking data from various authoritative sources. Each scraper is tailored to its specific source's data format and structure.
+### Architecture
 
-### Currently Documented Scrapers:
-
--   **[QS World University Rankings Scraper](docs/QS_SCRAPER_GUIDE.md)** - Guide for `scripts/qs-scraper.js`
--   **[Times Higher Education (THE) Rankings Scraper](docs/THE_SCRAPER_GUIDE.md)** - Guide for `scripts/the-scraper.js`
--   **[Academic Ranking of World Universities (ARWU) Scraper](docs/ARWU_SCRAPER_GUIDE.md)** - Guide for `scripts/arwu-scraper.js`
--   **[US News Rankings Scraper](docs/USNEWS_SCRAPER_GUIDE.md)** - Guide for `scripts/usnews_direct_extractor_selenium.py`
-
----
-
-## 🎯 **Manual Mapping System**
-
-### Simplified Architecture
-Our manual mapping system uses a **source-agnostic approach** - one mapping applies to all sources:
+Source-agnostic approach where one mapping applies to all sources:
 
 ```json
 {
@@ -217,83 +150,36 @@ Our manual mapping system uses a **source-agnostic approach** - one mapping appl
 ```
 
 ### File Structure
-- **`manual-university-mapping.json`**: 89 curated mappings for edge cases (highest priority)
-- **`suggested-university-mapping.json`**: Auto-generated bulk mappings (~39k entries, fallback system)
-- **`enhanced_name_matcher.js`**: Pattern-based transformation engine (primary system)
+
+- **`manual-university-mapping.json`**: 167 curated mappings for edge cases (highest priority)
+- **`suggested-university-mapping.json`**: Auto-generated bulk mappings (~7.9k entries, fallback)
+- **`enhanced_name_matcher.js`**: Pattern-based transformation engine
 - **`match-universities.js`**: Fuzzy matching script that generates suggested mappings
 
-### Adding Manual Mappings
-For universities that require manual intervention:
+### Mapping Hierarchy (5-tier Priority System)
 
-```json
-[
-  {
-    "originalName": "Catholic University of Leuven",
-    "suggestedStandardizedName": "KU Leuven"
-  },
-  {
-    "originalName": "École Normale Supérieure de Lyon",
-    "suggestedStandardizedName": "Ecole Normale Superieure de Lyon (ENS de LYON)"
-  }
-]
-```
-
-### When to Add Manual Mappings
-- 🏛️ **Institution name changes**: "Catholic University of Leuven" → "KU Leuven"
-- 🌍 **Country-specific variations**: University naming conventions
-- 🔤 **Complex linguistic differences**: Non-Latin scripts or complex translations
-- 🏥 **Specific institutional types**: Medical schools, technical institutes
-
-### Understanding the Mapping Hierarchy
-
-The system uses a **5-tier fallback approach** for name standardization:
-
-```javascript
-// Priority order in scrape-rankings.js:
-1. 🧠 Enhanced Pattern Matching    // NEW: automaticTuned transformations  
-2. 🎯 Manual Mapping Lookup       // manual-university-mapping.json (89 entries)
-3. 🔍 Legacy Auto-generated       // suggested-university-mapping.json (~39k entries)  
-4. 📝 Original Name Preserved     // When all else fails
-```
-
-### Auto-Generated Mappings (`suggested-university-mapping.json`)
-- **Size**: ~39,791 entries covering all source combinations
-- **Generated by**: `scripts/match-universities.js` using fuzzy matching (≥85% similarity)
-- **Format**: Source-specific mappings (`"originalName@source" → "suggestedStandardizedName"`)
-- **Usage**: Fallback system when manual and pattern-based matching fail
-- **Update Frequency**: Only when substantial new data sources added
-
-**Example**:
-```json
-{
-  "originalName": "Massachusetts Institute of Technology",
-  "source": "qs", 
-  "suggestedStandardizedName": "Massachusetts Institute of Technology"
-}
-```
-
-### Manual vs Auto-Generated Mappings
-| Aspect | Manual Mappings | Auto-Generated Mappings |
-|--------|----------------|------------------------|
-| **File** | `manual-university-mapping.json` | `suggested-university-mapping.json` |
-| **Size** | 89 entries | ~39,791 entries |
-| **Priority** | Higher (override system) | Lower (fallback system) |
-| **Scope** | Source-agnostic | Source-specific |
-| **Maintenance** | Hand-curated | Generated by script |
-| **Use Case** | Edge cases, corrections | Bulk fuzzy matching |
+1. Manual Mappings (167 curated entries, highest priority)
+2. Enhanced Pattern Matching (0.93 threshold)
+3. Auto-generated Mappings (~7.9k entries, quality insurance fallback)
+4. Canonicalization (8+ built-in patterns)
+5. Original Name (safety net)
 
 ---
 
-## 🖥️ **Frontend Application**
+## Frontend Application
 
 ### Features
-- **🔍 Advanced Search**: Real-time filtering across all universities
-- **📊 Multi-Source Views**: Compare rankings across QS, THE, ARWU, US News
-- **🎯 Aggregated Rankings**: Borda Count with Penalized Absence methodology
-- **📱 Responsive Design**: Works on desktop, tablet, and mobile
-- **⚡ Fast Performance**: Optimized for 1,729 universities
+
+- Advanced real-time search with fuzzy matching and abbreviation support
+- Multi-source comparison views (QS, THE, ARWU, US News)
+- Aggregated Borda Count rankings with calculation breakdown
+- Responsive design across desktop, tablet, and mobile
+- Dark/light mode with system preference detection
+- University comparison panel (up to 3 side-by-side)
+- URL-persisted filters and deep-linkable university profiles
 
 ### Development
+
 ```bash
 cd frontend
 npm install
@@ -302,17 +188,20 @@ npm run build  # Production build
 ```
 
 ### Technology Stack
-- **React 18** with hooks
-- **Tailwind CSS** for styling
-- **Create React App** for build tooling
-- **JSON data** for fast client-side filtering
+
+- React 18 with hooks and React Router
+- Tailwind CSS for styling
+- Recharts for data visualization
+- Fuse.js for fuzzy search
+- Framer Motion for animations
 
 ---
 
-## 🛠️ **Development & Extension**
+## Development and Extension
 
 ### Adding New Transformation Rules
-Extend the `EnhancedNameMatcher` in `scripts/enhanced_name_matcher.js`:
+
+Extend `canonicalizeName()` in `scripts/scrape-rankings.js`:
 
 ```javascript
 {
@@ -323,13 +212,8 @@ Extend the `EnhancedNameMatcher` in `scripts/enhanced_name_matcher.js`:
 }
 ```
 
-### Adding New Data Sources
-1. Create scraper in `scripts/new-source-scraper.js`
-2. Add CSV loading in `scripts/scrape-rankings.js`
-3. Update aggregation weights in `scripts/aggregation.js`
-4. Add source logo to `frontend/public/logos/`
-
 ### Monitoring Data Quality
+
 ```bash
 # Check current system performance
 node scripts/data-quality-monitor.js
@@ -337,83 +221,9 @@ node scripts/data-quality-monitor.js
 # Regenerate auto-mappings (when needed)
 node scripts/match-universities.js
 
-# Find potential new matches
-node scripts/suggest-new-mappings.js
-
-# Apply high-confidence suggestions
-node scripts/apply-suggested-mappings.js
+# System health check
+node scripts/automation-helpers/baseline-monitor.js health
 ```
-
-### Testing Enhanced Matching
-```bash
-# Test matcher against current manual mappings
-node scripts/enhanced_name_matcher.js
-```
-
----
-
-## 🔧 **Troubleshooting**
-
-### Common Issues
-
-**Q: University count suddenly increased/decreased significantly**
-```bash
-# Check if manual mappings are being applied correctly
-node scripts/scrape-rankings.js | grep "Consolidated data"
-```
-
-**Q: Enhanced matching not working for specific universities**
-- Check if patterns are too strict (threshold ≥93%)
-- Add specific cases to `manual-university-mapping.json`
-- Review transformation rules in `enhanced_name_matcher.js`
-
-**Q: Source data seems outdated**
-```bash
-# Update individual source files
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
-# Download latest QS, THE, ARWU from universityrankings.ch
-```
-
-**Q: Names appear garbled (e.g., 'Technical University of Mnchen')**
-```bash
-# Ensure the CSV files are read using Latin-1 encoding
-node scripts/scrape-rankings.js 200
-```
-
-**Q: Frontend build fails**
-```bash
-cd frontend
-rm -rf node_modules package-lock.json
-npm install
-npm start
-```
-
-### Performance Optimization
-- Enhanced matching processes 4,000+ universities in <30 seconds
-- Manual mappings file kept minimal (123 entries) for fast loading
-- Frontend optimized for client-side filtering of 1,729 universities
-
----
-
-## 📚 **Documentation**
-
-### Complete Documentation Suite
-- **[Enhanced Matching System](docs/ENHANCED_MATCHING.md)** - Detailed technical documentation of the pattern-based matching engine
-- **[University Mapping Tools Usage Guide](docs/MAPPING_TOOLS_GUIDE.md)** - Comprehensive guide for automated mapping suggestion and application
-- **[Scrape Rankings Script Usage Guide](docs/SCRAPE_RANKINGS_GUIDE.md)** - Comprehensive guide for the main data scraping, standardization, and aggregation script
-- **[Ranking Aggregation Guide](docs/AGGREGATION_GUIDE.md)** - Detailed explanation of the Borda Count methodology
-- **[API Reference](docs/API.md)** - Data formats and aggregation methods  
-- **[Data Sources](docs/DATA_SOURCES.md)** - Source specifications and update procedures
-- **[Contributing Guide](docs/CONTRIBUTING.md)** - Development setup and contribution guidelines
-
-### Key Files
-- `scripts/enhanced_name_matcher.js` - Core pattern-based matching engine
-- `scripts/match-universities.js` - Legacy fuzzy matching script (generates bulk mappings)
-- `scripts/scrape-rankings.js` - Main aggregation pipeline
-- `scripts/aggregation.js` - Borda Count implementation
-- `frontend/public/data/manual-university-mapping.json` - Curated manual mappings (89 entries)
-- `frontend/public/data/suggested-university-mapping.json` - Auto-generated mappings (~39k entries)
-- `frontend/public/data/aggregated-rankings.json` - Final output
 
 ---
 
@@ -422,54 +232,53 @@ npm start
 This project uses two GitHub Actions to keep ranking data up to date.
 
 ### `fetch-usnews.yml`
-- Triggers manually or when `scripts/usnews_direct_extractor_selenium.py` changes.
-- Installs Python dependencies and runs the US‑News scraper.
-- Commits `frontend/public/data/usnews_rankings.csv` back to the triggering branch.
+
+Triggers manually or when the US News scraper script changes. Installs Python dependencies, runs the scraper, and commits updated CSV back to the triggering branch.
 
 ### `aggregate-rankings.yml`
-- Runs for pull requests that modify files in `scripts/` or `frontend/public/data/` and on pushes to `main`.
-- Installs Python and Node dependencies, runs the matching and aggregation scripts and validates the JSON output.
-- Pushes any updated data back to the same branch.
+
+Runs for pull requests that modify files in `scripts/` or `frontend/public/data/` and on pushes to `main`. Installs dependencies, runs matching and aggregation scripts, validates JSON output, and pushes updated data back.
 
 ---
 
-## 🤝 **Contributing**
+## Documentation
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Test** your changes (`npm test` and manual verification)
-4. **Commit** with conventional commits (`git commit -m 'feat: add amazing feature'`)
-5. **Push** to your branch (`git push origin feature/amazing-feature`)
-6. **Open** a Pull Request
+- [Enhanced Matching System](docs/ENHANCED_MATCHING.md) -- Technical documentation of the pattern-based matching engine
+- [Data Integrity Guide](docs/DATA_INTEGRITY_GUIDE.md) -- Verification tools and duplicate detection
+- [Data Scrapers Guide](docs/DATA_SCRAPERS_GUIDE.md) -- Guide to source scraper scripts
+- [Aggregation Guide](docs/AGGREGATION_GUIDE.md) -- Borda Count methodology details
+- [Automation Workflow Guide](docs/AUTOMATION_WORKFLOW_GUIDE.md) -- CI/CD pipeline documentation
+- [University Mapping Guide](docs/UNIVERSITY_MAPPING_GUIDE.md) -- Manual and auto-generated mapping system
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Test your changes (`npm test` and manual verification)
+4. Commit with conventional commits (`git commit -m 'feat: add amazing feature'`)
+5. Push to your branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
 ### Development Setup
+
 ```bash
-git clone https://github.com/yourusername/university-ranking-aggregator.git
-cd university-ranking-aggregator
+git clone https://github.com/mmostagirbhuiyan/unirank.git
+cd unirank
 npm install
 pip install -r requirements.txt
 ```
 
 ---
 
-## 📄 **License**
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 **Acknowledgments**
+## Acknowledgments
 
 - **Data Sources**: QS, THE, ARWU, US News for providing comprehensive university rankings
 - **[universityrankings.ch](https://www.universityrankings.ch)** for standardized CSV exports
-- **Open Source Community** for the amazing tools and libraries
-
----
-
-<div align="center">
-
-**⭐ Star this repository if you find it useful!**
-
-[🐛 Report Bug](https://github.com/yourusername/university-ranking-aggregator/issues) · [✨ Request Feature](https://github.com/yourusername/university-ranking-aggregator/issues) · [📖 Documentation](docs/)
-
-</div>

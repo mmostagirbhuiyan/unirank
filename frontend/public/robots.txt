@@ -1,4 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://mmostagirbhuiyan.com/university-ranking-aggregator/sitemap.xml
+
+Sitemap: https://unirank.mmostagirbhuiyan.com/sitemap.xml

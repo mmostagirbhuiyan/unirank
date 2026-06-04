@@ -10,11 +10,12 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-2">
+    <nav role="navigation" aria-label="Pagination" className="flex items-center justify-center gap-2">
       <button
         disabled={currentPage === 1}
         onClick={() => handlePage(currentPage - 1)}
-        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border/60 text-foreground disabled:opacity-30 disabled:cursor-not-allowed hover:bg-muted hover:border-primary/20 transition-all font-medium text-sm"
+        aria-label="Previous page"
+        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border/60 text-foreground disabled:opacity-30 disabled:cursor-not-allowed hover:bg-muted hover:border-primary/20 transition-all font-medium text-sm focus-ring"
       >
         <ChevronLeft size={16} />
         Previous
@@ -36,7 +37,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             <button
               key={pageNum}
               onClick={() => handlePage(pageNum)}
-              className={`w-10 h-10 rounded-xl text-sm font-medium transition-all ${
+              aria-label={`Page ${pageNum}`}
+              aria-current={currentPage === pageNum ? 'page' : undefined}
+              className={`w-10 h-10 rounded-xl text-sm font-medium transition-all focus-ring ${
                 currentPage === pageNum
                   ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
                   : 'text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -55,12 +58,13 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       <button
         disabled={currentPage >= totalPages}
         onClick={() => handlePage(currentPage + 1)}
-        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border/60 text-foreground disabled:opacity-30 disabled:cursor-not-allowed hover:bg-muted hover:border-primary/20 transition-all font-medium text-sm"
+        aria-label="Next page"
+        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border/60 text-foreground disabled:opacity-30 disabled:cursor-not-allowed hover:bg-muted hover:border-primary/20 transition-all font-medium text-sm focus-ring"
       >
         Next
         <ChevronRight size={16} />
       </button>
-    </div>
+    </nav>
   );
 };
 

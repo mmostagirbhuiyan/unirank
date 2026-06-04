@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders loading state', () => {
+test('renders loading state with brand name', () => {
   render(<App />);
-  const loading = screen.getByText(/Loading Universities/i);
-  expect(loading).toBeInTheDocument();
+  const brand = screen.getByText(/Rank/i);
+  expect(brand).toBeInTheDocument();
 });

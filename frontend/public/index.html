@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1e1b4b" />
   <meta name="description"
-    content="Data aggregation platform combining rankings from QS, Times Higher Education, US News, and Shanghai ARWU. Weighted scoring algorithm normalizes disparate methodologies into unified rankings with filtering by region, program, and criteria." />
+    content="Data aggregation platform combining rankings from QS, Times Higher Education, US News, and Shanghai ARWU. Weighted scoring algorithm normalizes disparate methodologies into unified rankings with filtering by region and criteria." />
   <meta name="keywords"
     content="UniRank, university rankings, global universities, QS rankings, Times Higher Education, ARWU, US News, ranking aggregator, AI rankings" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" sizes="192x192" />
@@ -23,11 +23,67 @@
   <link rel="canonical" href="https://unirank.mmostagirbhuiyan.com/" />
   <meta property="og:title" content="UniRank | Global University Rankings Aggregated" />
   <meta property="og:description"
-    content="Data aggregation platform combining rankings from QS, Times Higher Education, US News, and Shanghai ARWU. Weighted scoring algorithm normalizes disparate methodologies into unified rankings with filtering by region, program, and criteria." />
+    content="Data aggregation platform combining rankings from QS, Times Higher Education, US News, and Shanghai ARWU. Weighted scoring algorithm normalizes disparate methodologies into unified rankings with filtering by region and criteria." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://unirank.mmostagirbhuiyan.com/" />
-  <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
-  <!-- Fonts loaded via CSS -->
+  <meta property="og:image" content="https://unirank.mmostagirbhuiyan.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UniRank | Global University Rankings Aggregated" />
+  <meta name="twitter:description"
+    content="Data aggregation platform combining rankings from QS, Times Higher Education, US News, and Shanghai ARWU into unified, normalized scores." />
+  <meta name="twitter:image" content="https://unirank.mmostagirbhuiyan.com/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "UniRank Global University Rankings",
+    "description": "Aggregated university rankings combining QS World University Rankings, Times Higher Education, Academic Ranking of World Universities (ARWU), and US News Best Global Universities. Weighted Borda Count scoring normalizes disparate methodologies into a unified ranking of 1750+ institutions.",
+    "url": "https://unirank.mmostagirbhuiyan.com/",
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "creator": {
+      "@type": "Person",
+      "name": "Mostagir Bhuiyan",
+      "url": "https://mmostagirbhuiyan.com/"
+    },
+    "temporalCoverage": "2024/2025",
+    "variableMeasured": [
+      "QS World Ranking",
+      "Times Higher Education Ranking",
+      "ARWU Shanghai Ranking",
+      "US News Global Ranking",
+      "Aggregated Borda Count Score"
+    ],
+    "keywords": ["university rankings", "higher education", "QS", "THE", "ARWU", "US News", "data aggregation"],
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Top Global Universities by Aggregated Ranking",
+      "numberOfItems": 10,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "CollegeOrUniversity", "name": "Harvard University" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "CollegeOrUniversity", "name": "Massachusetts Institute of Technology" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "CollegeOrUniversity", "name": "Stanford University" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "CollegeOrUniversity", "name": "University of Cambridge" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "CollegeOrUniversity", "name": "University of Oxford" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "CollegeOrUniversity", "name": "University of California Berkeley" } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "CollegeOrUniversity", "name": "ETH Zurich" } },
+        { "@type": "ListItem", "position": 8, "item": { "@type": "CollegeOrUniversity", "name": "University of Chicago" } },
+        { "@type": "ListItem", "position": 9, "item": { "@type": "CollegeOrUniversity", "name": "Columbia University" } },
+        { "@type": "ListItem", "position": 10, "item": { "@type": "CollegeOrUniversity", "name": "California Institute of Technology" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fonts: preconnect + link (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

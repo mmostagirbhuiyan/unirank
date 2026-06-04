@@ -7,25 +7,46 @@ const path = require('path');
 // URL to download the latest ARWU CSV directly from universityrankings.ch
 // Note: if this URL changes in the future, update the constant accordingly.
 const ARWU_CSV_DOWNLOAD_URL =
-  'https://www.universityrankings.ch/results/Shanghai/2024?mode=csv';
+  'https://www.universityrankings.ch/results/Shanghai/2025?mode=csv';
 
 // Updated URL to universityrankings.ch - This is no longer used for fetching, but kept for reference
-// Updated URL to universityrankings.ch
-const ARWU_RANKINGS_URL = 'https://www.universityrankings.ch/results/Shanghai/2024';
+const ARWU_RANKINGS_URL = 'https://www.universityrankings.ch/results/Shanghai/2025';
 
 // Define the path for the local CSV file
 const ARWU_CSV_FILE = 'arwu_rankings.csv';
 const ARWU_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', ARWU_CSV_FILE);
 
 // Define the path for the local HTML file
-const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2024 - Results _ UniversityRankings.ch.html';
+const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2025 - Results _ UniversityRankings.ch.html';
+
+// Staleness threshold: 30 days in milliseconds
+const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Parse --force-refresh from CLI args
+const FORCE_REFRESH = process.argv.includes('--force-refresh');
+
+/**
+ * Returns true if the file exists, is non-empty, and is less than 30 days old.
+ */
+function isFresh(filePath) {
+    if (!fs.existsSync(filePath)) return false;
+    const stat = fs.statSync(filePath);
+    if (stat.size === 0) return false;
+    const ageMs = Date.now() - stat.mtimeMs;
+    return ageMs < STALENESS_MS;
+}
 
 // Download the latest ARWU CSV and save it to the data directory
 async function downloadARWUCSV() {
     try {
-        if (fs.existsSync(ARWU_FILE_PATH) && fs.statSync(ARWU_FILE_PATH).size > 0) {
-            console.log(`Using existing ARWU CSV at ${ARWU_FILE_PATH}`);
+        if (!FORCE_REFRESH && isFresh(ARWU_FILE_PATH)) {
+            console.log(`Using existing ARWU CSV at ${ARWU_FILE_PATH} (still fresh)`);
             return;
+        }
+        if (FORCE_REFRESH) {
+            console.log('--force-refresh: re-downloading ARWU CSV...');
+        } else if (fs.existsSync(ARWU_FILE_PATH)) {
+            console.log('ARWU CSV is stale (>30 days). Re-downloading...');
         }
         console.log(`Downloading ARWU CSV from ${ARWU_CSV_DOWNLOAD_URL}...`);
         const { exec } = require('child_process');

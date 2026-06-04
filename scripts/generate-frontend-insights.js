@@ -12,6 +12,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+    calculateBordaScore,
+    calculatePenaltyScore,
+    calculateAggregatedScore
+} = require('./aggregation');
 
 // Paths
 const DATA_DIR = path.join(__dirname, '../frontend/public/data');
@@ -31,22 +36,9 @@ const SOURCE_CONFIG = {
 const TOTAL_SOURCES = 4;
 
 /**
- * Calculate Borda score for a rank
- */
-function calculateBordaScore(rank, maxRank) {
-    if (rank === null || rank === undefined) return 0;
-    return Math.max(0, maxRank - rank + 1);
-}
-
-/**
- * Calculate penalty score for missing source
- */
-function calculatePenaltyScore(maxRank) {
-    return maxRank * 0.1;
-}
-
-/**
- * Generate detailed calculation breakdown for a university
+ * Generate detailed calculation breakdown for a university.
+ * Uses calculateBordaScore, calculatePenaltyScore, and calculateAggregatedScore
+ * imported from aggregation.js to keep the formula in one place (DRY).
  */
 function generateCalculationBreakdown(university) {
     const rawRanks = {};
@@ -76,7 +68,22 @@ function generateCalculationBreakdown(university) {
     }
 
     const confidenceMultiplier = 0.5 + 0.5 * (appearances / TOTAL_SOURCES);
-    const finalScore = weightedSum * confidenceMultiplier;
+
+    // Build the universityData shape expected by calculateAggregatedScore
+    const sourceWeights = {};
+    const sourceMaxRanks = {};
+    for (const [source, config] of Object.entries(SOURCE_CONFIG)) {
+        sourceWeights[source] = config.weight;
+        sourceMaxRanks[source] = config.maxRank;
+    }
+    const universityDataForAgg = {
+        rankings: {}
+    };
+    for (const [source] of Object.entries(SOURCE_CONFIG)) {
+        const ranking = university.originalRankings[source];
+        universityDataForAgg.rankings[source] = ranking ? { rank: ranking.rank } : null;
+    }
+    const finalScore = calculateAggregatedScore(universityDataForAgg, sourceWeights, sourceMaxRanks, TOTAL_SOURCES);
 
     return {
         rawRanks,

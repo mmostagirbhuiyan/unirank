@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Calculator, Info } from 'lucide-react';
-
-const SOURCE_CONFIG = {
-  qs: { label: 'QS', color: '#f97316', maxRank: 1000 },
-  the: { label: 'THE', color: '#eab308', maxRank: 999 },
-  arwu: { label: 'ARWU', color: '#ef4444', maxRank: 1000 },
-  usnews: { label: 'US News', color: '#3b82f6', maxRank: 980 }
-};
+import { SOURCE_CONFIG } from '../constants';
 
 const CalculationBreakdown = ({ university }) => {
   const [showDetails, setShowDetails] = useState(false);

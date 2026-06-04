@@ -165,9 +165,38 @@ class USNewsPlaywrightExtractor:
                 
             self.seen_universities.add(name)
             
-            # Country Extraction (Basic)
+            # Country Extraction
+            # Comprehensive list covering all ~90+ countries in US News global rankings.
+            # Ordered longest-first within shared prefixes to avoid false matches
+            # (e.g., "New Zealand" before "New", "South Korea" before "South Africa").
             country = "N/A"
-            common_countries = ['United States', 'United Kingdom', 'China', 'France', 'Germany', 'Australia', 'Canada', 'Italy', 'Spain', 'Netherlands', 'Japan', 'South Korea', 'Brazil', 'Switzerland', 'Sweden', 'Denmark', 'Belgium', 'Singapore']
+            common_countries = [
+                # Americas
+                'United States', 'Canada', 'Brazil', 'Argentina', 'Chile', 'Colombia',
+                'Mexico', 'Peru', 'Uruguay', 'Venezuela', 'Costa Rica', 'Cuba', 'Ecuador',
+                # Europe
+                'United Kingdom', 'France', 'Germany', 'Italy', 'Spain', 'Netherlands',
+                'Switzerland', 'Sweden', 'Denmark', 'Belgium', 'Norway', 'Finland',
+                'Austria', 'Ireland', 'Portugal', 'Poland', 'Czech Republic', 'Greece',
+                'Hungary', 'Romania', 'Croatia', 'Serbia', 'Slovakia', 'Slovenia',
+                'Estonia', 'Lithuania', 'Latvia', 'Luxembourg', 'Iceland', 'Bulgaria',
+                'Cyprus', 'Northern Cyprus', 'Malta', 'Belarus', 'Ukraine', 'Georgia',
+                'Russia',
+                # Asia
+                'South Korea', 'China', 'Japan', 'Singapore', 'Hong Kong', 'Macao',
+                'Taiwan', 'India', 'Malaysia', 'Thailand', 'Indonesia', 'Philippines',
+                'Viet Nam', 'Vietnam', 'Bangladesh', 'Pakistan', 'Kazakhstan',
+                'Uzbekistan', 'Kyrgyzstan', 'Azerbaijan', 'Brunei',
+                # Middle East
+                'United Arab Emirates', 'Saudi Arabia', 'Israel', 'Turkey', 'Iran',
+                'Iraq', 'Qatar', 'Kuwait', 'Oman', 'Bahrain', 'Jordan', 'Lebanon',
+                'Palestine',
+                # Africa
+                'South Africa', 'Egypt', 'Nigeria', 'Ghana', 'Ethiopia', 'Uganda',
+                'Morocco', 'Tunisia',
+                # Oceania
+                'Australia', 'New Zealand',
+            ]
             for c in common_countries:
                 if c in text:
                     country = c

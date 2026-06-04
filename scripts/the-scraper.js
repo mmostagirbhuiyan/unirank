@@ -16,12 +16,34 @@ const THE_CSV_DOWNLOAD_URL =
 const THE_CSV_FILE = 'the_rankings.csv';
 const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_CSV_FILE);
 
+// Staleness threshold: 30 days in milliseconds
+const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Parse --force-refresh from CLI args
+const FORCE_REFRESH = process.argv.includes('--force-refresh');
+
+/**
+ * Returns true if the file exists, is non-empty, and is less than 30 days old.
+ */
+function isFresh(filePath) {
+    if (!fs.existsSync(filePath)) return false;
+    const stat = fs.statSync(filePath);
+    if (stat.size === 0) return false;
+    const ageMs = Date.now() - stat.mtimeMs;
+    return ageMs < STALENESS_MS;
+}
+
 // Download the latest THE CSV to the data directory
 async function downloadTHECSV() {
     try {
-        if (fs.existsSync(THE_FILE_PATH) && fs.statSync(THE_FILE_PATH).size > 0) {
-            console.log(`Using existing THE CSV at ${THE_FILE_PATH}`);
+        if (!FORCE_REFRESH && isFresh(THE_FILE_PATH)) {
+            console.log(`Using existing THE CSV at ${THE_FILE_PATH} (still fresh)`);
             return;
+        }
+        if (FORCE_REFRESH) {
+            console.log('--force-refresh: re-downloading THE CSV...');
+        } else if (fs.existsSync(THE_FILE_PATH)) {
+            console.log('THE CSV is stale (>30 days). Re-downloading...');
         }
         console.log(`Downloading THE CSV from ${THE_CSV_DOWNLOAD_URL}...`);
         const { exec } = require('child_process');

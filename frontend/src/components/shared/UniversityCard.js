@@ -1,13 +1,39 @@
-import React from 'react';
-import { ChevronDown, ChevronUp, MapPin } from 'lucide-react';
+import React, { useState, lazy, Suspense } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ChevronDown, ChevronUp, MapPin, Link2, Check, ExternalLink, GitCompareArrows } from 'lucide-react';
 import { SOURCE_COLORS } from '../../hooks/useUniversityData';
+import { toSlug } from '../../utils/slug';
 import Badge from './Badge';
-import EnhancedCardTabs from '../EnhancedCardTabs';
 
-const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) => {
+const LazyEnhancedCardTabs = lazy(() => import('../EnhancedCardTabs'));
+
+const CardTabsSkeleton = () => (
+  <div className="animate-pulse space-y-4">
+    <div className="flex gap-2">
+      {[1, 2, 3, 4].map(i => (
+        <div key={i} className="h-9 w-20 rounded-lg bg-muted/40" />
+      ))}
+    </div>
+    <div className="h-48 rounded-xl bg-muted/30" />
+  </div>
+);
+
+const UniversityCard = ({ university, expanded, onToggle, globalStats, index, isComparing, onToggleCompare, compareCount }) => {
+  const [copied, setCopied] = useState(false);
   const bestRank = Math.min(...Object.values(university.originalRankings).map(r => r.rank));
   const hasInsights = !!university.insights;
   const sourceCount = Object.keys(university.originalRankings).length;
+  const slug = toSlug(university.name);
+  const profileUrl = `${window.location.origin}/university/${slug}`;
+
+  const handleCopyLink = (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(profileUrl).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   const getConsensusBadge = () => {
     if (!hasInsights || !university.insights.disagreement) return null;
@@ -28,13 +54,25 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
   };
 
   return (
-    <div
-      className={`group bg-card text-card-foreground rounded-2xl border overflow-hidden transition-all duration-300 ${
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.03, ease: 'easeOut' }}
+      role="button"
+      tabIndex={0}
+      aria-expanded={expanded}
+      aria-label={`${university.name}, rank ${university.aggregatedRank}, score ${university.aggregatedScore.toFixed(1)}. ${university.country}`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onToggle();
+        }
+      }}
+      className={`group bg-card text-card-foreground rounded-2xl border overflow-hidden transition-all duration-300 outline-none focus-ring ${
         expanded
           ? 'border-primary/30 shadow-lg shadow-primary/5 ring-1 ring-primary/10'
           : 'border-border/60 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5'
       }`}
-      style={{ animationDelay: `${index * 30}ms` }}
     >
       <div
         className="px-5 py-4 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-5 cursor-pointer select-none"
@@ -96,15 +134,40 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
           })}
         </div>
 
-        {/* Sources count mobile */}
-        <div className="flex lg:hidden items-center gap-1.5">
-          <div className="flex -space-x-1">
-            {Object.keys(university.originalRankings).map(source => (
-              <div key={source} className={`w-2.5 h-2.5 rounded-full ${SOURCE_COLORS[source].dot} ring-2 ring-card`} />
-            ))}
-          </div>
-          <span className="text-xs text-muted-foreground">{sourceCount}/4</span>
+        {/* Source Rankings Compact - Mobile/Tablet */}
+        <div className="flex lg:hidden items-center gap-1 flex-wrap">
+          {Object.entries(university.originalRankings).map(([source, data], i) => {
+            const colors = SOURCE_COLORS[source];
+            const abbr = source === 'usnews' ? 'USN' : source.toUpperCase();
+            return (
+              <React.Fragment key={source}>
+                {i > 0 && <span className="text-muted-foreground/40 text-[10px] font-light select-none">|</span>}
+                <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-[10px] font-bold ${colors.bg} ${colors.text} whitespace-nowrap`}>
+                  {abbr}<span className="font-mono opacity-80">#{data.rank}</span>
+                </span>
+              </React.Fragment>
+            );
+          })}
         </div>
+
+        {/* Compare Button */}
+        {onToggleCompare && (
+          <button
+            onClick={(e) => { e.stopPropagation(); onToggleCompare(university.name); }}
+            disabled={!isComparing && compareCount >= 3}
+            className={`flex-shrink-0 p-2 rounded-lg transition-all duration-200 cursor-pointer
+              ${isComparing
+                ? 'bg-primary/15 text-primary border border-primary/25'
+                : compareCount >= 3
+                  ? 'text-muted-foreground/30 cursor-not-allowed'
+                  : 'text-muted-foreground hover:text-primary hover:bg-primary/5 border border-transparent hover:border-primary/15'
+              }`}
+            aria-label={isComparing ? `Remove ${university.name} from comparison` : `Add ${university.name} to comparison`}
+            title={isComparing ? 'Remove from comparison' : compareCount >= 3 ? 'Max 3 universities' : 'Add to comparison'}
+          >
+            <GitCompareArrows size={16} />
+          </button>
+        )}
 
         {/* Expand Toggle */}
         <div className={`ml-auto p-2 rounded-lg transition-all duration-200 ${expanded ? 'bg-primary/10 text-primary' : 'text-muted-foreground group-hover:text-foreground'}`}>
@@ -115,8 +178,33 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
       {/* Expanded Details */}
       {expanded && (
         <div className="border-t border-border/50 bg-muted/20 p-6 animate-fade-in">
+          <div className="flex items-center justify-end gap-2 mb-4">
+            <Link
+              to={`/university/${slug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                bg-primary/5 text-primary border border-primary/15
+                hover:bg-primary/10 hover:border-primary/25
+                transition-all duration-200"
+            >
+              <ExternalLink size={12} />
+              Full Profile
+            </Link>
+            <button
+              onClick={handleCopyLink}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+                bg-primary/5 text-primary border border-primary/15
+                hover:bg-primary/10 hover:border-primary/25
+                transition-all duration-200 cursor-pointer"
+            >
+              {copied ? <Check size={12} /> : <Link2 size={12} />}
+              {copied ? 'Copied' : 'Share'}
+            </button>
+          </div>
           {hasInsights ? (
-            <EnhancedCardTabs university={university} globalStats={globalStats} />
+            <Suspense fallback={<CardTabsSkeleton />}>
+              <LazyEnhancedCardTabs university={university} globalStats={globalStats} />
+            </Suspense>
           ) : (
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -169,7 +257,7 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index }) 
           )}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

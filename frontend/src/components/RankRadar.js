@@ -8,27 +8,7 @@ import {
   ResponsiveContainer,
   Tooltip
 } from 'recharts';
-
-const SOURCE_COLORS = {
-  qs: '#f97316',
-  the: '#eab308',
-  arwu: '#ef4444',
-  usnews: '#3b82f6'
-};
-
-const SOURCE_LABELS = {
-  qs: 'QS',
-  the: 'THE',
-  arwu: 'ARWU',
-  usnews: 'US News'
-};
-
-const SOURCE_MAX_RANKS = {
-  qs: 1000,
-  the: 999,
-  arwu: 1000,
-  usnews: 980
-};
+import { SOURCE_HEX, SOURCE_LABELS, SOURCE_MAX_RANKS } from '../constants';
 
 const RankRadar = ({ university }) => {
   const { originalRankings, insights } = university;
@@ -166,7 +146,7 @@ const RankRadar = ({ university }) => {
             <div key={key} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-muted/30">
               <div
                 className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: SOURCE_COLORS[key] }}
+                style={{ backgroundColor: SOURCE_HEX[key] }}
               />
               <span className="text-xs text-muted-foreground">{label}:</span>
               <span className="text-xs font-semibold text-foreground ml-auto font-mono">

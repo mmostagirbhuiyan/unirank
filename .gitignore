@@ -27,6 +27,8 @@ complete_university_ranking_system.md
 .cursor/*
 .claude/*
 userinput.py
+venv/
+frontend/build/
 
 # Local Data
 frontend/public/data/arwu_rankings.csv # ARWU rankings
