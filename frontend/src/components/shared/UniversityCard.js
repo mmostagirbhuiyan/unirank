@@ -23,7 +23,6 @@ const UniversityCard = ({ university, expanded, onToggle, globalStats, index, is
   const [copied, setCopied] = useState(false);
   const bestRank = Math.min(...Object.values(university.originalRankings).map(r => r.rank));
   const hasInsights = !!university.insights;
-  const sourceCount = Object.keys(university.originalRankings).length;
   const slug = toSlug(university.name);
   const profileUrl = `${window.location.origin}/university/${slug}`;
 

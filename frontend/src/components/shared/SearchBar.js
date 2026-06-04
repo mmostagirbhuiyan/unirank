@@ -90,6 +90,7 @@ const SearchBar = ({ value, onChange, suggestions = [], onSelectSuggestion, clas
         onFocus={() => { if (visibleSuggestions.length > 0 && value) setShowDropdown(true); }}
         role="combobox"
         aria-expanded={showDropdown}
+        aria-controls="search-suggestions-list"
         aria-autocomplete="list"
         aria-activedescendant={activeIndex >= 0 ? `search-suggestion-${activeIndex}` : undefined}
         autoComplete="off"
@@ -97,6 +98,7 @@ const SearchBar = ({ value, onChange, suggestions = [], onSelectSuggestion, clas
       {showDropdown && visibleSuggestions.length > 0 && (
         <ul
           ref={listRef}
+          id="search-suggestions-list"
           role="listbox"
           className="absolute z-50 left-0 right-0 mt-1.5 bg-card border border-border/60 rounded-xl shadow-lg shadow-black/10 dark:shadow-black/30 overflow-hidden max-h-[360px] overflow-y-auto"
           style={{ backdropFilter: 'blur(12px)' }}
