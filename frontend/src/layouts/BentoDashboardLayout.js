@@ -223,8 +223,11 @@ const BentoDashboardLayout = ({ data, actions }) => {
                     }))}
                     cx={32}
                     cy={32}
-                    innerRadius={22}
-                    outerRadius={32}
+                    innerRadius={16}
+                    outerRadius={30}
+                    startAngle={90}
+                    endAngle={-270}
+                    paddingAngle={2}
                     dataKey="value"
                     stroke="none"
                     isAnimationActive={false}
