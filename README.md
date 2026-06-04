@@ -1,4 +1,4 @@
-# UniRank -- Global University Rankings Aggregated
+# UniRank: Global University Rankings Aggregated
 
 A production-grade platform that aggregates and visualizes global university rankings from four authoritative sources (QS, THE, ARWU, US News) using pattern-based matching, intelligent name standardization, and Borda Count scoring.
 
@@ -243,12 +243,12 @@ Runs for pull requests that modify files in `scripts/` or `frontend/public/data/
 
 ## Documentation
 
-- [Enhanced Matching System](docs/ENHANCED_MATCHING.md) -- Technical documentation of the pattern-based matching engine
-- [Data Integrity Guide](docs/DATA_INTEGRITY_GUIDE.md) -- Verification tools and duplicate detection
-- [Data Scrapers Guide](docs/DATA_SCRAPERS_GUIDE.md) -- Guide to source scraper scripts
-- [Aggregation Guide](docs/AGGREGATION_GUIDE.md) -- Borda Count methodology details
-- [Automation Workflow Guide](docs/AUTOMATION_WORKFLOW_GUIDE.md) -- CI/CD pipeline documentation
-- [University Mapping Guide](docs/UNIVERSITY_MAPPING_GUIDE.md) -- Manual and auto-generated mapping system
+- [Enhanced Matching System](docs/ENHANCED_MATCHING.md): Technical documentation of the pattern-based matching engine
+- [Data Integrity Guide](docs/DATA_INTEGRITY_GUIDE.md): Verification tools and duplicate detection
+- [Data Scrapers Guide](docs/DATA_SCRAPERS_GUIDE.md): Guide to source scraper scripts
+- [Aggregation Guide](docs/AGGREGATION_GUIDE.md): Borda Count methodology details
+- [Automation Workflow Guide](docs/AUTOMATION_WORKFLOW_GUIDE.md): CI/CD pipeline documentation
+- [University Mapping Guide](docs/UNIVERSITY_MAPPING_GUIDE.md): Manual and auto-generated mapping system
 
 ---
 
