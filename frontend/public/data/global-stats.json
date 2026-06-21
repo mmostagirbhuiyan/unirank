@@ -1,6 +1,6 @@
 {
-  "totalUniversities": 1687,
-  "totalCountries": 93,
+  "totalUniversities": 1667,
+  "totalCountries": 92,
   "totalSources": 4,
   "sourceConfig": {
     "qs": {
@@ -26,47 +26,27 @@
   },
   "manualMappingsCount": 167,
   "autoMappingsCount": 7958,
-  "lastUpdated": "2026-06-04",
+  "lastUpdated": "2026-06-21",
   "disagreementDistribution": {
-    "high-consensus": 37,
-    "moderate-consensus": 96,
-    "moderate-disagreement": 384,
-    "high-disagreement": 493,
-    "insufficient-data": 677
+    "high-consensus": 34,
+    "moderate-consensus": 102,
+    "moderate-disagreement": 374,
+    "high-disagreement": 506,
+    "insufficient-data": 651
   },
   "appearancesDistribution": {
-    "1": 677,
-    "2": 285,
-    "3": 258,
-    "4": 467
+    "1": 651,
+    "2": 284,
+    "3": 256,
+    "4": 476
   },
   "topConsensus": [
-    {
-      "name": "Binghamton University",
-      "spread": 0
-    },
     {
       "name": "University of Toledo",
       "spread": 0
     },
     {
-      "name": "Michigan Technological University",
-      "spread": 0
-    },
-    {
-      "name": "Tokyo University of Science",
-      "spread": 0
-    },
-    {
-      "name": "Azerbaijan State University Economics",
-      "spread": 0
-    },
-    {
-      "name": "German Jordanian University",
-      "spread": 0
-    },
-    {
-      "name": "University of Westminster",
+      "name": "National University of Science and Technology MISiS",
       "spread": 0
     },
     {
@@ -74,17 +54,37 @@
       "spread": 0
     },
     {
+      "name": "University of Regina",
+      "spread": 0
+    },
+    {
       "name": "Chengdu University of Technology",
       "spread": 0
     },
     {
-      "name": "University of Leiden",
+      "name": "Institut National des Sciences Appliquées de Toulouse",
       "spread": 0
+    },
+    {
+      "name": "Florida Atlantic University",
+      "spread": 0
+    },
+    {
+      "name": "Old Dominion University",
+      "spread": 0
+    },
+    {
+      "name": "University of Calcutta",
+      "spread": 0
+    },
+    {
+      "name": "University of Pennsylvania",
+      "spread": 1
     }
   ],
   "topControversial": [
     {
-      "name": "George Mason University",
+      "name": "Virginia Commonwealth University",
       "spread": 750
     },
     {
@@ -92,36 +92,36 @@
       "spread": 750
     },
     {
-      "name": "Nanjing Agricultural University",
-      "spread": 750
+      "name": "North China University of Technology",
+      "spread": 735
     },
     {
-      "name": "Rutgers University New Brunswick",
-      "spread": 745
-    },
-    {
-      "name": "Soochow University",
-      "spread": 700
-    },
-    {
-      "name": "Huazhong Agricultural University",
-      "spread": 700
+      "name": "Fuzhou University",
+      "spread": 690
     },
     {
       "name": "University of Indonesia",
-      "spread": 688
+      "spread": 686
     },
     {
-      "name": "Universiti Putra Malaysia",
-      "spread": 667
+      "name": "Indian Institute of Technology (IIT) - Kanpur",
+      "spread": 680
+    },
+    {
+      "name": "Scuola Normale Superiore di Pisa",
+      "spread": 664
     },
     {
       "name": "Universidad Nacional Autonoma de Mexico",
-      "spread": 665
+      "spread": 656
     },
     {
-      "name": "University of Sharjah",
-      "spread": 656
+      "name": "University of Colorado Denver",
+      "spread": 650
+    },
+    {
+      "name": "University of Marburg",
+      "spread": 650
     }
   ]
 }
