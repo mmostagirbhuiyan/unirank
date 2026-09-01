@@ -38,3 +38,4 @@ frontend/public/data/usnews_rankings.csv # US News rankings
 
 
 
+__pycache__/
