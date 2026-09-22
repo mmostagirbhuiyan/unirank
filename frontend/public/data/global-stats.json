@@ -1,6 +1,6 @@
 {
-  "totalUniversities": 1667,
-  "totalCountries": 92,
+  "totalUniversities": 1656,
+  "totalCountries": 96,
   "totalSources": 4,
   "sourceConfig": {
     "qs": {
@@ -25,24 +25,36 @@
     }
   },
   "manualMappingsCount": 167,
-  "autoMappingsCount": 7958,
-  "lastUpdated": "2026-06-21",
+  "autoMappingsCount": 7944,
+  "lastUpdated": "2026-09-22",
   "disagreementDistribution": {
-    "high-consensus": 34,
-    "moderate-consensus": 102,
-    "moderate-disagreement": 374,
-    "high-disagreement": 506,
-    "insufficient-data": 651
+    "high-consensus": 35,
+    "moderate-consensus": 95,
+    "moderate-disagreement": 371,
+    "high-disagreement": 533,
+    "insufficient-data": 622
   },
   "appearancesDistribution": {
-    "1": 651,
-    "2": 284,
-    "3": 256,
-    "4": 476
+    "1": 622,
+    "2": 289,
+    "3": 252,
+    "4": 493
   },
   "topConsensus": [
     {
+      "name": "Ecole Normale Superieure de Lyon (ENS de LYON)",
+      "spread": 0
+    },
+    {
       "name": "University of Toledo",
+      "spread": 0
+    },
+    {
+      "name": "Chang'an University",
+      "spread": 0
+    },
+    {
+      "name": "National University de Córdoba",
       "spread": 0
     },
     {
@@ -68,18 +80,6 @@
     {
       "name": "Florida Atlantic University",
       "spread": 0
-    },
-    {
-      "name": "Old Dominion University",
-      "spread": 0
-    },
-    {
-      "name": "University of Calcutta",
-      "spread": 0
-    },
-    {
-      "name": "University of Pennsylvania",
-      "spread": 1
     }
   ],
   "topControversial": [
@@ -88,24 +88,24 @@
       "spread": 750
     },
     {
-      "name": "Wuhan University of Technology",
+      "name": "University of Düsseldorf",
       "spread": 750
     },
     {
       "name": "North China University of Technology",
-      "spread": 735
+      "spread": 739
     },
     {
       "name": "Fuzhou University",
-      "spread": 690
+      "spread": 711
     },
     {
-      "name": "University of Indonesia",
-      "spread": 686
-    },
-    {
-      "name": "Indian Institute of Technology (IIT) - Kanpur",
+      "name": "Indian Institute of Technology - Kanpur",
       "spread": 680
+    },
+    {
+      "name": "Jiangsu University",
+      "spread": 668
     },
     {
       "name": "Scuola Normale Superiore di Pisa",
@@ -116,11 +116,11 @@
       "spread": 656
     },
     {
-      "name": "University of Colorado Denver",
-      "spread": 650
+      "name": "Wuhan University of Technology",
+      "spread": 652
     },
     {
-      "name": "University of Marburg",
+      "name": "University of Colorado--Denver",
       "spread": 650
     }
   ]

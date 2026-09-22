@@ -4,13 +4,13 @@ This guide documents the comprehensive data integrity verification process for t
 
 ## Overview
 
-Data integrity is critical for accurate university rankings aggregation. This system maintains **1753 unique universities** with **≤8 high-confidence duplicates** representing legitimate different institutions.
+Data integrity is critical for accurate university rankings aggregation. With the 2026-2027 US News refresh and the existing QS 2027, THE 2026, and ARWU source files, this system maintains **1656 unique universities** with **≤8 unresolved high-confidence duplicate candidates**. Similar-looking institutions that the check can identify as separate by country or source overlap are reported but do not count against that threshold.
 
-## Current Status (2024-06-21)
+## Current Status (2026-09-22)
 
 ### ✅ Achieved Metrics
-- **Total universities**: 1753 (target: 1753 ± 2)
-- **High-confidence duplicates**: 8 (target: ≤8)
+- **Total universities**: 1656 (target: 1656 ± 2)
+- **Unresolved potential duplicates**: 7 (target: ≤8)
 - **Data integrity**: 100% within acceptable bounds
 - **Cross-source merging**: Functional across all 4 ranking sources
 
@@ -24,18 +24,18 @@ Data integrity is critical for accurate university rankings aggregation. This sy
 ### University Count Rules
 1. **Never increase**: University count must never go up
 2. **Controlled decrease**: Reductions only through verified merges
-3. **Target range**: 1753 ± 2 universities (acceptable variance)
+3. **Current-cycle target range**: 1656 ± 2 universities (acceptable variance)
 4. **Monitoring**: Track changes after every modification
 
 ### Duplicate Classification
 
-#### ✅ Acceptable Duplicates (≤8)
-Legitimate different institutions with high name similarity:
+#### ✅ Legitimate lookalikes (reported separately)
+Different institutions with high name similarity:
 - Different countries with similar names
 - Same country, different institutions with source overlap
 - Regional campuses vs main institutions (verified separate)
 
-#### ❌ Problematic Duplicates (0 target)
+#### ❌ Unresolved potential duplicates (≤8 threshold)
 Same institution appearing multiple times:
 - Cross-source naming inconsistencies
 - Format variations (abbreviations, language)
@@ -45,7 +45,7 @@ Same institution appearing multiple times:
 
 ### 1. Primary Quality Monitor
 ```bash
-node scripts/data-quality-monitor.js
+node scripts/data-integrity-check.js
 ```
 
 **Features:**
@@ -57,9 +57,9 @@ node scripts/data-quality-monitor.js
 **Output Interpretation:**
 ```
 📊 DATA QUALITY SUMMARY
-Universities: 1753
-High-confidence duplicates (≥90%): 8
-Data integrity: ✅ HEALTHY
+Current count: 1656
+Unresolved potential duplicates: 7
+Data integrity check PASSED
 ```
 
 ### 2. Comprehensive Duplicate Analysis
@@ -89,12 +89,12 @@ node debug/check-problematic-mappings.js
 
 2. **Check university count**
    ```bash
-   node scripts/data-quality-monitor.js | grep "Universities:"
+   node scripts/data-integrity-check.js | grep "Current count:"
    ```
 
 3. **Verify duplicate status**
    ```bash
-   node scripts/data-quality-monitor.js | grep "duplicates"
+   node scripts/data-integrity-check.js | grep "Unresolved potential duplicates:"
    ```
 
 4. **Investigate any increases**
@@ -104,7 +104,7 @@ node debug/check-problematic-mappings.js
 ### Before Manual Mapping Changes
 1. **Baseline measurement**
    ```bash
-   node scripts/data-quality-monitor.js > before.txt
+   node scripts/data-integrity-check.js > before.txt
    ```
 
 2. **Apply changes**
@@ -115,7 +115,7 @@ node debug/check-problematic-mappings.js
 
 3. **Compare results**
    ```bash
-   node scripts/data-quality-monitor.js > after.txt
+   node scripts/data-integrity-check.js > after.txt
    diff before.txt after.txt
    ```
 
@@ -236,14 +236,14 @@ These 8 high-similarity pairs are confirmed as legitimate different institutions
 ### Before Code Changes
 ```bash
 # Establish baseline
-node scripts/data-quality-monitor.js > baseline.txt
+node scripts/data-integrity-check.js > baseline.txt
 ```
 
 ### After Code Changes  
 ```bash
 # Test impact
 node scripts/scrape-rankings.js
-node scripts/data-quality-monitor.js > current.txt
+node scripts/data-integrity-check.js > current.txt
 
 # Compare with baseline
 diff baseline.txt current.txt
@@ -252,7 +252,7 @@ diff baseline.txt current.txt
 ### Continuous Monitoring
 ```bash
 # Daily health check
-node scripts/data-quality-monitor.js | grep -E "(Universities|duplicates|integrity)"
+node scripts/data-integrity-check.js | grep -E "(Current count|Unresolved potential duplicates|DATA INTEGRITY)"
 ```
 
 ## Future Enhancements

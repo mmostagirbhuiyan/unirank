@@ -98,8 +98,13 @@ function canonicalizeName(name) {
     
     // Science and Technology automation (e.g., "Jordan University of Science and Technology" -> "Jordan University of Science & Technology")
     cleaned = cleaned.replace(/Science and Technology/g, 'Science & Technology');
+    cleaned = cleaned.replace(/\s+/g, ' ').trim();
     
     return cleaned;
+}
+
+function canonicalKey(name) {
+    return canonicalizeName(name).toLocaleLowerCase('en');
 }
 
 async function loadUSNewsNames() {
@@ -112,7 +117,7 @@ async function loadUSNewsNames() {
             .on('data', row => {
                 if (row.University) {
                     const orig = row.University.trim();
-                    const clean = canonicalizeName(orig);
+                    const clean = canonicalKey(orig);
                     if (!map.has(clean)) {
                         map.set(clean, orig);
                         cleaned.push(clean);
@@ -168,40 +173,62 @@ async function loadUniversityMapping() {
 // Enhanced standardization function - for non-US News sources, try to map to US News names
 function standardizeUniversityName(originalName, source) {
     const cleaned = canonicalizeName(originalName);
+
+    const resolveToCurrentUSNews = name => {
+        const exact = usnewsNameMap.get(canonicalKey(name));
+        if (exact) return exact;
+
+        const matches = enhancedMatcher.findBestMatches(
+            name,
+            Array.from(usnewsNameMap.values()),
+            0.93
+        );
+        return matches.length > 0 ? matches[0].target : name;
+    };
+
+    const autoMappedName = () => {
+        const originalKey = `${originalName}@${source}`;
+        if (universityStandardizationMap.has(originalKey)) {
+            return universityStandardizationMap.get(originalKey);
+        }
+
+        const cleanedKey = `${cleaned}@${source}`;
+        return universityStandardizationMap.get(cleanedKey);
+    };
     
     // 1. US News names - first check manual mappings, then use canonical form
     if (source === 'usnews') {
         // Check manual mappings first (for cross-source merging)
         if (manualMappingToUSNews.has(originalName)) {
-            return manualMappingToUSNews.get(originalName);
+            return resolveToCurrentUSNews(manualMappingToUSNews.get(originalName));
         }
         
         if (manualMappingToUSNews.has(cleaned)) {
-            return manualMappingToUSNews.get(cleaned);
+            return resolveToCurrentUSNews(manualMappingToUSNews.get(cleaned));
         }
-        
+
         // Fall back to canonical US News name
-        return usnewsNameMap.get(cleaned) || originalName.trim();
+        return usnewsNameMap.get(canonicalKey(originalName)) || originalName.trim();
     }
     
     // 2. For non-US News sources, try source-agnostic manual mapping first
     if (manualMappingToUSNews.has(originalName)) {
-        return manualMappingToUSNews.get(originalName);
+        return resolveToCurrentUSNews(manualMappingToUSNews.get(originalName));
     }
     
     if (manualMappingToUSNews.has(cleaned)) {
-        return manualMappingToUSNews.get(cleaned);
+        return resolveToCurrentUSNews(manualMappingToUSNews.get(cleaned));
     }
     
     // 3. Try legacy source-specific manual mappings
     let key = `${originalName}@${source}`;
     if (manualMappingToUSNews.has(key)) {
-        return manualMappingToUSNews.get(key);
+        return resolveToCurrentUSNews(manualMappingToUSNews.get(key));
     }
     
     key = `${cleaned}@${source}`;
     if (manualMappingToUSNews.has(key)) {
-        return manualMappingToUSNews.get(key);
+        return resolveToCurrentUSNews(manualMappingToUSNews.get(key));
     }
     
     // 4. ENHANCED: Apply pattern-based transformations and fuzzy match
@@ -216,20 +243,9 @@ function standardizeUniversityName(originalName, source) {
     }
     
     // 5. Auto-generated mapping (legacy support)
-    key = `${originalName}@${source}`;
-    if (universityStandardizationMap.has(key)) {
-        const mapped = universityStandardizationMap.get(key);
-        if (mapped && mapped !== originalName) {
-            return mapped;
-        }
-    }
-    
-    key = `${cleaned}@${source}`;
-    if (universityStandardizationMap.has(key)) {
-        const mapped = universityStandardizationMap.get(key);
-        if (mapped && mapped !== cleaned) {
-            return mapped;
-        }
+    const mapped = autoMappedName();
+    if (mapped) {
+        return resolveToCurrentUSNews(mapped);
     }
     
     // 6. Fallback: return original name

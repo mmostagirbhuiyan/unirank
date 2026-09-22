@@ -15,7 +15,7 @@ The university rankings aggregator uses dedicated scraper scripts to extract dat
 | **QS World Rankings** | `scripts/qs-scraper.js` | `frontend/public/data/qs_rankings.csv` | CSV | ~1000 |
 | **THE World Rankings** | `scripts/the-scraper.js` | `frontend/public/data/the_rankings.csv` | CSV | ~999 |
 | **ARWU (Shanghai Rankings)** | `scripts/arwu-scraper.js` | `frontend/public/data/arwu_rankings.csv` | CSV | ~1000 |
-| **US News Global** | `scripts/usnews_direct_extractor_selenium.py` | `frontend/public/data/usnews_rankings.csv` | CSV | ~980 |
+| **US News Global** | `scripts/usnews-api-scraper.js` | `frontend/public/data/usnews_rankings.csv` | CSV | 980 |
 
 ---
 
@@ -123,31 +123,33 @@ node scripts/arwu-scraper.js 100
 
 ### **Usage**
 ```bash
-# Update US News data (Python with Selenium)
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
+# Update US News data from the public JSON endpoint
+npm run refresh:usnews
 ```
 
 ### **Data Source**
-- **Method**: Direct website scraping with Selenium
+- **Method**: Direct requests to the public JSON endpoint used by the rankings page
 - **Source**: [usnews.com](https://www.usnews.com/education/best-global-universities/rankings)
 - **Update Frequency**: Manual scraping when needed
 
 ### **Special Features**
-- **Real-time scraping**: Extracts live data from US News website
-- **Selenium automation**: Handles dynamic content loading
-- **Robust extraction**: Manages pagination and JavaScript rendering
+- **Real-time extraction**: Reads the live rankings-page data
+- **Lightweight access**: Uses Node's stable built-in `fetch`; no browser is required
+- **Robust extraction**: Handles API pagination, retries, validation, deduplication, and atomic output
 - **CSV output**: Standardized format matching other sources
 
 ### **Requirements**
-```bash
-pip install selenium beautifulsoup4 pandas
-```
+Node.js 22 or newer is required. The scraper adds no package dependency.
 
 ### **Advanced Options**
 ```bash
-# Scrape with custom output file
-python scripts/usnews_direct_extractor_selenium.py -o custom_output.csv
+# Scrape with a custom output file or row limit
+node scripts/usnews-api-scraper.js --output custom_output.csv --limit 980
 ```
+
+### Data-access review (2026-09-22)
+
+Before the 2026-2027 refresh, the available lightweight access paths were checked. The ranking page's public JSON endpoint at `/education/best-global-universities/api/search?format=json&page=N` returned the current paginated ranking, including rank, university, country, score, and enrollment, so it replaced browser automation for this source. The U.S. News RSS path and a direct CSV path returned 404, `format=csv` still returned JSON, and the public sitemap directives covered editorial/news content rather than a ranking bulk export. No documented bulk download was found. The endpoint reports 2,250 ranked institutions followed by unranked profiles; this project retains the top 980 to match its existing US News aggregation scope and configured maximum rank.
 
 ---
 
@@ -168,7 +170,7 @@ Only US News requires manual updates:
 
 ```bash
 # 1. Update US News data
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
+npm run refresh:usnews
 
 # 2. Run aggregation (includes all other scrapers)
 node scripts/scrape-rankings.js
@@ -181,7 +183,7 @@ node scripts/scrape-rankings.js
 node scripts/qs-scraper.js 10
 node scripts/the-scraper.js 10  
 node scripts/arwu-scraper.js 10
-python scripts/usnews_direct_extractor_selenium.py
+npm run refresh:usnews -- --output /tmp/usnews_rankings.csv
 ```
 
 ---
@@ -208,10 +210,9 @@ ls -la frontend/public/data/
 - Validate rank formats (numbers vs ranges)
 
 #### **US News Scraping Failures**
-- Check internet connection
-- Verify Selenium webdriver is installed
-- US News website structure may have changed
-- Try legacy extractor as fallback
+- Check internet connection and the endpoint response status
+- Verify the response still includes `items`, `total_pages`, `ranks`, and `stats`
+- Compare the endpoint payload with the live rankings page if its schema changes
 
 ### **Debugging Commands**
 
@@ -401,4 +402,4 @@ if (require.main === module) {
 
 [🏠 Home](../README.md) · [📊 Enhanced Matching](ENHANCED_MATCHING.md) · [🛠️ Automation Workflow](AUTOMATION_WORKFLOW_GUIDE.md) · [🎯 Manual Mapping](MANUAL_MAPPING_GUIDE.md)
 
-</div> 
+</div>
