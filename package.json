@@ -5,6 +5,7 @@
   "main": "scripts/scrape-rankings.js",
   "scripts": {
     "start": "node scripts/scrape-rankings.js",
+    "refresh:usnews": "node scripts/usnews-api-scraper.js",
     "test": "jest"
   },
   "keywords": [

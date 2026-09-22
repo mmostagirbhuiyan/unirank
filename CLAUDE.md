@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**UniRank.AI** - A unified intelligence platform that aggregates global university rankings from 4 major sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The system maintains 1753 unique universities with comprehensive data integrity verification and a 5-tier name standardization hierarchy.
+**UniRank.AI** - A unified intelligence platform that aggregates global university rankings from 4 major sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The current source cycles produce 1656 unique universities with comprehensive data integrity verification and a 5-tier name standardization hierarchy.
 
 **Live Site**: <https://unirank.mmostagirbhuiyan.com/>
 
 ## Core Architecture
 
 ### Data Flow Pipeline
-1. **Data Ingestion**: CSV files loaded from `frontend/public/data/` (QS, THE, ARWU from universityrankings.ch, US News from Selenium scraper)
+1. **Data Ingestion**: CSV files loaded from `frontend/public/data/` (QS, THE, ARWU from universityrankings.ch, US News from the rankings page's public JSON endpoint)
 2. **Name Standardization**: 5-tier hierarchy with pattern-based transformations, manual mappings, and fuzzy matching fallbacks
 3. **Aggregation**: Borda Count algorithm with source weights and absence penalties
 4. **Output**: JSON files served to React frontend
@@ -27,7 +27,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Name Standardization Hierarchy (5-tier Priority System)
 1. **Manual Mappings** (167 curated entries) - Highest priority exceptions
 2. **Enhanced Pattern Matching** (0.93 threshold) - Smart fuzzy matching with transformations  
-3. **Auto-generated Mappings** (7,938 entries) - **Quality insurance fallback layer**
+3. **Auto-generated Mappings** (7,944 entries) - **Quality insurance fallback layer**
 4. **Canonicalization** (8+ patterns) - Built-in name normalization
 5. **Original Name** - Safety net
 
@@ -40,8 +40,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # Main aggregation (standard operation)
 node scripts/scrape-rankings.js
 
-# Update US News data (Selenium scraper)
-python scripts/usnews_direct_extractor_selenium.py -o frontend/public/data/usnews_rankings.csv
+# Update US News data (public JSON endpoint; top 980 matches the aggregation scope)
+npm run refresh:usnews
 
 # Regenerate bulk fuzzy mappings (rarely needed)
 node scripts/match-universities.js
@@ -50,7 +50,7 @@ node scripts/match-universities.js
 ### Quality Monitoring & Development
 ```bash
 # Monitor data quality and find issues
-node scripts/data-quality-monitor.js
+node scripts/data-integrity-check.js
 
 # Discover automation patterns (≥3 occurrences)
 node scripts/automation-helpers/pattern-discovery.js
@@ -112,8 +112,8 @@ Additional complex patterns: UC system campus names, "of" preposition normalizat
 
 ### Data Integrity Requirements
 - **Critical**: University count must NEVER increase (only decrease or stay the same)
-- **Current target**: Maintain 1753 universities ± 2 (acceptable variance)
-- **Duplicate threshold**: ≤8 high-confidence duplicates (representing legitimate different institutions)
+- **Current-cycle target**: Maintain 1656 universities ± 2 (acceptable variance)
+- **Duplicate threshold**: ≤8 unresolved high-confidence duplicate candidates; legitimate lookalike institutions are reported separately
 - Always run health check after changes: `node scripts/automation-helpers/baseline-monitor.js health`
 - Test automation patterns with pattern-tester before implementing
 
@@ -139,9 +139,9 @@ Modify in `scripts/scrape-rankings.js`:
 4. Add to `canonicalizeName()` function with descriptive comment
 5. Run baseline monitor to confirm health
 
-## System Health Status (June 2025)
+## System Health Status (September 2026)
 
-**Data Integrity:** ✅ 1,756 universities with 15 legitimate duplicates  
+**Data Integrity:** ✅ 1,656 universities with 7 unresolved potential duplicates
 **Architecture:** ✅ 5-tier hierarchy provides comprehensive quality insurance  
 **Performance:** ⚠️ Carries 88.5% unused mappings but essential for edge case coverage
 
@@ -151,9 +151,9 @@ Modify in `scripts/scrape-rankings.js`:
 - **Cross-country mapping errors**: Fixed incorrect university country assignments
 - **US News bypass bug**: Ensured all data flows through mapping hierarchy
 - **Pohang University consolidation**: Unified 3 variants to single entry
-- **Data integrity baseline**: Stabilized at 1,756 ± 2 universities with 15 legitimate duplicates
+- **Data integrity baseline**: Recalibrated to 1,656 ± 2 universities for the current source cycles
 
 ## Dependencies
 - **Node.js**: string-similarity, csv-parser, cheerio, puppeteer, xlsx
-- **Python**: selenium, beautifulsoup4, pandas (for US News scraper)
+- **Python**: selenium, beautifulsoup4, pandas (legacy browser scraper only)
 - **Frontend**: React 18, Tailwind CSS, Chart.js, Fuse.js for search
