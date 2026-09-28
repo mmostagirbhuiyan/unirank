@@ -1,0 +1,20 @@
+[
+  {
+    "source": "usnews",
+    "name": "Near East University",
+    "originalCountry": "Turkey",
+    "country": "Cyprus",
+    "evidence": "https://neu.edu.tr/about-us/rankings-accreditations-equivalences-memberships/?lang=en",
+    "consulted": "2026-09-28",
+    "reason": "US News groups the Northern Cyprus institution with Turkey. Use the same geographic bucket as the other sources, not a country-wide Turkey to Cyprus alias."
+  },
+  {
+    "source": "usnews",
+    "name": "Eastern Mediterranean University",
+    "originalCountry": "Turkey",
+    "country": "Cyprus",
+    "evidence": "https://www.emu.edu.tr/study-in-north-cyprus",
+    "consulted": "2026-09-28",
+    "reason": "Institution is in Northern Cyprus. Preserve the publisher's country in sourceCountry while using the existing Cyprus bucket."
+  }
+]

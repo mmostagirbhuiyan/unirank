@@ -1,0 +1,908 @@
+[
+  {
+    "name": "Khalifa University of Science and Technology",
+    "country": "United Arab Emirates",
+    "previousRows": [
+      {
+        "name": "Khalifa University",
+        "country": "United Arab Emirates"
+      },
+      {
+        "name": "Khalifa University of Science and Technology",
+        "country": "United Arab Emirates"
+      }
+    ],
+    "members": [
+      {
+        "name": "Khalifa University of Science and Technology",
+        "rank": 340,
+        "country": "United Arab Emirates",
+        "source": "usnews"
+      },
+      {
+        "name": "Khalifa University",
+        "rank": 601,
+        "country": "United Arab Emirates",
+        "source": "arwu"
+      },
+      {
+        "name": "Khalifa University",
+        "rank": 147,
+        "country": "United Arab Emirates",
+        "source": "qs"
+      },
+      {
+        "name": "Khalifa University",
+        "rank": 201,
+        "country": "United Arab Emirates",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Texas A&M University--College Station",
+    "country": "United States",
+    "previousRows": [
+      {
+        "name": "Texas A&M University",
+        "country": "United States"
+      },
+      {
+        "name": "Texas A&M University--College Station",
+        "country": "United States"
+      }
+    ],
+    "members": [
+      {
+        "name": "Texas A&M University--College Station",
+        "rank": 177,
+        "country": "United States",
+        "source": "usnews"
+      },
+      {
+        "name": "Texas A&M University",
+        "rank": 201,
+        "country": "United States",
+        "source": "arwu"
+      },
+      {
+        "name": "Texas A&M University",
+        "rank": 169,
+        "country": "United States",
+        "source": "qs"
+      },
+      {
+        "name": "Texas A&M University",
+        "rank": 151,
+        "country": "United States",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Tecnologico de Monterrey",
+    "country": "Mexico",
+    "previousRows": [
+      {
+        "name": "Monterrey Institute of Technology and Higher Education",
+        "country": "Mexico"
+      },
+      {
+        "name": "Tecnologico de Monterrey",
+        "country": "Mexico"
+      }
+    ],
+    "members": [
+      {
+        "name": "Tecnologico de Monterrey",
+        "rank": 603,
+        "country": "Mexico",
+        "source": "usnews"
+      },
+      {
+        "name": "Monterrey Institute of Technology and Higher Education",
+        "rank": 188,
+        "country": "Mexico",
+        "source": "qs"
+      },
+      {
+        "name": "Monterrey Institute of Technology and Higher Education",
+        "rank": 601,
+        "country": "Mexico",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "ENS De Lyon",
+    "country": "France",
+    "previousRows": [
+      {
+        "name": "Ecole Normale Supérieure de Lyon",
+        "country": "France"
+      },
+      {
+        "name": "ENS De Lyon",
+        "country": "France"
+      }
+    ],
+    "members": [
+      {
+        "name": "ENS De Lyon",
+        "rank": 657,
+        "country": "France",
+        "source": "usnews"
+      },
+      {
+        "name": "Ecole Normale Supérieure de Lyon",
+        "rank": 301,
+        "country": "France",
+        "source": "arwu"
+      },
+      {
+        "name": "Ecole Normale Supérieure de Lyon",
+        "rank": 235,
+        "country": "France",
+        "source": "qs"
+      },
+      {
+        "name": "Ecole Normale Supérieure de Lyon",
+        "rank": 301,
+        "country": "France",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "University of Macau",
+    "country": "Macao",
+    "previousRows": [
+      {
+        "name": "University of Macau",
+        "country": "Macao"
+      },
+      {
+        "name": "University of Macau",
+        "country": "Macau"
+      }
+    ],
+    "members": [
+      {
+        "name": "University of Macau",
+        "rank": 206,
+        "country": "Macao",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Macau",
+        "rank": 301,
+        "country": "Macao",
+        "source": "arwu"
+      },
+      {
+        "name": "University of Macau",
+        "rank": 267,
+        "country": "Macao",
+        "source": "qs"
+      },
+      {
+        "name": "University of Macau",
+        "rank": 145,
+        "country": "Macao",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Virginia Tech",
+    "country": "United States",
+    "previousRows": [
+      {
+        "name": "Virginia Polytechnic Institute and State University",
+        "country": "United States"
+      },
+      {
+        "name": "Virginia Tech",
+        "country": "United States"
+      }
+    ],
+    "members": [
+      {
+        "name": "Virginia Tech",
+        "rank": 285,
+        "country": "United States",
+        "source": "usnews"
+      },
+      {
+        "name": "Virginia Polytechnic Institute and State University",
+        "rank": 201,
+        "country": "United States",
+        "source": "arwu"
+      },
+      {
+        "name": "Virginia Polytechnic Institute and State University",
+        "rank": 366,
+        "country": "United States",
+        "source": "qs"
+      },
+      {
+        "name": "Virginia Polytechnic Institute and State University",
+        "rank": 251,
+        "country": "United States",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Ajman University",
+    "country": "United Arab Emirates",
+    "previousRows": [
+      {
+        "name": "Ajman University of Science and Technology",
+        "country": "United Arab Emirates"
+      },
+      {
+        "name": "Ajman University",
+        "country": "United Arab Emirates"
+      }
+    ],
+    "members": [
+      {
+        "name": "Ajman University",
+        "rank": 783,
+        "country": "United Arab Emirates",
+        "source": "usnews"
+      },
+      {
+        "name": "Ajman University of Science and Technology",
+        "rank": 397,
+        "country": "United Arab Emirates",
+        "source": "qs"
+      },
+      {
+        "name": "Ajman University of Science and Technology",
+        "rank": 401,
+        "country": "United Arab Emirates",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Macau University of Science and Technology",
+    "country": "Macao",
+    "previousRows": [
+      {
+        "name": "Macau University of Science and Technology",
+        "country": "Macao"
+      },
+      {
+        "name": "Macau University of Science and Technology",
+        "country": "Macau"
+      }
+    ],
+    "members": [
+      {
+        "name": "Macau University of Science and Technology",
+        "rank": 568,
+        "country": "Macao",
+        "source": "usnews"
+      },
+      {
+        "name": "Macau University of Science and Technology",
+        "rank": 401,
+        "country": "Macao",
+        "source": "arwu"
+      },
+      {
+        "name": "Macau University of Science and Technology",
+        "rank": 398,
+        "country": "Macao",
+        "source": "qs"
+      },
+      {
+        "name": "Macau University of Science and Technology",
+        "rank": 251,
+        "country": "Macao",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "National and Kapodistrian University of Athens",
+    "country": "Greece",
+    "previousRows": [
+      {
+        "name": "University of Athens",
+        "country": "Greece"
+      },
+      {
+        "name": "National and Kapodistrian University of Athens",
+        "country": "Greece"
+      }
+    ],
+    "members": [
+      {
+        "name": "National and Kapodistrian University of Athens",
+        "rank": 227,
+        "country": "Greece",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Athens",
+        "rank": 301,
+        "country": "Greece",
+        "source": "arwu"
+      },
+      {
+        "name": "University of Athens",
+        "rank": 402,
+        "country": "Greece",
+        "source": "qs"
+      },
+      {
+        "name": "University of Athens",
+        "rank": 401,
+        "country": "Greece",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "National Research University - Higher School of Economics",
+    "country": "Russia",
+    "previousRows": [
+      {
+        "name": "Higher School of Economics",
+        "country": "Russia"
+      },
+      {
+        "name": "National Research University - Higher School of Economics",
+        "country": "Russia"
+      }
+    ],
+    "members": [
+      {
+        "name": "National Research University - Higher School of Economics",
+        "rank": 573,
+        "country": "Russia",
+        "source": "usnews"
+      },
+      {
+        "name": "Higher School of Economics",
+        "rank": 701,
+        "country": "Russia",
+        "source": "arwu"
+      },
+      {
+        "name": "Higher School of Economics",
+        "rank": 423,
+        "country": "Russia",
+        "source": "qs"
+      },
+      {
+        "name": "Higher School of Economics",
+        "rank": 501,
+        "country": "Russia",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Università della Svizzera italiana",
+    "country": "Switzerland",
+    "previousRows": [
+      {
+        "name": "University of Lugano",
+        "country": "Switzerland"
+      },
+      {
+        "name": "Università della Svizzera italiana",
+        "country": "Switzerland"
+      }
+    ],
+    "members": [
+      {
+        "name": "Università della Svizzera italiana",
+        "rank": 524,
+        "country": "Switzerland",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Lugano",
+        "rank": 601,
+        "country": "Switzerland",
+        "source": "arwu"
+      },
+      {
+        "name": "University of Lugano",
+        "rank": 456,
+        "country": "Switzerland",
+        "source": "qs"
+      },
+      {
+        "name": "University of Lugano",
+        "rank": 251,
+        "country": "Switzerland",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "UNESP - Universidade Estadual Paulista",
+    "country": "Brazil",
+    "previousRows": [
+      {
+        "name": "Sao Paulo State University",
+        "country": "Brazil"
+      },
+      {
+        "name": "UNESP - Universidade Estadual Paulista",
+        "country": "Brazil"
+      }
+    ],
+    "members": [
+      {
+        "name": "UNESP - Universidade Estadual Paulista",
+        "rank": 578,
+        "country": "Brazil",
+        "source": "usnews"
+      },
+      {
+        "name": "Sao Paulo State University",
+        "rank": 401,
+        "country": "Brazil",
+        "source": "arwu"
+      },
+      {
+        "name": "Sao Paulo State University",
+        "rank": 513,
+        "country": "Brazil",
+        "source": "qs"
+      },
+      {
+        "name": "Sao Paulo State University",
+        "rank": 601,
+        "country": "Brazil",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Friedrich Schiller University of Jena",
+    "country": "Germany",
+    "previousRows": [
+      {
+        "name": "University of Jena",
+        "country": "Germany"
+      },
+      {
+        "name": "Friedrich Schiller University of Jena",
+        "country": "Germany"
+      }
+    ],
+    "members": [
+      {
+        "name": "Friedrich Schiller University of Jena",
+        "rank": 410,
+        "country": "Germany",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Jena",
+        "rank": 301,
+        "country": "Germany",
+        "source": "arwu"
+      },
+      {
+        "name": "University of Jena",
+        "rank": 567,
+        "country": "Germany",
+        "source": "qs"
+      },
+      {
+        "name": "University of Jena",
+        "rank": 201,
+        "country": "Germany",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)",
+    "country": "Russia",
+    "previousRows": [
+      {
+        "name": "National Research Nuclear University",
+        "country": "Russia"
+      },
+      {
+        "name": "National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)",
+        "country": "Russia"
+      }
+    ],
+    "members": [
+      {
+        "name": "National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)",
+        "rank": 770,
+        "country": "Russia",
+        "source": "usnews"
+      },
+      {
+        "name": "National Research Nuclear University",
+        "rank": 626,
+        "country": "Russia",
+        "source": "qs"
+      },
+      {
+        "name": "National Research Nuclear University",
+        "rank": 601,
+        "country": "Russia",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "University of Tromsø",
+    "country": "Norway",
+    "previousRows": [
+      {
+        "name": "Uit the Arctic University of Norway",
+        "country": "Norway"
+      },
+      {
+        "name": "University of Tromsø",
+        "country": "Norway"
+      }
+    ],
+    "members": [
+      {
+        "name": "University of Tromsø",
+        "rank": 701,
+        "country": "Norway",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Tromso",
+        "rank": 501,
+        "country": "Norway",
+        "source": "arwu"
+      },
+      {
+        "name": "Uit the Arctic University of Norway",
+        "rank": 629,
+        "country": "Norway",
+        "source": "qs"
+      },
+      {
+        "name": "Uit the Arctic University of Norway",
+        "rank": 601,
+        "country": "Norway",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Eastern Mediterranean University",
+    "country": "Cyprus",
+    "previousRows": [
+      {
+        "name": "Eastern Mediterranean University",
+        "country": "Cyprus"
+      },
+      {
+        "name": "Eastern Mediterranean University",
+        "country": "Turkey"
+      }
+    ],
+    "members": [
+      {
+        "name": "Eastern Mediterranean University",
+        "rank": 875,
+        "country": "Cyprus",
+        "source": "usnews",
+        "sourceCountry": "Türkiye"
+      },
+      {
+        "name": "Eastern Mediterranean University",
+        "rank": 691,
+        "country": "Cyprus",
+        "source": "qs"
+      }
+    ]
+  },
+  {
+    "name": "Northwest A&F University - China",
+    "country": "China",
+    "previousRows": [
+      {
+        "name": "Northwest Agriculture and Forestry University",
+        "country": "China"
+      },
+      {
+        "name": "Northwest A&F University - China",
+        "country": "China"
+      }
+    ],
+    "members": [
+      {
+        "name": "Northwest A&F University - China",
+        "rank": 281,
+        "country": "China",
+        "source": "usnews"
+      },
+      {
+        "name": "Northwest Agriculture and Forestry University",
+        "rank": 301,
+        "country": "China",
+        "source": "arwu"
+      },
+      {
+        "name": "Northwest Agriculture and Forestry University",
+        "rank": 731,
+        "country": "China",
+        "source": "qs"
+      }
+    ]
+  },
+  {
+    "name": "AGH University of Krakow",
+    "country": "Poland",
+    "previousRows": [
+      {
+        "name": "AGH University of Science and Technology",
+        "country": "Poland"
+      },
+      {
+        "name": "AGH University of Krakow",
+        "country": "Poland"
+      }
+    ],
+    "members": [
+      {
+        "name": "AGH University of Krakow",
+        "rank": 817,
+        "country": "Poland",
+        "source": "usnews"
+      },
+      {
+        "name": "AGH University of Science and Technology",
+        "rank": 901,
+        "country": "Poland",
+        "source": "arwu"
+      },
+      {
+        "name": "AGH University of Science and Technology",
+        "rank": 761,
+        "country": "Poland",
+        "source": "qs"
+      }
+    ]
+  },
+  {
+    "name": "Near East University",
+    "country": "Cyprus",
+    "previousRows": [
+      {
+        "name": "Near East University",
+        "country": "Cyprus"
+      },
+      {
+        "name": "Near East University",
+        "country": "Turkey"
+      }
+    ],
+    "members": [
+      {
+        "name": "Near East University",
+        "rank": 859,
+        "country": "Cyprus",
+        "source": "usnews",
+        "sourceCountry": "Türkiye"
+      },
+      {
+        "name": "Near East University",
+        "rank": 791,
+        "country": "Cyprus",
+        "source": "qs"
+      },
+      {
+        "name": "Near East University",
+        "rank": 601,
+        "country": "Cyprus",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "University of Franche-Comté",
+    "country": "France",
+    "previousRows": [
+      {
+        "name": "University of Franche-Comté",
+        "country": "France"
+      },
+      {
+        "name": "Marie and Louis Pasteur University",
+        "country": "France"
+      }
+    ],
+    "members": [
+      {
+        "name": "University of Franche-Comté",
+        "rank": 951,
+        "country": "France",
+        "source": "qs"
+      },
+      {
+        "name": "Marie and Louis Pasteur University",
+        "rank": 801,
+        "country": "France",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Politecnico di Bari",
+    "country": "Italy",
+    "previousRows": [
+      {
+        "name": "Polytechnic University of Bari",
+        "country": "Italy"
+      },
+      {
+        "name": "Politecnico di Bari",
+        "country": "Italy"
+      }
+    ],
+    "members": [
+      {
+        "name": "Politecnico di Bari",
+        "rank": 809,
+        "country": "Italy",
+        "source": "usnews"
+      },
+      {
+        "name": "Polytechnic University of Bari",
+        "rank": 801,
+        "country": "Italy",
+        "source": "arwu"
+      },
+      {
+        "name": "Polytechnic University of Bari",
+        "rank": 951,
+        "country": "Italy",
+        "source": "qs"
+      },
+      {
+        "name": "Polytechnic University of Bari",
+        "rank": 501,
+        "country": "Italy",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "University at Albany--SUNY",
+    "country": "United States",
+    "previousRows": [
+      {
+        "name": "State University of New York at Albany",
+        "country": "United States"
+      },
+      {
+        "name": "University at Albany--SUNY",
+        "country": "United States"
+      }
+    ],
+    "members": [
+      {
+        "name": "University at Albany--SUNY",
+        "rank": 716,
+        "country": "United States",
+        "source": "usnews"
+      },
+      {
+        "name": "State University of New York at Albany",
+        "rank": 701,
+        "country": "United States",
+        "source": "arwu"
+      },
+      {
+        "name": "State University of New York at Albany",
+        "rank": 951,
+        "country": "United States",
+        "source": "qs"
+      },
+      {
+        "name": "State University of New York at Albany",
+        "rank": 601,
+        "country": "United States",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "Scuola Superiore Sant'Anna",
+    "country": "Italy",
+    "previousRows": [
+      {
+        "name": "Sant'Anna School of Advanced Studies",
+        "country": "Italy"
+      },
+      {
+        "name": "Scuola Superiore Sant'Anna",
+        "country": "Italy"
+      }
+    ],
+    "members": [
+      {
+        "name": "Scuola Superiore Sant'Anna",
+        "rank": 897,
+        "country": "Italy",
+        "source": "usnews"
+      },
+      {
+        "name": "Sant'Anna School of Advanced Studies",
+        "rank": 201,
+        "country": "Italy",
+        "source": "the"
+      }
+    ]
+  },
+  {
+    "name": "CUNY--City College",
+    "country": "United States",
+    "previousRows": [
+      {
+        "name": "City University of New York - City College",
+        "country": "United States"
+      },
+      {
+        "name": "CUNY--City College",
+        "country": "United States"
+      }
+    ],
+    "members": [
+      {
+        "name": "CUNY--City College",
+        "rank": 897,
+        "country": "United States",
+        "source": "usnews"
+      },
+      {
+        "name": "City University of New York - City College",
+        "rank": 501,
+        "country": "United States",
+        "source": "arwu"
+      }
+    ]
+  },
+  {
+    "name": "University of Bodenkultur Wien",
+    "country": "Austria",
+    "previousRows": [
+      {
+        "name": "University of Natural Resources and Life Sciences",
+        "country": "Austria"
+      },
+      {
+        "name": "University of Bodenkultur Wien",
+        "country": "Austria"
+      }
+    ],
+    "members": [
+      {
+        "name": "University of Bodenkultur Wien",
+        "rank": 710,
+        "country": "Austria",
+        "source": "usnews"
+      },
+      {
+        "name": "University of Natural Resources and Life Sciences",
+        "rank": 601,
+        "country": "Austria",
+        "source": "arwu"
+      }
+    ]
+  }
+]

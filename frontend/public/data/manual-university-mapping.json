@@ -152,10 +152,6 @@
     "suggestedStandardizedName": "Lomonosov Moscow State University"
   },
   {
-    "originalName": "Nanjing University of Posts & Telecommunications",
-    "suggestedStandardizedName": "Beijing University of Posts & Telecommunications"
-  },
-  {
     "originalName": "Nanyang Technological University Singapore",
     "suggestedStandardizedName": "Nanyang Technological University"
   },
@@ -666,5 +662,681 @@
   {
     "originalName": "Pohang University of Science & Technology (POSTECH)",
     "suggestedStandardizedName": "Pohang University of Science & Technology"
+  },
+  {
+    "originalName": "North Carolina State University",
+    "suggestedStandardizedName": "North Carolina State University--Raleigh",
+    "country": "United States",
+    "evidence": "https://brand.ncsu.edu/editorial-style/north-carolina-state-university/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Chonbuk National University",
+    "suggestedStandardizedName": "Jeonbuk National University",
+    "country": "South Korea",
+    "evidence": "https://portal.chonbuk.ac.kr/en/about/overview/history.do",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Purdue University",
+    "suggestedStandardizedName": "Purdue University--West Lafayette",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/purdue-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Pennsylvania State University",
+    "suggestedStandardizedName": "Pennsylvania State University--University Park",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/pennsylvania-state-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Ohio State University",
+    "suggestedStandardizedName": "Ohio State University--Columbus",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/ohio-state-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Missouri - Columbia",
+    "suggestedStandardizedName": "University of Missouri",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/university-missouri-columbia",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Tennessee - Knoxville",
+    "suggestedStandardizedName": "University of Tennessee",
+    "country": "United States",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-tennessee-knoxville",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of South Carolina",
+    "suggestedStandardizedName": "University of South Carolina--Columbia",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/university-south-carolina",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Brigham Young University",
+    "suggestedStandardizedName": "Brigham Young University--Provo",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/brigham-young-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Tübingen",
+    "suggestedStandardizedName": "Eberhard Karls University, Tübingen",
+    "country": "Germany",
+    "evidence": "https://uni-tuebingen.de/en/231839",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Bochum",
+    "suggestedStandardizedName": "Ruhr University Bochum",
+    "country": "Germany",
+    "evidence": "https://www.shanghairanking.com/universities/university-of-bochum",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Mainz",
+    "suggestedStandardizedName": "Johannes Gutenberg University of Mainz",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/johannes-gutenberg-universitat-mainz",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Moscow State University",
+    "suggestedStandardizedName": "M. V. Lomonosov Moscow State University",
+    "country": "Russia",
+    "evidence": "https://www.topuniversities.com/universities/lomonosov-moscow-state-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Gent",
+    "suggestedStandardizedName": "Ghent University",
+    "country": "Belgium",
+    "evidence": "https://www.ugent.be/nl/onderzoek/financiering/nationaal/fwo/moving-to-belgium",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Erlangen-Nürnberg",
+    "suggestedStandardizedName": "University of Erlangen Nuremberg",
+    "country": "Germany",
+    "evidence": "https://www.tf.fau.de/forschung/rankings/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "PSL Research University Paris",
+    "suggestedStandardizedName": "PSL Research University Paris (ComUE)",
+    "country": "France",
+    "evidence": "https://www.ens.psl.eu/en/ens/universite-psl",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Paris Cité University",
+    "suggestedStandardizedName": "Université de Paris",
+    "country": "France",
+    "evidence": "https://u-paris.fr/category/universite-paris/page/11/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Catholic University of Louvain",
+    "suggestedStandardizedName": "University Catholique of Louvain",
+    "country": "Belgium",
+    "evidence": "https://www.topuniversities.com/universities/universite-catholique-de-louvain-uclouvain",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Technology - Petronas",
+    "suggestedStandardizedName": "Universiti Teknologi Petronas",
+    "country": "Malaysia",
+    "evidence": "https://www.topuniversities.com/universities/universiti-teknologi-petronas-utp",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Technology - Malaysia",
+    "suggestedStandardizedName": "Universiti Teknologi Malaysia",
+    "country": "Malaysia",
+    "evidence": "https://www.topuniversities.com/universities/universiti-teknologi-malaysia-utm",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Northumbria at Newcastle",
+    "suggestedStandardizedName": "Northumbria University",
+    "country": "United Kingdom",
+    "evidence": "https://www.northumbria.ac.uk/contact-us/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of the West of England - Bristol",
+    "suggestedStandardizedName": "University of West England",
+    "country": "United Kingdom",
+    "evidence": "https://www.uwe.ac.uk/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Palacky University",
+    "suggestedStandardizedName": "Palacky University Olomouc",
+    "country": "Czech Republic",
+    "evidence": "https://www.upol.cz/en/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Shoolini University of Biotechnology and Management Sciences",
+    "suggestedStandardizedName": "Shoolini University",
+    "country": "India",
+    "evidence": "https://shooliniuniversity.com/news/shoolini-soars-to-new-heights-with-no1-qs-rankings",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Science and Technology of China",
+    "suggestedStandardizedName": "University of Science & Technology of China, CAS",
+    "country": "China",
+    "evidence": "https://en.ustc.edu.cn/About.htm",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "SRM Institute Of Science and Technology ( Deemed University)",
+    "suggestedStandardizedName": "SRM Institute of Science and Technology",
+    "country": "India",
+    "evidence": "https://webstor.srmist.edu.in/web_assets/downloads/2023/statutory-regulatory-authority-approval-2021-22.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Lubeck",
+    "suggestedStandardizedName": "University of Luebeck",
+    "country": "Germany",
+    "evidence": "https://www.uni-luebeck.de/en/university/overview/profile.html",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Jinan University - Guangdong",
+    "suggestedStandardizedName": "Jinan University",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/jinan-university-china",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Texas Technical University",
+    "suggestedStandardizedName": "Texas Tech University",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/texas-tech-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Capital University of Medical Sciences",
+    "suggestedStandardizedName": "Capital Medical University",
+    "country": "China",
+    "evidence": "https://www.ccmu.edu.cn/docs/20191118094644586729.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Linz",
+    "suggestedStandardizedName": "Johannes Kepler University Linz",
+    "country": "Austria",
+    "evidence": "https://www.topuniversities.com/universities/johannes-kepler-university-linz",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "St. Louis University",
+    "suggestedStandardizedName": "Saint Louis University",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/saint-louis-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "National University of Colombia",
+    "suggestedStandardizedName": "Universidad Nacional de Colombia",
+    "country": "Colombia",
+    "evidence": "https://www.topuniversities.com/universities/universidad-nacional-de-colombia",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Victoria University - Melbourne",
+    "suggestedStandardizedName": "Victoria University",
+    "country": "Australia",
+    "evidence": "https://www.topuniversities.com/universities/victoria-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Jamia Millia Islamia University",
+    "suggestedStandardizedName": "Jamia Millia Islamia",
+    "country": "India",
+    "evidence": "https://www.topuniversities.com/universities/jamia-millia-islamia",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Humboldt University of Berlin",
+    "suggestedStandardizedName": "Humboldt-Universität zu Berlin",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/humboldt-universitat-zu-berlin",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Free University of Berlin",
+    "suggestedStandardizedName": "Freie Universität Berlin",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/freie-universitaet-berlin",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Kent at Canterbury",
+    "suggestedStandardizedName": "University of Kent",
+    "country": "United Kingdom",
+    "evidence": "https://www.topuniversities.com/universities/university-kent",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Lincoln (England)",
+    "suggestedStandardizedName": "University of Lincoln",
+    "country": "United Kingdom",
+    "evidence": "https://www.topuniversities.com/universities/university-lincoln",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Québec at Montreal",
+    "suggestedStandardizedName": "Université du Québec à Montréal",
+    "country": "Canada",
+    "evidence": "https://www.topuniversities.com/universities/universite-du-quebec-montreal-uqam",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Northwest University",
+    "suggestedStandardizedName": "Northwest University, Xi'an",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/northwest-university-china",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Shanghai for Science and Technology",
+    "suggestedStandardizedName": "University of Shanghai for Science",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/university-shanghai-science-technology",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Shanghai University of Finance and Economics",
+    "suggestedStandardizedName": "Shanghai University of Finance",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/shanghai-university-finance-economics",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Universitetet i Stavanger",
+    "suggestedStandardizedName": "University of Stavanger",
+    "country": "Norway",
+    "evidence": "https://www.uis.no/en/about-uis",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "L'institut Agro",
+    "suggestedStandardizedName": "Institut Agro",
+    "country": "France",
+    "evidence": "https://www.institut-agro.fr/en",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University Paris-Est Créteil Val de Marne",
+    "suggestedStandardizedName": "University of Paris-Est Creteil",
+    "country": "France",
+    "evidence": "https://eurlive.u-pec.fr/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Imam Muhammad Ibn Saud Islamic University",
+    "suggestedStandardizedName": "Al-Imam Muhammad Ibn Saud Islamic University",
+    "country": "Saudi Arabia",
+    "evidence": "https://www.imamu.edu.sa/en/Admissions/elearn/Pages/admission.aspx",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Campania Luigi Vanvitelli",
+    "suggestedStandardizedName": "Universita della Campania Vanvitelli",
+    "country": "Italy",
+    "evidence": "https://www.vdl.unicampania.it/info/privacy",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "St George's - University of London",
+    "suggestedStandardizedName": "City St Georges, University of London",
+    "country": "United Kingdom",
+    "evidence": "https://www.citystgeorges.ac.uk/about/merger-st-georges",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "VU University Amsterdam",
+    "suggestedStandardizedName": "Vrije Universiteit Amsterdam",
+    "country": "Netherlands",
+    "evidence": "https://www.topuniversities.com/universities/vrije-universiteit-amsterdam",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Göteborg University",
+    "suggestedStandardizedName": "University of Gothenburg",
+    "country": "Sweden",
+    "evidence": "https://www.topuniversities.com/universities/university-gothenburg",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Frankfurt am Main",
+    "suggestedStandardizedName": "Johann Wolfgang Goethe University Frankfurt am Main",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/goethe-university-frankfurt-am-main",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "National University of Malaysia",
+    "suggestedStandardizedName": "Universiti Kebangsaan Malaysia (UKM)",
+    "country": "Malaysia",
+    "evidence": "https://www.topuniversities.com/universities/universiti-kebangsaan-malaysia-ukm",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Science - Malaysia",
+    "suggestedStandardizedName": "Universiti Sains Malaysia",
+    "country": "Malaysia",
+    "evidence": "https://www.topuniversities.com/universities/universiti-sains-malaysia-usm",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "State University of New York at Stony Brook",
+    "suggestedStandardizedName": "Stony Brook University--SUNY",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/stony-brook-university-state-university-new-york",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Düsseldorf",
+    "suggestedStandardizedName": "Heinrich Heine University of Dusseldorf",
+    "country": "Germany",
+    "evidence": "https://www.hhu.de/en/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Marburg",
+    "suggestedStandardizedName": "Philipps University of Marburg",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/philipps-universitat-marburg",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Donghua University - Shanghai",
+    "suggestedStandardizedName": "Donghua University",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/donghua-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Polytechnic University of Catalonia",
+    "suggestedStandardizedName": "Universitat Politècnica de Catalunya",
+    "country": "Spain",
+    "evidence": "https://www.topuniversities.com/universities/universitat-politecnica-de-catalunya-barcelonatech-upc",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "National University of Sciences and Technology - Islamabad",
+    "suggestedStandardizedName": "National University of Sciences and Technology - Pakistan",
+    "country": "Pakistan",
+    "evidence": "https://www.topuniversities.com/universities/national-university-sciences-technology-nust-islamabad",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Technical University of Dortmund",
+    "suggestedStandardizedName": "Dortmund University of Technology",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/tu-dortmund-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Louisiana State University",
+    "suggestedStandardizedName": "Louisiana State University--Baton Rouge",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/louisiana-state-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Modena",
+    "suggestedStandardizedName": "University of Modena and Reggio Emilia",
+    "country": "Italy",
+    "evidence": "https://www.topuniversities.com/universities/university-modena-reggio-emilia",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Technical University of Madrid",
+    "suggestedStandardizedName": "Polytechnic University of Madrid",
+    "country": "Spain",
+    "evidence": "https://www.topuniversities.com/universities/universidad-politecnica-de-madrid-upm",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Greifswald",
+    "suggestedStandardizedName": "Ernst Moritz Arndt Universitat Greifswald",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/ernst-moritz-arndt-universitat-greifswald",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Arkansas at Fayetteville",
+    "suggestedStandardizedName": "University of Arkansas",
+    "country": "United States",
+    "evidence": "https://www.uark.edu/about/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Halle-Wittenberg",
+    "suggestedStandardizedName": "Martin Luther University of Halle-Wittenberg",
+    "country": "Germany",
+    "evidence": "https://www.topuniversities.com/universities/martin-luther-universitat-halle-wittenberg",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Los Andes",
+    "suggestedStandardizedName": "University of the Andes Colombia",
+    "country": "Colombia",
+    "evidence": "https://www.topuniversities.com/universities/universidad-de-los-andes-colombia",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Central China Normal University",
+    "suggestedStandardizedName": "Central China Normal University (Huazhong Normal University)",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/central-china-normal-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Beijing University of Posts and Telecommunications",
+    "suggestedStandardizedName": "Beijing University of Posts",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/beijing-university-posts-telecommunications",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University of Massachusetts Medical School",
+    "suggestedStandardizedName": "University of Massachusetts--Worcester",
+    "country": "United States",
+    "evidence": "https://www.umassmed.edu/about/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "University Clermont Auvergne",
+    "suggestedStandardizedName": "University of Auvergne",
+    "country": "France",
+    "evidence": "https://www.uca.fr/universite/nous-connaitre",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Chitkara University",
+    "suggestedStandardizedName": "Chitkara University Punjab",
+    "country": "India",
+    "evidence": "https://www.topuniversities.com/universities/chitkara-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "International Islamic University Islamabad",
+    "suggestedStandardizedName": "International Islamic University, Pakistan",
+    "country": "Pakistan",
+    "evidence": "https://www.iiu.edu.pk/about-iiu/about/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Indiana University-Purdue University of Indianapolis",
+    "suggestedStandardizedName": "Indiana University Indianapolis",
+    "country": "United States",
+    "evidence": "https://www.topuniversities.com/universities/indiana-university-indianapolis-iu-indianapolis",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "China University of Mining Technology",
+    "suggestedStandardizedName": "China University of Mining",
+    "country": "China",
+    "evidence": "https://www.topuniversities.com/universities/china-university-mining-technology",
+    "consulted": "2026-09-28"
+  },
+  {
+    "originalName": "Higher School of Economics",
+    "suggestedStandardizedName": "National Research University - Higher School of Economics",
+    "country": "Russia",
+    "evidence": "https://www.hse.ru/en/info/history",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Virginia Polytechnic Institute and State University",
+    "suggestedStandardizedName": "Virginia Tech",
+    "country": "United States",
+    "evidence": "https://brand.vt.edu/university-style-guide.html",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Sant'Anna School of Advanced Studies",
+    "suggestedStandardizedName": "Scuola Superiore Sant'Anna",
+    "country": "Italy",
+    "evidence": "https://phdinlaw.santannapisa.it/scuola/",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "National Research Nuclear University",
+    "suggestedStandardizedName": "National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)",
+    "country": "Russia",
+    "evidence": "https://eng.mephi.ru/",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "University of Natural Resources and Life Sciences",
+    "suggestedStandardizedName": "University of Bodenkultur Wien",
+    "country": "Austria",
+    "evidence": "https://boku.ac.at/fileadmin/data/H03000/H91000/_TEMP_/7.Kolloquium/7_WABO_StudConference_BOKU_2022.pdf",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Sao Paulo State University",
+    "suggestedStandardizedName": "UNESP - Universidade Estadual Paulista",
+    "country": "Brazil",
+    "evidence": "https://www.international.unesp.br/",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Northwest Agriculture and Forestry University",
+    "suggestedStandardizedName": "Northwest A&F University - China",
+    "country": "China",
+    "evidence": "https://is.nwafu.edu.cn/home/About/index.htm",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "University of Jena",
+    "suggestedStandardizedName": "Friedrich Schiller University of Jena",
+    "country": "Germany",
+    "evidence": "https://www.uni-jena.de/en",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "University of Athens",
+    "suggestedStandardizedName": "National and Kapodistrian University of Athens",
+    "country": "Greece",
+    "evidence": "https://en.uoa.gr/about_us/history_and_perspectives",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Monterrey Institute of Technology and Higher Education",
+    "suggestedStandardizedName": "Tecnologico de Monterrey",
+    "country": "Mexico",
+    "evidence": "https://conecta.tec.mx/en/news/national/institution/tec-de-monterrey-how-it-began",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Uit the Arctic University of Norway",
+    "suggestedStandardizedName": "University of Tromsø",
+    "country": "Norway",
+    "evidence": "https://en.uit.no/om",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "AGH University of Science and Technology",
+    "suggestedStandardizedName": "AGH University of Krakow",
+    "country": "Poland",
+    "evidence": "https://www.agh.edu.pl/en/university/history-and-traditions",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "University of Lugano",
+    "suggestedStandardizedName": "Università della Svizzera italiana",
+    "country": "Switzerland",
+    "evidence": "https://www.usi.ch/sites/default/files/storage/attachments/press-bachelor-booklet.pdf",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Khalifa University",
+    "suggestedStandardizedName": "Khalifa University of Science and Technology",
+    "country": "United Arab Emirates",
+    "evidence": "https://www.ku.ac.ae/",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Ajman University of Science and Technology",
+    "suggestedStandardizedName": "Ajman University",
+    "country": "United Arab Emirates",
+    "evidence": "https://www.ajman.ac.ae/en/news/2016/ajman-ruler-decrees-name-change-for-ajman-university",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "State University of New York at Albany",
+    "suggestedStandardizedName": "University at Albany--SUNY",
+    "country": "United States",
+    "evidence": "https://www.albany.edu/",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "Texas A&M University",
+    "suggestedStandardizedName": "Texas A&M University--College Station",
+    "country": "United States",
+    "evidence": "https://www.tamu.edu/about/faq.html",
+    "consulted": "2026-09-28",
+    "round": 3
+  },
+  {
+    "originalName": "University of Franche-Comté",
+    "suggestedStandardizedName": "Marie and Louis Pasteur University",
+    "country": "France",
+    "evidence": "https://alumni.umlp.fr/fr/article/l-universite-marie-et-louis-pasteur-une-nouvelle-ere-pour-l-enseignement-superieur-en-bourgogne-franche-comte/23/04/2025/269",
+    "consulted": "2026-09-28",
+    "round": 3
   }
 ]

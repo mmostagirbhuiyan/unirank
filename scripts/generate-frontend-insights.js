@@ -22,7 +22,7 @@ const {
 const DATA_DIR = path.join(__dirname, '../frontend/public/data');
 const AGGREGATED_PATH = path.join(DATA_DIR, 'aggregated-rankings.json');
 const MANUAL_MAPPINGS_PATH = path.join(DATA_DIR, 'manual-university-mapping.json');
-const SUGGESTED_MAPPINGS_PATH = path.join(DATA_DIR, 'suggested-university-mapping.json');
+const IDENTITY_AUDIT_PATH = path.join(DATA_DIR, 'identity-audit.json');
 const OUTPUT_PATH = path.join(DATA_DIR, 'enhanced-aggregated-rankings.json');
 const GLOBAL_STATS_PATH = path.join(DATA_DIR, 'global-stats.json');
 
@@ -179,31 +179,17 @@ function findSimilarUniversities(university, allUniversities) {
 /**
  * Build name variations lookup from mappings
  */
-function buildNameVariationsLookup(manualMappings, suggestedMappings) {
-    const lookup = {};
-
-    // Process manual mappings (higher quality)
-    for (const mapping of manualMappings) {
-        const standardized = mapping.suggestedStandardizedName;
-        if (!lookup[standardized]) {
-            lookup[standardized] = { manual: [], auto: [] };
+function buildNameVariationsLookup(assignments, manualMappings) {
+    const lookup = new Map();
+    const manualNames = new Set(manualMappings.map(mapping => mapping.originalName));
+    for (const university of assignments) {
+        const variations = { manual: [], auto: [] };
+        for (const name of new Set(university.members.map(member => member.name))) {
+            if (name === university.name) continue;
+            variations[manualNames.has(name) ? 'manual' : 'auto'].push(name);
         }
-        if (mapping.originalName !== standardized) {
-            lookup[standardized].manual.push(mapping.originalName);
-        }
+        lookup.set(university.country + '\0' + university.name, variations);
     }
-
-    // Process suggested/auto mappings
-    for (const mapping of suggestedMappings) {
-        const standardized = mapping.suggestedStandardizedName;
-        if (!lookup[standardized]) {
-            lookup[standardized] = { manual: [], auto: [] };
-        }
-        if (mapping.originalName !== standardized) {
-            lookup[standardized].auto.push(mapping.originalName);
-        }
-    }
-
     return lookup;
 }
 
@@ -236,17 +222,9 @@ async function generateInsights() {
     const aggregatedData = JSON.parse(fs.readFileSync(AGGREGATED_PATH, 'utf8'));
     const manualMappings = JSON.parse(fs.readFileSync(MANUAL_MAPPINGS_PATH, 'utf8'));
 
-    let suggestedMappings = [];
-    try {
-        suggestedMappings = JSON.parse(fs.readFileSync(SUGGESTED_MAPPINGS_PATH, 'utf8'));
-    } catch (e) {
-        console.log('Note: suggested-university-mapping.json not found, continuing without it');
-    }
-
+    const identityAudit = JSON.parse(fs.readFileSync(IDENTITY_AUDIT_PATH, 'utf8'));
     console.log(`Processing ${aggregatedData.length} universities...`);
-
-    // Build name variations lookup
-    const nameVariationsLookup = buildNameVariationsLookup(manualMappings, suggestedMappings);
+    const nameVariationsLookup = buildNameVariationsLookup(identityAudit.sourceAssignments, manualMappings);
 
     // Process each university
     const enhancedData = aggregatedData.map(university => {
@@ -254,7 +232,7 @@ async function generateInsights() {
         const disagreement = calculateDisagreement(university);
 
         // Get name variations for this university
-        const variations = nameVariationsLookup[university.name] || { manual: [], auto: [] };
+        const variations = nameVariationsLookup.get(university.country + '\0' + university.name) || { manual: [], auto: [] };
         const hasVariations = variations.manual.length > 0 || variations.auto.length > 0;
 
         return {
@@ -290,8 +268,8 @@ async function generateInsights() {
         totalCountries: new Set(enhancedData.map(u => u.country)).size,
         totalSources: TOTAL_SOURCES,
         sourceConfig: SOURCE_CONFIG,
-        manualMappingsCount: manualMappings.length,
-        autoMappingsCount: suggestedMappings.length,
+        manualMappingsCount: [...nameVariationsLookup.values()].reduce((sum, v) => sum + v.manual.length, 0),
+        autoMappingsCount: [...nameVariationsLookup.values()].reduce((sum, v) => sum + v.auto.length, 0),
         lastUpdated: new Date().toISOString().split('T')[0],
         disagreementDistribution: {
             'high-consensus': enhancedData.filter(u => u.insights.disagreement.category === 'high-consensus').length,

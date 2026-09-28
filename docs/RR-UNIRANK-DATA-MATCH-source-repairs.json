@@ -1,0 +1,128 @@
+[
+  {
+    "file": "qs_rankings.csv",
+    "line": 321,
+    "rank": 314,
+    "originalName": "Rutgers - The State University of New Jersey",
+    "correctedName": "Rutgers - The State University of New Jersey - New Brunswick",
+    "evidence": "https://www.topuniversities.com/universities/rutgers-university-new-brunswick",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "qs_rankings.csv",
+    "line": 842,
+    "rank": 801,
+    "originalName": "Rutgers - The State University of New Jersey",
+    "correctedName": "Rutgers - The State University of New Jersey - Newark",
+    "evidence": "https://www.topuniversities.com/universities/rutgers-university-newark",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "the_rankings.csv",
+    "line": 352,
+    "rank": 301,
+    "originalName": "Rutgers - The State University of New Jersey",
+    "correctedName": "Rutgers - The State University of New Jersey - New Brunswick",
+    "evidence": "https://www.timeshighereducation.com/student/best-universities/best-universities-united-states",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 144,
+    "rank": 101,
+    "originalName": "Rutgers - The State University of New Jersey",
+    "correctedName": "Rutgers - The State University of New Jersey - New Brunswick",
+    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 776,
+    "rank": 701,
+    "originalName": "Rutgers - The State University of New Jersey",
+    "correctedName": "Rutgers - The State University of New Jersey - Newark",
+    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "the_rankings.csv",
+    "line": 610,
+    "rank": 601,
+    "originalName": "Ege University",
+    "correctedName": "Government College University Faisalabad",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/government-college-university-faisalabad",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "the_rankings.csv",
+    "line": 807,
+    "rank": 801,
+    "originalName": "Ege University",
+    "correctedName": "Government College University Lahore",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/government-college-university-lahore",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 920,
+    "rank": 901,
+    "originalName": "Jiangsu University",
+    "correctedName": "Jiangsu University of Science and Technology",
+    "evidence": "https://www.shanghairanking.cn/institution/jiangsu-university-of-science-and-technology",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 818,
+    "rank": 801,
+    "originalName": "Chengdu University of Technology",
+    "correctedName": "Chengdu University",
+    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 828,
+    "rank": 801,
+    "originalName": "South China Normal University",
+    "correctedName": "University of South China",
+    "evidence": "https://www.shanghairanking.cn/institution/university-of-south-china",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 420,
+    "rank": 401,
+    "originalName": "Hohai University Changzhou",
+    "correctedName": "Hohai University",
+    "evidence": "https://www.shanghairanking.cn/institution/hohai-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 523,
+    "rank": 501,
+    "originalName": "Hohai University Changzhou",
+    "correctedName": "Changzhou University",
+    "evidence": "https://www.shanghairanking.cn/institution/changzhou-university",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "qs_rankings.csv",
+    "line": 963,
+    "rank": 951,
+    "originalName": "Universityâ  Â campaniaâ luigiâ vanvitelli",
+    "correctedName": "University of Campania Luigi Vanvitelli",
+    "evidence": "https://www.topuniversities.com/universities/universit-degli-studi-della-campania-luigi-vanvitelli",
+    "consulted": "2026-09-28"
+  },
+  {
+    "file": "qs_rankings.csv",
+    "line": 696,
+    "rank": 691,
+    "originalName": "Ege University",
+    "correctedName": "Government College University Faisalabad",
+    "evidence": "https://www.topuniversities.com/universities/government-college-university-faisalabad",
+    "consulted": "2026-09-28"
+  }
+]

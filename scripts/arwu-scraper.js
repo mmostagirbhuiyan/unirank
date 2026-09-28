@@ -1,5 +1,4 @@
 // Academic Ranking of World Universities (ARWU) scraper 
-const axios = require('axios');
 const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
@@ -77,7 +76,7 @@ async function scrapeARWURankings(limit) {
 
     try {
         // Always attempt to download the latest data before parsing
-        await downloadARWUCSV();
+        if (!process.argv.includes('--offline')) await downloadARWUCSV();
         console.log(`Reading ARWU rankings from local CSV file ${ARWU_FILE_PATH}...`);
 
         // --- Start of parsing logic with csv-parser ---

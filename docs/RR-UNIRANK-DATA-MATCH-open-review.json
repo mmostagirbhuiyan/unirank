@@ -1,0 +1,13 @@
+[
+  {
+    "country": "Belgium",
+    "source": "usnews",
+    "name": "Free University of Brussels",
+    "rank": 364,
+    "status": "needs publisher identity evidence",
+    "possibleInstitutions": ["Vrije Universiteit Brussel", "Université Libre de Bruxelles"],
+    "reason": "Both contemporary institutions translate to Free University of Brussels. The separate US News ULB record makes VUB plausible, but source complementarity alone is not proof. No merge was made.",
+    "evidence": "https://www.vub.be/en/about-vub/history-and-philosophy-vub/how-it-started",
+    "consulted": "2026-09-28"
+  }
+]

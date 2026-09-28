@@ -1,5 +1,4 @@
 // scripts/the-scraper.js
-const axios = require('axios');
 const fs = require('fs');
 const fsp = fs.promises;
 const path = require('path');
@@ -72,7 +71,7 @@ async function scrapeTHERankings() {
 
     try {
         // Fetch the latest CSV before reading
-        await downloadTHECSV();
+        if (!process.argv.includes('--offline')) await downloadTHECSV();
         console.log(`Reading THE rankings from local CSV file ${THE_FILE_PATH}...`);
 
         await new Promise((resolve, reject) => {

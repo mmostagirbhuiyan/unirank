@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**UniRank.AI** - A unified intelligence platform that aggregates global university rankings from 4 major sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The current source cycles produce 1656 unique universities with comprehensive data integrity verification and a 5-tier name standardization hierarchy.
+**UniRank.AI** - A unified intelligence platform that aggregates global university rankings from 4 major sources (QS, THE, ARWU, US News), applies intelligent name standardization, and produces aggregated rankings using Borda Count with Penalized Absence methodology. The university count is derived from the published data; all source records have published owners. The current identity pipeline is documented in docs/DATA_INTEGRITY_GUIDE.md. Historical matching guidance below is superseded by that guide.
 
 **Live Site**: <https://unirank.mmostagirbhuiyan.com/>
 
@@ -112,7 +112,7 @@ Additional complex patterns: UC system campus names, "of" preposition normalizat
 
 ### Data Integrity Requirements
 - **Critical**: University count must NEVER increase (only decrease or stay the same)
-- **Current-cycle target**: Maintain 1656 universities ± 2 (acceptable variance)
+- **Current-cycle target**: Derive the count from source identities, not a fixed target
 - **Duplicate threshold**: ≤8 unresolved high-confidence duplicate candidates; legitimate lookalike institutions are reported separately
 - Always run health check after changes: `node scripts/automation-helpers/baseline-monitor.js health`
 - Test automation patterns with pattern-tester before implementing
@@ -141,7 +141,7 @@ Modify in `scripts/scrape-rankings.js`:
 
 ## System Health Status (September 2026)
 
-**Data Integrity:** ✅ 1,656 universities with 7 unresolved potential duplicates
+**Data Integrity:** Run `npm test` and `node scripts/data-integrity-check.js`; publication requires zero unresolved source identities.
 **Architecture:** ✅ 5-tier hierarchy provides comprehensive quality insurance  
 **Performance:** ⚠️ Carries 88.5% unused mappings but essential for edge case coverage
 
@@ -151,7 +151,7 @@ Modify in `scripts/scrape-rankings.js`:
 - **Cross-country mapping errors**: Fixed incorrect university country assignments
 - **US News bypass bug**: Ensured all data flows through mapping hierarchy
 - **Pohang University consolidation**: Unified 3 variants to single entry
-- **Data integrity baseline**: Recalibrated to 1,656 ± 2 universities for the current source cycles
+- **Data integrity baseline**: Superseded by source-conservation and reproducibility checks
 
 ## Dependencies
 - **Node.js**: string-similarity, csv-parser, cheerio, puppeteer, xlsx

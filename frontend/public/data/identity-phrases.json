@@ -1,0 +1,23 @@
+[
+  {
+    "country": "United States",
+    "from": "CUNY",
+    "to": "City University of New York",
+    "evidence": "https://www.ccny.cuny.edu/",
+    "consulted": "2026-09-28"
+  },
+  {
+    "country": "France",
+    "from": "ENS",
+    "to": "Ecole Normale Superieure",
+    "evidence": "https://www.ens-lyon.fr/en/sites/default/files/2023-03/PF%20DIPLOME%20ENS%202021%20VA-032023_0.pdf",
+    "consulted": "2026-09-28"
+  },
+  {
+    "country": "Italy",
+    "from": "Politecnico di",
+    "to": "Polytechnic University",
+    "evidence": "https://www.poliba.it/it/homepage",
+    "consulted": "2026-09-28"
+  }
+]

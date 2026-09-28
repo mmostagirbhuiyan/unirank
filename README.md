@@ -4,7 +4,7 @@ A production-grade platform that aggregates and visualizes global university ran
 
 **Live:** [unirank.mmostagirbhuiyan.com](https://unirank.mmostagirbhuiyan.com/)
 
-[![Universities](https://img.shields.io/badge/Universities-1687-blue)](https://github.com/mmostagirbhuiyan/unirank)
+[![Universities](https://img.shields.io/badge/Universities-1562-blue)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/unirank)
 
@@ -41,7 +41,7 @@ The system will automatically load rankings from all 4 sources, apply intelligen
 | Source | Universities | Focus | Update Frequency |
 |--------|-------------|-------|------------------|
 | **QS World Rankings** | 1,000 | Global comprehensive | Annual |
-| **THE (Times Higher Education)** | 999 | Research excellence | Annual |
+| **THE (Times Higher Education)** | 992 | Research excellence | Annual |
 | **ARWU (Shanghai Rankings)** | 1,000 | Academic performance | Annual |
 | **US News Global** | 980 | International reach | Annual |
 
@@ -51,14 +51,18 @@ The system will automatically load rankings from all 4 sources, apply intelligen
 
 ### Current Performance
 
-- **1,687 unique universities** with verified data integrity
+- **1,562 unique universities** in the regenerated data, with every source rank assigned
 - **8 active automation patterns** for name standardization
-- **167 curated manual mappings** for cross-source edge cases
+- **242 curated manual mappings** for cross-source edge cases
 - **<30 seconds** complete data processing
 
 ---
 
-## Enhanced Matching System
+## Identity matching
+
+The aggregation pipeline now uses country-scoped name equivalence and conflict-checked alias components. Fuzzy suggestions are not trusted for assigning ranks. See [data integrity verification](docs/DATA_INTEGRITY_GUIDE.md) and the [current repair report](docs/RR-UNIRANK-DATA-MATCH-report.md). The legacy matching utilities described below are not the aggregation authority.
+
+## Legacy Enhanced Matching System
 
 The advanced pattern-based matching system automatically handles systematic naming variations.
 

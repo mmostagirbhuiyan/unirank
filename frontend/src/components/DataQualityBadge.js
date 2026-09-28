@@ -6,7 +6,7 @@ const DataQualityBadge = ({ university, globalStats }) => {
   const { dataQuality } = insights || {};
 
   const stats = globalStats || {
-    totalUniversities: 1687,
+    totalUniversities: null,
     manualMappingsCount: 167,
     autoMappingsCount: 7958,
     lastUpdated: new Date().toISOString().split('T')[0]
@@ -102,7 +102,7 @@ const DataQualityBadge = ({ university, globalStats }) => {
         <div className="bg-muted/30 rounded-xl p-4 text-center">
           <Shield className="text-emerald-500 mx-auto mb-2" size={20} strokeWidth={2.5} />
           <div className="text-lg font-black font-mono text-foreground">
-            {stats.totalUniversities.toLocaleString()}
+            {stats.totalUniversities?.toLocaleString() ?? '\u2014'}
           </div>
           <div className="text-xs text-muted-foreground font-medium">verified</div>
         </div>

@@ -59,7 +59,7 @@ async function downloadQSCSV() {
 function parseQSCSV(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
-    fs.createReadStream(filePath, { encoding: 'utf-8' }) // Change this to 'utf-8' to handle the encoding issue, but it need to be changed back to 'latin1' when the third party csv is downloaded for 2026
+    fs.createReadStream(filePath, { encoding: 'latin1' })
       .pipe(
         csv({
           headers: ['# World Rank', ' Institution', ' Country'],
@@ -91,7 +91,7 @@ function parseQSCSV(filePath) {
  */
 async function scrapeQSRankings(limit) {
     try {
-        await downloadQSCSV();
+        if (!process.argv.includes('--offline')) await downloadQSCSV();
         console.log(`Reading QS rankings from CSV file: ${QS_FILE_PATH}...`);
         const rankings = await parseQSCSV(QS_FILE_PATH);
         console.log(`Successfully read ${rankings.length} universities from CSV.`);
@@ -104,7 +104,7 @@ async function scrapeQSRankings(limit) {
 
 async function main() {
   try {
-    await downloadQSCSV();
+    if (!process.argv.includes('--offline')) await downloadQSCSV();
     const qsData = await parseQSCSV(QS_FILE_PATH);
     console.log('Sample QS data:', qsData.slice(0, 5));
     // ...rest of your QS processing logic, using qsData...
