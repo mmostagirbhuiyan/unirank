@@ -91,16 +91,35 @@ async def run(args, work):
             await pg.reload(wait_until='load'); await pg.wait_for_timeout(1500)
             print('old deployed, visit 2:', await state(pg))
             replace_link(current, new_build); print('swapped')
+            reloads = []
             for i in range(3):
                 await pg.reload(wait_until='load'); await pg.wait_for_timeout(2500)
-                print(f'new deployed, reload {i+1}:', await state(pg))
+                reloads.append(await state(pg))
+                print(f'new deployed, reload {i+1}:', reloads[-1])
             await pg.close(); pg=await ctx.new_page(); await pg.goto(args.base, wait_until='load'); await pg.wait_for_timeout(2500)
-            print('new deployed, fresh tab:', await state(pg))
+            fresh = await state(pg)
+            print('new deployed, fresh tab:', fresh)
             regs = await pg.evaluate("navigator.serviceWorker.getRegistrations().then(r=>r.map(x=>x.active&&x.active.scriptURL))")
             print('registrations', regs)
             await ctx.close()
             # control: a first-time visitor
-            b=await p.chromium.launch(args=browser_args); q=await b.new_page(); await q.goto(args.base,wait_until='load'); await q.wait_for_timeout(2000); print('first-time visitor:', await state(q)); await b.close()
+            b=await p.chromium.launch(args=browser_args); q=await b.new_page(); await q.goto(args.base,wait_until='load'); await q.wait_for_timeout(2000); first = await state(q); print('first-time visitor:', first); await b.close()
+            failures = []
+            if not any(item['fray'] and not item['root'] for item in reloads[:2]):
+                failures.append('returning visitor does not see the new landing within two reloads')
+            if not (reloads[-1]['fray'] and not reloads[-1]['root']):
+                failures.append('returning visitor lost the new landing on a later reload')
+            if not (fresh['fray'] and not fresh['root']):
+                failures.append('fresh tab does not show the new landing')
+            if regs:
+                failures.append(f'a service worker is still registered: {regs}')
+            if not first['fray']:
+                failures.append('first-time visitor does not see the new landing')
+            for failure in failures:
+                print('FAIL', failure)
+            print('PASS service worker migration' if not failures else f'{len(failures)} failure(s)')
+            if failures:
+                raise SystemExit(1)
     finally:
         server.terminate()
         try:

@@ -419,7 +419,7 @@ function profileCalculation(university) {
       <div class="profile-table-wrap">
         <table class="profile-table">
           <caption class="visually-hidden">Source ranks and their contribution to the consensus score</caption>
-          <thead><tr><th scope="col">Source</th><th scope="col">Rank</th><th scope="col">Borda points</th><th scope="col">Weight</th><th scope="col">Share of score</th></tr></thead>
+          <thead><tr><th scope="col">Source</th><th scope="col">Rank</th><th scope="col">Borda points</th><th scope="col">Weight</th><th scope="col">Share of inputs</th></tr></thead>
           <tbody>${parts.map(part => {
             const weightedPoints = part.points * weight
             const share = totalInputMagnitude ? (weightedPoints / totalInputMagnitude) * 100 : 0
@@ -534,7 +534,7 @@ function renderCompare() {
   document.title = 'Compare universities | unirank'
   app.innerHTML = `
     <div class="page-shell secondary-page">
-      ${header()}
+      ${header({ profileSearch: true })}
       <main class="compare-surface" id="main-content">
         <p class="eyebrow">Compare universities</p>
         <h1>Four global rankings. One view.</h1>
@@ -657,13 +657,23 @@ app.addEventListener('click', event => {
   }
   const loadMore = event.target.closest('[data-action="load-more"]')
   if (loadMore) {
-    const firstNewUniversity = visibleUniversities()[state.visibleLimit]
+    const matchingUniversities = visibleUniversities()
+    const start = state.visibleLimit
+    const firstNewUniversity = matchingUniversities[start]
     state.visibleLimit += PAGE_SIZE
-    const hasMore = state.visibleLimit < visibleUniversities().length
-    const focusSelector = hasMore
-      ? '[data-action="load-more"]'
-      : `[data-university-index="${firstNewUniversity.sourceIndex}"] .university-cell a`
-    renderLanding(focusSelector)
+    const shownCount = Math.min(state.visibleLimit, matchingUniversities.length)
+    const hasMore = shownCount < matchingUniversities.length
+    document.querySelector('.ranking-list')
+      ?.insertAdjacentHTML('beforeend', matchingUniversities.slice(start, shownCount).map(universityRow).join(''))
+    const count = document.querySelector('.result-count')
+    if (count) count.textContent = `Showing ${shownCount.toLocaleString()} of ${matchingUniversities.length.toLocaleString()} ${matchingUniversities.length === 1 ? 'university' : 'universities'}`
+    if (hasMore) {
+      loadMore.textContent = `Show ${Math.min(PAGE_SIZE, matchingUniversities.length - shownCount)} more universities`
+      loadMore.focus()
+    } else {
+      loadMore.closest('.load-more-wrap')?.remove()
+      document.querySelector(`[data-university-index="${firstNewUniversity.sourceIndex}"] .university-cell a`)?.focus()
+    }
     return
   }
   const remove = event.target.closest('[data-compare-remove]')

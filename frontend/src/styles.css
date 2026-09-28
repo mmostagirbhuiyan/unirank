@@ -1685,7 +1685,27 @@ button {
   }
 
   .profile-table {
-    min-width: 700px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .profile-table th:nth-child(4),
+  .profile-table td:nth-child(4) {
+    display: none;
+  }
+
+  .profile-table th,
+  .profile-table td {
+    padding: 12px 6px;
+  }
+
+  .profile-table thead th {
+    white-space: normal;
+  }
+
+  .profile-table tbody th,
+  .profile-table td {
+    font-size: 13px;
   }
 
   .peer-links {
