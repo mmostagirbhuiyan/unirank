@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test src/ranking-engine.test.js"
+    "test": "node --test src/*.test.js"
   },
   "devDependencies": {
     "vite": "8.3.1"

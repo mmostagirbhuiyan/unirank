@@ -1709,3 +1709,48 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Compare uses the same paper, ink and source tokens as the ranking ledger. */
+.compare-surface { padding: 38px 0 60px; }
+.compare-surface h1 { font: 500 clamp(38px, 4vw, 64px)/1.05 var(--serif); letter-spacing: -0.035em; margin: 14px 0; }
+.compare-deck { font: 26px/1.3 var(--serif); color: var(--graphite); margin: 0 0 24px; }
+.compare-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.compare-pills button { display: flex; align-items: center; gap: 14px; min-height: 44px; padding: 10px 14px; border: 1px solid var(--rule-strong); border-radius: 6px; background: transparent; text-align: left; }
+.compare-number { font-family: var(--mono); }
+.compare-note { color: var(--graphite); font-size: 13px; line-height: 1.6; }
+.compare-form { margin: 18px 0 8px; }
+.compare-form label { min-width: 0; }
+.compare-form input { width: 100%; }
+#compare-feedback { font-size: 14px; }
+#compare-feedback:empty { display: none; }
+.compare-chart-scroll { overflow-x: auto; }
+.compare-chart { display: block; width: 100%; min-width: 850px; }
+.compare-chart text { fill: var(--ink); }
+.compare-chart .chart-axis { fill: var(--graphite); font: 14px var(--mono); }
+.chart-rule { stroke: var(--rule); }
+.chart-column { font: 16px var(--sans); }
+.compare-chart .source-qs { fill: var(--qs); }
+.compare-chart .source-the { fill: var(--the); }
+.compare-chart .source-arwu { fill: var(--arwu); }
+.compare-chart .source-usnews { fill: var(--usnews); }
+.compare-chart .chart-consensus { fill: var(--consensus); }
+.university-line { stroke: var(--ink); stroke-width: 1.8; fill: var(--paper); }
+.crossing-dot { fill: var(--ink); stroke: var(--paper); stroke-width: 2; }
+.chart-value { font: 12px var(--mono); paint-order: stroke; stroke: var(--paper); stroke-width: 4; stroke-linejoin: round; }
+.chart-label-leader { fill: none; stroke: var(--graphite); stroke-width: 0.7; }
+.compare-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 30px; }
+.compare-legend span { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.compare-takeaways, .compare-deciding { margin: 30px 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+.compare-surface h2 { font: 500 30px var(--serif); margin: 0 0 14px; }
+.compare-takeaways > div, .compare-deciding > div { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.compare-takeaways p { font: 22px/1.35 var(--serif); margin: 0; }
+.compare-deciding h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+.compare-deciding article p { font-size: 14px; line-height: 1.6; }
+.compare-table caption { text-align: left; padding: 12px 0; color: var(--graphite); }
+.compare-table { min-width: 720px; }
+@media (max-width: 700px) {
+  .compare-surface { padding-top: 24px; }
+  .compare-pills button { width: 100%; }
+  .compare-pills button > span:last-child { margin-left: auto; }
+  .compare-legend { justify-content: flex-start; }
+}

@@ -1,4 +1,5 @@
 import './styles.css'
+import { rankValues, reversals, decidingRankers } from './compare-engine.js'
 import {
   SOURCE_META,
   SOURCE_ORDER,
@@ -481,30 +482,85 @@ function compareSelection() {
     .split(',')
     .filter(Boolean)
     .map(slug => findUniversityBySlug(state.universities, slug))
-    .filter(Boolean)
+    .filter((university, index, items) => university && items.indexOf(university) === index)
     .slice(0, 4)
 }
 
+const compareDashes = ['', '9 5', '2 5', '12 4 2 4']
+
+function compareChart(selected) {
+  const maximum = Math.max(1000, ...selected.flatMap(rankValues).filter(Number.isFinite))
+  const y = rank => 70 + Math.log10(rank) / Math.log10(maximum) * 310
+  const x = column => 100 + column * 220
+  const crossings = reversals(selected)
+  const columns = [...SOURCE_ORDER.map(source => SOURCE_META[source].label), 'Consensus']
+  return `<div class="compare-chart-scroll" tabindex="0" role="region" aria-label="Rank comparison chart, scroll horizontally on small screens">
+    <svg class="compare-chart" viewBox="0 0 1100 465" role="img" aria-labelledby="compare-chart-title compare-chart-desc">
+      <title id="compare-chart-title">Where the rankers reverse the order</title>
+      <desc id="compare-chart-desc">Five columns share a logarithmic rank scale. Numbered ink lines identify universities. Dots mark strict order reversals between adjacent columns. Missing ranks break a line. Exact values are in the table below.</desc>
+      ${[1, 10, 100, 1000].map(rank => `<text x="55" y="${y(rank) + 5}" text-anchor="end" class="chart-axis">${formatNumber(rank)}</text><line x1="70" x2="1030" y1="${y(rank)}" y2="${y(rank)}" class="chart-rule"/>`).join('')}
+      ${columns.map((label, column) => `<text x="${x(column)}" y="30" text-anchor="middle" class="chart-column ${column === 4 ? 'chart-consensus' : `source-${SOURCE_ORDER[column]}`}">${column < 4 ? ['●', '■', '▲', '◆'][column] : '│'} ${label}</text>`).join('')}
+      ${selected.map((university, index) => {
+        const values = rankValues(university)
+        return `<g class="university-line">${values.map((rank, column) => {
+          if (!Number.isFinite(rank)) return `<text x="${x(column)}" y="${410 + index * 15}" text-anchor="middle" class="chart-value">${index + 1}: absent</text>`
+          const next = values[column + 1]
+          return `${Number.isFinite(next) ? `<line x1="${x(column)}" y1="${y(rank)}" x2="${x(column + 1)}" y2="${y(next)}" stroke-dasharray="${compareDashes[index]}"/>` : ''}<circle cx="${x(column)}" cy="${y(rank)}" r="4"><title>${escapeHtml(university.name)}: ${columns[column]} ${rank}</title></circle>`
+        }).join('')}</g>`
+      }).join('')}
+      ${crossings.map(({a, b, column}) => {
+        const av = rankValues(a), bv = rankValues(b)
+        const d0 = y(av[column]) - y(bv[column])
+        const d1 = y(av[column + 1]) - y(bv[column + 1])
+        const fraction = d0 / (d0 - d1)
+        return `<circle class="crossing-dot" cx="${x(column) + 220 * fraction}" cy="${y(av[column]) + fraction * (y(av[column + 1]) - y(av[column]))}" r="5"><title>${escapeHtml(a.name)} and ${escapeHtml(b.name)} reverse order</title></circle>`
+      }).join('')}
+      ${columns.map((_, column) => {
+        let last = 45
+        return selected.map((u, index) => ({u, index, rank: rankValues(u)[column]})).filter(item => Number.isFinite(item.rank)).sort((a,b) => a.rank - b.rank).map(({index, rank}) => {
+          const labelY = Math.max(y(rank), last + 19)
+          last = labelY
+          return `<path class="chart-label-leader" d="M${x(column) + 5} ${y(rank)} L${x(column) + 17} ${labelY}"/><text class="chart-value" x="${x(column) + 20}" y="${labelY + 4}">${index + 1}: ${rank}</text>`
+        }).join('')
+      }).join('')}
+    </svg></div>`
+}
+
 function renderCompare() {
-  const selected = compareSelection()
+  const ranked = new Map(rankUniversities(state.universities).map(item => [item.name, item]))
+  const selected = compareSelection().map(item => ranked.get(item.name))
+  const columns = [...SOURCE_ORDER.map(source => SOURCE_META[source].label), 'Consensus']
+  const changes = reversals(selected).filter(item => item.column < 3)
   document.title = 'Compare universities | unirank'
   app.innerHTML = `
     <div class="page-shell secondary-page">
       ${header()}
-      <main class="legacy-surface compare-surface" id="main-content">
+      <main class="compare-surface" id="main-content">
         <p class="eyebrow">Compare universities</p>
-        <h1>Compare source ranks side by side.</h1>
+        <h1>Four global rankings. One view.</h1>
+        <p class="compare-deck">See where rankings agree, and where they reverse the order.</p>
+        <div class="compare-pills">${selected.map((u, i) => `<button type="button" data-compare-remove="${toLegacySlug(u.name)}" aria-label="Remove ${escapeHtml(u.name)}"><span class="compare-number">${i + 1}</span>${escapeHtml(u.name)}<span aria-hidden="true">×</span></button>`).join('')}</div>
         <form class="compare-form" data-action="compare-add">
-          <label><span class="visually-hidden">Add a university</span><input name="university" list="university-options" placeholder="Search for a university" required /></label>
-          <datalist id="university-options">${state.universities.map(university => `<option value="${escapeHtml(university.name)}"></option>`).join('')}</datalist>
+          <label><span class="visually-hidden">Add a university</span><input name="university" list="university-options" placeholder="Search for a university" required ${selected.length >= 4 ? 'disabled' : ''} aria-describedby="compare-help" /></label>
+          <datalist id="university-options">${state.universities.filter(u => !selected.some(item => item.name === u.name)).map(u => `<option value="${escapeHtml(u.name)}"></option>`).join('')}</datalist>
           <button type="submit" ${selected.length >= 4 ? 'disabled' : ''}>Add university</button>
         </form>
-        ${selected.length ? `
-          <div class="compare-table-wrap"><table class="compare-table">
-            <thead><tr><th>University</th>${SOURCE_ORDER.map(source => `<th>${SOURCE_META[source].label}</th>`).join('')}<th>Consensus</th><th></th></tr></thead>
-            <tbody>${selected.map(university => `<tr><th>${escapeHtml(university.name)}</th>${SOURCE_ORDER.map(source => `<td>${university.originalRankings[source]?.rank ? `#${university.originalRankings[source].rank}` : 'Absent'}</td>`).join('')}<td>#${university.aggregatedRank}</td><td><button type="button" data-compare-remove="${toLegacySlug(university.name)}">Remove</button></td></tr>`).join('')}</tbody>
-          </table></div>`
-          : '<p class="empty-compare">Add up to four universities to compare their current source ranks.</p>'}
+        <p id="compare-help" class="compare-note">${selected.length} of 4 selected. Share this comparison by copying the page URL.</p>
+        <p id="compare-feedback" role="status"></p>
+        ${selected.length ? `${compareChart(selected)}
+          <div class="compare-legend">${selected.map((u, i) => `<span><svg width="38" height="12" aria-hidden="true"><line x1="0" x2="38" y1="6" y2="6" stroke="currentColor" stroke-width="2" stroke-dasharray="${compareDashes[i]}"/></svg>${i + 1}. ${escapeHtml(u.name)}</span>`).join('')}</div>
+          <p class="compare-note">Rank, logarithmic scale. Lower is better. Dots mark reversals, not ties. Missing ranks are not plotted. Labels show university number: rank.</p>
+          <section class="compare-takeaways"><h2>Key takeaways</h2><div>${changes.length ? changes.map(({a,b,column}) => {
+            const av = rankValues(a), bv = rankValues(b)
+            const first = av[column] < bv[column] ? a : b
+            const second = first === a ? b : a
+            return `<p>${columns[column]} puts ${escapeHtml(first.name)} ${Math.abs(av[column] - bv[column])} places above ${escapeHtml(second.name)}. ${columns[column + 1]} reverses their order by ${Math.abs(av[column + 1] - bv[column + 1])}.</p>`
+          }).join('') : `<p>${selected.length < 2 ? 'Add another university to reveal order reversals.' : 'No strict order reversals between adjacent source columns for these universities.'}</p>`}</div></section>
+          ${selected.length > 1 ? `<section class="compare-deciding"><h2>Deciding ranker</h2><p class="compare-note">Remove one source, then recompute equal-weight Borda scores and coverage across all ${formatNumber(state.universities.length)} universities. Tied scores do not count as flips.</p><div>${decidingRankers(state.universities, selected).map(({source, flips}) => `<article><h3>${sourceGlyph(source)} ${SOURCE_META[source].label}</h3>${flips.length ? flips.map(({before, after}) => `<p>Without ${SOURCE_META[source].label}, ${escapeHtml(after.name)} overtakes ${escapeHtml(before.name)} in consensus (now #${after.liveRank}).</p>`).join('') : '<p>No strict consensus order flips among these universities.</p>'}</article>`).join('')}</div></section>` : ''}
+          <div class="compare-table-wrap" tabindex="0" role="region" aria-label="Exact comparison ranks"><table class="compare-table"><caption>Exact ranks used in this comparison</caption>
+            <thead><tr><th scope="col">University</th>${columns.map(label => `<th scope="col">${label}</th>`).join('')}</tr></thead>
+            <tbody>${selected.map((u, i) => `<tr><th scope="row">${i + 1}. <a href="${withBase(`university/${toLegacySlug(u.name)}`)}">${escapeHtml(u.name)}</a></th>${rankValues(u).map(rank => `<td>${Number.isFinite(rank) ? `#${rank}` : 'Absent'}</td>`).join('')}</tr>`).join('')}</tbody>
+          </table></div>` : '<p class="empty-compare">Choose up to four universities to trace their ranks on one shared scale.</p>'}
       </main>
     </div>`
 }
@@ -563,6 +619,8 @@ function updateCompare(mutator) {
   else url.searchParams.delete('universities')
   history.replaceState(null, '', url)
   renderCompare()
+  document.querySelector('[name="university"]:not(:disabled), [data-compare-remove]')?.focus()
+  document.querySelector('#compare-feedback').textContent = 'Comparison updated.'
 }
 
 app.addEventListener('click', event => {
@@ -643,7 +701,10 @@ app.addEventListener('submit', event => {
   const formData = new FormData(event.target)
   const name = String(formData.get('university') || '')
   const university = state.universities.find(item => item.name.toLocaleLowerCase() === name.toLocaleLowerCase())
-  if (!university) return
+  if (!university) {
+    document.querySelector('#compare-feedback').textContent = 'Choose a university from the suggestions.'
+    return
+  }
   updateCompare(selected => selected.includes(toLegacySlug(university.name)) ? selected : [...selected, toLegacySlug(university.name)])
 })
 
