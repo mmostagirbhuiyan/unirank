@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <meta name="description" content="See where QS, Times Higher Education, ARWU, and US News agree and disagree, with a live consensus ranking built from all four." />
+    <meta name="keywords" content="university rankings, QS, Times Higher Education, ARWU, US News, consensus ranking" />
+    <meta property="og:title" content="unirank | Four rankers. One consensus." />
+    <meta property="og:description" content="Compare four global university rankings on one shared scale and inspect the consensus behind every position." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        const saved = localStorage.getItem('unirank-theme')
+        const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#101114' : '#f5f2ea'
+      })()
+    </script>
+    <title>unirank | Four rankers. One consensus.</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#rankings">Skip to rankings</a>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

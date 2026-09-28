@@ -1,5 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-
-Sitemap: https://unirank.mmostagirbhuiyan.com/sitemap.xml
