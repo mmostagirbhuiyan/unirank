@@ -20,4 +20,4 @@ npm run build
 
 ## Environment
 
-`VITE_BASE_PATH` is the only deployment-specific setting. It defaults to `/`. Set it to the public path, including its trailing slash, when the application is served below an origin root.
+`VITE_BASE_PATH` controls the public asset path and defaults to `/`. `VITE_SITE_URL` is the absolute deployment root used for sitemap and robots output. Production values live in `.env.production`. Other targets can override either variable without changing the application code.

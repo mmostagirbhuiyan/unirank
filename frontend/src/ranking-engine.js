@@ -1,10 +1,10 @@
 export const SOURCE_ORDER = ['qs', 'the', 'arwu', 'usnews']
 
 export const SOURCE_META = {
-  qs: { label: 'QS', maxRank: 1000, shape: 'circle' },
-  the: { label: 'THE', maxRank: 999, shape: 'square' },
-  arwu: { label: 'ARWU', maxRank: 1000, shape: 'triangle' },
-  usnews: { label: 'US News', maxRank: 980, shape: 'diamond' }
+  qs: { label: 'QS', name: 'QS World University Rankings', maxRank: 1000, shape: 'circle' },
+  the: { label: 'THE', name: 'Times Higher Education (THE)', maxRank: 999, shape: 'square' },
+  arwu: { label: 'ARWU', name: 'Academic Ranking of World Universities (ARWU)', maxRank: 1000, shape: 'triangle' },
+  usnews: { label: 'US News', name: 'U.S. News Best Global Universities', maxRank: 980, shape: 'diamond' }
 }
 
 export function calculateScore(university, activeSources = SOURCE_ORDER) {

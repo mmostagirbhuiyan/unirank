@@ -2,6 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { calculateScore, findUniversityBySlug, rankUniversities, calculateSpread, scaleRank, toLegacySlug, toSlug } from './ranking-engine.js'
+import { createSiteFiles } from '../site-files.js'
 
 const complete = {
   name: 'Example University',
@@ -64,4 +65,20 @@ test('every published university retains a unique previous-site profile URL', as
       assert.equal(findUniversityBySlug(universities, slug)?.name, university.name)
     }
   }
+})
+
+test('site discovery files list the root, compare page, and every legacy profile URL', async () => {
+  const file = new URL('../public/data/enhanced-aggregated-rankings.json', import.meta.url)
+  const universities = JSON.parse(await readFile(file, 'utf8'))
+  const siteUrl = 'https://rankings.example.org/catalog/'
+  const { sitemap, robots, locations } = createSiteFiles(siteUrl, universities)
+
+  assert.equal(locations.length, universities.length + 2)
+  assert.equal(locations[0], siteUrl)
+  assert.equal(locations[1], `${siteUrl}compare`)
+  for (const university of universities) {
+    assert.ok(locations.includes(`${siteUrl}university/${toLegacySlug(university.name)}`))
+  }
+  assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/)
+  assert.match(robots, new RegExp(`Sitemap: ${siteUrl}sitemap\\.xml`))
 })

@@ -48,6 +48,10 @@ function escapeHtml(value = '') {
     .replace(/'/g, '&#039;')
 }
 
+function formatNumber(value) {
+  return new Intl.NumberFormat('en-US').format(value)
+}
+
 function sourceGlyph(source, extraClass = '') {
   const meta = SOURCE_META[source]
   return `<span class="source-glyph source-${source} shape-${meta.shape} ${extraClass}" aria-hidden="true"></span>`
@@ -71,11 +75,19 @@ function themeButton() {
     </button>`
 }
 
-function header({ search = false } = {}) {
+function siteSearch() {
+  return `
+    <form class="header-search" data-action="site-search">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input name="university" type="search" placeholder="Search universities or countries…" autocomplete="off" aria-label="Search universities or countries" />
+    </form>`
+}
+
+function header({ search = false, profileSearch = false } = {}) {
   return `
     <header class="site-header">
       ${brand()}
-      ${search ? `
+      ${profileSearch ? siteSearch() : search ? `
         <label class="header-search">
           <span class="visually-hidden">Search universities or countries</span>
           <span class="search-icon" aria-hidden="true"></span>
@@ -287,7 +299,7 @@ function renderLanding(focusSelector = '') {
   app.innerHTML = `
     <div class="page-shell">
       ${header({ search: true })}
-      <main>
+      <main id="main-content">
         <section class="hero">
           <h1>Four rankers. One consensus. See where they disagree.</h1>
           <p class="dataset-line">${state.universities.length.toLocaleString()} universities <span>·</span> ${SOURCE_ORDER.length} sources <span>·</span> updated ${formatMonthYear(state.stats.lastUpdated)}</p>
@@ -310,6 +322,134 @@ function renderLanding(focusSelector = '') {
   if (focusSelector) document.querySelector(focusSelector)?.focus({ preventScroll: true })
 }
 
+function ordinal(value) {
+  const number = Number(value)
+  if (!Number.isFinite(number)) return ''
+  const remainder = number % 100
+  if (remainder >= 11 && remainder <= 13) return `${number}th`
+  return `${number}${({ 1: 'st', 2: 'nd', 3: 'rd' })[number % 10] || 'th'}`
+}
+
+function profileScaleRank(rank) {
+  const maximum = Math.max(1000, state.universities.length)
+  const bounded = Math.max(1, Math.min(maximum, Number(rank)))
+  return (Math.log10(bounded) / Math.log10(maximum)) * 100
+}
+
+function profileMarkerLayout(university) {
+  const minimumSeparation = window.innerWidth <= 700 ? 24 : 13
+  const markers = SOURCE_ORDER.map(source => {
+    const rank = university.originalRankings[source]?.rank
+    return {
+      source,
+      rank,
+      position: Number.isFinite(rank) ? profileScaleRank(rank) : 104,
+      absent: !Number.isFinite(rank),
+      consensus: false
+    }
+  })
+  markers.push({
+    source: 'consensus',
+    rank: university.liveRank,
+    position: profileScaleRank(university.liveRank),
+    absent: false,
+    consensus: true
+  })
+
+  const lastPositionByLane = []
+  for (const marker of [...markers].sort((a, b) => a.position - b.position || Number(a.consensus) - Number(b.consensus))) {
+    let lane = lastPositionByLane.findIndex(position => marker.position - position >= minimumSeparation)
+    if (lane === -1) lane = lastPositionByLane.length
+    lastPositionByLane[lane] = marker.position
+    marker.lane = lane
+  }
+  return { markers, laneCount: lastPositionByLane.length }
+}
+
+function profilePlot(university) {
+  const observed = observedRanks(university)
+  const minimum = Math.min(...observed)
+  const maximum = Math.max(...observed)
+  const start = profileScaleRank(minimum)
+  const width = profileScaleRank(maximum) - start
+  const { markers, laneCount } = profileMarkerLayout(university)
+  const summary = markers.map(marker => marker.consensus
+    ? `Consensus ${marker.rank}`
+    : `${SOURCE_META[marker.source].label} ${marker.absent ? 'absent' : marker.rank}`
+  ).join(', ')
+
+  return `
+    <section class="profile-plot" aria-labelledby="source-position-heading">
+      <h2 id="source-position-heading" class="visually-hidden">Ranker positions on a shared scale</h2>
+      <div class="profile-axis" role="img" aria-label="${escapeHtml(summary)}" style="--marker-lanes:${laneCount}">
+        <div class="profile-axis-labels" aria-hidden="true">
+          <span style="left:${profileScaleRank(1)}%">1</span><span style="left:${profileScaleRank(10)}%">10</span><span style="left:${profileScaleRank(100)}%">100</span><span style="left:${profileScaleRank(1000)}%">1000</span><i>Not ranked</i>
+        </div>
+        <div class="profile-axis-track" aria-hidden="true">
+          <span class="profile-observed-span" style="left:${start}%;width:${width}%"></span>
+          ${markers.map(marker => `
+            <span class="profile-axis-marker ${marker.consensus ? 'is-consensus' : `source-${marker.source} shape-${SOURCE_META[marker.source].shape}`} ${marker.absent ? 'is-absent' : marker.position < 8 ? 'is-start' : marker.position > 92 ? 'is-end' : ''}" style="${marker.absent ? '' : `left:${marker.position}%`};--marker-lane:${marker.lane}">
+              <span class="profile-marker-label">
+                <small>${marker.consensus ? 'Consensus' : SOURCE_META[marker.source].label}</small>
+                <strong>${marker.absent ? 'Absent' : `#${formatNumber(Number(marker.rank))}`}</strong>
+              </span>
+            </span>`).join('')}
+        </div>
+      </div>
+    </section>`
+}
+
+function profileCalculation(university) {
+  const { parts, appearances, coverage } = calculationParts(university)
+  const weight = 1 / SOURCE_ORDER.length
+  const totalInputMagnitude = parts.reduce((total, part) => total + Math.abs(part.points * weight), 0)
+  const equation = parts.map(part => part.absent
+    ? `(${SOURCE_META[part.source].maxRank} × −0.1)`
+    : `(${SOURCE_META[part.source].maxRank} − ${part.rank} + 1)`
+  ).join(' + ')
+
+  return `
+    <section class="profile-calculation" aria-labelledby="calculation-heading">
+      <div class="profile-equation">
+        <h2 id="calculation-heading">How the consensus rank is calculated</h2>
+        <code>[${equation}] × ${weight.toFixed(2)} × ${coverage.toFixed(3)} = ${university.liveScore.toFixed(2)} points → #${formatNumber(university.liveRank)}</code>
+      </div>
+      <p class="profile-calculation-note">Each source has equal weight. The ${coverage.toFixed(3)} coverage adjustment reflects ${appearances} of ${SOURCE_ORDER.length} sources. An absent source receives its stated penalty and is never treated as a last-place rank. Signed shares compare each source input with the total magnitude of all four inputs.</p>
+      <div class="profile-table-wrap">
+        <table class="profile-table">
+          <caption class="visually-hidden">Source ranks and their contribution to the consensus score</caption>
+          <thead><tr><th scope="col">Source</th><th scope="col">Rank</th><th scope="col">Borda points</th><th scope="col">Weight</th><th scope="col">Share of score</th></tr></thead>
+          <tbody>${parts.map(part => {
+            const weightedPoints = part.points * weight
+            const share = totalInputMagnitude ? (weightedPoints / totalInputMagnitude) * 100 : 0
+            return `<tr>
+              <th scope="row"><span class="table-source">${sourceGlyph(part.source)}<span>${SOURCE_META[part.source].name}</span></span></th>
+              <td>${part.absent ? '<span class="absent-text">Absent</span>' : `#${part.rank.toLocaleString()}`}</td>
+              <td>${part.points.toLocaleString()}</td>
+              <td>${(weight * 100).toFixed(0)}%</td>
+              <td>${share.toFixed(1)}%</td>
+            </tr>`
+          }).join('')}</tbody>
+        </table>
+      </div>
+    </section>`
+}
+
+function profilePeers(university, ranked) {
+  const spread = calculateSpread(university)
+  const peers = ranked
+    .filter(candidate => candidate.name !== university.name && Math.abs(candidate.liveRank - university.liveRank) <= 25)
+    .sort((a, b) => Math.abs(calculateSpread(b) - spread) - Math.abs(calculateSpread(a) - spread) || Math.abs(a.liveRank - university.liveRank) - Math.abs(b.liveRank - university.liveRank))
+    .slice(0, 3)
+  if (!peers.length) return ''
+
+  return `
+    <section class="profile-peers" aria-labelledby="peers-heading">
+      <div><h2 id="peers-heading">Similar consensus, different spread</h2><p>Nearby positions with a different pattern of source agreement.</p></div>
+      <div class="peer-links">${peers.map(peer => `<a href="${withBase(`university/${toLegacySlug(peer.name)}`)}"><span>${escapeHtml(peer.name)}</span><small>#${peer.liveRank.toLocaleString()} · ${calculateSpread(peer).toLocaleString()}-place spread</small></a>`).join('')}</div>
+    </section>`
+}
+
 function renderProfile(slug) {
   const university = findUniversityBySlug(state.universities, slug)
   if (!university) {
@@ -318,22 +458,19 @@ function renderProfile(slug) {
   }
   const ranked = rankUniversities(state.universities)
   const live = ranked.find(item => item.name === university.name)
-  const ranks = SOURCE_ORDER.map(source => ({ source, rank: university.originalRankings[source]?.rank }))
   document.title = `${university.name} | unirank`
   app.innerHTML = `
     <div class="page-shell secondary-page">
-      ${header()}
-      <main class="legacy-surface">
+      ${header({ profileSearch: true })}
+      <main class="profile-surface" id="main-content">
         <a class="back-link" href="${withBase()}">← Back to rankings</a>
         <div class="profile-heading">
-          <div><p class="eyebrow">University profile</p><h1>${escapeHtml(university.name)}</h1><p>${escapeHtml(university.country)} · #${university.countryRank} of ${university.countryTotal} in the country</p></div>
-          <div class="profile-rank"><span>Consensus rank</span><strong>#${live.liveRank}</strong></div>
+          <div><h1>${escapeHtml(university.name)}</h1><p>${escapeHtml(university.country)} · ${ordinal(university.countryRank)} of ${Number(university.countryTotal).toLocaleString()} in the country</p></div>
+          <div class="profile-rank"><span>Consensus rank</span><strong>#${formatNumber(live.liveRank)}</strong><div class="coverage-ticks" aria-label="Ranked by ${university.appearances} of ${SOURCE_ORDER.length} sources">${SOURCE_ORDER.map((_, index) => `<i class="${index < university.appearances ? 'is-filled' : ''}"></i>`).join('')}</div><small>${university.appearances} of ${SOURCE_ORDER.length} sources</small></div>
         </div>
-        <section class="profile-fray" aria-label="Source rankings for ${escapeHtml(university.name)}">
-          <div class="profile-track">${rowMarkers(live)}</div>
-          <div class="profile-sources">${ranks.map(({ source, rank }) => `<div>${sourceGlyph(source)}<span>${SOURCE_META[source].label}</span><strong>${Number.isFinite(rank) ? `#${rank}` : 'Absent'}</strong></div>`).join('')}</div>
-        </section>
-        ${detailPanel(live)}
+        ${profilePlot(live)}
+        ${profileCalculation(live)}
+        ${profilePeers(live, ranked)}
       </main>
     </div>`
 }
@@ -354,7 +491,7 @@ function renderCompare() {
   app.innerHTML = `
     <div class="page-shell secondary-page">
       ${header()}
-      <main class="legacy-surface compare-surface">
+      <main class="legacy-surface compare-surface" id="main-content">
         <p class="eyebrow">Compare universities</p>
         <h1>Compare source ranks side by side.</h1>
         <form class="compare-form" data-action="compare-add">
@@ -487,6 +624,20 @@ app.addEventListener('input', event => {
 })
 
 app.addEventListener('submit', event => {
+  if (event.target.matches('[data-action="site-search"]')) {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const query = String(formData.get('university') || '').trim()
+    const university = state.universities.find(item => item.name.toLocaleLowerCase() === query.toLocaleLowerCase())
+    if (university) {
+      location.href = withBase(`university/${toLegacySlug(university.name)}`)
+    } else {
+      state.search = query
+      history.pushState(null, '', withBase())
+      renderLanding('[data-action="search"]')
+    }
+    return
+  }
   if (!event.target.matches('[data-action="compare-add"]')) return
   event.preventDefault()
   const formData = new FormData(event.target)
@@ -501,5 +652,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
   document.documentElement.dataset.theme = event.matches ? 'dark' : 'light'
   syncThemeUi()
 })
+
+window.addEventListener('popstate', route)
 
 loadData()

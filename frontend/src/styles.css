@@ -291,6 +291,7 @@ button {
 }
 
 .hero h1,
+.profile-surface h1,
 .legacy-surface h1,
 .status-page h1 {
   margin: 0;
@@ -896,9 +897,13 @@ button {
   padding: 36px 0 90px;
 }
 
+.profile-surface {
+  padding: 30px 0 76px;
+}
+
 .back-link {
   display: inline-block;
-  margin-bottom: 42px;
+  margin-bottom: 38px;
   color: var(--graphite);
   text-decoration: none;
 }
@@ -909,73 +914,374 @@ button {
 
 .profile-heading {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 50px;
 }
 
 .profile-heading h1 {
+  max-width: 1000px;
+  margin: 0;
   font-size: clamp(48px, 6vw, 78px);
 }
 
-.profile-heading p:not(.eyebrow) {
+.profile-heading p {
+  margin: 12px 0 0;
   color: var(--graphite);
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .profile-rank {
   display: grid;
   justify-items: end;
-  min-width: 180px;
+  min-width: 210px;
 }
 
-.profile-rank span {
-  color: var(--graphite);
+.profile-rank > span {
+  font-size: 15px;
 }
 
 .profile-rank strong {
   color: var(--consensus);
-  font-family: var(--mono);
-  font-size: 70px;
+  font-family: var(--sans);
+  font-size: clamp(66px, 6.8vw, 94px);
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.profile-fray {
-  margin-top: 65px;
-  padding: 40px 4px 28px;
-  border-top: 1px solid var(--rule);
+.coverage-ticks {
+  display: grid;
+  grid-template-columns: repeat(4, 28px);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.coverage-ticks i {
+  display: block;
+  height: 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--consensus) 22%, var(--paper));
+}
+
+.coverage-ticks i.is-filled {
+  background: var(--consensus);
+}
+
+.profile-rank small {
+  margin-top: 9px;
+  color: var(--graphite);
+  font-size: 13px;
+}
+
+.profile-plot {
+  margin-top: 48px;
+  padding: 0 4px 26px;
   border-bottom: 1px solid var(--rule);
 }
 
-.profile-track {
-  padding: 0 18px;
+.profile-axis {
+  min-height: calc(126px + (var(--marker-lanes) * 48px));
+  padding: 0 78px;
 }
 
-.profile-track .fray-plot {
-  width: calc(100% - 48px);
-  height: 48px;
-}
-
-.profile-sources {
-  display: flex;
-  gap: 36px;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-.profile-sources div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.profile-sources strong {
+.profile-axis-labels {
+  position: relative;
+  height: 42px;
+  color: var(--ink);
   font-family: var(--mono);
+  font-size: 13px;
 }
 
-.legacy-surface > .row-detail {
-  margin-top: 34px;
-  border: 1px solid var(--rule);
+.profile-axis-labels span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.profile-axis-labels i {
+  position: absolute;
+  right: -75px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.profile-axis-track {
+  position: relative;
+  height: 42px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.profile-axis-track::after {
+  position: absolute;
+  top: -12px;
+  right: -42px;
+  height: 26px;
+  border-left: 1px solid var(--rule);
+  content: '';
+}
+
+.profile-axis-labels span::after {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  width: 1px;
+  height: 14px;
+  background: var(--rule-strong);
+  content: '';
+}
+
+.profile-observed-span {
+  position: absolute;
+  top: -1px;
+  z-index: 1;
+  min-width: 2px;
+  height: 2px;
+  background: var(--rule-strong);
+}
+
+.profile-axis-marker {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.profile-axis-marker.shape-triangle,
+.profile-axis-marker.shape-diamond {
+  clip-path: none;
+  transform: translate(-50%, -50%);
+}
+
+.profile-axis-marker::before {
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.12));
+  content: '';
+}
+
+.profile-axis-marker.shape-circle::before { border-radius: 50%; }
+.profile-axis-marker.shape-square::before { border-radius: 1px; }
+.profile-axis-marker.shape-triangle::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.profile-axis-marker.shape-diamond::before { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+
+.profile-axis-marker.is-consensus {
+  z-index: 5;
+  width: 3px;
+  height: 38px;
+  background: var(--consensus);
+  box-shadow: 0 0 0 2px var(--paper);
+}
+
+.profile-axis-marker.is-consensus::before {
+  display: none;
+}
+
+.profile-axis-marker.is-absent {
+  right: -43px;
+  left: auto !important;
+  clip-path: none;
+  opacity: 0.85;
+  transform: translate(50%, -50%);
+}
+
+.profile-axis-marker.is-absent::before {
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 1px;
+  clip-path: none;
+}
+
+.profile-marker-label {
+  position: absolute;
+  top: calc(29px + (var(--marker-lane) * 48px));
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  width: 116px;
+  color: var(--ink);
+  font-family: var(--sans);
+  filter: none;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.profile-axis-marker.is-absent .profile-marker-label {
+  left: auto;
+  right: -42px;
+  transform: none;
+}
+
+.profile-axis-marker.is-start .profile-marker-label {
+  left: 0;
+  transform: none;
+}
+
+.profile-axis-marker.is-end .profile-marker-label {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.profile-axis-marker.is-consensus .profile-marker-label {
+  top: calc(48px + (var(--marker-lane) * 48px));
+  color: var(--consensus);
+}
+
+.profile-marker-label small {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.profile-marker-label strong {
+  margin-top: 3px;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.profile-calculation {
+  padding-top: 20px;
+}
+
+.profile-equation {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: center;
+  gap: 34px;
+  min-height: 66px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.profile-equation h2,
+.profile-peers h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.profile-equation code {
+  display: block;
+  min-width: 0;
+  overflow-x: visible;
+  padding: 7px 0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: clamp(12px, 1.2vw, 17px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.65;
+  white-space: normal;
+}
+
+.profile-calculation-note {
+  margin: 14px 0 22px;
+  color: var(--graphite);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.profile-table-wrap {
+  overflow-x: auto;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+
+.profile-table th:first-child,
+.profile-table td:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.profile-table thead th {
+  color: var(--graphite);
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.profile-table tbody th {
+  width: 38%;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile-table td {
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.table-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.table-source .source-glyph {
+  width: 17px;
+  height: 17px;
+}
+
+.absent-text {
+  color: var(--graphite);
+  font-family: var(--sans);
+}
+
+.profile-peers {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.profile-peers p {
+  margin: 7px 0 0;
+  color: var(--graphite);
+  font-size: 14px;
+}
+
+.peer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+
+.peer-links a {
+  display: grid;
+  gap: 5px;
+  color: var(--focus);
+  text-underline-offset: 4px;
+}
+
+.peer-links small {
+  color: var(--graphite);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-decoration: none;
 }
 
 .compare-surface > h1 {
@@ -1115,6 +1421,15 @@ button {
 
   .university-cell > span {
     display: none;
+  }
+
+  .profile-equation {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .profile-peers {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
@@ -1311,19 +1626,71 @@ button {
 
   .profile-heading {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
   }
 
   .profile-heading h1 {
-    font-size: 48px;
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.98;
   }
 
   .profile-rank {
     justify-items: start;
+    min-width: 0;
   }
 
-  .profile-sources {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .profile-rank strong {
+    font-size: 72px;
+  }
+
+  .profile-plot {
+    margin-top: 40px;
+  }
+
+  .profile-axis {
+    padding: 0 24px;
+  }
+
+  .profile-axis-labels i {
+    right: -24px;
+    font-size: 9px;
+    transform: translateX(17px) rotate(-90deg);
+    transform-origin: left top;
+  }
+
+  .profile-axis-track::after {
+    right: -18px;
+  }
+
+  .profile-axis-marker.is-absent {
+    right: -19px;
+  }
+
+  .profile-axis-marker.is-absent .profile-marker-label {
+    right: -8px;
+  }
+
+  .profile-marker-label {
+    width: 92px;
+  }
+
+  .profile-equation {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .profile-equation code {
+    font-size: 12px;
+  }
+
+  .profile-table {
+    min-width: 700px;
+  }
+
+  .peer-links {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .compare-form {
