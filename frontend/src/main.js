@@ -581,7 +581,7 @@ function route() {
 function syncThemeUi() {
   const dark = document.documentElement.dataset.theme === 'dark'
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.content = dark ? '#101114' : '#f5f2ea'
+  if (meta) meta.content = dark ? '#101114' : '#f8fafc'
   const button = document.querySelector('[data-action="theme"]')
   if (!button) return
   button.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`)
