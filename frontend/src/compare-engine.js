@@ -34,3 +34,42 @@ export function decidingRankers(universities, selected) {
     return { source, flips }
   })
 }
+
+const CONNECTING_WORDS = new Set(['of', 'and', 'the', 'at', 'in', 'for', 'de', 'da', 'do', 'di', 'del', 'der', 'des', 'la', 'le', 'y', 'e', 'et', 'und'])
+
+export function searchKey(value = '') {
+  return String(value)
+    .normalize('NFKD')
+    .replace(/\p{M}/gu, '')
+    .toLocaleLowerCase('en')
+    .replace(/['’‘`]/gu, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
+}
+
+function initials(words) {
+  return words.filter(word => !CONNECTING_WORDS.has(word)).map(word => word[0]).join('')
+}
+
+export function searchUniversities(universities, query, limit = 8) {
+  const key = searchKey(query)
+  if (!key) return []
+  const tokens = key.split(' ')
+  const matches = []
+  universities.forEach((university, order) => {
+    const name = searchKey(university.name)
+    const words = name.split(' ')
+    const acronym = tokens.length === 1 && key.length > 1 && initials(words) === key
+    if (!acronym && !tokens.every(token => name.includes(token))) return
+    const tier = name === key ? 0
+      : acronym ? 1
+        : name.startsWith(key) ? 2
+          : tokens.every(token => words.some(word => word.startsWith(token))) ? 3
+            : 4
+    matches.push({ university, tier, order })
+  })
+  return matches
+    .sort((a, b) => a.tier - b.tier || a.order - b.order)
+    .slice(0, limit)
+    .map(match => match.university)
+}

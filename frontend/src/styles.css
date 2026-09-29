@@ -561,6 +561,8 @@ button {
 
 .university-cell a {
   overflow: hidden;
+  margin-block: -0.25em;
+  padding-block: 0.25em;
   font-family: var(--display);
   font-size: 20px;
   font-weight: 550;
@@ -776,10 +778,13 @@ button {
 }
 
 .equation-line code {
-  overflow-x: auto;
+  min-width: 0;
   color: var(--ink);
   font-family: var(--mono);
   font-size: 13px;
+}
+
+.equation-term {
   white-space: nowrap;
 }
 
@@ -1302,8 +1307,10 @@ button {
   margin: 40px 0;
 }
 
-.compare-form label {
+.compare-combobox {
+  position: relative;
   flex: 1;
+  min-width: 0;
 }
 
 .compare-form input {
@@ -1746,11 +1753,19 @@ button {
 .compare-pills button { display: flex; align-items: center; gap: 14px; min-height: 44px; padding: 10px 14px; border: 1px solid var(--rule-strong); border-radius: 6px; background: transparent; text-align: left; }
 .compare-number { font-family: var(--mono); }
 .compare-note { color: var(--graphite); font-size: 13px; line-height: 1.6; }
-.compare-form { margin: 18px 0 8px; }
-.compare-form label { min-width: 0; }
+.compare-form { flex-wrap: wrap; margin: 18px 0 8px; }
 .compare-form input { width: 100%; }
-#compare-feedback { font-size: 14px; }
+#compare-feedback { order: 1; flex: 1 0 100%; margin: 0; font-size: 14px; line-height: 1.5; }
 #compare-feedback:empty { display: none; }
+.compare-options { position: absolute; top: calc(100% + 6px); right: 0; left: 0; z-index: 20; max-height: 280px; margin: 0; padding: 4px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--rule-strong); border-radius: 8px; background: var(--paper-raised); box-shadow: 0 12px 28px rgb(9 13 22 / 0.14); list-style: none; }
+.compare-options[hidden] { display: none; }
+.compare-option { display: grid; gap: 2px; min-height: 44px; padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+.compare-option:hover, .compare-option[aria-selected='true'] { background: color-mix(in srgb, var(--focus) 12%, transparent); }
+.compare-option[aria-selected='true'] { outline: 2px solid var(--focus); outline-offset: -2px; }
+.compare-option-name { font-size: 15px; line-height: 1.35; }
+.compare-option-meta { color: var(--graphite); font-size: 12px; line-height: 1.35; }
+.compare-option-meta:empty { display: none; }
+.compare-option[aria-disabled='true'] .compare-option-name { color: var(--graphite); }
 .compare-chart-scroll { overflow-x: auto; }
 .compare-chart { display: block; width: 100%; min-width: 850px; }
 .compare-chart text { fill: var(--ink); }
@@ -1781,4 +1796,5 @@ button {
   .compare-pills button { width: 100%; }
   .compare-pills button > span:last-child { margin-left: auto; }
   .compare-legend { justify-content: flex-start; }
+  #compare-feedback { order: 0; flex: 0 0 auto; }
 }

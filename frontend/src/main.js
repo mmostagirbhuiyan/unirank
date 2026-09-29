@@ -1,5 +1,5 @@
 import './styles.css'
-import { rankValues, reversals, decidingRankers } from './compare-engine.js'
+import { rankValues, reversals, decidingRankers, searchKey, searchUniversities } from './compare-engine.js'
 import {
   SOURCE_META,
   SOURCE_ORDER,
@@ -16,6 +16,7 @@ import {
 const app = document.querySelector('#app')
 const basePath = import.meta.env.BASE_URL
 const PAGE_SIZE = 50
+const COMPARE_LIMIT = 4
 
 const state = {
   universities: [],
@@ -201,11 +202,15 @@ function rowMarkers(university) {
 function detailPanel(university) {
   const { parts, appearances, coverage } = calculationParts(university, state.activeSources)
   const weight = 1 / state.activeSources.length
-  const equation = parts
-    .map(part => part.absent
+  const terms = parts.map((part, index) => {
+    const term = part.absent
       ? `(${SOURCE_META[part.source].maxRank} × −0.1)`
-      : `(${SOURCE_META[part.source].maxRank} − ${part.rank} + 1)`)
-    .join(' + ')
+      : `(${SOURCE_META[part.source].maxRank} − ${part.rank} + 1)`
+    return `${index ? '+ ' : '('}${term}${index === parts.length - 1 ? ')' : ''}`
+  })
+  const equation = [...terms, `× ${weight.toFixed(2)}`, `× ${coverage.toFixed(3)}`, `= ${university.liveScore.toFixed(2)}`]
+    .map(term => `<span class="equation-term">${term}</span>`)
+    .join(' ')
   const sources = parts.map(part => `
     <div class="evidence-source">
       <span>${sourceGlyph(part.source)} ${SOURCE_META[part.source].label}</span>
@@ -218,7 +223,7 @@ function detailPanel(university) {
       <div class="evidence-grid">${sources}</div>
       <div class="equation-line">
         <span>How this becomes #${university.liveRank.toLocaleString()}</span>
-        <code>(${equation}) × ${weight.toFixed(2)} × ${coverage.toFixed(3)} = ${university.liveScore.toFixed(2)}</code>
+        <code>${equation}</code>
       </div>
       <p class="coverage-note">Ranked by ${appearances} of ${state.activeSources.length} active sources. An absent source is penalized, not placed last.</p>
     </section>`
@@ -483,7 +488,7 @@ function compareSelection() {
     .filter(Boolean)
     .map(slug => findUniversityBySlug(state.universities, slug))
     .filter((university, index, items) => university && items.indexOf(university) === index)
-    .slice(0, 4)
+    .slice(0, COMPARE_LIMIT)
 }
 
 const compareDashes = ['', '9 5', '2 5', '12 4 2 4']
@@ -540,13 +545,17 @@ function renderCompare() {
         <h1>Four global rankings. One view.</h1>
         <p class="compare-deck">See where rankings agree, and where they reverse the order.</p>
         <div class="compare-pills">${selected.map((u, i) => `<button type="button" data-compare-remove="${toLegacySlug(u.name)}" aria-label="Remove ${escapeHtml(u.name)}"><span class="compare-number">${i + 1}</span>${escapeHtml(u.name)}<span aria-hidden="true">×</span></button>`).join('')}</div>
-        <form class="compare-form" data-action="compare-add">
-          <label><span class="visually-hidden">Add a university</span><input name="university" list="university-options" placeholder="Search for a university" required ${selected.length >= 4 ? 'disabled' : ''} aria-describedby="compare-help" /></label>
-          <datalist id="university-options">${state.universities.filter(u => !selected.some(item => item.name === u.name)).map(u => `<option value="${escapeHtml(u.name)}"></option>`).join('')}</datalist>
-          <button type="submit" ${selected.length >= 4 ? 'disabled' : ''}>Add university</button>
+        <form class="compare-form" data-action="compare-add" novalidate>
+          <div class="compare-combobox">
+            <label class="visually-hidden" for="compare-input">Add a university</label>
+            <input id="compare-input" name="university" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="compare-options" aria-describedby="compare-help" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search for a university" />
+            <ul id="compare-options" class="compare-options" role="listbox" aria-label="Matching universities" hidden></ul>
+          </div>
+          <p id="compare-feedback" role="status"></p>
+          <button type="submit">Add university</button>
         </form>
-        <p id="compare-help" class="compare-note">${selected.length} of 4 selected. Share this comparison by copying the page URL.</p>
-        <p id="compare-feedback" role="status"></p>
+        <p id="compare-count" class="visually-hidden" role="status"></p>
+        <p id="compare-help" class="compare-note">${selected.length} of ${COMPARE_LIMIT} selected. Share this comparison by copying the page URL.</p>
         ${selected.length ? `${compareChart(selected)}
           <div class="compare-legend">${selected.map((u, i) => `<span><svg width="38" height="12" aria-hidden="true"><line x1="0" x2="38" y1="6" y2="6" stroke="currentColor" stroke-width="2" stroke-dasharray="${compareDashes[i]}"/></svg>${i + 1}. ${escapeHtml(u.name)}</span>`).join('')}</div>
           <p class="compare-note">Rank, logarithmic scale. Lower is better. Dots mark reversals, not ties. Missing ranks are not plotted. Labels show university number: rank.</p>
@@ -613,14 +622,166 @@ function toggleSource(source) {
 
 function updateCompare(mutator) {
   const selected = compareSelection().map(university => toLegacySlug(university.name))
-  const next = mutator(selected).slice(0, 4)
+  const next = mutator(selected).slice(0, COMPARE_LIMIT)
   const url = new URL(location.href)
   if (next.length) url.searchParams.set('universities', next.join(','))
   else url.searchParams.delete('universities')
   history.replaceState(null, '', url)
   renderCompare()
-  document.querySelector('[name="university"]:not(:disabled), [data-compare-remove]')?.focus()
+  document.querySelector('#compare-input')?.focus()
   document.querySelector('#compare-feedback').textContent = 'Comparison updated.'
+}
+
+const compareSearch = { matches: [], active: -1, source: null, ranked: [] }
+
+function compareElements() {
+  return {
+    input: document.querySelector('#compare-input'),
+    listbox: document.querySelector('#compare-options'),
+    feedback: document.querySelector('#compare-feedback'),
+    count: document.querySelector('#compare-count')
+  }
+}
+
+function setCompareMessage(message) {
+  const { feedback } = compareElements()
+  if (feedback) feedback.textContent = message
+}
+
+function compareLimitMessage() {
+  return `You can compare up to ${COMPARE_LIMIT} universities. Remove one above to add another.`
+}
+
+function closeCompareOptions() {
+  const { input, listbox } = compareElements()
+  compareSearch.matches = []
+  compareSearch.active = -1
+  if (!input || !listbox) return
+  listbox.hidden = true
+  listbox.innerHTML = ''
+  input.setAttribute('aria-expanded', 'false')
+  input.removeAttribute('aria-activedescendant')
+}
+
+function keepCompareSearchVisible() {
+  const { input, listbox } = compareElements()
+  if (!input || document.activeElement !== input) return
+  const viewport = window.visualViewport
+  const visibleTop = viewport ? viewport.offsetTop : 0
+  const visibleHeight = viewport ? viewport.height : window.innerHeight
+  const top = input.getBoundingClientRect().top
+  const bottom = listbox.hidden ? input.getBoundingClientRect().bottom : listbox.getBoundingClientRect().bottom
+  if (top >= visibleTop && bottom <= visibleTop + visibleHeight) return
+  window.scrollBy({ top: top - visibleTop - 12 })
+}
+
+function renderCompareOptions(matches) {
+  const { input, listbox, count } = compareElements()
+  const selectedNames = new Set(compareSelection().map(university => university.name))
+  compareSearch.matches = matches
+  compareSearch.active = -1
+  listbox.innerHTML = matches.map((university, index) => {
+    const added = selectedNames.has(university.name)
+    return `<li id="compare-option-${index}" class="compare-option" role="option" aria-selected="false" data-compare-option="${index}" ${added ? 'aria-disabled="true"' : ''}>
+      <span class="compare-option-name">${escapeHtml(university.name)}</span>
+      <span class="compare-option-meta">${escapeHtml(university.country || '')}${added ? `${university.country ? ' · ' : ''}Already added` : ''}</span>
+    </li>`
+  }).join('')
+  listbox.hidden = false
+  input.setAttribute('aria-expanded', 'true')
+  input.removeAttribute('aria-activedescendant')
+  if (count) count.textContent = `${matches.length} ${matches.length === 1 ? 'university matches' : 'universities match'}.`
+  keepCompareSearchVisible()
+}
+
+function setActiveCompareOption(index) {
+  const { input, listbox } = compareElements()
+  const options = [...listbox.querySelectorAll('[role="option"]')]
+  if (!options.length) return
+  compareSearch.active = (index + options.length) % options.length
+  options.forEach((option, optionIndex) => option.setAttribute('aria-selected', String(optionIndex === compareSearch.active)))
+  const option = options[compareSearch.active]
+  input.setAttribute('aria-activedescendant', option.id)
+  option.scrollIntoView({ block: 'nearest' })
+}
+
+function compareRanked() {
+  if (compareSearch.source !== state.universities) {
+    compareSearch.source = state.universities
+    compareSearch.ranked = rankUniversities(state.universities)
+  }
+  return compareSearch.ranked
+}
+
+function updateCompareSuggestions() {
+  const { input } = compareElements()
+  const query = input.value
+  setCompareMessage('')
+  if (!searchKey(query)) {
+    closeCompareOptions()
+    return
+  }
+  if (compareSelection().length >= COMPARE_LIMIT) {
+    closeCompareOptions()
+    setCompareMessage(compareLimitMessage())
+    return
+  }
+  const matches = searchUniversities(compareRanked(), query)
+  if (!matches.length) {
+    closeCompareOptions()
+    setCompareMessage(`No university matches “${query.trim()}”. Check the spelling or try part of the name.`)
+    return
+  }
+  renderCompareOptions(matches)
+}
+
+function pickCompareUniversity(university) {
+  const selected = compareSelection()
+  closeCompareOptions()
+  if (selected.some(item => item.name === university.name)) {
+    setCompareMessage(`${university.name} is already in this comparison.`)
+    return
+  }
+  if (selected.length >= COMPARE_LIMIT) {
+    setCompareMessage(compareLimitMessage())
+    return
+  }
+  updateCompare(slugs => [...slugs, toLegacySlug(university.name)])
+}
+
+function submitCompareSearch() {
+  const { input } = compareElements()
+  const query = input.value.trim()
+  if (compareSearch.active >= 0) {
+    pickCompareUniversity(compareSearch.matches[compareSearch.active])
+    return
+  }
+  if (!searchKey(query)) {
+    closeCompareOptions()
+    setCompareMessage('Type a university name, then choose it from the suggestions.')
+    input.focus()
+    return
+  }
+  if (compareSelection().length >= COMPARE_LIMIT) {
+    closeCompareOptions()
+    setCompareMessage(compareLimitMessage())
+    return
+  }
+  const matches = searchUniversities(compareRanked(), query)
+  const exact = matches.find(university => searchKey(university.name) === searchKey(query))
+  if (exact || matches.length === 1) {
+    pickCompareUniversity(exact || matches[0])
+    return
+  }
+  if (!matches.length) {
+    closeCompareOptions()
+    setCompareMessage(`No university matches “${query}”. Check the spelling or try part of the name.`)
+    input.focus()
+    return
+  }
+  input.focus()
+  renderCompareOptions(matches)
+  compareElements().count.textContent = `${matches.length} universities match “${query}”. Choose one from the list.`
 }
 
 app.addEventListener('click', event => {
@@ -676,11 +837,51 @@ app.addEventListener('click', event => {
     }
     return
   }
+  const option = event.target.closest('[data-compare-option]')
+  if (option) {
+    const university = compareSearch.matches[Number(option.dataset.compareOption)]
+    if (university) pickCompareUniversity(university)
+    return
+  }
   const remove = event.target.closest('[data-compare-remove]')
   if (remove) updateCompare(selected => selected.filter(slug => slug !== remove.dataset.compareRemove))
 })
 
+app.addEventListener('mousedown', event => {
+  if (event.target.closest('#compare-options')) event.preventDefault()
+})
+
+app.addEventListener('keydown', event => {
+  if (!event.target.matches('#compare-input')) return
+  const open = !compareElements().listbox.hidden
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault()
+    if (!open) updateCompareSuggestions()
+    if (compareElements().listbox.hidden) return
+    const step = event.key === 'ArrowDown' ? 1 : -1
+    setActiveCompareOption(compareSearch.active === -1 ? (step > 0 ? 0 : -1) : compareSearch.active + step)
+  } else if (event.key === 'Escape' && open) {
+    event.preventDefault()
+    closeCompareOptions()
+  }
+})
+
+app.addEventListener('focusout', event => {
+  if (!event.target.matches('#compare-input')) return
+  if (event.relatedTarget && !event.relatedTarget.closest('.compare-combobox')) closeCompareOptions()
+})
+
+document.addEventListener('pointerdown', event => {
+  if (!event.target.closest('.compare-combobox')) closeCompareOptions()
+})
+
+window.visualViewport?.addEventListener('resize', keepCompareSearchVisible)
+
 app.addEventListener('input', event => {
+  if (event.target.matches('#compare-input')) {
+    updateCompareSuggestions()
+    return
+  }
   if (!event.target.matches('[data-action="search"]')) return
   state.search = event.target.value
   state.visibleLimit = PAGE_SIZE
@@ -708,14 +909,7 @@ app.addEventListener('submit', event => {
   }
   if (!event.target.matches('[data-action="compare-add"]')) return
   event.preventDefault()
-  const formData = new FormData(event.target)
-  const name = String(formData.get('university') || '')
-  const university = state.universities.find(item => item.name.toLocaleLowerCase() === name.toLocaleLowerCase())
-  if (!university) {
-    document.querySelector('#compare-feedback').textContent = 'Choose a university from the suggestions.'
-    return
-  }
-  updateCompare(selected => selected.includes(toLegacySlug(university.name)) ? selected : [...selected, toLegacySlug(university.name)])
+  submitCompareSearch()
 })
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {

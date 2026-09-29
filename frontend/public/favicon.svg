@@ -1,7 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="13" fill="#F8FAFC"/>
-  <circle cx="14" cy="22" r="7" fill="#1F5FA8"/>
-  <rect x="25" y="15" width="14" height="14" rx="1" fill="#B26A00"/>
-  <path d="M50 14l9 16H41z" fill="#0B7A5C"/>
-  <path d="M32 39l9 9-9 9-9-9z" fill="#A8458C"/>
+  <style>
+    .tile { fill: #F8FAFC; }
+    .qs { fill: #1F5FA8; }
+    .the { fill: #A86100; }
+    .arwu { fill: #087559; }
+    .usnews { fill: #A13C87; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #101114; }
+      .qs { fill: #6FA8F0; }
+      .the { fill: #F0A63A; }
+      .arwu { fill: #3FC49A; }
+      .usnews { fill: #E08BC6; }
+    }
+  </style>
+  <rect class="tile" width="64" height="64" rx="13"/>
+  <circle class="qs" cx="14" cy="22" r="7"/>
+  <rect class="the" x="25" y="15" width="14" height="14" rx="1"/>
+  <path class="arwu" d="M50 14l9 16H41z"/>
+  <path class="usnews" d="M32 39l9 9-9 9-9-9z"/>
 </svg>
