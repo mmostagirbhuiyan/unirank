@@ -61,7 +61,7 @@
       },
       {
         "name": "Texas A&M University",
-        "rank": 201,
+        "rank": 151,
         "country": "United States",
         "source": "arwu"
       },
@@ -289,7 +289,7 @@
       },
       {
         "name": "Macau University of Science and Technology",
-        "rank": 401,
+        "rank": 601,
         "country": "Macao",
         "source": "arwu"
       },
@@ -369,7 +369,7 @@
       },
       {
         "name": "Higher School of Economics",
-        "rank": 701,
+        "rank": 801,
         "country": "Russia",
         "source": "arwu"
       },
@@ -449,7 +449,7 @@
       },
       {
         "name": "Sao Paulo State University",
-        "rank": 401,
+        "rank": 301,
         "country": "Brazil",
         "source": "arwu"
       },
@@ -489,7 +489,7 @@
       },
       {
         "name": "University of Jena",
-        "rank": 301,
+        "rank": 401,
         "country": "Germany",
         "source": "arwu"
       },
@@ -562,7 +562,7 @@
         "source": "usnews"
       },
       {
-        "name": "University of Tromso",
+        "name": "Uit the Arctic University of Norway",
         "rank": 501,
         "country": "Norway",
         "source": "arwu"
@@ -666,7 +666,7 @@
       },
       {
         "name": "AGH University of Science and Technology",
-        "rank": 901,
+        "rank": 701,
         "country": "Poland",
         "source": "arwu"
       },
@@ -763,7 +763,7 @@
       },
       {
         "name": "Polytechnic University of Bari",
-        "rank": 801,
+        "rank": 701,
         "country": "Italy",
         "source": "arwu"
       },
@@ -803,7 +803,7 @@
       },
       {
         "name": "State University of New York at Albany",
-        "rank": 701,
+        "rank": 501,
         "country": "United States",
         "source": "arwu"
       },
@@ -899,7 +899,7 @@
       },
       {
         "name": "University of Natural Resources and Life Sciences",
-        "rank": 601,
+        "rank": 501,
         "country": "Austria",
         "source": "arwu"
       }

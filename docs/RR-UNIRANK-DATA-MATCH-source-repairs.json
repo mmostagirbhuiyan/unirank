@@ -28,21 +28,12 @@
   },
   {
     "file": "arwu_rankings.csv",
-    "line": 144,
+    "line": 146,
     "rank": 101,
     "originalName": "Rutgers - The State University of New Jersey",
     "correctedName": "Rutgers - The State University of New Jersey - New Brunswick",
-    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
-    "consulted": "2026-09-28"
-  },
-  {
-    "file": "arwu_rankings.csv",
-    "line": 776,
-    "rank": 701,
-    "originalName": "Rutgers - The State University of New Jersey",
-    "correctedName": "Rutgers - The State University of New Jersey - Newark",
-    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
-    "consulted": "2026-09-28"
+    "evidence": "https://www.shanghairanking.com/universities/rutgers-the-state-university-of-new-jersey-new-brunswick",
+    "consulted": "2026-09-30"
   },
   {
     "file": "the_rankings.csv",
@@ -64,48 +55,84 @@
   },
   {
     "file": "arwu_rankings.csv",
-    "line": 920,
-    "rank": 901,
-    "originalName": "Jiangsu University",
-    "correctedName": "Jiangsu University of Science and Technology",
-    "evidence": "https://www.shanghairanking.cn/institution/jiangsu-university-of-science-and-technology",
-    "consulted": "2026-09-28"
-  },
-  {
-    "file": "arwu_rankings.csv",
-    "line": 818,
-    "rank": 801,
-    "originalName": "Chengdu University of Technology",
-    "correctedName": "Chengdu University",
-    "evidence": "https://www.shanghairanking.com/_pub/com/arwu/2025/2025%20ACADEMIC%20RANKING%20OF%20WORLD%20UNIVERSITIES.pdf",
-    "consulted": "2026-09-28"
-  },
-  {
-    "file": "arwu_rankings.csv",
-    "line": 828,
-    "rank": 801,
-    "originalName": "South China Normal University",
-    "correctedName": "University of South China",
-    "evidence": "https://www.shanghairanking.cn/institution/university-of-south-china",
-    "consulted": "2026-09-28"
-  },
-  {
-    "file": "arwu_rankings.csv",
-    "line": 420,
-    "rank": 401,
-    "originalName": "Hohai University Changzhou",
-    "correctedName": "Hohai University",
-    "evidence": "https://www.shanghairanking.cn/institution/hohai-university",
-    "consulted": "2026-09-28"
-  },
-  {
-    "file": "arwu_rankings.csv",
     "line": 523,
     "rank": 501,
+    "originalName": "Jiangsu University",
+    "correctedName": "Jiangsu University of Science and Technology",
+    "evidence": "https://www.shanghairanking.com/universities/jiangsu-university-of-science-and-technology",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 528,
+    "rank": 501,
+    "originalName": "South China Normal University",
+    "correctedName": "University of South China",
+    "evidence": "https://www.shanghairanking.com/universities/university-of-south-china",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 327,
+    "rank": 301,
+    "originalName": "Hohai University Changzhou",
+    "correctedName": "Hohai University",
+    "evidence": "https://www.shanghairanking.com/universities/hohai-university",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 719,
+    "rank": 701,
     "originalName": "Hohai University Changzhou",
     "correctedName": "Changzhou University",
-    "evidence": "https://www.shanghairanking.cn/institution/changzhou-university",
-    "consulted": "2026-09-28"
+    "evidence": "https://www.shanghairanking.com/universities/changzhou-university",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 621,
+    "rank": 601,
+    "originalName": "Shandong University of Science Technology",
+    "correctedName": "Shandong University of Science and Technology",
+    "evidence": "https://www.shanghairanking.com/universities/shandong-university-of-science-and-technology",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 696,
+    "rank": 601,
+    "originalName": "Henan University of Science and Technology",
+    "correctedName": "Henan University of Technology",
+    "evidence": "https://www.shanghairanking.com/universities/henan-university-of-technology",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 824,
+    "rank": 801,
+    "originalName": "Shandong University of Science Technology",
+    "correctedName": "Shandong University of Technology",
+    "evidence": "https://www.shanghairanking.com/universities/shandong-university-of-technology",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 932,
+    "rank": 901,
+    "originalName": "Qingdao University of Science and Technology",
+    "correctedName": "Qingdao University of Technology",
+    "evidence": "https://www.shanghairanking.com/universities/qingdao-university-of-technology",
+    "consulted": "2026-09-30"
+  },
+  {
+    "file": "arwu_rankings.csv",
+    "line": 954,
+    "rank": 901,
+    "originalName": "International Higher School for Advanced Studies",
+    "correctedName": "International School for Advanced Studies",
+    "evidence": "https://www.shanghairanking.com/universities/international-school-for-advanced-studies",
+    "consulted": "2026-09-30"
   },
   {
     "file": "qs_rankings.csv",

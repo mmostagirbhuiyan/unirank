@@ -81,10 +81,10 @@ test('published examples contain every owning rank and no foreign rank', async (
     const michigan = rankings.filter(u => /University of Michigan/.test(u.name));
     expect(michigan).toHaveLength(1);
     expect(michigan[0].originalRankings).toEqual({
-        qs: { rank: 51 }, the: { rank: 23 }, arwu: { rank: 30 }, usnews: { rank: 21 }
+        qs: { rank: 51 }, the: { rank: 23 }, arwu: { rank: 35 }, usnews: { rank: 21 }
     });
-    expect(rankings.find(u => u.name === 'Nanjing University').originalRankings.arwu.rank).toBe(82);
-    expect(rankings.find(u => u.name === 'Xinjiang University').originalRankings.arwu.rank).toBe(701);
+    expect(rankings.find(u => u.name === 'Nanjing University').originalRankings.arwu.rank).toBe(70);
+    expect(rankings.find(u => u.name === 'Xinjiang University').originalRankings.arwu.rank).toBe(601);
     expect(conflicts).toEqual([]);
     const accounted = universities.flatMap(u => u.members);
     const signature = r => JSON.stringify([r.source, r.name, r.rank]);
@@ -249,7 +249,7 @@ test('additional cross-source identities are not published as split universities
         'usnews', 'National Research University - Higher School of Economics',
         {
             qs: { rank: 423 }, the: { rank: 501 },
-            arwu: { rank: 701 }, usnews: { rank: 573 }
+            arwu: { rank: 801 }, usnews: { rank: 573 }
         }
     );
 
@@ -267,7 +267,7 @@ test('additional cross-source identities are not published as split universities
         'usnews', 'Politecnico di Bari',
         {
             qs: { rank: 951 }, the: { rank: 501 },
-            arwu: { rank: 801 }, usnews: { rank: 809 }
+            arwu: { rank: 701 }, usnews: { rank: 809 }
         }
     );
 

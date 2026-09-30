@@ -2,9 +2,12 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
+const { downloadRankingCsv } = require('./csv-download');
 
 // URL to download the latest ARWU CSV directly from universityrankings.ch
 // Note: if this URL changes in the future, update the constant accordingly.
+// The vendor now gates CSV downloads behind a captcha, so the file is fetched
+// by hand and this URL is only used for a validated refresh attempt.
 const ARWU_CSV_DOWNLOAD_URL =
   'https://www.universityrankings.ch/results/Shanghai/2025?mode=csv';
 
@@ -18,53 +21,6 @@ const ARWU_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', 
 // Define the path for the local HTML file
 const LOCAL_ARWU_DATA_PATH_HTML = 'Shanghai Ranking 2025 - Results _ UniversityRankings.ch.html';
 
-// Staleness threshold: 30 days in milliseconds
-const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
-
-// Parse --force-refresh from CLI args
-const FORCE_REFRESH = process.argv.includes('--force-refresh');
-
-/**
- * Returns true if the file exists, is non-empty, and is less than 30 days old.
- */
-function isFresh(filePath) {
-    if (!fs.existsSync(filePath)) return false;
-    const stat = fs.statSync(filePath);
-    if (stat.size === 0) return false;
-    const ageMs = Date.now() - stat.mtimeMs;
-    return ageMs < STALENESS_MS;
-}
-
-// Download the latest ARWU CSV and save it to the data directory
-async function downloadARWUCSV() {
-    try {
-        if (!FORCE_REFRESH && isFresh(ARWU_FILE_PATH)) {
-            console.log(`Using existing ARWU CSV at ${ARWU_FILE_PATH} (still fresh)`);
-            return;
-        }
-        if (FORCE_REFRESH) {
-            console.log('--force-refresh: re-downloading ARWU CSV...');
-        } else if (fs.existsSync(ARWU_FILE_PATH)) {
-            console.log('ARWU CSV is stale (>30 days). Re-downloading...');
-        }
-        console.log(`Downloading ARWU CSV from ${ARWU_CSV_DOWNLOAD_URL}...`);
-        const { exec } = require('child_process');
-        await new Promise((resolve, reject) => {
-            exec(`curl -L -o '${ARWU_FILE_PATH}' '${ARWU_CSV_DOWNLOAD_URL}'`, (err) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve();
-                }
-            });
-        });
-        console.log(`Saved ARWU CSV to ${ARWU_FILE_PATH}`);
-    } catch (error) {
-        console.error(`Failed to download ARWU CSV: ${error.message}`);
-        throw error;
-    }
-}
-
 /**
  * Scrapes the Academic Ranking of World Universities (ARWU/Shanghai Rankings) from universityrankings.ch.
  * This version reads from a local CSV file.
@@ -75,8 +31,11 @@ async function scrapeARWURankings(limit) {
     const rankings = [];
 
     try {
-        // Always attempt to download the latest data before parsing
-        if (!process.argv.includes('--offline')) await downloadARWUCSV();
+        // Always attempt to refresh the latest data before parsing; a failed
+        // or non-ranking download keeps the existing file.
+        if (!process.argv.includes('--offline')) await downloadRankingCsv({
+            url: ARWU_CSV_DOWNLOAD_URL, filePath: ARWU_FILE_PATH, label: 'ARWU CSV'
+        });
         console.log(`Reading ARWU rankings from local CSV file ${ARWU_FILE_PATH}...`);
 
         // --- Start of parsing logic with csv-parser ---

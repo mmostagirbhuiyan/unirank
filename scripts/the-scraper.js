@@ -1,66 +1,20 @@
 // scripts/the-scraper.js
 const fs = require('fs');
-const fsp = fs.promises;
 const path = require('path');
 const csv = require('csv-parser'); // Import the csv-parser library
 const { createReadStream } = require('fs'); // Import createReadStream
-const readline = require('readline'); // Import readline for line-by-line reading
+const { downloadRankingCsv } = require('./csv-download');
 
 // URL to download the latest THE CSV directly from universityrankings.ch
 // Update the year in the URL when a new ranking becomes available
+// The vendor now gates CSV downloads behind a captcha, so the file is fetched
+// by hand and this URL is only used for a validated refresh attempt.
 const THE_CSV_DOWNLOAD_URL =
   'https://www.universityrankings.ch/results/Times/2025?mode=csv';
 
 // Define the path for the local CSV file
 const THE_CSV_FILE = 'the_rankings.csv';
 const THE_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', THE_CSV_FILE);
-
-// Staleness threshold: 30 days in milliseconds
-const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
-
-// Parse --force-refresh from CLI args
-const FORCE_REFRESH = process.argv.includes('--force-refresh');
-
-/**
- * Returns true if the file exists, is non-empty, and is less than 30 days old.
- */
-function isFresh(filePath) {
-    if (!fs.existsSync(filePath)) return false;
-    const stat = fs.statSync(filePath);
-    if (stat.size === 0) return false;
-    const ageMs = Date.now() - stat.mtimeMs;
-    return ageMs < STALENESS_MS;
-}
-
-// Download the latest THE CSV to the data directory
-async function downloadTHECSV() {
-    try {
-        if (!FORCE_REFRESH && isFresh(THE_FILE_PATH)) {
-            console.log(`Using existing THE CSV at ${THE_FILE_PATH} (still fresh)`);
-            return;
-        }
-        if (FORCE_REFRESH) {
-            console.log('--force-refresh: re-downloading THE CSV...');
-        } else if (fs.existsSync(THE_FILE_PATH)) {
-            console.log('THE CSV is stale (>30 days). Re-downloading...');
-        }
-        console.log(`Downloading THE CSV from ${THE_CSV_DOWNLOAD_URL}...`);
-        const { exec } = require('child_process');
-        await new Promise((resolve, reject) => {
-            exec(`curl -L -o '${THE_FILE_PATH}' '${THE_CSV_DOWNLOAD_URL}'`, (err) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve();
-                }
-            });
-        });
-        console.log(`Saved THE CSV to ${THE_FILE_PATH}`);
-    } catch (error) {
-        console.error(`Failed to download THE CSV: ${error.message}`);
-        throw error;
-    }
-}
 
 /**
  * Reads the Times Higher Education World University Rankings from a local CSV file using csv-parser.
@@ -70,8 +24,11 @@ async function scrapeTHERankings() {
     const results = [];
 
     try {
-        // Fetch the latest CSV before reading
-        if (!process.argv.includes('--offline')) await downloadTHECSV();
+        // Always attempt to refresh the latest data before parsing; a failed
+        // or non-ranking download keeps the existing file.
+        if (!process.argv.includes('--offline')) await downloadRankingCsv({
+            url: THE_CSV_DOWNLOAD_URL, filePath: THE_FILE_PATH, label: 'THE CSV'
+        });
         console.log(`Reading THE rankings from local CSV file ${THE_FILE_PATH}...`);
 
         await new Promise((resolve, reject) => {

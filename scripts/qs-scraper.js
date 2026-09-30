@@ -2,59 +2,13 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
+const { downloadRankingCsv } = require('./csv-download');
 
 const QS_CSV_DOWNLOAD_URL =
   'https://www.universityrankings.ch/results/QS/2025?mode=csv';
 
 const QS_CSV_FILE = 'qs_rankings.csv';
 const QS_FILE_PATH = path.join(__dirname, '..', 'frontend', 'public', 'data', QS_CSV_FILE);
-
-// Staleness threshold: 30 days in milliseconds
-const STALENESS_MS = 30 * 24 * 60 * 60 * 1000;
-
-// Parse --force-refresh from CLI args
-const FORCE_REFRESH = process.argv.includes('--force-refresh');
-
-/**
- * Returns true if the file exists, is non-empty, and is less than 30 days old.
- */
-function isFresh(filePath) {
-  if (!fs.existsSync(filePath)) return false;
-  const stat = fs.statSync(filePath);
-  if (stat.size === 0) return false;
-  const ageMs = Date.now() - stat.mtimeMs;
-  return ageMs < STALENESS_MS;
-}
-
-// Download the latest QS CSV to the data directory
-async function downloadQSCSV() {
-  try {
-    if (!FORCE_REFRESH && isFresh(QS_FILE_PATH)) {
-      console.log(`Using existing QS CSV at ${QS_FILE_PATH} (still fresh)`);
-      return;
-    }
-    if (FORCE_REFRESH) {
-      console.log('--force-refresh: re-downloading QS CSV...');
-    } else if (fs.existsSync(QS_FILE_PATH)) {
-      console.log('QS CSV is stale (>30 days). Re-downloading...');
-    }
-    console.log(`Downloading QS CSV from ${QS_CSV_DOWNLOAD_URL}...`);
-    const { exec } = require('child_process');
-    await new Promise((resolve, reject) => {
-      exec(`curl -L -o '${QS_FILE_PATH}' '${QS_CSV_DOWNLOAD_URL}'`, (err) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
-    });
-    console.log(`Saved QS CSV to ${QS_FILE_PATH}`);
-  } catch (error) {
-    console.error(`Failed to download QS CSV: ${error.message}`);
-    throw error;
-  }
-}
 
 function parseQSCSV(filePath) {
   return new Promise((resolve, reject) => {
@@ -91,7 +45,11 @@ function parseQSCSV(filePath) {
  */
 async function scrapeQSRankings(limit) {
     try {
-        if (!process.argv.includes('--offline')) await downloadQSCSV();
+        // Always attempt to refresh the latest data before parsing; a failed
+        // or non-ranking download keeps the existing file.
+        if (!process.argv.includes('--offline')) await downloadRankingCsv({
+            url: QS_CSV_DOWNLOAD_URL, filePath: QS_FILE_PATH, label: 'QS CSV'
+        });
         console.log(`Reading QS rankings from CSV file: ${QS_FILE_PATH}...`);
         const rankings = await parseQSCSV(QS_FILE_PATH);
         console.log(`Successfully read ${rankings.length} universities from CSV.`);
@@ -104,7 +62,9 @@ async function scrapeQSRankings(limit) {
 
 async function main() {
   try {
-    if (!process.argv.includes('--offline')) await downloadQSCSV();
+    if (!process.argv.includes('--offline')) await downloadRankingCsv({
+        url: QS_CSV_DOWNLOAD_URL, filePath: QS_FILE_PATH, label: 'QS CSV'
+    });
     const qsData = await parseQSCSV(QS_FILE_PATH);
     console.log('Sample QS data:', qsData.slice(0, 5));
     // ...rest of your QS processing logic, using qsData...

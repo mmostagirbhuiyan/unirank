@@ -4,7 +4,7 @@ A production-grade platform that aggregates and visualizes global university ran
 
 **Live:** [unirank.mmostagirbhuiyan.com](https://unirank.mmostagirbhuiyan.com/)
 
-[![Universities](https://img.shields.io/badge/Universities-1562-blue)](https://github.com/mmostagirbhuiyan/unirank)
+[![Universities](https://img.shields.io/badge/Universities-1583-blue)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/unirank)
 
@@ -51,7 +51,7 @@ The system will automatically load rankings from all 4 sources, apply intelligen
 
 ### Current Performance
 
-- **1,562 unique universities** in the regenerated data, with every source rank assigned
+- **1,583 unique universities** in the regenerated data, with every source rank assigned
 - **8 active automation patterns** for name standardization
 - **242 curated manual mappings** for cross-source edge cases
 - **<30 seconds** complete data processing
