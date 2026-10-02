@@ -137,7 +137,7 @@ test('known cross-source aliases beyond the ticket examples resolve to one insti
         'usnews', 'Jeonbuk National University',
         {
             qs: { rank: 677 },
-            the: { rank: 801 },
+            the: { rank: 651 },
             arwu: { rank: 701 },
             usnews: { rank: 944 }
         }
@@ -148,7 +148,7 @@ test('known cross-source aliases beyond the ticket examples resolve to one insti
         'usnews', 'National Tsing Hua University',
         {
             qs: { rank: 142 },
-            the: { rank: 401 },
+            the: { rank: 351 },
             arwu: { rank: 401 },
             usnews: { rank: 520 }
         }
@@ -200,18 +200,16 @@ test('evidenced aliases are scoped to their country', () => {
     expect(resolveUniversities(records, aliases).universities).toHaveLength(3);
 });
 
-test('all researched aliases join their source records without crossing countries', async () => {
-    if (!process.argv.includes('--offline')) process.argv.push('--offline');
-    const { countryKey } = require('../scripts/university-identity');
-    const { universities } = await require('../scripts/scrape-rankings').buildRankings();
+test('researched aliases resolve within their country even when an edition drops a name', () => {
     const aliases = require('../frontend/public/data/manual-university-mapping.json');
     for (const mapping of aliases.filter(mapping => mapping.evidence)) {
-        const owner = name => universities.find(university =>
-            university.country === countryKey(mapping.country) &&
-            university.members.some(member => nameKey(member.name) === nameKey(name)));
-        const original = owner(mapping.originalName);
-        expect(original).toBeDefined();
-        expect(owner(mapping.suggestedStandardizedName)).toBe(original);
+        const records = [
+            row(mapping.originalName, mapping.source || 'the', 1, mapping.country),
+            row(mapping.suggestedStandardizedName, 'usnews', 2, mapping.country)
+        ];
+        expect(resolveUniversities(records, [mapping]).universities).toHaveLength(1);
+        records[1].country = 'Another Country';
+        expect(resolveUniversities(records, [mapping]).universities).toHaveLength(2);
     }
 });
 
@@ -219,7 +217,9 @@ test('repaired source labels publish their unchanged ranks on the corrected inst
     if (!process.argv.includes('--offline')) process.argv.push('--offline');
     const { universities } = await require('../scripts/scrape-rankings').buildRankings();
     const repairs = require('../docs/RR-UNIRANK-DATA-MATCH-source-repairs.json');
-    for (const repair of repairs) {
+    // THE's retired vendor labels and ranks are historical. Its publisher snapshot
+    // is covered by the THE scraper and 2027 identity tests.
+    for (const repair of repairs.filter(repair => repair.file !== 'the_rankings.csv')) {
         const source = repair.file.split('_')[0];
         const owners = universities.filter(university => university.members.some(member =>
             member.source === source && member.name === repair.correctedName));
@@ -248,7 +248,7 @@ test('additional cross-source identities are not published as split universities
         'qs', 'Higher School of Economics',
         'usnews', 'National Research University - Higher School of Economics',
         {
-            qs: { rank: 423 }, the: { rank: 501 },
+            qs: { rank: 423 }, the: { rank: 601 },
             arwu: { rank: 801 }, usnews: { rank: 573 }
         }
     );
@@ -257,7 +257,7 @@ test('additional cross-source identities are not published as split universities
         'qs', 'Virginia Polytechnic Institute and State University',
         'usnews', 'Virginia Tech',
         {
-            qs: { rank: 366 }, the: { rank: 251 },
+            qs: { rank: 366 }, the: { rank: 277 },
             arwu: { rank: 201 }, usnews: { rank: 285 }
         }
     );
@@ -266,15 +266,15 @@ test('additional cross-source identities are not published as split universities
         'qs', 'Polytechnic University of Bari',
         'usnews', 'Politecnico di Bari',
         {
-            qs: { rank: 951 }, the: { rank: 501 },
+            qs: { rank: 951 }, the: { rank: 551 },
             arwu: { rank: 701 }, usnews: { rank: 809 }
         }
     );
 
     expectSameOwner(
-        'the', "Sant'Anna School of Advanced Studies",
+        'the', 'Sant’Anna School of Advanced Studies – Pisa',
         'usnews', "Scuola Superiore Sant'Anna",
-        { the: { rank: 201 }, usnews: { rank: 897 } }
+        { the: { rank: 257 }, usnews: { rank: 897 } }
     );
 
     expectSameOwner(
@@ -287,7 +287,7 @@ test('additional cross-source identities are not published as split universities
         'qs', 'National Research Nuclear University',
         'usnews', 'National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)',
         {
-            qs: { rank: 626 }, the: { rank: 601 },
+            qs: { rank: 626 }, the: { rank: 801 },
             usnews: { rank: 770 }
         }
     );
@@ -339,10 +339,10 @@ test('actual campuses, systems, and separate medical institutions stay separate'
     const pairs = [
         ['CUNY--City College', 'The Graduate Center - CUNY'],
         ['CUNY--City College', 'City University of New York'],
-        ['University of Massachusetts (System)', 'University of Massachusetts--Amherst'],
+        ['University of Massachusetts', 'University of Massachusetts--Amherst'],
         ['University of Massachusetts--Amherst', 'University of Massachusetts--Boston'],
         ['Arizona State University--Tempe', 'Arizona State University--Downtown Phoenix'],
-        ['Shahid Beheshti University', 'Shahid Beheshti University Medical Sciences']
+        ['Shahid Beheshti University', 'Shahid Beheshti University of Medical Sciences']
     ];
     for (const [a, b] of pairs) {
         const owner = name => universities.find(u => u.members.some(m => m.name === name));
@@ -359,7 +359,9 @@ test('publisher geography overrides are record scoped and preserve the original 
         const owners = universities.filter(u => u.members.some(m => m.name === rule.name));
         expect(owners).toHaveLength(1);
         expect(owners[0].country).toBe(rule.country);
-        expect(owners[0].members.find(m => m.source === rule.source).sourceCountry).toBe('Türkiye');
+        expect(owners[0].members.find(m => m.source === rule.source).sourceCountry)
+            .toBe({ 'Near East University': 'Türkiye', 'Eastern Mediterranean University': 'Türkiye',
+                'Central European University': 'Hungary' }[rule.name]);
     }
     expect(resolveUniversities([
         row('Unrelated University', 'qs', 1, 'Turkey'),
@@ -367,17 +369,72 @@ test('publisher geography overrides are record scoped and preserve the original 
     ]).universities).toHaveLength(2);
 });
 
-test('all round-three resolved split pairs retain every audited source rank', async () => {
+test('round-three identities retain their QS, ARWU and US News ranks after the THE refresh', async () => {
     if (!process.argv.includes('--offline')) process.argv.push('--offline');
     const { universities } = await require('../scripts/scrape-rankings').buildRankings();
     const identities = require('../docs/RR-UNIRANK-DATA-MATCH-round3-identities.json');
     expect(identities).toHaveLength(25);
     for (const identity of identities) {
-        const owners = identity.members.map(member => universities.find(u =>
+        const unchangedMembers = identity.members.filter(member => member.source !== 'the');
+        const owners = unchangedMembers.map(member => universities.find(u =>
             u.members.some(m => m.source === member.source && m.name === member.name)));
         expect(owners[0]).toBeDefined();
         for (const owner of owners) expect(owner).toBe(owners[0]);
-        expect(owners[0].rankings).toEqual(Object.fromEntries(
-            identity.members.map(m => [m.source, { rank: m.rank }])));
+        expect(owners[0].rankings).toMatchObject(Object.fromEntries(
+            unchangedMembers.map(m => [m.source, { rank: m.rank }])));
+    }
+});
+
+
+test('publisher countries and Turkish dotless-i names join equivalent records without dropping qualifiers', () => {
+    const result = resolveUniversities([
+        row('Example University', 'qs', 1, 'Russia'),
+        row('Example University', 'the', 2, 'Russian Federation'),
+        row('Sabanci University', 'qs', 3, 'Turkey'),
+        row('Sabancı University', 'the', 4, 'Turkey'),
+        row('Sabancı University North', 'arwu', 5, 'Turkey')
+    ]);
+    expect(result.universities).toHaveLength(3);
+    expect(result.universities.find(u => u.country === 'Russia').rankings)
+        .toEqual({ qs: { rank: 1 }, the: { rank: 2 } });
+    expect(result.universities.find(u => u.name === 'Sabanci University').rankings)
+        .toEqual({ qs: { rank: 3 }, the: { rank: 4 } });
+});
+
+test('THE 2027 publisher identities join the existing source rows, with systems kept separate', async () => {
+    if (!process.argv.includes('--offline')) process.argv.push('--offline');
+    const { universities } = await require('../scripts/scrape-rankings').buildRankings();
+    const pairs = [
+        ['UCL', 'University College London', 17],
+        ['University of Minnesota', 'University of Minnesota--Twin Cities', 88],
+        ['Penn State (Main campus)', 'Pennsylvania State University--University Park', 101],
+        ['University of Galway', 'National University of Ireland - Galway', 326],
+        ['Université Bourgogne Europe', 'University of Burgundy', 801],
+        ['Central European University', 'Central European University', 269]
+    ];
+    for (const [publisherName, otherName, rank] of pairs) {
+        const owner = universities.find(u => u.members.some(m => m.source === 'the' && m.name === publisherName));
+        expect(owner).toBeDefined();
+        expect(owner.rankings.the).toEqual({ rank });
+        expect(owner.members.some(m => m.source !== 'the' && m.name === otherName)).toBe(true);
+    }
+    const system = universities.find(u => u.members.some(m => m.source === 'the' && m.name === 'University of Massachusetts'));
+    expect(system.rankings).toEqual({ the: { rank: 143 } });
+    expect(universities.find(u => u.name === 'University of Massachusetts--Amherst').rankings.the).toBeUndefined();
+});
+
+test('all publisher identity evidence pairs retain their existing other-source ranks', async () => {
+    if (!process.argv.includes('--offline')) process.argv.push('--offline');
+    const { universities } = await require('../scripts/scrape-rankings').buildRankings();
+    // Expected ranks are THE's separately fetched public JSON and the base
+    // commit's audited QS/ARWU/US News records, retained in the evidence ledger.
+    for (const identity of require('../docs/RR-UNIRANK-THE-SOURCE-identities.json')) {
+        const owners = universities.filter(u => u.members.some(m =>
+            m.source === 'the' && m.name === identity.originalName));
+        expect(owners).toHaveLength(1);
+        expect(owners[0].rankings.the).toEqual({ rank: identity.numericRank });
+        for (const member of identity.expectedOtherSourceMembers) {
+            expect(owners[0].members).toContainEqual(member);
+        }
     }
 });

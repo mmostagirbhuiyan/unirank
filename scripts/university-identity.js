@@ -10,7 +10,7 @@ function nameKey(name, sortWords = true) {
     }
     const normalized = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
         .replace(/\bIII\b/g, '3').replace(/\bII\b/g, '2').replace(/\bI\b/g, '1')
-        .toLowerCase().replace(/[ø]/g, 'o').replace(/[ł]/g, 'l')
+        .toLowerCase().replace(/[ø]/g, 'o').replace(/[ł]/g, 'l').replace(/ı/g, 'i')
         .replace(/['’]/g, '')
         .replace(/&/g, ' and ')
         .replace(/[^\p{L}\p{N}]+/gu, ' ')
@@ -28,7 +28,8 @@ function countryKey(country) {
         'Republic of Korea': 'South Korea', 'Iran (Islamic Republic of)': 'Iran',
         'Venezuela (Bolivarian Republic of)': 'Venezuela', 'Northern Cyprus': 'Cyprus',
         Czechia: 'Czech Republic', 'Brunei Darussalam': 'Brunei',
-        'Viet Nam': 'Vietnam', 'Türkiye': 'Turkey', Macau: 'Macao'
+        'Viet Nam': 'Vietnam', 'Türkiye': 'Turkey', Macau: 'Macao',
+        'Russian Federation': 'Russia'
     };
     return aliases[country.trim()] || country.trim();
 }

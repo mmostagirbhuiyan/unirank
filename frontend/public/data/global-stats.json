@@ -1,5 +1,5 @@
 {
-  "totalUniversities": 1583,
+  "totalUniversities": 1579,
   "totalCountries": 96,
   "totalSources": 4,
   "sourceConfig": {
@@ -24,25 +24,33 @@
       "fullName": "US News Best Global Universities"
     }
   },
-  "manualMappingsCount": 145,
-  "autoMappingsCount": 120,
-  "lastUpdated": "2026-09-30",
+  "manualMappingsCount": 234,
+  "autoMappingsCount": 235,
+  "lastUpdated": "2026-10-02",
   "disagreementDistribution": {
-    "high-consensus": 28,
-    "moderate-consensus": 91,
-    "moderate-disagreement": 389,
-    "high-disagreement": 557,
-    "insufficient-data": 518
+    "high-consensus": 26,
+    "moderate-consensus": 95,
+    "moderate-disagreement": 405,
+    "high-disagreement": 540,
+    "insufficient-data": 513
   },
   "appearancesDistribution": {
-    "1": 518,
-    "2": 292,
-    "3": 222,
-    "4": 551
+    "1": 513,
+    "2": 284,
+    "3": 228,
+    "4": 554
   },
   "topConsensus": [
     {
-      "name": "National University of Science and Technology MISiS",
+      "name": "Thapar University",
+      "spread": 0
+    },
+    {
+      "name": "University of Tunku Abdul Rahman",
+      "spread": 0
+    },
+    {
+      "name": "Egypt-Japan University of Science and Technology",
       "spread": 0
     },
     {
@@ -50,7 +58,7 @@
       "spread": 0
     },
     {
-      "name": "University of Regina",
+      "name": "Ataturk University",
       "spread": 0
     },
     {
@@ -58,15 +66,7 @@
       "spread": 0
     },
     {
-      "name": "Ataturk University",
-      "spread": 0
-    },
-    {
       "name": "College of William and Mary",
-      "spread": 0
-    },
-    {
-      "name": "Gabriele D'Annunzio University",
       "spread": 0
     },
     {
@@ -74,11 +74,11 @@
       "spread": 0
     },
     {
-      "name": "University of California--San Francisco",
+      "name": "Stanford University",
       "spread": 1
     },
     {
-      "name": "Tallinn University of Technology",
+      "name": "University of California--San Francisco",
       "spread": 1
     }
   ],
@@ -96,10 +96,6 @@
       "spread": 700
     },
     {
-      "name": "Scuola Superiore Sant'Anna",
-      "spread": 696
-    },
-    {
       "name": "Massey University",
       "spread": 686
     },
@@ -108,20 +104,24 @@
       "spread": 683
     },
     {
-      "name": "Universiti Teknologi Petronas",
-      "spread": 674
-    },
-    {
-      "name": "Royal College of Surgeons - Ireland",
-      "spread": 674
-    },
-    {
       "name": "Indian Institute of Technology - Bombay",
       "spread": 667
     },
     {
       "name": "Universiti Putra Malaysia",
       "spread": 663
+    },
+    {
+      "name": "Royal College of Surgeons - Ireland",
+      "spread": 658
+    },
+    {
+      "name": "University of Colorado--Denver",
+      "spread": 650
+    },
+    {
+      "name": "Virginia Commonwealth University",
+      "spread": 650
     }
   ]
 }

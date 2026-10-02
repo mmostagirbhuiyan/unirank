@@ -4,7 +4,7 @@ A production-grade platform that aggregates and visualizes global university ran
 
 **Live:** [unirank.mmostagirbhuiyan.com](https://unirank.mmostagirbhuiyan.com/)
 
-[![Universities](https://img.shields.io/badge/Universities-1583-blue)](https://github.com/mmostagirbhuiyan/unirank)
+[![Universities](https://img.shields.io/badge/Universities-1579-blue)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Sources](https://img.shields.io/badge/Data%20Sources-4-green)](https://github.com/mmostagirbhuiyan/unirank)
 [![Data Integrity](https://img.shields.io/badge/Data%20Integrity-Verified-green)](https://github.com/mmostagirbhuiyan/unirank)
 
@@ -41,7 +41,7 @@ The system will automatically load rankings from all 4 sources, apply intelligen
 | Source | Universities | Focus | Update Frequency |
 |--------|-------------|-------|------------------|
 | **QS World Rankings** | 1,000 | Global comprehensive | Annual |
-| **THE (Times Higher Education)** | 992 | Research excellence | Annual |
+| **THE (Times Higher Education)** | 1001 | Research excellence | Annual |
 | **ARWU (Shanghai Rankings)** | 1,000 | Academic performance | Annual |
 | **US News Global** | 980 | International reach | Annual |
 
@@ -51,7 +51,7 @@ The system will automatically load rankings from all 4 sources, apply intelligen
 
 ### Current Performance
 
-- **1,583 unique universities** in the regenerated data, with every source rank assigned
+- **1,579 unique universities** in the regenerated data, with every source rank assigned
 - **8 active automation patterns** for name standardization
 - **242 curated manual mappings** for cross-source edge cases
 - **<30 seconds** complete data processing
@@ -133,7 +133,7 @@ Raw Rankings Data
 
 ### Data Flow Architecture
 
-1. **Data Ingestion**: QS, THE, ARWU from CSV files via universityrankings.ch. US News via automated Playwright scraping.
+1. **Data Ingestion**: QS and ARWU from CSV files via universityrankings.ch. THE World University Rankings 2027 from THE’s public ranking table, refreshed automatically. US News via automated Playwright scraping.
 2. **Enhanced Name Matching** (5-tier system): Pattern-based transformations, high-confidence fuzzy matching (>=93%), manual mapping lookup (167 entries), auto-generated mappings (~7.9k entries), original name preserved as fallback.
 3. **Ranking Aggregation**: Borda Count with Penalized Absence. Weighted scoring with source-specific penalties.
 4. **Frontend Visualization**: React-based responsive interface with real-time search and filtering.

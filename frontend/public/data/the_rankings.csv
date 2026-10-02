@@ -1,997 +1,1006 @@
-# University Ranking Results - www.universityrankings.ch
-# Ranking: 
-# Year: 2026
-#
-   #    World Rank   ,  Institution   ,  Country   ,   
-    1  ,   University of Oxford   ,UK   
-    2  ,   Massachusetts Institute of Technology - MIT   ,USA   
-    3  ,   University of Cambridge   ,UK   
-    3  ,   Princeton University   ,USA   
-    5  ,   Stanford University   ,USA   
-    5  ,   Harvard University   ,USA   
-    7  ,   California Institute of Technology - Caltech   ,USA   
-    8  ,   Imperial College London   ,UK   
-    9  ,   University of California - Berkeley   ,USA   
-    10  ,   Yale University   ,USA   
-    11  ,   Swiss Federal Institute of Technology Zurich - ETHZ   ,Switzerland   
-    12  ,   Tsinghua University   ,China   
-    13  ,   Peking University   ,China   
-    14  ,   University of Pennsylvania   ,USA   
-    15  ,   University of Chicago   ,USA   
-    16  ,   Johns Hopkins University   ,USA   
-    17  ,   National University of Singapore   ,Singapore   
-    18  ,   University of California - Los Angeles   ,USA   
-    18  ,   Cornell University   ,USA   
-    20  ,   Columbia University   ,USA   
-    21  ,   University of Toronto   ,Canada   
-    22  ,   University College London   ,UK   
-    23  ,   University of Michigan - Ann Arbor   ,USA   
-    24  ,   Carnegie Mellon University   ,USA   
-    25  ,   University of Washington   ,USA   
-    26  ,   The University of Tokyo   ,Japan   
-    27  ,   Technical University of M�nchen   ,Germany   
-    28  ,   Duke University   ,USA   
-    29  ,   University of Edinburgh   ,UK   
-    30  ,   Northwestern University   ,USA   
-    31  ,   Nanyang Technological University   ,Singapore   
-    31  ,   New York University   ,USA   
-    33  ,   University of Hong Kong   ,Hong Kong   
-    34  ,   University of M�nchen   ,Germany   
-    35  ,   Swiss Federal Institute of Technology Lausanne - EPFL   ,Switzerland   
-    36  ,   Fudan University   ,China   
-    37  ,   University of Melbourne   ,Australia   
-    38  ,   King's College London   ,UK   
-    39  ,   Zhejiang University   ,China   
-    40  ,   Shanghai Jiao Tong University   ,China   
-    41  ,   McGill University   ,Canada   
-    41  ,   Chinese University of Hong Kong   ,Hong Kong   
-    41  ,   Georgia Institute of Technology   ,USA   
-    41  ,   University of Illinois at Urbana-Champaign   ,USA   
-    45  ,   University of British Columbia   ,Canada   
-    46  ,   Catholic University of Leuven   ,Belgium   
-    47  ,   University of California - San Diego   ,USA   
-    48  ,   PSL Research University Paris   ,France   
-    49  ,   University of Heidelberg   ,Germany   
-    50  ,   University of Texas at Austin   ,USA   
-    51  ,   University of Science and Technology of China   ,China   
-    52  ,   London School of Economics   ,UK   
-    53  ,   University of Sydney   ,Australia   
-    53  ,   Karolinska Institute   ,Sweden   
-    53  ,   University of Wisconsin-Madison   ,USA   
-    56  ,   University of Manchester   ,UK   
-    57  ,   Delft University of Technology   ,Netherlands   
-    58  ,   Monash University   ,Australia   
-    58  ,   Hong Kong University of Science and Technology   ,Hong Kong   
-    58  ,   Seoul National University   ,South Korea   
-    61  ,   Kyoto University   ,Japan   
-    62  ,   Nanjing University   ,China   
-    62  ,   University of Amsterdam   ,Netherlands   
-    64  ,   University of California - Davis   ,USA   
-    65  ,   Brown University   ,USA   
-    66  ,   Wageningen University & Research Center   ,Netherlands   
-    67  ,   Washington University in St. Louis   ,USA   
-    68  ,   Universit� Paris-Saclay   ,France   
-    68  ,   Institut Polytechnique de Paris   ,France   
-    70  ,   Korea Advanced Institute of Science and Technology   ,South Korea   
-    70  ,   University of Leiden   ,Netherlands   
-    72  ,   University of California - Santa Barbara   ,USA   
-    73  ,   Australian National University   ,Australia   
-    73  ,   University of Southern California   ,USA   
-    75  ,   City University of Hong Kong   ,Hong Kong   
-    76  ,   Boston University   ,USA   
-    76  ,   Sorbonne University   ,France   
-    78  ,   University of North Carolina at Chapel Hill   ,USA   
-    79  ,   University of New South Wales   ,Australia   
-    80  ,   University of Queensland   ,Australia   
-    80  ,   University of Bristol   ,UK   
-    82  ,   University of Groningen   ,Netherlands   
-    83  ,   Hong Kong Polytechnic University   ,Hong Kong   
-    84  ,   University of Glasgow   ,UK   
-    85  ,   Purdue University   ,USA   
-    86  ,   Yonsei University   ,South Korea   
-    87  ,   Sungkyunkwan University   ,South Korea   
-    88  ,   University of Minnesota - Twin Cities   ,USA   
-    89  ,   Humboldt University of Berlin   ,Germany   
-    90  ,   University of Copenhagen   ,Denmark   
-    91  ,   Charit� - University Medicine Berlin   ,Germany   
-    92  ,   University of Bonn   ,Germany   
-    92  ,   Vanderbilt University   ,USA   
-    92  ,   RWTH Aachen University   ,Germany   
-    95  ,   University of Vienna   ,Austria   
-    95  ,   Lund University   ,Sweden   
-    97  ,   University of California - Irvine   ,USA   
-    98  ,   University of T�bingen   ,Germany   
-    98  ,   KTH - Royal Institute of Technology   ,Sweden   
-    98  ,   University of Birmingham   ,UK   
-    101  ,   Aarhus University   ,Denmark   
-    102  ,   Emory University   ,USA   
-    103  ,   Tohoku University   ,Japan   
-    103  ,   Rice University   ,USA   
-    105  ,   University of Helsinki   ,Finland   
-    105  ,   Michigan State University   ,USA   
-    107  ,   Erasmus University Rotterdam   ,Netherlands   
-    108  ,   University of Bern   ,Switzerland   
-    108  ,   University of Sheffield   ,UK   
-    108  ,   Ohio State University   ,USA   
-    108  ,   Pennsylvania State University   ,USA   
-    112  ,   University of Massachusetts (System)   ,USA   
-    113  ,   Free University of Berlin   ,Germany   
-    113  ,   University of Oslo   ,Norway   
-    115  ,   University of Gent   ,Belgium   
-    116  ,   McMaster University   ,Canada   
-    116  ,   University of Maryland at College Park   ,USA   
-    118  ,   University of Leeds   ,UK   
-    119  ,   University of Alberta   ,Canada   
-    120  ,   University of Basel   ,Switzerland   
-    121  ,   Technical University of Denmark   ,Denmark   
-    122  ,   Wuhan University   ,China   
-    122  ,   University of G�ttingen   ,Germany   
-    122  ,   University of Warwick   ,UK   
-    125  ,   University of Lausanne   ,Switzerland   
-    125  ,   University of Hamburg   ,Germany   
-    127  ,   University of Rochester   ,USA   
-    128  ,   Uppsala University   ,Sweden   
-    129  ,   University of Southampton   ,UK   
-    130  ,   University of Bologna   ,Italy   
-    131  ,   Harbin Institute of Technology   ,China   
-    131  ,   University of Maastricht   ,Netherlands   
-    133  ,   Moscow State University   ,Russia   
-    134  ,   Beijing Normal University   ,China   
-    134  ,   Queen Mary - University of London   ,UK   
-    134  ,   University of Florida   ,USA   
-    137  ,   Scuola Normale Superiore di Pisa   ,Italy   
-    138  ,   University of Freiburg   ,Germany   
-    138  ,   University of Arizona   ,USA   
-    140  ,   National Taiwan University   ,Taiwan   
-    141  ,   Tongji University   ,China   
-    141  ,   Pohang University of Science and Technology   ,South Korea   
-    143  ,   University of Liverpool   ,UK   
-    144  ,   Newcastle University - Newcastle-upon-Tyne   ,UK   
-    145  ,   University of Technology Sydney   ,Australia   
-    145  ,   University of Barcelona   ,Spain   
-    145  ,   University of Macau   ,Macao   
-    145  ,   University of Nottingham   ,UK   
-    145  ,   Case Western Reserve University   ,USA   
-    150  ,   University of Montreal   ,Canada   
-    151  ,   Osaka University   ,Japan   
-    151  ,   Texas A&M University   ,USA   
-    153  ,   University of Western Australia   ,Australia   
-    154  ,   Radboud University of Nijmegen   ,Netherlands   
-    154  ,   University of York   ,UK   
-    156  ,   Korea University   ,South Korea   
-    156  ,   University of Auckland   ,New Zealand   
-    156  ,   University of Pittsburgh   ,USA   
-    159  ,   University of Colorado at Boulder   ,USA   
-    160  ,   Technical University of Berlin   ,Germany   
-    160  ,   Southern University of Science and Technology   ,China   
-    162  ,   University of Waterloo   ,Canada   
-    162  ,   University of St. Andrews   ,UK   
-    164  ,   University of Cologne   ,Germany   
-    164  ,   University of Cape Town   ,South Africa   
-    166  ,   Macquarie University   ,Australia   
-    166  ,   University of Geneva   ,Switzerland   
-    166  ,   University of Virginia   ,USA   
-    166  ,   Karlsruhe Institute of Technology   ,Germany   
-    170  ,   University of Antwerp   ,Belgium   
-    170  ,   University of Rome - La Sapienza   ,Italy   
-    170  ,   University of Exeter   ,UK   
-    173  ,   Trinity College Dublin   ,Ireland   
-    174  ,   Technical University of Dresden   ,Germany   
-    175  ,   University of Durham   ,UK   
-    176  ,   University of Adelaide   ,Australia   
-    176  ,   Huazhong University of Science and Technology   ,China   
-    176  ,   VU University Amsterdam   ,Netherlands   
-    179  ,   University of W�rzburg   ,Germany   
-    180  ,   Dartmouth College   ,USA   
-    181  ,   Medical University of Vienna   ,Austria   
-    181  ,   University of California - Santa Cruz   ,USA   
-    183  ,   Autonomous University of Barcelona   ,Spain   
-    184  ,   Catholic University of Louvain   ,Belgium   
-    184  ,   Lancaster University   ,UK   
-    184  ,   King Fahd University of Petroleum & Minerals   ,Saudi Arabia   
-    187  ,   University of Ottawa   ,Canada   
-    187  ,   University Pompeu Fabra   ,Spain   
-    189  ,   Tufts University   ,USA   
-    190  ,   University of Twente   ,Netherlands   
-    190  ,   Paris Cit� University   ,France   
-    192  ,   Eindhoven University of Technology   ,Netherlands   
-    192  ,   University of Leicester   ,UK   
-    194  ,   University of Notre Dame   ,USA   
-    195  ,   University of M�nster   ,Germany   
-    195  ,   Education University of Hong Kong   ,Hong Kong   
-    195  ,   Aalto University   ,Finland   
-    198  ,   Queen's University Belfast   ,UK   
-    198  ,   Indiana University at Bloomington   ,USA   
-    200  ,   University of Calgary   ,Canada   
-    201-250  ,   Abu Dhabi University   ,United Arab Emirates   
-    201-250  ,   United Arab Emirates University   ,United Arab Emirates   
-    201-250  ,   Medical University of Graz   ,Austria   
-    201-250  ,   Medical University of Innsbruck   ,Austria   
-    201-250  ,   Deakin University   ,Australia   
-    201-250  ,   Queensland University of Technology   ,Australia   
-    201-250  ,   University of Wollongong   ,Australia   
-    201-250  ,   Universit� Libre de Bruxelles   ,Belgium   
-    201-250  ,   Vrije Universiteit Brussel   ,Belgium   
-    201-250  ,   University of Sao Paulo   ,Brazil   
-    201-250  ,   Western University   ,Canada   
-    201-250  ,   Beijing Institute of Technology   ,China   
-    201-250  ,   Sichuan University   ,China   
-    201-250  ,   Tianjin University   ,China   
-    201-250  ,   Xi'an Jiaotong University   ,China   
-    201-250  ,   University of Erlangen-N�rnberg   ,Germany   
-    201-250  ,   University of Jena   ,Germany   
-    201-250  ,   University of Frankfurt am Main   ,Germany   
-    201-250  ,   University of Mannheim   ,Germany   
-    201-250  ,   University of Potsdam   ,Germany   
-    201-250  ,   Hong Kong Baptist University   ,Hong Kong   
-    201-250  ,   University College Dublin   ,Ireland   
-    201-250  ,   Tel Aviv University   ,Israel   
-    201-250  ,   Indian Institute of Science   ,India   
-    201-250  ,   Sant'Anna School of Advanced Studies   ,Italy   
-    201-250  ,   Polytechnic University of Milan   ,Italy   
-    201-250  ,   University of Padua   ,Italy   
-    201-250  ,   Nagoya University   ,Japan   
-    201-250  ,   University of Malaya   ,Malaysia   
-    201-250  ,   University of Technology - Petronas   ,Malaysia   
-    201-250  ,   University of Qatar   ,Qatar   
-    201-250  ,   Chalmers University of Technology   ,Sweden   
-    201-250  ,   G�teborg University   ,Sweden   
-    201-250  ,   Linkoping University   ,Sweden   
-    201-250  ,   Stockholm University   ,Sweden   
-    201-250  ,   Cardiff University   ,UK   
-    201-250  ,   University of Aberdeen   ,UK   
-    201-250  ,   University of Reading   ,UK   
-    201-250  ,   University of Surrey   ,UK   
-    201-250  ,   University of Sussex   ,UK   
-    201-250  ,   Arizona State University   ,USA   
-    201-250  ,   George Washington University   ,USA   
-    201-250  ,   Georgetown University   ,USA   
-    201-250  ,   University of Miami   ,USA   
-    201-250  ,   University of Illinois at Chicago   ,USA   
-    201-250  ,   Northeastern University   ,USA   
-    201-250  ,   University of Utah   ,USA   
-    201-250  ,   Sun Yat-Sen University   ,China   
-    201-250  ,   Khalifa University   ,United Arab Emirates   
-    201-250  ,   Ulsan National Institute of Science and Technology   ,South Korea   
-    251-300  ,   Curtin University   ,Australia   
-    251-300  ,   Griffith University   ,Australia   
-    251-300  ,   La Trobe University   ,Australia   
-    251-300  ,   RMIT University   ,Australia   
-    251-300  ,   Swinburne University of Technology   ,Australia   
-    251-300  ,   University of Newcastle - Australia   ,Australia   
-    251-300  ,   University of Tasmania   ,Australia   
-    251-300  ,   University of Lugano   ,Switzerland   
-    251-300  ,   Beihang University   ,China   
-    251-300  ,   Central South University   ,China   
-    251-300  ,   East China Normal University   ,China   
-    251-300  ,   Hunan University   ,China   
-    251-300  ,   Nankai University   ,China   
-    251-300  ,   Shandong University   ,China   
-    251-300  ,   South China University of Technology   ,China   
-    251-300  ,   Southeast University   ,China   
-    251-300  ,   Xiamen University   ,China   
-    251-300  ,   University of D�sseldorf   ,Germany   
-    251-300  ,   University of Bochum   ,Germany   
-    251-300  ,   Technical University of Darmstadt   ,Germany   
-    251-300  ,   University of Konstanz   ,Germany   
-    251-300  ,   University of Stuttgart   ,Germany   
-    251-300  ,   University of Ulm   ,Germany   
-    251-300  ,   Aalborg University   ,Denmark   
-    251-300  ,   University of Southern Denmark   ,Denmark   
-    251-300  ,   University of Navarra   ,Spain   
-    251-300  ,   Lappeenranta University of Technology   ,Finland   
-    251-300  ,   University of Oulu   ,Finland   
-    251-300  ,   Central European University   ,Hungary   
-    251-300  ,   Semmelweis University   ,Hungary   
-    251-300  ,   Royal College of Surgeons   ,Ireland   
-    251-300  ,   Hebrew University of Jerusalem   ,Israel   
-    251-300  ,   Catholic University of the Sacred Heart   ,Italy   
-    251-300  ,   Hanyang University   ,South Korea   
-    251-300  ,   Kyung Hee University   ,South Korea   
-    251-300  ,   Sejong University   ,South Korea   
-    251-300  ,   Lebanese American University   ,Lebanon   
-    251-300  ,   University of Luxembourg   ,Luxembourg   
-    251-300  ,   University of Bergen   ,Norway   
-    251-300  ,   King Saud University   ,Saudi Arabia   
-    251-300  ,   University of Bath   ,UK   
-    251-300  ,   University of East Anglia   ,UK   
-    251-300  ,   University of Hawaii at Manoa   ,USA   
-    251-300  ,   Boston College   ,USA   
-    251-300  ,   Virginia Polytechnic Institute and State University   ,USA   
-    251-300  ,   Northwestern Polytechnical University   ,China   
-    251-300  ,   Southern Medical University   ,China   
-    251-300  ,   King Khalid University   ,Saudi Arabia   
-    251-300  ,   Vita-Salute San Raffaele University   ,Italy   
-    251-300  ,   Macau University of Science and Technology   ,Macao   
-    251-300  ,   Humanitas University   ,Italy   
-    301-350  ,   University of Sharjah   ,United Arab Emirates   
-    301-350  ,   Vienna University of Technology   ,Austria   
-    301-350  ,   University of Innsbruck   ,Austria   
-    301-350  ,   Flinders University   ,Australia   
-    301-350  ,   University of Western Sydney   ,Australia   
-    301-350  ,   Hasselt University   ,Belgium   
-    301-350  ,   University of Li�ge   ,Belgium   
-    301-350  ,   Queen's University   ,Canada   
-    301-350  ,   Simon Fraser University   ,Canada   
-    301-350  ,   University of Victoria   ,Canada   
-    301-350  ,   University of Electronic Science and Technology of China   ,China   
-    301-350  ,   University of Duisburg-Essen   ,Germany   
-    301-350  ,   University of Mainz   ,Germany   
-    301-350  ,   University of Bayreuth   ,Germany   
-    301-350  ,   University of Bremen   ,Germany   
-    301-350  ,   University of Hohenheim   ,Germany   
-    301-350  ,   University of Tartu   ,Estonia   
-    301-350  ,   University of Tampere   ,Finland   
-    301-350  ,   University of Turku   ,Finland   
-    301-350  ,   Ecole Normale Sup�rieure de Lyon   ,France   
-    301-350  ,   Lingnan University   ,Hong Kong   
-    301-350  ,   Dublin City University   ,Ireland   
-    301-350  ,   Technion - Israel Institute of Technology   ,Israel   
-    301-350  ,   University of Milan   ,Italy   
-    301-350  ,   University of Naples Federico II   ,Italy   
-    301-350  ,   University of Rome - Tor Vergata   ,Italy   
-    301-350  ,   Kyushu University   ,Japan   
-    301-350  ,   Tokyo Institute of Technology   ,Japan   
-    301-350  ,   National University of Malaysia   ,Malaysia   
-    301-350  ,   Tilburg University   ,Netherlands   
-    301-350  ,   Norwegian University of Science and Technology   ,Norway   
-    301-350  ,   Bauman Moscow State Technical University   ,Russia   
-    301-350  ,   Koc University   ,Turkey   
-    301-350  ,   China Medical University - Taiwan   ,Taiwan   
-    301-350  ,   Birkbeck - University of London   ,UK   
-    301-350  ,   Loughborough University   ,UK   
-    301-350  ,   University of Dundee   ,UK   
-    301-350  ,   University of Essex   ,UK   
-    301-350  ,   Swansea University   ,UK   
-    301-350  ,   University of Stellenbosch   ,South Africa   
-    301-350  ,   University of Witwatersrand   ,South Africa   
-    301-350  ,   University of California - Riverside   ,USA   
-    301-350  ,   Florida State University   ,USA   
-    301-350  ,   Illinois Institute of Technology   ,USA   
-    301-350  ,   University of Iowa   ,USA   
-    301-350  ,   Rutgers - The State University of New Jersey - New Brunswick   ,USA
-    301-350  ,   State University of New York at Buffalo   ,USA   
-    301-350  ,   State University of New York at Stony Brook   ,USA   
-    301-350  ,   North Carolina State University   ,USA   
-    301-350  ,   Sunway University   ,Malaysia   
-    301-350  ,   Prince Mohammad Bin Fahd University   ,Saudi Arabia   
-    351-400  ,   Edith Cowan University   ,Australia   
-    351-400  ,   James Cook University   ,Australia   
-    351-400  ,   University of Southern Queensland   ,Australia   
-    351-400  ,   University of Brunei Darussalam   ,Brunei   
-    351-400  ,   State University of Campinas   ,Brazil   
-    351-400  ,   Dalhousie University   ,Canada   
-    351-400  ,   University of Saskatchewan   ,Canada   
-    351-400  ,   University of St.Gallen   ,Switzerland   
-    351-400  ,   Chongqing University   ,China   
-    351-400  ,   Shenzhen University   ,China   
-    351-400  ,   University of Kiel   ,Germany   
-    351-400  ,   University of Giessen   ,Germany   
-    351-400  ,   University of Hannover   ,Germany   
-    351-400  ,   Autonomous University of Madrid   ,Spain   
-    351-400  ,   National University of Ireland - Galway   ,Ireland   
-    351-400  ,   University College Cork   ,Ireland   
-    351-400  ,   Kermanshah University of Medical Sciences   ,Iran   
-    351-400  ,   Sharif University of Technology   ,Iran   
-    351-400  ,   University of Brescia   ,Italy   
-    351-400  ,   University of Florence   ,Italy   
-    351-400  ,   University of Pavia   ,Italy   
-    351-400  ,   University of Pisa   ,Italy   
-    351-400  ,   University of Siena   ,Italy   
-    351-400  ,   University of Trento   ,Italy   
-    351-400  ,   University of Verona   ,Italy   
-    351-400  ,   Hokkaido University   ,Japan   
-    351-400  ,   Tsukuba University   ,Japan   
-    351-400  ,   University of Otago   ,New Zealand   
-    351-400  ,   Moscow Institute of Physics and Technology   ,Russia   
-    351-400  ,   Prince Sultan University   ,Saudi Arabia   
-    351-400  ,   Swedish University of Agricultural Sciences   ,Sweden   
-    351-400  ,   Middle East Technical University   ,Turkey   
-    351-400  ,   Sabanci University   ,Turkey   
-    351-400  ,   St George's - University of London   ,UK   
-    351-400  ,   University of Strathclyde   ,UK   
-    351-400  ,   University of Colorado at Denver   ,USA   
-    351-400  ,   University of Connecticut   ,USA   
-    351-400  ,   University of South Florida   ,USA   
-    351-400  ,   University of Georgia   ,USA   
-    351-400  ,   University of Kansas   ,USA   
-    351-400  ,   Oregon Health and Science University   ,USA   
-    351-400  ,   Amirkabir University of Technology   ,Iran   
-    351-400  ,   King Abdulaziz University   ,Saudi Arabia   
-    351-400  ,   University of Johannesburg   ,South Africa   
-    351-400  ,   Grenoble Alpes University   ,France   
-    351-400  ,   Daegu Gyeongbuk Institute of Science and Technology   ,South Korea   
-    351-400  ,   Saveetha Institute of Medical and Technical Sciences   ,India   
-    351-400  ,   Mohammed VI Polytechnic University   ,Morocco   
-    401-500  ,  University of Nizwa  ,Oman   
-    401-500  ,   Ajman University of Science and Technology   ,United Arab Emirates   
-    401-500  ,   University of Linz   ,Austria   
-    401-500  ,   Australian Catholic University   ,Australia   
-    401-500  ,   Bond University   ,Australia   
-    401-500  ,   Central Queensland University   ,Australia   
-    401-500  ,   Charles Darwin University   ,Australia   
-    401-500  ,   Murdoch University   ,Australia   
-    401-500  ,   Southern Cross University   ,Australia   
-    401-500  ,   University of Canberra   ,Australia   
-    401-500  ,   Arabian Gulf University   ,Bahrain   
-    401-500  ,   Laval University   ,Canada   
-    401-500  ,   University of Guelph   ,Canada   
-    401-500  ,   York University   ,Canada   
-    401-500  ,   University of Fribourg   ,Switzerland   
-    401-500  ,   Pontifical Catholic University of Chile   ,Chile   
-    401-500  ,   Beijing University of Chemical Technology   ,China   
-    401-500  ,   Dalian University of Technology   ,China   
-    401-500  ,   Donghua University - Shanghai   ,China   
-    401-500  ,   University of Cyprus   ,Cyprus   
-    401-500  ,   Charles University Prague   ,Czech Republic   
-    401-500  ,   University of Greifswald   ,Germany   
-    401-500  ,   University of Marburg   ,Germany   
-    401-500  ,   University of Regensburg   ,Germany   
-    401-500  ,   Roskilde University   ,Denmark   
-    401-500  ,   University of Vaasa   ,Finland   
-    401-500  ,   University of Athens   ,Greece   
-    401-500  ,   Jamia Millia Islamia University   ,India   
-    401-500  ,   Iran University of Science and Technology Tehran   ,Iran   
-    401-500  ,   University of Tehran   ,Iran   
-    401-500  ,   Free University of Bozen-Bolzano   ,Italy   
-    401-500  ,   Polytechnic University of Turin   ,Italy   
-    401-500  ,   University of Genoa   ,Italy   
-    401-500  ,   University of Milan - Bicocca   ,Italy   
-    401-500  ,   University of Turin   ,Italy   
-    401-500  ,   Ajou University   ,South Korea   
-    401-500  ,   Chung-Ang University   ,South Korea   
-    401-500  ,   University of Science - Malaysia   ,Malaysia   
-    401-500  ,   University of Technology - Malaysia   ,Malaysia   
-    401-500  ,   University of Utara Malaysia   ,Malaysia   
-    401-500  ,   University of Waikato   ,New Zealand   
-    401-500  ,   Victoria University of Wellington   ,New Zealand   
-    401-500  ,   Quaid-i-Azam University   ,Pakistan   
-    401-500  ,   University of Coimbra   ,Portugal   
-    401-500  ,   University of Lisbon   ,Portugal   
-    401-500  ,   University of Porto   ,Portugal   
-    401-500  ,   Umm Al-Qura University   ,Saudi Arabia   
-    401-500  ,   Umea University   ,Sweden   
-    401-500  ,   Bogazici University   ,Turkey   
-    401-500  ,   National Taiwan University of Science and Technology   ,Taiwan   
-    401-500  ,   National Tsinghua University   ,Taiwan   
-    401-500  ,   Taipei Medical University   ,Taiwan   
-    401-500  ,   Aston University   ,UK   
-    401-500  ,   Bournemouth University   ,UK   
-    401-500  ,   Brunel University   ,UK   
-    401-500  ,   Heriot-Watt University   ,UK   
-    401-500  ,   School of Oriental and African Studies - University of London   ,UK   
-    401-500  ,   University of Kent at Canterbury   ,UK   
-    401-500  ,   University of Northumbria at Newcastle   ,UK   
-    401-500  ,   University of Portsmouth   ,UK   
-    401-500  ,   University of California - Merced   ,USA   
-    401-500  ,   Colorado School of Mines   ,USA   
-    401-500  ,   University of Delaware   ,USA   
-    401-500  ,   Florida International University   ,USA   
-    401-500  ,   University of Central Florida   ,USA   
-    401-500  ,   Rush University   ,USA   
-    401-500  ,   Iowa State University   ,USA   
-    401-500  ,   University of Kentucky   ,USA   
-    401-500  ,   Tulane University   ,USA   
-    401-500  ,   Brandeis University   ,USA   
-    401-500  ,   St. Louis University   ,USA   
-    401-500  ,   Syracuse University   ,USA   
-    401-500  ,   Wake Forest University   ,USA   
-    401-500  ,   University of Oregon   ,USA   
-    401-500  ,   Drexel University   ,USA   
-    401-500  ,   Temple University   ,USA   
-    401-500  ,   University of South Carolina   ,USA   
-    401-500  ,   University of Tennessee - Knoxville   ,USA   
-    401-500  ,   University of Houston   ,USA   
-    401-500  ,   University of Texas at Dallas   ,USA   
-    401-500  ,   George Mason University   ,USA   
-    401-500  ,   Virginia Commonwealth University   ,USA   
-    401-500  ,   Washington State University   ,USA   
-    401-500  ,   Royal Holloway - University of London   ,UK   
-    401-500  ,   University of Jyvaskyla   ,Finland   
-    401-500  ,   University of Eastern Finland   ,Finland   
-    401-500  ,   University of Bordeaux   ,France   
-    401-500  ,   Gwangju Institute of Science and Technology   ,South Korea   
-    401-500  ,   Marche Polytechnic University   ,Italy   
-    401-500  ,   University of Montpellier   ,France   
-    401-500  ,   IMT Atlantique   ,France   
-    401-500  ,   Asia University   ,Taiwan   
-    401-500  ,   Leuphana University Luneburg   ,Germany   
-    401-500  ,   National Yang Ming Chiao Tung University   ,Taiwan   
-    401-500  ,   Al Ain University   ,United Arab Emirates   
-    401-500  ,   Princess Nourah bint Abdulrahman University   ,Saudi Arabia   
-    401-500  ,   Prince Sattam Bin Abdulaziz University   ,Saudi Arabia   
-    401-500  ,   Shoolini University of Biotechnology and Management Sciences   ,India   
-    401-500  ,   Al-Ahliyya Amman University   ,Jordan   
-    401-500  ,   Applied Science Private University of Jordan   ,Jordan   
-    401-500  ,   L'institut Agro   ,France   
-    401-500  ,   Nazarbayev University   ,Kazakhstan   
-    501-600  ,   University of Graz   ,Austria   
-    501-600  ,   University of the Sunshine Coast   ,Australia   
-    501-600  ,   Victoria University - Melbourne   ,Australia   
-    501-600  ,   Carleton University   ,Canada   
-    501-600  ,   Memorial University of Newfoundland   ,Canada   
-    501-600  ,   University of Manitoba   ,Canada   
-    501-600  ,   University of Quebec   ,Canada   
-    501-600  ,   University of Windsor   ,Canada   
-    501-600  ,   Jiangsu University   ,China   
-    501-600  ,   Jinan University - Guangdong   ,China   
-    501-600  ,   Northeastern University in China   ,China   
-    501-600  ,   Shanghai University   ,China   
-    501-600  ,   University of International Business and Economics   ,China   
-    501-600  ,   Yangzhou University   ,China   
-    501-600  ,   Zhejiang University of Technology   ,China   
-    501-600  ,   Kaiserslautern University of Technology   ,Germany   
-    501-600  ,   University of Siegen   ,Germany   
-    501-600  ,   Saarland University   ,Germany   
-    501-600  ,   Complutense University of Madrid   ,Spain   
-    501-600  ,   University of Valencia   ,Spain   
-    501-600  ,   National University of Ireland - Maynooth   ,Ireland   
-    501-600  ,   University of Limerick   ,Ireland   
-    501-600  ,   University of Haifa   ,Israel   
-    501-600  ,   Mahatma Gandhi University   ,India   
-    501-600  ,   Tehran University of Medical Sciences   ,Iran   
-    501-600  ,   University of Iceland   ,Iceland   
-    501-600  ,   Campus Bio-Medico University of Rome   ,Italy   
-    501-600  ,   Polytechnic University of Bari   ,Italy   
-    501-600  ,   University of Catania   ,Italy   
-    501-600  ,   University of Ferrara   ,Italy   
-    501-600  ,   University of Messina   ,Italy   
-    501-600  ,   University of Modena   ,Italy   
-    501-600  ,   University of Palermo   ,Italy   
-    501-600  ,   University of Salerno   ,Italy   
-    501-600  ,   University of Trieste   ,Italy   
-    501-600  ,   Juntendo University   ,Japan   
-    501-600  ,   Ewha Womans University   ,South Korea   
-    501-600  ,   Konkuk University   ,South Korea   
-    501-600  ,   Kyungpook National University   ,South Korea   
-    501-600  ,   Pusan National University   ,South Korea   
-    501-600  ,   Ulsan University   ,South Korea   
-    501-600  ,   Yeungnam University   ,South Korea   
-    501-600  ,   University of Putra Malaysia   ,Malaysia   
-    501-600  ,   Lincoln University   ,New Zealand   
-    501-600  ,   Massey University   ,New Zealand   
-    501-600  ,   Sultan Qaboos University   ,Oman   
-    501-600  ,   Jagiellonian University   ,Poland   
-    501-600  ,   New University of Lisbon   ,Portugal   
-    501-600  ,   Higher School of Economics   ,Russia   
-    501-600  ,   Chulalongkorn University   ,Thailand   
-    501-600  ,   Istanbul Technical University   ,Turkey   
-    501-600  ,   National Cheng Kung University   ,Taiwan   
-    501-600  ,   National Taiwan Normal University   ,Taiwan   
-    501-600  ,   National Yunlin University of Science and Technology   ,Taiwan   
-    501-600  ,   Goldsmiths College - University of London   ,UK   
-    501-600  ,   Keele University   ,UK   
-    501-600  ,   Liverpool John Moores University   ,UK   
-    501-600  ,   Middlesex University   ,UK   
-    501-600  ,   University of Bradford   ,UK   
-    501-600  ,   University of Huddersfield   ,UK   
-    501-600  ,   University of Hull   ,UK   
-    501-600  ,   University of Plymouth   ,UK   
-    501-600  ,   University of Stirling   ,UK   
-    501-600  ,   Bangor University   ,UK   
-    501-600  ,   University of KwaZulu-Natal   ,South Africa   
-    501-600  ,   University of Pretoria   ,South Africa   
-    501-600  ,   Colorado State University   ,USA   
-    501-600  ,   University of Denver   ,USA   
-    501-600  ,   Georgia State University   ,USA   
-    501-600  ,   Wayne State University   ,USA   
-    501-600  ,   University of Missouri - Columbia   ,USA   
-    501-600  ,   University of Missouri - Kansas City   ,USA   
-    501-600  ,   University of Nebraska - Lincoln   ,USA   
-    501-600  ,   University of Nebraska Medical Center   ,USA   
-    501-600  ,   New Jersey Institute of Technology   ,USA   
-    501-600  ,   Stevens Institute of Technology   ,USA   
-    501-600  ,   Rensselaer Polytechnic Institute   ,USA   
-    501-600  ,   University of Tulsa   ,USA   
-    501-600  ,   Technical University of Dortmund   ,Germany   
-    501-600  ,   Ca' Foscari University of Venice   ,Italy   
-    501-600  ,   China University of Petroleum (Beijing)   ,China   
-    501-600  ,   Royal Veterinary College    ,UK   
-    501-600  ,   Missouri University of Science and Technology   ,USA   
-    501-600  ,   Federal University of Toulouse Midi-Pyr�n�es   ,France   
-    501-600  ,   Cyprus University of Technology   ,Cyprus   
-    501-600  ,   Soochow University   ,China   
-    501-600  ,   Hamburg University of Technology   ,Germany   
-    501-600  ,   Gachon University   ,South Korea   
-    501-600  ,   Imam Abdulrahman Bin Faisal University   ,Saudi Arabia   
-    501-600  ,   Wroclaw Medical University   ,Poland   
-    501-600  ,   Indian Institute of Technology Indore   ,India   
-    501-600  ,   Shiraz University of Technology   ,Iran   
-    501-600  ,   Federation University Australia   ,Australia   
-    501-600  ,   University of Nicosia   ,Cyprus   
-    501-600  ,   Tashkent Institute Irrigation and Agricultural Mechanization Engineers   ,Uzbekistan   
-    501-600  ,   UEH University   ,Viet Nam   
-    501-600  ,   Constructor University Bremen   ,Germany   
-    501-600  ,   KIIT University   ,India   
-    501-600  ,   Lovely Professional University    ,India   
-    501-600  ,   University of Petroleum and Energy Studies   ,India   
-    601-800  ,  City University of Macau  ,Macao   
-    601-800  ,  Dhofar University  ,Oman   
-    601-800  ,  Government College University Faisalabad  ,Pakistan
-    601-800  ,  Graphic Era University  ,India   
-    601-800  ,  Sharda University  ,India   
-    601-800  ,   Graz University of Technology   ,Austria   
-    601-800  ,   University of Klagenfurt   ,Austria   
-    601-800  ,   University of Salzburg   ,Austria   
-    601-800  ,   Charles Sturt University   ,Australia   
-    601-800  ,   University of Mons-Hainaut   ,Belgium   
-    601-800  ,   Sao Paulo State University   ,Brazil   
-    601-800  ,   Federal University of Rio Grande do Sul   ,Brazil   
-    601-800  ,   Federal University of Rio de Janeiro   ,Brazil   
-    601-800  ,   Concordia University   ,Canada   
-    601-800  ,   Toronto Metropolitan University   ,Canada   
-    601-800  ,   University of New Brunswick   ,Canada   
-    601-800  ,   University of Neuchatel   ,Switzerland   
-    601-800  ,   Capital University of Medical Sciences   ,China   
-    601-800  ,   East China University of Science and Technology   ,China   
-    601-800  ,   Guangdong University of Technology   ,China   
-    601-800  ,   Harbin Engineering University   ,China   
-    601-800  ,   Nanjing Forestry University   ,China   
-    601-800  ,   Nanjing University of Aeronautics and Astronautics   ,China   
-    601-800  ,   Nanjing University of Technology   ,China   
-    601-800  ,   Nanjing University of Science and Technology   ,China   
-    601-800  ,   Ocean University of China   ,China   
-    601-800  ,   Qingdao University   ,China   
-    601-800  ,   South China Normal University   ,China   
-    601-800  ,   Zhejiang Normal University   ,China   
-    601-800  ,   Near East University   ,Northern Cyprus   
-    601-800  ,   Masaryk University   ,Czech Republic   
-    601-800  ,   University of Wuppertal   ,Germany   
-    601-800  ,   University of Magdeburg   ,Germany   
-    601-800  ,   Technical University of Braunschweig   ,Germany   
-    601-800  ,   University of Paderborn   ,Germany   
-    601-800  ,   University of Passau   ,Germany   
-    601-800  ,   Espiritu Santo University   ,Ecuador   
-    601-800  ,   American University in Cairo   ,Egypt   
-    601-800  ,   Polytechnic University of Catalonia   ,Spain   
-    601-800  ,   Polytechnic University of Valencia   ,Spain   
-    601-800  ,   University of Granada   ,Spain   
-    601-800  ,   University of Santiago de Compostela   ,Spain   
-    601-800  ,   University of the Basque Country   ,Spain   
-    601-800  ,   University of Rovira i Virgili   ,Spain   
-    601-800  ,   Ecole Centrale de Nantes   ,France   
-    601-800  ,   Ecole Nationale des Travaux Publics de l'Etat   ,France   
-    601-800  ,   Sciences Po - Paris   ,France   
-    601-800  ,   University Claude Bernard - Lyon I   ,France   
-    601-800  ,   University of Rennes I   ,France   
-    601-800  ,   University of Nantes   ,France   
-    601-800  ,   Harokopio University   ,Greece   
-    601-800  ,   University of Crete   ,Greece   
-    601-800  ,   Bar-Ilan University   ,Israel   
-    601-800  ,   Ben-Gurion University of the Negev   ,Israel   
-    601-800  ,   Aligarh Muslim University   ,India   
-    601-800  ,   Bharathiar University   ,India   
-    601-800  ,   Manipal University   ,India   
-    601-800  ,   Panjab University   ,India   
-    601-800  ,   Thapar University   ,India   
-    601-800  ,   University of Delhi   ,India   
-    601-800  ,   Vellore Institute of Technology   ,India   
-    601-800  ,   Babol University of Medical Sciences   ,Iran   
-    601-800  ,   Iran University of Medical Sciences   ,Iran   
-    601-800  ,   Isfahan University of Technology   ,Iran   
-    601-800  ,   Qazvin University of Medical Sciences   ,Iran   
-    601-800  ,   Shiraz University of Medical Sciences   ,Iran   
-    601-800  ,   University of Tabriz   ,Iran   
-    601-800  ,   Tabriz University of Medical Sciences   ,Iran   
-    601-800  ,   Tarbiat Modares University   ,Iran   
-    601-800  ,   Urmia University of Medical Sciences   ,Iran   
-    601-800  ,   University of Aquila   ,Italy   
-    601-800  ,   University of Bari   ,Italy   
-    601-800  ,   University of Cagliari   ,Italy   
-    601-800  ,   University of Calabria   ,Italy   
-    601-800  ,   University of Parma   ,Italy   
-    601-800  ,   University of Udine   ,Italy   
-    601-800  ,   Jordan University   ,Jordan   
-    601-800  ,   Yarmouk University   ,Jordan   
-    601-800  ,   Hiroshima University   ,Japan   
-    601-800  ,   Keio University   ,Japan   
-    601-800  ,   Kobe University   ,Japan   
-    601-800  ,   University of Aizu   ,Japan   
-    601-800  ,   Catholic University of Korea   ,South Korea   
-    601-800  ,   Beirut Arab University   ,Lebanon   
-    601-800  ,   Monterrey Institute of Technology and Higher Education    ,Mexico   
-    601-800  ,   University of Tenaga Nasional   ,Malaysia   
-    601-800  ,   University of Canterbury   ,New Zealand   
-    601-800  ,   Air University   ,Pakistan   
-    601-800  ,   Bahauddin Zakariya University   ,Pakistan   
-    601-800  ,   National University of Sciences and Technology - Islamabad   ,Pakistan   
-    601-800  ,   University of Lahore   ,Pakistan   
-    601-800  ,   University of Veterinary and Animal Sciences   ,Pakistan   
-    601-800  ,   University of Warsaw   ,Poland   
-    601-800  ,   University of Beira Interior   ,Portugal   
-    601-800  ,   University of Aveiro   ,Portugal   
-    601-800  ,   University of Minho   ,Portugal   
-    601-800  ,   Tomsk State University   ,Russia   
-    601-800  ,   Imam Muhammad Ibn Saud Islamic University   ,Saudi Arabia   
-    601-800  ,   Jouf University   ,Saudi Arabia   
-    601-800  ,   King Faisal University   ,Saudi Arabia   
-    601-800  ,   Mahidol University   ,Thailand   
-    601-800  ,   Bilkent University   ,Turkey   
-    601-800  ,   Kadir Has University   ,Turkey   
-    601-800  ,   Yildiz Technical University   ,Turkey   
-    601-800  ,   Chang Gung University   ,Taiwan   
-    601-800  ,   National Sun Yat-Sen University   ,Taiwan   
-    601-800  ,   Yuan Ze University   ,Taiwan   
-    601-800  ,   Coventry University   ,UK   
-    601-800  ,   De Montfort University   ,UK   
-    601-800  ,   London Metropolitan University   ,UK   
-    601-800  ,   Edinburgh Napier University   ,UK   
-    601-800  ,   Nottingham Trent University   ,UK   
-    601-800  ,   The Manchester Metropolitan University   ,UK   
-    601-800  ,   University of Brighton   ,UK   
-    601-800  ,   University of Derby   ,UK   
-    601-800  ,   University of Greenwich   ,UK   
-    601-800  ,   University of Hertfordshire   ,UK   
-    601-800  ,   University of Teesside   ,UK   
-    601-800  ,   University of Ulster   ,UK   
-    601-800  ,   Aberystwyth University   ,UK   
-    601-800  ,   University of the West of England - Bristol   ,UK   
-    601-800  ,   University of the Western Cape   ,South Africa   
-    601-800  ,   University of Alaska - Fairbanks   ,USA   
-    601-800  ,   University of Arkansas at Fayetteville   ,USA   
-    601-800  ,   American University   ,USA   
-    601-800  ,   Kansas State University   ,USA   
-    601-800  ,   Louisiana State University   ,USA   
-    601-800  ,   University of Maryland Baltimore County   ,USA   
-    601-800  ,   Worcester Polytechnic Institute   ,USA   
-    601-800  ,   Mississippi State University   ,USA   
-    601-800  ,   University of Nevada - Las Vegas   ,USA   
-    601-800  ,   New Mexico State University   ,USA   
-    601-800  ,   Rochester Institute of Technology   ,USA   
-    601-800  ,   State University of New York at Albany   ,USA   
-    601-800  ,   Binghamton University   ,USA   
-    601-800  ,   University of North Carolina at Charlotte   ,USA   
-    601-800  ,   Ohio University   ,USA   
-    601-800  ,   University of Toledo   ,USA   
-    601-800  ,   Oklahoma State University   ,USA   
-    601-800  ,   Texas Technical University   ,USA   
-    601-800  ,   University of Texas at Arlington   ,USA   
-    601-800  ,   University of Texas at San Antonio   ,USA   
-    601-800  ,   Auburn University   ,USA   
-    601-800  ,   Lehigh University   ,USA   
-    601-800  ,   Tallinn University of Technology   ,Estonia   
-    601-800  ,   National Research Nuclear University   ,Russia   
-    601-800  ,   Xidian University   ,China   
-    601-800  ,   Jiangnan University   ,China   
-    601-800  ,   Shahid Beheshti University of Medical Sciences   ,Iran   
-    601-800  ,   Uit the Arctic University of Norway   ,Norway   
-    601-800  ,   Anglia Ruskin University   ,UK   
-    601-800  ,   Czech University of Life Sciences Prague   ,Czech Republic   
-    601-800  ,   University of Lille   ,France   
-    601-800  ,   Amity University   ,India   
-    601-800  ,   National Institute of Technology Rourkela   ,India   
-    601-800  ,   University of Lincoln (England)   ,UK   
-    601-800  ,   London South Bank University   ,UK   
-    601-800  ,   University of the West Scotland   ,UK   
-    601-800  ,   �rebro University   ,Sweden   
-    601-800  ,   Babol Noshirvani University of Technology   ,Iran   
-    601-800  ,   University of C�te d'Azur   ,France   
-    601-800  ,   University of Technology Brunei   ,Brunei   
-    601-800  ,   �cole des Mines de Saint-�tienne   ,France   
-    601-800  ,   University of Insubria   ,Italy   
-    601-800  ,   University of Eastern Piedmont   ,Italy   
-    601-800  ,   COMSATS University Islamabad   ,Pakistan   
-    601-800  ,   Kafrelsheikh University   ,Egypt   
-    601-800  ,   Indian Institute of Technology - Patna   ,India   
-    601-800  ,   Tuscia University   ,Italy   
-    601-800  ,   Ton Duc Thang University   ,Viet Nam   
-    601-800  ,   Management and Science University   ,Malaysia   
-    601-800  ,   University of Malaysia - Pahang   ,Malaysia   
-    601-800  ,   Xi'an Jiaotong Liverpool University   ,China   
-    601-800  ,   Parthenope University of Naples   ,Italy   
-    601-800  ,   Scotland's Rural College   ,UK   
-    601-800  ,   University of Tabuk   ,Saudi Arabia   
-    601-800  ,   Duy Tan University   ,Viet Nam   
-    601-800  ,   Taif University   ,Saudi Arabia   
-    601-800  ,   American University of the Middle East   ,Kuwait   
-    601-800  ,   Qassim University   ,Saudi Arabia   
-    601-800  ,   Sultan Idris Education University   ,Malaysia   
-    601-800  ,   �buda University   ,Hungary   
-    601-800  ,   Jazan University   ,Saudi Arabia   
-    601-800  ,   Symbiosis International University   ,India   
-    601-800  ,   Alborz University of Medical Sciences   ,Iran   
-    601-800  ,   Golestan University   ,Iran   
-    601-800  ,   Lorestan University of Medical Sciences   ,Iran   
-    601-800  ,   Sukkur IBA University   ,Pakistan   
-    601-800  ,   University of Hail   ,Saudi Arabia   
-    601-800  ,   Chitkara University   ,India   
-    601-800  ,   Egypt-Japan University of Science and Technology   ,Egypt   
-    601-800  ,   Majmaah University   ,Saudi Arabia   
-    601-800  ,   Malaviya National Institute of Technology   ,India   
-    601-800  ,   International Institute of Information Technology Hyderabad   ,India   
-    801-1000  ,  Abdullah Gul University  ,Turkey   
-    801-1000  ,  Ahvaz Jundishapur University Medical Sciences  ,Iran   
-    801-1000  ,  An-Najah National University  ,Palestine   
-    801-1000  ,  Azerbaijan State University Economics  ,Azerbaijan   
-    801-1000  ,  Gazipur Agricultural University  ,Bangladesh   
-    801-1000  ,  Government College University Lahore  ,Pakistan
-    801-1000  ,  Imt Nord Europe  ,France   
-    801-1000  ,  International University of Rabat  ,Morocco   
-    801-1000  ,  Iqra University  ,Pakistan   
-    801-1000  ,  Istanbul Medipol University  ,Turkey   
-    801-1000  ,  Mahsa University  ,Malaysia   
-    801-1000  ,  Marie and Louis Pasteur University  ,France   
-    801-1000  ,  Shahroud University Medical Sciences  ,Iran   
-    801-1000  ,  Sr University  ,India   
-    801-1000  ,   University of Leoben   ,Austria   
-    801-1000  ,   University of Notre Dame Australia   ,Australia   
-    801-1000  ,   Daffodil International University   ,Bangladesh   
-    801-1000  ,   Jahangirnagar University   ,Bangladesh   
-    801-1000  ,   North South University   ,Bangladesh   
-    801-1000  ,   University of Dhaka   ,Bangladesh   
-    801-1000  ,   Pontifical Catholic University of Rio de Janeiro   ,Brazil   
-    801-1000  ,   Federal University of Minas Gerais   ,Brazil   
-    801-1000  ,   Federal University of Sao Paulo   ,Brazil   
-    801-1000  ,   University of Ontario Institute of Technology   ,Canada   
-    801-1000  ,   University of Regina   ,Canada   
-    801-1000  ,   Chengdu University of Technology   ,China   
-    801-1000  ,   Fuzhou University   ,China   
-    801-1000  ,   Nanjing Medical University   ,China   
-    801-1000  ,   Nanjing Normal University   ,China   
-    801-1000  ,   Northeast Agricultural University   ,China   
-    801-1000  ,   Northeast Normal University   ,China   
-    801-1000  ,   Southwest Jiaotong University   ,China   
-    801-1000  ,   Zhejiang Gongshang University   ,China   
-    801-1000  ,   University of Gesamthochschule Hagen   ,Germany   
-    801-1000  ,   Ain Shams University   ,Egypt   
-    801-1000  ,   Al Azhar University   ,Egypt   
-    801-1000  ,   Alexandria University   ,Egypt   
-    801-1000  ,   Cairo University   ,Egypt   
-    801-1000  ,   Mansoura University   ,Egypt   
-    801-1000  ,   University Carlos III de Madrid   ,Spain   
-    801-1000  ,   University Pablo de Olavide   ,Spain   
-    801-1000  ,   University of Alcal� de Henares   ,Spain   
-    801-1000  ,   University of C�rdoba   ,Spain   
-    801-1000  ,   University of Ja�n   ,Spain   
-    801-1000  ,   University of Salamanca   ,Spain   
-    801-1000  ,   University of Seville   ,Spain   
-    801-1000  ,   University of Vigo   ,Spain   
-    801-1000  ,   Ramon Llull University   ,Spain   
-    801-1000  ,   University of Lleida   ,Spain   
-    801-1000  ,   University of Vic   ,Spain   
-    801-1000  ,   University of the Balearic Islands   ,Spain   
-    801-1000  ,   Ecole Centrale de Lyon   ,France   
-    801-1000  ,   Arts et M�tiers   ,France   
-    801-1000  ,   National Veterinary School of Alfort   ,France   
-    801-1000  ,   Institut National des Sciences Appliqu�es de Lyon   ,France   
-    801-1000  ,   University Panth�on-Sorbonne (Paris I)   ,France   
-    801-1000  ,   University of Western Brittany   ,France   
-    801-1000  ,   University of Cape Coast   ,Ghana   
-    801-1000  ,   Aristotle University of Thessaloniki   ,Greece   
-    801-1000  ,   National Technical University of Athens   ,Greece   
-    801-1000  ,   University of Patras   ,Greece   
-    801-1000  ,   E�tv�s Lorand University   ,Hungary   
-    801-1000  ,   University of Debrecen    ,Hungary   
-    801-1000  ,   University of Indonesia   ,Indonesia   
-    801-1000  ,   Alagappa University   ,India   
-    801-1000  ,   Anna University   ,India   
-    801-1000  ,   Birla Institute of Technology and Science   ,India   
-    801-1000  ,   Guru Gobind Singh Indraprastha University   ,India   
-    801-1000  ,   Jamia Hamdard University   ,India   
-    801-1000  ,   Jawaharlal Nehru University   ,India   
-    801-1000  ,   Savitribai Phule Pune University   ,India   
-    801-1000  ,   Birjand University of Medical Sciences   ,Iran   
-    801-1000  ,   Ferdowsi University of Mashhad   ,Iran   
-    801-1000  ,   Gorgan University Of Agricultural Sciences And Natural Resources   ,Iran   
-    801-1000  ,   Guilan University of Medical Sciences   ,Iran   
-    801-1000  ,   Ilam University of Medical Sciences   ,Iran   
-    801-1000  ,   K.N.Toosi University of Technology   ,Iran   
-    801-1000  ,   Kerman University of Medical Sciences   ,Iran   
-    801-1000  ,   Kurdistan University of Medical Sciences   ,Iran   
-    801-1000  ,   Mashhad University of Medical Sciences   ,Iran   
-    801-1000  ,   Mazandaran University of Medical Sciences   ,Iran   
-    801-1000  ,   Rafsanjan University of Medical Sciences   ,Iran   
-    801-1000  ,   Shahid Beheshti University   ,Iran   
-    801-1000  ,   Shiraz University   ,Iran   
-    801-1000  ,   Urmia University   ,Iran   
-    801-1000  ,   Zahedan University of Medical Sciences   ,Iran   
-    801-1000  ,   Zanjan University of Medical Sciences   ,Iran   
-    801-1000  ,   Reykjav�k University   ,Iceland   
-    801-1000  ,   Roma Tre University   ,Italy   
-    801-1000  ,   University of Foggia   ,Italy   
-    801-1000  ,   University of Salento   ,Italy   
-    801-1000  ,   Al al-Bayt University   ,Jordan   
-    801-1000  ,   Al-Isra University   ,Jordan   
-    801-1000  ,   Al-Zaytoonah University of Jordan   ,Jordan   
-    801-1000  ,   German Jordanian University   ,Jordan   
-    801-1000  ,   Jordan University of Science and Technology   ,Jordan   
-    801-1000  ,   University of Petra   ,Jordan   
-    801-1000  ,   Wakayama Medical University   ,Japan   
-    801-1000  ,   Waseda University   ,Japan   
-    801-1000  ,   Chonbuk National University   ,South Korea   
-    801-1000  ,   Chonnam National University   ,South Korea   
-    801-1000  ,   Inha University   ,South Korea   
-    801-1000  ,   Sogang University   ,South Korea   
-    801-1000  ,   Vilnius University   ,Lithuania   
-    801-1000  ,   University of Malta   ,Malta   
-    801-1000  ,   National Autonomous University of Mexico   ,Mexico   
-    801-1000  ,   University of Ibadan   ,Nigeria   
-    801-1000  ,   University of Lagos   ,Nigeria   
-    801-1000  ,   Norwegian University of Life Sciences   ,Norway   
-    801-1000  ,   Ghulam Ishaq Khan Institute of Engineering Sciences and Technology   ,Pakistan   
-    801-1000  ,   Islamia University Bahawalpur   ,Pakistan   
-    801-1000  ,   Lahore University of Management Sciences   ,Pakistan   
-    801-1000  ,   University of Central Punjab   ,Pakistan   
-    801-1000  ,   University of Engineering and Technology Taxila   ,Pakistan   
-    801-1000  ,   University of Gujrat   ,Pakistan   
-    801-1000  ,   University of Management and Technology   ,Pakistan   
-    801-1000  ,   University of the Punjab   ,Pakistan   
-    801-1000  ,   Medical University of Lodz   ,Poland   
-    801-1000  ,   Catholic University of Portugal   ,Portugal   
-    801-1000  ,   Peoples' Friendship University of Russia   ,Russia   
-    801-1000  ,   St. Petersburg State Mining Institute (Technical University)   ,Russia   
-    801-1000  ,   Tomsk Polytechnic University   ,Russia   
-    801-1000  ,   King Saud bin Abdulaziz University for Health Sciences    ,Saudi Arabia   
-    801-1000  ,   Halmstad University College   ,Sweden   
-    801-1000  ,   J�nk�ping University College   ,Sweden   
-    801-1000  ,   University of Ljubljana   ,Slovenia   
-    801-1000  ,   King Mongkut's University of Technology Thonburi   ,Thailand   
-    801-1000  ,   University of Tunis El Manar   ,Tunisia   
-    801-1000  ,   Ataturk University   ,Turkey   
-    801-1000  ,   Bahcesehir University   ,Turkey   
-    801-1000  ,   Cankaya University   ,Turkey   
-    801-1000  ,   Hacettepe University   ,Turkey   
-    801-1000  ,   Makerere University   ,Uganda   
-    801-1000  ,   Glasgow Caledonian University   ,UK   
-    801-1000  ,   Kingston University   ,UK   
-    801-1000  ,   Open University   ,UK   
-    801-1000  ,   Oxford Brookes University   ,UK   
-    801-1000  ,   Roehampton University of Surrey   ,UK   
-    801-1000  ,   Sheffield Hallam University   ,UK   
-    801-1000  ,   The Robert Gordon University   ,UK   
-    801-1000  ,   University of Salford   ,UK   
-    801-1000  ,   University of Westminster   ,UK   
-    801-1000  ,   University of Wolverhampton   ,UK   
-    801-1000  ,   Hanoi Medical University   ,Viet Nam   
-    801-1000  ,   North-West University   ,South Africa   
-    801-1000  ,   Catholic University of America   ,USA   
-    801-1000  ,   Florida Atlantic University   ,USA   
-    801-1000  ,   Northern Illinois University   ,USA   
-    801-1000  ,   Southern Illinois University at Carbondale   ,USA   
-    801-1000  ,   Clark University   ,USA   
-    801-1000  ,   Portland State University   ,USA   
-    801-1000  ,   University of Rhode Island   ,USA   
-    801-1000  ,   Baylor University   ,USA   
-    801-1000  ,   College of William and Mary   ,USA   
-    801-1000  ,   Old Dominion University   ,USA   
-    801-1000  ,   University of Wyoming   ,USA   
-    801-1000  ,   University of Alabama   ,USA   
-    801-1000  ,   Ural Federal University   ,Russia   
-    801-1000  ,   Kaohsiung Medical University   ,Taiwan   
-    801-1000  ,   Kazan Federal University    ,Russia   
-    801-1000  ,   National University of Science and Technology MISiS   ,Russia   
-    801-1000  ,   Gabriele D'Annunzio University   ,Italy   
-    801-1000  ,   Leeds Beckett University   ,UK   
-    801-1000  ,   Siberian Federal University   ,Russia   
-    801-1000  ,   Nanjing University of Information Science and Technology   ,China   
-    801-1000  ,   Guangzhou Medical University   ,China   
-    801-1000  ,   Open University of Catalonia   ,Spain   
-    801-1000  ,   Birmingham City University   ,UK   
-    801-1000  ,   Bucharest University of Economic Studies   ,Romania   
-    801-1000  ,   International Islamic University Islamabad   ,Pakistan   
-    801-1000  ,   National Institute of Technology Tiruchirappalli   ,India   
-    801-1000  ,   JSS Academy of Higher Education and Research   ,India   
-    801-1000  ,   Abdul Wali Khan University Mardan   ,Pakistan   
-    801-1000  ,   Delhi Technological University   ,India   
-    801-1000  ,   National Institute of Technology Silchar   ,India   
-    801-1000  ,   Ozyegin University   ,Turkey   
-    801-1000  ,   Wenzhou University   ,China   
-    801-1000  ,   Peter the Great St Petersburg Polytechnic University   ,Russia   
-    801-1000  ,   Northern Border University   ,Saudi Arabia   
-    801-1000  ,   Baqiyatallah University of Medical Sciences   ,Iran   
-    801-1000  ,   Innopolis University   ,Russia   
-    801-1000  ,   European University Cyprus   ,Cyprus   
-    801-1000  ,   Khwaja Fareed University of Engineering and Information Technology   ,Pakistan   
-    801-1000  ,   University of Nova Gorica   ,Slovenia   
-    801-1000  ,   Capital University of Science and Technology   ,Pakistan   
-    801-1000  ,   Carol Davila University of Medicine and Pharmacy   ,Romania   
-    801-1000  ,   Future University in Egypt   ,Egypt   
-    801-1000  ,   KL University   ,India   
-    801-1000  ,   University of Malakand   ,Pakistan   
-    801-1000  ,   Najran University   ,Saudi Arabia   
-    801-1000  ,   University of Namur   ,Belgium   
-    801-1000  ,   Reichman University   ,Israel   
-    801-1000  ,   Shahrekord University of Medical Sciences   ,Iran   
-    801-1000  ,   Shri Mata Vaishno Devi University   ,India   
-    801-1000  ,   Siksha O Anusandhan   ,India   
-    801-1000  ,   Amity University Rajasthan - Jaipur   ,India     
+# Times Higher Education World University Rankings
+# Source: https://www.timeshighereducation.com/world-university-rankings/2027/world-ranking
+# Year: 2027
+# Encoding: UTF-8
+# World Rank,Institution,Country
+"1","University of Oxford","United Kingdom"
+"2","Massachusetts Institute of Technology","United States"
+"=3","Princeton University","United States"
+"=3","Stanford University","United States"
+"5","University of Cambridge","United Kingdom"
+"6","Harvard University","United States"
+"7","California Institute of Technology","United States"
+"8","Imperial College London","United Kingdom"
+"=9","University of California, Berkeley","United States"
+"=9","Yale University","United States"
+"11","Tsinghua University","China"
+"12","ETH Zurich","Switzerland"
+"13","Peking University","China"
+"14","University of Pennsylvania","United States"
+"15","National University of Singapore","Singapore"
+"16","The University of Chicago","United States"
+"=17","Johns Hopkins University","United States"
+"=17","UCL","United Kingdom"
+"19","Columbia University","United States"
+"20","University of California, Los Angeles","United States"
+"21","Cornell University","United States"
+"22","University of Toronto","Canada"
+"23","University of Michigan-Ann Arbor","United States"
+"24","Carnegie Mellon University","United States"
+"25","Technical University of Munich","Germany"
+"26","University of Washington","United States"
+"27","The University of Tokyo","Japan"
+"28","Nanyang Technological University, Singapore","Singapore"
+"=29","New York University (NYU)","United States"
+"=29","Northwestern University","United States"
+"=29","University of Edinburgh","United Kingdom"
+"32","Duke University","United States"
+"33","University of Hong Kong","Hong Kong"
+"=34","University of Melbourne","Australia"
+"=34","Zhejiang University","China"
+"36","École Polytechnique Fédérale de Lausanne","Switzerland"
+"37","University of California, San Diego","United States"
+"38","Fudan University","China"
+"39","Shanghai Jiao Tong University","China"
+"40","King’s College London","United Kingdom"
+"41","LMU Munich","Germany"
+"42","The Chinese University of Hong Kong","Hong Kong"
+"43","McGill University","Canada"
+"44","University of British Columbia","Canada"
+"=45","KU Leuven","Belgium"
+"=45","Universität Heidelberg","Germany"
+"47","London School of Economics and Political Science","United Kingdom"
+"48","University of Illinois at Urbana-Champaign","United States"
+"49","Georgia Institute of Technology","United States"
+"50","Delft University of Technology","Netherlands"
+"=51","The University of Sydney","Australia"
+"=51","University of Science and Technology of China","China"
+"=53","University of Texas at Austin","United States"
+"=53","University of Wisconsin-Madison","United States"
+"55","Karolinska Institute","Sweden"
+"56","Seoul National University","South Korea"
+"57","Paris Sciences et Lettres – PSL Research University Paris","France"
+"58","The Hong Kong University of Science and Technology","Hong Kong"
+"59","Nanjing University","China"
+"60","University of Manchester","United Kingdom"
+"61","Monash University","Australia"
+"=62","Kyoto University","Japan"
+"=62","University of Amsterdam","Netherlands"
+"64","Korea Advanced Institute of Science and Technology (KAIST)","South Korea"
+"65","University of California, Davis","United States"
+"=66","Wageningen University & Research","Netherlands"
+"=66","Washington University in St Louis","United States"
+"68","Sungkyunkwan University (SKKU)","South Korea"
+"69","Leiden University","Netherlands"
+"70","City University of Hong Kong","Hong Kong"
+"=71","University of California, Santa Barbara","United States"
+"=71","University of Southern California","United States"
+"=73","Brown University","United States"
+"=73","The University of Queensland","Australia"
+"=75","Institut Polytechnique de Paris","France"
+"=75","UNSW Sydney","Australia"
+"77","Australian National University","Australia"
+"78","Université Paris-Saclay","France"
+"79","The Hong Kong Polytechnic University","Hong Kong"
+"80","Yonsei University (Seoul campus)","South Korea"
+"81","University of Copenhagen","Denmark"
+"82","University of Bristol","United Kingdom"
+"83","University of Glasgow","United Kingdom"
+"84","Purdue University West Lafayette","United States"
+"85","University of North Carolina at Chapel Hill","United States"
+"86","Boston University","United States"
+"87","University of Groningen","Netherlands"
+"88","University of Minnesota","United States"
+"89","University of Bonn","Germany"
+"90","RWTH Aachen University","Germany"
+"91","Humboldt University of Berlin","Germany"
+"92","Vanderbilt University","United States"
+"93","Michigan State University","United States"
+"94","Charité – Universitätsmedizin Berlin","Germany"
+"95","University of Vienna","Austria"
+"96","Harbin Institute of Technology","China"
+"=97","Aarhus University","Denmark"
+"=97","Ohio State University (Main campus)","United States"
+"=97","University of Birmingham","United Kingdom"
+"=97","University of California, Irvine","United States"
+"=101","Penn State (Main campus)","United States"
+"=101","Rice University","United States"
+"=101","University of Tübingen","Germany"
+"=104","Lund University","Sweden"
+"=104","University of Sheffield","United Kingdom"
+"=106","KTH Royal Institute of Technology","Sweden"
+"=106","Tohoku University","Japan"
+"108","Emory University","United States"
+"109","Erasmus University Rotterdam","Netherlands"
+"110","Technical University of Denmark","Denmark"
+"=111","University of Basel","Switzerland"
+"=111","University of Bologna","Italy"
+"=113","Free University of Berlin","Germany"
+"=113","University of Leeds","United Kingdom"
+"=113","University of Warwick","United Kingdom"
+"=116","Ghent University","Belgium"
+"=116","McMaster University","Canada"
+"=118","University of Alberta","Canada"
+"=118","University of Helsinki","Finland"
+"=118","University of Oslo","Norway"
+"=121","University of Bern","Switzerland"
+"=121","Wuhan University","China"
+"123","University of Maryland, College Park","United States"
+"124","Tongji University","China"
+"125","Beijing Normal University","China"
+"=126","Hamad Bin Khalifa University","Qatar"
+"=126","National Taiwan University (NTU)","Taiwan"
+"128","Korea University","South Korea"
+"=129","Queen Mary University of London","United Kingdom"
+"=129","University of Hamburg","Germany"
+"=129","University of Lausanne","Switzerland"
+"132","Université de Montréal","Canada"
+"=133","Maastricht University","Netherlands"
+"=133","University of Göttingen","Germany"
+"=133","Uppsala University","Sweden"
+"=136","University of Rochester","United States"
+"=136","University of Southampton","United Kingdom"
+"138","University of Florida","United States"
+"=139","University of Arizona","United States"
+"=139","University of Freiburg","Germany"
+"=141","Adelaide University","Australia"
+"=141","University of São Paulo","Brazil"
+"=143","Karlsruhe Institute of Technology","Germany"
+"=143","Pohang University of Science and Technology (POSTECH)","South Korea"
+"=143","University of Barcelona","Spain"
+"=143","University of Massachusetts","United States"
+"=147","Case Western Reserve University","United States"
+"=147","Sapienza University of Rome","Italy"
+"=147","Scuola Normale Superiore di Pisa","Italy"
+"=147","The University of Osaka","Japan"
+"=147","University of Cape Town","South Africa"
+"152","University of Technology Sydney","Australia"
+"153","Texas A&M University","United States"
+"=154","Newcastle University","United Kingdom"
+"=154","University of Liverpool","United Kingdom"
+"=154","University of Macau","Macao"
+"=157","Durham University","United Kingdom"
+"=157","Politecnico di Milano","Italy"
+"=157","University of Exeter","United Kingdom"
+"=157","University of Nottingham","United Kingdom"
+"=161","Macquarie University","Australia"
+"=161","Radboud University Nijmegen","Netherlands"
+"=163","Southern University of Science and Technology (SUSTech)","China"
+"=163","University of Cologne","Germany"
+"=163","University of Geneva","Switzerland"
+"166","University of Pittsburgh-Pittsburgh campus","United States"
+"167","Dartmouth College","United States"
+"=168","TU Dresden","Germany"
+"=168","University of Auckland","New Zealand"
+"=168","University of York","United Kingdom"
+"=171","Technical University of Berlin","Germany"
+"=171","Trinity College Dublin","Ireland"
+"=173","Nankai University","China"
+"=173","The University of Western Australia","Australia"
+"175","Universitat Autònoma de Barcelona (UAB)","Spain"
+"=176","KFUPM","Saudi Arabia"
+"=176","Vrije Universiteit Amsterdam","Netherlands"
+"178","University of Waterloo","Canada"
+"179","University of Virginia (Main campus)","United States"
+"=180","Eindhoven University of Technology","Netherlands"
+"=180","Medical University of Vienna","Austria"
+"182","University of Würzburg","Germany"
+"=183","Aalto University","Finland"
+"=183","Lancaster University","United Kingdom"
+"=185","Beihang University","China"
+"=185","Institute of Science Tokyo","Japan"
+"=185","University of Antwerp","Belgium"
+"=185","University of Calgary","Canada"
+"=185","University of Ottawa","Canada"
+"=185","University of St Andrews","United Kingdom"
+"=191","Huazhong University of Science and Technology","China"
+"=191","University of Notre Dame","United States"
+"193","Goethe University Frankfurt","Germany"
+"=194","University of Malaya","Malaysia"
+"=194","University of Münster","Germany"
+"=196","Georgetown University","United States"
+"=196","Queen’s University Belfast","United Kingdom"
+"=196","Tianjin University","China"
+"=196","Xi’an Jiaotong University","China"
+"200","Arizona State University (Tempe)","United States"
+"=201","Université Paris Cité","France"
+"=201","University of California, Santa Cruz","United States"
+"=201","University of Erlangen-Nuremberg","Germany"
+"=201","University of Twente","Netherlands"
+"=205","Hong Kong Baptist University","Hong Kong"
+"=205","Pompeu Fabra University","Spain"
+"=205","Sun Yat-sen University","China"
+"=205","Université Catholique de Louvain","Belgium"
+"=209","Tel Aviv University","Israel"
+"=209","Tufts University","United States"
+"=209","University of Leicester","United Kingdom"
+"=212","Indiana University","United States"
+"=212","The Education University of Hong Kong","Hong Kong"
+"=212","University College Dublin","Ireland"
+"=212","Western University","Canada"
+"216","King Saud University","Saudi Arabia"
+"217","Friedrich Schiller University Jena","Germany"
+"218","Deakin University","Australia"
+"=219","University of Gothenburg","Sweden"
+"=219","University of Reading","United Kingdom"
+"221","Medical University of Graz","Austria"
+"=222","Qatar University","Qatar"
+"=222","Queensland University of Technology","Australia"
+"=224","Aalborg University","Denmark"
+"=224","Northwestern Polytechnical University","China"
+"=224","Sichuan University","China"
+"=224","University of Mannheim","Germany"
+"=224","University of Miami","United States"
+"=224","University of Padua","Italy"
+"=224","Xiamen University","China"
+"=231","EURECOM","France"
+"=231","Stockholm University","Sweden"
+"233","University of Aberdeen","United Kingdom"
+"234","Beijing Institute of Technology","China"
+"=235","Khalifa University","United Arab Emirates"
+"=235","United Arab Emirates University","United Arab Emirates"
+"=237","Kyung Hee University","South Korea"
+"=237","University of Surrey","United Kingdom"
+"=239","Medical University of Innsbruck","Austria"
+"=239","RMIT University","Australia"
+"=239","Ulm University","Germany"
+"=242","East China Normal University","China"
+"=242","Linköping University","Sweden"
+"=242","Nagoya University","Japan"
+"=242","Universiti Teknologi Petronas","Malaysia"
+"=242","University of Utah","United States"
+"=247","Semmelweis University","Hungary"
+"=247","Southeast University","China"
+"=247","University of Potsdam","Germany"
+"=247","University of Wollongong","Australia"
+"=247","Vita-Salute San Raffaele University","Italy"
+"=252","Université Libre de Bruxelles","Belgium"
+"=252","University of Luxembourg","Luxembourg"
+"=254","George Washington University","United States"
+"=254","Indian Institute of Science","India"
+"=254","Northeastern University, US","United States"
+"=257","Cardiff University","United Kingdom"
+"=257","Chalmers University of Technology","Sweden"
+"=257","Lingnan University Hong Kong","Hong Kong"
+"=257","Sant’Anna School of Advanced Studies – Pisa","Italy"
+"=261","Ruhr University Bochum","Germany"
+"=261","Vrije Universiteit Brussel","Belgium"
+"=263","Hunan University","China"
+"=263","Shandong University","China"
+"265","South China University of Technology","China"
+"266","Griffith University","Australia"
+"=267","Humanitas University","Italy"
+"=267","RCSI University of Medicine and Health Sciences","Ireland"
+"=269","Central European University","Austria"
+"=269","Macau University of Science and Technology","Macao"
+"=269","Queen’s University","Canada"
+"272","University of Illinois Chicago","United States"
+"=273","University of Bergen","Norway"
+"=273","University of Sussex","United Kingdom"
+"=275","University of Konstanz","Germany"
+"=275","University of Navarra","Spain"
+"=277","Central South University","China"
+"=277","University of Southern Denmark","Denmark"
+"=277","University of Tasmania","Australia"
+"=277","Virginia Polytechnic Institute and State University","United States"
+"=281","Sejong University","South Korea"
+"=281","Ulsan National Institute of Science and Technology (UNIST)","South Korea"
+"283","Sunway University","Malaysia"
+"=284","Boston College","United States"
+"=284","Dublin City University","Ireland"
+"=284","Heinrich Heine University Düsseldorf","Germany"
+"=284","Southern Medical University","China"
+"=284","Technical University of Darmstadt","Germany"
+"=284","University of Bath","United Kingdom"
+"=284","University of Oulu","Finland"
+"291","La Trobe University","Australia"
+"=292","Curtin University","Australia"
+"=292","University of Duisburg-Essen","Germany"
+"294","Swinburne University of Technology","Australia"
+"295","University of Newcastle","Australia"
+"=296","Hanyang University","South Korea"
+"=296","Hebrew University of Jerusalem","Israel"
+"=296","Johannes Gutenberg University of Mainz","Germany"
+"=299","Ahlia University","Bahrain"
+"=299","Norwegian University of Science and Technology","Norway"
+"=299","Rutgers University–New Brunswick","United States"
+"=299","University of Hawai’i at Mānoa","United States"
+"301–325","Abu Dhabi University","United Arab Emirates"
+"301–325","Flinders University","Australia"
+"301–325","Illinois Institute of Technology","United States"
+"301–325","King Khalid University","Saudi Arabia"
+"301–325","Kyushu University","Japan"
+"301–325","North Carolina State University","United States"
+"301–325","Singapore University of Technology and Design","Singapore"
+"301–325","TU Wien","Austria"
+"301–325","Università Cattolica del Sacro Cuore","Italy"
+"301–325","Università della Svizzera italiana","Switzerland"
+"301–325","Université Laval","Canada"
+"301–325","Universiti Brunei Darussalam","Brunei Darussalam"
+"301–325","Universiti Kebangsaan Malaysia","Malaysia"
+"301–325","University College Cork","Ireland"
+"301–325","University of Bayreuth","Germany"
+"301–325","University of Connecticut","United States"
+"301–325","University of East Anglia","United Kingdom"
+"301–325","University of Innsbruck","Austria"
+"301–325","University of Sharjah","United Arab Emirates"
+"301–325","University of Stuttgart","Germany"
+"301–325","University of the Witwatersrand","South Africa"
+"301–325","University of Victoria","Canada"
+"301–325","Western Sydney University","Australia"
+"326–350","Birkbeck, University of London","United Kingdom"
+"326–350","City St George’s, University of London","United Kingdom"
+"326–350","Dalian University of Technology","China"
+"326–350","École Normale Supérieure de Lyon","France"
+"326–350","Florida State University","United States"
+"326–350","James Cook University","Australia"
+"326–350","Koç University","Turkey"
+"326–350","Loughborough University","United Kingdom"
+"326–350","LUT University","Finland"
+"326–350","Middle East Technical University","Turkey"
+"326–350","Saveetha Institute of Medical and Technical Sciences","India"
+"326–350","Stellenbosch University","South Africa"
+"326–350","Stony Brook University","United States"
+"326–350","Taipei Medical University","Taiwan"
+"326–350","Tampere University","Finland"
+"326–350","Technion Israel Institute of Technology","Israel"
+"326–350","Tilburg University","Netherlands"
+"326–350","Universiti Sains Malaysia","Malaysia"
+"326–350","University at Buffalo","United States"
+"326–350","University of California, Riverside","United States"
+"326–350","University of Campinas","Brazil"
+"326–350","University of Dundee","United Kingdom"
+"326–350","University of Galway","Ireland"
+"326–350","University of Iowa","United States"
+"326–350","University of Liège","Belgium"
+"326–350","University of Rome II – Tor Vergata","Italy"
+"351–375","Autonomous University of Madrid","Spain"
+"351–375","China Medical University, Taiwan","Taiwan"
+"351–375","Daegu Gyeongbuk Institute of Science and Technology (DGIST)","South Korea"
+"351–375","Dalhousie University","Canada"
+"351–375","Edith Cowan University","Australia"
+"351–375","Hasselt University","Belgium"
+"351–375","Lebanese American University","Lebanon"
+"351–375","Leibniz University Hannover","Germany"
+"351–375","National Tsing Hua University","Taiwan"
+"351–375","Shenzhen University","China"
+"351–375","Simon Fraser University","Canada"
+"351–375","Swansea University","United Kingdom"
+"351–375","Umeå University","Sweden"
+"351–375","University of Bremen","Germany"
+"351–375","University of Electronic Science and Technology of China","China"
+"351–375","University of Essex","United Kingdom"
+"351–375","University of Florence","Italy"
+"351–375","University of Johannesburg","South Africa"
+"351–375","University of Milan","Italy"
+"351–375","University of Otago","New Zealand"
+"351–375","University of Saskatchewan","Canada"
+"351–375","University of Strathclyde","United Kingdom"
+"351–375","University of Trento","Italy"
+"351–375","University of Turku","Finland"
+"376–400","Ajman University","United Arab Emirates"
+"376–400","Al-Ahliyya Amman University","Jordan"
+"376–400","Chongqing University","China"
+"376–400","Constructor University","Germany"
+"376–400","Drexel University","United States"
+"376–400","Gwangju Institute of Science and Technology (GIST)","South Korea"
+"376–400","Hokkaido University","Japan"
+"376–400","Jilin University","China"
+"376–400","Nazarbayev University","Kazakhstan"
+"376–400","Prince Sultan University (PSU)","Saudi Arabia"
+"376–400","Sabancı University","Turkey"
+"376–400","Swedish University of Agricultural Sciences","Sweden"
+"376–400","University Mohammed VI Polytechnic","Morocco"
+"376–400","University of Colorado Denver/Anschutz Medical Campus","United States"
+"376–400","University of Georgia (USA)","United States"
+"376–400","University of Hohenheim","Germany"
+"376–400","University of Kansas","United States"
+"376–400","University of Lisbon","Portugal"
+"376–400","University of Marburg","Germany"
+"376–400","University of Naples Federico II","Italy"
+"376–400","University of Oregon","United States"
+"376–400","University of Siena","Italy"
+"376–400","University of Southern Queensland","Australia"
+"376–400","University of Tartu","Estonia"
+"376–400","University of Tsukuba","Japan"
+"376–400","University of Turin","Italy"
+"401–450","Al Ain University","United Arab Emirates"
+"401–450","Amirkabir University of Technology","Iran"
+"401–450","Applied Science Private University","Jordan"
+"401–450","Arabian Gulf University","Bahrain"
+"401–450","Aston University","United Kingdom"
+"401–450","Australian Catholic University","Australia"
+"401–450","Boğaziçi University","Turkey"
+"401–450","Bond University","Australia"
+"401–450","Brunel University of London","United Kingdom"
+"401–450","Chung-Ang University","South Korea"
+"401–450","Complutense University of Madrid","Spain"
+"401–450","Free University of Bozen-Bolzano","Italy"
+"401–450","George Mason University","United States"
+"401–450","Graz University of Technology","Austria"
+"401–450","Institut Agro","France"
+"401–450","Iowa State University","United States"
+"401–450","Iran University of Science and Technology","Iran"
+"401–450","Johannes Kepler University of Linz","Austria"
+"401–450","Justus Liebig University Giessen","Germany"
+"401–450","Kermanshah University of Medical Sciences","Iran"
+"401–450","King Abdulaziz University","Saudi Arabia"
+"401–450","Marche Polytechnic University","Italy"
+"401–450","Montpellier University","France"
+"401–450","Moscow Institute of Physics and Technology (MIPT)","Russian Federation"
+"401–450","Murdoch University","Australia"
+"401–450","National Yang Ming Chiao Tung University (NYCU Taiwan)","Taiwan"
+"401–450","Polytechnic University of Turin","Italy"
+"401–450","Prince Mohammad Bin Fahd University","Saudi Arabia"
+"401–450","Prince Sattam Bin Abdulaziz University","Saudi Arabia"
+"401–450","Royal Holloway, University of London","United Kingdom"
+"401–450","Saarland University","Germany"
+"401–450","SOAS University of London","United Kingdom"
+"401–450","Temple University","United States"
+"401–450","Tulane University","United States"
+"401–450","Université Grenoble Alpes","France"
+"401–450","Universiti Teknologi Malaysia","Malaysia"
+"401–450","University of Brescia","Italy"
+"401–450","University of California, Merced","United States"
+"401–450","University of Canberra","Australia"
+"401–450","University of Coimbra","Portugal"
+"401–450","University of Fribourg","Switzerland"
+"401–450","University of Genoa","Italy"
+"401–450","University of Houston","United States"
+"401–450","University of Kiel","Germany"
+"401–450","University of Pavia","Italy"
+"401–450","University of Pisa","Italy"
+"401–450","University of Porto","Portugal"
+"401–450","University of Portsmouth","United Kingdom"
+"401–450","University of South Florida","United States"
+"401–450","Victoria University of Wellington","New Zealand"
+"451–500","Ajou University","South Korea"
+"451–500","Ca’ Foscari University of Venice","Italy"
+"451–500","Campus Bio-Medico University of Rome","Italy"
+"451–500","Central Queensland University","Australia"
+"451–500","Charles Darwin University","Australia"
+"451–500","Charles University","Czechia"
+"451–500","City University of Macau","Macao"
+"451–500","Colorado School of Mines","United States"
+"451–500","Donghua University","China"
+"451–500","Gachon University","South Korea"
+"451–500","Gulf University for Science and Technology","Kuwait"
+"451–500","Heriot-Watt University","United Kingdom"
+"451–500","IMT Atlantique","France"
+"451–500","National and Kapodistrian University of Athens","Greece"
+"451–500","National Cheng Kung University (NCKU)","Taiwan"
+"451–500","National Taiwan University of Science and Technology (Taiwan Tech)","Taiwan"
+"451–500","National Yunlin University of Science and Technology","Taiwan"
+"451–500","Northeastern University, China","China"
+"451–500","Northumbria University","United Kingdom"
+"451–500","Pontificia Universidad Católica de Chile","Chile"
+"451–500","Princess Nourah bint Abdulrahman University","Saudi Arabia"
+"451–500","Rush University","United States"
+"451–500","Sharif University of Technology","Iran"
+"451–500","Shoolini University of Biotechnology and Management Sciences","India"
+"451–500","Syracuse University","United States"
+"451–500","The University of Texas at San Antonio","United States"
+"451–500","TU Dortmund University","Germany"
+"451–500","Umm Al-Qura University","Saudi Arabia"
+"451–500","Universiti Putra Malaysia","Malaysia"
+"451–500","Universiti Utara Malaysia","Malaysia"
+"451–500","University of Delaware","United States"
+"451–500","University of Eastern Finland","Finland"
+"451–500","University of Guelph","Canada"
+"451–500","University of Huddersfield","United Kingdom"
+"451–500","University of Kent","United Kingdom"
+"451–500","University of Kentucky","United States"
+"451–500","University of Milan-Bicocca","Italy"
+"451–500","University of Pretoria","South Africa"
+"451–500","University of Regensburg","Germany"
+"451–500","University of South Carolina-Columbia","United States"
+"451–500","University of Tehran","Iran"
+"451–500","University of Texas at Dallas","United States"
+"451–500","University of Vaasa","Finland"
+"451–500","Verona University","Italy"
+"451–500","Virginia Commonwealth University","United States"
+"451–500","Wake Forest University","United States"
+"451–500","Washington State University","United States"
+"451–500","Wroclaw Medical University","Poland"
+"451–500","York University","Canada"
+"501–550","Alfaisal University","Saudi Arabia"
+"501–550","American University of Sharjah","United Arab Emirates"
+"501–550","Bangor University","United Kingdom"
+"501–550","Bournemouth University","United Kingdom"
+"501–550","Brandeis University","United States"
+"501–550","China University of Petroleum, Beijing","China"
+"501–550","Chulalongkorn University","Thailand"
+"501–550","Colorado State University, Fort Collins","United States"
+"501–550","Cyprus University of Technology","Cyprus"
+"501–550","Ewha Womans University","South Korea"
+"501–550","Federation University Australia","Australia"
+"501–550","Florida International University","United States"
+"501–550","Jamia Millia Islamia","India"
+"501–550","Jiangsu University","China"
+"501–550","Jinan University (China)","China"
+"501–550","KIIT University","India"
+"501–550","Kyungpook National University (KNU)","South Korea"
+"501–550","Leuphana University of Lüneburg","Germany"
+"501–550","Lovely Professional University","India"
+"501–550","Management and Science University","Malaysia"
+"501–550","Massey University","New Zealand"
+"501–550","Maynooth University","Ireland"
+"501–550","National Taiwan Normal University","Taiwan"
+"501–550","Near East University","Northern Cyprus"
+"501–550","NOVA University of Lisbon","Portugal"
+"501–550","Roskilde University","Denmark"
+"501–550","Shanghai University","China"
+"501–550","Stevens Institute of Technology","United States"
+"501–550","Sultan Qaboos University","Oman"
+"501–550","Tecnológico de Monterrey","Mexico"
+"501–550","Tehran University of Medical Sciences","Iran"
+"501–550","The Catholic University of Korea (CUK)","South Korea"
+"501–550","The University of Tennessee-Knoxville","United States"
+"501–550","Université du Québec","Canada"
+"501–550","University of Cyprus","Cyprus"
+"501–550","University of Graz","Austria"
+"501–550","University of Greifswald","Germany"
+"501–550","University of Iceland","Iceland"
+"501–550","University of Jyväskylä","Finland"
+"501–550","University of KwaZulu-Natal","South Africa"
+"501–550","University of Limerick","Ireland"
+"501–550","University of Nebraska Medical Center","United States"
+"501–550","University of Nicosia","Cyprus"
+"501–550","University of Siegen","Germany"
+"501–550","University of Stirling","United Kingdom"
+"501–550","University of Toulouse","France"
+"501–550","University of Ulsan","South Korea"
+"501–550","University of Valencia","Spain"
+"501–550","Zayed University","United Arab Emirates"
+"501–550","Zhejiang University of Technology","China"
+"551–600","Amity University, Noida","India"
+"551–600","Asia University, Taiwan","Taiwan"
+"551–600","Auckland University of Technology","New Zealand"
+"551–600","Banaras Hindu University","India"
+"551–600","Bauman Moscow State Technical University","Russian Federation"
+"551–600","Beijing University of Chemical Technology","China"
+"551–600","Ben-Gurion University of the Negev","Israel"
+"551–600","Carleton University","Canada"
+"551–600","East China University of Science and Technology","China"
+"551–600","Goldsmiths, University of London","United Kingdom"
+"551–600","Graphic Era University","India"
+"551–600","Hamburg University of Technology","Germany"
+"551–600","Jagiellonian University","Poland"
+"551–600","King Faisal University","Saudi Arabia"
+"551–600","Liverpool John Moores University","United Kingdom"
+"551–600","Mahidol University","Thailand"
+"551–600","Manchester Metropolitan University","United Kingdom"
+"551–600","Manipal Academy of Higher Education","India"
+"551–600","Memorial University of Newfoundland","Canada"
+"551–600","Mizzou – University of Missouri","United States"
+"551–600","Nanjing University of Science and Technology (NJUST)","China"
+"551–600","Polytechnic University of Bari","Italy"
+"551–600","Pusan National University","South Korea"
+"551–600","Quaid-i-Azam University","Pakistan"
+"551–600","Royal Veterinary College","United Kingdom"
+"551–600","Sciences Po","France"
+"551–600","Shiraz University of Technology","Iran"
+"551–600","Soochow University, China","China"
+"551–600","Southern Cross University","Australia"
+"551–600","Tashkent Institute of Irrigation and Agricultural Mechanisation","Uzbekistan"
+"551–600","Universiti Tenaga Nasional (UNITEN)","Malaysia"
+"551–600","University of Bordeaux","France"
+"551–600","University of Canterbury","New Zealand"
+"551–600","University of Catania","Italy"
+"551–600","University of Central Florida","United States"
+"551–600","University of Hull","United Kingdom"
+"551–600","University of International Business and Economics","China"
+"551–600","University of Klagenfurt","Austria"
+"551–600","University of Manitoba","Canada"
+"551–600","University of Messina","Italy"
+"551–600","University of Modena and Reggio Emilia","Italy"
+"551–600","University of Palermo","Italy"
+"551–600","University of Plymouth","United Kingdom"
+"551–600","University of the Sunshine Coast","Australia"
+"551–600","University of Trieste","Italy"
+"551–600","University of Waikato","New Zealand"
+"551–600","University of Windsor","Canada"
+"551–600","Victoria University","Australia"
+"551–600","Yangzhou University","China"
+"551–600","Zarqa University","Jordan"
+"601–650","Anglia Ruskin University (ARU)","United Kingdom"
+"601–650","Auburn University","United States"
+"601–650","Chonnam National University","South Korea"
+"601–650","Coventry University","United Kingdom"
+"601–650","Dhofar University","Oman"
+"601–650","Edinburgh Napier University","United Kingdom"
+"601–650","Effat University","Saudi Arabia"
+"601–650","European University of Lefke","Northern Cyprus"
+"601–650","Federal University of Rio de Janeiro","Brazil"
+"601–650","Gabriele d‘Annunzio University","Italy"
+"601–650","Georgia State University","United States"
+"601–650","Hiroshima University","Japan"
+"601–650","HSE University","Russian Federation"
+"601–650","Imam Mohammad Ibn Saud Islamic University","Saudi Arabia"
+"601–650","Jiangnan University","China"
+"601–650","Juntendo University","Japan"
+"601–650","Keele University","United Kingdom"
+"601–650","Konkuk University","South Korea"
+"601–650","Lehigh University","United States"
+"601–650","Masaryk University","Czechia"
+"601–650","Middlesex University","United Kingdom"
+"601–650","Missouri University of Science and Technology","United States"
+"601–650","National University of Sciences and Technology","Pakistan"
+"601–650","New Jersey Institute of Technology","United States"
+"601–650","Nottingham Trent University","United Kingdom"
+"601–650","Ocean University of China","China"
+"601–650","Paderborn University","Germany"
+"601–650","Rensselaer Polytechnic Institute","United States"
+"601–650","RPTU University Kaiserslautern-Landau","Germany"
+"601–650","Saint Louis University","United States"
+"601–650","Symbiosis International University","India"
+"601–650","The University of Tulsa","United States"
+"601–650","Universitat Politècnica de Catalunya","Spain"
+"601–650","Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)","Malaysia"
+"601–650","Universiti Pendidikan Sultan Idris","Malaysia"
+"601–650","University of Bradford","United Kingdom"
+"601–650","University of Cassino and Southern Lazio (Unicas)","Italy"
+"601–650","University of Greenwich","United Kingdom"
+"601–650","University of Minho","Portugal"
+"601–650","University of Missouri-Kansas City","United States"
+"601–650","University of Nebraska-Lincoln","United States"
+"601–650","University of Neuchâtel","Switzerland"
+"601–650","University of Nevada, Las Vegas","United States"
+"601–650","University of Passau","Germany"
+"601–650","University of Wuppertal","Germany"
+"601–650","UPES","India"
+"601–650","Wayne State University","United States"
+"601–650","Xidian University","China"
+"601–650","Yarmouk University","Jordan"
+"601–650","Yeungnam University","South Korea"
+"601–650","Yuan Ze University","Taiwan"
+"601–650","Zhejiang Normal University","China"
+"651–700","Aligarh Muslim University","India"
+"651–700","American University of the Middle East","Kuwait"
+"651–700","Amman Arab University","Jordan"
+"651–700","Amrita Vishwa Vidyapeetham","India"
+"651–700","Bar-Ilan University","Israel"
+"651–700","Bilkent University","Turkey"
+"651–700","BOKU University","Austria"
+"651–700","Centrale Nantes","France"
+"651–700","Charles Sturt University","Australia"
+"651–700","COMSATS University Islamabad","Pakistan"
+"651–700","Concordia University","Canada"
+"651–700","Cyprus International University","Northern Cyprus"
+"651–700","École des Mines de Saint-Étienne","France"
+"651–700","École Nationale des Travaux Publics de l’État (ENTPE)","France"
+"651–700","Harbin Engineering University","China"
+"651–700","Harokopio University of Athens","Greece"
+"651–700","Imam Abdulrahman Bin Faisal University","Saudi Arabia"
+"651–700","Indian Institute of Technology Indore","India"
+"651–700","ISCTE-University Institute of Lisbon","Portugal"
+"651–700","Istanbul Technical University","Turkey"
+"651–700","Jeonbuk National University","South Korea"
+"651–700","Jouf University","Saudi Arabia"
+"651–700","Nanjing Forestry University","China"
+"651–700","Nanjing University of Aeronautics and Astronautics","China"
+"651–700","Oklahoma State University","United States"
+"651–700","Örebro University","Sweden"
+"651–700","Otto von Guericke University of Magdeburg","Germany"
+"651–700","Sharda University","India"
+"651–700","Shiraz University of Medical Sciences","Iran"
+"651–700","Tashkent State University of Economics","Uzbekistan"
+"651–700","The University of Aizu","Japan"
+"651–700","TU Braunschweig","Germany"
+"651–700","UiT The Arctic University of Norway","Norway"
+"651–700","Ulster University","United Kingdom"
+"651–700","Universidade Estadual Paulista (Unesp)","Brazil"
+"651–700","University of Arkansas","United States"
+"651–700","University of Bari Aldo Moro","Italy"
+"651–700","University of Calabria","Italy"
+"651–700","University of Denver","United States"
+"651–700","University of Ferrara","Italy"
+"651–700","University of Granada","Spain"
+"651–700","University of Indonesia","Indonesia"
+"651–700","University of Lille","France"
+"651–700","University of Nizwa","Oman"
+"651–700","University of North Carolina at Charlotte","United States"
+"651–700","University of Salerno","Italy"
+"651–700","University of Tabuk","Saudi Arabia"
+"651–700","UWE Bristol (University of the West of England)","United Kingdom"
+"651–700","Xi’an Jiaotong-Liverpool University","China"
+"651–700","Zhengzhou University","China"
+"701–800","Aberystwyth University","United Kingdom"
+"701–800","AlMaarefa University","Saudi Arabia"
+"701–800","American University","United States"
+"701–800","American University in Cairo","Egypt"
+"701–800","An-Najah National University","Palestine"
+"701–800","Azerbaijan State University of Economics","Azerbaijan"
+"701–800","Babol Noshirvani University of Technology","Iran"
+"701–800","Bahauddin Zakariya University","Pakistan"
+"701–800","Bushehr University of Medical Sciences (BPUMS)","Iran"
+"701–800","Central University of Himachal Pradesh","India"
+"701–800","Central University of Punjab","India"
+"701–800","Chitkara University","India"
+"701–800","Claude Bernard University Lyon 1","France"
+"701–800","Clemson University","United States"
+"701–800","De Montfort University","United Kingdom"
+"701–800","Duy Tan University","Vietnam"
+"701–800","Eastern Mediterranean University","Northern Cyprus"
+"701–800","European University Cyprus","Cyprus"
+"701–800","Fuzhou University","China"
+"701–800","Guangdong University of Technology","China"
+"701–800","Indian Institute of Technology Patna","India"
+"701–800","Inha University","South Korea"
+"701–800","International Institute of Information Technology, Hyderabad","India"
+"701–800","Iran University of Medical Sciences","Iran"
+"701–800","Isfahan University of Medical Sciences","Iran"
+"701–800","Isfahan University of Technology","Iran"
+"701–800","Islamic University of Madinah","Saudi Arabia"
+"701–800","Jawaharlal Nehru University","India"
+"701–800","Jazan University","Saudi Arabia"
+"701–800","Jönköping University","Sweden"
+"701–800","JSS Academy of Higher Education and Research","India"
+"701–800","Kansas State University","United States"
+"701–800","King Saud bin Abdulaziz University for Health Sciences","Saudi Arabia"
+"701–800","Kobe University","Japan"
+"701–800","Kurdistan University of Medical Sciences","Iran"
+"701–800","Lincoln University (New Zealand)","New Zealand"
+"701–800","London South Bank University","United Kingdom"
+"701–800","Louisiana State University","United States"
+"701–800","Mahatma Jyotiba Phule Rohilkhand University","India"
+"701–800","Majmaah University","Saudi Arabia"
+"701–800","Mississippi State University","United States"
+"701–800","Nanjing Tech University","China"
+"701–800","Nantes Université","France"
+"701–800","National Autonomous University of Mexico","Mexico"
+"701–800","National Sun Yat-Sen University","Taiwan"
+"701–800","New Mexico State University (Main campus)","United States"
+"701–800","Northeast Normal University","China"
+"701–800","Obuda University","Hungary"
+"701–800","Oxford Brookes University","United Kingdom"
+"701–800","Panjab University","India"
+"701–800","Paris Lodron Universität Salzburg","Austria"
+"701–800","Polytechnic University of Valencia","Spain"
+"701–800","Pontifical Catholic University of Rio de Janeiro (PUC-Rio)","Brazil"
+"701–800","Qingdao University","China"
+"701–800","Rochester Institute of Technology","United States"
+"701–800","Rovira i Virgili University","Spain"
+"701–800","Semnan University of Medical Sciences and Health Services","Iran"
+"701–800","Shahid Beheshti University of Medical Sciences","Iran"
+"701–800","South China Normal University","China"
+"701–800","Southwest Jiaotong University","China"
+"701–800","SRUC (Scotland’s Rural College)","United Kingdom"
+"701–800","SUNY University at Albany","United States"
+"701–800","Tabriz University of Medical Sciences","Iran"
+"701–800","Taif University","Saudi Arabia"
+"701–800","Teesside University","United Kingdom"
+"701–800","Texas Tech University","United States"
+"701–800","Thapar Institute of Engineering and Technology","India"
+"701–800","Tomsk State University","Russian Federation"
+"701–800","Toronto Metropolitan University","Canada"
+"701–800","UEES, Espiritu Santo University","Ecuador"
+"701–800","UEH University","Vietnam"
+"701–800","Universidade Federal do Rio Grande do Sul","Brazil"
+"701–800","Université Côte d’Azur","France"
+"701–800","University of Agriculture, Faisalabad","Pakistan"
+"701–800","University of Alaska Fairbanks","United States"
+"701–800","University of Aveiro","Portugal"
+"701–800","University of Beira Interior","Portugal"
+"701–800","University of Brighton","United Kingdom"
+"701–800","University of Cagliari","Italy"
+"701–800","University of Crete","Greece"
+"701–800","University of Delhi","India"
+"701–800","University of Haifa","Israel"
+"701–800","University of Ha’il","Saudi Arabia"
+"701–800","University of Hertfordshire","United Kingdom"
+"701–800","University of Insubria","Italy"
+"701–800","University of Lahore","Pakistan"
+"701–800","University of L’Aquila","Italy"
+"701–800","University of Lincoln","United Kingdom"
+"701–800","University of Maryland, Baltimore County","United States"
+"701–800","University of Mons","Belgium"
+"701–800","University of New Brunswick UNB","Canada"
+"701–800","University of Perugia","Italy"
+"701–800","University of Tabriz","Iran"
+"701–800","University of the Western Cape","South Africa"
+"701–800","University of Toledo","United States"
+"701–800","University of Tuscia","Italy"
+"701–800","University of Wyoming","United States"
+"701–800","Urmia University of Medical Sciences","Iran"
+"701–800","Worcester Polytechnic Institute","United States"
+"701–800","Wuhan University of Technology","China"
+"801–1000","Abdullah Gül University","Turkey"
+"801–1000","Abdul Wali Khan University Mardan","Pakistan"
+"801–1000","Ahvaz Jundishapur University of Medical Sciences (AJUMS)","Iran"
+"801–1000","Air University","Pakistan"
+"801–1000","Al-Azhar University","Egypt"
+"801–1000","Alexandria University","Egypt"
+"801–1000","Al-Zaytoonah University of Jordan","Jordan"
+"801–1000","Amedeo Avogadro University of Eastern Piedmont","Italy"
+"801–1000","American International University – Bangladesh","Bangladesh"
+"801–1000","Arab Academy for Science, Technology and Maritime Transport","Egypt"
+"801–1000","Arak University of Medical Sciences","Iran"
+"801–1000","Aristotle University of Thessaloniki","Greece"
+"801–1000","Arts et Métiers","France"
+"801–1000","Atatürk University","Turkey"
+"801–1000","Babol University of Medical Sciences","Iran"
+"801–1000","Baylor University","United States"
+"801–1000","Beirut Arab University","Lebanon"
+"801–1000","Bharathiar University","India"
+"801–1000","Birmingham City University","United Kingdom"
+"801–1000","Brandenburg University of Technology Cottbus-Senftenberg (BTU)","Germany"
+"801–1000","Bucharest University of Economic Studies","Romania"
+"801–1000","Cairo University","Egypt"
+"801–1000","Carlos III University of Madrid","Spain"
+"801–1000","Catholic University of Portugal","Portugal"
+"801–1000","Chang Gung University","Taiwan"
+"801–1000","Chungbuk National University","South Korea"
+"801–1000","Covenant University","Nigeria"
+"801–1000","Czech University of Life Sciences Prague (CZU)","Czechia"
+"801–1000","Daffodil International University (DIU)","Bangladesh"
+"801–1000","École Centrale de Lyon","France"
+"801–1000","Egypt-Japan University of Science and Technology (E-JUST)","Egypt"
+"801–1000","Empress Catherine II Saint Petersburg Mining University","Russian Federation"
+"801–1000","Eötvös Loránd University","Hungary"
+"801–1000","Federal University of Minas Gerais","Brazil"
+"801–1000","Florida Atlantic University","United States"
+"801–1000","Future University in Egypt","Egypt"
+"801–1000","Ghulam Ishaq Khan Institute of Engineering Sciences and Technology","Pakistan"
+"801–1000","Glasgow Caledonian University","United Kingdom"
+"801–1000","Golestan University of Medical Sciences","Iran"
+"801–1000","Gomal University","Pakistan"
+"801–1000","Government College University Faisalabad","Pakistan"
+"801–1000","Government College University Lahore","Pakistan"
+"801–1000","Hacettepe University","Turkey"
+"801–1000","Hainan University","China"
+"801–1000","Halmstad University","Sweden"
+"801–1000","Hanoi Medical University","Vietnam"
+"801–1000","Holy Spirit University of Kaslik","Lebanon"
+"801–1000","IMT Nord Europe","France"
+"801–1000","Indian Institute of Technology Gandhinagar","India"
+"801–1000","Indian Institute of Technology Mandi","India"
+"801–1000","International Islamic University, Islamabad","Pakistan"
+"801–1000","International University of Rabat","Morocco"
+"801–1000","Iqra University","Pakistan"
+"801–1000","Isra University (Jordan)","Jordan"
+"801–1000","İstanbul Nişantaşi University","Turkey"
+"801–1000","İstinye University","Turkey"
+"801–1000","Jahangirnagar University","Bangladesh"
+"801–1000","Kaohsiung Medical University","Taiwan"
+"801–1000","Keio University","Japan"
+"801–1000","Kerman University of Medical Sciences","Iran"
+"801–1000","KLEF Deemed to be University","India"
+"801–1000","Leeds Beckett University","United Kingdom"
+"801–1000","London Metropolitan University","United Kingdom"
+"801–1000","Mahsa University","Malaysia"
+"801–1000","Makerere University","Uganda"
+"801–1000","Malaviya National Institute of Technology","India"
+"801–1000","Mansoura University","Egypt"
+"801–1000","Marie and Louis Pasteur University","France"
+"801–1000","Mashhad University of Medical Sciences","Iran"
+"801–1000","Medical University of Lodz","Poland"
+"801–1000","Mizoram University","India"
+"801–1000","Montanuniversität Leoben","Austria"
+"801–1000","Multimedia University","Malaysia"
+"801–1000","Najran University","Saudi Arabia"
+"801–1000","Nanjing Medical University","China"
+"801–1000","Nanjing Normal University","China"
+"801–1000","Nanjing University of Information Science and Technology","China"
+"801–1000","National Central University","Taiwan"
+"801–1000","National Institute of Applied Sciences of Lyon (INSA Lyon)","France"
+"801–1000","National Institute of Technology Rourkela","India"
+"801–1000","National Institute of Technology Silchar","India"
+"801–1000","National Research Nuclear University MEPhI","Russian Federation"
+"801–1000","National Technical University of Athens","Greece"
+"801–1000","North China Electric Power University","China"
+"801–1000","Northern Border University","Saudi Arabia"
+"801–1000","North South University","Bangladesh"
+"801–1000","North-West University","South Africa"
+"801–1000","Norwegian University of Life Sciences","Norway"
+"801–1000","Ohio University (Main campus)","United States"
+"801–1000","Old Dominion University","United States"
+"801–1000","Ontario Tech University","Canada"
+"801–1000","Open University of Catalonia","Spain"
+"801–1000","O.P. Jindal Global University","India"
+"801–1000","Ozyegin University","Turkey"
+"801–1000","Panthéon-Sorbonne University – Paris 1","France"
+"801–1000","Parthenope University of Naples","Italy"
+"801–1000","Portland State University","United States"
+"801–1000","Qassim University","Saudi Arabia"
+"801–1000","Rafsanjan University of Medical Sciences","Iran"
+"801–1000","Reichman University","Israel"
+"801–1000","Reykjavík University","Iceland"
+"801–1000","Riga Technical University","Latvia"
+"801–1000","Robert Gordon University","United Kingdom"
+"801–1000","RUDN University","Russian Federation"
+"801–1000","Shahid Beheshti University","Iran"
+"801–1000","Shahroud University of Medical Sciences","Iran"
+"801–1000","Shantou University","China"
+"801–1000","Shaqra University","Saudi Arabia"
+"801–1000","Sheffield Hallam University","United Kingdom"
+"801–1000","Shiraz University","Iran"
+"801–1000","Shri Mata Vaishno Devi University","India"
+"801–1000","Sogang University","South Korea"
+"801–1000","Sohar University","Oman"
+"801–1000","SR University","India"
+"801–1000","Sunan Kalijaga State Islamic University, Yogyakarta","Indonesia"
+"801–1000","SUNY Binghamton University","United States"
+"801–1000","Tallinn University of Technology","Estonia"
+"801–1000","The Catholic University of America","United States"
+"801–1000","The Islamia University of Bahawalpur","Pakistan"
+"801–1000","The Open University","United Kingdom"
+"801–1000","The University of Alabama","United States"
+"801–1000","The University of Notre Dame Australia","Australia"
+"801–1000","Tishk International University","Iraq"
+"801–1000","Universidade Federal de Santa Catarina","Brazil"
+"801–1000","Universidade Federal de São Paulo (UNIFESP)","Brazil"
+"801–1000","Universidad Europea","Spain"
+"801–1000","Università degli Studi del Molise","Italy"
+"801–1000","Universitas Gadjah Mada","Indonesia"
+"801–1000","Universitat Internacional de Catalunya","Spain"
+"801–1000","Universitat Ramon Llull","Spain"
+"801–1000","Université Bourgogne Europe","France"
+"801–1000","Universiti Malaysia Terengganu (UMT)","Malaysia"
+"801–1000","Universiti Sultan Zainal Abidin","Malaysia"
+"801–1000","Universiti Tunku Abdul Rahman (UTAR)","Malaysia"
+"801–1000","University of Alcalá","Spain"
+"801–1000","University of Bahrain","Bahrain"
+"801–1000","University of Bucharest","Romania"
+"801–1000","University of Cape Coast","Ghana"
+"801–1000","University of Central Punjab","Pakistan"
+"801–1000","University of Chile","Chile"
+"801–1000","University of Debrecen","Hungary"
+"801–1000","University of Derby","United Kingdom"
+"801–1000","University of East London","United Kingdom"
+"801–1000","University of Engineering and Technology, Taxila","Pakistan"
+"801–1000","University of Foggia","Italy"
+"801–1000","University of Ghana","Ghana"
+"801–1000","University of Girona","Spain"
+"801–1000","University of Gujrat","Pakistan"
+"801–1000","University of Hagen","Germany"
+"801–1000","University of Hradec Králové","Czechia"
+"801–1000","University of Hyderabad","India"
+"801–1000","University of Ibadan","Nigeria"
+"801–1000","University of Jaén","Spain"
+"801–1000","University of Lagos","Nigeria"
+"801–1000","University of Ljubljana","Slovenia"
+"801–1000","University of Lleida","Spain"
+"801–1000","University of Malakand","Pakistan"
+"801–1000","University of Malta","Malta"
+"801–1000","University of Management and Technology","Pakistan"
+"801–1000","University of Medicine and Pharmacy Carol Davila","Romania"
+"801–1000","University of Namur","Belgium"
+"801–1000","University of Nova Gorica","Slovenia"
+"801–1000","University of Parma","Italy"
+"801–1000","University of Patras","Greece"
+"801–1000","University of Petra","Jordan"
+"801–1000","University of Rennes 1","France"
+"801–1000","University of Rhode Island","United States"
+"801–1000","University of Roehampton","United Kingdom"
+"801–1000","University of Rome III","Italy"
+"801–1000","University of Salamanca","Spain"
+"801–1000","University of Salento","Italy"
+"801–1000","University of Salford","United Kingdom"
+"801–1000","University of Santiago de Compostela","Spain"
+"801–1000","University of Seville","Spain"
+"801–1000","University of Texas at Arlington","United States"
+"801–1000","University of the Andes, Colombia","Colombia"
+"801–1000","University of the Basque Country","Spain"
+"801–1000","University of the Punjab","Pakistan"
+"801–1000","University of the West of Scotland","United Kingdom"
+"801–1000","University of Tunis El Manar","Tunisia"
+"801–1000","University of Udine","Italy"
+"801–1000","University of Veterinary and Animal Sciences, Lahore","Pakistan"
+"801–1000","University of Vigo","Spain"
+"801–1000","University of Warsaw","Poland"
+"801–1000","University of Westminster","United Kingdom"
+"801–1000","University of Wolverhampton","United Kingdom"
+"801–1000","Ural Federal University","Russian Federation"
+"801–1000","Urmia University","Iran"
+"801–1000","Veltech University","India"
+"801–1000","Vilnius University","Lithuania"
+"801–1000","Waseda University","Japan"
+"801–1000","Wenzhou–Kean University","China"
+"801–1000","Wenzhou University","China"
+"801–1000","William & Mary","United States"
+"801–1000","Yildiz Technical University","Turkey"
+"801–1000","Yokohama City University","Japan"
+"801–1000","Zagazig University","Egypt"
+"801–1000","ZHAW Zurich University of Applied Sciences","Switzerland"
+"801–1000","Zhejiang Gongshang University","China"

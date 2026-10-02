@@ -420,15 +420,7 @@
     "suggestedStandardizedName": "University of Maryland Baltimore"
   },
   {
-    "originalName": "university of massachusetts",
-    "suggestedStandardizedName": "University of Massachusetts Amherst"
-  },
-  {
     "originalName": "University of Massachusetts - Amherst",
-    "suggestedStandardizedName": "University of Massachusetts Amherst"
-  },
-  {
-    "originalName": "University of Massachusetts (System)",
     "suggestedStandardizedName": "University of Massachusetts Amherst"
   },
   {
@@ -1338,5 +1330,761 @@
     "evidence": "https://alumni.umlp.fr/fr/article/l-universite-marie-et-louis-pasteur-une-nouvelle-ere-pour-l-enseignement-superieur-en-bourgogne-franche-comte/23/04/2025/269",
     "consulted": "2026-09-28",
     "round": 3
+  },
+  {
+    "originalName": "UCL",
+    "suggestedStandardizedName": "University College London",
+    "country": "United Kingdom",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/ucl",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "LMU Munich",
+    "suggestedStandardizedName": "University of Munich",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/lmu-munich",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Paris Sciences et Lettres – PSL Research University Paris",
+    "suggestedStandardizedName": "PSL Research University Paris",
+    "country": "France",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/paris-sciences-et-lettres-psl-research-university-paris",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Sungkyunkwan University (SKKU)",
+    "suggestedStandardizedName": "Sungkyunkwan University",
+    "country": "South Korea",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/sungkyunkwan-university-skku",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "UNSW Sydney",
+    "suggestedStandardizedName": "University of New South Wales",
+    "country": "Australia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/unsw-sydney",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Yonsei University (Seoul campus)",
+    "suggestedStandardizedName": "Yonsei University",
+    "country": "South Korea",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/yonsei-university-seoul-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Minnesota",
+    "suggestedStandardizedName": "University of Minnesota - Twin Cities",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-minnesota",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Ohio State University (Main campus)",
+    "suggestedStandardizedName": "Ohio State University",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/ohio-state-university-main-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Penn State (Main campus)",
+    "suggestedStandardizedName": "Pennsylvania State University - University Park",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/penn-state-main-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Politecnico di Milano",
+    "suggestedStandardizedName": "Polytechnic University of Milan",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/politecnico-di-milano",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Southern University of Science and Technology (SUSTech)",
+    "suggestedStandardizedName": "Southern University of Science and Technology",
+    "country": "China",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/southern-university-science-and-technology-sustech",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Pittsburgh-Pittsburgh campus",
+    "suggestedStandardizedName": "University of Pittsburgh",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-pittsburgh-pittsburgh-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "TU Dresden",
+    "suggestedStandardizedName": "Technical University of Dresden",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/tu-dresden",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universitat Autònoma de Barcelona (UAB)",
+    "suggestedStandardizedName": "Autonomous University of Barcelona",
+    "country": "Spain",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universitat-autonoma-de-barcelona-uab",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "KFUPM",
+    "suggestedStandardizedName": "King Fahd University of Petroleum and Minerals",
+    "country": "Saudi Arabia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/kfupm",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Virginia (Main campus)",
+    "suggestedStandardizedName": "University of Virginia",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-virginia-main-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Goethe University Frankfurt",
+    "suggestedStandardizedName": "University of Frankfurt am Main",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/goethe-university-frankfurt",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Indiana University",
+    "suggestedStandardizedName": "Indiana University at Bloomington",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/indiana-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Northeastern University, US",
+    "suggestedStandardizedName": "Northeastern University",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Sant’Anna School of Advanced Studies – Pisa",
+    "suggestedStandardizedName": "Sant'Anna School of Advanced Studies",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/santanna-school-advanced-studies-pisa",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "RCSI University of Medicine and Health Sciences",
+    "suggestedStandardizedName": "Royal College of Surgeons - Ireland",
+    "country": "Ireland",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/rcsi-university-medicine-and-health-sciences",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Ahlia University",
+    "suggestedStandardizedName": "Al Ahlia University",
+    "country": "Bahrain",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/ahlia-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Rutgers University–New Brunswick",
+    "suggestedStandardizedName": "Rutgers - The State University of New Jersey - New Brunswick",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/rutgers-university-new-brunswick-0",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "TU Wien",
+    "suggestedStandardizedName": "Vienna University of Technology",
+    "country": "Austria",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/tu-wien",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Università Cattolica del Sacro Cuore",
+    "suggestedStandardizedName": "Catholic University of the Sacred Heart",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universita-cattolica-del-sacro-cuore",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "LUT University",
+    "suggestedStandardizedName": "Lappeenranta University of Technology",
+    "country": "Finland",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/lut-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Campinas",
+    "suggestedStandardizedName": "State University of Campinas",
+    "country": "Brazil",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-campinas",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Galway",
+    "suggestedStandardizedName": "National University of Ireland - Galway",
+    "country": "Ireland",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-galway",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Rome II – Tor Vergata",
+    "suggestedStandardizedName": "University of Rome - Tor Vergata",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-rome-ii-tor-vergata",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Leibniz University Hannover",
+    "suggestedStandardizedName": "University of Hannover",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/leibniz-university-hannover",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Colorado Denver/Anschutz Medical Campus",
+    "suggestedStandardizedName": "University of Colorado - Denver",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-colorado-denver-anschutz-medical-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Georgia (USA)",
+    "suggestedStandardizedName": "University of Georgia",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-georgia-usa",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Brunel University of London",
+    "suggestedStandardizedName": "Brunel University",
+    "country": "United Kingdom",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/brunel-university-london",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Justus Liebig University Giessen",
+    "suggestedStandardizedName": "University of Giessen",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/justus-liebig-university-giessen",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "National Yang Ming Chiao Tung University (NYCU Taiwan)",
+    "suggestedStandardizedName": "National Yang Ming Chiao Tung University",
+    "country": "Taiwan",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/national-yang-ming-chiao-tung-university-nycu-taiwan",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "SOAS University of London",
+    "suggestedStandardizedName": "School of Oriental and African Studies - University of London",
+    "country": "United Kingdom",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/soas-university-london",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Charles University",
+    "suggestedStandardizedName": "Charles University in Prague",
+    "country": "Czech Republic",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/charles-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "National Taiwan University of Science and Technology (Taiwan Tech)",
+    "suggestedStandardizedName": "National Taiwan University of Science and Technology",
+    "country": "Taiwan",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/national-taiwan-university-science-and-technology-taiwan-tech",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "TU Dortmund University",
+    "suggestedStandardizedName": "Dortmund University of Technology",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/tu-dortmund-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Colorado State University, Fort Collins",
+    "suggestedStandardizedName": "Colorado State University",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/colorado-state-university-fort-collins-0",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Maynooth University",
+    "suggestedStandardizedName": "National University of Ireland - Maynooth",
+    "country": "Ireland",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/maynooth-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "NOVA University of Lisbon",
+    "suggestedStandardizedName": "University of Nova de Lisboa",
+    "country": "Portugal",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/nova-university-lisbon",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Université du Québec",
+    "suggestedStandardizedName": "University of Quebec",
+    "country": "Canada",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universite-du-quebec",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Amity University, Noida",
+    "suggestedStandardizedName": "Amity University",
+    "country": "India",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/amity-university-noida",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Goldsmiths, University of London",
+    "suggestedStandardizedName": "Goldsmiths College - University of London",
+    "country": "United Kingdom",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/goldsmiths-university-london",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Manipal Academy of Higher Education",
+    "suggestedStandardizedName": "Manipal University",
+    "country": "India",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/manipal-academy-higher-education",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Mizzou – University of Missouri",
+    "suggestedStandardizedName": "University of Missouri",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/mizzou-university-missouri",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Nanjing University of Science and Technology (NJUST)",
+    "suggestedStandardizedName": "Nanjing University of Science and Technology",
+    "country": "China",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/nanjing-university-science-and-technology-njust",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Sciences Po",
+    "suggestedStandardizedName": "Sciences Po - Paris",
+    "country": "France",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/sciences-po",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Tashkent Institute of Irrigation and Agricultural Mechanisation",
+    "suggestedStandardizedName": "Tashkent Institute Irrigation and Agricultural Mechanization Engineers",
+    "country": "Uzbekistan",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/tashkent-institute-irrigation-and-agricultural-mechanisation",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universiti Tenaga Nasional (UNITEN)",
+    "suggestedStandardizedName": "University of Tenaga Nasional",
+    "country": "Malaysia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universiti-tenaga-nasional-uniten",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "HSE University",
+    "suggestedStandardizedName": "Higher School of Economics",
+    "country": "Russia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/hse-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Imam Mohammad Ibn Saud Islamic University",
+    "suggestedStandardizedName": "Al-Imam Muhammad Ibn Saud Islamic University",
+    "country": "Saudi Arabia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/imam-mohammad-ibn-saud-islamic-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "RPTU University Kaiserslautern-Landau",
+    "suggestedStandardizedName": "Kaiserslautern University of Technology",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/rptu-university-kaiserslautern-landau",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+    "suggestedStandardizedName": "University of Malaysia - Pahang",
+    "country": "Malaysia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universiti-malaysia-pahang-al-sultan-abdullah-umpsa",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universiti Pendidikan Sultan Idris",
+    "suggestedStandardizedName": "Sultan Idris Education University",
+    "country": "Malaysia",
+    "source": "the",
+    "evidence": "https://www.upsi.edu.my/legacy/",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "UPES",
+    "suggestedStandardizedName": "University of Petroleum and Energy Studies",
+    "country": "India",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/upes",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "BOKU University",
+    "suggestedStandardizedName": "University of Bodenkultur Wien",
+    "country": "Austria",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/boku-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Otto von Guericke University of Magdeburg",
+    "suggestedStandardizedName": "University of Magdeburg",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/otto-von-guericke-university-magdeburg",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "TU Braunschweig",
+    "suggestedStandardizedName": "Technical University of Braunschweig",
+    "country": "Germany",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/tu-braunschweig",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Bari Aldo Moro",
+    "suggestedStandardizedName": "University of Bari",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-bari-aldo-moro",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Nanjing Tech University",
+    "suggestedStandardizedName": "Nanjing University of Technology",
+    "country": "China",
+    "source": "the",
+    "evidence": "https://en.njtech.edu.cn/info/1075/1114.htm",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Paris Lodron Universität Salzburg",
+    "suggestedStandardizedName": "University of Salzburg",
+    "country": "Austria",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/paris-lodron-universitat-salzburg",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)",
+    "suggestedStandardizedName": "Pontifical Catholic University of Rio de Janeiro",
+    "country": "Brazil",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/pontifical-catholic-university-rio-de-janeiro-puc-rio",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Thapar Institute of Engineering and Technology",
+    "suggestedStandardizedName": "Thapar University",
+    "country": "India",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/thapar-institute-engineering-and-technology",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "UEES, Espiritu Santo University",
+    "suggestedStandardizedName": "Espiritu Santo University",
+    "country": "Ecuador",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/uees-espiritu-santo-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universidade Federal do Rio Grande do Sul",
+    "suggestedStandardizedName": "Federal University of Rio Grande do Sul",
+    "country": "Brazil",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universidade-federal-do-rio-grande-do-sul",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of L’Aquila",
+    "suggestedStandardizedName": "University of Aquila",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-laquila",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Mons",
+    "suggestedStandardizedName": "University of Mons-Hainaut",
+    "country": "Belgium",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-mons",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Amedeo Avogadro University of Eastern Piedmont",
+    "suggestedStandardizedName": "University of Eastern Piedmont",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/amedeo-avogadro-university-eastern-piedmont",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Czech University of Life Sciences Prague (CZU)",
+    "suggestedStandardizedName": "Czech University of Life Sciences Prague",
+    "country": "Czech Republic",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/czech-university-life-sciences-prague-czu",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Egypt-Japan University of Science and Technology (E-JUST)",
+    "suggestedStandardizedName": "Egypt-Japan University of Science and Technology",
+    "country": "Egypt",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/egypt-japan-university-science-and-technology-e-just",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "National Research Nuclear University MEPhI",
+    "suggestedStandardizedName": "National Research Nuclear University",
+    "country": "Russia",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/national-research-nuclear-university-mephi",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Ohio University (Main campus)",
+    "suggestedStandardizedName": "Ohio University",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/ohio-university-main-campus",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "RUDN University",
+    "suggestedStandardizedName": "Peoples Friendship University of Russia",
+    "country": "Russia",
+    "source": "the",
+    "evidence": "https://www.rudn.ru/sveden/common/",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "SUNY Binghamton University",
+    "suggestedStandardizedName": "Binghamton University",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/suny-binghamton-university",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universidade Federal de São Paulo (UNIFESP)",
+    "suggestedStandardizedName": "Federal University of Sao Paulo",
+    "country": "Brazil",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universidade-federal-de-sao-paulo-unifesp",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Universidad Europea",
+    "suggestedStandardizedName": "European University of Madrid",
+    "country": "Spain",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/universidad-europea",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Rome III",
+    "suggestedStandardizedName": "Roma Tre University",
+    "country": "Italy",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-rome-iii",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "William & Mary",
+    "suggestedStandardizedName": "College of William and Mary",
+    "country": "United States",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/william-mary",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "ZHAW Zurich University of Applied Sciences",
+    "suggestedStandardizedName": "Zurich University of Applied Sciences",
+    "country": "Switzerland",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/zhaw-zurich-university-applied-sciences",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Montanuniversität Leoben",
+    "suggestedStandardizedName": "University of Leoben",
+    "country": "Austria",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/montanuniversitat-leoben",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "University of Alcalá",
+    "suggestedStandardizedName": "University of Alcalá de Henares",
+    "country": "Spain",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-alcala",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
+  },
+  {
+    "originalName": "Université Bourgogne Europe",
+    "suggestedStandardizedName": "University of Burgundy",
+    "country": "France",
+    "source": "the",
+    "evidence": "https://www.timeshighereducation.com/world-university-rankings/university-burgundy",
+    "consulted": "2026-10-01",
+    "ticket": "RR-UNIRANK-THE-SOURCE"
   }
 ]

@@ -16,5 +16,14 @@
     "evidence": "https://www.emu.edu.tr/study-in-north-cyprus",
     "consulted": "2026-09-28",
     "reason": "Institution is in Northern Cyprus. Preserve the publisher's country in sourceCountry while using the existing Cyprus bucket."
+  },
+  {
+    "source": "qs",
+    "name": "Central European University",
+    "originalCountry": "Hungary",
+    "country": "Austria",
+    "evidence": "https://www.topuniversities.com/universities/central-european-university",
+    "consulted": "2026-10-01",
+    "reason": "QS now locates CEU in Vienna, Austria. Retain Hungary from the unchanged legacy CSV in sourceCountry and join its rank to THE’s current CEU row."
   }
 ]
