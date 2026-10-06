@@ -1540,7 +1540,7 @@ button {
 
   .ledger-head,
   .ranking-row {
-    grid-template-columns: var(--rank-width) minmax(0, 1fr) var(--open-width);
+    grid-template-columns: minmax(var(--rank-width), max-content) minmax(0, 1fr) var(--open-width);
   }
 
   .ledger-head {
@@ -1568,6 +1568,7 @@ button {
     grid-row: 1;
     align-self: start;
     padding-top: 2px;
+    padding-inline-end: 8px;
   }
 
   .consensus-rank {
